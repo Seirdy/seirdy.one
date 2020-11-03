@@ -1,0 +1,7 @@
+Hello, world! This is my first post.
+
+=> gemini://envs.net envs.net
+
+## A subheading
+
+ok cool that worked

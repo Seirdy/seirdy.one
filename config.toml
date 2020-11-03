@@ -1,0 +1,70 @@
+baseURL = "https://seirdy.one/"
+languageCode = "en-us"
+title = "Seirdy's Home"
+theme = "etch-custom"
+
+enableInlineShortcodes = true
+# disablePathToLower = true
+# uglyurls = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+description = "Seirdy's personal website"
+src = "https://git.sr.ht/~seirdy/seirdy.one"
+copyright = "Copyright © 2020 Rohan Kumar"
+dark = "auto"
+highlight = true
+
+[author]
+name = "Rohan Kumar"
+
+[menu]
+  [[menu.main]]
+	identifier = "posts"
+	name = "posts"
+	title = "posts"
+	url = "/"
+	weight = 10
+
+  [[menu.main]]
+	identifier = "about"
+	name = "about"
+	title = "about"
+	url = "/about"
+	weight = 20
+
+[permalinks]
+posts = "/:year/:month/:day/:filename"
+
+[markup.goldmark.renderer]
+# Allows HTML in Markdown
+unsafe = true
+
+[markup.tableOfContents]
+ordered = true
+
+# lifted from https://git.sr.ht/~sircmpwn/drewdevault.com
+[mediaTypes]
+[mediaTypes."text/gemini"]
+suffixes = ["gmi"]
+
+[outputFormats]
+[outputFormats.Gemini]
+name = "GEMTEXT"
+isPlainText = true
+isHTML = false
+mediaType = "text/gemini"
+protocol = "gemini://"
+permalinkable = true
+path = "gemini/"
+
+[outputFormats.GEMRSS]
+name = "GEMRSS"
+isHTML = false
+mediaType = "application/rss+xml"
+protocol = "gemini://"
+path = "gemini/"
+
+[outputs]
+section = ["HTML", "RSS", "GEMRSS"]

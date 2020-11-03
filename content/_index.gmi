@@ -1,0 +1,24 @@
+It me!
+
+## About me
+
+See the Director's Cut of my bio in the "about" page:
+
+=> /about/ About me
+
+Git repos:
+
+=> https://sr.ht/%7Eseirdy Sourcehut
+=> https://github.com/Seirdy GitHub
+=> https://gitlab.com/Seirdy GitLab
+
+## Contact
+
+=> mailto:seirdy@seirdy.one email: seirdy@seirdy.one
+=> https://pleroma.envs.net/seirdy Fediverse (Pleroma)
+
+Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm on Matrix:
+
+=> https://matrix.to/#/@seirdy:envs.net @seirdy:envs.net
+
+When I finish setting up CI/CD, this line should disappear.
