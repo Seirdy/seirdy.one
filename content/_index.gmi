@@ -20,5 +20,3 @@ Git repos:
 Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm on Matrix:
 
 => https://matrix.to/#/@seirdy:envs.net @seirdy:envs.net
-
-When I finish setting up CI/CD, this line should disappear.

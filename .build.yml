@@ -1,0 +1,23 @@
+---
+image: alpine/edge
+packages:
+  - rsync
+  - hugo
+sources:
+  - https://git.sr.ht/~seirdy/seirdy.one
+secrets:
+  - cc1eb90c-b07b-4c46-86d4-58fec41cf0e4
+triggers:
+  - action: email
+    condition: always
+    to: Rohan Kumar <seirdy@seirdy.one>
+tasks:
+  - build: |
+      cd seirdy.one
+      hugo
+  - upload: |
+      cd seirdy.one
+      echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+      rsync -rvzP --exclude "public/gemini" --exclude "*.gmi" public/ deploy@seirdy.one:/var/www/seirdy.one/
+      rsync -rvzP --exclude "*.html" public/gemini/ public/about public/posts deploy@seirdy.one:/srv/gemini/seirdy.one/
+      rsync -rvzP public/posts/gemini/index.xml deploy@seirdy.one:/srv/gemini/seirdy.one/feed.xml

@@ -7,4 +7,6 @@ mirror](https://img.shields.io/badge/mirror-GitLab-orange.svg?logo=gitlab)](http
 [![GitHub
 mirror](https://img.shields.io/badge/mirror-GitHub-black.svg?logo=github)](https://github.com/Seirdy/seirdy.one)
 
+[![builds.sr.ht status](https://builds.sr.ht/~seirdy/seirdy.one.svg)](https://builds.sr.ht/~seirdy/seirdy.one)
+
 Code for my personal website, [seirdy.one](https://seirdy.one). Built with Hugo.
