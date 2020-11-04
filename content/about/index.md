@@ -21,7 +21,7 @@ tilde](http://tilde.club/%7Epfhawkins/othertildes.html) and [get
 started](http://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve
 as a "rough draft".
 
-Content on this site also appears on my Gemini space (TODO: link it).
+Content on this site also appears on [my Gemini space](gemini://seirdy.one)
 
 Location (Rohan, meatspace)
 ---------------------------

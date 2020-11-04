@@ -4,7 +4,7 @@ It me!
 
 See the Director's Cut of my bio in the "about" page:
 
-=> /about/ About me
+=> about/ About me
 
 Git repos:
 

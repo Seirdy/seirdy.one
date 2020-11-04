@@ -16,8 +16,6 @@ More info about the Tildeverse:
 => http://tilde.club/%7Epfhawkins/othertildes.html Pick a tilde
 => http://tilde.club/%7Eanthonydpaul/primer.html Get started
 
-Content on this site also appears on my Gemini space (TODO: link it).
-
 ## Location (Rohan, meatspace)
 
 Currently living at home in Cupertino, CA
