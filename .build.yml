@@ -10,7 +10,7 @@ secrets:
 triggers:
   - action: email
     condition: always
-    to: Rohan Kumar <seirdy@seirdy.one>
+    to: seirdy@seirdy.one
 tasks:
   - build: |
       cd seirdy.one

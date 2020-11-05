@@ -12,7 +12,9 @@ case "$1" in
 		gemini_prefix="$login:/home/seirdy/public_gemini"
 		;;
 	localhost)
+		www_prefix='/tmp/www/seeirdy.one'
 		gemini_prefix='/tmp/gemini/serve/seirdy.one'
+		mkdir -p "$www_prefix" "$gemini_prefix"
 		;;
 	*)
 		echo 'must supply hostname' >&2
@@ -20,7 +22,6 @@ case "$1" in
 		;;
 esac
 
-[ "$1" != 'localhost' ] \
-	&& rsync -rvzP --exclude "public/gemini" --exclude "*.gmi" public/ "$www_prefix/"
+rsync -rvzP --exclude "gemini" --exclude "*.gmi" public/ "$www_prefix/"
 rsync -rvzP --exclude "*.html" public/gemini/ public/about public/posts "$gemini_prefix/"
 rsync -rvzP public/posts/gemini/index.xml "$gemini_prefix/feed.xml"
