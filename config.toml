@@ -24,14 +24,14 @@ name = "Rohan Kumar"
 	identifier = "posts"
 	name = "posts"
 	title = "posts"
-	url = "/"
+	url = "/posts/"
 	weight = 10
 
   [[menu.main]]
 	identifier = "about"
 	name = "about"
 	title = "about"
-	url = "/about"
+	url = "/about/"
 	weight = 20
 
 [permalinks]
