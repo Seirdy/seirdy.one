@@ -1,7 +1,4 @@
 Hello, world! This is my first post.
 
-=> gemini://envs.net envs.net
-
-## A subheading
-
-ok cool that worked
+It looks like I managed to somehow get this site working. You can look forward to a
+few more posts in the coming weeks.
