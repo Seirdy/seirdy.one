@@ -58,7 +58,7 @@ header#banner nav ul li a {
     color: #454545;
 }
 
-main#content a {
+main#content a, footer a {
     color: #007dfa;
     text-decoration: none;
 }

@@ -8,4 +8,10 @@
     </header>
     {{- .Content -}}
 </article>
+<section class="comment">
+  {{ with .OutputFormats.Get "gemtext" }}
+  <p>
+  ⇒ View this article on <a href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>.
+  {{ end }}
+
 {{ end }}

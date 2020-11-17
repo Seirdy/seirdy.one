@@ -1,9 +1,6 @@
 {{ if not (eq .Site.Params.dark "on") -}}
 @media (prefers-color-scheme: dark) {
 {{ end -}}
-html {
-    scrollbar-color: #6c6c6c #2e2e2e;
-}
 
 body {
     color: #ebebeb;
@@ -19,7 +16,7 @@ header#banner nav ul li a {
     color: #cccccc;
 }
 
-main#content a {
+main#content a, footer a {
     color: #00b1ed;
 }
 
