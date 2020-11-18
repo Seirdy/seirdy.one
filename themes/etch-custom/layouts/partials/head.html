@@ -5,9 +5,7 @@
     <meta name="description" content="{{ . }}">
     {{ end }}
     {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.png" | absURL) | safeHTML }}
-    {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    <link href="{{ .Site.BaseURL }}posts/index.xml" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
 
     {{ $resources := slice -}}
 
