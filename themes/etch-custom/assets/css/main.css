@@ -235,7 +235,7 @@ main#content pre {
 }
 
 main#content code {
-    font-size: 0.96em;
+    font-size: 14px;
     padding: 0 5px;
 }
 
@@ -243,7 +243,6 @@ main#content pre {
     display: block;
     overflow-x: auto;
     font-size: 14px;
-    font-size: 1.4rem;
     white-space: pre;
     margin: 20px 0;
     padding: 1.5rem 1.5rem;
