@@ -12,6 +12,10 @@ Git repos:
 => https://github.com/Seirdy GitHub
 => https://gitlab.com/Seirdy GitLab
 
+Since some people asked me about music, here's a generated list of every track in my library that I've rated 8/10 or higher:
+
+=> music.txt
+
 ## Contact
 
 => mailto:seirdy@seirdy.one email: seirdy@seirdy.one

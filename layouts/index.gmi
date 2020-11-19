@@ -1,6 +1,6 @@
 {{readFile (replace (replace $.File.Path ".md" ".gmi") ".html" ".gmi") | safeHTML}}
 
-## Blog posts
+## Gemlog posts
 {{ range (where .Site.RegularPages "Section" "posts") }}
 {{- if .OutputFormats.Get "gemtext" }}
 => {{replace .Permalink "/gemini" "" 1}} {{.Date.Format "January 2, 2006"}}: {{.Title | safeHTML}}{{ end }}{{ end }}
