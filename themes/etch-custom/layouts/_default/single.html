@@ -1,17 +1,24 @@
 {{ define "main" }}
 <article>
-    <header id="post-header">
-        <h1>{{ .Title }}</h1>
-        {{- if isset .Params "date" -}}
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
-        {{- end -}}
-    </header>
-    {{- .Content -}}
+	<header id="post-header">
+		<h1>{{ .Title }}</h1>
+		{{- if isset .Params "date" -}}
+		<time>{{ .Date.Format "January 2, 2006" }}</time>
+		{{- end -}}
+	</header>
+	{{- .Content -}}
 </article>
+<br>
+<hr>
 <section class="comment">
-  {{ with .OutputFormats.Get "gemtext" }}
-  <p>
-  ⇒ View this article on <a href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>.
-  {{ end }}
+	{{ with .OutputFormats.Get "gemtext" }}
+	<p>
+	View this article on <a href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>
+	</p>
+	{{ end }}
+	<p>
+	<a href="mailto:~seirdy/seirdy.one@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one
+	</p>
+<hr>
 
-{{ end }}
+	{{ end }}
