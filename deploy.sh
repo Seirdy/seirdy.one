@@ -24,4 +24,4 @@ esac
 
 rsync -rvzP --exclude "gemini" --exclude "*.gmi" public/ "$www_prefix/"
 rsync -rvzP --exclude "*.html" public/gemini/ public/about public/posts "$gemini_prefix/"
-rsync -rvzP public/posts/gemini/index.xml "$gemini_prefix/feed.xml"
+rsync -rvzP public/posts/gemini.xml "$gemini_prefix/feed.xml"

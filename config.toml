@@ -5,7 +5,7 @@ theme = "etch-custom"
 
 enableInlineShortcodes = true
 # disablePathToLower = true
-# uglyurls = true
+uglyurls = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
@@ -24,14 +24,14 @@ name = "Rohan Kumar"
 	identifier = "posts"
 	name = "posts"
 	title = "posts"
-	url = "/posts/"
+	url = "/posts.html"
 	weight = 10
 
   [[menu.main]]
 	identifier = "about"
 	name = "about"
 	title = "about"
-	url = "/about/"
+	url = "/about.html"
 	weight = 20
 
 [permalinks]
