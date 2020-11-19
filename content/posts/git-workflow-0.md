@@ -64,4 +64,4 @@ Q: I'm not interested in trying anything new, no matter what the benefits are.
 A: First of all, that wasn't a question. Second, this series isn't for you. You
 should not read this. I recommend doing literally anything else.
 
-Next: Resilient Git, Part 2: [Hydra Hosting](../../../2020/11/18/git-workflow-1.html)
+Next: Resilient Git, Part 1: [Hydra Hosting](../../../2020/11/18/git-workflow-1.html)

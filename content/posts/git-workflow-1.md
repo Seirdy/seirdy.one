@@ -82,7 +82,7 @@ introducing new tools, dependencies, or closed platforms to the mix.
 
 Q: What about issues, patches, etc.?
 
-A: Stay tuned for Part 3, coming soon to a weblog/gemlog near you™.
+A: Stay tuned for Parts 2 and 3, coming soon to a weblog/gemlog near you™.
 
 Q: Why did you call this "hydra hosting"?
 

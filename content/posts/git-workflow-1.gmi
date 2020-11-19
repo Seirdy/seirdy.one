@@ -54,7 +54,7 @@ A: Such a setup depends upon the cloud service and a primary repo for that servi
 
 Q: What about issues, patches, etc.?
 
-A: Stay tuned for Part 3, coming soon to a weblog/gemlog near you™.
+A: Stay tuned for Parts 2 and 3, coming soon to a weblog/gemlog near you™.
 
 Q: Why did you call this "hydra hosting"?
 
