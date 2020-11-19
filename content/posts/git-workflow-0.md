@@ -23,7 +23,7 @@ include all parts of a typical project.
 I'll update this post as I add articles to the series. At the moment, I've planned to
 write the following articles:
 
-1.  Repository hosting
+1.  [Hydra Hosting](../../../2020/11/18/git-workflow-1.html): repository hosting.
 2.  Community feedback (issues, support, etc.)
 3.  Community contributions (patches)
 4.  CI/CD
@@ -32,11 +32,10 @@ write the following articles:
 The result of the workflows this series covers will be minimal dependence on outside
 parties; all members of the community will easily be able to get a copy of the
 software, its code, development history, issues, and patches offline on their
-machines. With the exception of CI/CD, the offline content will follow
-implementation-neutral open standards. Following open standards is the killer
-feature: nothing in this workflow depends on a specific platform (GitHub, GitLab,
-Gitea, Bitbucket, Docker, Nix, Jenkins, et cetera), almost eliminating your project's
-"bus factor".
+machines with implementation-neutral open standards. Following open standards is the
+killer feature: nothing in this workflow depends on a specific platform (GitHub,
+GitLab, Gitea, Bitbucket, Docker, Nix, Jenkins, etc.), almost eliminating your
+project's "bus factor".
 
 Providing a way to get everything offline, in a format that won't go obsolete if a
 project dies, is the key to a resilient git workflow.
@@ -62,5 +61,7 @@ it).
 
 Q: I'm not interested in trying anything new, no matter what the benefits are.
 
-A: Ok, first of all, that wasn't a question. Second, this series isn't for you. You
+A: First of all, that wasn't a question. Second, this series isn't for you. You
 should not read this. I recommend doing literally anything else.
+
+Next: Resilient Git, Part 2: [Hydra Hosting](../../../2020/11/18/git-workflow-1.html)
