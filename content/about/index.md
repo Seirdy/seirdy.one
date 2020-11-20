@@ -69,7 +69,7 @@ Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest,
 Neovim, tmux, newsboat, WeeChat, and zsh.
 
 More information is available in my [dotfiles
-repo](https://git.sr.ht/~seirdy/dotfiles); check its README.
+repo](https://sr.ht/~seirdy/dotfiles); check its README.
 
 ### Anime
 

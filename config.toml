@@ -11,7 +11,7 @@ pygmentsUseClasses = true
 
 [params]
 description = "Seirdy's personal website"
-src = "https://git.sr.ht/~seirdy/seirdy.one"
+src = "https://sr.ht/~seirdy/seirdy.one"
 copyright = "Copyright © 2020 Rohan Kumar"
 dark = "auto"
 highlight = true

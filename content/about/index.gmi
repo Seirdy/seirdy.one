@@ -53,7 +53,7 @@ Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest, N
 
 More information is available in my dotfiles repo; check its README.
 
-=> https://git.sr.ht/%7Eseirdy/dotfiles My dotfiles
+=> https://sr.ht/%7Eseirdy/dotfiles My dotfiles
 
 ### Anime
 
