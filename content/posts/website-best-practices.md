@@ -1,0 +1,121 @@
+---
+date: "2020-11-23T12:21:35-08:00"
+outputs:
+- html
+- gemtext
+tags:
+- web
+- rant
+- minimalism
+title: An opinionated list of best practices for textual websites
+---
+
+*The following applies to minimal websites that focus primarily on text. It does not
+apply to websites that have a lot of non-textual content. It also does not apply to
+websites that focus more on generating revenue or pleasing investors than being good
+websites.*
+
+I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today
+(that'll take, like, a month at the longest). Until that happens, here's a
+non-exhaustive, highly-opinionated list of best practices for websites that focus
+primarily on text:
+
+- Final page weight under 50kb without images, and under 200kb with images.
+- Works in Lynx, w3m, links (both graphics and text mode), Netsurf, Dillo, and most
+  HTML-to-markdown converters
+- No scripts or interactivity (preferably enforced at the CSP level)
+- No cookies
+- No animations
+- No fonts--local or remote--besides `sans-serif` and `monospace`. More on this
+  below.
+- No referrers
+- No requests after the page finishes loading
+- No 3rd-party resources (preferably enforced at the CSP level)
+- No lazy loading (more on this below)
+- Supports dark mode and/or works with most "dark mode" browser addons
+- A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
+- Optimized images. You also might want to use HTML's `<picture>` element, using
+  jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools
+  such as [oxipng](https://github.com/shssoichiro/oxipng) to optimize images.
+
+Early rough drafts of this post generated some feedback I thought I should address
+below.
+
+About fonts
+-----------
+
+If you *really* want, you could use `serif` instead of `sans-serif`, but serif fonts
+tend to look worse on low-res monitors. Not every screen's DPI has three digits.
+
+To ship custom fonts is to assert that branding is more important than user choice.
+Beyond basic layout and optionally supporting dark mode, authors should not dictate
+the presentation of their websites; that is the job of the user agent. Most websites
+are not important enough to look completely different from the rest of the user's
+system.
+
+### But most users don't change their fonts...
+
+The "users don't know better and need us to make decisions for them" mindset isn't
+without merits; however, in my opinion, it's overused. Using system fonts doesn't
+make your website harder to use, but it does make it smaller and stick out less to
+the subset of users who care enough about fonts to change them. This argument isn't
+about making software easier for non-technical users; it's about branding by
+asserting a personal preference.
+
+### But wouldn't that allow a website to fingerprint with fonts?
+
+I don't know much about fingerprinting, except that you can't do font enumeration
+without JavaScript. Since text-based websites that follow these best-practices don't
+send requests after the page loads and have no scripts, fingerprinting via font
+enumeration is a non-issue.
+
+About lazy loading
+------------------
+
+For users on slow connections, lazy loading is often frustrating. I think I can speak
+for some of these users: mobile data near my home has a number of "dead zones" with
+abysmal download speeds, and my home's Wi-Fi repeater setup occasionally results in
+packet loss rates above 60% (!!).
+
+Users on poor connections have better things to do than idly wait for pages to load.
+They might open multiple links in background tabs to wait for them all to load at
+once, or switch to another window/app and come back when loading finishes. They might
+also open links while on a good connection before switching to a poor connection; I
+know that I often open 10-20 links on Wi-Fi before going out for a walk in a
+mobile-data dead-zone.
+
+Unfortunately, pages with lazy loading don't finish loading off-screen images in the
+background. To load this content ahead of time, users need to switch to the loading
+page and slowly scroll to the bottom to ensure that all the important content appears
+on-screen and starts loading. Website owners shouldn't expect users to have to jump
+through these ridiculous hoops.
+
+### Wouldn't this be solved by combining lazy loading with pre-loading/pre-fetching?
+
+A large number of users with poor connections also have capped data, and would prefer
+that pages don't decide to predictively load content ahead-of-time for them. Some go
+so far as to disable this behavior to avoid data overages. Savvy privacy-conscious
+users also generally disable pre-loading because they don't have reason to trust that
+linked content doesn't practice dark patterns like tracking without consent.
+
+Users who click a link *choose* to load a full page. Loading pages that a user hasn't
+clicked on is making a choice for that user.
+
+### Can't users on poor connections disable images?
+
+I have two responses:
+
+1.  If an image isn't essential, you shouldn't include it inline.
+2.  Yes, users could disable images. That's *their* choice. If your page uses lazy
+    loading, you've effectively (and probably unintentionally) made that choice for a
+    large number of users.
+
+Other places to check out
+-------------------------
+
+The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also
+rewards websites that have a high ratio of content size to total size.
+
+Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking
+Website inspired several unofficial sequels that tried to gently improve upon it. My
+favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
