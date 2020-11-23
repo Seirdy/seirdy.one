@@ -2,6 +2,8 @@
 
 {{ trim (readFile (replace $.File.Path ".md" ".gmi")) "\n" | safeHTML }}
 
+---
+
 “{{$.Title | safeHTML}}” was published on {{.Date.Format "January 2, 2006"}}.
 
 => / Back to the home page{{ with .OutputFormats.Get "html" }}

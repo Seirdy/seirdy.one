@@ -1,48 +1,33 @@
 {{ if not (eq .Site.Params.dark "on") -}}
 @media (prefers-color-scheme: dark) {
-{{ end -}}
+	{{ end -}}
 
-body {
-    color: #ebebeb;
-    background: #121212;
-}
+	:root {
+		--dim-text: #a7a7a7;
+		--shaded-bg: #222;
+	}
 
-header#banner a {
-    color: #e0e0e0;
-    text-decoration: none;
-}
+	html{
+		color: white;
+		background: black;
+	}
 
-header#banner nav ul li a {
-    color: #cccccc;
-}
+	header#banner a {
+		color: white;
+	}
 
-main#content a, footer a {
-    color: #00b1ed;
-}
+	main#content a, footer a {
+		color: #00b1ed;
+	}
 
-main#content p {
-    color: #f5f5f5;
-}
+	main#content hr {
+		border-color: #5c5c5c;
+	}
 
-main#content hr {
-    background: #5c5c5c;
-}
+	main#content #toc h4 {
+		color: #d4d4d4;
+	}
 
-main#content #toc h4 {
-    color: #d4d4d4;
-}
-
-main#content ul#posts small {
-    color: #a7a7a7;
-}
-
-main#content ul#posts li a:hover {
-    color: #21c7ff;
-}
-
-main#content header#post-header time {
-    color: #a7a7a7;
-}
-{{- if not (eq .Site.Params.dark "on") -}}
+	{{- if not (eq .Site.Params.dark "on") -}}
 }
 {{- end -}}
