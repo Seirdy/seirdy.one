@@ -17,7 +17,7 @@ website also exists on my [Tildeverse page](https://envs.net/~seirdy) and on my
 About me
 --------
 
-The Director's Cut of my bio is at my [About page](/about).
+The Director's Cut of my bio is at my [About page](/about.html).
 
 Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>, <a href="https://github.com/Seirdy" rel="me">GitHub</a>, and <a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
 
