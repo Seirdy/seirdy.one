@@ -22,6 +22,6 @@ case "$1" in
 		;;
 esac
 
-rsync -rvzP --exclude "gemini" --exclude "*.gmi" public/ "$www_prefix/"
-rsync -rvzP --exclude "*.html" public/gemini/ public/about public/posts "$gemini_prefix/"
-rsync -rvzP public/posts/gemini.xml "$gemini_prefix/feed.xml"
+rsync -avzP --exclude 'gemini' --exclude '*.gmi' --exclude 'misc/' --exclude 'music.txt' --exclude '.well-known' public/ "$www_prefix/" --delete
+rsync -avzP --exclude '*.html' public/gemini/ public/about public/posts "$gemini_prefix/" --delete
+rsync -avzP public/posts/gemini.xml "$gemini_prefix/feed.xml" --delete
