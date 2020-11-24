@@ -15,6 +15,8 @@ apply to websites that have a lot of non-textual content. It also does not apply
 websites that focus more on generating revenue or pleasing investors than being good
 websites.*
 
+This is a "living document" that I add to as I receive feedback. See the [changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/content/posts/website-best-practices.md).
+
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today
 (that'll take, like, a month at the longest). Until that happens, here's a
 non-exhaustive, highly-opinionated list of best practices for websites that focus
