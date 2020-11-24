@@ -32,14 +32,20 @@ primarily on text:
 - No requests after the page finishes loading
 - No 3rd-party resources (preferably enforced at the CSP level)
 - No lazy loading (more on this below)
+- No custom colors OR explicitly set the both foreground and background colors. More
+  on this below.
 - Supports dark mode and/or works with most "dark mode" browser addons
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
 - Optimized images. You also might want to use HTML's `<picture>` element, using
   jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools
   such as [oxipng](https://github.com/shssoichiro/oxipng) to optimize images.
 
+I'd like to re-iterate yet another time that this only applies to websites that
+primarily focus on text. If graphics, interactivity, etc. are an important part of
+your website, less (possibly none) of this article applies.
+
 Early rough drafts of this post generated some feedback I thought I should address
-below.
+below. Special thanks to the five IRC users who provided feedback!
 
 About fonts
 -----------
@@ -109,6 +115,23 @@ I have two responses:
 2.  Yes, users could disable images. That's *their* choice. If your page uses lazy
     loading, you've effectively (and probably unintentionally) made that choice for a
     large number of users.
+
+About custom colors
+-------------------
+
+Some users' browsers set default page colors that aren't white-on-black. For
+instance, Linux users who enable GTK style overrides might default to having white
+text on a dark background. Websites that explicitly set foreground colors but leave
+the default background color (or vice-versa) end up being difficult to read. Here's
+an example:
+
+<picture>
+<source srcset="https://seirdy.one/misc/website_colors.webp" type="image/webp">
+<img src="https://seirdy.one/misc/website_colors.png" alt="This page with a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets">
+</picture>
+
+If you do explicitly set colors, please also include a dark theme using a media
+query: `@media (prefers-color-scheme: dark)`.
 
 Other places to check out
 -------------------------

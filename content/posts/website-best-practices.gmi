@@ -12,6 +12,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No requests after the page finishes loading
 * No 3rd-party resources (preferably enforced at the CSP level)
 * No lazy loading (more on this below)
+* No custom colors OR explicitly set the both foreground and background colors. More on this below.
 * Supports dark mode and/or works with most "dark mode" browser addons
 * A good score on Mozilla's HTTP Observatory
 * Optimized images. You also might want to use HTML's <picture> element, using jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools such as oxipng to optimize images.
@@ -19,7 +20,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 => https://observatory.mozilla.org/ HTTP Observatory
 => https://github.com/shssoichiro/oxipng Oxipng
 
-Early rough drafts of this post generated some feedback I thought I should address below.
+Early rough drafts of this post generated some feedback I thought I should address below. Special thanks to the five IRC users who provided feedback!
 
 ## About fonts
 
@@ -55,6 +56,20 @@ I have two responses:
 
 1. If an image isn't essential, you shouldn't include it inline.
 2. Yes, users could disable images. That's *their* choice. If your page uses lazy loading, you've effectively (and probably unintentionally) made that choice for a large number of users.
+
+## About custom colors
+
+Some users' browsers set default page colors that aren't white-on-black. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Here's what this page would look like if it messed with the colors carelessly:
+
+=> gemini://seirdy.one/misc/website_colors.png Screenshot of this page with some unreadable text
+
+It's got a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets
+
+If you do explicitly set colors, please also include a dark theme using a media query:
+
+```
+@media (prefers-color-scheme: dark).
+```
 
 ## Other places to check out
 
