@@ -3,7 +3,8 @@ The following applies to minimal websites that focus primarily on text. It does 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text:
 
 * Final page weight under 50kb without images, and under 200kb with images.
-* Works in Lynx, w3m, links (both graphics and text mode), Netsurf, Dillo, and most HTML-to-markdown converters
+* Works in Lynx, w3m, links (both graphics and text mode), Netsurf, and Dillo
+* Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
 * No scripts or interactivity (preferably enforced at the CSP level)
 * No cookies
 * No animations
@@ -20,7 +21,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 => https://observatory.mozilla.org/ HTTP Observatory
 => https://github.com/shssoichiro/oxipng Oxipng
 
-Early rough drafts of this post generated some feedback I thought I should address below. Special thanks to the five IRC users who provided feedback!
+Early rough drafts of this post generated some feedback I thought I should address below. Special thanks to the eight IRC users who provided feedback!
 
 ## About fonts
 
@@ -68,7 +69,7 @@ It's got a grey background, a header with unreadable black/grey text, and unread
 If you do explicitly set colors, please also include a dark theme using a media query:
 
 ```
-@media (prefers-color-scheme: dark).
+@media (prefers-color-scheme: dark)
 ```
 
 ## Other places to check out

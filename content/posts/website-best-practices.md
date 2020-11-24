@@ -21,8 +21,10 @@ non-exhaustive, highly-opinionated list of best practices for websites that focu
 primarily on text:
 
 - Final page weight under 50kb without images, and under 200kb with images.
-- Works in Lynx, w3m, links (both graphics and text mode), Netsurf, Dillo, and most
-  HTML-to-markdown converters
+- Works in Lynx, w3m, links (both graphics and text mode), Netsurf, and Dillo
+- Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown
+  converters. This is a good way to verify that your site uses simple HTML and works
+  with most non-browser article readers (e.g. ebook converters, PDF exports).
 - No scripts or interactivity (preferably enforced at the CSP level)
 - No cookies
 - No animations
@@ -45,7 +47,7 @@ primarily focus on text. If graphics, interactivity, etc. are an important part 
 your website, less (possibly none) of this article applies.
 
 Early rough drafts of this post generated some feedback I thought I should address
-below. Special thanks to the five IRC users who provided feedback!
+below. Special thanks to the eight IRC users who provided feedback!
 
 About fonts
 -----------
