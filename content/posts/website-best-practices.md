@@ -38,6 +38,7 @@ primarily on text:
 - No lazy loading (more on this below)
 - No custom colors OR explicitly set the both foreground and background colors. More
   on this below.
+- A maximum line length for readability
 - Server configured to support compression (gzip, optionally zstd as well) and
   HTTP/2. It's a free speed boost.
 - Supports dark mode via a CSS media feature and/or works with most "dark mode"
