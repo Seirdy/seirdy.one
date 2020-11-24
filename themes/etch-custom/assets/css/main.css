@@ -76,8 +76,9 @@ main#content ul#posts {
 }
 
 main#content ul#posts li {
-	line-height: 2rem;
+	line-height: 1.5rem;
 	padding: 0;
+	margin: 1rem 0;
 }
 
 main#content ul#posts small {
@@ -95,7 +96,7 @@ main#content ul#posts li a:hover {
 /* single.html styles */
 main#content h1 {
 	font-size: 1.5rem;
-	line-height: 2.5rem;
+	line-height: 2rem;
 }
 main#content h2 {
 	font-size: 1.25rem;
