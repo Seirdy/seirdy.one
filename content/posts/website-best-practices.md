@@ -36,6 +36,8 @@ primarily on text:
 - No lazy loading (more on this below)
 - No custom colors OR explicitly set the both foreground and background colors. More
   on this below.
+- Server configured to support compression (gzip, optionally zstd as well) and
+  HTTP/2. It's a free speed boost.
 - Supports dark mode and/or works with most "dark mode" browser addons
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
 - Optimized images. You also might want to use HTML's `<picture>` element, using

@@ -14,6 +14,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No 3rd-party resources (preferably enforced at the CSP level)
 * No lazy loading (more on this below)
 * No custom colors OR explicitly set the both foreground and background colors. More on this below.
+* Server configured to support compression (gzip, optionally zstd as well) and HTTP/2. It's a free speed boost.
 * Supports dark mode and/or works with most "dark mode" browser addons
 * A good score on Mozilla's HTTP Observatory
 * Optimized images. You also might want to use HTML's <picture> element, using jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools such as oxipng to optimize images.
