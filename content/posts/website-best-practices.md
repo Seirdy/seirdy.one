@@ -63,6 +63,10 @@ the presentation of their websites; that is the job of the user agent. Most webs
 are not important enough to look completely different from the rest of the user's
 system.
 
+A personal example: I set my preferred fonts in my computer's fontconfig settings.
+Now every website that uses `sans-serif` will have my preferred font. Sites with
+`sans-serif` blend into the users' systems instead of sticking out.
+
 ### But most users don't change their fonts...
 
 The "users don't know better and need us to make decisions for them" mindset isn't

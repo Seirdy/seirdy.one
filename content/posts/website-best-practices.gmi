@@ -30,6 +30,8 @@ If you really want, you could use serif instead of sans-serif, but serif fonts t
 
 To ship custom fonts is to assert that branding is more important than user choice. Beyond basic layout and optionally supporting dark mode, authors should not dictate the presentation of their websites; that is the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
 
+A personal example: I set my preferred fonts in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
+
 ### But most users don't change their fonts...
 
 The "users don't know better and need us to make decisions for them" mindset isn't without merits; however, in my opinion, it's overused. Using system fonts doesn't make your website harder to use, but it does make it smaller and stick out less to the subset of users who care enough about fonts to change them. This argument isn't about making software easier for non-technical users; it's about branding by asserting a personal preference.
