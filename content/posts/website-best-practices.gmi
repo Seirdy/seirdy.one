@@ -38,7 +38,9 @@ The "users don't know better and need us to make decisions for them" mindset isn
 
 ### Can't users globally override stylesheets instead?
 
-It's not a good idea to expect users to automatically override website stylesheets. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't expect these users to constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do.
+It's not a good idea to require users to automatically override website stylesheets. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
+
+That being said, many users *do* actually override stylesheets. We shouldn't *require* them to do so, but we should keep our pages from breaking in case they do. Pages following this article's advice will probably work perfectly well in these cases without any extra effort.
 
 ### But wouldn't that allow a website to fingerprint with fonts?
 
