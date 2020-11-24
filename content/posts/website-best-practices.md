@@ -40,9 +40,7 @@ primarily on text:
   HTTP/2. It's a free speed boost.
 - Supports dark mode and/or works with most "dark mode" browser addons
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
-- Optimized images. You also might want to use HTML's `<picture>` element, using
-  jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools
-  such as [oxipng](https://github.com/shssoichiro/oxipng) to optimize images.
+- Optimized images.
 
 I'd like to re-iterate yet another time that this only applies to websites that
 primarily focus on text. If graphics, interactivity, etc. are an important part of
@@ -140,6 +138,23 @@ an example:
 
 If you do explicitly set colors, please also include a dark theme using a media
 query: `@media (prefers-color-scheme: dark)`.
+
+Image optimization
+------------------
+
+Some image optimization tools I use:
+
+- [oxipng](https://github.com/shssoichiro/oxipng)
+- [jpegoptim](https://github.com/tjko/jpegoptim)
+- [cwebp](https://developers.google.com/speed/webp/docs/cwebp)
+
+I put together a [quick
+script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image)
+to optimize images using these programs in my dotfile repo.
+
+You also might want to use HTML's `<picture>` element, using jpg/png as a fallback
+for more efficient formats such as WebP or AVIF. More info in the [MDN
+docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 Other places to check out
 -------------------------

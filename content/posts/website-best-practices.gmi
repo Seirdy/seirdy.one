@@ -17,7 +17,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * Server configured to support compression (gzip, optionally zstd as well) and HTTP/2. It's a free speed boost.
 * Supports dark mode and/or works with most "dark mode" browser addons
 * A good score on Mozilla's HTTP Observatory
-* Optimized images. You also might want to use HTML's <picture> element, using jpg/png as a fallback for more efficient formats such as WebP or AVIF. Use tools such as oxipng to optimize images.
+* Optimized images. More on this below.
 
 => https://observatory.mozilla.org/ HTTP Observatory
 => https://github.com/shssoichiro/oxipng Oxipng
@@ -74,6 +74,22 @@ If you do explicitly set colors, please also include a dark theme using a media 
 ```
 @media (prefers-color-scheme: dark)
 ```
+
+## Image optimization
+
+Some image optimization tools I use:
+
+=> https://github.com/shssoichiro/oxipng Oxipng
+=> https://github.com/tjko/jpegoptim jpegoptim
+=> https://developers.google.com/speed/webp/docs/cwebp cwebp
+
+I put together a quick script to optimize images using these programs in my dotfile repo:
+
+=> https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image optimize-image
+
+You also might want to use HTML's <picture> element, using jpg/png as a fallback for more efficient formats such as WebP or AVIF.
+
+=> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture <picture> docs on MDN
 
 ## Other places to check out
 
