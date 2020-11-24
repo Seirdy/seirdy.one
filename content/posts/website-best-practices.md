@@ -38,7 +38,8 @@ primarily on text:
   on this below.
 - Server configured to support compression (gzip, optionally zstd as well) and
   HTTP/2. It's a free speed boost.
-- Supports dark mode and/or works with most "dark mode" browser addons
+- Supports dark mode via a CSS media feature and/or works with most "dark mode"
+  browser addons. More on this below.
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
 - Optimized images.
 
@@ -161,7 +162,9 @@ an example:
 </picture>
 
 If you do explicitly set colors, please also include a dark theme using a media
-query: `@media (prefers-color-scheme: dark)`.
+query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs
+[on
+MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
 Image optimization
 ------------------

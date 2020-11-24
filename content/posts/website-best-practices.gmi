@@ -15,7 +15,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No lazy loading (more on this below)
 * No custom colors OR explicitly set the both foreground and background colors. More on this below.
 * Server configured to support compression (gzip, optionally zstd as well) and HTTP/2. It's a free speed boost.
-* Supports dark mode and/or works with most "dark mode" browser addons
+* Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
 * A good score on Mozilla's HTTP Observatory
 * Optimized images. More on this below.
 
@@ -84,6 +84,10 @@ If you do explicitly set colors, please also include a dark theme using a media 
 ```
 @media (prefers-color-scheme: dark)
 ```
+
+For more info, read the relevant docs:
+
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme prefers-color-scheme docs on MDN
 
 ## Image optimization
 
