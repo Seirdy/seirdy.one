@@ -3,6 +3,8 @@
 	--shaded-bg: #e3e3e3;
 }
 html {
+	background: white;
+	color: black;
 	line-height: 1.5rem;
 	font-family: sans-serif;
 }
