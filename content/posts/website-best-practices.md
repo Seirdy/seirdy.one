@@ -119,7 +119,7 @@ I have two responses:
 About custom colors
 -------------------
 
-Some users' browsers set default page colors that aren't white-on-black. For
+Some users' browsers set default page colors that aren't black-on-white. For
 instance, Linux users who enable GTK style overrides might default to having white
 text on a dark background. Websites that explicitly set foreground colors but leave
 the default background color (or vice-versa) end up being difficult to read. Here's
