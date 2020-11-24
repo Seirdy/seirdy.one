@@ -36,6 +36,10 @@ A personal example: I set my preferred fonts in my computer's fontconfig setting
 
 The "users don't know better and need us to make decisions for them" mindset isn't without merits; however, in my opinion, it's overused. Using system fonts doesn't make your website harder to use, but it does make it smaller and stick out less to the subset of users who care enough about fonts to change them. This argument isn't about making software easier for non-technical users; it's about branding by asserting a personal preference.
 
+### Can't users globally override stylesheets instead?
+
+It's not a good idea to expect users to automatically override website stylesheets. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't expect these users to constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do.
+
 ### But wouldn't that allow a website to fingerprint with fonts?
 
 I don't know much about fingerprinting, except that you can't do font enumeration without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, fingerprinting via font enumeration is a non-issue.

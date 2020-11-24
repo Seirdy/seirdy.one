@@ -74,6 +74,13 @@ the subset of users who care enough about fonts to change them. This argument is
 about making software easier for non-technical users; it's about branding by
 asserting a personal preference.
 
+### Can't users globally override stylesheets instead?
+
+It's not a good idea to expect users to automatically override website stylesheets.
+Doing so would break websites that use fonts such as Font Awesome to display vector
+icons. We shouldn't expect these users to constantly battle with websites the same way
+that many adblocking/script-blocking users (myself included) already do.
+
 ### But wouldn't that allow a website to fingerprint with fonts?
 
 I don't know much about fingerprinting, except that you can't do font enumeration
