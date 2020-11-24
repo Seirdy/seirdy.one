@@ -1,7 +1,3 @@
-This post is a rough draft WIP on my staging site, envs.net/~seirdy. Once it's done, I'll publish it to my main site, seirdy.one:
-
-=> gemini://seirdy.one seirdy.one
-
 The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites.
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text:
