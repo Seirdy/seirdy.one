@@ -56,10 +56,11 @@ If you *really* want, you could use `serif` instead of `sans-serif`, but serif f
 tend to look worse on low-res monitors. Not every screen's DPI has three digits.
 
 To ship custom fonts is to assert that branding is more important than user choice.
-Beyond basic layout and optionally supporting dark mode, authors should not dictate
-the presentation of their websites; that is the job of the user agent. Most websites
-are not important enough to look completely different from the rest of the user's
-system.
+That might very well be a reasonable thing to do; branding isn't evil! It isn't
+*usually* the case for textual websites, though. Beyond basic layout and optionally
+supporting dark mode, authors generally shouldn't dictate the presentation of their
+websites; that is the job of the user agent. Most websites are not important enough
+to look completely different from the rest of the user's system.
 
 A personal example: I set my preferred fonts in my computer's fontconfig settings.
 Now every website that uses `sans-serif` will have my preferred font. Sites with
