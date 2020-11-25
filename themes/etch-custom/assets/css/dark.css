@@ -2,11 +2,6 @@
 @media (prefers-color-scheme: dark) {
 	{{ end -}}
 
-	:root {
-		--dim-text: #a7a7a7;
-		--shaded-bg: #222;
-	}
-
 	html{
 		color: white;
 		background: black;
@@ -23,9 +18,9 @@
 	main#content hr {
 		border-color: #5c5c5c;
 	}
-
-	main#content #toc h4 {
-		color: #d4d4d4;
+	main#content pre,
+	main#content code {
+		border: 1px solid #222;
 	}
 
 	{{- if not (eq .Site.Params.dark "on") -}}
