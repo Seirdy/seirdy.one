@@ -24,7 +24,7 @@ esac
 
 find public -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' \
 	| grep -v gemini \
-	| xargs -L1 zopfli
+	| xargs zopfli
 rsync -avzP --exclude 'gemini' --exclude '*.gmi' --exclude 'misc/' --exclude 'music.txt' --exclude '.well-known' public/ "$www_prefix/" --delete
 rsync -avzP --exclude '*.html' --exclude 'misc/' --exclude 'music.txt' public/gemini/ public/about public/posts "$gemini_prefix/" --delete
 rsync -avzP public/posts/gemini.xml "$gemini_prefix/feed.xml"
