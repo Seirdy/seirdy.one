@@ -3,6 +3,7 @@ image: alpine/edge
 packages:
   - rsync
   - hugo
+  - zopfli
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
