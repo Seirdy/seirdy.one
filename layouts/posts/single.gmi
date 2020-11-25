@@ -1,13 +1,13 @@
 # {{$.Title | safeHTML}}
+{{.Date.Format "January 2, 2006"}}
 
 {{ trim (readFile (replace $.File.Path ".md" ".gmi")) "\n" | safeHTML }}
 
 ---
 
-“{{$.Title | safeHTML}}” was published on {{.Date.Format "January 2, 2006"}}.
-
-=> / Back to the home page{{ with .OutputFormats.Get "html" }}
+=> / Homepage{{ with .OutputFormats.Get "html" }}
 => {{.Permalink}} View “{{$.Title | safeHTML}}” on the WWW
 {{- end }}
+=> {{ .Site.Params.src }} Gemini capsule source code
 
-The content for this site is CC-BY-SA. The code for this site is MIT.
+{{ .Site.Params.copyright }}
