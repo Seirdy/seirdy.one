@@ -19,15 +19,17 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No lazy loading (more on this below)
 * No custom colors OR explicitly set the both foreground and background colors. More on this below.
 * A maximum line length for readability
-* Server configured to support compression (gzip, optionally zstd as well) and HTTP/2. It's a free speed boost.
+* Server configured to support compression (gzip, optionally zstd as well). It's a free speed boost.
 * Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
 * A good score on Mozilla's HTTP Observatory
 * Optimized images. More on this below.
+* Maybe HTTP/2. There are some cases in which HTTP/2 can make things slower. Run some tests to find out.
 
 => https://observatory.mozilla.org/ HTTP Observatory
-=> https://github.com/shssoichiro/oxipng Oxipng
 
-Early rough drafts of this post generated some feedback I thought I should address below. Special thanks to the eight IRC users who provided feedback!
+Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and Lobsters users who gave good feedback!
+
+=> https://lobste.rs/s/akcw1m Lobsters thread
 
 ## About fonts
 

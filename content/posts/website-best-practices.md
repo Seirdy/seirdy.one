@@ -15,7 +15,8 @@ apply to websites that have a lot of non-textual content. It also does not apply
 websites that focus more on generating revenue or pleasing investors than being good
 websites.*
 
-This is a "living document" that I add to as I receive feedback. See the [changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/content/posts/website-best-practices.md).
+This is a "living document" that I add to as I receive feedback. See the
+[changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/content/posts/website-best-practices.md).
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today
 (that'll take, like, a month at the longest). Until that happens, here's a
@@ -39,19 +40,22 @@ primarily on text:
 - No custom colors OR explicitly set the both foreground and background colors. More
   on this below.
 - A maximum line length for readability
-- Server configured to support compression (gzip, optionally zstd as well) and
-  HTTP/2. It's a free speed boost.
+- Server configured to support compression (gzip, optionally zstd as well). It's a
+  free speed boost.
 - Supports dark mode via a CSS media feature and/or works with most "dark mode"
   browser addons. More on this below.
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
 - Optimized images.
+- Maybe HTTP/2. There are some cases in which HTTP/2 can make things slower. Run some
+  tests to find out.
 
 I'd like to re-iterate yet another time that this only applies to websites that
 primarily focus on text. If graphics, interactivity, etc. are an important part of
 your website, less (possibly none) of this article applies.
 
-Early rough drafts of this post generated some feedback I thought I should address
-below. Special thanks to the eight IRC users who provided feedback!
+Earlier revisions of this post generated some responses I thought I should address
+below. Special thanks to the IRC and [Lobsters](https://lobste.rs/s/akcw1m) users who
+gave good feedback!
 
 About fonts
 -----------
