@@ -1,5 +1,5 @@
 # {{$.Title | safeHTML}}
-{{.Date.Format "January 2, 2006"}}
+{{ .Date.Format "2006-01-02" }}
 
 {{ trim (readFile (replace $.File.Path ".md" ".gmi")) "\n" | safeHTML }}
 
