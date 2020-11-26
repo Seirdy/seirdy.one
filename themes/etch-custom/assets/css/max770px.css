@@ -3,4 +3,13 @@
 		max-width: 600px;
 		padding: 0 1rem;
 	}
+	header#banner nav {
+		display: block;
+		padding: 1rem 0 0.5rem 0;
+		margin: 0;
+	}
+	header#banner nav ul li {
+		display: block;
+		padding: 0.25rem;
+	}
 }

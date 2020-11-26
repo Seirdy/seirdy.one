@@ -7,11 +7,7 @@
 		background: black;
 	}
 
-	header#banner a {
-		color: white;
-	}
-
-	main#content a, footer a {
+	a {
 		color: #00b1ed;
 	}
 
