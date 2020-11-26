@@ -22,9 +22,17 @@ case "$1" in
 		;;
 esac
 
-find public -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' \
-	| grep -v gemini \
-	| xargs zopfli
-rsync -avzP --exclude 'gemini' --exclude '*.gmi' --exclude 'misc/' --exclude 'music.txt' --exclude '.well-known' public/ "$www_prefix/" --delete
-rsync -avzP --exclude '*.html' --exclude 'misc/' --exclude 'music.txt' public/gemini/ public/about public/posts "$gemini_prefix/" --delete
+# I use gzip_static with nginx
+if [ "$1" = 'seirdy.one' ]; then
+	find public -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' \
+		| grep -v gemini \
+		| xargs zopfli
+fi
+
+rsync -avzP \
+	--exclude 'gemini' --exclude '*.gmi' --exclude 'misc/' --exclude 'music.txt' --exclude '.well-known' \
+	public/ "$www_prefix/" --delete
+rsync -avzP \
+	--exclude '*.html' --exclude 'misc/' --exclude 'music.txt' \
+	public/gemini/ public/about public/posts "$gemini_prefix/" --delete
 rsync -avzP public/posts/gemini.xml "$gemini_prefix/feed.xml"
