@@ -1,8 +1,9 @@
 <h3>Posts</h3>
+<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> and <a href="https://xkcd.com/1179/">ISO 8601</a></em></p>
 <ul id="posts">
 	{{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
 	<li>
-		<time>{{ .Date.Format "Jan 2, 2006" }}</time>
+		<time datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 		<br>
 		<a href="{{ .Permalink }}">
 			{{ .Title }}
