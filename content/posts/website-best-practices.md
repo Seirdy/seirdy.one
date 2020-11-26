@@ -178,17 +178,27 @@ Image optimization
 
 Some image optimization tools I use:
 
-- [oxipng](https://github.com/shssoichiro/oxipng)
-- [jpegoptim](https://github.com/tjko/jpegoptim)
-- [cwebp](https://developers.google.com/speed/webp/docs/cwebp)
+- [pngquant](http://pngquant.org) (lossy)
+- [Oxipng](https://github.com/shssoichiro/oxipng) (lossless)
+- [jpegoptim](https://github.com/tjko/jpegoptim) (lossless or lossy)
+- [cwebp](https://developers.google.com/speed/webp/docs/cwebp) (lossless or lossy)
 
 I put together a [quick
 script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image)
-to optimize images using these programs in my dotfile repo.
+to losslessly optimize images using these programs in my dotfile repo.
 
-You also might want to use HTML's `<picture>` element, using jpg/png as a fallback
+You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback
 for more efficient formats such as WebP or AVIF. More info in the [MDN
 docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+
+Most of my images will probably be screenshots that start as PNGs. My typical flow:
+
+1.  Lossy compression with `pngquant`
+2.  Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
+3.  Also create a lossless WebP from the lossy PNG, using `cwebp`
+4.  Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
 Other places to check out
 -------------------------
