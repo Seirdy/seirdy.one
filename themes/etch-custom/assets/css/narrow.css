@@ -1,7 +1,7 @@
-@media (max-width: 770px) {
+@media (max-width: 600px) {
 	body {
-		max-width: 600px;
-		padding: 0 1rem;
+		max-width: 500px;
+		padding: 0 5%;
 	}
 	header#banner nav {
 		display: block;
@@ -10,6 +10,6 @@
 	}
 	header#banner nav ul li {
 		display: block;
-		padding: 0.25rem;
+		padding: 0.25rem 0;
 	}
 }
