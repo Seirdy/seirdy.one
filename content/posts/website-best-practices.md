@@ -126,7 +126,10 @@ They might open multiple links in background tabs to wait for them all to load a
 once, or switch to another window/app and come back when loading finishes. They might
 also open links while on a good connection before switching to a poor connection; I
 know that I often open 10-20 links on Wi-Fi before going out for a walk in a
-mobile-data dead-zone.
+mobile-data dead-zone. A Reddit user reading an earlier version of this article
+described a [similar
+experience](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/)
+riding the train.
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the
 background. To load this content ahead of time, users need to switch to the loading
@@ -196,9 +199,12 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 1.  Lossy compression with `pngquant`
 2.  Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
 3.  Also create a lossless WebP from the lossy PNG, using `cwebp`
-4.  Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+4.  Include the resulting WebP in the page, with a fallback to the PNG using a
+    `<picture>` element.
 
-It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that
+it's the best way to get the smallest possible image at the minimum acceptable
+quality for screenshots with solid backgrounds.
 
 Other places to check out
 -------------------------
@@ -209,3 +215,7 @@ rewards websites that have a high ratio of content size to total size.
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking
 Website inspired several unofficial sequels that tried to gently improve upon it. My
 favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
+
+The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size with
+the size of a PNG screenshot of the full page content, encouraging site owners to
+minimize the ratio of the two.

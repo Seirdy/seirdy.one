@@ -61,7 +61,9 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 For users on slow connections, lazy loading is often frustrating. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup occasionally results in packet loss rates above 60% (!!).
 
-Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, or switch to another window/app and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection; I know that I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone.
+Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, or switch to another window/app and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection; I know that I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a similar experience when travelling by train:
+
+=> https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/ u/Snapstromegon's comment
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
@@ -126,7 +128,7 @@ It might seem odd to create a lossless WebP from a lossy PNG, but I've found tha
 
 The 250kb club gathers websites at or under 250kb, and also rewards websites that have a high ratio of content size to total size.
 
-=> https://250kb.club/ https://250kb.club/
+=> https://250kb.club/ The 250kb Club
 
 Motherfucking Website generated a lot of buzz when it was created:
 
@@ -135,3 +137,7 @@ Motherfucking Website generated a lot of buzz when it was created:
 Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite:
 
 => https://bestmotherfucking.website/ Best Motherfucking Website
+
+The WebBS calculator compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two:
+
+=> https://www.webbloatscore.com/ Web Bloat Score Calculator
