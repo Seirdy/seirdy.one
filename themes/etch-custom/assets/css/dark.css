@@ -16,7 +16,7 @@
 	}
 	main#content pre,
 	main#content code {
-		border: 1px solid #222;
+		border: 1px solid #333;
 	}
 
 	{{- if not (eq .Site.Params.dark "on") -}}

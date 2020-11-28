@@ -14,10 +14,6 @@ header#banner {
 	margin: 2rem 0 0 0;
 }
 
-header#banner a:hover {
-	text-decoration: underline;
-}
-
 header#banner h2 {
 	display: inline;
 	font-size: 1.5rem;
@@ -31,7 +27,6 @@ header#banner nav {
 header#banner nav ul {
 	list-style-type: none;
 	font-size: 1.25rem;
-	text-transform: lowercase;
 	margin: 0;
 	padding: 0
 }
@@ -47,7 +42,6 @@ main#content h3,
 main#content h4,
 main#content h5,
 main#content h6 {
-	display: block;
 	margin: 1.5rem 0 1rem;
 }
 
@@ -58,21 +52,7 @@ main#content ul#posts {
 }
 
 main#content ul#posts li {
-	line-height: 1.5rem;
-	padding: 0;
-	margin: 1rem 0;
-}
-
-main#content ul#posts small {
-	color: var(--dim-text);
-}
-
-main#content ul#posts li a {
-	text-decoration: none;
-}
-
-main#content ul#posts li a:hover {
-	text-decoration: underline;
+	margin-bottom: 1rem;
 }
 
 /* single.html styles */
