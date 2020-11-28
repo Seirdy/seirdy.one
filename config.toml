@@ -14,7 +14,7 @@ description = "Seirdy's personal website"
 src = "https://sr.ht/~seirdy/seirdy.one"
 copyright = "Copyright © 2020 Rohan Kumar"
 dark = "auto"
-highlight = true
+highlight = false
 
 [author]
 name = "Rohan Kumar"
