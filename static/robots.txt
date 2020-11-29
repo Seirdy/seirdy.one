@@ -1,0 +1,3 @@
+Uset-agent: *
+Sitemap: https://seirdy.one/sitemap.xml
+Disallow:
