@@ -23,7 +23,9 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 non-exhaustive, highly-opinionated list of best practices for websites that focus
 primarily on text:
 
-- Final page weight under 50kb without images, and under 200kb with images. Page weight should usually be much smaller; these are upper-bounds for exceptional cases.
+- Final page weight under 50kb without images, and under 200kb with images. Page
+  weight should usually be much smaller; these are upper-bounds for exceptional
+  cases.
 - Works in Lynx, w3m, links (both graphics and text mode), Netsurf, and Dillo
 - Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown
   converters. This is a good way to verify that your site uses simple HTML and works
@@ -44,7 +46,8 @@ primarily on text:
   free speed boost.
 - Supports dark mode via a CSS media feature and/or works with most "dark mode"
   browser addons. More on this below.
-- A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/)
+- A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/). A
+  bare minimum would be 50, but it shouldn't be too hard to hit 100.
 - Optimized images. More on image optimization below.
 - All images labeled with alt-text. The page should make sense without images.
 - Maybe HTTP/2. There are some cases in which HTTP/2 can make things slower. Run some
