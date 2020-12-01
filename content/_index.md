@@ -5,7 +5,11 @@ outputs:
 title: Seirdy's Home
 ---
 
-It me!
+Seirdy
+======
+
+It me! This is the personal website of Seirdy (online handle), a.k.a. Rohan
+(meatspace).
 
 Other versions of this website
 ------------------------------
@@ -19,7 +23,9 @@ About me
 
 The Director's Cut of my bio is at my [About page](/about.html).
 
-Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>, <a href="https://github.com/Seirdy" rel="me">GitHub</a>, and <a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
+Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>,
+<a href="https://github.com/Seirdy" rel="me">GitHub</a>, and
+<a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
 
 Contact
 -------
