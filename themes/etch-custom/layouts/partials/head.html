@@ -23,6 +23,9 @@
 	{{ printf `<link rel="stylesheet" href="/css/syntax.css">` | safeHTML }}
 	{{ end -}}
 
-
+	{{ if eq .RelPermalink "/" -}}
 	<title>{{ .Title }}</title>
+	{{ else -}}
+	<title>{{ .Title }} - Seirdy</title>
+	{{ end -}}
 </head>
