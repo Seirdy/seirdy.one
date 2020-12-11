@@ -44,8 +44,11 @@ My handle is "Seirdy" on all the platforms I use:
 - [email](mailto:seirdy@seirdy.one)
 - [PGP: 36B154A782AEA0AC](../publickey.txt)
 
-My username is Seirdy on Reddit, Hacker News, and Lobsters; my nick is Seirdy on many
-IRC networks.
+My username is Seirdy on Reddit, Hacker News, Lobsters, Linux Weekly News, Codeberg,
+and a few other places; my nick is Seirdy on many IRC networks.
+
+If you find a "Seirdy" somewhere else and don't know whether or not it's me, please
+contact me and ask instead of assuming that it must be me.
 
 My preferred forge for personal projects is Sourcehut, but my repositories have
 remotes for GitHub and GitLab too.
@@ -68,8 +71,8 @@ Linux distro with Systemd (Fedora), after all.
 Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest,
 Neovim, tmux, newsboat, WeeChat, and zsh.
 
-More information is available in my [dotfiles
-repo](https://sr.ht/~seirdy/dotfiles); check its README.
+More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles);
+check its README.
 
 ### Anime
 
