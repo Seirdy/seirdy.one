@@ -33,6 +33,6 @@ rsync -avzP \
 	--exclude 'gemini' --exclude '*.gmi' --exclude 'misc/' --exclude 'music.txt' --exclude '.well-known' \
 	public/ "$www_prefix/" --delete
 rsync -avzP \
-	--exclude '*.html' --exclude 'misc/' --exclude 'music.txt' \
-	public/gemini/ public/about public/posts "$gemini_prefix/" --delete
+	--exclude '*.html' --exclude 'misc/' --exclude 'music.txt' --exclude '*.xml' \
+	public/gemini/ public/about public/posts public/publickey.txt "$gemini_prefix/" --delete
 rsync -avzP public/posts/gemini.xml "$gemini_prefix/feed.xml"
