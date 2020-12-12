@@ -1,0 +1,43 @@
+{
+	"extends": [
+		"web-recommended"
+	],
+	"connector": {
+		"name": "puppeteer",
+		"options": {
+			"browser": "Chromium",
+			"headless": false
+		}
+	},
+	"browserslist": [
+		">.01%, last 2 versions, not dead"
+	],
+	"hints": {
+		"axe/other": "error",
+		"https-only": "error",
+		"doctype": "error",
+		"no-broken-links": "error",
+		"performance-budget": "error",
+		"compat-api/css": "error",
+		"compat-api/html": [
+			"error",
+			{
+				"ignore": [
+					"time",
+					"picture"
+				]
+			}
+		],
+		"http-compression": [
+			"warning",
+			{
+				"html": {
+					"brotli": false
+				},
+				"resource": {
+					"brotli": false
+				}
+			}
+		]
+	}
+}
