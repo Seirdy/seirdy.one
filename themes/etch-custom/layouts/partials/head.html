@@ -8,10 +8,10 @@
 	<link href="{{ .Site.BaseURL }}posts/index.xml" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}"/>
 	{{ if eq .Site.BaseURL "https://envs.net/~seirdy/" -}}
 	<meta name="robots" content="noindex">
-	{{ printf `<link rel="apple-touch-icon-precomposed" href="%s">` ("apple-touch-icon-precomposed.png" | absURL) | safeHTML }}
 	{{ else -}}
 	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}"/>
 	{{ end -}}
+	{{ printf `<link rel="apple-touch-icon-precomposed" href="%s">` ("apple-touch-icon-precomposed.png" | absURL) | safeHTML }}
 	{{ $resources := slice -}}
 	{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
 	{{ $resources = $resources | append (resources.Get "/css/narrow.css") -}}
