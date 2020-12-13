@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-	html{
+	html {
 		background: black;
 		color: white;
 	}
@@ -11,9 +11,9 @@
 	hr {
 		border-color: #5c5c5c;
 	}
+
 	pre,
 	code {
 		border: 1px solid #333;
 	}
-
 }
