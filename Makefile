@@ -30,17 +30,18 @@ hugo:
 	hugo
 
 build: hugo
+# gzip_static + max zopfli compression
 ifndef NO_GZIP_STATIC
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' \
 		| grep -v gemini \
-		| xargs zopfli --i150 --gzip
+		| xargs zopfli --i50 --gzip
 endif
 
 
 deploy: build
-	rsync $(RSYNCFLAGS) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore public/ $(WWW_RSYNC_DEST) --delete
-	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude-from .rsyncignore public/gemini/ public/about public/posts public/publickey.txt $(GEMINI_RSYNC_DEST)/
-	rsync $(RSYNCFLAGS) public/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
+	rsync $(RSYNCFLAGS) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete
+	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.txt $(GEMINI_RSYNC_DEST)/ --delete
+	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
 all: clean lint deploy
 
