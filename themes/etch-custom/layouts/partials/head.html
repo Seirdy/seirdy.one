@@ -4,14 +4,20 @@
 	{{ with .Site.Params.description -}}
 	<meta name="description" content="{{ . }}">
 	{{ end }}
-	{{ printf `<link rel="shortcut icon" href="%s">` ("favicon.png" | absURL) | safeHTML }}
+	{{- $favicon := resources.Get "/favicon.png" | resources.Fingerprint "sha384" -}}
+	{{ printf `<link rel="shortcut icon" href="%s" integrity="%s">` $favicon.RelPermalink $favicon.Data.Integrity | safeHTML }}
 	<link href="{{ .Site.BaseURL }}posts/index.xml" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}"/>
 	{{ if eq .Site.BaseURL "https://envs.net/~seirdy/" -}}
 	<meta name="robots" content="noindex">
 	{{ else -}}
 	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}"/>
 	{{ end -}}
-	{{ printf `<link rel="apple-touch-icon-precomposed" href="%s">` ("apple-touch-icon-precomposed.png" | absURL) | safeHTML }}
+	<!--It used to be appple-specific, but now it's a pseudo-standard
+	 relied upon by other vendors too.-->
+	{{- $apple_icon := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "sha384" -}}
+	{{ printf `<link rel="apple-touch-icon" href="%s" integrity="%s">` $apple_icon.RelPermalink $apple_icon.Data.Integrity | safeHTML }}
+	{{- $mask_icon := resources.Get "/mask.svg" | resources.Fingerprint "sha384" -}}
+	{{ printf `<link rel="mask" href="%s" integrity="%s">` $mask_icon.RelPermalink $mask_icon.Data.Integrity | safeHTML }}
 	{{ $resources := slice -}}
 	{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
 	{{ $resources = $resources | append (resources.Get "/css/narrow.css") -}}
