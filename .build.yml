@@ -4,6 +4,7 @@ packages:
   - rsync
   - hugo
   - zopfli
+  - make
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
