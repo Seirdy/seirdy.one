@@ -9,7 +9,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public/
 
-RSYNCFLAGS += -avzP --no-g --no-o --zc=zstd
+RSYNCFLAGS += -rlvz --zc=zstd
 
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
