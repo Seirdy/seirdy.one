@@ -13,10 +13,7 @@ triggers:
     condition: always
     to: seirdy@seirdy.one
 tasks:
-  - build: |
-      cd seirdy.one
-      hugo
-  - upload: |
+  - build_deploy: |
       cd seirdy.one
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
-      sh ./deploy.sh seirdy.one
+      make build deploy
