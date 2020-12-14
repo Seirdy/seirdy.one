@@ -1,0 +1,16 @@
+{
+	"name": "",
+	"short_name": "",
+	"icons": [
+		{
+			"src": "https://seirdy.one/apple-touch-icon.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "https://seirdy.one/favicon.svg",
+			"sizes": "193x193",
+			"type": "image/svg"
+		}
+	]
+}
