@@ -7,7 +7,7 @@ GEMINI_ROOT = /srv/gemini/seirdy.one
 WWW_RSYNC_DEST = $(USER):$(WWW_ROOT)
 GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
-OUTPUT_DIR = public/
+OUTPUT_DIR = public
 
 RSYNCFLAGS += -rlvz --zc=zstd
 
@@ -25,6 +25,11 @@ lint-css:
 
 lint: lint-css build .hintrc-local
 	hint --config .hintrc-local -f codeframe $(OUTPUT_DIR)
+
+check-links: build
+	lychee --verbose $(find public -type f -name '*.html' -o -name '*.gmi' -o -name '*.txt')
+
+test: lint
 
 hugo:
 	hugo
@@ -45,4 +50,4 @@ deploy: build
 
 all: clean lint deploy
 
-.PHONY: clean lint-css lint build deploy all
+.PHONY: clean lint-css test lint build deploy all

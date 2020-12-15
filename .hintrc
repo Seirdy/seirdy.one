@@ -9,17 +9,10 @@
 			"browser": "Chromium"
 		}
 	},
-	"browserslist": [
-		">0%",
-		"last 8 versions",
-		"not dead",
-		"dead"
-	],
 	"hints": {
 		"axe/other": "error",
 		"https-only": "error",
 		"doctype": "error",
-		"no-broken-links": "error",
 		"performance-budget": "error",
 		"compat-api/css": "error",
 		"compat-api/html": [

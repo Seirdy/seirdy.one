@@ -1,0 +1,7 @@
+insecure = true
+method = "get"
+exclude = [
+	"^gemini://.*",
+	"mailto:.*",
+	"git@git.*",
+]
