@@ -23,16 +23,16 @@ lint-css:
 	stylelint $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/narrow.css
 	csslint $(CSS_DIR)
 
-lint: lint-css build .hintrc-local
+lint: lint-css hugo .hintrc-local
 	hint --config .hintrc-local -f codeframe $(OUTPUT_DIR)
 
-check-links: build
+check-links: hugo
 	lychee --verbose $(find public -type f -name '*.html' -o -name '*.gmi' -o -name '*.txt')
 
-test: lint
+test: lint check-links
 
 hugo:
-	hugo
+	hugo --gc
 
 build: hugo
 # gzip_static + max zopfli compression
@@ -48,6 +48,6 @@ deploy: build
 	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.txt $(GEMINI_RSYNC_DEST)/ --delete
 	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
-all: clean lint deploy
+all: clean test deploy
 
-.PHONY: clean lint-css test lint build deploy all
+.PHONY: clean lint-css lint check-links test hugo build deploy all
