@@ -2,6 +2,16 @@
 
 It me! This is the personal website of Seirdy (online handle), a.k.a. Rohan (meatspace).
 
+## Other versions of this site
+
+Canonical versions:
+=> gemini://seirdy.one Canonical Gemini capsule
+=> https://seirdy.one Canonical Web site
+
+Staging/rough-draft Tildeverse mirror:
+=> gemini://envs.net/~seirdy Tildeverse Gemini capsule
+=> https://envs.net/~seirdy Tildeverse Web site
+
 ## About me
 
 See the Director's Cut of my bio in the "about" page:

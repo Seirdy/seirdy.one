@@ -14,9 +14,10 @@ It me! This is the personal website of Seirdy (online handle), a.k.a. Rohan
 Other versions of this website
 ------------------------------
 
-In addition to its [canonical URL](https://seirdy.one), a "rough draft" of this
-website also exists on my [Tildeverse page](https://envs.net/~seirdy) and on my
-[Gemini space](gemini://seirdy.one).
+In addition to its <a href="https://seirdy.one" rel="me">canonical URL</a>, a "rough
+draft" of this website also exists on my
+<a href="https://envs.net/~seirdy" rel="me">Tildeverse page</a> and on my
+<a href="gemini://seirdy.one" rel="me">Gemini space</a>
 
 About me
 --------
@@ -30,8 +31,10 @@ Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>,
 Contact
 -------
 
-Contact me via [email](mailto:seirdy@seirdy.one), or on the Fediverse via
-<a href="https://pleroma.envs.net/seirdy" rel="me">my Pleroma account</a>.
+Contact me via <a href="mailto:seirdy@seirdy.one" rel="me">email</a>, or on the
+Fediverse via <a href="https://pleroma.envs.net/seirdy" rel="me">my Pleroma
+account</a>.
 
 Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm
-[@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix.
+<a href="https://matrix.to/\#/@seirdy:envs.net" rel="me">@seirdy:envs.net</a> on
+Matrix.

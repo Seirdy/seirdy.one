@@ -33,11 +33,24 @@
 	{{ if .Params.highlight -}}
 	{{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" }}
 	{{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
-	{{ end -}}
-
-	{{ if eq .RelPermalink "/" -}}
+	{{- end -}}
+	{{- if eq .RelPermalink "/" -}}
 	<title>{{ .Title }}</title>
-	{{ else -}}
+	{{- else -}}
 	<title>{{ .Title }} - Seirdy</title>
-	{{ end -}}
+	{{- end -}}
+	<!-- opengraph stuff; used in the Fediverse, Signal link previews, some
+	 RSS readers, and a certain large social media company -->
+	<meta property="og:title" content="{{ .Title }}">
+	<meta property="og:site_name" content="{{ $.Site.Title }}">
+	{{- if (eq "page" .Kind) }}
+	<meta property="og:type" content="article">
+	{{- else }}
+	<meta property="og:type" content="website">
+	{{- end }}
+	{{ printf `<meta property="og:image" content="%s">` $icon_192.Permalink | safeHTML }}
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:height" content="192">
+	<meta property="og:image:width" content="192">
+	<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}"/>
 </head>
