@@ -14,12 +14,13 @@
 	{{ printf `<link rel="apple-touch-icon" href="%s">` $icon_192.RelPermalink | safeHTML }}
 	{{ $mask_icon := resources.Get "/mask_apple.svg" | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="mask-icon" href="%s" color="black">` $mask_icon.RelPermalink | safeHTML }}
-	<link rel="manifest" href="{{ .Site.BaseURL }}manifest.webmanifest">
-	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}"/>
+	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.Fingerprint "md5" -}}
+	{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
+	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 	{{ if eq .Site.BaseURL "https://envs.net/~seirdy/" -}}
 	<meta name="robots" content="noindex">
 	{{ else -}}
-	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}"/>
+	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
 	{{ end -}}
 	{{ $resources := slice -}}
 	{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
@@ -48,9 +49,10 @@
 	{{- else }}
 	<meta property="og:type" content="website">
 	{{- end }}
-	{{ printf `<meta property="og:image" content="%s">` $icon_192.Permalink | safeHTML }}
+	{{ $og_image := resources.Get "/open_graph.png" | resources.Fingerprint "md5" -}}
+	{{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
 	<meta property="og:image:type" content="image/png">
-	<meta property="og:image:height" content="192">
-	<meta property="og:image:width" content="192">
-	<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}"/>
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 </head>
