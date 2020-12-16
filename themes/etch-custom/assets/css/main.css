@@ -1,3 +1,19 @@
+/* CSS that adds the bare minimum for a simple layout */
+
+/* This site's CSS only does 9 things:
+ * 1. sans-serif instead of serif for low-res screens.
+ * 2. Consistent font size; <pre> and <code> shouldn't be smaller.
+ * 3. max text width for readability
+ * 4. single-row nav links widescreen, multiline nav on narrow screens
+ * 5. Bigger "home" link that doubles as a site header
+ * 6. Soft border around code in case it looks too similar to regular
+ *    text, and to show it continue across more than one line
+ * 7. Horizontally center inline images; left-aligned stick out.
+ * 8. Padding fixes so the above changes don't make elements misalign.
+ * 9. dark.css changes a few colors if the browser wants dark mode.
+ * Everything else is browser defaults:
+ * default fonts, non-dark-mode colors, etc.
+ */
 html {
 	font-family: sans-serif;
 	font-size: 16px;
@@ -5,86 +21,85 @@ html {
 }
 
 body {
-	margin: 0 auto;
+	margin: auto;
 	max-width: 50rem;
-	padding: 2rem;
+	padding: 2rem 5%;
 }
 
-header nav {
-	display: block;
-	padding: 0 0 0.25rem;
-}
-
-header nav ul {
-	font-size: 1.25rem;
-	list-style-type: none;
-	margin: 0;
+/* The posts list doesn't need bullets; simple spacing and repetition
+ * of the "date + title" format is enough to convey separation
+ * between elements.
+ */
+.posts {
 	padding: 0;
 }
 
-header nav ul li {
-	display: block;
-	padding: 0.5rem 0.25rem;
-}
-
-.home {
-	font-size: 1.5rem;
-	font-weight: bold;
-	padding: 0 0.4rem 1rem 0;
-}
-
-/* index.html styles */
-main .posts {
+.posts li {
 	list-style-type: none;
-	padding: 0;
-}
-
-main .posts li {
 	margin-bottom: 1rem;
 }
 
-h1 {
-	font-size: 1.5rem;
-	line-height: 2rem;
-	margin: 1.5rem 0 1rem;
-}
-
-h2 {
+nav ul {
+	/* nav links should look more prominent than normal links */
 	font-size: 1.25rem;
-	margin: 1.5rem 0 1rem;
+
+	/* Use whitespace instead of bullets to separate nav from article.
+	   Also avoid top-padding at the top of the page. */
+	list-style-type: none;
+	margin: 0 0 2rem;
+	padding: 0;
 }
 
+/* nav links should be easy to tap with fat fingers */
+nav ul li:not(.home) {
+	padding: 0.5rem 0.25rem;
+}
+
+/* Make the home link a bit bigger to serve as a site heading */
+.home {
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 0 0.5rem 0.75rem 0;
+}
+
+/* single-line nav on widescreen, multi-line nav on narrow screens */
+@media (min-width: 32rem) {
+	header nav ul li {
+		display: inline;
+	}
+}
+
+h1,
+h2,
 h3 {
-	font-size: 1.125rem;
-	margin: 1.5rem 0 1rem;
+	line-height: 1.25em;
 }
 
 img {
+	display: block;
 	height: auto;
-	margin: 0 auto;
+	margin: auto;
 	max-width: 100%;
 }
 
 code {
-	font-size: 16px;
-	padding: 0.1rem 0.25rem;
+	padding: 0 0.25rem;
 }
 
 pre,
 code {
-	border: 1px solid #e3e3e3;
+	border: 1px solid #bbb;
 }
 
 pre code {
-	border: none;
+	border: 0; /* don't border each line in a pre block */
+	padding: 0; /* otherwise the first line in a pre block gets indented. */
 }
 
+/* Allow horizontal scroll in a pre block, but don't clip it vertically */
 pre {
-	overflow-x: scroll;
-	overflow-y: visible;
-	padding: 0.5rem;
-}
+	/* csslint ignore:start */
+	overflow: auto visible;
 
-footer {
-	margin: 2rem 0;
+	/* csslint ignore:end */
 }

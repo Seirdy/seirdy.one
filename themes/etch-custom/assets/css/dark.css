@@ -1,19 +1,24 @@
 @media (prefers-color-scheme: dark) {
 	html {
-		background: black;
-		color: white;
+		background: #000;
+		color: #fff;
 	}
 
 	a {
-		color: #00b1ed;
+		color: #0af;
 	}
 
-	hr {
-		border-color: #5c5c5c;
+	a:visited {
+		color: #d7c;
+	}
+
+	a:active {
+		color: #f33;
 	}
 
 	pre,
-	code {
-		border: 1px solid #333;
+	code,
+	hr {
+		border-color: #333;
 	}
 }
