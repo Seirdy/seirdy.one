@@ -34,9 +34,9 @@ Earlier revisions of this post generated some responses I thought I should addre
 
 ## About fonts
 
-If you really want, you could use serif instead of sans-serif, but serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits.
+If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits.
 
-To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! It isn't *usually* the case for textual websites, though. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that is the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
+To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! It isn't *usually* the case for textual websites, though. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that should be the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
 
 A personal example: I set my preferred fonts in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
 
@@ -62,7 +62,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 For users on slow connections, lazy loading is often frustrating. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup occasionally results in packet loss rates above 60% (!!).
 
-Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, or switch to another window/app and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection; I know that I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a similar experience when travelling by train:
+Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, or switch to another window/app and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a similar experience when travelling by train:
 
 => https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/ u/Snapstromegon's comment
 
@@ -70,7 +70,7 @@ Unfortunately, pages with lazy loading don't finish loading off-screen images in
 
 ### Wouldn't this be solved by combining lazy loading with pre-loading/pre-fetching?
 
-A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading because they don't have reason to trust that linked content doesn't practice dark patterns like tracking without consent.
+A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading since linked content may employ dark patterns like tracking without consent.
 
 Users who click a link *choose* to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user.
 
@@ -124,6 +124,35 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 4.  Include the resulting WebP in the page, with a fallback to the PNG using a "<picture>" element.
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
+
+In general, avoid using inline images just for decoration. Only use an image if it significantly adds to your content, and provide alt-text as a fallback.
+
+## Testing
+
+If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand semantic, backward-compatible HTML.
+
+In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't look good in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
+
+Your page should easily pass the harshest of tests without any extra effort if its HTML meets basic standards for well-written code (overlooking bad formatting and a lack of comments). Even if you use a complex static site generator, the final HTML should be simple, readable, and semantic.
+
+### Sample unorthodox tests
+
+These tests start out pretty reasonable, but gradually get more insane as you go down. Use your judgement.
+
+1. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
+2. Print out the site in black-and-white, preferably with a simple laser printer.
+3. Test with a screen reader.
+4. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
+5. Test in textual browsers: lynx, links, w3m, edbrowse, EWW, etc.
+6. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+7. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
+8. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
+
+=> https://xkcd.com/567/ xkcd: Urgent Mission
+
+I'm still on step 7, trying to find new ways to break this page. If you come up with a new test, please share it:
+
+=> mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 
 ## Other places to check out
 
