@@ -20,7 +20,7 @@ clean:
 	rm -rf $(OUTPUT_DIR) .hintrc-local
 
 lint-css:
-	stylelint $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/narrow.css
+	stylelint $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/wide.css
 	csslint $(CSS_DIR)
 
 lint: lint-css hugo .hintrc-local

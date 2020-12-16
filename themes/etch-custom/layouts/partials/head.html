@@ -24,7 +24,7 @@
 	{{ end -}}
 	{{ $resources := slice -}}
 	{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
-	{{ $resources = $resources | append (resources.Get "/css/narrow.css") -}}
+	{{ $resources = $resources | append (resources.Get "/css/wide.css") -}}
 	{{ $dark := .Site.Params.dark | default "auto" -}}
 	{{ if not (eq $dark "off") -}}
 	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}

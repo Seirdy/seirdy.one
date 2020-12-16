@@ -6,12 +6,13 @@ html {
 
 body {
 	margin: 0 auto;
-	max-width: 1000px;
-	padding: 2rem 5rem;
+	max-width: 50rem;
+	padding: 2rem;
 }
 
 header nav {
-	display: inline-block;
+	display: block;
+	padding: 0 0 0.25rem;
 }
 
 header nav ul {
@@ -22,14 +23,14 @@ header nav ul {
 }
 
 header nav ul li {
-	display: inline;
-	padding: 0 0.25rem;
+	display: block;
+	padding: 0.5rem 0.25rem;
 }
 
 .home {
 	font-size: 1.5rem;
 	font-weight: bold;
-	padding: 0 0.4rem 0 0;
+	padding: 0 0.4rem 1rem 0;
 }
 
 /* index.html styles */
