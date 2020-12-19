@@ -1,5 +1,6 @@
 ---
 date: "2020-11-18T18:31:15-08:00"
+description: Efficient redundancy via repository mirroring with nothing but git.
 outputs:
 - html
 - gemtext
@@ -30,7 +31,8 @@ reports, get code, or send patches? Do maintainers need to check multiple places
 No. Of course not. A good distributed system should automatically keep its nodes in
 sync to avoid the hassle of checking multiple places for updates.
 
-## Adding remotes
+Adding remotes
+--------------
 
 This process should pretty straightforward. You can run `git remote add` (see
 `git-remote(1)`) or edit your repo's `.git/config` directly:
@@ -51,7 +53,8 @@ If that's too much work--a perfectly understandable complaint--automating the pr
 is trivial. Here's [an example from my
 dotfiles](https://git.sr.ht/~seirdy/dotfiles/tree/master/Executables/shell-scripts/bin/git-remote-setup).
 
-## Seamless pushing and pulling
+Seamless pushing and pulling
+----------------------------
 
 Having multiple remotes is fine, but pushing to and fetching from all of them can be
 slow. Two simple git aliases fix that:
@@ -66,13 +69,15 @@ Now, `git pushall` and `git fetchall` will push to and fetch from all remotes in
 parallel, respectively. Only one remote needs to be online for project members to
 keep working.
 
-## Advertising remotes
+Advertising remotes
+-------------------
 
 I'd recommend advertising at least three remotes in your README: your personal
 favorite and two determined by popularity. Tell users to run `git remote set-url` to
 switch remote locations if one goes down.
 
-## Before you ask...
+Before you ask...
+-----------------
 
 Q: Why not use a cloud service to automate mirroring?
 

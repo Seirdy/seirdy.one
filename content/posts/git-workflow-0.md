@@ -1,5 +1,7 @@
 ---
 date: "2020-11-17T13:13:03-08:00"
+description: A seires on setting up resilient git-based project workflows, free of
+  vendor lock-in.
 outputs:
 - html
 - gemtext
@@ -40,7 +42,8 @@ project's "bus factor".
 Providing a way to get everything offline, in a format that won't go obsolete if a
 project dies, is the key to a resilient git workflow.
 
-## Before we start: FAQ
+Before we start: FAQ
+--------------------
 
 Q: What level of experience does this series expect?
 

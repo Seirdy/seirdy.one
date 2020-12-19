@@ -1,25 +1,36 @@
+{{- $192png := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+{{- $512png := resources.Get "/favicon512.png" | resources.Fingerprint "md5" }}
+{{- $1024svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
+{{- $maskablesvg := resources.Get "/maskable_android.svg" | resources.Fingerprint "md5" -}}
 {
 	"name": "Seirdy's Home",
 	"short_name": "Seirdy",
+	"description": "{{ .Site.Params.Description }}",
 	"display": "browser",
 	"scope": "/",
-	"start_url": ".",
+	"start_url": "/",
 	"icons": [
 		{
-			"src": "https://seirdy.one/apple-touch-icon.png",
+			"src": "{{ $192png.Permalink }}",
 			"sizes": "192x192",
 			"type": "image/png",
 			"purpose": "any"
 		},
 		{
-			"src": "https://seirdy.one/favicon.svg",
-			"sizes": "1024x1024",
+			"src": "{{ $512png.Permalink }}",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "{{ $1024svg.Permalink }}",
+			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152",
 			"type": "image/svg+xml",
 			"purpose": "any"
 		},
 		{
-			"src": "https://seirdy.one/maskable_android.svg",
-			"sizes": "1024x1024",
+			"src": "{{ $maskablesvg.Permalink }}",
+			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152",
 			"type": "image/svg+xml",
 			"purpose": "maskable"
 		}

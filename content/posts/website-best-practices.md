@@ -1,5 +1,7 @@
 ---
 date: "2020-11-23T12:21:35-08:00"
+description: A lengthy guide to making small sites that focus on content rather than
+  form.
 outputs:
 - html
 - gemtext
