@@ -37,7 +37,7 @@ hugo:
 build: hugo
 # gzip_static + max zopfli compression
 ifndef NO_GZIP_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.webmanifest' \
 		| grep -v gemini \
 		| xargs zopfli --i50 --gzip
 endif
