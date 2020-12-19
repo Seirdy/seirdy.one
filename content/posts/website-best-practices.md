@@ -247,10 +247,8 @@ down. Use your judgement.
 5.  Test in textual browsers: lynx, links, w3m, edbrowse, EWW, etc.
 6.  Read the (prettified/indented) HTML source itself and parse it with your brain.
     See if anything seems illogical or unnecessary. Imagine giving someone a printout
-    of your page's
-    <body>
-    along with a whiteboard. If they have a basic knowledge of HTML tags, would they
-    be able to draw something resembling your website?
+    of your page's `<body>` along with a whiteboard. If they have a basic knowledge
+    of HTML tags, would they be able to draw something resembling your website?
 7.  Test on something ridiculous: try your old e-reader's embedded browser, combine
     an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple
     article-extraction utilities on top of each other. Be creative and enjoy breaking
