@@ -8,12 +8,13 @@
 	{{ printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
 	{{ $favicon := resources.Get "/favicon.png" | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="icon" sizes="32x32" href="%s" type="image/png">` $favicon.RelPermalink | safeHTML -}}
-	<!--apple-touch-icon and mask-icon used to be appple-specific, but now
-	 they're pseudo-standards relied upon by other vendors too. See
-	 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes-->
+	<!-- apple-touch-icon and mask-icon used to be apple-specific, but
+	     now they're pseudo-standards relied upon by other vendors too:
+	     https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
 	{{ printf `<link rel="apple-touch-icon" href="%s">` $icon_192.RelPermalink | safeHTML }}
 	{{ $mask_icon := resources.Get "/mask_apple.svg" | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="mask-icon" href="%s" color="black">` $mask_icon.RelPermalink | safeHTML }}
+	<!-- webmanifest defines even more icons. This is getting ridiculous -->
 	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
@@ -28,8 +29,14 @@
 	{{ if not (eq $dark "off") -}}
 	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
 	{{ end -}}
+	<!-- Tell the browser we support dark mode. If the user doesn't
+	     specify a preference, prefer light mode; users who override
+	     browser default stylesheets will be able to use their preferred
+			 palette that way. -->
+	<meta name="color-scheme" content="light dark">
 	{{ $css := $resources | resources.Concat "css/style.css" | minify | resources.Fingerprint "sha384" -}}
 	{{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML }}
+	<!-- only load syntax-highlighting CSS if this page needs it -->
 	{{ if .Params.highlight -}}
 	{{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" }}
 	{{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
@@ -39,8 +46,8 @@
 	{{- else -}}
 	<title>{{ .Title }} - Seirdy</title>
 	{{- end -}}
-	<!-- opengraph stuff; used in the Fediverse, Signal link previews, some
-	 RSS readers, and a certain large social media company -->
+	<!-- open graph stuff; used in the Fediverse, Signal link previews,
+	     some RSS readers, and a certain large social media company -->
 	<meta property="og:title" content="{{ .Title }}">
 	<meta property="og:site_name" content="{{ $.Site.Title }}">
 	{{- if (eq "page" .Kind) }}
@@ -48,6 +55,7 @@
 	{{- else }}
 	<meta property="og:type" content="website">
 	{{- end }}
+	<!-- ANOTHER meta image?! When will it end? -->
 	{{ $og_image := resources.Get "/open_graph.png" | resources.Fingerprint "md5" -}}
 	{{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
 	<meta property="og:image:type" content="image/png">
