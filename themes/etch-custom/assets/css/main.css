@@ -1,6 +1,6 @@
 /* CSS that adds the bare minimum for a simple layout */
 
-/* This site's CSS only does 9 things:
+/* This site's CSS only does 9 major things:
  * 1. sans-serif instead of serif for low-res screens.
  * 2. Consistent font size; <pre> and <code> shouldn't be smaller.
  * 3. max text width for readability
@@ -51,7 +51,7 @@ nav ul {
 }
 
 /* nav links should be easy to tap with fat fingers */
-nav ul li:not(.home) {
+nav li {
 	padding: 0.5rem 0.25rem;
 }
 
@@ -64,7 +64,7 @@ nav ul li:not(.home) {
 
 /* single-line nav on widescreen, multi-line nav on narrow screens */
 @media (min-width: 32rem) {
-	header nav ul li {
+	nav li {
 		display: inline;
 	}
 }
