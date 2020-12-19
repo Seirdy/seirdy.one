@@ -170,10 +170,12 @@ text on a dark background. Websites that explicitly set foreground colors but le
 the default background color (or vice-versa) end up being difficult to read. Here's
 an example:
 
+<a href="https://seirdy.one/misc/website_colors_large.png">
 <picture>
 <source srcset="https://seirdy.one/misc/website_colors.webp" type="image/webp">
-<img src="https://seirdy.one/misc/website_colors.png" width="637" height="484" alt="This page with a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets">
+<img src="https://seirdy.one/misc/website_colors.png" width="478" height="363" alt="This page with a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets">
 </picture>
+</a>
 
 If you do explicitly set colors, please also include a dark theme using a media
 query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs
