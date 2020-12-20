@@ -2,7 +2,7 @@ The following applies to minimal websites that focus primarily on text. It does 
 
 This is a "living document" that I add to as I receive feedback.
 
-=> https://git.sr.ht/~seirdy/seirdy.one/log/master/content/posts/website-best-practices.gmi See the changelog
+=> https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.gmi See the changelog
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text:
 
