@@ -26,19 +26,6 @@ body {
 	padding: 2rem 5%;
 }
 
-/* The posts list doesn't need bullets; simple spacing and repetition
- * of the "date + title" format is enough to convey separation
- * between elements.
- */
-.posts {
-	padding: 0;
-}
-
-.posts li {
-	list-style-type: none;
-	margin-bottom: 1rem;
-}
-
 nav ul {
 	/* nav links should look more prominent than normal links */
 	font-size: 1.25rem;
@@ -53,6 +40,19 @@ nav ul {
 /* nav links should be easy to tap with fat fingers */
 nav li {
 	padding: 0.5rem 0.25rem;
+}
+
+/* The posts list doesn't need bullets; simple spacing and repetition
+ * of the "date + title" format is enough to convey separation
+ * between elements.
+ */
+.posts {
+	padding: 0;
+}
+
+.posts li {
+	list-style-type: none;
+	margin-bottom: 1rem;
 }
 
 /* Make the home link a bit bigger to serve as a site heading */
