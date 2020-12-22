@@ -10,3 +10,28 @@ mirror](https://img.shields.io/badge/mirror-GitHub-black.svg?logo=github)](https
 [![builds.sr.ht status](https://builds.sr.ht/~seirdy/seirdy.one.svg)](https://builds.sr.ht/~seirdy/seirdy.one)
 
 Code for my personal website, [seirdy.one](https://seirdy.one). Built with Hugo.
+
+## Dependencies
+
+To build:
+
+- Hugo 0.79 or later
+- Make
+- Git (Hugo uses Git info for features like date last updated)
+- Zopfli (optional; set `NO_GZIP_STATIC=1` to disable)
+- POSIX utils: grep, find, etc.
+
+To deploy:
+
+- ssh
+- rsync
+- zstd
+
+To lint:
+
+- stylelint
+- csslint
+- [webhint CLI](https://github.com/webhintio/hint)
+- [lychee](https://github.com/lycheeverse/lychee)
+
+See the `Makefile` for details.
