@@ -2,10 +2,12 @@
 {{- $512png := resources.Get "/favicon512.png" | resources.Fingerprint "md5" }}
 {{- $1024svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
 {{- $maskablesvg := resources.Get "/maskable_android.svg" | resources.Fingerprint "md5" -}}
+{{- $monochromesvg := resources.Get "/mask_apple.svg" | resources.Fingerprint "md5" -}}
 {
 	"name": "Seirdy's Home",
 	"short_name": "Seirdy",
 	"description": "{{ .Site.Params.Description }}",
+	"lang": "en-US",
 	"display": "browser",
 	"scope": "/",
 	"start_url": "/",
@@ -33,6 +35,12 @@
 			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152",
 			"type": "image/svg+xml",
 			"purpose": "maskable"
+		},
+		{
+			"src": "{{ $monochromesvg.Permalink }}",
+			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152",
+			"type": "image/svg+xml",
+			"purpose": "monochrome"
 		}
 	]
 }
