@@ -217,6 +217,64 @@ quality for screenshots with solid backgrounds.
 In general, avoid using inline images just for decoration. Only use an image if it
 significantly adds to your content, and provide alt-text as a fallback.
 
+Layout
+------
+
+This is possibly the most subjective item I'm including, and the item with the most
+exceptions. Consider it more of a weak suggestion than hard advice. Use your own
+judgement.
+
+A simple layout looks good at a variety of window sizes, rendering responsive layout
+changes unnecessary. Textual websites really don't need more than a single column;
+readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left,
+depending on the locale) exactly once to read all its content. Verify this using the
+horizontal-line test: mentally draw a horizontal line across your page, and make sure
+it doesn't intersect more than one (1) item. Keeping a single-column layout that
+doesn't require responsive layout changes ensures smooth window re-sizing.
+
+Exceptions exist: one or two very simple responsive changes won't hurt. For example,
+the only responsive layout change on [my website](https://seirdy.one/) is a single
+CSS declaration to switch between inline and multi-line navigation links at the top
+of the page:
+
+```
+@media (min-width: 32rem) {
+  nav li {
+    display: inline;
+  }
+}
+```
+
+### What about sidebars?
+
+Sidebars are probably unnecessary, and can be quite annoying to readers who re-size
+windows frequently. This is especially true for tiling window manager users like me:
+we frequently shrink windows to a fraction of their original size. When this happens
+on a website with a sidebar, one of two things happens:
+
+1.  The site's responsive design kicks in: the sidebar vanishes and its elements move
+    elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the
+    text *and* handle a complex layout change. Frequent window re-sizers will
+    experience lag and battery loss, and might need a moment to figure out where
+    everything went.
+2.  The site doesn't use responsive design. The navbar and main content are now
+    squeezed together. Readers will probably close the page.
+
+Neither situation looks great.
+
+### Sidebar alternatives
+
+Common items in sidebars include article tags, an author bio, and an index of
+entries; these aren't useful while reading an article. Consider putting them in the
+article footer or--even better--dedicated pages. This does mean that readers will
+have to navigate to a different page to see that content, but they probably prefer
+things that way; almost nobody who clicked on "An opinionated list of best practices
+for textual websites" did so because they wanted to read my bio.
+
+Don't boost engagement by providing readers with information they didn't ask for;
+earn engagement with good content, and let readers navigate to your other pages
+*after* they've decided they want to read more.
+
 Testing
 -------
 
@@ -238,7 +296,7 @@ should be simple, readable, and semantic.
 ### Sample unorthodox tests
 
 These tests start out pretty reasonable, but gradually get more insane as you go
-down. Use your judgement.
+down. Once again, use your judgement.
 
 1.  Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as
     well for good measure.
