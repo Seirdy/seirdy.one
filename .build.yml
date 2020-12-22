@@ -4,6 +4,7 @@ packages:
   - rsync
   - hugo
   - zopfli
+  - git # for Hugo's gitInfo
   - make
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one

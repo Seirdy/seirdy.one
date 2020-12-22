@@ -11,6 +11,9 @@ OUTPUT_DIR = public
 
 RSYNCFLAGS += -rlvz --zc=zstd
 
+hugo:
+	hugo --gc --enableGitInfo
+
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
 .hintrc-local: .hintrc
@@ -27,12 +30,9 @@ lint: lint-css hugo .hintrc-local
 	hint --config .hintrc-local -f codeframe $(OUTPUT_DIR)
 
 check-links: hugo
-	lychee --verbose $(find public -type f -name '*.html' -o -name '*.gmi' -o -name '*.txt')
+	lychee --verbose $(find public -type f -name '*.html' -o -name '*.gmi' -o -name '*.txt') content/posts/*.md content/posts/*.gmi
 
 test: lint check-links
-
-hugo:
-	hugo --gc
 
 build: hugo
 # gzip_static + max zopfli compression

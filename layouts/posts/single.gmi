@@ -1,10 +1,15 @@
 # {{$.Title | safeHTML}}
-{{ .Date.Format "2006-01-02" }}
-
+{{ $lastmod := .Lastmod -}}
+{{ if lt .Date $lastmod -}}
+Originally posted {{ .Date.Format "2006-01-02" }}. Last updated {{ .Lastmod.Format "2006-01-02" }}.
+{{ else -}}
+Posted {{ .Date.Format "2006-01-02" }}.
+{{ end }}
 {{ trim (readFile (replace $.File.Path ".md" ".gmi")) "\n" | safeHTML }}
 
 ---
 
+=> {{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }} Article changelog
 => / Homepage{{ with .OutputFormats.Get "html" }}
 => {{.Permalink}} View “{{$.Title | safeHTML}}” on the WWW
 {{- end }}

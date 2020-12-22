@@ -12,6 +12,7 @@ pygmentsUseClasses = true
 [params]
 description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
 src = "https://sr.ht/~seirdy/seirdy.one"
+logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
 copyright = "Copyright © 2020 Rohan Kumar"
 dark = "auto"
 highlight = false
