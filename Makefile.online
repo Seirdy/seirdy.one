@@ -1,0 +1,23 @@
+# The following test the online instance, post-deploy. I just kept them here for convenience
+
+DOMAIN = seirdy.one
+PAGE_PATH = /
+SCHEME=https://
+URL = $(SCHEME)$(DOMAIN)$(PAGE_PATH)
+# latest bleeding-edge chromium snapshot
+CHROME_PATH = /home/rkumar/Executables/ghq/github.com/chromium-unofficial-latest-linux/chromium-latest-linux/latest/chrome
+CHROME_PROFILE = /tmp/chrome-lighthouse
+CHROME_FLAGS += --headless --disable-extensions --no-sandbox --no-first-run --user-data-dir=$(CHROME_PROFILE)
+CPU_SLOWDOWN=2.4
+LIGHTHOUSE_ARGS += --budget-path budget.json --output html --output json --output-file lighthouse-results --throttling.cpuSlowdownMultiplier=$(CPU_SLOWDOWN) --chrome-flags=$(CHROME_FLAGS)
+
+hint-online:
+	hint --config .hintrc -f codeframe $(URL)
+lighthouse:
+	mkdir -p $(CHROME_PROFILE)
+	lighthouse $(URL) $(LIGHTHOUSE_ARGS)
+	rm -rf $(CHROME_PROFILE)
+
+all: lighthouse hint-online
+
+.PHONY: hint-online lighthouse all

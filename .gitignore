@@ -2,3 +2,5 @@ public/
 public_*/
 hint-report/
 .hintrc-local
+*.report.html
+*.report.json

@@ -15,12 +15,15 @@
 		"doctype": "error",
 		"performance-budget": "error",
 		"compat-api/css": "error",
+		"manifest-is-valid": "error",
+		"manifest-file-extension": "error",
 		"compat-api/html": [
 			"error",
 			{
 				"ignore": [
 					"time",
-					"picture"
+					"picture",
+					"meta[name=color-scheme]"
 				]
 			}
 		],

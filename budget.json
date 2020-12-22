@@ -1,0 +1,79 @@
+[
+	{
+		"options": {
+			"firstPartyHostnames": [
+				"seirdy.one",
+				"localhost"
+			]
+		},
+		"timings": [
+			{
+				"metric": "total-blocking-time",
+				"budget": 0
+			},
+			{
+				"metric": "cumulative-layout-shift",
+				"budget": 0
+			}
+		],
+		"resourceSizes": [
+			{
+				"resourceType": "total",
+				"budget": 100
+			},
+			{
+				"resourceType": "document",
+				"budget": 30
+			},
+			{
+				"resourceType": "image",
+				"budget": 70
+			},
+			{
+				"resourceType": "stylesheet",
+				"budget": 5
+			}
+		],
+		"resourceCounts": [
+			{
+				"resourceType": "script",
+				"budget": 0
+			},
+			{
+				"resourceType": "font",
+				"budget": 0
+			},
+			{
+				"resourceType": "third-party",
+				"budget": 0
+			}
+		]
+	},
+	{
+		"path": "/index.html",
+		"timings": [
+			{
+				"metric": "largest-contentful-paint",
+				"budget": 1000
+			}
+		],
+		"resourceSizes": [
+			{
+				"resourceType": "total",
+				"budget": 10
+			},
+			{
+				"resourceType": "document",
+				"budget": 8
+			},
+			{
+				"resourceType": "image",
+				"budget": 5
+			},
+			{
+				"resourceType": "stylesheet",
+				"budget": 2
+			}
+		]
+	}
+]
