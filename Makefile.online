@@ -17,7 +17,9 @@ lighthouse:
 	mkdir -p $(CHROME_PROFILE)
 	lighthouse $(URL) $(LIGHTHOUSE_ARGS)
 	rm -rf $(CHROME_PROFILE)
+redbot:
+	redbot_cli -a $(URL)
 
 all: lighthouse hint-online
 
-.PHONY: hint-online lighthouse all
+.PHONY: hint-online lighthouse redbot all
