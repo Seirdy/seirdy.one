@@ -5,7 +5,7 @@ theme = "etch-custom"
 
 enableInlineShortcodes = true
 enableGitInfo = true
-disableHugoGeneratorInject = true # first item in <head> should be charset=utf-8
+disableHugoGeneratorInject = true  # I inject it explicitly at the BOTTOM of <head>
 uglyurls = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true

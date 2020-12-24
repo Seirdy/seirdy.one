@@ -62,4 +62,5 @@
 	<meta property="og:image:width" content="1200">
 	<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 	<meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+	{{ hugo.Generator }}
 </head>
