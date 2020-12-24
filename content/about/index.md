@@ -16,7 +16,7 @@ computers that let people sign up for shell accounts. A typical shell account
 features clients for IRC and email, common terminal/commandline utilities, and (most
 importantly) web hosting. Read about the tildeverse's
 [origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf),
-[learn more](http://tilde.club/wiki/faq.html), pick [a
+read [the FAQ](http://tilde.club/wiki/faq.html), pick [a
 tilde](http://tilde.club/%7Epfhawkins/othertildes.html) and [get
 started](http://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve
 as a "rough draft".
@@ -33,19 +33,22 @@ Would normally be in Portland, OR during the school year, but COVID-19 happened.
 Location (Seirdy, online)
 -------------------------
 
-My handle is "Seirdy" on all the platforms I use:
+My handle is "Seirdy" on all the platforms I use.
 
-- [Tildeverse](https://envs.net/~seirdy)
-- [Sourcehut forge](https://sr.ht/~seirdy)
-- [GitHub forge](https://github.com/Seirdy)
-- [GitLab forge](https://gitlab.com/Seirdy)
-- [Fediverse (Pleroma)](https://pleroma.envs.net/seirdy)
-- [Matrix: @seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net)
-- [email](mailto:seirdy@seirdy.one)
-- [PGP: 36B154A782AEA0AC](../publickey.txt)
-
-My username is Seirdy on Reddit, Hacker News, Lobsters, Linux Weekly News, Codeberg,
-and a few other places; my nick is Seirdy on many IRC networks.
+- The [Tildeverse](https://envs.net/~seirdy).
+- Software forges: [Sourcehut](https://sr.ht/~seirdy),
+  [GitHub](https://github.com/Seirdy), [GitLab](https://gitlab.com/Seirdy), and
+  [Codeberg](https://codeberg.org/Seirdy).
+- Social (federated): I'm [@Seirdy
+  @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
+- Social (non-federated): I'm Seirdy on [Hacker
+  News](https://news.ycombinator.com/user?id=Seirdy),
+  [Lobsters](https://lobste.rs/u/Seirdy),
+  [Reddit](https://www.reddit.com/user/Seirdy/), and Linux Weekly News.
+- Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public
+  PGP key: [36B154A782AEA0AC](../publickey.txt). My key is also available via WKD.
+- Chat: my nick is Seirdy on most IRC networks. If you don't like IRC, I'm also
+  [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix.
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please
 contact me and ask instead of assuming that it must be me.
