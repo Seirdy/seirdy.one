@@ -1,22 +1,21 @@
 {
-	"extends": [
-		"web-recommended"
-	],
 	"connector": {
 		"name": "puppeteer",
 		"options": {
-			"headless": true,
-			"browser": "Chromium"
+			"browser": "Chromium",
+			"headless": true
 		}
 	},
+	"extends": [
+		"web-recommended"
+	],
+	"formatters": [
+		"codeframe"
+	],
 	"hints": {
+		"apple-touch-icons": "off",
 		"axe/other": "error",
-		"https-only": "error",
-		"doctype": "error",
-		"performance-budget": "error",
 		"compat-api/css": "error",
-		"manifest-is-valid": "error",
-		"manifest-file-extension": "error",
 		"compat-api/html": [
 			"error",
 			{
@@ -27,6 +26,7 @@
 				]
 			}
 		],
+		"doctype": "error",
 		"http-compression": [
 			"warning",
 			{
@@ -37,6 +37,11 @@
 					"brotli": false
 				}
 			}
-		]
+		],
+		"https-only": "error",
+		"manifest-file-extension": "error",
+		"manifest-is-valid": "error",
+		"performance-budget": "error",
+		"ssllabs": "off"
 	}
 }

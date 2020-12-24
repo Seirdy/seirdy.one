@@ -4,7 +4,8 @@ title = "Seirdy's Home"
 theme = "etch-custom"
 
 enableInlineShortcodes = true
-# disablePathToLower = true
+enableGitInfo = true
+disableHugoGeneratorInject = true # first item in <head> should be charset=utf-8
 uglyurls = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
@@ -76,3 +77,23 @@ path = "gemini/"
 
 [outputs]
 section = ["HTML", "RSS", "GEMRSS"]
+
+[server]
+[[server.headers]]
+for = "/**.{css,png,webp,webm}"
+[server.headers.values]
+X-Content-Type-Options = "nosniff"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+Cache-Control = "max-age=31557600, immutable"
+[[server.headers]]
+for = "/**"
+[server.headers.values]
+X-Content-Type-Options = "nosniff"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+Referrer-Policy = "no-referrer"
+X-XSS-Protection = "1; mode=block"
+X-FROG-UNSAFE = "1"
+X-UA-Compatible = "IE=edge"
+Content-Security-Policy = "default-src 'none'; img-src 'self'; style-src 'self'; script-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; manifest-src 'self'; upgrade-insecure-requests;"
+Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+Cache-Control = "max-age=120, no-transform"

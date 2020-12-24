@@ -2,10 +2,11 @@
 image: alpine/edge
 packages:
   - rsync
-  - hugo
   - zopfli
-  - git # for Hugo's gitInfo
+  - git  # for Hugo's gitInfo
   - make
+  - npm
+  - chromium
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
@@ -15,7 +16,13 @@ triggers:
     condition: always
     to: seirdy@seirdy.one
 tasks:
+  - deps: |
+      echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+      rsync deploy@seirdy.one:/home/deploy/binaries.tar.gz .
+      tar x -ozC /bin -f binaries.tar.gz
+      npm i -g npm pnpm
+      pnpm i -g @lhci/cli hint @hint/configuration-web-recommended @hint/hint-doctype @hint/hint-https-only @hint/hint-performance-budget @hint/formatter-codeframe
   - build_deploy: |
       cd seirdy.one
-      echo "StrictHostKeyChecking=no" >> ~/.ssh/config
-      make build deploy
+      make DOMAIN=staging.seirdy.one test-staging
+      make clean deploy

@@ -1,0 +1,59 @@
+---
+ci:
+  assert:
+    preset: lighthouse:recommended
+    assertions:
+      errors-in-console: "off"  # false positive for CSP violation
+      installable-manifest: "off"   # not a PWA
+      offline-start-url: "off"  # not a PWA
+      performance-budget: "error"
+      render-blocking-resources:
+        - warn
+        # the CSS file.
+        # My site doesn't use JS so it doesn't use the recommended async hack
+        - maxLength: 1
+      robots-txt: "off"  # Lighthouse is incompatible with a hardened CSP
+      service-worker: "off"  # not a PWA
+      splash-screen: "off"  # not a PWA
+      themed-omnibox: "off"  # antifeature, not a PWA
+      works-offline: "off"  # not a PWA. Use caching.
+      is-crawlable: "off" # staging server won't be indexed
+      timing-budget: "off"  # buggy; manually use the below assertions instead
+      speed-index:
+        - warn
+        - maxNumericValue: 3000
+      largest-contentful-paint:
+        - warn
+        - maxNumericValue: 3000
+      first-contentful-paint:
+        - warn
+        - maxNumericValue: 3000
+      first-meaningful-paint:
+        - warn
+        - maxNumericValue: 3000
+      total-blocking-time:
+        - warn
+        - maxNumericValue: 0
+      cumulative-layout-shift:
+        - warn
+        - maxNumericValue: 0
+  collect:
+    method: node
+    settings:
+      budgetPath: budget.json
+      chromeFlags: "--disable-gpu --no-sandbox --disable-extensions --no-first-run --headless"
+      skipAudits:
+        - robots-txt
+        - canonical
+      throttling:
+        cpuSlowdownMultiplier: 2
+      throttlingMethod: devtools
+    url:
+      - https://staging.seirdy.one/
+      - https://staging.seirdy.one/about.html
+      - https://staging.seirdy.one/2020/11/23/website-best-practices.html
+    numberOfRuns: 5
+  upload:
+    outputDir: lighthouse-reports
+    reportFilenamePattern: lighthouse-report-%%DATE%%.%%EXTENSION%%
+    target: filesystem

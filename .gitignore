@@ -1,6 +1,8 @@
 public/
 public_*/
 hint-report/
-.hintrc-local
+.hintrc-*
 *.report.html
 *.report.json
+.lighthouseci
+lighthouse-reports

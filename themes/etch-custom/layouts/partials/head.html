@@ -17,7 +17,7 @@
 	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
-	{{ if eq .Site.BaseURL "https://envs.net/~seirdy/" -}}
+	{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
 	<meta name="robots" content="noindex">
 	{{ else -}}
 	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
