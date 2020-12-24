@@ -17,9 +17,9 @@ ci:
       splash-screen: "off"  # not a PWA
       themed-omnibox: "off"  # antifeature, not a PWA
       works-offline: "off"  # not a PWA. Use caching.
-      is-crawlable: "off" # staging server won't be indexed
+      is-crawlable: "off"  # staging server won't be indexed
       timing-budget: "off"  # buggy; manually use the below assertions instead
-      canonical: "off" # staging server doesn't have canonical
+      canonical: "off"  # staging server doesn't have canonical
       speed-index:
         - warn
         - maxNumericValue: 3000
@@ -53,8 +53,8 @@ ci:
       - https://staging.seirdy.one/
       - https://staging.seirdy.one/about.html
       - https://staging.seirdy.one/2020/11/23/website-best-practices.html
-    numberOfRuns: 5
+    numberOfRuns: 3
   upload:
     outputDir: lighthouse-reports
-    reportFilenamePattern: lighthouse-report-%%DATE%%.%%EXTENSION%%
+    reportFilenamePattern: lighthouse-report-%%PATHNAME%%.%%EXTENSION%%
     target: filesystem

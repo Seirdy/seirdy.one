@@ -5,8 +5,10 @@ packages:
   - zopfli
   - git  # for Hugo's gitInfo
   - make
-  - npm
-  - chromium
+  - npm  # for testing with lighthouse and webhint
+  - chromium  # for testing with lighthouse and webhint
+environment:
+  HINT_TELEMETRY: off
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
@@ -21,9 +23,13 @@ tasks:
       rsync deploy@seirdy.one:/home/deploy/binaries.tar.gz .
       mkdir -p ~/bin
       tar x -ozC ~/bin -f binaries.tar.gz
-  - build_deploy: |
       cd seirdy.one
       npm i -D
+  - build_deploy: |
+      cd seirdy.one
       export PATH=~/bin:$PATH
       make DOMAIN=staging.seirdy.one test-staging
+      tar czf ~/lighthouse-reports.tar.gz lighthouse-reports
       make clean deploy
+artifacts:
+  - lighthouse-reports.tar.gz
