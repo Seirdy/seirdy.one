@@ -19,10 +19,11 @@ tasks:
   - deps: |
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
       rsync deploy@seirdy.one:/home/deploy/binaries.tar.gz .
-      tar x -ozC /bin -f binaries.tar.gz
-      npm i -g npm pnpm
-      pnpm i -g @lhci/cli hint @hint/configuration-web-recommended @hint/hint-doctype @hint/hint-https-only @hint/hint-performance-budget @hint/formatter-codeframe
+      mkdir -p ~/bin
+      tar x -ozC ~/bin -f binaries.tar.gz
   - build_deploy: |
       cd seirdy.one
+      npm i -D
+      export PATH=~/bin:$PATH
       make DOMAIN=staging.seirdy.one test-staging
       make clean deploy

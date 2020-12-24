@@ -84,8 +84,8 @@ deploy: deploy-html deploy-gemini
 ## stuff for the staging server
 .PHONY: test-staging
 test-staging: deploy-html
-	yq e '.ci .collect .url | .[]' .lighthouserc.yml | xargs hint -f codeframe
-	lhci autorun
+	yq e '.ci .collect .url | .[]' .lighthouserc.yml | xargs npx hint -f codeframe
+	npx lhci autorun
 
 .PHONY: all
 all: test deploy

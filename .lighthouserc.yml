@@ -19,6 +19,7 @@ ci:
       works-offline: "off"  # not a PWA. Use caching.
       is-crawlable: "off" # staging server won't be indexed
       timing-budget: "off"  # buggy; manually use the below assertions instead
+      canonical: "off" # staging server doesn't have canonical
       speed-index:
         - warn
         - maxNumericValue: 3000

@@ -4,5 +4,6 @@ hint-report/
 .hintrc-*
 *.report.html
 *.report.json
-.lighthouseci
-lighthouse-reports
+.lighthouseci/*
+lighthouse-reports/*
+node_modules/*

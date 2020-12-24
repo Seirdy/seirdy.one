@@ -1,0 +1,21 @@
+{
+  "name": "seirdy.one",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.sr.ht:~seirdy/seirdy.one"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.1.0",
+    "@hint/formatter-codeframe": "^3.1.19",
+    "@hint/hint-doctype": "^3.3.7",
+    "@hint/hint-https-only": "^2.4.7",
+    "@hint/hint-performance-budget": "^2.4.7",
+    "@lhci/cli": "^0.6.1",
+    "hint": "^6.1.1"
+  }
+}
