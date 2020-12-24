@@ -7,15 +7,17 @@ mirror](https://img.shields.io/badge/mirror-GitLab-orange.svg?logo=gitlab)](http
 [![GitHub
 mirror](https://img.shields.io/badge/mirror-GitHub-black.svg?logo=github)](https://github.com/Seirdy/seirdy.one)
 
-[![builds.sr.ht status](https://builds.sr.ht/~seirdy/seirdy.one.svg)](https://builds.sr.ht/~seirdy/seirdy.one)
+[![builds.sr.ht
+status](https://builds.sr.ht/~seirdy/seirdy.one.svg)](https://builds.sr.ht/~seirdy/seirdy.one)
 
 Code for my personal website, [seirdy.one](https://seirdy.one). Built with Hugo.
 
-## Dependencies
+Dependencies
+------------
 
 To build:
 
-- Hugo 0.79 or later
+- Hugo 0.75 or later
 - Make
 - Git (Hugo uses Git info for features like date last updated)
 - Zopfli (optional; set `NO_GZIP_STATIC=1` to disable)
@@ -34,4 +36,9 @@ To lint:
 - [webhint CLI](https://github.com/webhintio/hint)
 - [lychee](https://github.com/lycheeverse/lychee)
 
-See the `Makefile` for details.
+To test in CI, after deploying to the staging environment:
+
+- webhint CLI
+- [lighthouse-ci](https://github.com/GoogleChrome/lighthouse-ci)
+
+See the `Makefile` for details. The CI saves lighthouse reports as a build artifact.
