@@ -47,7 +47,7 @@ ci:
         - robots-txt
         - canonical
       throttling:
-        cpuSlowdownMultiplier: 2
+        cpuSlowdownMultiplier: 3  # seems about right on builds.sr.ht
       throttlingMethod: devtools
     url:
       - https://staging.seirdy.one/
