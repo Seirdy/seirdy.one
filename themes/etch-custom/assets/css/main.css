@@ -14,16 +14,14 @@
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
-html {
+
+body {
 	font-family: sans-serif;
 	font-size: 16px;
 	line-height: 1.5rem;
-}
-
-body {
 	margin: auto;
 	max-width: 50rem;
-	padding: 2rem 5%;
+	padding: 0 5%;
 }
 
 nav ul {
@@ -33,13 +31,12 @@ nav ul {
 	/* Use whitespace instead of bullets to separate nav from article.
 	   Also avoid top-padding at the top of the page. */
 	list-style-type: none;
-	margin: 0 0 2rem;
 	padding: 0;
 }
 
 /* nav links should be easy to tap with fat fingers */
 nav li {
-	padding: 0.5rem 0.25rem;
+	padding: 0 0.5rem 0.75rem 0;
 }
 
 /* The posts list doesn't need bullets; simple spacing and repetition
@@ -57,9 +54,7 @@ nav li {
 
 /* Make the home link a bit bigger to serve as a site heading */
 .home {
-	font-size: 1.5rem;
 	font-weight: bold;
-	padding: 0 0.5rem 0.75rem 0;
 }
 
 /* single-line nav on widescreen, multi-line nav on narrow screens */
@@ -82,13 +77,10 @@ img {
 	max-width: 100%;
 }
 
-code {
-	padding: 0 0.25rem;
-}
-
 pre,
 code {
 	border: 1px solid #bbb;
+	padding: 0 0.25rem;
 }
 
 pre code {
