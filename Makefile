@@ -12,6 +12,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlvz --zc=zstd
+ZOPFLI_ITERATIONS=1200  # max compression
 
 .PHONY: hugo
 hugo: clean
@@ -65,7 +66,7 @@ build: hugo
 ifndef NO_GZIP_STATIC
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.webmanifest' \
 		| grep -v gemini \
-		| xargs zopfli --i50 --gzip
+		| xargs zopfli --i$(ZOPFLI_ITERATIONS) --gzip
 endif
 
 

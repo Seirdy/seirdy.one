@@ -8,7 +8,7 @@ packages:
   - npm  # for testing with lighthouse and webhint
   - chromium  # for testing with lighthouse and webhint
 environment:
-  HINT_TELEMETRY: off
+  HINT_TELEMETRY: "off"
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
@@ -24,11 +24,12 @@ tasks:
       mkdir -p ~/bin
       tar x -ozC ~/bin -f binaries.tar.gz
       cd seirdy.one
-      npm i -D
+      npm i -D --no-fund
   - build_deploy: |
       cd seirdy.one
       export PATH=~/bin:$PATH
-      make DOMAIN=staging.seirdy.one test-staging
+      # don't spend as much time compressing for staging.
+      make DOMAIN=staging.seirdy.one ZOPFLI_ITERATIONS=50 test-staging
       tar czf ~/lighthouse-reports.tar.gz lighthouse-reports
       make clean deploy
 artifacts:
