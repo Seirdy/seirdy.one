@@ -20,6 +20,8 @@ ci:
       is-crawlable: "off"  # staging server won't be indexed
       timing-budget: "off"  # buggy; manually use the below assertions instead
       canonical: "off"  # staging server doesn't have canonical
+      # https://seirdy.one/2020/11/23/website-best-practices.html#about-lazy-loading
+      offscreen-images: "off"
       speed-index:
         - warn
         - maxNumericValue: 3000
