@@ -191,6 +191,10 @@ The 250kb club gathers websites at or under 250kb, and also rewards websites tha
 
 => https://250kb.club/ The 250kb Club
 
+The 10 KB Club does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
+
+=> https://10kbclub.com/ The 10 KB Club
+
 Motherfucking Website generated a lot of buzz when it was created:
 
 => https://motherfuckingwebsite.com/ Motherfucking Website

@@ -330,6 +330,8 @@ Other places to check out
 The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also
 rewards websites that have a high ratio of content size to total size.
 
+The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
+
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking
 Website inspired several unofficial sequels that tried to gently improve upon it. My
 favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
