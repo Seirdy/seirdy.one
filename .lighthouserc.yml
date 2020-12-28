@@ -3,7 +3,6 @@ ci:
   assert:
     preset: lighthouse:recommended
     assertions:
-      errors-in-console: "off"  # false positive for CSP violation
       installable-manifest: "off"   # not a PWA
       offline-start-url: "off"  # not a PWA
       performance-budget: "error"
@@ -12,28 +11,20 @@ ci:
         # the CSS file.
         # My site doesn't use JS so it doesn't use the recommended async hack
         - maxLength: 1
-      robots-txt: "off"  # Lighthouse is incompatible with a hardened CSP
-      service-worker: "off"  # not a PWA
-      splash-screen: "off"  # not a PWA
-      themed-omnibox: "off"  # antifeature, not a PWA
-      works-offline: "off"  # not a PWA. Use caching.
-      is-crawlable: "off"  # staging server won't be indexed
       timing-budget: "off"  # buggy; manually use the below assertions instead
-      canonical: "off"  # staging server doesn't have canonical
       # https://seirdy.one/2020/11/23/website-best-practices.html#about-lazy-loading
-      offscreen-images: "off"
       speed-index:
         - warn
-        - maxNumericValue: 3000
+        - maxNumericValue: 2000
       largest-contentful-paint:
         - warn
-        - maxNumericValue: 3000
+        - maxNumericValue: 2000
       first-contentful-paint:
         - warn
-        - maxNumericValue: 3000
+        - maxNumericValue: 2000
       first-meaningful-paint:
         - warn
-        - maxNumericValue: 3000
+        - maxNumericValue: 2000
       total-blocking-time:
         - warn
         - maxNumericValue: 0
@@ -46,10 +37,18 @@ ci:
       budgetPath: budget.json
       chromeFlags: "--disable-gpu --no-sandbox --disable-extensions --no-first-run --headless"
       skipAudits:
-        - robots-txt
-        - canonical
+        - robots-txt  # Lighthouse bug: CSP makes this impossible
+        - canonical  # staging site has no rel=canonical
+        - is-crawlable  # staging site isn't crawlable
+        - service-worker  # not a PWA
+        - works-offline  # not a PWA
+        - installable-manifest  # not a PWA
+        - splash-screen  # not a PWA
+        - themed-omnibox  # not a PWA
+        - offline-start-url  # not a pwa
+        - offscreen-images  # antipattern: see my articlec on best practices for textual websites
       throttling:
-        cpuSlowdownMultiplier: 3  # seems about right on builds.sr.ht
+        cpuSlowdownMultiplier: 1.2  # seems about right on builds.sr.ht
       throttlingMethod: devtools
     url:
       - https://staging.seirdy.one/
