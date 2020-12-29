@@ -2,7 +2,7 @@
 	<nav>
 		<ul>
 			<li class="home">
-				<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+				<a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 			</li>
 			{{ range .Site.Menus.main.ByWeight -}}
 			<li>

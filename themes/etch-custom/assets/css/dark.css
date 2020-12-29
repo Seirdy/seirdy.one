@@ -4,12 +4,18 @@
 		color: #fff;
 	}
 
+	/* IndieWeb u-photo should be distinct from the background */
+	.u-photo {
+		-webkit-filter: invert(100%);
+		filter: invert(100%);
+	}
+
 	a {
-		color: #0af;
+		color: #4af;
 	}
 
 	a:visited {
-		color: #d7c;
+		color: #d7f;
 	}
 
 	a:active {

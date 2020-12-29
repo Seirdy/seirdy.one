@@ -1,0 +1,4 @@
+<!-- re-using the indefinetly-cached favicon to avoid bloating page size -->
+{{ $favicon := resources.Get "/favicon.png" | resources.Fingerprint "md5" -}}
+<a itemprop="author" class="p-author h-card" href="https://seirdy.one" rel="author"><img class="u-photo" src="{{ $favicon.RelPermalink }}" width="1em" height="1em" type="image/png" alt="Rohan Kumar" > <span class="p-given-name">Rohan</span>
+<span class="p-family-name">Kumar</span></a>

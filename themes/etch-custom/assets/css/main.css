@@ -67,14 +67,21 @@ nav li {
 h1,
 h2,
 h3 {
-	line-height: 1.25em;
+	line-height: 1.75rem;
 }
 
-img {
+img:not(.u-photo) {
 	display: block;
 	height: auto;
 	margin: auto;
 	max-width: 100%;
+}
+
+.u-photo {
+	display: inline-block;
+	height: 1em;
+	vertical-align: -0.1em;
+	width: 1em;
 }
 
 pre,

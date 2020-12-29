@@ -15,7 +15,14 @@
 	"hints": {
 		"apple-touch-icons": "off",
 		"axe/other": "error",
-		"compat-api/css": "error",
+		"compat-api/css": [
+			"error",
+			{
+				"ignore": [
+					"filter"
+				]
+			}
+		],
 		"compat-api/html": [
 			"error",
 			{
