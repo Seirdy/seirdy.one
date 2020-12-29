@@ -1,28 +1,30 @@
 {{ define "main" }}
-<article itemscope itemtype="https://schema.org/Article" class="h-entry">
-	<header id="post-header">
-		<h1 itemprop="name headline" class="p-hame">{{ .Title }}</h1>
-		{{ $lastmod := .Lastmod -}}
-		{{ if lt .Date $lastmod -}}
-		Originally posted <time class="dt-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by <a itemprop="author" class="p-author h-card" href="https://seirdy.one" rel="author">{{ .Site.Author.name }}</a>.<br>
-		Last updated <time itemprop="dateModified" class="dt-updated" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }}">Changelog</a>
-		{{ else -}}
-		Posted <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>.
-		{{ end }}
-	</header>
-	<section itemprop="articlebody">
-		{{ .Content -}}
-	</section>
-</article>
-<br>
-<hr>
-<footer class="comment">
-	{{ with .OutputFormats.Get "gemtext" -}}
-	<p>
-	View this article on <a href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>
-	</p>
-	{{ end -}}
-	<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how.</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
-</footer>
+<div itemscope itemtype="https://schema.org/Article" class="h-entry">
+	<article itemprop="mainEntityOfPage">
+		<header id="post-header">
+			<h1 itemprop="name headline" class="p-name">{{ .Title }}</h1>
+			{{ $lastmod := .Lastmod -}}
+			{{ if lt .Date $lastmod -}}
+			Originally posted <a class="u-url" href="https://seirdy.one{{ .RelPermalink }}"><time class="dt-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time></a> by <a itemprop="author" class="p-author h-card" href="https://seirdy.one" rel="author">{{ .Site.Author.name }}</a>.<br>
+			Last updated <time itemprop="dateModified" class="dt-updated" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }}">Changelog</a>
+			{{ else -}}
+			Posted <a class="u-url" href="https://seirdy.one{{ .RelPermalink }}"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time></a>.
+			{{ end }}
+		</header>
+		<section class="e-content" itemprop="articlebody">
+			{{ .Content -}}
+		</section>
+	</article>
+	<br>
+	<hr>
+	<footer class="comment">
+		{{ with .OutputFormats.Get "gemtext" -}}
+		<p>
+		View this article on <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>
+		</p>
+		{{ end -}}
+		<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how.</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
+	</footer>
+</div>
 <hr>
 {{ end }}
