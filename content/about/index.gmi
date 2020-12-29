@@ -33,7 +33,7 @@ My handle is "Seirdy" on all the platforms I use:
 => https://pleroma.envs.net/seirdy Fediverse (Pleroma)
 => https://matrix.to/#/@seirdy:envs.net Matrix: @seirdy:envs.net
 => mailto:seirdy@seirdy.one email
-=> ../publickey.txt PGP: 36B154A782AEA0AC
+=> /publickey.asc PGP: 36B154A782AEA0AC
 
 My username is Seirdy on Reddit, Hacker News, Lobsters, Linux Weekly News, Codeberg, and a few other places; my nick is Seirdy on many IRC networks.
 

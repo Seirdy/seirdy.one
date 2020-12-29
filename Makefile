@@ -64,7 +64,7 @@ test: lint-css hint-devserver check-links
 build: hugo
 # gzip_static + max zopfli compression
 ifndef NO_GZIP_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.webmanifest' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' \
 		| grep -v gemini \
 		| xargs zopfli --i$(ZOPFLI_ITERATIONS) --gzip
 endif
@@ -76,7 +76,7 @@ deploy-html: build
 
 .PHONY: deploy-gemini
 deploy-gemini: hugo
-	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.txt $(GEMINI_RSYNC_DEST)/ --delete
+	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
 	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
 .PHONY: deploy

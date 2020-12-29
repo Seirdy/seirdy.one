@@ -31,6 +31,7 @@ Since some people asked me about music, here's a generated list of every track i
 ## Contact
 
 => mailto:seirdy@seirdy.one email: seirdy@seirdy.one
+=> /publickey.asc PGP: 36B154A782AEA0AC
 => https://pleroma.envs.net/seirdy Fediverse (Pleroma)
 
 Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm on Matrix:
