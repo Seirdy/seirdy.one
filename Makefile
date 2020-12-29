@@ -12,7 +12,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlvz --zc=zstd
-ZOPFLI_ITERATIONS=1200  # max compression
+ZOPFLI_ITERATIONS=500  # max compression
 
 .PHONY: hugo
 hugo: clean
