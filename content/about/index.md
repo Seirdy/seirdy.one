@@ -46,7 +46,7 @@ My handle is "Seirdy" on all the platforms I use.
   [Lobsters](https://lobste.rs/u/Seirdy),
   [Reddit](https://www.reddit.com/user/Seirdy/), and Linux Weekly News.
 - Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public
-  PGP key: [36B154A782AEA0AC](/publickey.asc). My key is also available via WKD.
+  PGP key: [36B154A782AEA0AC](./publickey.asc). My key is also available via WKD.
 - Chat: my nick is Seirdy on most IRC networks. If you don't like IRC, I'm also
   [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix.
 
