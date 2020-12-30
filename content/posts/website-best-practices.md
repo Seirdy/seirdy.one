@@ -217,6 +217,10 @@ quality for screenshots with solid backgrounds.
 In general, avoid using inline images just for decoration. Only use an image if it
 significantly adds to your content, and provide alt-text as a fallback.
 
+If you want to include a profile photo (e.g., if your website is part of the
+IndieWeb), I recommend re-using one of your favicons. Since most browsers will fetch
+your favicons anyway, re-using them should be relatively harmless.
+
 Layout
 ------
 
@@ -330,7 +334,9 @@ Other places to check out
 The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also
 rewards websites that have a high ratio of content size to total size.
 
-The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
+The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget
+(excluding favicons and webmanifest icons). It also has guidelines for
+noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
 
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking
 Website inspired several unofficial sequels that tried to gently improve upon it. My

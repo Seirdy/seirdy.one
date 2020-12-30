@@ -127,6 +127,8 @@ It might seem odd to create a lossless WebP from a lossy PNG, but I've found tha
 
 In general, avoid using inline images just for decoration. Only use an image if it significantly adds to your content, and provide alt-text as a fallback.
 
+If you want to include a profile photo (e.g., if your website is part of the IndieWeb), I recommend re-using one of your favicons. Since most browsers will fetch your favicons anyway, re-using them should be relatively harmless.
+
 ## Layout
 
 This is possibly the most subjective item I'm including, and the item with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
