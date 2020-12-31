@@ -2,7 +2,8 @@
 image: alpine/edge
 packages:
   - rsync
-  - zopfli
+  - zopfli  # for max compression with gzip_static
+  - brotli  # for max compression with brotli_static
   - git  # for Hugo's gitInfo
   - make
   - npm  # for testing with lighthouse and webhint

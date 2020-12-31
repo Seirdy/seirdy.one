@@ -34,17 +34,7 @@
 			}
 		],
 		"doctype": "error",
-		"http-compression": [
-			"warning",
-			{
-				"html": {
-					"brotli": false
-				},
-				"resource": {
-					"brotli": false
-				}
-			}
-		],
+		"http-compression": "error",
 		"https-only": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",

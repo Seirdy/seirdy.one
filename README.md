@@ -20,7 +20,8 @@ To build:
 - Hugo 0.75 or later
 - Make
 - Git (Hugo uses Git info for features like date last updated)
-- Zopfli (optional; set `NO_GZIP_STATIC=1` to disable)
+- Zopfli (optional; set `NO_STATIC=1` to disable)
+- Brotli (optional; set `NO_STATIC=1` to disable)
 - POSIX utils: grep, find, etc.
 
 To deploy:
