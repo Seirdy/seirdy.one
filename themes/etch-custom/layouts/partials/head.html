@@ -14,7 +14,7 @@
 	{{ $mask_icon := resources.Get "/mask_apple.svg" | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="mask-icon" href="%s" color="black">` $mask_icon.RelPermalink | safeHTML }}
 	<!-- webmanifest defines even more icons. This is getting ridiculous -->
-	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Fingerprint "md5" -}}
+	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 	{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 	{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
