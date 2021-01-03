@@ -64,10 +64,10 @@ test: lint-css hint-devserver check-links
 build: hugo
 # gzip_static + max zopfli compression
 ifndef NO_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
 		| grep -v gemini \
 		| xargs zopfli --i$(ZOPFLI_ITERATIONS) --gzip
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
 		| grep -v gemini \
 		| xargs brotli -q 11
 endif
