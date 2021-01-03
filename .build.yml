@@ -2,8 +2,8 @@
 image: alpine/edge
 packages:
   - rsync
-  - zopfli  # for max compression with gzip_static
-  - brotli  # for max compression with brotli_static
+  - zopfli  # for max compression w/ gzip_static
+  - brotli  # for max compression w/ brotli_static, decompressing binaries
   - git  # for Hugo's gitInfo
   - make
   - npm  # for testing with lighthouse and webhint
@@ -21,11 +21,11 @@ triggers:
 tasks:
   - deps: |
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
-      rsync deploy@seirdy.one:/home/deploy/binaries.tar.gz .
+      rsync deploy@seirdy.one:/home/deploy/binaries.tar.br .
       mkdir -p ~/bin
-      tar x -ozC ~/bin -f binaries.tar.gz
+      brotli -dc binaries.tar.br | tar x -oC ~/bin
       cd seirdy.one
-      npm i -D --no-fund
+      npm i -D --no-fund  # no-fund reduces log verbosity
   - build_deploy: |
       cd seirdy.one
       export PATH=~/bin:$PATH
