@@ -85,7 +85,7 @@ I watch anime. Some of my favorites, in no particular order:
 - Mawaru Penguindrum
 - No Game No Life: Zero
 - Black Lagoon
-- Ascendance of a Bookworm
+- Serial Experiments Lain
 - Saga of Tanya the Evil
 - Monogatari
 - Attack on Titan
