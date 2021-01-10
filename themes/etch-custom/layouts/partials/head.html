@@ -20,6 +20,7 @@
 	{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
 	<meta name="robots" content="noindex">
 	{{ else -}}
+	<link rel="webmention" href="https://seirdy.one/webmentions/receive">
 	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
 	{{ end -}}
 	<link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
