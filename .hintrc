@@ -14,6 +14,7 @@
 	],
 	"hints": {
 		"apple-touch-icons": "off",
+		"axe/aria": "off",
 		"axe/other": "error",
 		"compat-api/css": [
 			"error",

@@ -1,9 +1,11 @@
-public/
-public_*/
-hint-report/
-.hintrc-*
 *.report.html
 *.report.json
+.hintrc-*
 .lighthouseci/*
+hint-report/
 lighthouse-reports/*
+mentions.json
 node_modules/*
+old/
+public/
+public_*/

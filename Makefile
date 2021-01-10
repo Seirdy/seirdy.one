@@ -28,7 +28,7 @@ hugo: clean
 
 .PHONY: clean
 clean:
-	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports
+	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports mentions.json
 
 .PHONY: lint-css
 lint-css:
@@ -72,14 +72,23 @@ ifndef NO_STATIC
 		| xargs brotli -q 11
 endif
 
+# save webmentions to a file, don't send yet
+mentions.json: hugo
+	# gather old version of the site
+	# rsync $(RSYNCFLAGS) --exclude '*.gz' --exclude '*.br' --exclude '*.png' --exclude-from .rsyncignore $(WWW_RSYNC_DEST)/ old
+	static-webmentions find
+	mv mentions.json mentions.json.unfiltered
+	# filter the webmentions a bit; jq offers more flexibility than config.toml
+	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|matrix.to)") | not) ]' <mentions.json.unfiltered >mentions.json
+	rm mentions.json.unfiltered
 
 .PHONY: deploy-html
-deploy-html: build
+deploy-html: build mentions.json
 	rsync $(RSYNCFLAGS) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete
 
 .PHONY: deploy-gemini
 deploy-gemini: hugo
-	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
+	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude '*.br' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
 	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
 .PHONY: deploy
@@ -87,7 +96,7 @@ deploy: deploy-html deploy-gemini
 
 ## stuff for the staging server
 .PHONY: test-staging
-test-staging: deploy-html
+test-staging:
 	yq e '.ci .collect .url | .[]' .lighthouserc.yml | xargs npx hint -f codeframe
 	npx lhci autorun
 

@@ -6,6 +6,7 @@ packages:
   - brotli  # for max compression w/ brotli_static, decompressing binaries
   - git  # for Hugo's gitInfo
   - make
+  - jq
   - npm  # for testing with lighthouse and webhint
   - chromium  # for testing with lighthouse and webhint
 environment:
@@ -33,5 +34,7 @@ tasks:
       make DOMAIN=staging.seirdy.one ZOPFLI_ITERATIONS=50 test-staging
       tar czf ~/lighthouse-reports.tar.gz lighthouse-reports
       make clean deploy
+      cp mentions.json ~/mentions.json
 artifacts:
   - lighthouse-reports.tar.gz
+  - mentions.json

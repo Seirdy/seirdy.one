@@ -78,6 +78,28 @@ path = "gemini/"
 [outputs]
 section = ["HTML", "RSS", "GEMRSS"]
 
+# https://github.com/nekr0z/static-webmentions
+[webmentions]
+newDir = "public"
+oldDir = "old"
+webmentionsFile = "mentions.json"
+excludeSources = [
+  "/tags/*",                    # only trailing * are supported at the moment
+  "/posts/*",                     # this only excludes /posts/index.html, not /posts/somepost/
+  "/",                          # same as "/index.html"
+]
+
+# addresses that we don't want to send webmentions to
+# other schemes and stuff that's I link to too often
+excludeDestinations = [
+  "mailto:",
+	"gemini:",
+	"https://web.archive.org",
+	"https://lists.sr.ht/~seirdy/seirdy.one-comments",
+	"https://useplaintext.email/",
+	"https://seirdy.one",
+]
+
 [server]
 [[server.headers]]
 for = "/**.{css,png,webp,webm}"

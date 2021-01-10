@@ -1,6 +1,6 @@
+.well-known/
+_*
 misc/
 music.txt
 music.txt.gz
-.well-known
-_*
-webmentions
+webmentions/
