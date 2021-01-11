@@ -35,6 +35,7 @@
 			}
 		],
 		"doctype": "error",
+		"highest-available-document-mode": "off",
 		"http-compression": "error",
 		"https-only": "error",
 		"manifest-file-extension": "error",
