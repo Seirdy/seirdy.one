@@ -283,7 +283,7 @@ Further reading: an alternative approach
 ----------------------------------------
 
 Check out Scott Aaronson's article, [Cosmology and
-Complexity](https://www.scottaaronson.com/democritus/lec20.html%20Cosmology%20and%20Complexity).
+Complexity](https://www.scottaaronson.com/democritus/lec20.html).
 He uses an alternative approach to finding the maximum bits we can work with: he
 simply inverts the [cosmological
 constant](https://en.wikipedia.org/wiki/Cosmological_constant).
