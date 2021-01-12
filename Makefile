@@ -3,6 +3,7 @@ DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
 HUGO_BASEURL = "https://$(DOMAIN)/"
+HUGO_FLAGS += --gc
 USER = deploy@$(DOMAIN)
 WWW_ROOT = /var/www/$(DOMAIN)
 GEMINI_ROOT = /srv/gemini/$(DOMAIN)
@@ -16,7 +17,7 @@ ZOPFLI_ITERATIONS=500  # max compression
 
 .PHONY: hugo
 hugo: clean
-	hugo --gc -b $(HUGO_BASEURL)
+	hugo --gc -b $(HUGO_BASEURL) $(HUGO_FLAGS)
 
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
