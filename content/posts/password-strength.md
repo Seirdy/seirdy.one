@@ -124,7 +124,7 @@ relation](https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation).
 It's also probably a better idea to make this value an estimate for flipping a single
 bit, and to estimate the average number of bit-flips it takes to make a single
 password guess. If that bothers you, pick a number `b` you believe to be a good
-estimate for a bit-flip-count and calculate `P(n+b, e)` instead of `P(n, e)`.
+estimate for a bit-flip-count and calculate `P(n-b, e)` instead of `P(n, e)`.
 
 What's the temperature of the system? Three pieces of information help us find out:
 
