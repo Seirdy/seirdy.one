@@ -1,9 +1,7 @@
 ---
 date: "2021-01-12T00:03:10-08:00"
-description: "This is a tale of the intersection between thermal physics, cosmology,
-  and a tiny amount of computer science to answer a seemingly innocuous question:
-  \"How strong does a password need to be for it to be physically impossible to
-  brute-force, ever?\""
+description: Using thermal physics, cosmology, and computer science to calculate
+  password vulnerability to the biggest possible brute-force attack.
 outputs:
 - html
 - gemtext
