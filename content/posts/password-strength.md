@@ -283,14 +283,18 @@ Further reading: an alternative approach
 ----------------------------------------
 
 Check out Scott Aaronson's article, [Cosmology and
-Complexity](https://www.scottaaronson.com/democritus/lec20.html).
-He uses an alternative approach to finding the maximum bits we can work with: he
-simply inverts the [cosmological
-constant](https://en.wikipedia.org/wiki/Cosmological_constant).
+Complexity](https://www.scottaaronson.com/democritus/lec20.html). He uses an
+alternative approach to finding the maximum bits we can work with: he simply inverts
+the [cosmological constant](https://en.wikipedia.org/wiki/Cosmological_constant).
 
 This model takes into account more than just the mass of the observable universe.
 While we previously found that the MOAC can brute-force a password with 306.76
 entropy bits, this model allows the same for up to 405.3 bits.
+
+Another well-known approach to calculating physical limits of computation is
+[Bremermann's limit](https://en.wikipedia.org/wiki/Bremermann%27s_limit), which
+calculates the speed of computation given a finite amount of mass. This article's
+approach disregards time, focusing only on mass-energy equivalence.
 
 Acknowledgements
 ----------------
