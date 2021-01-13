@@ -47,10 +47,10 @@ energy efficiency is limited only by the mass-energy of *the entire [observable
 universe](https://en.wikipedia.org/wiki/Observable_universe)?*
 
 Let's call this absolute unit of an energy-efficient computer the MOAC (Mother of All
-Computers). For all classical that are made of matter, do work to compute, and are
-bound by the conservation of energy, the MOAC represents a finite yet unreachable
-limit of computational power. And yes, it can play Solitaire with *amazing*
-framerates.
+Computers). For all classical computers that are made of matter, do work to compute,
+and are bound by the conservation of energy, the MOAC represents a finite yet
+unreachable limit of computational power. And yes, it can play Solitaire with
+*amazing* framerates.
 
 How strong should your password be for it to be safe from a brute-force attack by the
 MOAC?
