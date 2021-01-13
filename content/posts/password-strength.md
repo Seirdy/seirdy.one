@@ -253,9 +253,33 @@ Here are some sample outputs:
 - P(326.6) ≈ 1.1×10<sup>-6</sup> (about one in a million)
 
 If your threat model is a bit smaller, simulate putting a smaller object into the
-MOAC's furnace. For example, the Earth has a mass of 5.972×10<sup>24</sup> kg; this
-gives the MOAC a one-in-ten-trillion chance of cracking a password with 256 entropy
-bits and a 100% chance of cracking a 213-bit password.
+MOAC's furnace. For example, the Earth has a mass of 5.972×10²⁴ kg; this gives the
+MOAC a one-in-ten-trillion chance of cracking a password with 256 entropy bits and a
+100% chance of cracking a 213-bit password. 
+
+Sample unbreakable passwords
+----------------------------
+
+According to KeePassXC's password generator, each of the following passwords has en
+entropy between 330 and 340 bits.
+
+Using the extended-ASCII character set:
+
+    ¦=¦FVõ)Çb^ÄwÎ¡=,°m°B9®;>3[°r:t®Ú"$3CG¨/Bq-y\;
+
+Using the characters on a standard US QWERTY layout:
+
+    %nUzL2XR&Tz5hJfp2tiYBoBBX^vWo3`g6H#JSC#N6gWm#hVdD~ziD$YHW
+
+Using only alphanumeric characters:
+
+    tp8D69CGWE5t5a9si5XNsw32CKyCafh8qGrKWLwE6KJHpGyUtcJDWpgRz5mFNx
+
+An excerpt from a religious text with a trailing space:
+
+    I'd just like to interject for a moment. What you’re referring to as Linux, is in fact, GNU/Linux, 
+
+Don't use actual excerpts from pre-existing works as your password.
 
 Conclusion/TLDR
 ---------------
