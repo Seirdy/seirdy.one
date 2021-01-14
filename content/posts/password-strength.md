@@ -260,7 +260,7 @@ MOAC a one-in-ten-trillion chance of cracking a password with 256 entropy bits a
 Sample unbreakable passwords
 ----------------------------
 
-According to KeePassXC's password generator, each of the following passwords has en
+According to KeePassXC's password generator, each of the following passwords has an
 entropy between 330 and 340 bits.
 
 Using the extended-ASCII character set:
