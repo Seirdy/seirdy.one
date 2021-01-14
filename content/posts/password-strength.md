@@ -107,6 +107,11 @@ Obviously, I'm not taking into account future mathematical advances; my crystal 
 broke after I asked it if humanity would ever develop the technology to make anime
 real.
 
+Finally, there's always a non-zero probability of a brute-force attack guessing a
+password with a given entropy. Literal "immunity" is impossible. Lowering this
+probability to statistical insignificance renders our password practically immune to
+brute-force attacks.
+
 Computation
 -----------
 
@@ -255,7 +260,7 @@ Here are some sample outputs:
 If your threat model is a bit smaller, simulate putting a smaller object into the
 MOAC's furnace. For example, the Earth has a mass of 5.972×10²⁴ kg; this gives the
 MOAC a one-in-ten-trillion chance of cracking a password with 256 entropy bits and a
-100% chance of cracking a 213-bit password. 
+100% chance of cracking a 213-bit password.
 
 Sample unbreakable passwords
 ----------------------------
