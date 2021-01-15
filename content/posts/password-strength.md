@@ -15,6 +15,8 @@ This is a tale of the intersection between thermal physics, cosmology, and a tin
 amount of computer science to answer a seemingly innocuous question: "How strong does
 a password need to be for it to be physically impossible to brute-force, ever?"
 
+[TLDR]({{<ref "#conclusiontldr" >}}) at the bottom.
+
 *Note: this post contains equations. Since none of the equations were long or
 complex, I decided to just write them out in code blocks instead of using images or
 MathML the way Wikipedia does.*
