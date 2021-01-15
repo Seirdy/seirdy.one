@@ -336,6 +336,12 @@ My notes from Thermal Physics weren't enough to write this; various Wikipedia
 articles were also quite helpful, most of which were linked in the body of the
 article.
 
+A [blog post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by
+Bruce Schneier also contained a useful excerpt from his book *Applied
+Cryptography*[^5] involving setting the minimum energy per computation to `kT`. I
+chose a more conservative estimate for `T` than Schneier did, and a *much* greater
+source of energy.
+
 [^1]: James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE
   International Symposium on Information Theory. IEEE. p. 204.
 
@@ -352,3 +358,5 @@ article.
   approach is one of multiple valid perspectives. The absolute size of the observable
   universe is much greater due to the way expansion works, but stuffing that into the
   MOAC's furnace would require moving mass faster than the speed of light.
+
+[^5]: Schneier, Bruce. Applied Cryptography, Second Edition, John Wiley & Sons, 1996.
