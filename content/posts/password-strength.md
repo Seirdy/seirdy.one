@@ -131,7 +131,7 @@ relation](https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation).
 It's also probably a better idea to make this value an estimate for flipping a single
 bit, and to estimate the average number of bit-flips it takes to make a single
 password guess. If that bothers you, pick a number `b` you believe to be a good
-estimate for a bit-flip-count and calculate `P(n-b, e)` instead of `P(n, e)`.
+estimate for a bit-flip-count and calculate `P(n+b, e)` instead of `P(n, e)`.
 
 What's the temperature of the system? Three pieces of information help us find out:
 
@@ -308,8 +308,8 @@ conservation of energy:
 At that point, a formidable threat would rather use [other
 means](https://xkcd.com/538/) to unlock your secrets.
 
-Further reading: an alternative approach
-----------------------------------------
+Further reading: alternative approaches
+---------------------------------------
 
 Check out Scott Aaronson's article, [Cosmology and
 Complexity](https://www.scottaaronson.com/democritus/lec20.html). He uses an
@@ -320,10 +320,19 @@ This model takes into account more than just the mass of the observable universe
 While we previously found that the MOAC can brute-force a password with 306.76
 entropy bits, this model allows the same for up to 405.3 bits.
 
-Another well-known approach to calculating physical limits of computation is
+### Approaches that account for computation speed
+
+This article's approach deliberately disregards computation speed, focusing only on
+energy required to finish a set of computations. Other approaches account for
+physical limits on computation speed.
+
+One well-known approach to calculating physical limits of computation is
 [Bremermann's limit](https://en.wikipedia.org/wiki/Bremermann%27s_limit), which
 calculates the speed of computation given a finite amount of mass. This article's
 approach disregards time, focusing only on mass-energy equivalence.
+
+[A publication](https://arxiv.org/abs/quant-ph/9908043)[^5] by Seth Lloyd from MIT
+further explores limits to computation speed on an ideal 1-kilogram computer.
 
 Acknowledgements
 ----------------
@@ -336,11 +345,13 @@ My notes from Thermal Physics weren't enough to write this; various Wikipedia
 articles were also quite helpful, most of which were linked in the body of the
 article.
 
-A [blog post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by
-Bruce Schneier also contained a useful excerpt from his book *Applied
-Cryptography*[^5] involving setting the minimum energy per computation to `kT`. I
-chose a more conservative estimate for `T` than Schneier did, and a *much* greater
-source of energy.
+While I was struggling to come up with a good expression for the minimum energy used
+per password guess, I stumbled upon a [blog
+post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by Bruce
+Schneier. It contained a useful excerpt from his book *Applied Cryptography*[^6]
+involving setting the minimum energy per computation to `kT`. I chose a more
+conservative estimate for `T` than Schneier did, and a *much* greater source of
+energy.
 
 [^1]: James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE
   International Symposium on Information Theory. IEEE. p. 204.
@@ -359,4 +370,7 @@ source of energy.
   universe is much greater due to the way expansion works, but stuffing that into the
   MOAC's furnace would require moving mass faster than the speed of light.
 
-[^5]: Schneier, Bruce. Applied Cryptography, Second Edition, John Wiley & Sons, 1996.
+[^5]: Lloyd, S., "Ultimate Physical Limits to Computation," Nature 406.6799,
+  1047-1054, 2000.
+
+[^6]: Schneier, Bruce. Applied Cryptography, Second Edition, John Wiley & Sons, 1996.
