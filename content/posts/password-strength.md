@@ -106,11 +106,14 @@ password strength. We'll also simplify: for instance, the MOAC will not waste an
 heat, and the only way it can guess a password is through brute-forcing. Focusing on
 too many details would defeat the point of this thought experiment.
 
-I won't address any particular encryption algorithms; this is just a pure and simple
-brute-force attack given precomputed password entropy. Furthermore, quantum computers
-can use [Grover's algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) for
-an exponential speed-up; to account for quantum computers using Grover's algorithm,
-calculate `P(n/2, e)` instead.
+Quantum computers can use [Grover's
+algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) for an exponential
+speed-up; to account for quantum computers using Grover's algorithm, calculate
+`P(n/2, e)` instead.
+
+Others are better equipped to explain encryption/hashing/key-derivation algorithms,
+so I won't; this is just a pure and simple brute-force attack given precomputed
+password entropy, assuming that the cryptography is bulletproof.
 
 Obviously, I'm not taking into account future mathematical advances; my crystal ball
 broke after I asked it if humanity would ever develop the technology to make anime
