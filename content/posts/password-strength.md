@@ -69,8 +69,12 @@ with *n*+1 entropy bits.
 
 For scale, [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 encryption is currently the industry standard for strong symmetric encryption. As the
-name suggests, its keys have 256 bits of entropy; if your password has more than 256
-entropy bits, then the AES-256 encryption algorithm is the bottleneck.
+name suggests, its keys have 256 bits of entropy. Be aware that AES keys are
+typically derived from [key derivation
+functions](https://en.wikipedia.org/wiki/Key_derivation_function) that
+[salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) and hash passwords, so a
+brute-force attack to discover the password from an AES key would be against such a
+function. Perhaps I could address that in a future article.
 
 To calculate the entropy of a password, I recommend using a tool such as
 [zxcvbn](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/wheeler)
@@ -339,7 +343,8 @@ Acknowledgements
 
 Thanks to [Barna Zsombor](http://bzsombor.web.elte.hu/) and [Ryan
 Coyler](https://rcolyer.net/) for helping me over IRC with my shaky physics and
-pointing out the caveats of my approach.
+pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected my
+reference to AES-256 encryption by bringing up salts.
 
 My notes from Thermal Physics weren't enough to write this; various Wikipedia
 articles were also quite helpful, most of which were linked in the body of the
