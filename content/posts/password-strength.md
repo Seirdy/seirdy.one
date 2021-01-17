@@ -59,6 +59,8 @@ MOAC?
 
 ### Quantifying password strength.
 
+*A previous version of this section wasn't clear and accurate. I've since removed the offending bits and added a clarification about salting/hashing to the [Caveats and estimates]({{<ref "#caveats-and-estimates" >}}) section.*
+
 A good measure of password strength is **entropy bits.** The entropy bits in a
 password is a base-2 logarithm of the number of guesses required to brute-force
 it.[^1]
@@ -68,13 +70,9 @@ password with *n* entropy bits, and has a one-in-two chance of cracking a passwo
 with *n*+1 entropy bits.
 
 For scale, [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-encryption is currently the industry standard for strong symmetric encryption. As the
-name suggests, its keys have 256 bits of entropy. Be aware that AES keys are
-typically derived from [key derivation
-functions](https://en.wikipedia.org/wiki/Key_derivation_function) that
-[salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) and hash passwords, so a
-brute-force attack to discover the password from an AES key would be against such a
-function. Perhaps I could address that in a future article.
+encryption is currently the industry standard for strong symmetric encryption, and
+uses key lengths of 256-bits. An exhaustive key search over a 256-bit key space would
+be up against its 2<sup>256</sup> possible permutations.
 
 To calculate the entropy of a password, I recommend using a tool such as
 [zxcvbn](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/wheeler)
@@ -96,6 +94,11 @@ Caveats and estimates
 ---------------------
 
 I don't have a strong physics background.
+
+A brute-force attack will just guess a single password until the right one is found.
+Brute-force attacks won't "decrypt" stored passwords, because they're not supposed to
+be stored encrypted; they're typically
+[salted](https://en.wikipedia.org/wiki/Salt_(cryptography)) and hashed.
 
 When estimating, we'll prefer higher estimates that increase the odds of it guessing
 a password; after all, the point of this exercise is to establish an *upper* limit on
@@ -343,8 +346,8 @@ Acknowledgements
 
 Thanks to [Barna Zsombor](http://bzsombor.web.elte.hu/) and [Ryan
 Coyler](https://rcolyer.net/) for helping me over IRC with my shaky physics and
-pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected my
-reference to AES-256 encryption by bringing up salts.
+pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected an
+incorrect reference to AES-256 encryption by bringing up salts.
 
 My notes from Thermal Physics weren't enough to write this; various Wikipedia
 articles were also quite helpful, most of which were linked in the body of the
