@@ -37,6 +37,9 @@ interesting perspective regarding sane upper-limits on password strength.
 Asking the right question
 -------------------------
 
+Let's limit the scope of this article to passwords used in encryption/decryption. An
+attacker is trying to guess a password to decrypt something.
+
 Instead of predicting what tomorrow's computers may be able to do, let's examine the
 *biggest possible brute-force attack* that the laws of physics can allow.
 
@@ -60,7 +63,9 @@ MOAC?
 
 ### Quantifying password strength.
 
-*A previous version of this section wasn't clear and accurate. I've since removed the offending bits and added a clarification about salting/hashing to the [Caveats and estimates]({{<ref "#caveats-and-estimates" >}}) section.*
+*A previous version of this section wasn't clear and accurate. I've since removed the
+offending bits and added a clarification about salting/hashing to the [Caveats and
+estimates]({{<ref "#caveats-and-estimates" >}}) section.*
 
 A good measure of password strength is **entropy bits.** The entropy bits in a
 password is a base-2 logarithm of the number of guesses required to brute-force
