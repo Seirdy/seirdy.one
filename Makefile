@@ -1,4 +1,4 @@
-CSS_DIR = themes/etch-custom/assets/css
+CSS_DIR = assets/css
 DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
