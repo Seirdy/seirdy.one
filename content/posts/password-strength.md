@@ -78,7 +78,10 @@ with *n*+1 entropy bits.
 For scale, [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 encryption is currently the industry standard for strong symmetric encryption, and
 uses key lengths of 256-bits. An exhaustive key search over a 256-bit key space would
-be up against its 2<sup>256</sup> possible permutations.
+be up against its 2<sup>256</sup> possible permutations. When using AES-256
+encryption with a key derived from a password with more than 256 entropy bits, the
+entropy of the AES key is the bottleneck; an attacker would fare better by doing an
+exhaustive key search for the AES key than a brute-force attack for the password.
 
 To calculate the entropy of a password, I recommend using a tool such as
 [zxcvbn](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/wheeler)
