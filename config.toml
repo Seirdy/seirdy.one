@@ -1,7 +1,6 @@
 baseURL = "https://seirdy.one/"
 languageCode = "en-us"
 title = "Seirdy's Home"
-theme = "etch-custom"
 
 enableInlineShortcodes = true
 enableGitInfo = true
