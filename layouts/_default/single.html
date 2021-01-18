@@ -14,17 +14,37 @@
 		<section class="e-content" itemprop="articlebody">
 			{{ partial "processed-content" . -}}
 		</section>
-	</article>
-	<br>
-	<hr>
-	<footer class="comment">
-		{{ with .OutputFormats.Get "gemtext" -}}
-		<p>
-		View this article on <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>
-		</p>
-		{{ end -}}
-		<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how.</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
-	</footer>
+</article>
+<br>
+<hr>
+<footer class="comment">
+	{{ with .OutputFormats.Get "gemtext" -}}
+	<p>
+	View this article on <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">my Gemini capsule</a>
+	</p>
+	{{ end -}}
+	<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how.</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
+	<p>This site also supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them.</p>
+	<section class="webmentions">
+		<h2>Webmentions</h2>
+		<ul class="unstyled-list">
+			{{ $target := .RelPermalink -}}
+			{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
+			{{ $webmentions := getJSON $url -}}
+			{{ range $webmentions -}}
+			{{ $webmention := . -}}
+			<li>
+				<time datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
+				<br>
+				<a href="{{ $webmention.source }}">{{ $webmention.title }}</a>
+			</li>
+			{{ else -}}
+			<li><p>This post doesn't have any approved Webmentions yet.</p></li>
+			{{ end -}}
+		</ul>
+	</section>
+</footer>
 </div>
 <hr>
+<br>
 {{ end }}
