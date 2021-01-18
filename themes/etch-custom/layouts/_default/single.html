@@ -12,7 +12,7 @@
 			{{ end }}
 		</header>
 		<section class="e-content" itemprop="articlebody">
-			{{ .Content -}}
+			{{ partial "processed-content" . -}}
 		</section>
 	</article>
 	<br>

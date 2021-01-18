@@ -1,0 +1,7 @@
+{{ if .Params.footnote_heading -}}
+{{ $references    := `(<section class="footnotes" role="doc-endnotes")` -}}
+	{{ $heading :=  .Params.footnote_heading -}}
+	{{ $referencesWithHeading := printf `${1} aria-labeledby="note-hd">
+<h2 id="note-hd">%s</h2` ($heading) -}}
+	{{ .Content | replaceRE $references $referencesWithHeading | safeHTML -}}
+{{ end -}}

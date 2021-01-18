@@ -9,6 +9,7 @@ tags:
 - security
 - fun
 title: Becoming physically immune to brute-force attacks
+footnote_heading: References and endnotes
 ---
 
 This is a tale of the intersection between thermal physics, cosmology, and a tiny
