@@ -1,5 +1,7 @@
+<hr>
 <footer id="site-footer">
-	{{ .Site.Params.copyright }}
-	·
-	<a href="{{ .Site.Params.src }}">Website source code</a>
+	<p>Copyright © {{now.Year}} Rohan Kumar · <a href="{{ .Site.Params.src }}">Website source code</a></p>
+	{{if .GitInfo -}}
+	<p>Site last rebuilt on {{now.Format "2006-01-02 15:04:05 -0700" }}</p>
+	{{- end}}
 </footer>

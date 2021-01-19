@@ -15,7 +15,6 @@
 			{{ partial "processed-content" . -}}
 		</section>
 </article>
-<br>
 <hr>
 <footer class="comment">
 	{{ with .OutputFormats.Get "gemtext" -}}
@@ -36,7 +35,7 @@
 			<li>
 				<time datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
 				<br>
-				<a href="{{ $webmention.source }}">{{ $webmention.title }}</a>
+				<a href="{{ $webmention.source }}" rel="nofollow">{{ $webmention.title }}</a>
 			</li>
 			{{ else -}}
 			<li><p>This post doesn't have any approved Webmentions yet.</p></li>
@@ -45,6 +44,4 @@
 	</section>
 </footer>
 </div>
-<hr>
-<br>
 {{ end }}
