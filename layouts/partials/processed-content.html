@@ -2,7 +2,7 @@
 {{ $references    := `(<section class="footnotes" role="doc-endnotes">
 <hr>)` -}}
 	{{ $heading :=  .Params.footnote_heading -}}
-	{{ $referencesWithHeading := printf `<section class="footnotes" role="doc-endnotes" aria-labeledby="note-hd">
+	{{ $referencesWithHeading := printf `<section class="footnotes" role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($heading) -}}
 	{{ .Content | replaceRE $references $referencesWithHeading | safeHTML -}}
 {{ else -}}
