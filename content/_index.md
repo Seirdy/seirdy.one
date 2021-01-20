@@ -11,8 +11,7 @@ Seirdy
 ======
 
 It me! This is the personal website for
-<a class="p-author u-url" href="https://seirdy.one" rel="home">{{% indieweb-icon %}}<span class="p-given-name">Rohan</span>
-<span class="p-family-name">Kumar</span></a>, a.k.a. <span class="p-nickname">Seirdy</span> (online handle).
+<span class="h-card p-author"><a href="https://seirdy.one" rel="author home" class="u-url url">{{% indieweb-icon %}}<span class="p-name"><span class="p-given-name">Rohan</span> <span class="p-family-name">Kumar</span></span></a>, a.k.a. <span class="p-nickname">Seirdy</span> (online handle).</span>
 
 Other versions of this website
 ------------------------------
