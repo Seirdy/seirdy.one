@@ -28,11 +28,6 @@
 	{{ if not (eq $dark "off") -}}
 	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
 	{{ end -}}
-	<!-- Tell the browser we support dark mode. If the user doesn't
-	     specify a preference, prefer light mode; users who override
-	     browser default stylesheets will be able to use their preferred
-			 palette that way. -->
-	<meta name="color-scheme" content="light dark">
 	{{ $css := $resources | resources.Concat "css/style.css" | minify | resources.Fingerprint "sha384" -}}
 	{{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}}
 	<!-- only load syntax-highlighting CSS if this page needs it -->
