@@ -3,7 +3,6 @@ date: 2020-10-30
 layout: post
 title: Seirdy (Rohan Kumar)
 ---
-
 Rohan Kumar : He/Him : Age 20
 
 Online Handle: Seirdy
@@ -11,15 +10,7 @@ Online Handle: Seirdy
 Other versions of this website
 ------------------------------
 
-This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \*nix
-computers that let people sign up for shell accounts. A typical shell account
-features clients for IRC and email, common terminal/commandline utilities, and (most
-importantly) web hosting. Read about the tildeverse's
-[origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf),
-read [the FAQ](http://tilde.club/wiki/faq.html), pick [a
-tilde](http://tilde.club/%7Epfhawkins/othertildes.html) and [get
-started](http://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve
-as a "rough draft".
+This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \*nix computers that let people sign up for shell accounts. A typical shell account features clients for IRC and email, common terminal/commandline utilities, and (most importantly) web hosting. Read about the tildeverse's [origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf), read [the FAQ](http://tilde.club/wiki/faq.html), pick [a tilde](http://tilde.club/%7Epfhawkins/othertildes.html) and [get started](http://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve as a "rough draft".
 
 Content on this site also appears on [my Gemini space](gemini://seirdy.one)
 
@@ -36,27 +27,15 @@ Location (Seirdy, online)
 My handle is "Seirdy" on all the platforms I use.
 
 - The [Tildeverse](https://envs.net/~seirdy).
-- Software forges: [Sourcehut](https://sr.ht/~seirdy),
-  [GitHub](https://github.com/Seirdy), [GitLab](https://gitlab.com/Seirdy), and
-  [Codeberg](https://codeberg.org/Seirdy).
-- Social (federated): I'm [@Seirdy
-  @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
-- Social (non-federated): I'm Seirdy on [Hacker
-  News](https://news.ycombinator.com/user?id=Seirdy),
-  [Lobsters](https://lobste.rs/u/Seirdy),
-  [Reddit](https://www.reddit.com/user/Seirdy/),
-  [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
-- Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public
-  PGP key: [36B154A782AEA0AC](./publickey.asc). My key is also available via WKD.
-- Chat: my nick is Seirdy on most IRC networks. If you don't like IRC, I'm also
-  [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix. I generally
-  prefer IRC to Matrix, and don't check Matrix very often.
+- Software forges: [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), [GitLab](https://gitlab.com/Seirdy), and [Codeberg](https://codeberg.org/Seirdy).
+- Social (federated): I'm [@Seirdy @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
+- Social (non-federated): I'm Seirdy on [Hacker News](https://news.ycombinator.com/user?id=Seirdy), [Lobsters](https://lobste.rs/u/Seirdy), [Reddit](https://www.reddit.com/user/Seirdy/), [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
+- Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public PGP key: [36B154A782AEA0AC](./publickey.asc). My key is also available via WKD.
+- Chat: my nick is Seirdy on most IRC networks. If you don't like IRC, I'm also [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix. I generally prefer IRC to Matrix, and don't check Matrix very often.
 
-If you find a "Seirdy" somewhere else and don't know whether or not it's me, please
-contact me and ask instead of assuming that it must be me.
+If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
-My preferred forge for personal projects is Sourcehut, but my repositories have
-remotes for GitHub and GitLab too.
+My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub and GitLab too.
 
 Interests, preferences, et cetera
 ---------------------------------
@@ -65,19 +44,13 @@ I ought to come up with more interests than these, but that sounds hard.
 
 ### Free software
 
-The word "free" in "free software" refers to freedom, not price. I recommend looking
-it up if you aren't familiar.
+The word "free" in "free software" refers to freedom, not price. I recommend looking it up if you aren't familiar.
 
-I lean towards simplicity; I usually prefer CLIs that follow the UNIX philosophy over
-TUIs, and TUIs over GUIs. If a piece of software is complex enough to require a
-funding round, I would rather avoid it. There are exceptions, of course: I use a
-Linux distro with Systemd (Fedora), after all.
+I lean towards simplicity; I usually prefer CLIs that follow the UNIX philosophy over TUIs, and TUIs over GUIs. If a piece of software is complex enough to require a funding round, I would rather avoid it. There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all.
 
-Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest,
-Neovim, tmux, newsboat, WeeChat, and zsh.
+Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, and zsh.
 
-More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles);
-check its README.
+More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles); check its README.
 
 ### Anime
 
@@ -94,13 +67,7 @@ I watch anime. Some of my favorites, in no particular order:
 
 ### Music
 
-I've put together a periodically-updated [list of tracks](/music.txt) that I've rated
-8/10 or higher in my mpd stickers database, auto-generated by some of my
-[mpd-scripts](https://git.sr.ht/~seirdy/mpd-scripts/tree/master/smart-playlists). I'm
-a fan of glitch, trailer music, and symphonic and power metal; I've also recently
-been getting into Japanese rock thanks to a few anime openings. Some of my favorite
-artists are The Glitch Mob, Pretty Lights, Beats Antique, Hammerfall, Badflower,
-Celldweller/Scandroid, Helloween, Two Steps from Hell, Nightwish, Mili, and MYTH &
-ROID.
+I've put together a periodically-updated [list of tracks](/music.txt) that I've rated 8/10 or higher in my mpd stickers database, auto-generated by some of my [mpd-scripts](https://git.sr.ht/~seirdy/mpd-scripts/tree/master/smart-playlists). I'm a fan of glitch, trailer music, and symphonic and power metal; I've also recently been getting into Japanese rock thanks to a few anime openings. Some of my favorite artists are The Glitch Mob, Pretty Lights, Beats Antique, Hammerfall, Badflower, Celldweller/Scandroid, Helloween, Two Steps from Hell, Nightwish, Mili, and MYTH & ROID.
 
 <!--vi:ft=markdown.pandoc.gfm-->
+

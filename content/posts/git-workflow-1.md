@@ -2,42 +2,29 @@
 date: "2020-11-18T18:31:15-08:00"
 description: Efficient redundancy via repository mirroring with nothing but git.
 outputs:
-- html
-- gemtext
+  - html
+  - gemtext
 tags:
-- git
-- foss
+  - git
+  - foss
 title: "Resilient Git, Part 1: Hydra Hosting"
 ---
+This is Part 1 of a series called [Resilient Git](../../../2020/11/17/git-workflow-0.html).
 
-This is Part 1 of a series called [Resilient
-Git](../../../2020/11/17/git-workflow-0.html).
+The most important part of a project is its code. Resilient projects should have their code in multiple places of equal weight so that work continues normally if a single remote goes down.
 
-The most important part of a project is its code. Resilient projects should have
-their code in multiple places of equal weight so that work continues normally if a
-single remote goes down.
+Many projects already do something similar: they have one "primary" remote and several mirrors. I'm suggesting something different. Treating a remote as a "mirror" implies that the remote is a second-class citizen. Mirrors are often out of date and aren't usually the preferred place to fetch code. Instead of setting up a primary remote and mirrors, I propose **hydra hosting:** setting up multiple primary remotes of equal status and pushing to/fetching from them in parallel.
 
-Many projects already do something similar: they have one "primary" remote and
-several mirrors. I'm suggesting something different. Treating a remote as a "mirror"
-implies that the remote is a second-class citizen. Mirrors are often out of date and
-aren't usually the preferred place to fetch code. Instead of setting up a primary
-remote and mirrors, I propose **hydra hosting:** setting up multiple primary remotes
-of equal status and pushing to/fetching from them in parallel.
+Having multiple primary remotes of equal status might sound like a bad idea. If there are multiple remotes, how do people know which one to use? Where do they file bug reports, get code, or send patches? Do maintainers need to check multiple places?
 
-Having multiple primary remotes of equal status might sound like a bad idea. If there
-are multiple remotes, how do people know which one to use? Where do they file bug
-reports, get code, or send patches? Do maintainers need to check multiple places?
-
-No. Of course not. A good distributed system should automatically keep its nodes in
-sync to avoid the hassle of checking multiple places for updates.
+No. Of course not. A good distributed system should automatically keep its nodes in sync to avoid the hassle of checking multiple places for updates.
 
 Adding remotes
 --------------
 
-This process should pretty straightforward. You can run `git remote add` (see
-`git-remote(1)`) or edit your repo's `.git/config` directly:
+This process should pretty straightforward. You can run `git remote add` (see `git-remote(1)`) or edit your repo's `.git/config` directly:
 
-``` gitconfig
+```gitconfig
 [remote "origin"]
 	url = git@git.sr.ht:~seirdy/seirdy.one
 	fetch = +refs/heads/*:refs/remotes/origin/*
@@ -49,41 +36,32 @@ This process should pretty straightforward. You can run `git remote add` (see
 	fetch = +refs/heads/*:refs/remotes/gh_upstream/*
 ```
 
-If that's too much work--a perfectly understandable complaint--automating the process
-is trivial. Here's [an example from my
-dotfiles](https://git.sr.ht/~seirdy/dotfiles/tree/master/Executables/shell-scripts/bin/git-remote-setup).
+If that's too much work--a perfectly understandable complaint--automating the process is trivial. Here's [an example from my dotfiles](https://git.sr.ht/~seirdy/dotfiles/tree/master/Executables/shell-scripts/bin/git-remote-setup).
 
 Seamless pushing and pulling
 ----------------------------
 
-Having multiple remotes is fine, but pushing to and fetching from all of them can be
-slow. Two simple git aliases fix that:
+Having multiple remotes is fine, but pushing to and fetching from all of them can be slow. Two simple git aliases fix that:
 
-``` gitconfig
+```gitconfig
 [alias]
 	pushall = !git remote | grep -E 'origin|upstream' | xargs -L1 -P 0 git push --all --follow-tags
 	fetchall = !git remote | grep -E 'origin|upstream' | xargs -L1 -P 0 git fetch
 ```
 
-Now, `git pushall` and `git fetchall` will push to and fetch from all remotes in
-parallel, respectively. Only one remote needs to be online for project members to
-keep working.
+Now, `git pushall` and `git fetchall` will push to and fetch from all remotes in parallel, respectively. Only one remote needs to be online for project members to keep working.
 
 Advertising remotes
 -------------------
 
-I'd recommend advertising at least three remotes in your README: your personal
-favorite and two determined by popularity. Tell users to run `git remote set-url` to
-switch remote locations if one goes down.
+I'd recommend advertising at least three remotes in your README: your personal favorite and two determined by popularity. Tell users to run `git remote set-url` to switch remote locations if one goes down.
 
 Before you ask...
 -----------------
 
 Q: Why not use a cloud service to automate mirroring?
 
-A: Such a setup depends upon the cloud service and a primary repo for that service to
-watch, defeating the purpose (resiliency). Hydra hosting automates this without
-introducing new tools, dependencies, or closed platforms to the mix.
+A: Such a setup depends upon the cloud service and a primary repo for that service to watch, defeating the purpose (resiliency). Hydra hosting automates this without introducing new tools, dependencies, or closed platforms to the mix.
 
 Q: What about issues, patches, etc.?
 
@@ -91,9 +69,5 @@ A: Stay tuned for Parts 2 and 3, coming soon to a weblog/gemlog near you™.
 
 Q: Why did you call this "hydra hosting"?
 
-A: It's a reference to the Hydra of Lerna from Greek Mythology, famous for keeping
-its brain in a nested RAID array to protect against disk failures and beheading. It
-could also be a reference to a fictional organization of the same name from Marvel
-Comics named after the Greek monster for [similar
-reasons](https://www.youtube.com/watch?v=assccoyvntI&t=37) ([direct
-webm](https://seirdy.one/misc/hail_hydra.webm)).
+A: It's a reference to the Hydra of Lerna from Greek Mythology, famous for keeping its brain in a nested RAID array to protect against disk failures and beheading. It could also be a reference to a fictional organization of the same name from Marvel Comics named after the Greek monster for [similar reasons](https://www.youtube.com/watch?v=assccoyvntI&t=37) ([direct webm](https://seirdy.one/misc/hail_hydra.webm)).
+
