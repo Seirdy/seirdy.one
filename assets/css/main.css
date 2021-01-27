@@ -16,9 +16,8 @@
  */
 
 body {
-	font-family: sans-serif;
-	font-size: 16px;
-	line-height: 1.5rem;
+	font: 16px sans-serif;
+	line-height: 1.75rem;
 	margin: auto;
 	max-width: 50rem;
 	padding: 0 5%;
@@ -64,12 +63,6 @@ nav li {
 	}
 }
 
-h1,
-h2,
-h3 {
-	line-height: 1.75rem;
-}
-
 img:not(.u-photo) {
 	display: block;
 	height: auto;
@@ -79,9 +72,7 @@ img:not(.u-photo) {
 
 .u-photo {
 	display: inline-block;
-	height: 1em;
 	vertical-align: -0.1em;
-	width: 1em;
 }
 
 pre,
