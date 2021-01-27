@@ -1,0 +1,47 @@
+{{ $light_png := resources.GetMatch (printf "/p/%s.png" (.Get "name")) | resources.Fingerprint "md5" -}}
+{{ $light_webp := resources.GetMatch (printf "/p/%s.webp" (.Get "name")) | resources.Fingerprint "md5" -}}
+{{ $light_avif := resources.GetMatch (printf "/p/%s.avif" (.Get "name")) | resources.Fingerprint "md5" -}}
+{{ $dark_png := resources.GetMatch (printf "/p/%s_dark.png" (.Get "name")) | resources.Fingerprint "md5" -}}
+{{ $dark_webp := resources.GetMatch (printf "/p/%s_dark.webp" (.Get "name")) | resources.Fingerprint "md5" -}}
+{{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) | resources.Fingerprint "md5" -}}
+<picture>
+	{{ with $dark_avif -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/avif"
+		media="(prefers-color-scheme: dark)">
+	{{ end -}}
+	{{ with $dark_webp -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/webp"
+		media="(prefers-color-scheme: dark)">
+	{{ end -}}
+	{{ with $dark_png -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/png"
+		media="(prefers-color-scheme: dark)">
+	{{ end -}}
+	{{ with $light_avif -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/avif"
+		media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+	{{ end -}}
+	{{ with $light_webp -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/webp"
+		media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+	{{ end -}}
+	{{ with $light_png -}}
+	<source
+		srcset="{{ .RelPermalink }}"
+		type="image/png"
+		media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+	{{ end -}}
+	<img
+		width="{{ $light_png.Width }}"
+		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'>
+</picture>
