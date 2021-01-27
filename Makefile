@@ -47,7 +47,7 @@ lint-local: lint-css hint
 # dev server
 .PHONY: serve
 serve:
-	hugo serve --disableLiveReload
+	hugo serve --disableLiveReload $(HUGO_FLAGS)
 
 .PHONY: hint-devserver
 hint-devserver: .hintrc-devserver
