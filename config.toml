@@ -36,11 +36,18 @@ name = "Rohan Kumar"
 	weight = 20
 
   [[menu.main]]
+	identifier = "resume"
+	name = "resume"
+	title = "resume"
+	url = "/resume.html"
+	weight = 30
+
+  [[menu.main]]
 	identifier = "rss"
 	name = "rss"
 	title = "rss"
 	url = "/posts/index.xml"
-	weight = 30
+	weight = 40
 
 [permalinks]
 posts = "/:year/:month/:day/:filename"
