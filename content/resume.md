@@ -14,7 +14,7 @@ Detail oriented, committed and self-motivated, open-source enthusiast proficient
 Education: Lewis and Clark College
 ----------------------------------
 
-Bachelor of Arts, Major in Math and Computer Science, Minor in Physics.
+Bachelor of Arts, Major in Math and Computer Science
 
 Fall 2018 - Spring 2022 (expected)
 
