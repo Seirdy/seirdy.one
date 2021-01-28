@@ -1,6 +1,6 @@
 /* CSS that adds the bare minimum for a simple layout */
 
-/* This site's CSS only does 9 major things:
+/* This site's CSS only does 10 major things:
  * 1. sans-serif instead of serif for low-res screens.
  * 2. Consistent font size; <pre> and <code> shouldn't be smaller.
  * 3. max text width for readability
@@ -11,16 +11,23 @@
  * 7. Horizontally center inline images; left-aligned stick out.
  * 8. Padding fixes so the above changes don't make elements misalign.
  * 9. dark.css changes a few colors if the browser wants dark mode.
+ * 10. Line height for consistent vertical rhythm
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
 
 body {
 	font: 16px sans-serif;
-	line-height: 1.75rem;
+	line-height: 1.5rem;
 	margin: auto;
 	max-width: 50rem;
 	padding: 0 5%;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.75rem;
 }
 
 nav ul {
