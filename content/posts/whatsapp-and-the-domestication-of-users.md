@@ -120,7 +120,7 @@ To prevent a network effect from turning into vendor lock-in, software that natu
 
 #### Case study: Signal
 
-Ever since a certain car salesman tweeted "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FOSS and use solid crypto; however, I'm not a fan.
+Ever since a certain car salesman [tweeted](https://web.archive.org/web/20210108024414/https://nitter.net/elonmusk/status/1347165127036977153) "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FOSS and use some of the best <abbr title="end-to-end encryption">E2EE</abbr> out there; however, I'm not a fan.
 
 Although Signal's clients and servers are FOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in [a blog post](https://signal.org/blog/the-ecosystem-is-moving/).[^3] This means that there's no supported way to develop an alternative server that's supported by Signal clients, or an alternative client that supports Signal servers. Step one to user domestication is nearly complete.
 
