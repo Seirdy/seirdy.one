@@ -4,7 +4,7 @@ With the meta-explanation out of the way, let us begin.
 
 ## WhatsApp's rise
 
-For those unfamiliar, WhatsApp is a tool that makes it convenient and easy to help Facebook further its core mission: the optimization and auctioning of human behavior (colloquially known as "targeted advertising"). It originally persuaded people to consent to this by allowing them to send text to each other over the Internet, something that was already possible (see the following link), and combining an easy-to-learn UI with successful marketing. It then expanded to include features such as voice and video calls.
+For those unfamiliar, WhatsApp is a tool that makes it convenient and easy to help Facebook further its core mission: the optimization and auctioning of human behavior (colloquially known as "targeted advertising"). It originally persuaded people to consent to this by allowing them to send text to each other over the Internet, something that was already possible (see the following link), and combining an easy-to-learn UI with successful marketing. It then expanded to include features such as free voice and video calls. Free calls helped it grow to become the de-facto communication platform in many other countries.
 
 => https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_protocols Comparison of instant messaging protocols (Wikipedia)
 
