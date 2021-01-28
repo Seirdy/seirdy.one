@@ -96,10 +96,7 @@ About custom colors
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Here's an example:
 
 <a href="https://seirdy.one/misc/website_colors_large.png">
-<picture>
-<source srcset="https://seirdy.one/misc/website_colors.webp" type="image/webp">
-<img src="https://seirdy.one/misc/website_colors.png" width="478" height="363" alt="This page with a grey background behind black/grey headers and white-on-white code snippets">
-</picture>
+{{< picture name="website_colors" alt="This page with a grey background behind black/grey headers and white-on-white code snippets" >}}
 </a>
 
 If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
@@ -120,12 +117,15 @@ You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fal
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1. Lossy compression with `pngquant`
-2. Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
-3. Also create a lossless WebP from the lossy PNG, using `cwebp`
-4. Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+1.  Re-size and crop the image. Convert to grayscale if colors aren't important.
+2.  Lossy compression with `pngquant`
+3.  Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
+4.  Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
+5.  Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+6.  Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
+7.  If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
-It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
 In general, avoid using inline images just for decoration. Only use an image if it significantly adds to your content, and provide alt-text as a fallback.
 

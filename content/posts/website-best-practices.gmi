@@ -118,12 +118,15 @@ You also might want to use the HTML "<picture>" element, using JPEG/PNG as a fal
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1.  Lossy compression with pngquant
-2.  Losslessly optimize the result with Oxipng and its Zopfli backend (slow)
-3.  Also create a lossless WebP from the lossy PNG, using cwebp
-4.  Include the resulting WebP in the page, with a fallback to the PNG using a "<picture>" element.
+1.  Re-size and crop the image. Convert to grayscale if colors aren't important.
+2.  Lossy compression with pngquant
+3.  Losslessly optimize the result with Oxipng and its Zopfli backend (slow)
+4.  Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using cwebp. Pick the smaller of the two.
+5.  Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+6.  Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
+7.  If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
-It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
 In general, avoid using inline images just for decoration. Only use an image if it significantly adds to your content, and provide alt-text as a fallback.
 
