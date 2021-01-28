@@ -1,0 +1,178 @@
+I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
+
+With the meta-explanation out of the way, let us begin.
+
+## WhatsApp's rise
+
+For those unfamiliar, WhatsApp is a tool that makes it convenient and easy to help Facebook further its core mission: the optimization and auctioning of human behavior (colloquially known as "targeted advertising"). It originally persuaded people to consent to this by allowing them to send text to each other over the Internet, something that was already possible (see the following link), and combining an easy-to-learn UI with successful marketing. It then expanded to include features such as voice and video calls.
+
+=> https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_protocols Comparison of instant messaging protocols (Wikipedia)
+
+Having its own proprietary chat system incompatible with other clients allowed WhatsApp to build a network effect: WhatsApp's existing users were held captive by the fact that leaving WhatsApp meant losing the ability to communicate with WhatsApp users. People switching from WhatsApp must convince all their friends to switch, too; this includes less technically inclined friends who had a hard time learning WhatsApp in the first place.
+
+=> https://en.wikipedia.org/wiki/Network_effect Network effect (Wikipedia)
+
+In a WhatsApp world, people who want to keep in touch must abide by the following rules:
+
+* Everyone can only use the proprietary WhatsApp client to send messages; developing alternative clients isn't supported.
+* Everyone's mobile device must run an operating system supported by said client. Since WhatsApp developers will only write a client for popular operating systems, the Android and iOS duopoly strengthens.
+* Users fully depend on WhatsApp developers. If WhatsApp developers decide to include user-hostile features in the app, users must go with it. They can't switch to a different server or client without switching away from WhatsApp and losing the ability to communicate with all their WhatsApp contacts.
+
+## User domestication
+
+WhatsApp rose by trapping previously-free beings in their corral and changing their habits to create dependence on masters. Over time, this made it difficult or impossible to return to their previous lifestyle. That process should sound familiar: it's eerily similar to the domestication of animals. I call this type of vendor lock-in *user domestication:* the removal of user autonomy to trap users into serving vendors.
+
+I chose this metaphor because animal domestication is a gradual process that isn't always deliberate, and typically revolves around one group becoming dependent upon another. For example: there's evidence that domestication of dogs began with socialization, resulting in not-entirely-artificial selection promoting genes that resulted in more friendliness with and dependence upon humans.¹
+
+Whether it happens on purpose or by accident, user domestication almost always follows the same three steps:
+
+1. A high level of dependence given from users to a software vendor
+2. An inability for users to control their software, through at least one of the following methods: 1. Preventing modification of the software 2. Preventing migration onto a different platform
+3. The exploitation of now-captive users who are unable to resist
+
+The completion of the first two steps left WhatsApp users vulnerable to user domestication. With investors to answer to, they had every incentive to implement user-hostile features without consequence.
+
+So, of course, they did.
+
+## WhatsApp's descent
+
+Domestication has a purpose: it enables a master species to exploit the domesticated species for its own gain.
+
+Recently, WhatsApp updated its privacy policy to allow sharing data with its parent, Facebook. Users who agreed to use WhatsApp under its previous privacy policy had two options: agree to the new policy or be unable to use WhatsApp again. The WhatsApp privacy policy update is a classic bait-and-switch: WhatsApp lured users in with a sleek interface and the impression of privacy, domesticated them to remove their autonomy to migrate, and then backtracked on its previous commitment to privacy with minimal consequence. Each step in this process enabled the next; had user domestication not taken place, it would be easy for most users to switch away with minimal friction.
+
+Those of us who were sounding the alarm a few years ago experienced a brief moment of sadistic bliss when our titles were upgraded from "annoying and paranoid conspiracy theorists" to just "annoying".
+
+### An attempt at damage control
+
+The bait-and-switch operation incurred backlash significant enough for a noticeable minority of users to actually migrate; this number turned out to be slightly more than the rounding error WhatsApp was likely expecting. In response, WhatsApp delayed the change and published the following ad:
+
+=> gemini://seirdy.one/misc/whatsapp_ad.png
+
+The ad lists various data that WhatsApp doesn't collect or share. Allaying data collection concerns by listing data *not* collected is misleading. WhatsApp doesn't collect hair samples or retinal scans either; not collecting that information doesn't mean it respects privacy because it doesn't change the information WhatsApp *does* collect.
+
+The ad denies "keep[ing] logs of who everyone is messaging or calling". Collecting data is not the same as "keeping logs"; it's possible for metadata to be fed into an algorithm before being discarded. A model can thus learn that two users call each other frequently without keeping logs of the metadata for each call. The fact that they specifically chose to phrase this line around logging implies that WhatsApp either already collects this class of data or has deliberately left the door open to collecting it in the future.
+
+A stroll through WhatsApp's actual privacy policy at the time reveals that they do collect considerable metadata used for marketing through Facebook:
+
+=> https://web.archive.org/web/20210124061525/https://www.whatsapp.com/legal/updates/privacy-policy/?lang=en WhatsApp's privacy policy (archived)
+
+## Software freedom
+
+With user domestication, providing useful software to users is a means to the end of exploiting them. The alternative is simple: make serving users the end in and of itself.
+
+To prevent being controlled by software, users must be in control. Software that allows users to be in control is called free software. The word "free" in this context refers to freedom rather than price. Software freedom is similar to the concept of open-source, but the latter is focused on practical benefits rather than ethics. A less ambiguous term that neutrally refers to both free and open-source software is FOSS.
+
+=> https://en.wikipedia.org/wiki/Free_software Free software (Wikipedia)
+
+Others have explained the concepts underpinning free software better than I can, so I won't go into detail.
+
+=> https://www.gnu.org/philosophy/free-sw.en.html What is free software? (GNU Project)
+
+It comes down to four essential freedoms:
+
+* The freedom to run the program as you wish, for any purpose
+* The freedom to study how the program works, and change it so it does your computing as you wish
+* The freedom to redistribute copies so you can help others
+* The freedom to distribute copies of your modified versions to others
+
+### Making money with FOSS
+
+The most common objection I hear is that FOSS makes it harder to make money.
+
+The key to making money with FOSS is to make software a commoditized complement of other, more profitable services.
+
+=> https://www.gwern.net/Complement Laws of Tech: Commoditize Your Complement
+
+Examples of such services include selling support, customization, consulting, training, managed hosting, hardware, and certifications. Plenty of companies use this approach instead of building proprietary software: Red Hat, Collabora, System76, Purism, Canonical, SUSE, Hashicorp, Databricks, and Gradle are some names that come to mind.
+
+Managed hosting isn't a basket worth all your eggs if giants like AWS can do the same at a lower price. Being the developer can give an edge in areas like customization, support, and training; it doesn't offer as obvious an advantage when it comes to hosting.
+
+## FOSS isn't always enough
+
+Free software is a necessary but sometimes insufficient requirement to build domestication immunity. Two more measures include *simplicity* and *open platforms.*
+
+### Simplicity
+
+When software grows too complex, it needs to be maintained by a large team. Users who disagree with a vendor can't easily fork and maintain a multi-million-line codebase, especially if the software in question potentially contains security vulnerabilities. Dependence on the vendor can grow quite problematic when complexity causes development costs to skyrocket; the vendor might resort to implementing user-hostile features to stay afloat.
+
+Complex software that can't be developed by a different group of people creates dependence, step one of user domestication. That alone is enough to open the door to problematic developments.
+
+#### Case study: Mozilla and the Web
+
+Mozilla was a ray of hope in the browser wars, a space dominated by adtech, surveillance, and vendor lock-in. Unfortunately, developing a browser engine is a monumental task difficult enough for Opera and Microsoft to give up and re-skin Chromium. Browsers are more than the document readers they were meant to be: they've evolved into application runtimes with their own stacks for GPU acceleration, Bluetooth, permissions, device enumeration, bundled media codecs, DRM², extension APIs, developer tools...the list goes on. It takes billions of dollars a year to respond to vulnerabilities in such a massive attack surface and keep up with a standard that grows at such a worrying rate. Those billions have to come from somewhere.
+
+Mozilla ended up having to make major compromises to stay afloat. It cut search deals with blatantly user-hostile companies, and bundled the browser with ads and bloatware such as a partially ad-funded proprietary bookmarking SaaS called Pocket.
+
+=> https://blog.mozilla.org/advancingcontent/2014/02/11/publisher-transformation-with-users-at-the-center/ Mozilla's blog post announcing sponsored content in Firefox
+=> https://dustri.org/b/firefox-youre-supposed-to-be-in-my-pocket-not-the-other-way-around.html A user's blog post responding to the Pocket integration
+
+Since acquiring Pocket (to diversify its sources of income), Mozilla hasn't yet delivered on its earlier statements saying it would open-source its code: while the clients have been open-sourced, the server code remains proprietary. Open-sourcing this and re-writing portions if necessary would understandably be a large task due in part to Pocket's complexity.
+
+=> https://techcrunch.com/2017/02/27/mozilla-pockets-pocket-in-first-acquisition/ TechCrunch article in which a Mozilla spokesperson stated an intention to open-source Pocket
+
+Substantial forks such as Pale Moon are unable to keep up with the growing complexity of modern Web standards such as Web Components. In fact, Pale Moon recently had to migrate its code off of GitHub since GitHub began using Web Components.
+
+=> https://forum.palemoon.org/viewtopic.php?f=1&t=25473 Migrating repositories  off of GitHub (Pale Moon forum)
+
+It's nigh-impossible to start a new browser from scratch and catch up with behemoths that have been running on ridiculous annual sums for decades. Users can pick between a browser engine developed by Mozilla, an adtech company (Blink by Google), or a walled-garden vendor (WebKit by Apple). WebKit doesn't seem too bad, but users will be helpless if Apple ever decides to backtrack.
+
+To summarize: the complexity of the Web platform forced Mozilla, the only browser engine developer claiming to serve "people, not profit", to implement user-hostile features in its browser. The Web's complexity has left users with limited choice between three big players with conflicts of interest whose positions grow more entrenched with time.
+
+For the record, *I don't think Mozilla is a bad organization;* rather, I think it's surprising that they're able to do so much without further compromise in a system that practically requires it. Their core product is still FOSS, and very lightly patched third-party builds remove antifeatures.
+
+### Open platforms
+
+To prevent a network effect from turning into vendor lock-in, software that naturally encourages a network effect needs to be part of an open platform. In the case of communication/messaging software, it should be possible to make alternative clients and servers that are compatible with each other to prevent completion of user domestication's first two steps.
+
+#### Case study: Signal
+
+Ever since a certain car salesman tweeted "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FOSS and use solid crypto; however, I'm not a fan.
+
+Although Signal's clients and servers are FOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in a blog post.³
+
+=> https://signal.org/blog/the-ecosystem-is-moving/ Reflections: The ecosystem is moving (Signal blog)
+
+This means that there's no supported way to develop an alternative server that's supported by Signal clients, or an alternative client that supports Signal servers. Step one to user domestication is nearly complete.
+
+In addition to there being a single client and server implementation, there's only one Signal server provider: Signal Messenger LLC. Users' dependence on this central server provider blew up in their faces when Signal's recent growth caused downtime for over a day, rendering every Signal user unable to send messages until the single vendor fixed the issue.
+
+People still tried to develop alternative clients: a Signal fork called LibreSignal attempted to make Signal work on privacy-friendly Android builds without proprietary Google Play Services. That fork shut down after Moxie made it clear that he wasn't okay with a third-party app using Signal's servers. Moxie's decision is understandable, but the situation could have been avoided if Signal didn't have to rely on a single server provider.
+
+=> https://github.com/LibreSignal/LibreSignal/issues/37#issuecomment-217211165 Moxie: "I'm not OK with LibreSignal using our servers"
+
+If Signal decides to update its apps to include a user-hostile feature, users will be just as helpless as they now are with WhatsApp. Although I don't think this is likely, Signal's closed platform leaves users vulnerable to user domestication.
+
+Despite not liking Signal, I still recommended it to my non-technical friends because it was the only messenger private enough for me and simple enough for them. If it had literally any onboarding (account creation, manually adding contacts, etc.), one of my friends would have stuck with Discord or WhatsApp. I'd say something cheeky like "you know who you are" if there was any chance he'd make it this far in the article.
+
+## Food for thought
+
+Both of the prior two case studies--Mozilla and Signal--are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
+
+Not all software needs to rake in billions. Federation allows services and networks like the Fediverse and XMPP to scale up to large numbers of users without forcing a single behemoth to sell its soul to foot the bill.
+
+=> https://drewdevault.com/2020/09/20/The-potential-of-federation.html The unrealized potential of federation (Drew Devault's blog)
+
+Although anti-domestication business models are less profitable, they still allow the creation of the same technologies that were enabled by user domestication. All that's missing is an advertising budget; the biggest advertising some of these projects get is long unpaid blog posts.
+
+Maybe we don't need to chase growth and try to "make it big". Maybe we can stop after achieving sustainability and financial security, and make it possible for people to do more with less.
+
+## Closing notes
+
+Before it turned into a manifesto of sorts, this post was intended to be an expanded version of a comment I left under a Fediverse post by Binyamin Green:
+
+=> https://fosstodon.org/@binyamin/105608407071699797 Binyamin on Fosstodon
+
+I initially decided to expand it to its current form for personal reasons. Nowadays, people demand a thorough explanation every time I refuse to use something that "everybody" uses (WhatsApp, Microsoft Office, Windows, macOS, Google Docs...). They'll usually ignore the explanation, but they expect one anyway. By the next time I meet them, they'll have forgotten our prior conversation and will re-enact the same dialogue again. Justifying all my life choices by sending logically correct statements into the void--knowing that everything I say will be ignored--is an emotionally draining process that has taken a toll on my mental health for the past few years; sending my friends this article and changing the subject should save me a few gray hairs in the years to come.
+
+This article builds on prior writing by the Free Software Foundation, GNU Project, and Richard Stallman. Thanks to Barna Zsombor for giving good feedback over IRC.
+
+¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
+
+² See Defective by Design (linked below). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
+
+=> https://www.defectivebydesign.org/ Defective by Design
+
+³ Moxie's blog post generated many responses. Two good follow-ups are on Linux Weekly News and a blog post by Matrix.org:
+
+=> https://lwn.net/Articles/687294/ The perils of federated protocols (Linux Weekly News)
+=> https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom On Privacy versus Freedom (Matrix.org blog)
