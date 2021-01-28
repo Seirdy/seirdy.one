@@ -30,7 +30,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - No lazy loading (more on this below)
 - No custom colors OR explicitly set the both foreground and background colors. More on this below.
 - A maximum line length for readability
-- Server configured to support compression (gzip, optionally zstd as well). It's a free speed boost.
+- Server configured to support compression (gzip, optionally Brotli and zstd as well). It's a free speed boost.
 - Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/). A bare minimum would be 50, but it shouldn't be too hard to hit 100.
 - Optimized images. More on image optimization below.
