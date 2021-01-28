@@ -27,7 +27,9 @@ I chose this metaphor because animal domestication is a gradual process that isn
 Whether it happens on purpose or by accident, user domestication almost always follows the same three steps:
 
 1. A high level of dependence given from users to a software vendor
-2. An inability for users to control their software, through at least one of the following methods: 1. Preventing modification of the software 2. Preventing migration onto a different platform
+2. An inability for users to control their software, through at least one of the following methods:
+    a) Preventing modification of the software
+    b) Preventing migration onto a different platform
 3. The exploitation of now-captive users who are unable to resist
 
 The completion of the first two steps left WhatsApp users vulnerable to user domestication. With investors to answer to, they had every incentive to implement user-hostile features without consequence.
