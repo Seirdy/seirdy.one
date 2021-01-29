@@ -22,9 +22,10 @@
 		color: #f33;
 	}
 
-	pre,
+	blockquote,
 	code,
-	hr {
+	hr,
+	pre {
 		border-color: #333;
 	}
 }

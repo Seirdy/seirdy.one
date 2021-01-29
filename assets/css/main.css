@@ -1,17 +1,18 @@
 /* CSS that adds the bare minimum for a simple layout */
 
-/* This site's CSS only does 10 major things:
+/* This site's CSS does 11 major things:
  * 1. sans-serif instead of serif for low-res screens.
- * 2. Consistent font size; <pre> and <code> shouldn't be smaller.
+ * 2. Consistent font size; <pre> and <code> shouldn't be smaller than regular text.
  * 3. max text width for readability
  * 4. single-row nav links widescreen, multiline nav on narrow screens
- * 5. Bigger "home" link that doubles as a site header
+ * 5. Bold "home" link that doubles as a site header
  * 6. Soft border around code in case it looks too similar to regular
  *    text, and to show it continue across more than one line
  * 7. Horizontally center inline images; left-aligned stick out.
  * 8. Padding fixes so the above changes don't make elements misalign.
  * 9. dark.css changes a few colors if the browser wants dark mode.
  * 10. Line height for consistent vertical rhythm
+ * 11. Make blockquotes stand out a little; some browsers don't make them obvious
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
@@ -24,6 +25,12 @@ body {
 	padding: 0 5%;
 }
 
+blockquote {
+	border-left: 6px solid #bbb;
+	margin-left: 0;
+	padding-left: 1.5rem;
+}
+
 h1,
 h2,
 h3 {
@@ -33,22 +40,14 @@ h3 {
 nav ul {
 	/* nav links should look more prominent than normal links */
 	font-size: 1.25rem;
-
-	/* Use whitespace instead of bullets to separate nav from article.
-	   Also avoid top-padding at the top of the page. */
-	list-style-type: none;
-	padding: 0;
 }
 
 /* nav links should be easy to tap with fat fingers */
 nav li {
-	padding: 0 0.5rem 0.75rem 0;
+	padding-right: 0.5rem;
 }
 
-/* The posts list doesn't need bullets; simple spacing and repetition
- * of the "date + title" format is enough to convey separation
- * between elements.
- */
+/* Lists without bullets; navlinks, posts lists, webmentions */
 .unstyled-list {
 	padding: 0;
 }
