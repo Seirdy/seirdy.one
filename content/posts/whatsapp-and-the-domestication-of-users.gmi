@@ -150,6 +150,12 @@ Despite not liking Signal, I still recommended it to my non-technical friends be
 
 Both of the prior two case studies--Mozilla and Signal--are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
 
+Fediverse user @paulsnar@mastodon.technology pointed out a potential conflict between simplicity and open platforms:
+
+> I feel like there's some tension between simplicity and open platforms; to take Signal, in a way it's simple precisely because it's a de-facto-closed platform, or at least so Moxie has argued. In turn, Matrix is superficially simple, but the protocol is actually (imho) fairly complex exactly because it's an open platform.
+
+I don't have a simple answer to this dilemma. It's true that Matrix is extremely complex (compared to alternatives such as IRC or even XMPP), and it's true that it's harder to build an open platform. That being said, it's certainly possible to keep complexity on a leash while developing an open platform: Gemini, IRC, and email are examples. While email standards aren't nearly simple as Gemini and IRC, they evolve slowly; this keeps implementations from having to play catch-up the way Web browsers and Matrix clients/servers do.
+
 Not all software needs to rake in billions. Federation allows services and networks like the Fediverse and XMPP to scale up to large numbers of users without forcing a single behemoth to sell its soul to foot the bill.
 
 => https://drewdevault.com/2020/09/20/The-potential-of-federation.html The unrealized potential of federation (Drew Devault's blog)

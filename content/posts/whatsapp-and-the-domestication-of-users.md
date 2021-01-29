@@ -137,6 +137,12 @@ Food for thought
 
 Both of the prior two case studies--Mozilla and Signal--are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
 
+[@paulsnar@mastodon.technology](https://mastodon.technology/@paulsnar) pointed out a potential conflict between simplicity and open platforms:
+
+> I feel like there's some tension between simplicity and open platforms; to take Signal, in a way it's simple precisely because it's a de-facto-closed platform, or at least so Moxie has argued. In turn, Matrix is superficially simple, but the protocol is actually (imho) fairly complex exactly because it's an open platform.
+
+I don't have a simple answer to this dilemma. It's true that [Matrix](https://matrix.org/) is extremely complex (compared to alternatives such as IRC or even [XMPP](https://xmpp.org/)), and it's true that it's harder to build an open platform. That being said, it's certainly possible to keep complexity on a leash while developing an open platform: Gemini, IRC, and email are examples. While email standards aren't nearly simple as Gemini and IRC, they evolve slowly; this keeps implementations from having to play catch-up the way Web browsers and Matrix clients/servers do.
+
 Not all software needs to rake in billions. Federation [allows](https://drewdevault.com/2020/09/20/The-potential-of-federation.html) services and networks like the Fediverse and XMPP to scale up to large numbers of users without forcing a single behemoth to sell its soul to foot the bill. Although anti-domestication business models are less profitable, they still allow the creation of the same technologies that were enabled by user domestication. All that's missing is an advertising budget; the biggest advertising some of these projects get is long unpaid blog posts.
 
 Maybe we don't need to chase growth and try to "make it big". Maybe we can stop after achieving sustainability and financial security, and make it possible for people to do more with less.
