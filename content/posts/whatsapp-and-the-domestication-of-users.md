@@ -156,6 +156,12 @@ I initially decided to expand it to its current form for personal reasons. Nowad
 
 This article builds on prior writing by the Free Software Foundation, GNU Project, and Richard Stallman. Thanks to [Barna Zsombor](http://bzsombor.web.elte.hu/) for giving good feedback over IRC.
 
+Translations
+------------
+
+Translations are always welcome.
+
+<span class="vcard"><a class="url fn n" href="https://evgenykuznetsov.org/"><span class="given-name">Евгений</span> <span class="family-name">Кузнецов</span></a></span> translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
 
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
