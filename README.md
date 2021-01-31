@@ -39,5 +39,4 @@ To test in CI, after deploying to the staging environment:
 
 CI also runs [static-webmention](https://github.com/nekr0z/static-webmentions) to gather a list of WebMentions for me to send and review manually.
 
-See the `Makefile` for details. The CI saves lighthouse reports as a build artifact.
-
+See the `Makefile` for details.
