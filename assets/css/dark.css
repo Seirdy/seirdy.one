@@ -5,7 +5,7 @@
 	}
 
 	/* IndieWeb u-photo should be distinct from the background */
-	.dark-invert {
+	.u-photo {
 		-webkit-filter: invert(100%);
 		filter: invert(100%);
 	}
