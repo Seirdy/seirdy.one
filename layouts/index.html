@@ -1,4 +1,17 @@
 {{ define "main" }}
 {{ .Content }}
 {{- partial "posts.html" . -}}
+<!--svg image with a fallback to a PNG when SVG is unsupported-->
+{{- $merveilles_svg := resources.GetMatch (printf "/p/merveilles_ring.svg") -}}
+{{ $merveilles_png := resources.GetMatch (printf "/p/merveilles_ring.png") -}}
+<a href="https://webring.xxiivv.com/#random" target="_blank" rel="noopener"><picture class="dark-invert">
+	{{ $merveilles_svg_src := $merveilles_svg | resources.Fingerprint "md5" -}}
+	<source
+		srcset="{{ $merveilles_svg_src.RelPermalink }}"
+		type="image/svg+xml">
+	{{ $merveilles_png_src := $merveilles_png | resources.Fingerprint "md5" -}}
+	<img
+		width="{{ $merveilles_png.Width }}"
+		src="{{ $merveilles_png_src.RelPermalink }}" alt="Merevilles logo">
+</picture></a>
 {{ end }}
