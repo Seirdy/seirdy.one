@@ -37,6 +37,19 @@ If you find a "Seirdy" somewhere else and don't know whether or not it's me, ple
 
 My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub and GitLab too.
 
+Selected projects
+-----------------
+
+### [Clogstats](https://sr.ht/~seirdy/clogstats/)
+
+Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection on IRC channel activity. Written in Python; uses Pandas.
+
+### [MOAC](https://sr.ht/~seirdy/MOAC/)
+
+Analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](https://seirdy.one/2021/01/12/password-strength.html).
+
+Written in Go; uses zxcvbn-go. Currently in very early development.
+
 Interests, preferences, et cetera
 ---------------------------------
 
