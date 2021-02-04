@@ -165,6 +165,8 @@ Translations are always welcome.
 
 <span class="vcard"><a class="url fn n" href="https://evgenykuznetsov.org/"><span class="given-name">Евгений</span> <span class="family-name">Кузнецов</span></a></span> translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
 
+The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to French: <a lang="fr" hreflang="fr" rel="alternate" href="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/">WhatsApp et la domestication des utilisateurs</a>.
+
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
 [^2]: See [Defective by Design](https://www.defectivebydesign.org/). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.

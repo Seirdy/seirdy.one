@@ -184,6 +184,9 @@ Evgeny Kuznetsov wrote a Russian translation of this article:
 
 => https://evgenykuznetsov.org/posts/2021/domestication/ WhatsApp и одомашнивание пользователей
 
+The Framalang translators at Framasoft translated this article to French:
+
+=> https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/ WhatsApp et la domestication des utilisateurs.
 
 ¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
