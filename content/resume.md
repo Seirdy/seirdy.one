@@ -32,18 +32,18 @@ Work Experience
 
 Developed an anomaly detection and seasonal forecasting tool in Golang using Triple Exponential Smoothing (Holt-Winters) techniques to smooth time series data. It was capable of scaling to over one million historical points from InfluxDB, real-time, in an extensively configurable manner. Use cases include detecting a server's anomalous spikes in resource usage and analyzing trends in environmental data.
 
-Projects
---------
+Selected Projects
+-----------------
 
 Git repositories on [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), and [GitLab](https://gitlab.com/Seirdy)
 
-### Clogstats
+### [Clogstats](https://sr.ht/~seirdy/clogstats)
 
-[sr.ht/~seirdy/clogstats](https://sr.ht/~seirdy/clogstats)
+Gathers IRC channel activity statistics from WeeChat logs and performs time-series analysis and forecasting on them. It can quantify, rank, and chart chatting activity over time and display forecasts. It can also detect anomalous increases in activity. Written in Python with NumPy and Pandas.
 
-Gathers IRC channel activity statistics from WeeChat logs and performs time-series analysis and forecasting on them. It can quantify, rank, and chart chatting activity over time and display forecasts. It can also detect anomalous increases in activity.
+### [MOAC](https://sr.ht/~seirdy/MOAC/)
 
-Tools used: Python, NumPy, Pandas.
+Analyze password strength given physical limits to computing. Computes theoretical limits to a brute-force attack limited by given physical quantities (mass, energy, power, temperature, etc.) and generates passwords to withstand them. This provides a future-proof understanding of password strength. Written in Go.
 
 Technical Skills
 ----------------
@@ -77,3 +77,4 @@ Familiar with math and data science libraries such as the SciPy stack, Jupyter n
 ### Other Tools
 
 Git, Continuous Integration/Delivery (Jenkins, GitLab CI, Travis CI), Nginx.
+
