@@ -6,8 +6,8 @@
 
 	/* IndieWeb u-photo should be distinct from the background */
 	.u-photo {
-		-webkit-filter: invert(100%);
-		filter: invert(100%);
+		-webkit-filter: invert(1);
+		filter: invert(1);
 	}
 
 	a {
