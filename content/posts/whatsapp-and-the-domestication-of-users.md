@@ -8,6 +8,7 @@ outputs:
   - gemtext
 tags:
   - free software
+  - user domestication
   - privacy
   - rant
 title: WhatsApp and the domestication of users
@@ -163,9 +164,12 @@ Translations
 
 Translations are always welcome.
 
-<span class="vcard"><a class="url fn n" href="https://evgenykuznetsov.org/"><span class="given-name">Евгений</span> <span class="family-name">Кузнецов</span></a></span> translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
+<span class="h-card vcard"><a class="p-name url fn n" href="https://evgenykuznetsov.org/"><span class="p-given-name given-name">Евгений</span> <span class="p-family-name family-name">Кузнецов</span></a></span> translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
 
 The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to French: <a lang="fr" hreflang="fr" rel="alternate" href="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/">WhatsApp et la domestication des utilisateurs</a>.
+
+<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://convorb.im">Licaon_Kter</a></span> translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
+
 
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
