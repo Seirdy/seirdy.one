@@ -192,6 +192,10 @@ Licaon_Kter translated this article to Romanian:
 
 => https://convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html WhatsApp și domesticirea utilizatorilor
 
+David Jimenez translated this article to Spanish:
+
+=> gemini://dvejmz.srht.site/whatsapp-y-la-domesticacion-de-usuarios.gmi WhatsApp y la domesticación de usuarios
+
 ¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
 ² See Defective by Design (linked below). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.

@@ -170,6 +170,7 @@ The Framalang translators at [Framasoft](https://framasoft.org/) translated this
 
 <span class="h-card vcard"><a class="p-nickname url nickname n" href="https://convorb.im">Licaon_Kter</a></span> translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
 
+<span class="h-card vcard"><a class="p-name url fn n" href="https://sgfault.com"><span class="p-given-name given-name">David</span> <span class="p-family-name family-name">Jimenez</span></a></span> translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
 
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
