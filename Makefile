@@ -80,7 +80,7 @@ mentions.json: hugo
 	static-webmentions find
 	mv mentions.json mentions.json.unfiltered
 	# filter the webmentions a bit; jq offers more flexibility than config.toml
-	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|en.wikipedia.org|matrix.to|([a-z]*.)?reddit.com|github.com)") | not) ]' <mentions.json.unfiltered >mentions.json
+	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|archive.is|en.wikipedia.org|matrix.to|([a-z]*.)?reddit.com|github.com)") | not) ]' <mentions.json.unfiltered >mentions.json
 	rm mentions.json.unfiltered
 
 .PHONY: deploy-html
