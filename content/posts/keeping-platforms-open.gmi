@@ -135,6 +135,8 @@ Perhaps the biggest benefit to abandoning the "move fast and break things" minds
 
 ## Acknowledgements
 
+Denver Gingerich helped me brainstorm early in the writing process and provided useful information for the section on XMPP.
+
 Thanks to Barna Zsombor and carbolymer for giving good feedback over IRC.
 
 ## Notes

@@ -119,9 +119,13 @@ The standards- and consensus-driven approach to platform development and the ine
 
 Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
 
-## Acknowledgements
+Acknowledgements
+----------------
+
+<span class="h-card vcard"><a class="p-name url fn n" href="https://ossguy.com/"><span class="p-given-name given-name">Denver</span> <span class="p-family-name family-name">Gingerich</span></a></span> helped me brainstorm early in the writing process and provided useful information for the section on XMPP.
 
 Thanks to <span class="h-card vcard"><a class="p-name url fn n" href="http://bzsombor.web.elte.hu/"><span class="p-given-name given-name">Barna</span> <span class="p-family-name family-name">Zsombor</span></a></span> and carbolymer for giving good feedback over IRC.
+
 
 [^1]: [This Hacker News comment](https://news.ycombinator.com/item?id=25961895) in particular planted quite a few seeds for this article.
 
