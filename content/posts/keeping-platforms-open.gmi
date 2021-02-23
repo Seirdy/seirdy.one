@@ -74,6 +74,7 @@ The vast majority of email accounts come from a small handful of dominant provid
 => https://archive.is/rJnSs#deliverability How's Migadu's deliverability?
 
 > We’ve already seen our share of bad spam filters and misconfigured servers. In some cases recipient servers intentionally rejected correct emails just because we are a low volume sender. Ironically that is how an ideal sender should be. To improve the “receiveability” they of course offer their own hosted email service at a hefty price.
+
 Another example: email providers such as Hey.com, Protonmail, and Tutanota offer many features that are incompatible with IMAP/POP3. Protonmail and Tutanota use their own non-standard E2EE implementation (rather than focusing on improving the UX for vanilla PGP), and Hey.com offers server-side mail organization. Users of these services must use official Web, desktop, and mobile clients.⁵ These three providers control both the client and the server, giving them the means for vendor lock-in. Of course, there's a limit to the amount of lock-in these providers can achieve: as I explained in the XMPP case study, these providers still need to support SMTP to stay compatible with the wider email landscape.
 
 ## Solutions
