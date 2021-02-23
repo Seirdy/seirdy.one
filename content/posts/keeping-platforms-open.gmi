@@ -1,0 +1,158 @@
+My previous article, Whatsapp and the domestication of users, got more attention than I was expecting. Some responses gave me a lot to think about,¹ especially regarding *actions* we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FOSS, simplicity, and open platforms.
+
+=>  ../../../2021/01/27/whatsapp-and-the-domestication-of-users.html WhatsApp and the domestication of users
+
+Hard problems, by definition, lack easy solutions. Simply choosing (or creating) a platform that avoids user domestication isn't enough if that platform can change. The price of freedom is eternal vigilance; in addition to settling on the right platform, we must ensure that it honors its users in both the present *and the future*. Keeping a platform FOSS and simple is more straightforward² than keeping a platform "open".
+
+How do we keep an open platform from becoming a closed platform in the future?
+
+## How open platforms become closed
+
+There are three main ways to close an open platform:
+
+1. A forced migration onto a different platform.
+2. A single implementation growing dominant, blurring the line between specification and implementation.
+3. Dominant implementations adopting too many unstandardized features and behaviors.
+
+These three approaches overlap: they frequently feature platform monoculture and a single vendor controlling both clients and servers.
+
+### Forced migration
+
+When one vendor controls all parts of a service (e.g., both a client and server), it has the means to create what I call a *boxed platform:* a subset of a larger open platform that can evolve at its own pace, without concern for compatibility or interoperability.
+
+Controlling both the server and client allows a vendor to update the client and server without worrying about breaking compatibility with other clients/servers in the larger network. It could update the client to point users to a server that uses a completely different, closed protocol. This is what happened to many XMPP users in the early 2000s.
+
+### Case study: the boxing of XMPP
+
+XMPP (formerly known as Jabber) is an open and federated instant-messaging protocol; anybody can set up their own XMPP server and talk to users on different XMPP servers, preventing one organization from owning the platform.
+
+=> https://en.wikipedia.org/wiki/XMPP XMPP (Wikipedia)
+
+Between 2005 and 2014, many proprietary chat platforms supported it: Google Talk, AOL Instant Messenger (AIM), Facebook Chat (later known as Facebook Messenger), and Skype were some well-known examples. Some of these platforms even enabled server-to-server federation.
+
+Unfortunately, users of these proprietary services were boxed. Not many Google Talk users talked to Skype users, and Skype users didn't typically talk to AIM users. Users stayed in their own sub-platforms. The result was that all users limited themselves to talking exclusively using their provider's software: one provider controlled the entire messaging flow, from a sender's client to the server to a recipient's client. *Users were only ever exposed to a single XMPP implementation offered by a single provider.*
+
+Each of the listed platforms eventually locked in their users by migrating away from XMPP. This wouldn't have been possible if multiple implementations and providers interacted with each other. Imagine Bob uses BobClient and BobServer to talk to Alice, and Alice uses AliceClient and AliceServer. BobClient, BobServer, AliceClient, and AliceServer would all have to remain compatible and use the same protocol; a forced migration would be unlikely to occur since it would break compatibility.
+
+Compare the situation with email: despite Gmail's dominance, other email providers remain popular. Gmail users need to be able to communicate with non-Gmail users, and vice versa. Email is far less "boxed" than the aforementioned proprietary XMPP platforms. As a result, Google hasn't been able to control the email platform as easily; Google can't simply migrate Gmail users to a non-email platform that's incompatible with the rest of the email landscape to further domesticate its users. XMPP is still alive and well, but its current popularity is a fraction of what it once was.
+
+### Implementation clout
+
+Standards are a form of agreements made to ensure compatibility between implementations. Such agreements need to be agreed upon by the implementations themselves. When one implementation grows dominant, so too does its leverage in the decision-making process over shared standards. Too much dominance can create a monoculture in which the dominant implementation is the only implementation that conforms to the spec.
+
+With enough leverage, a dominant implementation can serve as a reference implementation. Reference implementations are typically quite helpful, serving as a source of truth to test other implementations against. Problems may arise when development of the spec and production-grade reference implementation grow tightly coupled, leaving other implementations out of the decision-making process.
+
+### Case study: Matrix and Element
+
+One example of this phenomenon is Matrix.
+
+=> https://matrix.org/ Matrix.org
+
+Matrix is an open and federated instant-messaging platform similar to XMPP, with a very large spec boasting many features: server-side history, replies, rich text, reactions, room versions, end-to-end encryption (E2EE), avatars, display names, typing indicators, read receipts, device verification...the list goes on and grows every month.³ The only client that implements all the necessary features is Element. In addition to being the most popular client, Element is the reference client implementation developed by the same company that builds the dominant servers and spec. The tight coupling between Element and the Matrix spec allow it to add features at a rate too fast for other clients too keep up; pretty much every Matrix user has to open up Element at some point to perform an action that isn't supported in any other client. On the server side, Synapse is the only server that implements enough of the spec to be usable, with Dendrite coming in second. Both are made by the same company that develops Element.
+
+Since there aren't any third-party clients and servers that can replace the official ones, one vendor is close to controlling all parts of the platform. Matrix is close to being a boxed platform because the official client and server can iterate independently of the greater ecosystem.
+
+I don't think that Matrix is going to become a fully closed platform anytime soon; the blog post "On Privacy versus Freedom" seems to put it on the right side of the closed/open spectrum.
+
+=> https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom/ On Privacy versus Freedom (Matrix.org blog)
+
+Clients like gomuks and FluffyChat seem to keep up with Element well enough to serve as partial replacements. I do, however, find its current state problematic and much closer to "closed" on the closed/open spectrum than XMPP, IRC, and email.
+
+=> https://github.com/tulir/gomuks gomuks
+=> https://fluffychat.im/ FluffyChat
+
+### Unstandardized feature creep
+
+Platforms are more than their protocols. Different implementations have unique behavior to distinguish themselves. Problems arise when dominant implementations' unique unstandardized features grow past a certain point to make a closed superset of an open platform.
+
+### Case studies: email providers
+
+After reading my previous article, a few people contacted me to ask for my thoughts regarding certain email providers. There's not really much that can set a standard email provider apart if it just hosts a simple email server. To distinguish themselves, email providers often implement many features beyond email standards compliance.
+
+The vast majority of email accounts come from a small handful of dominant providers backed by large companies (Gmail, Yahoo! Mail, Yandex Mail, Mail.ru, iCloud, and others). Providers such as Gmail are notorious for implementing advanced spam filters prejudiced against non-mainstream email providers. Users who self-host email servers or use small providers frequently trigger false positives and end up having their messages incorrectly labeled as spam until they can build up a "reputation".⁴ The addition of such a complex spam-prevention filter strengthens the email oligopoly by creating a barrier to entry for newcomers. Low-volume senders are discriminated against, as Migadu found out:
+
+=> https://archive.is/rJnSs#deliverability How's Migadu's deliverability?
+
+> We’ve already seen our share of bad spam filters and misconfigured servers. In some cases recipient servers intentionally rejected correct emails just because we are a low volume sender. Ironically that is how an ideal sender should be. To improve the “receiveability” they of course offer their own hosted email service at a hefty price.
+Another example: email providers such as Hey.com, Protonmail, and Tutanota offer many features that are incompatible with IMAP/POP3. Protonmail and Tutanota use their own non-standard E2EE implementation (rather than focusing on improving the UX for vanilla PGP), and Hey.com offers server-side mail organization. Users of these services must use official Web, desktop, and mobile clients.⁵ These three providers control both the client and the server, giving them the means for vendor lock-in. Of course, there's a limit to the amount of lock-in these providers can achieve: as I explained in the XMPP case study, these providers still need to support SMTP to stay compatible with the wider email landscape.
+
+## Solutions
+
+That's enough doom-and-gloom. Let's focus on actions that users and vendors can take to keep platforms open.
+
+### What users can do
+
+As a user, consider using clients and servers made by different groups of people to make platform boxing more difficult. Pick implementations that suffer from less feature creep beyond spec compliance.
+
+=> https://en.wikipedia.org/wiki/Feature_creep Feature creep (Wikipedia)
+
+What distinguishes a client shouldn't be *what* features it has, but *how* it implements its features. Obviously, having some unique features is great; problems arise when the number of unique features crosses a certain threshold. Following both these practices encourages implementations to stick to standards compliance, reliability, and compatibility rather than "innovation". Choose boring technology over shiny new features.
+
+=> http://boringtechnology.club/ Choose Boring Technology
+
+Try venturing outside the mainstream by taking a look at a less popular provider or client. All implementations start somewhere, and a diversity of implementations prevents a rule by oligopoly.
+
+When picking a client and provider, consider the provider's incentives. Who do your vendors serve? Do they serve users or investors? Have they scaled past the point of financial sustainability?
+
+I'm not arguing that average users are doing something "wrong" by doing otherwise; expecting average users to change their behavior for the greater good is naive. This advice is targeted at the subset of users technical and willing enough to put some thought into the platforms they choose, and indirectly targeted towards the people they can influence.
+
+### What vendors can do
+
+Rather than focusing too much on scaling, focus on making server-side software easy to install and federate. Close sign-ups if your instance grows too big, and encourage people to check out different providers. Many Fediverse instances already practice this. I'm not saying that scaling is unimportant; rather, I'm saying that decreasing the barrier to entry for new providers is an effective alternate approach to scaling.⁶
+
+Consider copyleft licensing. Copyleft is one of the most powerful tools we have to protect user freedom by preventing the creation of derivative works that seek to restrict user freedom. This makes it more difficult for alternative implementations to keep changes to themselves in an effort to "box" users. The GNU AGPLv3 is particularly effective since it requires distribution of server-side code for networked services; a viral proliferation of AGPLv3-licensed software could have mitigated the boxing of XMPP users in the early 2000s.
+
+=> https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License GNU Affero General Public License
+
+Reference implementations are fine if they aren't too dominant. Make sure that other implementations can catch up. If necessary, slow down the evolution of a spec, let developers of other implementations participate in the decision-making process, and lend them a hand to improve their implementations. Moving fast and breaking things isn't the best approach.
+
+For example, Element and the Matrix.org Foundation would alleviate most of my concerns by doing the following:
+
+* Wind down new sign-ups on the matrix.org homeserver, pointing users to alternative servers run by different people instead.
+* Adopt a very conservative approach to new features until more server- and client- implementations reach parity with Element, Synapse, and Dendrite.
+* Focus on reducing the system requirements to host a server, reducing the barrier to entry for new providers. This is already underway with the development of Dendrite.
+
+## Drawbacks
+
+The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As one Hacker News reader pointed out, Signal might not have been able to implement as many features if it was an open platform:
+
+=> https://news.ycombinator.com/item?id=25986551 Hacker News comment by tao_oat
+
+Open platforms with multiple providers and implementations often suffer from poorer usability, especially with regards to onboarding. Instead of just opening the official app/website, users need to choose from multiple clients and providers. This can be a turn-off for casual users just wanting to try something out. One of the best ways to improve the onboarding experience is to offer recommendations to your non-technical friends; you know them well and can probably help them make an informed decision.
+
+## Parallels to other situations
+
+Programming languages driven by a standard rather than a reference implementation typically have greater portability, many good implementations, and are unlikely to fade away with time. Examples include C, C++, Common Lisp, JavaScript, and POSIX Shell. Compare this with a language like Python: so many packages depend on the CPython reference implementation's approach to C extensions that alternative implementations such as PyPy must perpetually remain second-class citizens.
+
+The standards- and consensus-driven approach to platform development and the inefficiency that comes with it is a trade-off visible in many places outside software development. Most forms of democracy suffer from bureaucracy and in-fighting that stifle progress. Some have argued that democracy's inefficiency is a feature, not a bug. As Nathan Myhrvold puts it:
+
+> The reason societies with democratic governments are better places to live in than their alternatives isn’t because of some goodness intrinsic to democracy, but because its hopeless inefficiency helps blunt the basic potential for evil. The constraint of maintaining constant popularity is simply too large a burden to bear. So, happily, very little gets done that is extremely bad–or extremely good.
+
+=> https://slate.com/news-and-politics/1996/10/the-virtue-of-inefficient-government.html Source
+
+Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
+
+## Acknowledgements
+
+Thanks to Barna Zsombor and carbolymer for giving good feedback over IRC.
+
+## Notes
+
+¹ This Hacker News comment in particular planted quite a few seeds for this article:
+
+=> https://news.ycombinator.com/item?id=25961895 HN comment by psychlops
+
+² Please note that the words "straightforward" and "easy" are not interchangeable, though they do have some overlap.
+
+³ See This Week in Matrix, a weekly blog of updates to the Matrix landscape. In particular, see the spec updates: new MSCs get merged every month.
+
+=> https://matrix.org/blog/category/this-week-in-matrix This Week in Matrix
+
+⁴ The official advice from Google and AWS describe this behavior in more detail:
+
+=> https://support.google.com/mail/answer/81126 Gmail help: Prevent mail to Gmail users from being blocked or sent to spam
+=> https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip.html#dedicated-ips-managed-reputation Using dedicated IP addresses with Amazon SES
+
+⁵ Protonmail offers its own "bridge" program which "translates" the Protonmail API into IMAP, allowing users to use their preferred mail clients. This still doesn't change the fact that users must use official clients; in this case, the official client is the bridge program itself.
+
+⁶ I decided against using the cheeky sub-heading "Scaling considered harmful" because I worried that readers on a certain orange-colored website might take the joke too seriously.
