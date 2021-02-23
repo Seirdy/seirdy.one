@@ -9,7 +9,7 @@ title: Seirdy's Home
 Seirdy
 ======
 
-It me! This is the personal website for <span class="h-card p-author"><a href="https://seirdy.one" rel="author home" class="u-url url">{{% indieweb-icon %}}<span class="p-name"><span class="p-given-name">Rohan</span> <span class="p-family-name">Kumar</span></span></a>, a.k.a. <span class="p-nickname">Seirdy</span> (online handle).</span>
+It me! This is the personal website for <span class="h-card p-author vcard"><a href="https://seirdy.one" rel="author home" class="u-url url">{{% indieweb-icon %}}<span class="p-name fn n"><span class="p-given-name given-name">Rohan</span> <span class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span class="p-nickname nickname">Seirdy</span> (online handle).</span>
 
 Other versions of this website
 ------------------------------
