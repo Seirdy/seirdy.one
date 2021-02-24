@@ -42,7 +42,9 @@ Unfortunately, users of these proprietary services were boxed. Not many Google T
 
 Each of the listed platforms eventually locked in their users by migrating away from XMPP. This wouldn't have been possible if multiple implementations and providers interacted with each other. Imagine Bob uses BobClient and BobServer to talk to Alice, and Alice uses AliceClient and AliceServer. BobClient, BobServer, AliceClient, and AliceServer would all have to remain compatible and use the same protocol; a forced migration would be unlikely to occur since it would break compatibility.
 
-Compare the situation with email: despite Gmail's dominance, other email providers remain popular. Gmail users need to be able to communicate with non-Gmail users, and vice versa. Email is far less "boxed" than the aforementioned proprietary XMPP platforms. As a result, Google hasn't been able to control the email platform as easily; Google can't simply migrate Gmail users to a non-email platform that's incompatible with the rest of the email landscape to further domesticate its users. XMPP is still alive and well, but its current popularity is a fraction of what it once was.
+Compare the situation with email: despite Gmail's dominance, other email providers remain popular. Gmail users need to be able to communicate with non-Gmail users, and vice versa. Email is far less "boxed" than the aforementioned proprietary XMPP platforms. As a result, Google hasn't been able to control the email platform as easily; Google can't simply migrate Gmail users to a non-email platform that's incompatible with the rest of the email landscape to further domesticate its users.
+
+XMPP is still alive and well, but its current popularity is a fraction of what it once was.
 
 ### Implementation clout
 
@@ -64,7 +66,7 @@ Platforms are more than their protocols. Different implementations have unique b
 
 #### Case studies: email providers
 
-After reading my previous article, a few people contacted me to ask for my thoughts regarding certain email providers. There's not really much that can set a standard email provider apart if it just hosts a simple email server. To distinguish themselves, email providers often implement many features beyond email standards compliance.
+After reading my previous article, a few people contacted me to ask for my thoughts regarding certain email providers. There's not much that can set a standard email provider apart if it just hosts a simple email server. To distinguish themselves, email providers often implement many features beyond email standards compliance.
 
 The vast majority of email accounts come from a small handful of dominant providers backed by large companies (Gmail, Yahoo! Mail, Yandex Mail, Mail.ru, iCloud, and others). Providers such as Gmail are notorious for implementing advanced spam filters prejudiced against non-mainstream email providers. Users who self-host email servers or use small providers frequently trigger false positives and end up having their messages incorrectly labeled as spam until they can build up a "reputation".[^4] The addition of such a complex spam-prevention filter strengthens the email oligopoly by creating a barrier to entry for newcomers. Low-volume senders are discriminated against, as Migadu [found out](https://archive.is/rJnSs#deliverability):
 
@@ -104,7 +106,7 @@ For example, Element and the Matrix.org Foundation would alleviate most of my co
 Drawbacks
 ---------
 
-The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As Moxie [argues](https://signal.org/blog/the-ecosystem-is-moving/), Signal might not have been able to implement as many features if it was an open platform.
+The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As Moxie [argues](https://signal.org/blog/the-ecosystem-is-moving/), Signal might not have been able to implement as many features if it was an open platform; spec-constrained development is, by definition, *constrained*. Users are limited by the lowest common denominator among popular participating implementations.
 
 Open platforms with multiple providers and implementations often suffer from poorer usability, especially with regards to onboarding. Instead of just opening the official app/website, users need to choose from multiple clients and providers. This can be a turn-off for casual users just wanting to try something out. One of the best ways to improve the onboarding experience is to offer recommendations to your non-technical friends; you know them well and can probably help them make an informed decision.
 
