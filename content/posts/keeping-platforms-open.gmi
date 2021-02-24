@@ -115,9 +115,9 @@ For example, Element and the Matrix.org Foundation would alleviate most of my co
 
 ## Drawbacks
 
-The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As one Hacker News reader pointed out, Signal might not have been able to implement as many features if it was an open platform:
+The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As Moxie argues, Signal might not have been able to implement as many features if it was an open platform:
 
-=> https://news.ycombinator.com/item?id=25986551 Hacker News comment by tao_oat
+=> https://signal.org/blog/the-ecosystem-is-moving/ The ecosystem is moving (Signal blog)
 
 Open platforms with multiple providers and implementations often suffer from poorer usability, especially with regards to onboarding. Instead of just opening the official app/website, users need to choose from multiple clients and providers. This can be a turn-off for casual users just wanting to try something out. One of the best ways to improve the onboarding experience is to offer recommendations to your non-technical friends; you know them well and can probably help them make an informed decision.
 
