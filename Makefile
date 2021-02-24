@@ -13,7 +13,9 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlvz --zc=zstd
-ZOPFLI_ITERATIONS=500  # max compression
+# max compression
+ZOPFLI_ITERATIONS=500
+ZOPFLI_ITERATIONS_LARGE=75
 
 .PHONY: hugo
 hugo: clean
@@ -63,9 +65,13 @@ test: lint-css hint-devserver check-links
 
 .PHONY: build
 build: hugo
-# gzip_static + max zopfli compression
+# gzip_static + max zopfli compression + brotli_static
 ifndef NO_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
+	# compress RSS feeds separately, with fewer iterations since they're bigger
+	find $(OUTPUT_DIR) -type f -name '*.xml' \
+		| grep -v gemini \
+		| xargs zopfli --i$(ZOPFLI_ITERATIONS_LARGE) --gzip
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
 		| grep -v gemini \
 		| xargs zopfli --i$(ZOPFLI_ITERATIONS) --gzip
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
