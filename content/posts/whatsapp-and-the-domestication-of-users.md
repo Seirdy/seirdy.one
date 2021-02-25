@@ -13,6 +13,7 @@ tags:
   - rant
 title: WhatsApp and the domestication of users
 ---
+
 I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
 
 WhatsApp wasn't the first instant messenger of its kind, and probably won't be the last. I simply chose to focus on WhatsApp since its recent privacy issues have made it a hot topic.
@@ -158,6 +159,8 @@ Before it turned into a manifesto of sorts, this post was intended to be an expa
 I initially decided to expand it to its current form for personal reasons. Nowadays, people demand a thorough explanation every time I refuse to use something that "everybody" uses (WhatsApp, Microsoft Office, Windows, macOS, Google Docs...). They'll usually ignore the explanation, but they expect one anyway. By the next time I meet them, they'll have forgotten our prior conversation and will re-enact the same dialogue again. Justifying all my life choices by sending logically correct statements into the void--knowing that everything I say will be ignored--is an emotionally draining process that has taken a toll on my mental health for the past few years; sending my friends this article and changing the subject should save me a few gray hairs in the years to come.
 
 This article builds on prior writing by the Free Software Foundation, GNU Project, and Richard Stallman. Thanks to [Barna Zsombor](http://bzsombor.web.elte.hu/) for giving good feedback over IRC.
+
+Since 2900 words wasn't quite enough, I wrote a follow-up: [Keeping platforms open](../../../2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting.
 
 Translations
 ------------

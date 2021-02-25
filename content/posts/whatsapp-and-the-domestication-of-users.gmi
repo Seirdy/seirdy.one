@@ -176,6 +176,11 @@ I initially decided to expand it to its current form for personal reasons. Nowad
 
 This article builds on prior writing by the Free Software Foundation, GNU Project, and Richard Stallman. Thanks to Barna Zsombor for giving good feedback over IRC.
 
+Since 2900 words wasn't quite enough, I wrote a follow-up; check it out if you found this article interesting:
+
+=> ../../../2021/02/23/keeping-platforms-open.gmi Keeping platforms open
+
+
 ## Translations
 
 Translations are always welcome
