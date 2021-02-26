@@ -1,3 +1,5 @@
+This article is the second entry of series of posts exploring situations in which FOSS alone isn’t enough to secure user freedom.
+
 My previous article, Whatsapp and the domestication of users, got more attention than I was expecting. Some responses gave me a lot to think about,¹ especially regarding *actions* we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FOSS, simplicity, and open platforms.
 
 =>  ../../../2021/01/27/whatsapp-and-the-domestication-of-users.html WhatsApp and the domestication of users
@@ -42,7 +44,7 @@ XMPP is still alive and well, but its current popularity is a fraction of what i
 
 Standards are a form of agreements made to ensure compatibility between implementations. Such agreements need to be agreed upon by the implementations themselves. When one implementation grows dominant, so too does its leverage in the decision-making process over shared standards. Too much dominance can create a monoculture in which the dominant implementation is the only implementation that conforms to the spec.
 
-With enough leverage, a dominant implementation can serve as a reference implementation. Reference implementations are typically quite helpful, serving as a source of truth to test other implementations against. Problems may arise when development of the spec and production-grade reference implementation grow tightly coupled, leaving other implementations out of the decision-making process.
+With enough leverage, a dominant implementation can serve as a reference implementation. Reference implementations are typically quite helpful, serving as a source of truth to test other implementations against. Problems may arise when development of the spec and production-grade reference implementation grow tightly coupled, leaving third-party implementation feasibility out of the decision-making process.
 
 ### Case study: Matrix and Element
 
@@ -50,9 +52,13 @@ One example of this phenomenon is Matrix.
 
 => https://matrix.org/ Matrix.org
 
-Matrix is an open and federated instant-messaging platform similar to XMPP, with a very large spec boasting many features: server-side history, replies, rich text, reactions, room versions, end-to-end encryption (E2EE), avatars, display names, typing indicators, read receipts, device verification...the list goes on and grows every month.³ The only client that implements all the necessary features is Element. In addition to being the most popular client, Element is the reference client implementation developed by the same company that builds the dominant servers and spec. The tight coupling between Element and the Matrix spec allow it to add features at a rate too fast for other clients too keep up; pretty much every Matrix user has to open up Element at some point to perform an action that isn't supported in any other client. On the server side, Synapse is the only server that implements enough of the spec to be usable, with Dendrite coming in second. Both are made by the same company that develops Element.
+Matrix is an open and federated instant-messaging platform similar to XMPP, with a very large spec boasting many features: server-side history, replies, rich text, reactions, room versions, end-to-end encryption (E2EE), avatars, display names, typing indicators, read receipts, device verification...the list goes on and grows every month.³ The only client that implements all the necessary features is Element. In addition to being the most popular client, Element practically serves as the reference client implementation: it's developed by the same company that builds the dominant servers and most of the spec. The tight coupling between Element and the Matrix spec allow it to add features at a rate too fast for other clients too keep up; pretty much every Matrix user has to open up Element at some point to perform an action that isn't supported in any other client. On the server side, Synapse is the only server that implements enough of the spec to be usable, with Dendrite coming in second. Both are made by the same company that develops Element.
 
-Since there aren't any third-party clients and servers that can replace the official ones, one vendor is close to controlling all parts of the platform. Matrix is close to being a boxed platform because the official client and server can iterate independently of the greater ecosystem.
+Since there aren't any third-party clients and servers that can replace the official ones, one vendor is close to controlling all parts of the platform. The growing complexity required of clients and servers can also further entrench these dominant implementations, as I explained in the previous article's "Simplicity" section:
+
+=> gemini://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.gmi
+
+Matrix is close to being a boxed platform because the official client and server can iterate independently of the greater ecosystem.
 
 I don't think that Matrix is going to become a fully closed platform anytime soon; the blog post "On Privacy versus Freedom" seems to put it on the right side of the closed/open spectrum.
 
