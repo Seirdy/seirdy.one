@@ -117,13 +117,13 @@ You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fal
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1.  Re-size and crop the image. Convert to grayscale if colors aren't important.
-2.  Lossy compression with `pngquant`
-3.  Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
-4.  Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
-5.  Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
-6.  Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
-7.  If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
+1. Re-size and crop the image. Convert to grayscale if colors aren't important.
+2. Lossy compression with `pngquant`
+3. Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
+4. Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
+5. Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+6. Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
+7. If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
@@ -182,8 +182,9 @@ These tests start out pretty reasonable, but gradually get more insane as you go
 4. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
 5. Test in textual browsers: lynx, links, w3m, edbrowse, EWW, etc.
 6. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-7. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
-8. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+7. Test in an online website translator tool.
+8. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
+9. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 7, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
