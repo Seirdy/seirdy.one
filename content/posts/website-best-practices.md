@@ -106,10 +106,11 @@ Image optimization
 
 Some image optimization tools I use:
 
-- [pngquant](http://pngquant.org) (lossy)
-- [Oxipng](https://github.com/shssoichiro/oxipng) (lossless)
-- [jpegoptim](https://github.com/tjko/jpegoptim) (lossless or lossy)
-- [cwebp](https://developers.google.com/speed/webp/docs/cwebp) (lossless or lossy)
+- [`pngquant`](http://pngquant.org) (lossy)
+- [`oxipng`](https://github.com/shssoichiro/oxipng) (lossless)
+- [`jpegoptim`](https://github.com/tjko/jpegoptim) (lossless or lossy)
+- [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp) (lossless or lossy)
+- `avifenc` (lossless or lossy), included in [libavif](https://github.com/AOMediaCodec/libavif)
 
 I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs in my dotfile repo.
 
