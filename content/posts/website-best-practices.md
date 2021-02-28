@@ -126,9 +126,17 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
 7. If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
+Here's a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
+
+```sh
+convert -resize 75% original.png -colorspace GRAY -format png - \
+	| pngquant -s 1 12 - \
+	| oxipng -o max -Z --fix - --out compressed.png
+```
+
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
-In general, avoid using inline images just for decoration. Only use an image if it significantly adds to your content, and provide alt-text as a fallback.
+In general, avoid using inline images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
