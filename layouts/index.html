@@ -23,7 +23,7 @@
 		type="image/svg+xml">
 	{{ $merveilles_png_src := $merveilles_png | resources.Fingerprint "md5" -}}
 	<img
-		width="{{ $merveilles_png.Width }}"
+		width="{{ $merveilles_png.Width }}" height="{{ $merveilles_png.Height }}"
 		src="{{ $merveilles_png_src.RelPermalink }}" alt="Merevilles logo">
 </picture></a>
 {{ end }}
