@@ -13,7 +13,6 @@ tags:
   - rant
 title: WhatsApp and the domestication of users
 ---
-
 I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
 
 WhatsApp wasn't the first instant messenger of its kind, and probably won't be the last. I simply chose to focus on WhatsApp since its recent privacy issues have made it a hot topic.
@@ -78,25 +77,25 @@ Software freedom
 
 With user domestication, providing useful software to users is a means to the end of exploiting them. The alternative is simple: make serving users the end in and of itself.
 
-To prevent being controlled by software, users must be in control. Software that allows users to be in control is called [free software](https://en.wikipedia.org/wiki/Free_software). The word "free" in this context refers to freedom rather than price. Software freedom is similar to the concept of open-source, but the latter is focused on practical benefits rather than ethics. A less ambiguous term that neutrally refers to both free and open-source software is **<abbr title="free and open-source software">FOSS</abbr>**.
+To avoid being controlled by software, users must be in control. Software that allows users to be in control is called [free software](https://en.wikipedia.org/wiki/Free_software) or libre software. The word "free" in this context refers to freedom rather than price. Software freedom is similar to the concept of open-source; the latter is an offshoot of the former focused on more business-friendly practical benefits rather than ethics. A less ambiguous term that neutrally refers to free, libre, and open-source software is **<abbr title="free, libre, and open-source software">FLOSS</abbr>**.[^2]
 
-Others have [explained](https://www.gnu.org/philosophy/free-sw.en.html) the concepts underpinning free software better than I can, so I won't go into detail. It comes down to four essential freedoms:
+Others have explained the [fundamental concepts](https://www.gnu.org/philosophy/free-sw.en.html) underpinning free software and [its importance](https://www.gnu.org/philosophy/free-software-even-more-important.html) better than I can, so I won't go into detail. It comes down to four essential freedoms:
 
 - The freedom to run the program as you wish, for any purpose
 - The freedom to study how the program works, and change it so it does your computing as you wish
 - The freedom to redistribute copies so you can help others
 - The freedom to distribute copies of your modified versions to others
 
-### Making money with FOSS
+### Making money with FLOSS
 
-The most common objection I hear is that FOSS makes it harder to make money.
+The most common objection I hear is that FLOSS makes it harder to make money.
 
-The key to making money with FOSS is to make software a [commoditized complement](https://www.gwern.net/Complement) of other, more profitable services. Examples of such services include selling support, customization, consulting, training, managed hosting, hardware, and certifications. Plenty of companies use this approach instead of building proprietary software: Red Hat, Collabora, System76, Purism, Canonical, SUSE, Hashicorp, Databricks, and Gradle are some names that come to mind.
+The key to making money with FLOSS is to make software a [commoditized complement](https://www.gwern.net/Complement) of other, more profitable services. Examples of such services include selling support, customization, consulting, training, managed hosting, hardware, and certifications. Plenty of companies use this approach instead of building proprietary software: Red Hat, Collabora, System76, Purism, Canonical, SUSE, Hashicorp, Databricks, and Gradle are some names that come to mind.
 
 Managed hosting isn't a basket worth all your eggs if giants like AWS can do the same at a lower price. Being the developer can give an edge in areas like customization, support, and training; it doesn't offer as obvious an advantage when it comes to hosting.
 
-FOSS isn't always enough
-------------------------
+FLOSS isn't always enough
+-------------------------
 
 Free software is a necessary but sometimes insufficient requirement to build domestication immunity. Two more measures include **simplicity** and **open platforms.**
 
@@ -108,7 +107,7 @@ Complex software that can't be developed by a different group of people creates 
 
 #### Case study: Mozilla and the Web
 
-Mozilla was a ray of hope in the browser wars, a space dominated by adtech, surveillance, and vendor lock-in. Unfortunately, developing a browser engine is a monumental task difficult enough for Opera and Microsoft to give up and re-skin Chromium. Browsers are more than the document readers they were meant to be: they've evolved into application runtimes with their own stacks for GPU acceleration, Bluetooth, permissions, device enumeration, bundled media codecs, <abbr title="digital rights management">DRM</abbr>[^2], extension APIs, developer tools...the list goes on. It takes billions of dollars a year to respond to vulnerabilities in such a massive attack surface and keep up with a standard that grows at such a worrying rate. Those billions have to come from somewhere.
+Mozilla was a ray of hope in the browser wars, a space dominated by adtech, surveillance, and vendor lock-in. Unfortunately, developing a browser engine is a monumental task difficult enough for Opera and Microsoft to give up and re-skin Chromium. Browsers are more than the document readers they were meant to be: they've evolved into application runtimes with their own stacks for GPU acceleration, Bluetooth, permissions, device enumeration, bundled media codecs, <abbr title="digital rights management">DRM</abbr>[^3], extension APIs, developer tools...the list goes on. It takes billions of dollars a year to respond to vulnerabilities in such a massive attack surface and keep up with a standard that grows at such a worrying rate. Those billions have to come from somewhere.
 
 Mozilla ended up having to make major compromises to stay afloat. It cut search deals with blatantly user-hostile companies, and bundled the browser with [ads](https://blog.mozilla.org/advancingcontent/2014/02/11/publisher-transformation-with-users-at-the-center/) and bloatware such as a partially ad-funded proprietary bookmarking SaaS called [Pocket](https://dustri.org/b/firefox-youre-supposed-to-be-in-my-pocket-not-the-other-way-around.html). Since acquiring Pocket (to diversify its sources of income), Mozilla hasn't yet delivered on its [earlier statements](https://techcrunch.com/2017/02/27/mozilla-pockets-pocket-in-first-acquisition/) saying it would open-source its code: while the clients have been open-sourced, the server code remains proprietary. Open-sourcing this and re-writing portions if necessary would understandably be a large task due in part to Pocket's complexity.
 
@@ -116,7 +115,7 @@ Substantial forks such as Pale Moon are unable to keep up with the growing compl
 
 To summarize: the complexity of the Web platform forced Mozilla, the only browser engine developer claiming to serve "people, not profit", to implement user-hostile features in its browser. The Web's complexity has left users with limited choice between three big players with conflicts of interest whose positions grow more entrenched with time.
 
-For the record, **I don't think Mozilla is a bad organization;** rather, I think it's surprising that they're able to do so much without further compromise in a system that practically requires it. Their core product is still FOSS, and very lightly patched third-party builds remove antifeatures.
+For the record, **I don't think Mozilla is a bad organization;** rather, I think it's surprising that they're able to do so much without further compromise in a system that practically requires it. Their core product is still FLOSS, and very lightly patched third-party builds remove antifeatures.
 
 ### Open platforms
 
@@ -124,9 +123,9 @@ To prevent a network effect from turning into vendor lock-in, software that natu
 
 #### Case study: Signal
 
-Ever since a certain car salesman [tweeted](https://web.archive.org/web/20210108024414/https://nitter.net/elonmusk/status/1347165127036977153) "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FOSS and use some of the best <abbr title="end-to-end encryption">E2EE</abbr> out there; however, I'm not a fan.
+Ever since a certain car salesman [tweeted](https://web.archive.org/web/20210108024414/https://nitter.net/elonmusk/status/1347165127036977153) "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FLOSS and use some of the best <abbr title="end-to-end encryption">E2EE</abbr> out there; however, I'm not a fan.
 
-Although Signal's clients and servers are FOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in [a blog post](https://signal.org/blog/the-ecosystem-is-moving/).[^3] This means that there's no supported way to develop an alternative server that's supported by Signal clients, or an alternative client that supports Signal servers. Step one to user domestication is nearly complete.
+Although Signal's clients and servers are FLOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in [a blog post](https://signal.org/blog/the-ecosystem-is-moving/).[^4] This means that there's no supported way to develop an alternative server that's supported by Signal clients, or an alternative client that supports Signal servers. Step one to user domestication is nearly complete.
 
 In addition to there being a single client and server implementation, there's only one Signal server provider: Signal Messenger LLC. Users' dependence on this central server provider blew up in their faces when Signal's recent growth caused downtime for over a day, rendering every Signal user unable to send messages until the single vendor fixed the issue.
 
@@ -175,9 +174,12 @@ The Framalang translators at [Framasoft](https://framasoft.org/) translated this
 
 <span class="h-card vcard"><a class="p-name url fn n" href="https://sgfault.com"><span class="p-given-name given-name">David</span> <span class="p-family-name family-name">Jimenez</span></a></span> translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
 
+
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
-[^2]: See [Defective by Design](https://www.defectivebydesign.org/). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
+[^2]: Many within the free software movement dislike the term "open source" for a [number of reasons](https://www.gnu.org/philosophy/open-source-misses-the-point.html); others use the terms "free" and "open source" [interchangeably](https://drewdevault.com/2019/09/17/The-wrong-words-but-the-right-ideas.html). Finally, many vendors use the word "free" to refer to price rather than freedom, prompting some free software supporters to adopt the term "libre" instead. All this can be quite confusing, which is why I prefer acronyms like FLOSS to describe these terms' intersection.
 
-[^3]: Moxie's blog post generated many responses. Two good follow-ups are on [Linux Weekly News](https://lwn.net/Articles/687294/) and a [blog post](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom) by Matrix.org
+[^3]: See [Defective by Design](https://www.defectivebydesign.org/). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
+
+[^4]: Moxie's blog post generated many responses. Two good follow-ups are on [Linux Weekly News](https://lwn.net/Articles/687294/) and a [blog post](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom) by Matrix.org
 

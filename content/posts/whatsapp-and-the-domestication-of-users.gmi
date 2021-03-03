@@ -64,13 +64,16 @@ A stroll through WhatsApp's actual privacy policy at the time reveals that they 
 
 With user domestication, providing useful software to users is a means to the end of exploiting them. The alternative is simple: make serving users the end in and of itself.
 
-To prevent being controlled by software, users must be in control. Software that allows users to be in control is called free software. The word "free" in this context refers to freedom rather than price. Software freedom is similar to the concept of open-source, but the latter is focused on practical benefits rather than ethics. A less ambiguous term that neutrally refers to both free and open-source software is FOSS.
+To avoid being controlled by software, users must be in control. Software that allows users to be in control is called "free software" or "libre software":
 
 => https://en.wikipedia.org/wiki/Free_software Free software (Wikipedia)
 
-Others have explained the concepts underpinning free software better than I can, so I won't go into detail.
+The word "free" in this context refers to freedom rather than price. Software freedom is similar to the concept of open-source; the latter is an offshoot of the former focused on more business-friendly practical benefits rather than ethics. A less ambiguous term that neutrally refers to free, libre, and open-source software is "FLOSS".²
+
+Others have explained the fundamental concepts underpinning free software and its importance better than I can, so I won't go into detail.
 
 => https://www.gnu.org/philosophy/free-sw.en.html What is free software? (GNU Project)
+=> https://www.gnu.org/philosophy/free-software-even-more-important.html Free Software Is Even More Important Now (GNU Project)
 
 It comes down to four essential freedoms:
 
@@ -79,11 +82,11 @@ It comes down to four essential freedoms:
 * The freedom to redistribute copies so you can help others
 * The freedom to distribute copies of your modified versions to others
 
-### Making money with FOSS
+### Making money with FLOSS
 
-The most common objection I hear is that FOSS makes it harder to make money.
+The most common objection I hear is that FLOSS makes it harder to make money.
 
-The key to making money with FOSS is to make software a commoditized complement of other, more profitable services.
+The key to making money with FLOSS is to make software a commoditized complement of other, more profitable services.
 
 => https://www.gwern.net/Complement Laws of Tech: Commoditize Your Complement
 
@@ -91,7 +94,7 @@ Examples of such services include selling support, customization, consulting, tr
 
 Managed hosting isn't a basket worth all your eggs if giants like AWS can do the same at a lower price. Being the developer can give an edge in areas like customization, support, and training; it doesn't offer as obvious an advantage when it comes to hosting.
 
-## FOSS isn't always enough
+## FLOSS isn't always enough
 
 Free software is a necessary but sometimes insufficient requirement to build domestication immunity. Two more measures include *simplicity* and *open platforms.*
 
@@ -122,7 +125,7 @@ It's nigh-impossible to start a new browser from scratch and catch up with behem
 
 To summarize: the complexity of the Web platform forced Mozilla, the only browser engine developer claiming to serve "people, not profit", to implement user-hostile features in its browser. The Web's complexity has left users with limited choice between three big players with conflicts of interest whose positions grow more entrenched with time.
 
-For the record, *I don't think Mozilla is a bad organization;* rather, I think it's surprising that they're able to do so much without further compromise in a system that practically requires it. Their core product is still FOSS, and very lightly patched third-party builds remove antifeatures.
+For the record, *I don't think Mozilla is a bad organization;* rather, I think it's surprising that they're able to do so much without further compromise in a system that practically requires it. Their core product is still FLOSS, and very lightly patched third-party builds remove antifeatures.
 
 ### Open platforms
 
@@ -130,9 +133,9 @@ To prevent a network effect from turning into vendor lock-in, software that natu
 
 #### Case study: Signal
 
-Ever since a certain car salesman tweeted "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FOSS and use some of the best E2EE out there; however, I'm not a fan.
+Ever since a certain car salesman tweeted "Use Signal", large numbers of users have been obediently switching. At the time of writing, the Signal clients and servers are FLOSS and use some of the best E2EE out there; however, I'm not a fan.
 
-Although Signal's clients and servers are FOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in a blog post.³
+Although Signal's clients and servers are FLOSS, Signal is still a closed platform. Signal co-founder Moxie Marlinspike is quite critical of open and federated platforms, describing his rationale for keeping Signal a closed platform in a blog post.⁴
 
 => https://signal.org/blog/the-ecosystem-is-moving/ Reflections: The ecosystem is moving (Signal blog)
 
@@ -203,11 +206,18 @@ David Jimenez translated this article to Spanish:
 
 ¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
-² See Defective by Design (linked below). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
+² Many within the free software movement dislike the term "open source" for a number of reasons; others use the terms "free" and "open source" interchangeably:
+
+=> https://www.gnu.org/philosophy/open-source-misses-the-point.html Why Open Source misses the point of Free Software (GNU Project)
+=> https://drewdevault.com/2019/09/17/The-wrong-words-but-the-right-ideas.html Don't sacrifice the right ideas to win the right words (Drew Devault's blog)
+
+Finally, many vendors use the word "free" to refer to price rather than freedom, prompting some free software supporters to adopt the term "libre" instead. All this can be quite confusing, which is why I prefer acronyms like FLOSS to describe these terms' intersection.
+
+³ See Defective by Design (linked below). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
 
 => https://www.defectivebydesign.org/ Defective by Design
 
-³ Moxie's blog post generated many responses. Two good follow-ups are on Linux Weekly News and a blog post by Matrix.org:
+⁴ Moxie's blog post generated many responses. Two good follow-ups are on Linux Weekly News and a blog post by Matrix.org:
 
 => https://lwn.net/Articles/687294/ The perils of federated protocols (Linux Weekly News)
 => https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom On Privacy versus Freedom (Matrix.org blog)
