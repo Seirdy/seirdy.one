@@ -117,7 +117,7 @@ Since acquiring Pocket (to diversify its sources of income), Mozilla hasn't yet 
 
 => https://techcrunch.com/2017/02/27/mozilla-pockets-pocket-in-first-acquisition/ TechCrunch article in which a Mozilla spokesperson stated an intention to open-source Pocket
 
-Substantial forks such as Pale Moon are unable to keep up with the growing complexity of modern Web standards such as Web Components. In fact, Pale Moon recently had to migrate its code off of GitHub since GitHub began using Web Components.
+Substantial forks such as Pale Moon are unable to keep up with the growing complexity of modern Web standards such as Web Components. In fact, Pale Moon recently had to migrate its code off of GitHub since GitHub began using Web Components, a feature too complex for Pale Moon to support.
 
 => https://forum.palemoon.org/viewtopic.php?f=1&t=25473 Migrating repositories  off of GitHub (Pale Moon forum)
 
