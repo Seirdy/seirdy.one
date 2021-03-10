@@ -77,7 +77,7 @@ These engines pass most of the tests listed in the “methodology” section.
 
 * Right Dao : very fast, good results. Passes the tests fairly well.
 * Gigablast : It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-* Gowiki : Very young, small index, but shows promise. I discovered this in the seirdy.one access logs.
+* Gowiki : Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
 => https://rightdao.com  Right Dao
 => http://gigablast.com/  Gigablast
