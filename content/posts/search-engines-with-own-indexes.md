@@ -1,5 +1,7 @@
 ---
 date: "2021-03-10T12:51:06-08:00"
+description: "A cursory review of all the non-metasearch, indexing search engines
+    I have been able to find."
 outputs:
   - html
   - gemtext
