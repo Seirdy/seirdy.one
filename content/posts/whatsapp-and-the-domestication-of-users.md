@@ -10,7 +10,7 @@ tags:
   - free software
   - user domestication
   - privacy
-  - rant
+  - platforms
 title: WhatsApp and the domestication of users
 ---
 I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.

@@ -7,7 +7,6 @@ outputs:
   - gemtext
 tags:
   - web
-  - rant
   - minimalism
 title: An opinionated list of best practices for textual websites
 ---

@@ -9,6 +9,7 @@ outputs:
 tags:
   - free software
   - user domestication
+  - platforms
 title: Keeping platforms open
 ---
 This article is the second entry of series of posts exploring situations in which <abbr title="free, libre, and open-source software">FLOSS</abbr> alone isn't enough to secure user freedom.
