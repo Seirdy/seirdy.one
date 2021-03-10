@@ -1,7 +1,3 @@
-DRAFT POST: this post is in progress/under review on envs.net and will be posted on my main site, seirdy.one when it’s ready. Don’t share it yet.
-
-=> gemini://seirdy.one/  seirdy.one
-
 This is a cursory review of all the indexing search engines I have been able to find.
 
 The three dominant English search engines with their own indexes¹ are Google, Bing, and Yandex (GBY). Many alternatives to GBY exist, but almost none of them have their own results; instead, they just source their results from GBY.
@@ -69,6 +65,7 @@ These are large engines that pass all the above tests and more.
 * Occasionally powers DuckDuckGo’s link results instead of Bing.
 
 4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live.
+
 5. Petal search: gopetal.com and petalsearch.com. A very new engine developed by Huawei. Surprisingly good results; it passed all the listed tests. Requires an account to submit sites. I discovered this via my access logs.
 
 => https://www.gopetal.com/  gopetal.com

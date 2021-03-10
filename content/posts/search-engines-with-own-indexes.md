@@ -1,6 +1,5 @@
 ---
 date: "2021-03-10T12:51:06-08:00"
-draft: true
 outputs:
   - html
   - gemtext
@@ -9,8 +8,6 @@ tags:
 footnote_heading: Notes
 title: A look at search engines with their own indexes
 ---
-DRAFT POST: this post is in progress/under review on envs.net and will be posted on my main site, [seirdy.one](https://seirdy.one/) when it's ready. Don't share it yet.
-
 This is a cursory review of all the indexing search engines I have been able to find.
 
 The three dominant English search engines with their own indexes[^1] are Google, Bing, and Yandex (<abbr title="Google, Bing, Yandex">GBY</abbr>). Many alternatives to GBY exist, but almost none of them have their own results; instead, they just source their results from GBY.
