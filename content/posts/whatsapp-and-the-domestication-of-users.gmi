@@ -204,6 +204,8 @@ David Jimenez translated this article to Spanish:
 
 => gemini://dvejmz.srht.site/whatsapp-y-la-domesticacion-de-usuarios.gmi WhatsApp y la domesticación de usuarios
 
+## References and Endnotes
+
 ¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 
 ² Many within the free software movement dislike the term "open source" for a number of reasons; others use the terms "free" and "open source" interchangeably:
