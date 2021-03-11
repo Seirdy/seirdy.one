@@ -1,4 +1,4 @@
-This is a cursory review of all the indexing search engines I have been able to find.
+This is a cursory review of all the indexing search engines I have been able to find. Gemini engines are at the bottom; the rest of this post is about Web search engines.
 
 The three dominant English search engines with their own indexes¹ are Google, Bing, and Yandex (GBY). Many alternatives to GBY exist, but almost none of them have their own results; instead, they just source their results from GBY.
 
@@ -170,6 +170,16 @@ These engines aren’t ready yet; their indexes are either in a proof-of-concept
 * Brave announced that it will start its own independent search engine based on the now-discontinued Cliqz. I don’t endorse the company, but I hope its results will be available through metasearch engines like Searx.
 
 => https://brave.com/search/  Brave Search
+
+## Gemini search engines
+
+Time for my first Gemini-exclusive content! A Gemini page about search engines wouldn't be complete without a few search engines for the Gemini space.
+
+* gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
+* geminispace.info: Another instance of GUS, but with an updated index.
+
+=> gemini://gus.guru/ gus.guru
+=> gemini://geminispace.info/ geminispace.info
 
 ## Acknowledgements
 
