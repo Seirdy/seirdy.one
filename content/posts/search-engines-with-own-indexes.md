@@ -107,6 +107,7 @@ Non-generalist search
 These indexing search engines don't have a Google-like "ask me anything" endgame; they're trying to do something different.
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
+- [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 - [Quor](https://www.quor.com): seems to mainly index large news sites.
 
 Other languages
