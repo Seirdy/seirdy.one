@@ -16,7 +16,7 @@ The three dominant English search engines with their own indexes[^1] are Google,
 
 With that in mind, I decided to test and catalog all the different indexing search engines I could find. I prioritized breadth over depth, and encourage readers to try the engines out themselves if they'd like more information.
 
-I primarily evaluated English-speaking search engines because that's my primary language. With some difficulty, I could probably evaluate a Spanish one; however, I wasn't able to find any Spanish-language engines powered by their own crawlers.
+I primarily evaluated English-speaking search engines because that's my primary language. With some difficulty, I could probably evaluate a Spanish one; however, I wasn't able to find many Spanish-language engines powered by their own crawlers.
 
 This page is a "living document" that I plan on updating indefinitely. Check for updates once in a while if you find this page interesting. Feel free to send me suggestions, updates, and corrections; I'd especially appreciate help from those who speak languages besides English and can evaluate a non-English indexing search engine. Contact info is in the article footer.
 
@@ -89,7 +89,7 @@ These engines fail badly at a few important tests.
 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
 - [Exalead](http://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
-- [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing.
+- [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
 
 ### Unusable engines, irrelevant results
