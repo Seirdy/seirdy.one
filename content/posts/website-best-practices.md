@@ -188,7 +188,7 @@ These tests start out pretty reasonable, but gradually get more insane as you go
 2. Print out the site in black-and-white, preferably with a simple laser printer.
 3. Test with a screen reader.
 4. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
-5. Test in textual browsers: lynx, links, w3m, edbrowse, EWW, etc.
+5. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 6. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 7. Test in an online website translator tool.
 8. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
