@@ -92,7 +92,8 @@ These engines fail badly at a few important tests.
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
-* [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to do this, but it exists. There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+
+* [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^7] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 ### Unusable engines, irrelevant results
 
@@ -167,4 +168,6 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 [^5]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
 
 [^6]: Ask.moe was working on a [FLOSS indexer](https://git.sr.ht/~danskeren/spider.moe); its search page stated an intention to switch to it from Bing at one point. This statement has since been removed.
+
+[^7]: Google and Bing support the `site:` search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
