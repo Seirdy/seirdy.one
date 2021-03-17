@@ -8,6 +8,7 @@ disableHugoGeneratorInject = true  # I inject it explicitly at the BOTTOM of <he
 uglyurls = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+disableKinds = ["taxonomy", "term"]
 
 [params]
 description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
