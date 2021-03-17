@@ -80,7 +80,7 @@ These engines pass most of the tests listed in the “methodology” section.
 * Gowiki : Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
 => https://rightdao.com  Right Dao
-=> http://gigablast.com/  Gigablast
+=> https://gigablast.com/  Gigablast
 => https://private.sh  Private.sh
 => https://gowiki.com  Gowiki
 
@@ -93,13 +93,15 @@ These engines fail badly at a few important tests.
 * wbsrch : In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn’t finished indexing. It also has several dedicated per-language indexes.
 * ExactSeek : small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
+* search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to do this, but it exists. There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de, but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 => http://www.seekport.com/  seekport
-=> http://www.exalead.com/search/  Exalead
+=> https://www.exalead.com/search/  Exalead
 => https://curlie.org  Curlie
 => https://wbsrch.com/  wbsrch
 => https://www.exactseek.com/  ExactSeek
-=> https://meorca.com/ Meorca Search Engine
+=> https://meorca.com/  Meorca Search Engine
+=> http://www.search.tl  search.tl
 
 ### Unusable engines, irrelevant results
 
@@ -108,14 +110,16 @@ Results from these search engines don’t seem at all useful.
 * YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 * Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 * Active Search Results : very poor quality
-* Crawlson: young, slow. In this category because its index has a cap of 10 urls per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn’t link it.
+* Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn’t link it.
+* Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 
 => https://metager.org  MetaGer
 => https://www.activesearchresults.com  Active Search Results
+=> https://www.anoox.com/  Anoox
 
 ## Non-generalist search
 
-These indexing search engines don’t have a Google-like “ask me anything” endgame; they’re trying to do something different.
+These indexing search engines don’t have a Google-like “ask me anything” endgame; they’re trying to do something different. You aren't supposed to use these engines the same way you use GBY.
 
 * Wiby: I love this one. It focuses on smaller independent sites that capture the spirit of the “early” web. It’s more focused on “discovering” new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn’t very “commercial”, consider submitting it to the index.
 * Search My Site: Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
@@ -151,7 +155,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 * fastbot: German
 * Moose.at: German (Austria-based)
 
-=> http://www.parsijoo.ir/  Parsijoo
+=> https://www.parsijoo.ir/  Parsijoo
 => https://search.ch  search.ch
 => https://www.fastbot.de/  fastbot
 => https://www.moose.at  Moose.at

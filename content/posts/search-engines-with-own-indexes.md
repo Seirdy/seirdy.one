@@ -23,7 +23,7 @@ This page is a "living document" that I plan on updating indefinitely. Check for
 Methodology
 -----------
 
-I mainly evaluated link results, and didn't focus too much on (often glaring) privacy issues, "enhanced" or "instant" results (e.g. Wikipedia sidebars, related searches, StackExchange answers), or other elements.
+I mainly evaluated link results, and didn't focus too much on (often glaring) privacy issues, "enhanced" or "instant" results (e.g. Wikipedia sidebars, related searches, Stack Exchange answers), or other elements.
 
 I compared results for esoteric queries side-by-side; if the first 20 results were (nearly) identical to another engine's results (though perhaps in a slightly different order), they were likely sourced externally and not from an independent index.
 
@@ -80,7 +80,7 @@ These are large engines that pass all the above tests and more.
 These engines pass most of the tests listed in the "methodology" section.
 
 - [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well.
-- [Gigablast](http://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
+- [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
 - [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
 ### Smaller indexes, hit-and-miss
@@ -88,10 +88,11 @@ These engines pass most of the tests listed in the "methodology" section.
 These engines fail badly at a few important tests.
 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
-- [Exalead](http://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
+- [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
-- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
+- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
+* [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to do this, but it exists. There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 ### Unusable engines, irrelevant results
 
@@ -100,7 +101,8 @@ Results from these search engines don't seem at all useful.
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 - Scopia: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 - [Active Search Results](https://www.activesearchresults.com): very poor quality
-- Crawlson: young, slow. In this category because its index has a cap of 10 urls per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn't link it.
+- Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn't link it.
+- [Anoox](https://www.anoox.com/): Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 
 Non-generalist search
 ---------------------
@@ -128,7 +130,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 ### Smaller indexes
 
-- [Parsijoo](http://www.parsijoo.ir/): Persian
+- [Parsijoo](https://www.parsijoo.ir/): Persian
 - [search.ch](https://search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
 - [fastbot](https://www.fastbot.de/): German
 - [Moose.at](https://www.moose.at): German (Austria-based)
