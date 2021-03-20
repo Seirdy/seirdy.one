@@ -20,6 +20,15 @@ I primarily evaluated English-speaking search engines because that's my primary 
 
 This page is a "living document" that I plan on updating indefinitely. Check for updates once in a while if you find this page interesting. Feel free to send me suggestions, updates, and corrections; I'd especially appreciate help from those who speak languages besides English and can evaluate a non-English indexing search engine. Contact info is in the article footer.
 
+Rationale
+---------
+
+Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^2]
+
+One way to avoid this conflict of interest is to _use search engines that aren't linked to major content providers;_ i.e., use engines with their own independent indexes.
+
+There's also a practical, non-ideological reason to try other engines: different providers have different results. Websites that are hard to find on one search engine might be easy to find on another, so using more indexes and ranking algorithms results in access to more content.
+
 Methodology
 -----------
 
@@ -48,25 +57,25 @@ These are large engines that pass all the above tests and more.
   - SAPO (Portuguese interface, can work with English results)
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
   - Yahoo
-  - DuckDuckGo[^2]
+  - DuckDuckGo[^3]
   - AOL
-  - Qwant[^3]
+  - Qwant[^4]
   - Ecosia
   - Ekoru
   - Privado
   - Findx
-  - Disconnect Search[^4]
+  - Disconnect Search[^5]
   - PrivacyWall
   - Lilo
   - SearchScene
   - Peekier
   - Oscobo
   - Million Short
-  - Yippy search[^5]
+  - Yippy search[^6]
   - Lycos
   - Givero
   - Swisscows
-  - Ask.moe[^6]
+  - Ask.moe[^7]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I stopped adding Bing-based search engines. There are just too many.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
@@ -79,7 +88,7 @@ These are large engines that pass all the above tests and more.
 
 These engines pass most of the tests listed in the "methodology" section.
 
-- [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^7]
+- [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
 - [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
@@ -92,7 +101,7 @@ These engines fail badly at a few important tests.
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
-- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^8] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^9] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 ### Unusable engines, irrelevant results
 
@@ -156,20 +165,24 @@ Acknowledgements
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
+Matt from Gigablast also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
+
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.
 
-[^2]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers
+[^2]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
-[^3]: Qwant claims to also use its own crawler for results, but it's still mostly Bing. Try a side-by-side comparison; I found that it doesn't seem to have anything besides Bing results.
+[^3]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers
 
-[^4]: Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
+[^4]: Qwant claims to also use its own crawler for results, but it's still mostly Bing. Try a side-by-side comparison; I found that it doesn't seem to have anything besides Bing results.
 
-[^5]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
+[^5]: Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
 
-[^6]: Ask.moe was working on a [FLOSS indexer](https://git.sr.ht/~danskeren/spider.moe); its search page stated an intention to switch to it from Bing at one point. This statement has since been removed.
+[^6]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
 
-[^7]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
+[^7]: Ask.moe was working on a [FLOSS indexer](https://git.sr.ht/~danskeren/spider.moe); its search page stated an intention to switch to it from Bing at one point. This statement has since been removed.
 
-[^8]: Google and Bing support the `site:` search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^8]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
+
+[^9]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
