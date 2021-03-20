@@ -64,9 +64,9 @@ These are large engines that pass all the above tests and more.
 * Epic Search
 * Occasionally powers DuckDuckGo’s link results instead of Bing.
 
-4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live.
+4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch.
 
-5. Petal search: gopetal.com and petalsearch.com. A very new engine developed by Huawei. Surprisingly good results; it passed all the listed tests. Requires an account to submit sites. I discovered this via my access logs.
+5. Petal search: gopetal.com and petalsearch.com. A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
 
 => https://www.gopetal.com/  gopetal.com
 => https://petalsearch.com/  petalsearch.com
@@ -75,9 +75,9 @@ These are large engines that pass all the above tests and more.
 
 These engines pass most of the tests listed in the “methodology” section.
 
-* Right Dao : very fast, good results. Passes the tests fairly well.
-* Gigablast : It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-* Gowiki : Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
+* Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁷
+* Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
+* Gowiki: Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
 => https://rightdao.com  Right Dao
 => https://gigablast.com/  Gigablast
@@ -88,12 +88,12 @@ These engines pass most of the tests listed in the “methodology” section.
 
 These engines fail badly at a few important tests.
 
-* seekport : The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms (e.g. “Seirdy”), but it’s able to find relevant results in other tests.
-* Exalead : slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
-* wbsrch : In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn’t finished indexing. It also has several dedicated per-language indexes.
-* ExactSeek : small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
+* seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms (e.g. “Seirdy”), but it’s able to find relevant results in other tests.
+* Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
+* wbsrch: In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn’t finished indexing. It also has several dedicated per-language indexes.
+* ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
-* search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.⁷ There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de, but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+* search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.⁸ There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de, but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 => http://www.seekport.com/  seekport
 => https://www.exalead.com/search/  Exalead
@@ -109,7 +109,7 @@ Results from these search engines don’t seem at all useful.
 
 * YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 * Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
-* Active Search Results : very poor quality
+* Active Search Results: very poor quality
 * Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn’t link it.
 * Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 * Plumb: Almost all queries return no results; when this happens, it loads Google's Custom Search scripts from "cse.google.com" onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block "cse.google.com" from loading any scripts. Plumb claims that this is a temporary measure while its index grows. Allows submitting URLs, but requires solving an hCaptcha; as of 2021-03-19, the hCaptcha is broken (missing sitekey). This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer previously founded the Gibiru search engine which shares the same affiliates.
@@ -216,4 +216,9 @@ Some of this content came from the Search Engine Map and Search Engine Party. A 
 
 => https://git.sr.ht/~danskeren/spider.moe  FLOSS indexer
 
-⁷ Google and Bing support the "site:" search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. "site:.one", for instance, limits searches to websites with the ".one" TLD.
+⁷ This is based on a statement Right Dao made in on Reddit:
+
+=> https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1 Right Dao on Reddit
+=> https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1 Archive of the Reddit thread
+
+⁸ Google and Bing support the "site:" search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. "site:.one", for instance, limits searches to websites with the ".one" TLD.

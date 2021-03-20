@@ -72,14 +72,14 @@ These are large engines that pass all the above tests and more.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
   - Epic Search
   - Occasionally powers DuckDuckGo's link results instead of Bing.
-- Mojeek: Claims to be privacy-oriented. Quality isn't at Google/Bing/Yandex's level, but it's not bad either. If I had to use Mojeek as my default general search engine, I'd live.
-- Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A very new engine developed by Huawei. Surprisingly good results; it passed all the listed tests. Requires an account to submit sites. I discovered this via my access logs.
+- Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers [eTools.ch](https://www.etools.ch/).
+- Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
 
 ### Smaller indexes, relevant results
 
 These engines pass most of the tests listed in the "methodology" section.
 
-- [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well.
+- [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^7]
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
 - [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
 
@@ -92,7 +92,7 @@ These engines fail badly at a few important tests.
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
-- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^7] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^8] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 ### Unusable engines, irrelevant results
 
@@ -169,5 +169,7 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^6]: Ask.moe was working on a [FLOSS indexer](https://git.sr.ht/~danskeren/spider.moe); its search page stated an intention to switch to it from Bing at one point. This statement has since been removed.
 
-[^7]: Google and Bing support the `site:` search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^7]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
+
+[^8]: Google and Bing support the `site:` search operator to limit searches to subpages/subdomains of a single site, but it can also limit searches to a single TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
