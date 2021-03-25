@@ -8,11 +8,11 @@
  * 5. Bold "home" link that doubles as a site header
  * 6. Soft border around code in case it looks too similar to regular
  *    text, and to show it continue across more than one line
- * 7. Horizontally center inline images; left-aligned stick out.
- * 8. Padding fixes so the above changes don't make elements misalign.
+ * 7. Horizontally center non-inline images; left-aligned stick out.
+ * 8. Padding/line-height fixes so the above changes don't ruin alignment.
  * 9. dark.css changes a few colors if the browser wants dark mode.
- * 10. Line height for consistent vertical rhythm
- * 11. Make blockquotes stand out a little; some browsers don't make them obvious
+ * 10. Make blockquotes stand out a little; some browsers don't make them obvious
+ * 11. Support unstyled lists: for webmentions, post lists, nav links.
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
@@ -37,11 +37,6 @@ h3 {
 	line-height: 1.75rem;
 }
 
-nav ul {
-	/* nav links should look more prominent than normal links */
-	font-size: 1.25rem;
-}
-
 /* nav links should be easy to tap with fat fingers */
 nav li {
 	padding-right: 0.5rem;
@@ -54,16 +49,16 @@ nav li {
 
 .unstyled-list li {
 	list-style-type: none;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 
-/* Make the home link a bit bigger to serve as a site heading */
+/* Make the home link bold to serve as a site heading */
 .home {
 	font-weight: bold;
 }
 
 /* single-line nav on widescreen, multi-line nav on narrow screens */
-@media (min-width: 32rem) {
+@media (min-width: 28rem) {
 	nav li {
 		display: inline;
 	}
@@ -77,19 +72,13 @@ img:not(.u-photo) {
 }
 
 .u-photo {
-	display: inline-block;
 	vertical-align: -0.1em;
 }
 
 pre,
-code {
+p code {
 	border: 1px solid #bbb;
 	padding: 0 0.25rem;
-}
-
-pre code {
-	border: 0; /* don't border each line in a pre block */
-	padding: 0; /* otherwise the first line in a pre block gets indented. */
 }
 
 /* Allow horizontal scroll in a pre block, but don't clip it vertically */
