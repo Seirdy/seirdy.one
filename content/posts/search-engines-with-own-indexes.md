@@ -138,6 +138,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 - [Naver](https://search.naver.com): Korean.
 - [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs.
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
+- [go.mail.ru](https://go.mail.ru/): Russian
 
 ### Smaller indexes
 
