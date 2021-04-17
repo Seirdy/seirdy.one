@@ -9,7 +9,7 @@ outputs:
 footnote_heading: Notes
 title: "Misinformation about Permissions Policy and FLoC"
 ---
-This post was [written in a hurry](https://www.goodreads.com/quotes/219878-a-lie-can-run-round-the-world-before-the-truth) in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies.
+This post was [written in a hurry](https://www.goodreads.com/quotes/219878-a-lie-can-run-round-the-world-before-the-truth) in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies. The initial blog posts about this issue were quite benign, but online discussions quickly devolved into panic and support for building flawed work-arounds into upstream software. I had to write this before things got out of hand.
 
 A lot of misleading online discussion stems from one not-very-misleading [blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network)[^1] that's been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
 
@@ -75,7 +75,9 @@ If you're concerned about Google breaking the spec and opting you in even after 
 Take a breath
 -------------
 
-Please, don't spam maintainers of web server/backend software to tell them to include this header by default when it may or may not actually reduce user fingerprints. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+If you want to be extra safe, you're free to add this header to your site. Just manage your expectations. However:
+
+Please, don't spam maintainers of web server/backend software to tell them to include this header by default when it may or may not actually reduce user fingerprints. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity. Knee-jerk reactions like patching upstream software only galvanize Google to start ignoring this non-standard usage of the Permissions Policy header.
 
 
 [^1]: This isn't the only post making rounds, but it did hit the front page of a certain orange-colored website. I'm not blaming the author; if I hadn't encountered the Permissions Policy spec earlier, I probably would have also taken the advice the author read at face-value.
