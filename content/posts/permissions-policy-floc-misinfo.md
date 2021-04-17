@@ -32,7 +32,7 @@ As per a [post](https://web.dev/floc/) on Google's web development blog, web.dev
 What explicitly opting out actually entails
 -------------------------------------------
 
-What it does do is exclude your website from being used when calcualting a user's cohort. Cohorts are calculated locally from browsing history; sites that send this header will be excluded from this calculation. This may or may not reduce the entropy gained by a FLoC ID, depending on how well or poorly your site serves as an identifier. Given this marginal improvement, I don't think it's right to place a burden or blame on webmasters that should rightfully be directed at those responsible for rolling this antifeature out in Chromium. We shouldn't expect webmasters to add a tag or header every time Google advances the war against its own users.
+What adding this header does is exclude your website from being used when calcualting a user's cohort. Cohorts are calculated locally from browsing history; sites that send this header will be excluded from this calculation. This may or may not reduce the entropy gained by a FLoC ID, depending on how well or poorly your site serves as an identifier. Given this marginal improvement, I don't think it's right to place a burden or blame on webmasters when the burden and blame should rightfully be directed at those responsible for rolling this antifeature out in Chromium. We shouldn't expect webmasters to add a tag or header every time Google advances the war against its own users.
 
 How Permissions Policy works
 ----------------------------
@@ -46,6 +46,17 @@ Permissions-Policy: geolocation=()
 ```
 
 In other words, it provides a global override for any page contents requesting too many permissions. It's ideal for situations in which authors aren't in control of what content is being loaded.
+
+Using the Permissions Policy to opt out of cohort calculation isn't really what the Permissions Policy was intended for. That doesn't seem like a big deal until you consider the history of HTTP headers being used to protect privacy.
+
+This has happened before
+------------------------
+
+Google's non-standard usage of the Permissions Policy header to opt a site out of cohort calculation is reminiscent of the [Do Not Track (DNT) header](https://en.wikipedia.org/wiki/Do_Not_Track).
+
+Do Not Track was a non-standard client header used to request websites not to track users. This ended up getting ignored by almost all sites it was intended to target, as adtech companies had no incentive to comply. Several websites initially obeyed the header until eventually dropping support; Reddit is a notable recent example.
+
+Given that non-standard header usage has failed in the client-side fight against surveillance capitalism before, I'm not too optimistic about trying this again from the server side.
 
 Better advice: how not to opt-in
 --------------------------------
