@@ -25,9 +25,14 @@ If you check that README yourself, you'll notice the following statement one (1)
 
 > A site should be able to declare that it does not want to be included in the user's list of sites for cohort calculation. This can be accomplished via a new `interest-cohort` [permissions policy](https://www.w3.org/TR/permissions-policy-1/). This policy will be default allow. Any frame that is not allowed `interest-cohort` permission will have a default value returned **when they call `document.interestCohort()`.** If the main frame does not have `interest-cohort` permission then the page visit will not be included in interest cohort calculation.
 
-If your website does not include JS that calls `document.interestCohort()`, it will not leverage Google's FLoC. There will be no need to opt-out.
+If your website does not include JS that calls `document.interestCohort()`, it will not leverage Google's FLoC. Explicitly opting out will not change this.
 
 As per a [post](https://web.dev/floc/) on Google's web development blog, web.dev, FLoC also will be enabled during an origin trial if the page "loads ads or ads-related resource"; i.e., anything that Chromium's [ad tagger](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) classifies as an ad. If your website loads third-party ads, it might end up getting opted-in even if those ads don't call `document.interestCohort()`.
+
+What explicitly opting out actually entails
+-------------------------------------------
+
+What it does do is exclude your website from being used when calcualting a user's cohort. Cohorts are calculated locally from browsing history; sites that send this header will be excluded from this calculation. This may or may not reduce the entropy gained by a FLoC ID, depending on how well or poorly your site serves as an identifier. Given this marginal improvement, I don't think it's right to place a burden or blame on webmasters that should rightfully be directed at those responsible for rolling this antifeature out in Chromium. We shouldn't expect webmasters to add a tag or header every time Google advances the war against its own users.
 
 How Permissions Policy works
 ----------------------------
@@ -61,8 +66,10 @@ Don't tack a new header onto every request because someone read a post by someon
 Take a breath
 -------------
 
-Please, don't spam maintainers of web server/backend software to tell them to include this header by default. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+Please, don't spam maintainers of web server/backend software to tell them to include this header by default when it may or may not actually reduce user fingerprints. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+
 
 [^1]: This isn't the only post making rounds, but it did hit the front page of a certain orange-colored website. I'm not blaming the author; if I hadn't encountered the Permissions Policy spec earlier, I probably would have also taken the advice the author read at face-value.
+
 [^2]: I've noticed both of these behaviors on several threads online. I've decided against linking to them because I think the discourse there has heated past the point of reason.
 
