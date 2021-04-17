@@ -61,8 +61,6 @@ To be extra safe, you can whitelist exactly what scripts can run with a [Content
 
 If you're concerned about Google breaking the spec and opting you in even after you've not done so yourself, what reason do you have to believe that they'll stop there? There's nothing preventing Google from ignoring your `Permissions-Policy` header, either.
 
-Don't tack a new header onto every request because someone read a post by someone else who read part of a GitHub README.
-
 Take a breath
 -------------
 
