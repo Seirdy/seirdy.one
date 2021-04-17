@@ -56,4 +56,4 @@ If you're concerned about Google breaking the spec and opting you in even after 
 
 Don't tack a new header onto every request because someone read a post by someone else who read part of a GitHub README.
 
-And please, don't spam maintainers of web server/backend server to tell them to include this header by default. You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+And please, don't spam maintainers of web server/backend software to tell them to include this header by default. You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
