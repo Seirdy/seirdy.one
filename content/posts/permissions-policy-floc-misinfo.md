@@ -5,6 +5,7 @@ description: Recently, people have been telling webmasters to add a Permissions-
     how the Permissions-Policy header works.
 outputs:
   - html
+  - gemtext
 footnote_heading: Notes
 title: "Misinformation about Permissions Policy and FLoC"
 ---
