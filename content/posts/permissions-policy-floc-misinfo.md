@@ -5,11 +5,12 @@ description: Recently, people have been telling webmasters to add a Permissions-
     how the Permissions-Policy header works.
 outputs:
   - html
+footnote_heading: Notes
 title: "Misinformation about Permissions Policy and FLoC"
 ---
 This post was [written in a hurry](https://www.goodreads.com/quotes/219878-a-lie-can-run-round-the-world-before-the-truth) in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies.
 
-A [certain blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network) has been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
+A [certain blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network)[^1] has been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
 
 ```
 Permissions-Policy: interest-cohort=()
@@ -30,7 +31,7 @@ As per a [post](https://web.dev/floc/) on Google's web development blog, web.dev
 How Permissions Policy works
 ----------------------------
 
-I don't think that every webmaster should have to read every single W3C spec (I certainly haven't). I do, however, think that people who offer prescriptive advice and interpretations of a spec should be expected to read the relevant spec first.
+I don't think that every webmaster should have to read every single W3C spec. I do, however, think that people who offer prescriptive advice and interpretations of a spec should be expected to read the relevant spec first.
 
 Here's [a copy](https://www.w3.org/TR/permissions-policy-1/) of the Permissions Policy spec. Essentially, the `Permissions-Policy` header allows a webmaster to whitelist which parties (if any) are allowed to leverage certain APIs. If I make a website that doesn't perform any geolocation directly but I load a third-party widget that does, I can forbid all parties from using Geolocation APIs by setting the following Permissions-Policy:
 
@@ -56,4 +57,11 @@ If you're concerned about Google breaking the spec and opting you in even after 
 
 Don't tack a new header onto every request because someone read a post by someone else who read part of a GitHub README.
 
-And please, don't spam maintainers of web server/backend software to tell them to include this header by default. You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+Take a breath
+-------------
+
+Please, don't spam maintainers of web server/backend software to tell them to include this header by default. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity.
+
+[^1]: This isn't the only post making rounds, but it did hit the front page of a certain orange-colored website. I'm not blaming the author; if I hadn't encountered the Permissions Policy spec earlier, I probably would have also taken the advice the author read at face-value.
+[^2]: I've noticed both of these behaviors on several threads online. I've decided against linking to them because I think the discourse there has heated past the point of reason.
+
