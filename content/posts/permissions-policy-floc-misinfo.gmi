@@ -1,6 +1,6 @@
 This post was written in a hurry in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies.
 
-A certain blog post ¹ has been making rounds:
+A lot of misleading online discussion stems from one not-very-misleading blog post¹ that's been making rounds:
 
 => https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network Opting your website out of Google's FLoC network
 

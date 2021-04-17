@@ -11,7 +11,7 @@ title: "Misinformation about Permissions Policy and FLoC"
 ---
 This post was [written in a hurry](https://www.goodreads.com/quotes/219878-a-lie-can-run-round-the-world-before-the-truth) in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies.
 
-A [certain blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network)[^1] has been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
+A lot of misleading online discussion stems from one not-very-misleading [blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network)[^1] that's been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
 
 ```
 Permissions-Policy: interest-cohort=()
