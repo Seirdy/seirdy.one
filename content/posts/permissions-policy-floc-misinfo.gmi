@@ -35,7 +35,7 @@ As per a post on Google's web development blog, web.dev, FLoC also will be enabl
 
 What adding this header does is exclude your website from being used when calcualting a user's cohort. A cohort is an identifier shared with a few thousand other users, calculated locally from browsing history; sites that send this header will be excluded from this calculation. The EFF estimates that a cohort ID can add up to 8 bits of of entropy to a user's fingerprint.
 
-Being excluded from cohort calculation has a chance to place a user in a different cohort, altering a user's fingerprint. This new fingerprint may or may not have more entropy than the one derived without being excluded.
+Being excluded from cohort calculation has a chance to place a user in a different cohort, altering a user's fingerprint. This new fingerprint may or may not have more entropy than the one derived without being excluded. Excluding some portion of sites from a user's cohort calculation doesn't necessarily make a user less unique if a nontrivial number of sites doesn't opt out.
 
 Given this marginal improvement, I don't think it's right to place a burden or blame on webmasters when the burden and blame should rightfully be directed at those responsible for rolling this antifeature out in Chromium. We shouldn't expect webmasters to add a tag or header every time Google advances the war against its own users.
 
