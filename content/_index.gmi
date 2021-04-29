@@ -39,3 +39,9 @@ Since some people asked me about music, here's a generated list of every track i
 Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm on Matrix:
 
 => https://matrix.to/#/@seirdy:envs.net @seirdy:envs.net
+
+## Links
+
+Orbits (Gemini equivalent of webrings):
+
+=> gemini://si3t.ch/cgi-bin/wormhole The Wormhole Experiment
