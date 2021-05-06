@@ -1,66 +1,64 @@
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
-	<meta name="author" content="{{ .Site.Author.name }}">
-	{{- $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
-	{{ printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
-	{{ $favicon := resources.Get "/favicon.png" | resources.Fingerprint "md5" -}}
-	{{ printf `<link rel="icon" sizes="32x32" href="%s" type="image/png">` $favicon.RelPermalink | safeHTML -}}
-	<!-- apple-touch-icon used to be apple-specific, but now it's
-	     a pseudo-standard relied upon by other vendors too:
-	     https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
-	{{ printf `<link rel="apple-touch-icon" href="%s">` $icon_192.RelPermalink | safeHTML -}}
-	<!-- webmanifest defines even more icons. This is getting ridiculous -->
-	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
-	{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
-	<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
-	{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
-	<meta name="robots" content="noindex">
-	{{ else -}}
-	<link rel="webmention" href="https://seirdy.one/webmentions/receive">
-	<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
-	{{ end -}}
-	<link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
-	{{- $resources := slice -}}
-	{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
-	{{ $dark := .Site.Params.dark | default "auto" -}}
-	{{ if not (eq $dark "off") -}}
-	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
-	{{ end -}}
-	{{ $css := $resources | resources.Concat "css/style.css" | minify | resources.Fingerprint "sha384" -}}
-	{{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}}
-	<!-- only load syntax-highlighting CSS if this page needs it -->
-	{{ if .Params.highlight -}}
-	{{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" -}}
-	{{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
-	{{- end -}}
-	{{- if eq .RelPermalink "/" -}}
-	<title>{{ .Title }}</title>
-	{{- else -}}
-	<title>{{ .Title }} - Seirdy</title>
-	{{- end -}}
-	<!-- open graph stuff; used in the Fediverse, Signal link previews,
-	     some RSS readers, and a certain large social media company -->
-	<meta property="og:title" content="{{ .Title }}">
-	<meta property="og:site_name" content="{{ $.Site.Title }}">
-	{{- if (eq "page" .Kind) }}
-	<meta property="og:type" content="article">
-	{{- else }}
-	<meta property="og:type" content="website">
-	{{- end -}}
-	<!-- ANOTHER meta image?! When will it end? -->
-	{{ $og_image := resources.Get "/open_graph.png" | resources.Fingerprint "md5" -}}
-	{{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
-	<meta property="og:image:type" content="image/png">
-	<meta property="og:image:height" content="630">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
-	<meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
-	<meta property="article:author" content="{{ .Site.Author.name }}">
-	<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-	{{ if lt .Date .Lastmod -}}
-	<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-	{{ end -}}
-	{{ hugo.Generator }}
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+<meta name="author" content="{{ .Site.Author.name }}">
+{{- $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
+{{ printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
+{{ $favicon := resources.Get "/favicon.png" | resources.Fingerprint "md5" -}}
+{{ printf `<link rel="icon" sizes="32x32" href="%s" type="image/png">` $favicon.RelPermalink | safeHTML -}}
+<!-- apple-touch-icon used to be apple-specific, but now it's
+		 a pseudo-standard relied upon by other vendors too:
+		 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
+{{ printf `<link rel="apple-touch-icon" href="%s">` $icon_192.RelPermalink | safeHTML -}}
+<!-- webmanifest defines even more icons. This is getting ridiculous -->
+{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
+{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
+<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
+{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
+<meta name="robots" content="noindex">
+{{ else -}}
+<link rel="webmention" href="https://seirdy.one/webmentions/receive">
+<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
+{{ end -}}
+<link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
+{{- $resources := slice -}}
+{{ $resources = $resources | append (resources.Get "/css/main.css") -}}
+{{ $dark := .Site.Params.dark | default "auto" -}}
+{{ if not (eq $dark "off") -}}
+{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+{{ end -}}
+{{ $css := $resources | resources.Concat "css/style.css" | minify | resources.Fingerprint "sha384" -}}
+{{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}}
+<!-- only load syntax-highlighting CSS if this page needs it -->
+{{ if .Params.highlight -}}
+{{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" -}}
+{{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
+{{- end -}}
+{{- if eq .RelPermalink "/" -}}
+<title>{{ .Title }}</title>
+{{- else -}}
+<title>{{ .Title }} - Seirdy</title>
+{{- end -}}
+<!-- open graph stuff; used in the Fediverse, Signal link previews,
+		 some RSS readers, and a certain large social media company -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:site_name" content="{{ $.Site.Title }}">
+{{- if (eq "page" .Kind) }}
+<meta property="og:type" content="article">
+{{- else }}
+<meta property="og:type" content="website">
+{{- end -}}
+<!-- ANOTHER meta image?! When will it end? -->
+{{ $og_image := resources.Get "/open_graph.png" | resources.Fingerprint "md5" -}}
+{{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
+<meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+<meta property="article:author" content="{{ .Site.Author.name }}">
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ if lt .Date .Lastmod -}}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ end -}}
+{{ hugo.Generator }}
