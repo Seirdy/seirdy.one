@@ -6,6 +6,8 @@
 
 	/* IndieWeb u-photo should be distinct from the background */
 	.u-photo {
+		/* Versions of Samsung Internet released recently as 2017 need this
+		 * prefix, along with Qt4-based QtWebkit used in e.g. rekonq */
 		-webkit-filter: invert(1);
 		filter: invert(1);
 	}

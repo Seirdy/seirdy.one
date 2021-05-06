@@ -52,11 +52,6 @@ nav li {
 	margin-bottom: 0.5rem;
 }
 
-/* Make the home link bold to serve as a site heading */
-.home {
-	font-weight: bold;
-}
-
 /* single-line nav on widescreen, multi-line nav on narrow screens */
 @media (min-width: 28rem) {
 	nav li {
