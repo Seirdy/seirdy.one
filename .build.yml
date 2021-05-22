@@ -2,7 +2,6 @@
 image: alpine/edge
 packages:
   - rsync
-  - zopfli  # for max compression w/ gzip_static
   - brotli  # for max compression w/ brotli_static, decompressing binaries
   - git  # for Hugo's gitInfo
   - make
