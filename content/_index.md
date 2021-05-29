@@ -33,7 +33,7 @@ Contact
 
 Contact me via <a class="u-email" href="mailto:seirdy@seirdy.one" rel="me">email</a> (<a rel="pgpkey authn" class="u-key" href="./publickey.asc">PGP</a>), or on the Fediverse via <a class="u-url" href="https://pleroma.envs.net/seirdy" rel="me">my Pleroma account</a>.
 
-Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm <a class="u-url" href="https://matrix.to/#/@seirdy:envs.net" rel="me">@seirdy:envs.net</a> on Matrix.
+Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm <a class="u-url" href="https://matrix.to/#/@seirdy:envs.net" rel="me">@seirdy:envs.net</a> on Matrix.
 
 </div>
 

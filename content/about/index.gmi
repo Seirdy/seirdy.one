@@ -35,7 +35,7 @@ My handle is "Seirdy" on all the platforms I use:
 => mailto:seirdy@seirdy.one email
 => ../publickey.asc PGP: 1E892DB2A5F84479
 
-My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places; my nick is Seirdy on many IRC networks. I generally prefer IRC to Matrix, and don't check Matrix very often.
+My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places. For IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. I generally prefer IRC to Matrix, and don't check Matrix very often.
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 

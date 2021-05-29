@@ -36,7 +36,7 @@ Since some people asked me about music, here's a generated list of every track i
 => ./publickey.asc PGP: 1E892DB2A5F84479
 => https://pleroma.envs.net/seirdy Fediverse (Pleroma)
 
-Chat with me: I prefer IRC, where my nick is usually Seirdy. Alternatively, I'm on Matrix:
+Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm on Matrix:
 
 => https://matrix.to/#/@seirdy:envs.net @seirdy:envs.net
 
