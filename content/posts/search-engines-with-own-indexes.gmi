@@ -39,7 +39,7 @@ These are large engines that pass all the above tests and more.
 1. Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
 
 * Startpage
-* Runnaroo
+* (discontinued) Runnaroo
 * SAPO (Portuguese interface, can work with English results)
 
 2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
@@ -119,6 +119,13 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://kozmonavt.ml/ Kozmonavt
 => https://burf.co/ Burf.co
 
+* ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
+
+=> https://www.chatnoir.eu/ ChatNoir
+=> https://commoncrawl.org/ Common Crawl
+=> https://github.com/chatnoir-eu ChatNoir source code (GitHub)
+=> https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ ChatNoir Announcement
+
 ### Unusable engines, irrelevant results
 
 Results from these search engines don’t seem at all useful.
@@ -145,11 +152,13 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 * Wiby: I love this one. It focuses on smaller independent sites that capture the spirit of the “early” web. It’s more focused on “discovering” new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn’t very “commercial”, consider submitting it to the index.
 * Search My Site: Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 * Quor: seems to mainly index large news sites.
+* Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 
 => https://wiby.me  wiby.me
 => https://wiby.org  wiby.org
 => https://searchmysite.net Search My site
 => https://www.quor.com  Quor
+=> https://ninfex.com Ninfex
 
 ## Other languages
 
