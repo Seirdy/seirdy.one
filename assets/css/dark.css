@@ -1,10 +1,10 @@
 @media (prefers-color-scheme: dark) {
 	html {
 		background: #000;
-		color: #fff;
+		color: #eee;
 	}
 
-	/* IndieWeb u-photo should be distinct from the background */
+	/* IndieWeb u-photo shouldn't look like floating punctuation marks */
 	.u-photo {
 		/* Versions of Samsung Internet released recently as 2017 need this
 		 * prefix, along with Qt4-based QtWebkit used in e.g. rekonq */
@@ -13,15 +13,15 @@
 	}
 
 	a {
-		color: #4af;
+		color: #8cf;
 	}
 
 	a:visited {
-		color: #d7f;
+		color: #d9f;
 	}
 
 	a:active {
-		color: #f33;
+		color: #e3e;
 	}
 
 	blockquote,

@@ -66,10 +66,6 @@ img:not(.u-photo) {
 	max-width: 100%;
 }
 
-.u-photo {
-	vertical-align: -0.1em;
-}
-
 pre,
 p code {
 	border: 1px solid #bbb;
