@@ -3,4 +3,6 @@ _*
 misc/
 music.txt
 music.txt.gz
+music.txt.br
 webmentions/
+noindex/
