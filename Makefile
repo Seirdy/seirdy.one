@@ -14,7 +14,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlvz --zc=zstd
 # compression has dimishing returns after this point
-ZOPFLI_ITERATIONS=70
+ECT_LEVEL=1009
 
 .PHONY: hugo
 hugo: clean
@@ -67,7 +67,7 @@ build: hugo
 ifndef NO_STATIC
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
 		| grep -v gemini \
-		| xargs zopfli --i$(ZOPFLI_ITERATIONS) --gzip
+		| xargs ect -$(ECT_LEVEL) -gzip --ultra=3 --stagnations=200
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
 		| grep -v gemini \
 		| xargs brotli -q 11

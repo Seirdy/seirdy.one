@@ -2,7 +2,6 @@
 image: alpine/edge
 packages:
   - rsync
-  - brotli  # for max compression w/ brotli_static, decompressing binaries
   - git  # for Hugo's gitInfo
   - make
   - jq
@@ -17,9 +16,9 @@ triggers:
 tasks:
   - deps: |
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
-      rsync deploy@seirdy.one:/home/deploy/binaries.tar.br .
+      rsync -v deploy@seirdy.one:/home/deploy/binaries.tar.gz .
       mkdir -p ~/bin
-      brotli -dc binaries.tar.br | tar x -oC ~/bin
+      tar xzf binaries.tar.gz -oC ~/bin
       cd seirdy.one
   - build_deploy: |
       cd seirdy.one
