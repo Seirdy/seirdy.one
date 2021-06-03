@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: dark) {
 	html {
 		background: #000;
-		color: #eee;
+		color: #fff;
 	}
 
 	/* IndieWeb u-photo shouldn't look like floating punctuation marks */
@@ -13,15 +13,15 @@
 	}
 
 	a {
-		color: #8cf;
+		color: #ed5;
 	}
 
 	a:visited {
-		color: #d9f;
+		color: #ddc;
 	}
 
 	a:active {
-		color: #e3e;
+		color: #c80;
 	}
 
 	blockquote,
