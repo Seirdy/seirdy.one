@@ -27,10 +27,11 @@
 {{ if not (eq $dark "off") -}}
 {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
 {{ end -}}
-{{ $css := $resources | resources.Concat "css/style.css" | minify | resources.Fingerprint "sha384" -}}
-{{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}}
+{{ $css := $resources | resources.Concat "css/style.css" | minify -}}
+<!-- {{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}} -->
+<style>{{ $css.Content | safeCSS }}</style>
 <!-- only load syntax-highlighting CSS if this page needs it -->
-{{ if .Params.highlight -}}
+{{- if .Params.highlight -}}
 {{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" -}}
 {{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
 {{- end -}}
