@@ -4,8 +4,9 @@
 <meta name="author" content="{{ .Site.Author.name }}">
 {{- $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
 {{ printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
-{{ $favicon := resources.Get "/favicon.png" | resources.Fingerprint "md5" -}}
-{{ printf `<link rel="icon" sizes="32x32" href="%s" type="image/png">` $favicon.RelPermalink | safeHTML -}}
+{{ $favicon := resources.Get "/favicon.png" -}}
+{{ $favicon_base64 := $favicon.Content | base64Encode }}
+{{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
 <!-- apple-touch-icon used to be apple-specific, but now it's
 		 a pseudo-standard relied upon by other vendors too:
 		 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
