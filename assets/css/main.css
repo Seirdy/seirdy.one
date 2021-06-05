@@ -18,8 +18,7 @@
  */
 
 body {
-	font: 16px sans-serif;
-	line-height: 1.5rem;
+	font: 16px/1.5rem sans-serif;
 	margin: auto;
 	max-width: 50rem;
 	padding: 0 5%;
@@ -52,8 +51,8 @@ nav li {
 	margin-bottom: 0.5rem;
 }
 
-/* single-line nav on widescreen, multi-line nav on narrow screens */
-@media (min-width: 28rem) {
+/* single-line nav o4 widescreen, multi-line nav on narrow screens */
+@media (min-width: 24rem) {
 	nav li {
 		display: inline;
 	}
