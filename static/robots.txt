@@ -1,4 +1,5 @@
 User-agent: *
 Sitemap: https://seirdy.one/sitemap.xml
 Disallow: /noindex/
+Disallow: /misc/
 Disallow: /webmentions/
