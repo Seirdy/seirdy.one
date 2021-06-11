@@ -1,14 +1,16 @@
 ---
 date: "2021-04-16T17:28:06-07:00"
 description: Recently, people have been telling webmasters to add a Permissions-Policy
-    header to their sites to opt out of FLoC; these people don't seem to understand
-    how the Permissions-Policy header works.
+    header to their sites to opt out of FLoC. The reality of the situation isn't so
+    simple.
 outputs:
   - html
   - gemtext
 footnote_heading: Notes
 title: "Misinformation about Permissions Policy and FLoC"
 ---
+_Update: I've amended this post with a valid reason to use the header. More info at the bottom._
+
 This post was [written in a hurry](https://www.goodreads.com/quotes/219878-a-lie-can-run-round-the-world-before-the-truth) in response to some misinformation about Google's newest Web antifeature, Federated Learning of Cohorts (FLoC). Google's FLoC is an attempt to track users even when their browsers (rightly) block third-party cookies. The initial blog posts about this issue were quite benign, but online discussions quickly devolved into panic and support for building flawed work-arounds into upstream software. I had to write this before things got out of hand.
 
 A lot of misleading online discussion stems from one not-very-misleading [blog post](https://paramdeo.com/blog/opting-your-website-out-of-googles-floc-network)[^1] that's been making rounds, instructing webmasters everywhere to add the following HTTP response headers to all their pages:
@@ -70,7 +72,7 @@ Here's how not to opt-in to Google's FLoC:
 - Don't load untrusted third-party content that might get classified as an ad (only applies during the origin trial)
 - Don't call `document.interestCohort()`, and don't load third-party scripts that might call it either.
 
-If you have to resort to adding a Permissions-Policy header to opt your site out of FLoC, it means that you've accidentally opted yourself in by including a tracking script (malware) on your page. I'd wager that opting into FLoC wasn't the only nefarious thing those scripts do; chances are they bundle a host of other fingerprinting measures.
+If you have to resort to adding a `Permissions-Policy` header to opt your site out of FLoC, it means that you've accidentally opted yourself in by including a tracking script (malware) on your page. I'd wager that opting into FLoC wasn't the only nefarious thing those scripts do; chances are they bundle a host of other fingerprinting measures.
 
 To be extra safe, you can whitelist exactly what scripts can run with a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (CSP); seirdy.one, for instance, has a CSP that blocks all scripts, forms, frames, and third-party resources from loading.
 
@@ -82,6 +84,22 @@ Take a breath
 If you want to be extra safe, you're free to add this header to your site. Just manage your expectations. However:
 
 Please, don't spam maintainers of web server/backend software to tell them to include this header by default when it may or may not actually reduce user fingerprints. Don't tell webmasters that they have a _moral obligation_ to add a Permissions Policy header either.[^2] You don't need to add this permission policy to every request, just as you don't need to wear a helmet for every form of physical activity. Knee-jerk reactions like patching upstream software only galvanize Google to start ignoring this non-standard usage of the Permissions Policy header.
+
+Update: a valid reason to add this header
+-----------------------------------------
+
+Some IRC discussions and a Hacker News commenter have helped me understand a valid reason to add a `Permissions-Policy` header: making a statement. Opting your site out of FLoC might not significantly improve user privacy, but it does send a clear message that you're against it.
+
+I was initially skeptical of this justification for two reasons:
+
+1. Google is unlikely to care if most of the non-adtech Web disabled FLoC, since they aren't Google's customers. If you work at Google, feel free to prove me wrong.
+2. Most websites won't include the header, so it's unlikely to make a big difference.
+
+However, I've changed my mind for one reason: if enough people implement this header, then anyone looking at HTTP headers will be reminded of the existence of FLoC. Making a statement like this will help spread awareness. I do maintain that effort is better spent getting users off Chromium and Chromium-dependent browsers, though.
+
+Normally, I'd be against making a statement in response header fields; messages meant to be parsed by humans should be sent in the body instead. I'm making an exception because `interest-cohort` will likely become an official addition to the Permissions-Policy standard.
+
+In short: FLoC is a terrible idea partly because "opting out" your site won't significantly improve users' privacy. Opt out of FLoC with the suggested header if you want to make a statement, not because you think you think you're fulfilling your moral obligation to protect your visitors. If you want to fulfill that obligation, **get them off of Chrome and Google.**
 
 
 [^1]: This isn't the only post making rounds, but it did hit the front page of a certain orange-colored website. I'm not blaming the author; if I hadn't encountered the Permissions Policy spec earlier, I probably would have also taken the advice the author read at face-value.
