@@ -64,6 +64,8 @@ ordered = true
 [mediaTypes]
 [mediaTypes."text/gemini"]
 suffixes = ["gmi"]
+[mediaTypes."application/manifest+json"]
+suffixes = ["webmanifest"]
 
 [outputFormats]
 [outputFormats.Gemini]
@@ -123,6 +125,6 @@ Referrer-Policy = "no-referrer"
 X-XSS-Protection = "1; mode=block"
 X-FROG-UNSAFE = "1"
 X-UA-Compatible = "IE=edge"
-Content-Security-Policy = "default-src 'none'; img-src 'self' https://seirdy.one; style-src 'self'; script-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; manifest-src 'self'; upgrade-insecure-requests;"
+Content-Security-Policy = "default-src 'none'; img-src 'self' https://seirdy.one data:; style-src 'self'; script-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; manifest-src 'self'; upgrade-insecure-requests;"
 Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
 Cache-Control = "max-age=120, no-transform"
