@@ -51,11 +51,11 @@
 <meta property="og:type" content="website">
 {{- end -}}
 <!-- ANOTHER meta image?! When will it end? -->
-{{ $og_image := resources.Get "/open_graph.png" | resources.Fingerprint "md5" -}}
+{{ $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
 {{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:height" content="630">
-<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="512">
 <meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 <meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta property="article:author" content="{{ .Site.Author.name }}">

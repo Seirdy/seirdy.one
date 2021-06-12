@@ -4,7 +4,7 @@
 {{- $maskablesvg := resources.Get "/maskable_android.svg" | resources.Fingerprint "md5" -}}
 {{- $monochromesvg := resources.Get "/monochrome.svg" | resources.Fingerprint "md5" -}}
 {
-	"name": "Seirdy's Home",
+	"name": "{{site.Title}}",
 	"short_name": "Seirdy",
 	"description": "{{ .Site.Params.Description }}",
 	"lang": "en-US",

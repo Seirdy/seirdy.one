@@ -14,7 +14,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlvz --zc=zstd
 # compression has dimishing returns after this point
-ECT_LEVEL=1009
+ECT_LEVEL=70109
 
 .PHONY: hugo
 hugo: clean
@@ -65,12 +65,12 @@ test: lint-css hint-devserver check-links
 .PHONY: build
 build: hugo
 ifndef NO_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' \
 		| grep -v gemini \
-		| xargs ect -$(ECT_LEVEL) -gzip --ultra=3 --stagnations=200
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.txt' -o -name '*.asc' -o -name '*.webmanifest' -o -name "*.svg" \
+		| xargs ect -$(ECT_LEVEL) -gzip
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' \
 		| grep -v gemini \
-		| xargs brotli -q 11
+		| xargs brotli -q 11 --
 endif
 
 # save webmentions to a file, don't send yet
