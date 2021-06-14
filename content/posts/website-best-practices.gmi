@@ -89,6 +89,8 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 
 It's got a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets
 
+## Dark themes
+
 If you do explicitly set colors, please also include a dark theme using a media query:
 
 ```
@@ -98,6 +100,14 @@ If you do explicitly set colors, please also include a dark theme using a media 
 For more info, read the relevant docs:
 
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme prefers-color-scheme docs on MDN
+
+When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
+
+=> https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
+
+Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+
+CSS filters such as "invert" are quite expensive to run, so they should be used sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 ## Image optimization
 
