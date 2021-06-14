@@ -13,7 +13,7 @@ footnote_heading: References and endnotes
 ---
 This is a tale of the intersection between thermal physics, cosmology, and a tiny amount of computer science to answer a seemingly innocuous question: "How strong does a password need to be for it to be physically impossible to brute-force, ever?"
 
-[TLDR]({{<ref "#conclusiontldr" >}}) at the bottom.
+[TLDR](#conclusiontldr) at the bottom.
 
 _Note: this post contains equations. Since none of the equations were long or complex, I decided to just write them out in code blocks instead of using images or MathML the way Wikipedia does._
 
@@ -41,7 +41,7 @@ How strong should your password be for it to be safe from a brute-force attack b
 
 ### Quantifying password strength.
 
-_A previous version of this section wasn't clear and accurate. I've since removed the offending bits and added a clarification about salting/hashing to the [Caveats and estimates]({{<ref "#caveats-and-estimates" >}}) section._
+_A previous version of this section wasn't clear and accurate. I've since removed the offending bits and added a clarification about salting/hashing to the [Caveats and estimates](#caveats-and-estimates) section._
 
 A good measure of password strength is **entropy bits.** The entropy bits in a password is a base-2 logarithm of the number of guesses required to brute-force it.[^1]
 

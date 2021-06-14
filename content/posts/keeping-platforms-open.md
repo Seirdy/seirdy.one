@@ -14,7 +14,7 @@ title: Keeping platforms open
 ---
 This article is the second entry of series of posts exploring situations in which <abbr title="free, libre, and open-source software">FLOSS</abbr> alone isn't enough to secure user freedom.
 
-My previous article, [Whatsapp and the domestication of users](../../../2021/01/27/whatsapp-and-the-domestication-of-users.html), got more attention than I was expecting. Some responses gave me a lot to think about,[^1] especially regarding _actions_ we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FLOSS, simplicity, and open platforms.
+My previous article, [Whatsapp and the domestication of users](/2021/01/27/whatsapp-and-the-domestication-of-users.html), got more attention than I was expecting. Some responses gave me a lot to think about,[^1] especially regarding _actions_ we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FLOSS, simplicity, and open platforms.
 
 Hard problems, by definition, lack easy solutions. Simply choosing (or creating) a platform that avoids user domestication isn't enough if that platform can change. The price of freedom is eternal vigilance; in addition to settling on the right platform, we must ensure that it honors its users in both the present _and the future_. Keeping a platform FLOSS and simple is more straightforward[^2] than keeping a platform "open".
 
