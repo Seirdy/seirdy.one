@@ -5,14 +5,13 @@
  * 2. Consistent font size; <pre> and <code> shouldn't be smaller than regular text.
  * 3. max text width for readability
  * 4. single-row nav links widescreen, multiline nav on narrow screens
- * 5. Bold "home" link that doubles as a site header
- * 6. Soft border around code in case it looks too similar to regular
+ * 5. Soft border around code in case it looks too similar to regular
  *    text, and to show it continue across more than one line
- * 7. Horizontally center non-inline images; left-aligned stick out.
- * 8. Padding/line-height fixes so the above changes don't ruin alignment.
- * 9. dark.css changes a few colors if the browser wants dark mode.
- * 10. Make blockquotes stand out a little; some browsers don't make them obvious
- * 11. Support unstyled lists: for webmentions, post lists, nav links.
+ * 6. Horizontally center non-inline images; left-aligned stick out.
+ * 7. Padding/line-height fixes so the above changes don't ruin alignment.
+ * 8. dark.css changes a few colors if the browser wants dark mode.
+ * 9. Make blockquotes stand out a little; some browsers don't make them obvious
+ * 10. Support unstyled lists: for webmentions, post lists, nav links.
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
