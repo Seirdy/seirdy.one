@@ -25,5 +25,6 @@ tasks:
       export PATH=~/bin:$PATH
       make clean deploy
       cp mentions.json ~/mentions.json
+      make WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' clean deploy-html
 artifacts:
   - mentions.json
