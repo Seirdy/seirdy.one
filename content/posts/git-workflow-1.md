@@ -9,7 +9,7 @@ tags:
   - foss
 title: "Resilient Git, Part 1: Hydra Hosting"
 ---
-This is Part 1 of a series called [Resilient Git](../../../2020/11/17/git-workflow-0.html).
+This is Part 1 of a series called [Resilient Git](/2020/11/17/git-workflow-0.html).
 
 The most important part of a project is its code. Resilient projects should have their code in multiple places of equal weight so that work continues normally if a single remote goes down.
 
