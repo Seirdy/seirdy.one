@@ -136,14 +136,15 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 ### Big indexes
 
-- Baidu: Chinese
+- Baidu: Chinese. Very large index; it's a major engine alongside GBY. Offers webmaster tools for site submission.
 - Qihoo 360: Chinese. I'm not sure how independent this one is.
 - Sogou: Chinese
 - Yisou: Chinese
-- [Naver](https://search.naver.com): Korean.
-- [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs.
+- [Naver](https://search.naver.com): Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
+- [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
 - [go.mail.ru](https://go.mail.ru/): Russian
+- [Goo](https://www.goo.ne.jp/): Japanese. Originally sighted in the seirdy.one access logs; rediscovered by a reader.
 
 ### Smaller indexes
 
@@ -174,6 +175,7 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 Matt from Gigablast also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
 
+<span class="h-card vcard"><a class="p-name url fn n" href="http://nafmusings.xyz/"><span class="p-given-name given-name">Nicholas</span> A. <span class="p-family-name family-name">Ferrell</span></a></span> of [The New Leaf Journal](https://thenewleafjournal.com/) wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.
 
