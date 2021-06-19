@@ -15,12 +15,12 @@
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
-{{ if ne .Site.BaseURL "https://seirdy.one/" -}}
+{{ if and (ne .Site.BaseURL "https://seirdy.one/") (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <meta name="robots" content="noindex">
 {{ else -}}
 <link rel="webmention" href="https://seirdy.one/webmentions/receive">
-<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
 {{ end -}}
+<link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
 <link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
 {{- $resources := slice -}}
 {{ $resources = $resources | append (resources.Get "/css/main.css") -}}
