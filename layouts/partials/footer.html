@@ -1,7 +1,7 @@
 <hr>
 <footer id="site-footer">
-	<p>Copyright © {{now.Year}} Rohan Kumar · Licenced under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a> · <a href="{{ .Site.Params.src }}">Website source code</a></p>
+	<p>Copyright © {{now.Year}} Rohan Kumar · <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a> · <a href="{{ .Site.Params.src }}">Source</a> · <a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor</a></p>
 	{{if .GitInfo -}}
-	<p>Site last rebuilt on {{now.Format "2006-01-02 15:04:05 -0700" }}</p>
+	<p>Site last deployed on {{now.Format "2006-01-02 15:04:05 -0700" }}</p>
 	{{- end}}
 </footer>
