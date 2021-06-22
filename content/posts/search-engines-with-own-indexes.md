@@ -32,7 +32,7 @@ There's also a practical, non-ideological reason to try other engines: different
 Methodology
 -----------
 
-I mainly evaluated link results, and didn't focus too much on (often glaring) privacy issues, "enhanced" or "instant" results (e.g. Wikipedia sidebars, related searches, Stack Exchange answers), or other elements.
+I focused almost entirely on "organic results" (the classic link results), and didn't focus too much on (often glaring) privacy issues, "enhanced" or "instant" results (e.g. Wikipedia sidebars, related searches, Stack Exchange answers), or other elements.
 
 I compared results for esoteric queries side-by-side; if the first 20 results were (nearly) identical to another engine's results (though perhaps in a slightly different order), they were likely sourced externally and not from an independent index.
 
@@ -116,8 +116,14 @@ Results from these search engines don't seem at all useful.
 - [Active Search Results](https://www.activesearchresults.com): very poor quality
 - Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn't link it.
 - [Anoox](https://www.anoox.com/): Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
-- [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha; as of 2021-03-20, the hCaptcha is broken (missing sitekey). This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 - [Yioop!](https://www.yioop.com): A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
+
+### Semi-independent indexes
+
+Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
+
+- [Brave Search](https://search.brave.com/): Most tests (including all the tests I listed in the "Methodology" section) resulted in a fallback to Google-based results, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Tests that didn't fall back ("Brave", "Yandex", "zip") seemed to have good results. As of June 2021, a [help page](https://web.archive.org/web/20210622170701/https://search.brave.com/help/google-fallback) gives the impression that fallback isn't on by default; this hasn't been my experience. More transparency about fallback is needed before I can consider recommending Brave Search.
+- [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about *how* it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
 Non-generalist search
 ---------------------
@@ -126,7 +132,7 @@ These indexing search engines don't have a Google-like "ask me anything" endgame
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
 - [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
-- [Quor](https://www.quor.com): Seems to mainly index large news sites.
+- Quor: Seems to mainly index large news sites. Site is down as of June 2021; originally available at www dot quor dot com.
 - [Ninfex](https://ninfex.com/): a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 
 Other languages
@@ -166,7 +172,6 @@ Upcoming engines
 These engines aren't ready yet; their indexes are either in a proof-of-concept phase with a handful of sites, or aren't available yet.
 
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
-- Brave [announced](https://brave.com/search/) that it will start its own independent search engine based on the now-discontinued Cliqz. I don't endorse the company, but I hope its results will be available through metasearch engines like Searx.
 
 Acknowledgements
 ----------------
@@ -181,7 +186,7 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 
 [^2]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
-[^3]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers
+[^3]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing).
 
 [^4]: Qwant claims to also use its own crawler for results, but it's still mostly Bing. Try a side-by-side comparison; I found that it doesn't seem to have anything besides Bing results.
 
