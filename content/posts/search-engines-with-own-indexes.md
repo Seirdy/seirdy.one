@@ -53,7 +53,7 @@ These are large engines that pass all the above tests and more.
 
 - Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
   - Startpage
-    - (discontinued) Runnaroo
+  - (discontinued) Runnaroo
   - SAPO (Portuguese interface, can work with English results)
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
   - Yahoo
@@ -123,7 +123,6 @@ Results from these search engines don't seem at all useful.
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
 
 - [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
-
 - [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
 Non-generalist search
@@ -203,3 +202,4 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 [^9]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
 [^10]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+
