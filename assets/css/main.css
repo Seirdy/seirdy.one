@@ -57,6 +57,7 @@ nav li {
 	}
 }
 
+/* center images that aren't my indieweb icon */
 img:not(.u-photo) {
 	display: block;
 	height: auto;
