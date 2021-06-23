@@ -147,10 +147,9 @@ Results from these search engines don’t seem at all useful.
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
 
-* Brave Search: Most tests (including all the tests I listed in the "Methodology" section) resulted in a fallback to Google-based results, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Tests that didn't fall back ("Brave", "Yandex", "zip") seemed to have good results. As of June 2021, a help page gives the impression that fallback isn't on by default; this hasn't been my experience. More transparency about fallback is needed before I can consider recommending Brave Search.
+* Brave Search: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.¹⁰ The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
 
 => https://search.brave.com/ Brave Search
-=> https://web.archive.org/web/20210622170701/https://search.brave.com/help/google-fallback Google fallback mixing (Brave Search Help)
 
 * Plumb: Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about *how* it does this: it loads Google's Custom Search scripts from "cse.google.com" onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block "cse.google.com" from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer previously founded the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
@@ -274,3 +273,9 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 => https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1 Archive of the Reddit thread
 
 ⁹ Some search engines support the "site:" search operator to limit searches to subpages/subdomains of a single site or TLD. "site:.one", for instance, limits searches to websites with the ".one" TLD.
+
+¹⁰ More information can be found in a HN subthread and the Cliqz tech blog:
+
+=> https://news.ycombinator.com/item?id=27593801 HN comment thread for "Introducing Brave Search Beta"
+=> https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html Tech @ Cliqz: Building a search engine from scratch
+=> https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html Tech @ Cliqz: Search quality at Cliqz

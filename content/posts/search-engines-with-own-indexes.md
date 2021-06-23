@@ -53,7 +53,7 @@ These are large engines that pass all the above tests and more.
 
 - Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
   - Startpage
-	- (discontinued) Runnaroo
+    - (discontinued) Runnaroo
   - SAPO (Portuguese interface, can work with English results)
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
   - Yahoo
@@ -122,8 +122,9 @@ Results from these search engines don't seem at all useful.
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
 
-- [Brave Search](https://search.brave.com/): Most tests (including all the tests I listed in the "Methodology" section) resulted in a fallback to Google-based results, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Tests that didn't fall back ("Brave", "Yandex", "zip") seemed to have good results. As of June 2021, a [help page](https://web.archive.org/web/20210622170701/https://search.brave.com/help/google-fallback) gives the impression that fallback isn't on by default; this hasn't been my experience. More transparency about fallback is needed before I can consider recommending Brave Search.
-- [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about *how* it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
+- [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
+
+- [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
 Non-generalist search
 ---------------------
@@ -182,6 +183,7 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 
 <span class="h-card vcard"><a class="p-name url fn n" href="http://nafmusings.xyz/"><span class="p-given-name given-name">Nicholas</span> A. <span class="p-family-name family-name">Ferrell</span></a></span> of [The New Leaf Journal](https://thenewleafjournal.com/) wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 
+
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.
 
 [^2]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
@@ -200,3 +202,4 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 
 [^9]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
+[^10]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
