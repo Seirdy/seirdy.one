@@ -1,13 +1,14 @@
 @media (prefers-color-scheme: dark) {
 	html {
-		/*"background" is short for a bunch of unnecessary CSS rules; background-color is all I need*/
+		/* "background" is short for a bunch of unnecessary CSS rules
+		 * background-color is all I need */
 		background-color: #000;
-		color: #eee; /*I've been told that pure white on black is a bit harsh*/
+		color: #eee; /* I've been told that pure white on black is a bit harsh */
 	}
 
 	/* IndieWeb u-photo shouldn't look like floating punctuation marks */
 	.u-photo {
-		border: 1px solid #ddc;	
+		border: 1px solid #ddc;
 	}
 
 	a {
