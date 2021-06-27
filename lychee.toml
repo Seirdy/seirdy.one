@@ -4,4 +4,6 @@ exclude = [
 	"^gemini://.*",
 	"mailto:.*",
 	"git@git.*",
+	"*.onion",
+	"*.onion/*",
 ]
