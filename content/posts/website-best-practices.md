@@ -35,6 +35,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - Optimized images. More on image optimization below.
 - All images labeled with alt-text. The page should make sense without images.
 - Probably HTTP/2. There are some edge cases in which HTTP/2 can make things slower. Run some tests to find out.
+- Works well with Tor. More on this below.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies.
 
@@ -177,6 +178,17 @@ Common items in sidebars include article tags, an author bio, and an index of en
 
 Don't boost engagement by providing readers with information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages _after_ they've decided they want to read more.
 
+Tor
+---
+
+Many people use Tor out of necessity. On Tor, additional constraints apply.
+
+For one, Tor users are encouraged to set the Tor Browser Bundle's (<abbr title="Tor Browser Bundle">TBB</abbr>) [security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, some fonts, SVG images, and other features. If your site has any SVG images, be sure to provide a fallback to raster formats using a `<picture>` element.
+
+Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
+
+If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JS to complete a CAPTCHA.
+
 Testing
 -------
 
@@ -190,17 +202,18 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests start out pretty reasonable, but gradually get more insane as you go down. Once again, use your judgement.
 
-1. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
-2. Print out the site in black-and-white, preferably with a simple laser printer.
-3. Test with a screen reader.
-4. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
-5. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
-6. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-7. Test in an online website translator tool.
-8. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
-9. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+1. Test using the Tor browser with the safest security level enabled (disables JS and other features).
+2. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
+3. Print out the site in black-and-white, preferably with a simple laser printer.
+4. Test with a screen reader.
+5. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
+6. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
+7. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+8. Test in an online website translator tool.
+9. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
+10. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
-I'm still on step 8, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+I'm still on step 9, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
 Other places to check out
 -------------------------
