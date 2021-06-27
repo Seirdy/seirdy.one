@@ -12,7 +12,9 @@ WWW_RSYNC_DEST = $(USER):$(WWW_ROOT)
 GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
-RSYNCFLAGS += -rlvz --zc=zstd
+RSYNCFLAGS += -rlcv --zc=zstd --zl=6
+# include br, jxl, and gmi in skip-compress
+RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3
 # compression has dimishing returns after this point
 ECT_LEVEL=70109
 
