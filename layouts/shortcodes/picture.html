@@ -2,16 +2,25 @@
 {{ $light_png := resources.GetMatch (printf "/p/%s.png" (.Get "name")) -}}
 {{ $light_webp := resources.GetMatch (printf "/p/%s.webp" (.Get "name")) -}}
 {{ $light_avif := resources.GetMatch (printf "/p/%s.avif" (.Get "name")) -}}
+{{ $light_jxl := resources.GetMatch (printf "/p/%s.jxl" (.Get "name")) -}}
 {{ $dark_svg := resources.GetMatch (printf "/p/%s_dark.svg" (.Get "name")) -}}
 {{ $dark_png := resources.GetMatch (printf "/p/%s_dark.png" (.Get "name")) -}}
 {{ $dark_webp := resources.GetMatch (printf "/p/%s_dark.webp" (.Get "name")) -}}
 {{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) -}}
+{{ $dark_jxl := resources.GetMatch (printf "/p/%s_dark.jxl" (.Get "name")) -}}
 <picture>
 	{{ with $dark_svg -}}
 	{{ $dark_svg_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_svg_src.RelPermalink }}"
 		type="image/svg+xml"
+		media="(prefers-color-scheme: dark)">
+	{{ end -}}
+	{{ with $dark_jxl -}}
+	{{ $dark_jxl_src := . | resources.Fingerprint "md5" -}}
+	<source
+		srcset="{{ $dark_jxl_src.RelPermalink }}"
+		type="image/jxl"
 		media="(prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $dark_avif -}}
@@ -41,6 +50,12 @@
 		srcset="{{ $light_svg_src.RelPermalink }}"
 		type="image/svg+xml">
 	{{ end -}}
+	{{ with $light_jxl -}}
+	{{ $light_jxl_src := . | resources.Fingerprint "md5" -}}
+	<source
+		srcset="{{ $light_jxl_src.RelPermalink }}"
+		type="image/jxl">
+	{{ end -}}
 	{{ with $light_avif -}}
 	{{ $light_avif_src := . | resources.Fingerprint "md5" -}}
 	<source
@@ -59,5 +74,6 @@
 		type="image/png">
 	<img
 		width="{{ $light_png.Width }}" height="{{ $light_png.Height }}"
-		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'>
+		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
+		decoding="async">
 </picture>
