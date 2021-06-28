@@ -11,6 +11,8 @@
 		 a pseudo-standard relied upon by other vendors too:
 		 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
 {{ printf `<link rel="apple-touch-icon" href="%s">` $icon_192.RelPermalink | safeHTML -}}
+<!-- Why does apple do this -->
+<meta name="format-detection" content="telephone=no">
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
@@ -29,13 +31,7 @@
 {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
 {{ end -}}
 {{ $css := $resources | resources.Concat "css/style.css" | minify -}}
-<!-- {{ printf `<link rel="stylesheet" href="%s" integrity="%s">` $css.RelPermalink $css.Data.Integrity | safeHTML -}} -->
 <style>{{ $css.Content | safeCSS }}</style>
-<!-- only load syntax-highlighting CSS if this page needs it -->
-{{- if .Params.highlight -}}
-{{ $css_syntax := resources.Get "/css/syntax.css" | minify | resources.Fingerprint "sha384" -}}
-{{- printf `<link rel="stylesheet" href="%s" integrity="%s">` $css_syntax.RelPermalink $css_syntax.Data.Integrity | safeHTML }}
-{{- end -}}
 {{- if eq .RelPermalink "/" -}}
 <title>{{ .Title }}</title>
 {{- else -}}
