@@ -146,6 +146,8 @@ In general, avoid using inline images just for decoration. Only use an image if 
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
+If you really want to go overboard with PNG optimization, you can try a tool like [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool).
+
 Layout
 ------
 
