@@ -79,7 +79,7 @@ These are large engines that pass all the above tests and more.
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I stopped adding Bing-based search engines. There are just too many.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
-  - Epic Search
+	- Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.
 - Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers [eTools.ch](https://www.etools.ch/).
 - Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
@@ -172,6 +172,7 @@ Upcoming engines
 These engines aren't ready yet; their indexes are either in a proof-of-concept phase with a handful of sites, or aren't available yet.
 
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
+- [Neeva](https://neeva.com/): Claims to be building its own index. Until its own index grows big enough, it uses Bing. Like Infinity Search, it's a paid service; it requires registration to use.
 
 Acknowledgements
 ----------------

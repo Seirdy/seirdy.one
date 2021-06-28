@@ -69,7 +69,7 @@ These are large engines that pass all the above tests and more.
 
 3. Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
 
-* Epic Search
+* Epic Search (went paid-only by June 2021)
 * Occasionally powers DuckDuckGo’s link results instead of Bing.
 
 4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch.
@@ -207,7 +207,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 * Ask.com: the main site shut down, but subdomains like uk.ask.com are still alive. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from.
 * Not evaluated: Apple’s search. It’s only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
-* Partially evaluated: Infinity Search young, small index. It recently split into a paid offering with the main index and Infinity Decentralized, the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn’t able to run the tests listed in the “Methodology” section. Allows submitting URLs and sitemaps into a text box, no other work required.
+* Partially evaluated: Infinity Search. It has a young, small index. It recently split into a paid offering with the main index and Infinity Decentralized, the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn’t able to run the tests listed in the “Methodology” section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
 => https://uk.ask.com  uk.ask.com
 => https://infinitysearch.co  Infinity Search
@@ -215,9 +215,12 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 ## Upcoming engines
 
-These engines aren’t ready yet; their indexes are either in a proof-of-concept phase with a handful of sites, or aren’t available yet.
+These engines aren’t ready yet; their indexes are either in a proof-of-concept phase with a handful of sites or aren’t available yet.
 
 * Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server’s access logs; there’s a good chance it’s crawled your site if you have a few backlinks.
+* Neeva: Claims to be building its own index. Until its own index grows big enough, it uses Bing. Like Infinity Search, it's a paid service; it requires registration to use.
+
+=> https://neeva.com/ Neeva
 
 ## Gemini search engines
 
