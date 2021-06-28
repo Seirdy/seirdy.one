@@ -224,7 +224,11 @@ The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and al
 
 The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
 
+My favorite website club has to be the [<abbr title="eXtreme HyperText Movement for Luddites">XHTML</abbr> Club](https://xhtml.club/) by <span class="h-card vcard"><a class="p-name url fn n" href="https://uglyduck.ca"><span class="p-given-name given-name">Bradley</span> <span class="p-family-name family-name">Taunt</span></a></span>, the creator of the original [1mb.club](https://1mb.club).
+
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
 
 The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
+
+One resource I found useful (that eventually featured this article!) was the "Your page content" section of <span class="h-card vcard"><a class="p-name url fn n" href="https://www.billdietrich.me"><span class="p-given-name given-name">Bill</span> <span class="p-family-name family-name">Dietrich</span>'s</a></span> comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
