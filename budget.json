@@ -27,19 +27,19 @@
 		"resourceSizes": [
 			{
 				"resourceType": "total",
-				"budget": 100
+				"budget": 60
 			},
 			{
 				"resourceType": "document",
-				"budget": 30
+				"budget": 40
 			},
 			{
 				"resourceType": "image",
-				"budget": 70
+				"budget": 35
 			},
 			{
 				"resourceType": "stylesheet",
-				"budget": 5
+				"budget": 1
 			}
 		],
 		"resourceCounts": [

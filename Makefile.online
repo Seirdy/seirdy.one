@@ -5,7 +5,7 @@ PAGE_PATH = /
 SCHEME=https://
 URL = $(SCHEME)$(DOMAIN)$(PAGE_PATH)
 # latest bleeding-edge chromium snapshot
-CHROME_PATH = /home/rkumar/Executables/ghq/github.com/chromium-unofficial-latest-linux/chromium-latest-linux/latest/chrome
+CHROME_PATH = /home/rkumar/Executables/ghq/github.com/chromium-unofficial-latest-linux/chromium-latest-linux/latest/chrome-linux/chrome
 CHROME_PROFILE = /tmp/chrome-lighthouse
 CHROME_FLAGS += --headless --disable-extensions --no-sandbox --no-first-run --user-data-dir=$(CHROME_PROFILE)
 CPU_SLOWDOWN=2.4

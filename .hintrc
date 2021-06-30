@@ -15,7 +15,6 @@
 	"hints": {
 		"apple-touch-icons": "off",
 		"axe/aria": "off",
-		"axe/other": "error",
 		"compat-api/css": [
 			"error",
 			{
@@ -36,7 +35,7 @@
 		],
 		"doctype": "error",
 		"highest-available-document-mode": "off",
-		"http-compression": "error",
+		"http-compression": "off",
 		"https-only": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
