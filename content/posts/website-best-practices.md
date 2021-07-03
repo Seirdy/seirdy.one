@@ -77,6 +77,8 @@ Users on poor connections have better things to do than idly wait for pages to l
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
+A similar attribute that I *do* recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
+
 ### Wouldn't this be solved by combining lazy loading with pre-loading/pre-fetching?
 
 A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading since linked content may employ dark patterns like tracking without consent.
@@ -164,6 +166,8 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
   }
 }
 ```
+
+Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/how-css-alone-can-help-track-you-YF4ciVY6/).
 
 ### What about sidebars?
 
