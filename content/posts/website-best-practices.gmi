@@ -110,7 +110,7 @@ When setting colors, especially with a dark background, I recommend checking you
 
 => https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
 
-Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+Blue and purple links on a black background have much worse perceptual contrast than yellow or green links. Also, remember that the darker the background, the less battery your website will require devices with OLED screens.
 
 CSS filters such as "invert" are quite expensive to run, so they should be used sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
