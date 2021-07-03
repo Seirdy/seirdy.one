@@ -67,10 +67,10 @@ test: lint-css hint-devserver check-links
 .PHONY: build
 build: hugo
 ifndef NO_STATIC
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
 		| grep -v gemini \
 		| xargs ect -$(ECT_LEVEL) -gzip
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' \
+	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
 		| grep -v gemini \
 		| xargs brotli -q 11 --
 endif
