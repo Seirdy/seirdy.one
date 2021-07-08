@@ -29,9 +29,7 @@ ci:
       cumulative-layout-shift:
         - warn
         - maxNumericValue: 0
-      robots-txt: "off"  # Lighthouse bug: CSP makes this impossible
       canonical: "off"  # staging site has no rel=canonical
-      is-crawlable: "off"  # staging site isn't crawlable
       service-worker: "off"  # not a PWA
       works-offline: "off"  # not a PWA
       installable-manifest: "off"  # not a PWA
@@ -45,9 +43,7 @@ ci:
       budgetPath: budget.json
       chromeFlags: "--disable-gpu --no-sandbox --disable-extensions --no-first-run --headless"
       skipAudits:
-        - robots-txt
         - canonical
-        - is-crawlable
         - service-worker
         - works-offline
         - installable-manifest
@@ -56,12 +52,12 @@ ci:
         - offline-start-url
         - offscreen-images
       throttling:
-        cpuSlowdownMultiplier: 4.2  # seems about right on builds.sr.ht
+        cpuSlowdownMultiplier: 1
       throttlingMethod: devtools
     url:
-      - https://staging.seirdy.one/
-      - https://staging.seirdy.one/about.html
-      - https://staging.seirdy.one/2020/11/23/website-best-practices.html
+      - https://seirdy.one/
+      - https://seirdy.one/about.html
+      - https://seirdy.one/2020/11/23/website-best-practices.html
     numberOfRuns: 3
   upload:
     outputDir: lighthouse-reports
