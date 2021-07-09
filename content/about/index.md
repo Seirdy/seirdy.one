@@ -3,7 +3,7 @@ date: 2020-10-30
 layout: post
 title: Seirdy (Rohan Kumar)
 ---
-Rohan Kumar : He/Him : Age 20
+Rohan Kumar : He/Him : Age 21
 
 Online Handle: Seirdy
 
@@ -31,7 +31,7 @@ My handle is "Seirdy" on all the platforms I use.
 - Social (federated): I'm [@Seirdy @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
 - Social (non-federated): I'm Seirdy on [Hacker News](https://news.ycombinator.com/user?id=Seirdy), [Lobsters](https://lobste.rs/u/Seirdy), [Reddit](https://www.reddit.com/user/Seirdy/), [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
 - Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public PGP key: [1E892DB2A5F84479](./publickey.asc). My key is also available via WKD.
-- Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. If you don't like IRC, I'm also [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix. I generally prefer IRC to Matrix, and don't check Matrix very often.
+- Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. If you don't like IRC, I'm also [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix. I might be a bit slow to respond on Matrix because I generally prefer IRC.
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
@@ -72,6 +72,7 @@ I watch anime. Some of my favorites, in no particular order:
 - Code Geass
 - Mawaru Penguindrum
 - No Game No Life: Zero
+- Darling in the Franxx
 - Black Lagoon
 - Serial Experiments Lain
 - Saga of Tanya the Evil
