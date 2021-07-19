@@ -9,13 +9,13 @@ CHROME_PATH = /home/rkumar/Executables/ghq/github.com/chromium-unofficial-latest
 CHROME_PROFILE = /tmp/chrome-lighthouse
 CHROME_FLAGS += --headless --disable-extensions --no-sandbox --no-first-run --user-data-dir=$(CHROME_PROFILE)
 CPU_SLOWDOWN=2.4
-LIGHTHOUSE_ARGS += --budget-path budget.json --output html --output json --output-file lighthouse-results --throttling.cpuSlowdownMultiplier=$(CPU_SLOWDOWN) --chrome-flags=$(CHROME_FLAGS)
+LIGHTHOUSE_ARGS += --budget-path budget.json --output html --output json --output-file lighthouse-results --throttling.cpuSlowdownMultiplier=$(CPU_SLOWDOWN) --plugins=lighthouse-plugin-resource-granular-summary --chrome-flags="$(CHROME_FLAGS)"
 
 hint-online:
 	hint --config .hintrc -f codeframe $(URL)
 lighthouse:
 	mkdir -p $(CHROME_PROFILE)
-	lighthouse $(URL) $(LIGHTHOUSE_ARGS)
+	npx lighthouse@next $(URL) $(LIGHTHOUSE_ARGS)
 	rm -rf $(CHROME_PROFILE)
 redbot:
 	redbot_cli -a $(URL)

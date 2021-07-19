@@ -79,8 +79,7 @@ endif
 mentions.json: hugo
 	# gather old version of the site
 	# rsync $(RSYNCFLAGS) --exclude '*.gz' --exclude '*.br' --exclude '*.png' --exclude-from .rsyncignore $(WWW_RSYNC_DEST)/ old
-	static-webmentions find
-	mv mentions.json mentions.json.unfiltered
+	static-webmentions -f mentions.json.unfiltered find 
 	# filter the webmentions a bit; jq offers more flexibility than config.toml
 	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|archive.is|en.wikipedia.org|matrix.to|([a-z]*.)?reddit.com|github.com)") | not) ]' <mentions.json.unfiltered >mentions.json
 	rm mentions.json.unfiltered
