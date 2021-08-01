@@ -5,6 +5,7 @@ description: A lengthy guide to making small sites that focus on content rather 
 outputs:
   - html
   - gemtext
+footnote_heading: Notes
 tags:
   - web
   - minimalism
