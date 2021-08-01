@@ -29,17 +29,30 @@
 				"ignore": [
 					"time",
 					"picture",
-					"meta[name=color-scheme]"
+					"meta[name=color-scheme]",
+					"img[decoding]"
 				]
 			}
 		],
 		"doctype": "error",
 		"highest-available-document-mode": "off",
+		"http-cache": [
+			"error",
+			{
+				"maxAgeTarget": 300
+			}
+		],
 		"http-compression": "off",
 		"https-only": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
-		"performance-budget": "error",
+		"performance-budget": [
+			"error",
+			{
+				"connectionType": "3GSlow",
+				"loadTime": 5
+			}
+		],
 		"ssllabs": "off"
 	}
 }
