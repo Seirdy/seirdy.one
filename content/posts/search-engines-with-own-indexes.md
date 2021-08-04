@@ -98,7 +98,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
 - [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
-- [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also has many other utilities related to domain name statistics. Failed multiple tests. Its index is a bit dated; it has an old backlog of sites it hasn't finished indexing. It also has several per-language indexes.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
 - [Infotiger](https://alpha.infotiger.com/): Allows choosing between multiple different sorting algorithms (date, text length, PageRank, and "AND"). Supports English and German. The legacy version allows submitting links via a web-form or email, but I don't know if that has an impact on the more recent alpha version.
@@ -114,7 +113,7 @@ Results from these search engines don't seem at all useful.
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 - Scopia: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 - [Active Search Results](https://www.activesearchresults.com): very poor quality
-- Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. The site seems to be down right now, so I didn't link it.
+- [Crawlson](https://crawlson.com): young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 - [Anoox](https://www.anoox.com/): Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 - [Yioop!](https://www.yioop.com): A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
@@ -150,7 +149,6 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 - [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
 - [go.mail.ru](https://go.mail.ru/): Russian
-- [Goo](https://www.goo.ne.jp/): Japanese. Originally sighted in the seirdy.one access logs; rediscovered by a reader.
 
 ### Smaller indexes
 
@@ -173,6 +171,12 @@ These engines aren't ready yet; their indexes are either in a proof-of-concept p
 
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
 - [Neeva](https://neeva.com/): Claims to be building its own index. Until its own index grows big enough, it uses Bing. Like Infinity Search, it's a paid service; it requires registration to use.
+
+## Graveyard
+
+These engines were originally included in the article, but have since been discontinued.
+
+- [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.
 
 Acknowledgements
 ----------------
