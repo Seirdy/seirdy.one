@@ -35,7 +35,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/). A bare minimum would be 50, but it shouldn't be too hard to hit 100.
 - Optimized images. More on image optimization below.
 - All images labeled with alt-text. The page should make sense without images.
-- Probably HTTP/2. There are some edge cases in which HTTP/2 can make things slower. Run some tests to find out.
+- Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
 - Works well with Tor. More on this below.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies.
@@ -49,7 +49,7 @@ One of the defining differences between textual websites and advanced Web 2.0 si
 
 ### TLS
 
-All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with [testssl.sh](https://testssl.sh/) and [Webbkoll](https://webbkoll.dataskydd.net/).
+All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with [testssl.sh](https://testssl.sh/) and [Webbkoll](https://webbkoll.dataskydd.net/). Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard.
 
 ### Scripts and the Content Security Policy
 
@@ -150,7 +150,7 @@ Image optimization
 
 Some image optimization tools I use:
 
-- [`pngquant`](http://pngquant.org) (lossy)
+- [`pngquant`](https://pngquant.org) (lossy)
 - [`oxipng`](https://github.com/shssoichiro/oxipng) (lossless)
 - [`jpegoptim`](https://github.com/tjko/jpegoptim) (lossless or lossy)
 - [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp) (lossless or lossy)

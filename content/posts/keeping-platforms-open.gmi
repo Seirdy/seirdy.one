@@ -97,7 +97,7 @@ As a user, consider using clients and servers made by different groups of people
 
 What distinguishes a client shouldn't be *what* features it has, but *how* it implements its features. Obviously, having some unique features is great; problems arise when the number of unique features crosses a certain threshold. Following both these practices encourages implementations to stick to standards compliance, reliability, and compatibility rather than "innovation". Choose boring technology over shiny new features.
 
-=> http://boringtechnology.club/ Choose Boring Technology
+=> https://web.archive.org/web/20210810063956/http://boringtechnology.club/ Choose Boring Technology
 
 Try venturing outside the mainstream by taking a look at a less popular provider or client. All implementations start somewhere, and a diversity of implementations prevents a rule by oligopoly.
 

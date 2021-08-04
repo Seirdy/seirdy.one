@@ -24,7 +24,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * A good score on Mozilla's HTTP Observatory. A bare minimum would be 50, but it shouldn't be too hard to hit 100.
 * Optimized images. More on image optimization below.
 * All images labeled with alt-text. The page should make sense without images.
-* Probably HTTP/2. There are some edge cases in which HTTP/2 can make things slower. Run some tests to find out.
+* Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
 * Works well with Tor. More on this below.
 
 => https://observatory.mozilla.org/ HTTP Observatory
@@ -168,7 +168,7 @@ CSS filters such as "invert" are quite expensive to run, so they should be used 
 
 Some image optimization tools I use:
 
-=> http://pngquant.org pngquant (lossy)
+=> https://pngquant.org pngquant (lossy)
 => https://github.com/shssoichiro/oxipng Oxipng (lossless)
 => https://github.com/tjko/jpegoptim jpegoptim (lossless or lossy)
 => https://developers.google.com/speed/webp/docs/cwebp cwebp (lossless or lossy)

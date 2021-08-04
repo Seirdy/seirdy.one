@@ -157,7 +157,7 @@ Before it turned into a manifesto of sorts, this post was intended to be an expa
 
 I initially decided to expand it to its current form for personal reasons. Nowadays, people demand a thorough explanation every time I refuse to use something that "everybody" uses (WhatsApp, Microsoft Office, Windows, macOS, Google Docs...). They'll usually ignore the explanation, but they expect one anyway. By the next time I meet them, they'll have forgotten our prior conversation and will re-enact the same dialogue again. Justifying all my life choices by sending logically correct statements into the void--knowing that everything I say will be ignored--is an emotionally draining process that has taken a toll on my mental health for the past few years; sending my friends this article and changing the subject should save me a few gray hairs in the years to come.
 
-This article extends the guiding philosophies of the Free Software and Copyleft movements. Thanks to [Barna Zsombor](http://bzsombor.web.elte.hu/) for giving good feedback over IRC.
+This article extends the guiding philosophies of the Free Software and Copyleft movements. Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) for giving good feedback over IRC.
 
 Since 2900 words wasn't quite enough, I wrote a follow-up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting.
 

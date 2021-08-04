@@ -10,7 +10,7 @@ Online Handle: Seirdy
 Other versions of this website
 ------------------------------
 
-This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \*nix computers that let people sign up for shell accounts. A typical shell account features clients for IRC and email, common terminal/commandline utilities, and (most importantly) web hosting. Read about the tildeverse's [origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf), read [the FAQ](http://tilde.club/wiki/faq.html), pick [a tilde](http://tilde.club/%7Epfhawkins/othertildes.html) and [get started](http://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve as a "rough draft".
+This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \*nix computers that let people sign up for shell accounts. A typical shell account features clients for IRC and email, common terminal/commandline utilities, and (most importantly) web hosting. Read about the tildeverse's [origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf), read [the FAQ](https://tilde.club/wiki/faq.html), pick [a tilde](https://tilde.club/%7Epfhawkins/othertildes.html) and [get started](https://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve as a "rough draft".
 
 Content on this site also appears on [my Gemini space](gemini://seirdy.one)
 

@@ -84,7 +84,7 @@ That's enough doom-and-gloom. Let's focus on actions that users and vendors can 
 
 ### What users can do
 
-As a user, consider using clients and servers made by different groups of people to make platform boxing more difficult. Pick implementations that suffer from less [feature creep](https://en.wikipedia.org/wiki/Feature_creep) beyond spec compliance. What distinguishes a client shouldn't be _what_ features it has, but _how_ it implements its features. Obviously, having some unique features is great; problems arise when the number of unique features crosses a certain threshold. Following both these practices encourages implementations to stick to standards compliance, reliability, and compatibility rather than "innovation". [Choose boring technology](http://boringtechnology.club/) over shiny new features.
+As a user, consider using clients and servers made by different groups of people to make platform boxing more difficult. Pick implementations that suffer from less [feature creep](https://en.wikipedia.org/wiki/Feature_creep) beyond spec compliance. What distinguishes a client shouldn't be _what_ features it has, but _how_ it implements its features. Obviously, having some unique features is great; problems arise when the number of unique features crosses a certain threshold. Following both these practices encourages implementations to stick to standards compliance, reliability, and compatibility rather than "innovation". [Choose boring technology](https://web.archive.org/web/20210810063956/http://boringtechnology.club/) over shiny new features.
 
 Try venturing outside the mainstream by taking a look at a less popular provider or client. All implementations start somewhere, and a diversity of implementations prevents a rule by oligopoly.
 
@@ -129,7 +129,7 @@ Acknowledgements
 
 <span class="h-card vcard"><a class="p-name url fn n" href="https://ossguy.com/"><span class="p-given-name given-name">Denver</span> <span class="p-family-name family-name">Gingerich</span></a></span> helped me brainstorm early in the writing process and provided useful information for the section on XMPP.
 
-Thanks to <span class="h-card vcard"><a class="p-name url fn n" href="http://bzsombor.web.elte.hu/"><span class="p-given-name given-name">Barna</span> <span class="p-family-name family-name">Zsombor</span></a></span> and carbolymer for giving good feedback over IRC.
+Thanks to <span class="h-card vcard"><a class="p-name url fn n" href="https://bzsombor.web.elte.hu/"><span class="p-given-name given-name">Barna</span> <span class="p-family-name family-name">Zsombor</span></a></span> and carbolymer for giving good feedback over IRC.
 
 
 [^1]: [This Hacker News comment](https://news.ycombinator.com/item?id=25961895) in particular planted quite a few seeds for this article.

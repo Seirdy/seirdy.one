@@ -12,9 +12,9 @@ More info about the Tildeverse:
 
 => https://tildeverse.org/ The tildeverse
 => https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf Origins of the tildeverse
-=> http://tilde.club/wiki/faq.html Tildeverse FAQ
-=> http://tilde.club/%7Epfhawkins/othertildes.html Pick a tilde
-=> http://tilde.club/%7Eanthonydpaul/primer.html Get started
+=> https://tilde.club/wiki/faq.html Tildeverse FAQ
+=> https://tilde.club/%7Epfhawkins/othertildes.html Pick a tilde
+=> https://tilde.club/%7Eanthonydpaul/primer.html Get started
 
 ## Location (Rohan, meatspace)
 
