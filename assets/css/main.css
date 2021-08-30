@@ -8,7 +8,8 @@
  * 4. single-row nav links widescreen, multiline nav on narrow screens
  * 5. Soft border around code in case it looks too similar to regular
  *    text, and to show it continue across more than one line
- * 6. Increase the line-spacing a bit.
+ * 6. Increase the line-spacing a bit so users on mobile devices can
+ *    tap links more easily.
  * 7. Horizontally center non-inline images; left-aligned stick out.
  * 8. dark.css changes a few colors if the browser wants dark mode.
  * 9. Support unstyled lists: for webmentions, post lists, nav links.
@@ -17,17 +18,11 @@
  * default fonts, non-dark-mode colors, etc.
  */
 
-body {
-	font: 100%/1.5em sans-serif;
+html {
+	font: 100%/1.5 sans-serif;
 	margin: auto;
 	max-width: 50em;
-	padding: 0 5%;
-}
-
-h1,
-h2,
-h3 {
-	line-height: 1.25;
+	padding: 0 3%;
 }
 
 blockquote {
@@ -51,8 +46,8 @@ nav li {
 	margin-bottom: 0.5em;
 }
 
-/* single-line nav o4 widescreen, multi-line nav on narrow screens */
-@media (min-width: 24rem) {
+/* single-line nav on widescreen, multi-line nav on narrow screens */
+@media (min-width: 24em) {
 	nav li {
 		display: inline;
 	}
