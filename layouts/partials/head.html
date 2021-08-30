@@ -3,7 +3,7 @@
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta name="author" content="{{ .Site.Author.name }}">
 {{- $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
-{{ printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
+{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
 {{ $favicon := resources.Get "/favicon.png" -}}
 {{ $favicon_base64 := $favicon.Content | base64Encode }}
 {{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
@@ -15,7 +15,7 @@
 <meta name="format-detection" content="telephone=no">
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
-{{ printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
+{{- printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 {{ if and (ne .Site.BaseURL "https://seirdy.one/") (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <meta name="robots" content="noindex">
@@ -24,7 +24,7 @@
 {{ end -}}
 <link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
 <link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
-{{- $resources := slice -}}
+{{ $resources := slice -}}
 {{ $resources = $resources | append (resources.Get "/css/main.css") -}}
 {{ $dark := .Site.Params.dark | default "auto" -}}
 {{ if not (eq $dark "off") -}}
@@ -50,8 +50,7 @@
 {{ $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
 {{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:height" content="512">
-<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512"><meta property="og:image:width" content="512">
 <meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 <meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta property="article:author" content="{{ .Site.Author.name }}">
