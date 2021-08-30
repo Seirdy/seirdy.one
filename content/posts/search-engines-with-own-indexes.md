@@ -79,7 +79,7 @@ These are large engines that pass all the above tests and more.
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I stopped adding Bing-based search engines. There are just too many.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
-	- Epic Search (went paid-only as of June 2021)
+  - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.
 - Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers [eTools.ch](https://www.etools.ch/).
 - Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
@@ -123,6 +123,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 - [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
 - [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
+- [Neeva](https://neeva.com): Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva managed to get an agreement with Bing that allowed result-mixing. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address to use; after the (rather long) free trial it requires payment as an alternative to ads.
 
 Non-generalist search
 ---------------------
@@ -172,7 +173,8 @@ These engines aren't ready yet; their indexes are either in a proof-of-concept p
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
 - [Neeva](https://neeva.com/): Claims to be building its own index. Until its own index grows big enough, it uses Bing. Like Infinity Search, it's a paid service; it requires registration to use.
 
-## Graveyard
+Graveyard
+---------
 
 These engines were originally included in the article, but have since been discontinued.
 
