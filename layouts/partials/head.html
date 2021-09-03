@@ -6,7 +6,7 @@
 {{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
 {{ $favicon := resources.Get "/favicon.png" -}}
 {{ $favicon_base64 := $favicon.Content | base64Encode }}
-{{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
+{{- printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
 <!-- apple-touch-icon used to be apple-specific, but now it's
 		 a pseudo-standard relied upon by other vendors too:
 		 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
@@ -14,7 +14,7 @@
 <!-- Why does apple do this -->
 <meta name="format-detection" content="telephone=no">
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
-{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
+{{- $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 {{ if and (ne .Site.BaseURL "https://seirdy.one/") (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}

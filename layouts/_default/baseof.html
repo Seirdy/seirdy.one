@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{- default "" .Site.LanguageCode -}}">
-	{{- partial "head.html" . -}}
-	{{- partial "header.html" . -}}
-	<main id="content">
-		{{- block "main" . }}{{- end }}
-	</main>
-	{{- partial "footer.html" . -}}
+{{- partial "head.html" . -}}
+{{- partial "header.html" . -}}
+<main id="content">
+	{{- block "main" . }}{{- end -}}
+</main>
+{{ partial "footer.html" . }}
