@@ -13,6 +13,9 @@ tags:
   - platforms
 title: WhatsApp and the domestication of users
 ---
+
+*Update: I wrote a follow up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting.*
+
 I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
 
 WhatsApp wasn't the first instant messenger of its kind, and probably won't be the last. I simply chose to focus on WhatsApp since its recent privacy issues have made it a hot topic.
