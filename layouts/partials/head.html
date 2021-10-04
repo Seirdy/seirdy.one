@@ -2,11 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta name="author" content="{{ .Site.Author.name }}">
-{{- $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
-{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML }}
+{{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML -}}
 {{ $favicon := resources.Get "/favicon.png" -}}
 {{ $favicon_base64 := $favicon.Content | base64Encode }}
-{{- printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
+{{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
 <!-- apple-touch-icon used to be apple-specific, but now it's
 		 a pseudo-standard relied upon by other vendors too:
 		 https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes -->
@@ -16,6 +16,8 @@
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{- $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 {{ if and (ne .Site.BaseURL "https://seirdy.one/") (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <meta name="robots" content="noindex">
@@ -32,9 +34,9 @@
 {{ end -}}
 {{ $css := $resources | resources.Concat "css/style.css" | minify -}}
 <style>{{ $css.Content | safeCSS }}</style>
-{{- if eq .RelPermalink "/" -}}
+{{- if eq .RelPermalink "/" }}
 <title>{{ .Title }}</title>
-{{- else -}}
+{{- else }}
 <title>{{ .Title }} - Seirdy</title>
 {{- end -}}
 <!-- open graph stuff; used in the Fediverse, Signal link previews,
