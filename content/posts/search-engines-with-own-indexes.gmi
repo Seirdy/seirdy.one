@@ -74,7 +74,7 @@ These are large engines that pass all the above tests and more.
 
 4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch.
 
-5. Petal search: gopetal.com and petalsearch.com. A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
+5. Petal search: gopetal.com and petalsearch.com. A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
 => https://www.gopetal.com/  gopetal.com
 => https://petalsearch.com/  petalsearch.com

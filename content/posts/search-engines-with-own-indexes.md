@@ -1,12 +1,11 @@
 ---
 date: "2021-03-10T12:51:06-08:00"
-description: "A cursory review of all the non-metasearch, indexing search engines
-    I have been able to find."
+description: "A cursory review of all the non-metasearch, indexing search engines I have been able to find."
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 tags:
-  - web
+    - web
 footnote_heading: Notes
 title: A look at search engines with their own indexes
 ---
@@ -82,7 +81,7 @@ These are large engines that pass all the above tests and more.
   - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.
 - Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers [eTools.ch](https://www.etools.ch/).
-- Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs.
+- Petal search: [gopetal.com](https://www.gopetal.com/) and [petalsearch.com](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
 ### Smaller indexes, relevant results
 
@@ -209,4 +208,5 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 [^9]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
 [^10]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+
 
