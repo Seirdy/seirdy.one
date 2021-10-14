@@ -171,7 +171,6 @@ Upcoming engines
 These engines aren't ready yet; their indexes are either in a proof-of-concept phase with a handful of sites, or aren't available yet.
 
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
-- [Neeva](https://neeva.com/): Claims to be building its own index. Until its own index grows big enough, it uses Bing. Like Infinity Search, it's a paid service; it requires registration to use.
 
 Graveyard
 ---------
