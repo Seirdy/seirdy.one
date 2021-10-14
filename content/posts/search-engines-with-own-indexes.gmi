@@ -74,9 +74,8 @@ These are large engines that pass all the above tests and more.
 
 4. Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch.
 
-5. Petal search: gopetal.com and petalsearch.com. A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
+5. Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
-=> https://www.gopetal.com/  gopetal.com
 => https://petalsearch.com/  petalsearch.com
 
 ### Smaller indexes, relevant results
@@ -207,6 +206,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 * Ask.com: the main site shut down, but subdomains like uk.ask.com are still alive. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from.
 * Not evaluated: Apple’s search. It’s only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
+* Not evaluated: Kagi Search. It's in a closed beta and I haven't yet gotten an invitation.
 * Partially evaluated: Infinity Search. It has a young, small index. It recently split into a paid offering with the main index and Infinity Decentralized, the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn’t able to run the tests listed in the “Methodology” section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
 => https://uk.ask.com  uk.ask.com
