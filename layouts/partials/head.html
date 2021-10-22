@@ -16,6 +16,7 @@
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{- $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link rel="manifest" href="%s">` $webmanifest.RelPermalink | safeHTML }}
+<meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
@@ -53,6 +54,7 @@
 {{ printf `<meta property="og:image" content="%s">` $og_image.Permalink | safeHTML }}
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:height" content="512"><meta property="og:image:width" content="512">
+<meta property="og:image:alt" content="White-on-black colon and semicolon">
 <meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 <meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta property="article:author" content="{{ .Site.Author.name }}">
