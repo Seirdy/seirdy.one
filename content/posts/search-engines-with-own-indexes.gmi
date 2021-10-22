@@ -97,7 +97,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms (e.g. “Seirdy”), but it’s able to find relevant results in other tests. The server does not support TLS.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
-* ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options.
+* ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
 
 => http://www.seekport.com/  seekport (HTTP only)
 => https://www.exalead.com/search/  Exalead
