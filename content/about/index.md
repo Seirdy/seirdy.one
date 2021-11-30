@@ -31,11 +31,13 @@ My handle is "Seirdy" on all the platforms I use.
 - Social (federated): I'm [@Seirdy @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
 - Social (non-federated): I'm Seirdy on [Hacker News](https://news.ycombinator.com/user?id=Seirdy), [Lobsters](https://lobste.rs/u/Seirdy), [Reddit](https://www.reddit.com/user/Seirdy/), [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
 - Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public PGP key: [1E892DB2A5F84479](./publickey.asc). My key is also available via WKD.
-- Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. If you don't like IRC, I'm also [@seirdy:envs.net](https://matrix.to/\#/@seirdy:envs.net) on Matrix. I might be a bit slow to respond on Matrix because I generally prefer IRC.
+- Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. I'm also [@seirdy:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one) on Matrix.
+
+My Matrix account used to be [@seirdy:envs.net](https://matrix.to/#/@seirdy:envs.net) but I've since migrated to my own Conduit server. Conduit doesn't (yet) support v9 rooms, so I keep my old account around just to join those.
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
-My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub and GitLab too.
+My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub, GitLab, and Codeberg too.
 
 Selected projects
 -----------------
@@ -46,9 +48,7 @@ Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection
 
 ### [MOAC](https://sr.ht/~seirdy/MOAC/)
 
-Analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](https://seirdy.one/2021/01/12/password-strength.html).
-
-Written in Go; uses zxcvbn-go. Currently in very early development.
+Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](https://seirdy.one/2021/01/12/password-strength.html). Written in Go.
 
 Interests, preferences, et cetera
 ---------------------------------
@@ -57,11 +57,11 @@ I ought to come up with more interests than these, but that sounds hard.
 
 ### Free software
 
-The word "free" in "free software" refers to freedom, not price. I recommend looking it up if you aren't familiar.
+The word "free" in "free software" refers to freedom, not price. I recommend looking it up if you aren't familiar. That being said, I think that simply meeting the definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of [user domestication](https://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.html).
 
 I lean towards simplicity; I usually prefer CLIs that follow the UNIX philosophy over TUIs, and TUIs over GUIs. If a piece of software is complex enough to require a funding round, I would rather avoid it. There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all.
 
-Some software I use: Fedora, Alpine Linux, SwayWM, Pandoc, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, and zsh.
+Some software I use: Fedora, Alpine Linux, SwayWM, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, Foot, and zsh.
 
 More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles); check its README.
 
