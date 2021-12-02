@@ -1,13 +1,12 @@
 ---
 date: "2021-01-12T00:03:10-08:00"
-description: Using thermal physics, cosmology, and computer science to calculate password
-    vulnerability to the biggest possible brute-force attack.
+description: Using thermal physics, cosmology, and computer science to calculate password vulnerability to the biggest possible brute-force attack.
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 tags:
-  - security
-  - fun
+    - security
+    - fun
 title: Becoming physically immune to brute-force attacks
 footnote_heading: References and endnotes
 ---
@@ -16,6 +15,8 @@ This is a tale of the intersection between thermal physics, cosmology, and a tin
 [TLDR](#conclusiontldr) at the bottom.
 
 _Note: this post contains equations. Since none of the equations were long or complex, I decided to just write them out in code blocks instead of using images or MathML the way Wikipedia does._
+
+_Update: I implemented the ideas in this blog post (and more) in a program/library, [MOAC](https://sr.ht/~seirdy/MOAC/)_
 
 Introduction
 ------------
@@ -259,4 +260,5 @@ While I was struggling to come up with a good expression for the minimum energy 
 [^5]: Lloyd, S., "Ultimate Physical Limits to Computation," Nature 406.6799, 1047-1054, 2000.
 
 [^6]: Schneier, Bruce. Applied Cryptography, Second Edition, John Wiley & Sons, 1996.
+
 
