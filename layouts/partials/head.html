@@ -26,7 +26,6 @@
 <link rel="webmention" href="https://seirdy.one/webmentions/receive">
 {{ end -}}
 <link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
-<link rel="pgpkey" type="application/pgp-keys" href="{{ .Site.BaseURL }}publickey.asc">
 {{ $resources := slice -}}
 {{ $resources = $resources | append (resources.Get "/css/main.css") -}}
 {{ $dark := .Site.Params.dark | default "auto" -}}
