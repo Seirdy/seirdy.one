@@ -94,7 +94,7 @@ deploy-gemini: hugo
 	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
 .PHONY: deploy
-deploy: deploy-html mentions.json deploy-gemini
+deploy: deploy-html deploy-gemini
 
 ## stuff for the staging server
 .PHONY: test-staging
