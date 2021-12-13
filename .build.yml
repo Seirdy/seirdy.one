@@ -4,7 +4,6 @@ packages:
   - rsync
   - git  # for Hugo's gitInfo
   - make
-  - jq
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
