@@ -177,6 +177,8 @@ The Framalang translators at [Framasoft](https://framasoft.org/) translated this
 
 <span class="h-card vcard"><a class="p-name url fn n" href="https://sgfault.com"><span class="p-given-name given-name">David</span> <span class="p-family-name family-name">Jimenez</span></a></span> translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
 
+<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://www.lealternative.net/author/skariko/">Skariko</a></span> of [Le Alternative](https://lealternative.net/) translated this article to Italian: <a lang="it-IT" hreflang="it-IT" rel="alternate" href="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/">WhatsApp e l’addomesticamento degli utenti</a>.
+
 
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
 

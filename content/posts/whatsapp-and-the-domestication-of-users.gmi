@@ -207,6 +207,10 @@ David Jimenez translated this article to Spanish:
 
 => gemini://dvejmz.srht.site/whatsapp-y-la-domesticacion-de-usuarios.gmi WhatsApp y la domesticación de usuarios
 
+Andrea of Le Alternative translated this article to Italian:
+
+=> https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/ WhatsApp e l’addomesticamento degli utenti
+
 ## References and Endnotes
 
 ¹ Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
