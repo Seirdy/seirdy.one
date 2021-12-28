@@ -30,7 +30,7 @@ Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>, <a href="http
 Contact
 -------
 
-Contact me via <a class="u-email" href="mailto:seirdy@seirdy.one" rel="me">email</a> (<a rel="pgpkey authn" type="application/pgp-keys" class="u-key" href="{{ .Site.BaseURL }}publickey.asc">PGP</a>), or on the Fediverse where I'm <a class="u-url" href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
+Contact me via <a class="u-email" href="mailto:seirdy@seirdy.one" rel="me">email</a> (<a rel="pgpkey authn" type="application/pgp-keys" class="u-key" href="./publickey.asc">PGP</a>), or on the Fediverse where I'm <a class="u-url" href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
 Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm <a class="u-url" href="https://matrix.to/#/@seirdy:seirdy.one" rel="me">@seirdy:seirdy.one</a> on Matrix. I was previously @seirdy:envs.net, which is currently a secondary account.
 
