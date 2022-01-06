@@ -24,9 +24,9 @@
 </div>
 <hr>
 <p>
-{{- if .Prev -}}<a href="{{ .Prev.Permalink }}">Previous</a>{{- end -}}
-{{- if and (.Prev) (.Next) }} · {{ end -}}
-{{- if .Next -}}<a href="{{ .Next.Permalink }}">Next</a>{{- end -}}
+{{- if .PrevInSection -}}<a href="{{ .PrevInSection.Permalink }}">Previous</a>{{- end -}}
+{{- if and (.PrevInSection) (.NextInSection) }} · {{ end -}}
+{{- if .NextInSection -}}<a href="{{ .NextInSection.Permalink }}">Next</a>{{- end -}}
 </p>
 <hr>
 <footer class="comment">
