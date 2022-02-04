@@ -11,7 +11,7 @@ I find it easy to handle views different from my own. I feel more troubled when 
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts ([one](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html), [two](./../../../2021/02/23/keeping-platforms-open.html)) about how <abbr title="Free, Libre, and  Open-Source Software">FLOSS</abbr> is necessary but insufficient to preserve user autonomy. After two posts spanning over 5000 words, I need to add some nuance.
 
-One of the biggest parts of the Free and Open Source Software definitions is the freedom to study a program and modify it; in other words, access to editable source code. I agree that such access is essential; however, far too many people support source availability for the _wrong_ reasons. One such reason is that source code is necessary to have any degree of transparency into how a piece of software operates, and is therefore necessary to determine if it is at all secure. Although security through obscurity is certainly not a robust measure, this claim has two issues:
+One of the biggest parts of the Free and Open Source Software definitions is the freedom to study a program and modify it; in other words, access to editable source code. I agree that such access is essential; however, far too many people support source availability for the _wrong_ reasons. One such reason is that source code is necessary to have any degree of transparency into how a piece of software operates, and is therefore necessary to determine if it is at all secure or trustworthy. Although security through obscurity is certainly not a robust measure, this claim has two issues:
 
 - Source code describes what a program is designed to do; it is unnecessary and insufficient to determine if what it actually does aligns with its intended design.
 - Vulnerability discovery doesn't require source code.
@@ -23,7 +23,7 @@ _PS: this stance is not absolute; I concede to several good counter-arguments at
 How security fixes work
 -----------------------
 
-I don't think anyone seriously claims that software's security instantly improves the second its source code is published. The argument I'm responding to is that source code makes it possible to understand what a program does and how (in)secure it is, and without it we can't know for sure.
+I don't think anyone seriously claims that software's security instantly improves the second its source code is published. The argument I'm responding to is that source code is necessary to understand what a program does and how (in)secure it is, and without it we can't know for sure.
 
 Assuming a re-write that fundamentally changes a program's architecture is not an option[^1], software security typically improves by fixing vulnerabilities via something resembling this process:
 
@@ -41,13 +41,13 @@ Understanding _how a program is designed_ is not the same as understanding _what
 
 Source code[^2] is essential to describe a program's high-level, human-comprehensible design; it represents a contract that outlines how a developer _expects_ a program to behave. A compiler or interpreter[^3] must then translate it into machine instructions. But source code isn't always easy to map directly to machine instructions because it is part of a complex system:
 
-- Compilers (and sometimes even interpreters) can apply optimizations and hardening measures that are difficult to reason about. This is especially true for <abbr title="Just-In-Time">JIT</abbr> compilers that leverage run-time information.
+- Compilers (sometimes even interpreters) can apply optimizations and hardening measures that are difficult to reason about. This is especially true for <abbr title="Just-In-Time">JIT</abbr> compilers that leverage run-time information.
 - The operating system itself may be poorly understood by the developers, and run a program in a way that contradicts a developer's expectations.
 - Toolchains, interpreters, and operating systems can have bugs that impact program execution.
 - Different compilers and compiler flags can offer different security guarantees and mitigations.
 - All of the above points apply to each dependency and the underlying operating system, which can impact a program's behavior.
 
-Furthermore, all programmers are flawed mortal beings that don't always fully understand source code. Everyone who's done a non-trivial amount of programming is familiar with the feeling of encountering a bug during run-time for which the cause is impossible to find...until they notice it staring them in the face on Line 12. Think of all the bugs that _aren't_ so easily noticed.
+Furthermore, all programmers are flawed mortals who don't always fully understand source code. Everyone who's done a non-trivial amount of programming is familiar with the feeling of encountering a bug during run-time for which the cause is impossible to find...until they notice it staring them in the face on Line 12. Think of all the bugs that _aren't_ so easily noticed.
 
 Reading the source code, compiling, and passing tests isn't sufficient to show us a program's final behavior. The only way to know what a program does when you run it is to...run it.[^4]
 
@@ -61,7 +61,7 @@ Distributing binaries with sanitizers and debug information to testers is a vali
 
 It's hard to figure out which syscalls and files a large program program needs by reading its source, especially when certain libraries (e.g. the libc implementation/version) can vary. A syscall tracer like [`strace(1)`](https://strace.io/)[^6] makes the process trivial.
 
-A personal example: the understanding I gained from `strace` was necessary for me to write my [bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts/) to sandbox programs with the minimum permissions possible. Analyzing every relevant program and library's source code would have taken me months, while `strace` gave me everything I needed to know in an afternoon: analyzing the `strace` output told me exactly which syscalls to allow and which files to grant access to, without even having to know what language the program was written in. I generated the initial version of the syscall allow-lists with the following command[^7]:
+A personal example: the understanding I gained from `strace` was necessary for me to write my [bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts/). These scripts use [`bubblewrap(1)`](https://github.com/containers/bubblewrap) to sandbox programs with the minimum permissions possible. Analyzing every relevant program and library's source code would have taken me months, while `strace` gave me everything I needed to know in an afternoon: analyzing the `strace` output told me exactly which syscalls to allow and which files to grant access to, without even having to know what language the program was written in. I generated the initial version of the syscall allow-lists with the following command[^7]:
 
 ```
 strace name-of-program program-args 2>&1 \
@@ -73,7 +73,7 @@ This also extends to determining how programs utilize the network: packet analyz
 
 These methods are not flawless. Syscall tracers are only designed to shed light on how a program interacts with the kernel. Kernel interactions tell us plenty (it's sometimes all we need), but they don't give the whole story. Furthermore, packet inspection can be made a bit painful by transit encryption[^8]; tracing a program's execution alongside packet inspection can offer clarity, but this is not easy.
 
-For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/Core_dump), also known as memory dumps. Core dumps share the state of a program during execution or upon crashing, giving us greater visibility into exactly what data a program is processing. This information is further augmented if the binary in question is built with debugging symbols (e.g. [DWARF](https://dwarfstd.org/)). Vendors that release daily snapshots of pre-release builds typically include some symbols to give testers more detail concerning the causes of crashes. Web browsers are a common example: Chromium dev snapshots, Chrome Canary, Firefox Nightly, WebKit Canary builds, etc. all include debug symbols. Until recently, _Minecraft: Bedrock Edition_ included debug symbols which were used heavily by the modding community.[^9]
+For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/Core_dump), also known as memory dumps. Core dumps share the state of a program during execution or upon crashing, giving us greater visibility into exactly what data a program is processing. Builds containing debugging symbols (e.g. [DWARF](https://dwarfstd.org/)) have more detailed core dumps. Vendors that release daily snapshots of pre-release builds typically include some symbols to give testers more detail concerning the causes of crashes. Web browsers are a common example: Chromium dev snapshots, Chrome Canary, Firefox Nightly, WebKit Canary builds, etc. all include debug symbols. Until recently, _Minecraft: Bedrock Edition_ included debug symbols which were used heavily by the modding community.[^9]
 
 #### Dynamic analysis example: Zoom
 
@@ -178,7 +178,7 @@ I'm _not_ arguing that source code is useless from a security perspective. Relea
 
 [^7]: This command only lists syscall names, but I did eventually follow the example of sandbox-app-launcher by allowing certain syscalls (e.g. ioctl) only when invoked with certain parameters. Also, I used [ripgrep](https://github.com/BurntSushi/ripgrep) because I'm more familiar with <abbr title="Perl-Compatible Regular Expressions">PCRE</abbr>-style capture groups.
 
-[^8]: This process typically involves saving saving and using key logs, or using endpoints with [known pre-master secrets](https://blog.didierstevens.com/2020/12/14/decrypting-tls-streams-with-wireshark-part-1/).
+[^8]: Decrypting these packets typically involves saving and using key logs, or using endpoints with [known pre-master secrets](https://blog.didierstevens.com/2020/12/14/decrypting-tls-streams-with-wireshark-part-1/).
 
 [^9]: I invite any modders who miss these debug symbols to check out the FLOSS [Minetest](https://www.minetest.net/), perhaps with the [MineClone2](https://content.minetest.net/packages/Wuzzy/mineclone2/) game.
 
