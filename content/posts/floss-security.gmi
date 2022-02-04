@@ -164,6 +164,10 @@ In fact, some types of fuzz tests (e.g. fuzzing an API for a web service) hardly
 
 Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. cURL, OpenSSL, web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples.
 
+> I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.
+
+=> https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work --- Daniel Stenberg "A Google grant for libcurl work"
+
 ### Example: CVE-2022-0185
 
 A recent example of how fuzzing helps spot a vulnerability in an open-source project is CVE-2022-0185: a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the syzkaller kernel fuzzer.
@@ -187,6 +191,7 @@ I readily concede to several points in favor of source availability from a secur
 * Patching vulnerabilities is important. Source availability makes it possible for the community, package maintainers, or reporters of a vulnerability to patch software. Package maintainers often blur the line between "packager" and "contributor" by helping projects migrate away from abandoned/insecure dependencies. One example that comes to mind is the Python 2 to Python 3 transition for projects like Calibre.¹² Being able to fix issues independent of upstream support is an important mitigation against user domestication.
 * Some developers/vendors don't distribute binaries that make use of modern toolchain-level exploit mitigations (e.g. PIE, RELRO, stack canaries, automatic variable initialization, control-flow integrity, etc.). In these cases, building software yourself with these mitigations (or delegating it to a distro that enforces them) requires source code availability (or at least some sort of intermediate representation).
 * Closed-source software may or may not have builds available that include sanitizers and debug symbols.
+* Although fuzzing release binaries is possible, fuzzing is much easier to do when source code is available. Vendors of proprietary software seldom release special fuzz-friendly builds, and filtering out false-positives can be quite tedious without understanding high-level design.
 * It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it’s not the main way most vulnerabilities are found nowadays (thanks to X_Cli for reminding me about what source analysis does accomplish).
 * Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Furthermore, it's difficult to verify which software a server is running.¹⁴ For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
 
