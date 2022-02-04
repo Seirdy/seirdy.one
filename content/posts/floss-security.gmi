@@ -132,7 +132,7 @@ This is where some binary analysis comes in. Neither of Skochinsky's linked pres
 
 => http://io.netgarage.org/me/ Intel ME Huffman algorithm
 
-However, black-box analysis does tell us about their scope: see page 21 of "ME Secrets".
+Understanding the inner workings of the obfuscated components blurs the line between software reverse-engineering and figuring out how the chips are actually made, the latter of which is nigh-impossible if you don't have access to a chip lab full of cash. However, black-box analysis does tell us about the capabilities of these components: see page 21 of "ME Secrets". Thanks to zdctg for clarifying this.
 
 Skochinsky's and Corna's analysis was sufficient to clarify (but not completely contradict) sensationalism claiming that ME can remotely lock any PC (it was a former opt-in feature), can spy on anything the user does (they clarified that access is limited to unblocked parts of the host memory and the integrated GPU, but doesn't include e.g. the framebuffer), etc.
 
@@ -187,7 +187,7 @@ I readily concede to several points in favor of source availability from a secur
 * Patching vulnerabilities is important. Source availability makes it possible for the community, package maintainers, or reporters of a vulnerability to patch software. Package maintainers often blur the line between "packager" and "contributor" by helping projects migrate away from abandoned/insecure dependencies. One example that comes to mind is the Python 2 to Python 3 transition for projects like Calibre.¹² Being able to fix issues independent of upstream support is an important mitigation against user domestication.
 * Some developers/vendors don't distribute binaries that make use of modern toolchain-level exploit mitigations (e.g. PIE, RELRO, stack canaries, automatic variable initialization, control-flow integrity, etc.). In these cases, building software yourself with these mitigations (or delegating it to a distro that enforces them) requires source code availability (or at least some sort of intermediate representation).
 * Closed-source software may or may not have builds available that include sanitizers and debug symbols.
-* It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit, it's just not the main way they're found nowadays.
+* It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it’s not the main way most vulnerabilities are found nowadays (thanks to X_Cli for reminding me about what source analysis does accomplish).
 * Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Furthermore, it's difficult to verify which software a server is running.¹⁴ For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
 
 Most of this post is written with the assumption that binaries are inspectable and traceable. Binary obfuscation and some forms of content protection/DRM violate this assumption and actually do make analysis more difficult.
