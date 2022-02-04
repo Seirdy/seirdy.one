@@ -9,7 +9,12 @@ title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
 I find it easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.
 
-It's no secret that I'm a passionate supporter of software freedom: I've written two posts ([one](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html), [two](./../../../2021/02/23/keeping-platforms-open.html)) about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy. After two posts spanning over 5000 words, I need to add some nuance.
+It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
+
+1. [Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)
+2. [Keeping Platforms Open](./../../../2021/02/23/keeping-platforms-open.html)
+
+After two posts spanning over 5000 words, I need to add some nuance.
 
 One of the biggest parts of the Free and Open Source Software definitions is the freedom to study a program and modify it; in other words, access to editable source code. I agree that such access is essential; however, far too many people support source availability for the _wrong_ reasons. One such reason is that source code is necessary to have any degree of transparency into how a piece of software operates, and is therefore necessary to determine if it is at all secure or trustworthy. Although security through obscurity is certainly not a robust measure, this claim has two issues:
 
