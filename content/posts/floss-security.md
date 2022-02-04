@@ -7,7 +7,7 @@ outputs:
 footnote_heading: Notes
 title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
-Supporting something I disagree with is generally easy to ignore. What I find more troubling is using the wrong reasons to support something I do agree with.
+I find it easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts ([one](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html), [two](./../../../2021/02/23/keeping-platforms-open.html)) about how <abbr title="Free, Libre, and  Open-Source Software">FLOSS</abbr> is necessary but insufficient to preserve user autonomy. After two posts spanning over 5000 words, I need to add some nuance.
 
@@ -16,7 +16,7 @@ One of the biggest parts of the Free and Open Source Software definitions is the
 - Source code describes what a program is designed to do; it is unnecessary and insufficient to determine if what it actually does aligns with its intended design.
 - Vulnerability discovery doesn't require source code.
 
-I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective, and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't automatically imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
+I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective, and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
 
 _PS: this stance is not absolute; I concede to several good counter-arguments at the bottom!_
 
