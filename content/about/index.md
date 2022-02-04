@@ -33,7 +33,7 @@ My handle is "Seirdy" on all the platforms I use.
 - Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public PGP key: [1E892DB2A5F84479](./publickey.asc). My key is also available via WKD.
 - Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. I'm also [@seirdy:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one) on Matrix.
 
-My Matrix account used to be @seirdy:envs.net but I've since migrated to my own Conduit server. Conduit doesn't (yet) support v9 rooms, so I keep my old account around just to join those.
+My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. My Matrix account used to be `@seirdy:envs.net` but I've since migrated to my own Conduit server.
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 

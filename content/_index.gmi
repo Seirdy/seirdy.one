@@ -40,7 +40,7 @@ Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFT
 
 => https://matrix.to/#/@seirdy:seirdy.one @seirdy:seirdy.one
 
-I was previously @seirdy:envs.net, which is currently a secondary account.
+My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. I was previously @seirdy:envs.net.
 
 ## Links
 
