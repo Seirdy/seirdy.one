@@ -132,7 +132,7 @@ If you want to get started with fuzzing, I recommend checking out [the quick-sta
 
 ### Example: CVE-2022-0185
 
-A recent example of how fuzzing helps spot a vulnerability in an open-source project is CVE-2022-0185: a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
+A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
 [CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 

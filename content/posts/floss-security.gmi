@@ -168,6 +168,7 @@ Fuzzing frequently catches bugs that are only apparent by running a program, not
 
 A recent example of how fuzzing helps spot a vulnerability in an open-source project is CVE-2022-0185: a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the syzkaller kernel fuzzer.
 
+=> https://www.openwall.com/lists/oss-security/2022/01/18/7 oss-security: Linux kernel: Heap buffer overflow in fs_context.c since version 5.1
 => https://github.com/google/syzkaller Syzkaller
 
 The process was documented on Will's Root:
