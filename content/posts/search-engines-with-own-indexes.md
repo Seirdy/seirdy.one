@@ -58,7 +58,7 @@ These are large engines that pass all the above tests and more.
   - Yahoo
   - DuckDuckGo[^3]
   - AOL
-  - Qwant[^4]
+	- Qwant (partial)[^4]
   - Ecosia
   - Ekoru
   - Privado
@@ -123,6 +123,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 - [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
 - [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 - [Neeva](https://neeva.com): Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva managed to get an agreement with Bing that allowed result-mixing. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address to use; after the (rather long) free trial it requires payment as an alternative to ads.
+- [Qwant](https://www.qwant.com): Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
 
 Non-generalist search
 ---------------------
@@ -195,7 +196,7 @@ Matt from Gigablast also gave me some helpful information on GBY which I include
 
 [^3]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing).
 
-[^4]: Qwant claims to also use its own crawler for results, but it's still mostly Bing. Try a side-by-side comparison; I found that it doesn't seem to have anything besides Bing results.
+[^4]: Qwant claims to also use its own crawler for results, but it’s still mostly Bing in my experience. See the "semi-independent" section.
 
 [^5]: Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
 

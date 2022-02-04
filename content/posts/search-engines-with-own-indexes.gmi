@@ -47,7 +47,7 @@ These are large engines that pass all the above tests and more.
 * Yahoo
 * DuckDuckGo³
 * AOL
-* Qwant⁴
+* Qwant (partial)⁴
 * Ecosia
 * Ekoru
 * Privado
@@ -155,6 +155,10 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 * Neeva: Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva managed to get an agreement with Bing that allowed result-mixing. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address to use; after the (rather long) free trial it requires payment as an alternative to ads.
 
 => https://neeva.com/ Neeva
+
+* Qwant: Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
+
+=> https://www.qwant.com Qwant
 
 ## Non-generalist search
 
@@ -265,7 +269,7 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 
 ³ DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing).
 
-⁴ Qwant claims to also use its own crawler for results, but it’s still mostly Bing. Try a side-by-side comparison; I found that it doesn’t seem to have anything besides Bing results.
+⁴ Qwant claims to also use its own crawler for results, but it’s still mostly Bing in my experience. See the "semi-independent" section.
 
 ⁵ Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
 
