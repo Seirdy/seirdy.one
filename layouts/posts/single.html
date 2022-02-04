@@ -44,9 +44,9 @@
 				<time datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
 				<br>
 				{{ if (eq $webmention.type "like") -}}
-				<a href="{{ $webmention.source }}" rel="nofollow">{{ if $webmention.author_name }}{{ $webmention.author_name }}{{ else }}{{ $webmention.title }}{{ end }}</a> liked this
+				<a href="{{ $webmention.source }}" rel="nofollow">{{ if $webmention.author_name }}{{ $webmention.author_name }}{{ else if $webmention.title }}{{ $webmention.title }}{{ else }}{{ $webmention.source }}{{ end }}</a> liked this
 				{{else -}}
-					<a href="{{ $webmention.source }}" rel="nofollow">{{ $webmention.title }}</a>
+					<a href="{{ $webmention.source }}" rel="nofollow">{{ if $webmention.title }}{{ $webmention.title }}{{ else }}{{ $webmention.source }}{{ end }}</a>
 				{{- end }}
 			</li>
 			{{ else -}}
