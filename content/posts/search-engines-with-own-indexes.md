@@ -131,6 +131,7 @@ Non-generalist search
 These indexing search engines don't have a Google-like "ask me anything" endgame; they're trying to do something different.
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
+- [search.marginalia.nu](https://search.marginalia.nu/): A recent addition similar to Wiby. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY.
 - [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 - Quor: Seems to mainly index large news sites. Site is down as of June 2021; originally available at www dot quor dot com.
 - [Ninfex](https://ninfex.com/): a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
