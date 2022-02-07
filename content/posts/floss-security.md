@@ -74,7 +74,7 @@ strace name-of-program program-args 2>&1 \
 	| sort | uniq
 ```
 
-This also extends to determining how programs utilize the network: packet analyzers like [Wireshark](https://www.wireshark.org/) can determine when a program connects to the network, and where it connects.
+This also extends to determining how programs utilize the network: packet sniffers like [Wireshark](https://www.wireshark.org/) can determine when a program connects to the network, and where it connects.
 
 These methods are not flawless. Syscall tracers are only designed to shed light on how a program interacts with the kernel. Kernel interactions tell us plenty (it's sometimes all we need), but they don't give the whole story. Furthermore, packet inspection can be made a bit painful by transit encryption[^8]; tracing a program's execution alongside packet inspection can offer clarity, but this is not easy.
 
@@ -95,6 +95,8 @@ Tracing execution and inspecting memory dumps can be considered forms of reverse
 Static binary analysis is a powerful way to inspect a program's underlying design. Decompilation (especially when supplemented with debug symbols) can re-construct a binary's assembly or source code. Symbol names may look incomprehensible in stripped binaries, and comments will be missing. What's left is more than enough to decipher control flow to uncover how a program processes data. This process can be tedious, especially if a program uses certain forms of binary obfuscation.
 
 The goal doesn't have to be a complete understanding of a program's design (incredibly difficult without source code); it's typically to answer a specific question, fill in a gap left by tracing/fuzzing, or find a well-known property. When developers publish documentation on the security architecture of their closed-source software, reverse engineering tools like decompilers are exactly what you need to verify their honesty (or lack thereof).
+
+Decompilers are seldom used alone in this context. Instead, they're typically a component of reverse engineering frameworks that also sport memory analysis, debugging tools, scripting, and sometimes even IDEs. I use [the radare project](https://www.radare.org/n/), but [Ghidra](https://ghidra-sre.org/) is also popular. Their documentation should help you get started if you're interested.
 
 ### Example: malware analysis
 
@@ -131,7 +133,7 @@ Fuzzing
 
 Manual invocation of a program paired with a tracer like `strace` won't always exercise all code paths or find edge-cases. [Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) helps to bridge this gap: it automates the process of causing a program to fail by generating random or malformed data to feed it. Researchers then study failures and failure-conditions to isolate a bug.
 
-Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing an API](https://github.com/KissPeter/APIFuzzer/) for a web service) hardly need to know any implementation details.
+Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing an API](https://github.com/KissPeter/APIFuzzer/) for a web service) hardly need any implementation details.
 
 Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples. <cite><span class="h-card vcard"><a class="p-name url fn n" href="https://daniel.haxx.se/"><span class="p-given-name given-name">Daniel</span> <span class="p-family-name family-name">Stenberg</span></a></span></cite> wrote about <a href="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/" rel="cite">fuzzing curl</a>:
 
@@ -149,7 +151,7 @@ A recent example of how fuzzing helps spot a vulnerability in an open-source pro
 
 [CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers](https://www.willsroot.io/2022/01/cve-2022-0185.html)
 
-I _highly_ encourage giving it a read; it's the perfect example of using fuzzing and with an address sanitizer to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
+I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
 
 The fact that some of the most-used pieces of FLOSS in existence have been the biggest beneficiaries of source-agnostic approaches to vulnerability analysis should be quite revealing. The source code to these projects has received attention from millions of eyes, yet they _still_ invest in fuzzing infrastructure and vulnerability-hunters prefer analyzing artifacts over inspecting the source.
 
