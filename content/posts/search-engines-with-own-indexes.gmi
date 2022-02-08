@@ -84,7 +84,7 @@ These engines pass most of the tests listed in the “methodology” section.
 
 * Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁸
 * Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-* Gowiki: Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
+* Gowiki: Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US. Seems down as of early 2022.
 
 => https://rightdao.com  Right Dao
 => https://gigablast.com/  Gigablast
@@ -110,12 +110,13 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * Infotiger: Allows choosing between multiple different sorting algorithms (date, text length, PageRank, and "AND"). Supports English and German. The legacy version allows submitting links via a web-form or email, but I don't know if that has an impact on the more recent alpha version.
 * search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.⁹ There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de, but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 * Kozmonavt: Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
-* Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps. Down as of late June 2021.
+* Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 
 => https://meorca.com/  Meorca Search Engine
 => https://alpha.infotiger.com/ Infotiger
 => http://www.search.tl  search.tl
 => https://kozmonavt.ml/ Kozmonavt
+=> https://burf.co/ Burf.co
 
 * ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 

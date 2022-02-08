@@ -173,7 +173,7 @@ Translations are always welcome.
 
 The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to French: <a lang="fr" hreflang="fr" rel="alternate" href="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/">WhatsApp et la domestication des utilisateurs</a>.
 
-<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://convorb.im">Licaon_Kter</a></span> translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
+<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://web.archive.org/web/20210924154338/https://convorb.im/">Licaon_Kter</a></span> translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
 
 <span class="h-card vcard"><a class="p-name url fn n" href="https://sgfault.com"><span class="p-given-name given-name">David</span> <span class="p-family-name family-name">Jimenez</span></a></span> translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
 
@@ -186,5 +186,5 @@ The Framalang translators at [Framasoft](https://framasoft.org/) translated this
 
 [^3]: See [Defective by Design](https://www.defectivebydesign.org/). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
 
-[^4]: Moxie's blog post generated many responses. Two good follow-ups are on [Linux Weekly News](https://lwn.net/Articles/687294/) and a [blog post](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom) by Matrix.org
+[^4]: Moxie's blog post generated many responses. Two good follow-ups are on [Linux Weekly News](https://lwn.net/Articles/687294/) and a [blog post](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom/) by Matrix.org
 

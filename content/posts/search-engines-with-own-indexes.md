@@ -58,7 +58,7 @@ These are large engines that pass all the above tests and more.
   - Yahoo
   - DuckDuckGo[^3]
   - AOL
-	- Qwant (partial)[^4]
+  - Qwant (partial)[^4]
   - Ecosia
   - Ekoru
   - Privado
@@ -89,7 +89,7 @@ These engines pass most of the tests listed in the "methodology" section.
 
 - [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
-- [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US.
+- [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US. Seems down as of early 2022.
 
 ### Smaller indexes, hit-and-miss
 
@@ -103,7 +103,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [Infotiger](https://alpha.infotiger.com/): Allows choosing between multiple different sorting algorithms (date, text length, PageRank, and "AND"). Supports English and German. The legacy version allows submitting links via a web-form or email, but I don't know if that has an impact on the more recent alpha version.
 - [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^9] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 - [Kozmonavt](https://kozmonavt.ml/): Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
-- Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps. Down as of late June 2021.
+- [Burf.co](https://burf.co/): Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
 
 ### Unusable engines, irrelevant results
@@ -189,7 +189,7 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 Matt from Gigablast also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
 
-<span class="h-card vcard"><a class="p-name url fn n" href="http://nafmusings.xyz/"><span class="p-given-name given-name">Nicholas</span> A. <span class="p-family-name family-name">Ferrell</span></a></span> of [The New Leaf Journal](https://thenewleafjournal.com/) wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
+<span class="h-card vcard"><a class="p-name url fn n" href="https://emucafe.club/channel/naferrell"><span class="p-given-name given-name">Nicholas</span> A. <span class="p-family-name family-name">Ferrell</span></a></span> of [The New Leaf Journal](https://thenewleafjournal.com/) wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.

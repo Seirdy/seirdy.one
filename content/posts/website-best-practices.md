@@ -203,7 +203,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
 }
 ```
 
-Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/how-css-alone-can-help-track-you-YF4ciVY6/).
+Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/).
 
 ### What about sidebars?
 
