@@ -98,11 +98,13 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms (e.g. “Seirdy”), but it’s able to find relevant results in other tests. The server does not support TLS.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 * ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
+* sengine.info: only shows domains, not individual pages. Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available.
 
 => http://www.seekport.com/  seekport (HTTP only)
 => https://www.exalead.com/search/  Exalead
 => https://curlie.org  Curlie
 => https://www.exactseek.com/  ExactSeek
+=> https://www.sengine.info/ sengine.info
 
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
 * Infotiger: Allows choosing between multiple different sorting algorithms (date, text length, PageRank, and "AND"). Supports English and German. The legacy version allows submitting links via a web-form or email, but I don't know if that has an impact on the more recent alpha version.
