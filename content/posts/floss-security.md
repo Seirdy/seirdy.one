@@ -175,9 +175,7 @@ Beyond source code, transparency into the development helps assure users of comp
 Conclusion
 ----------
 
-I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation process.
-
-All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective. My thesis is only that closed-source software doesn't have to be disqualified automatically on the grounds of source being unavailable. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that Google Chrome or Microsoft Edge are more vulnerable than Pale Moon, for instance.
+I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation/discovery process.
 
 Likewise, don't assume software is safer than proprietary alternatives just because its source is visible. There are lots of great reasons to switch from macOS or Windows to Linux (it's been my main OS for years), but security is [low on that list](https://madaidans-insecurities.github.io/linux.html).
 
