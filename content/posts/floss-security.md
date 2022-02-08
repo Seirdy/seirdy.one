@@ -21,9 +21,9 @@ One of the biggest parts of the Free and Open Source Software definitions is the
 - Source code describes what a program is designed to do; it is unnecessary and insufficient to determine if what it actually does aligns with its intended design.
 - Vulnerability discovery doesn't require source code.
 
-I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective, and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
+I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective (it certainly makes audits easier), and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
 
-_PS: this stance is not absolute; I concede to several good counter-arguments at the bottom!_
+_PS: this stance is not absolute; I concede to several good counter-arguments [at the bottom](#good-counter-arguments)!_
 
 How security fixes work
 -----------------------
@@ -170,14 +170,20 @@ I readily concede to several points in favor of source availability from a secur
 
 Most of this post is written with the assumption that binaries are inspectable and traceable. Binary obfuscation and some forms of content protection/<abbr title="Digital Rights Management">DRM</abbr> violate this assumption and actually do make analysis more difficult.
 
+Beyond source code, transparency into the development helps assure users of compliance with good security practices. Viewing VCS history, patch reviews, linter configurations, etc. reveal the standards that code is being held up to, some of which can be related to bug-squashing and security.
+
 Conclusion
 ----------
 
-I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code expedites (and sometimes even enables) the vulnerability-fixing process but has limited utility for the evaluation process.
+I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation process.
+
+All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective. My thesis is only that closed-source software doesn't have to be disqualified automatically on the grounds of source being unavailable. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that Google Chrome or Microsoft Edge are more vulnerable than Pale Moon, for instance.
 
 Likewise, don't assume software is safer than proprietary alternatives just because its source is visible. There are lots of great reasons to switch from macOS or Windows to Linux (it's been my main OS for years), but security is [low on that list](https://madaidans-insecurities.github.io/linux.html).
 
-I'm _not_ arguing that source code is useless from a security perspective. Releasing source code is just one thing vendors can do to improve audits; other options include releasing test builds with debug symbols/sanitizers, publishing docs describing their architecture, and/or just keeping software small and simple. My main point is that source unavailability does not imply insecurity, and source availability does not imply security. No matter the source model, we should evaluate software security through _study_ rather than development model. Support the right things for the right reasons, and help others make informed choices with accurate information. There are enough good reasons to support software freedom; we don't need to rely on bad ones.
+All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective. All I argue is that source unavailability does not imply insecurity, and source availability does not imply security. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that the sandboxing employed by Google Chrome or Microsoft Edge is more vulnerable than Pale Moon or most WebKitGTK-based browsers, for instance.
+
+Releasing source code is just one thing vendors can do to improve audits; other options include releasing test builds with debug symbols/sanitizers, publishing docs describing their architecture, and/or just keeping software small and simple. We should evaluate software security through _study_ rather than source model. Support the right things for the right reasons, and help others make informed choices with accurate information. There are enough good reasons to support software freedom; we don't need to rely on bad ones.
 
 
 [^1]: Writing an alternative or re-implementation doesn't require access to the original's source code, as is evidenced by a plethora of clean-room re-implementations of existing software written to circumvent the need to comply with license terms.
