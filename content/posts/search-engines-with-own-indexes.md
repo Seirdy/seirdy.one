@@ -112,6 +112,7 @@ Results from these search engines don't seem at all useful.
 
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 - Scopia: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
+- [Artado Search](https://www.artadosearch.com/): Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
 - [Active Search Results](https://www.activesearchresults.com): very poor quality
 - [Crawlson](https://crawlson.com): young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 - [Anoox](https://www.anoox.com/): Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
