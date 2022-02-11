@@ -33,9 +33,9 @@ These three approaches overlap: they frequently feature platform monoculture and
 
 ### Forced migration
 
-When one vendor controls all parts of a service (e.g., both a client and server), it has the means to create what I call a <dfn id="boxed-platform">boxed platform</dfn>: a subset of a larger open platform that can evolve at its own pace, without concern for compatibility or interoperability.
+A <dfn id="boxed-platform">boxed platform</dfn> is a subset of a larger open platform that can evolve at its own pace, without concern for compatibility or interoperability.
 
-Controlling both the server and client allows a vendor to update the client and server without worrying about breaking compatibility with other clients/servers in the larger network. It could update the client to point users to a server that uses a completely different, closed protocol. This is what happened to many XMPP users in the early 2000s.
+When one vendor controls all parts of a service (e.g., both a client and server), it has the means to create a boxed platform. Controlling both the server and client allows a vendor to update the client and server without worrying about breaking compatibility with other clients/servers in the larger network. It could update the client to point users to a server that uses a completely different, closed protocol. This is what happened to many XMPP users in the early 2000s.
 
 #### Case study: the boxing of XMPP
 
