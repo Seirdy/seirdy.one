@@ -9,6 +9,6 @@
 		<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor</a>
 	</p>
 	{{if .GitInfo -}}
-	<p>Site last deployed on {{now.Format "2006-01-02 15:04:05 -0700" }}</p>
+	<p>Site last deployed on <time datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" now }}">{{now.Format "2006-01-02 15:04:05 -0700" }}</time></p>
 	{{- end}}
 </footer>
