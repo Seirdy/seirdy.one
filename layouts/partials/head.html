@@ -38,7 +38,7 @@
 {{- if eq .RelPermalink "/" }}
 <title>{{ .Title }}</title>
 {{- else }}
-<title>{{ .Title }} - Seirdy</title>
+<title>{{ .Title }}{{if lt (len .Title) 66 }} - Seirdy{{ end }}</title>
 {{- end -}}
 <!-- open graph stuff; used in the Fediverse, Signal link previews,
 		 some RSS readers, and a certain large social media company -->
