@@ -1,14 +1,14 @@
-<header id="banner">
-	<nav>
-		<ul class="unstyled-list">
-			<li>
-				<a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-			</li>
-			{{ range .Site.Menus.main.ByWeight -}}
-			<li>
-				{{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
-			</li>
-			{{- end }}
-		</ul>
-	</nav>
-</header>
+	<header id="banner" itemscope itemtype="https://schema.org/WPHeader">
+		<nav>
+			<ul class="unstyled-list">
+				<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+					<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"><span itemprop="name">{{ .Site.Title }}</span></a>
+				</li>
+				{{ range .Site.Menus.main.ByWeight -}}
+				<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+					{{ .Pre }}<a href="{{ .URL }}" itemprop="url" title="{{ .Title }}"><span itemprop="name">{{- .Name -}}</span></a>{{ .Post }}
+				</li>
+				{{- end }}
+			</ul>
+		</nav>
+	</header>

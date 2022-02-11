@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{- default "" .Site.LanguageCode -}}" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
 {{- partial "head.html" . -}}
-{{- partial "header.html" . -}}
+<body itemscope itemtype="https://schema.org/Blog https://schema.org/WebPage">
+{{ partial "header.html" . -}}
 <main id="content">
 	{{- block "main" . }}{{- end -}}
 </main>
 {{ partial "footer.html" . }}
+</body>
