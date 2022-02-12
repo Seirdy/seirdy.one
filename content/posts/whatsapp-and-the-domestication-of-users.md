@@ -40,7 +40,7 @@ User domestication
 
 WhatsApp rose by trapping previously-free beings in their corral and changing their habits to create dependence on masters. Over time, this made it difficult or impossible to return to their previous lifestyle. That process should sound familiar: it's eerily similar to the domestication of animals.
 
-I call this type of vendor lock-in <dfn id="user-domestication">user domestication</dfn>: the removal of user autonomy to trap users into serving vendors.
+I call this type of vendor lock-in <dfn id="user-domestication-dfn">user domestication</dfn>: the removal of user autonomy to trap users into serving vendors.
 
 I chose this metaphor because animal domestication is a gradual process that isn't always deliberate, and typically revolves around one group becoming dependent upon another. For example: there's evidence that domestication of dogs began with socialization, resulting in not-entirely-artificial selection promoting genes that resulted in more friendliness with and dependence upon humans.[^1]
 
