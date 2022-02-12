@@ -83,13 +83,18 @@ These are large engines that pass all the above tests and more.
 These engines pass most of the tests listed in the “methodology” section.
 
 * Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁸
-* Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-* Gowiki: Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US. Seems down as of early 2022.
 
 => https://rightdao.com  Right Dao
+
+* Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
+
 => https://gigablast.com/  Gigablast
 => https://private.sh  Private.sh
-=> https://gowiki.com  Gowiki
+
+* Alexandria: A pretty new "non-profit, ad free" engine, with freely-licensed code. Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
+
+=> https://www.alexandria.org/ Alexandria
+=> https://github.com/alexandria-org/alexandria Alexandria engine source code
 
 ### Smaller indexes, hit-and-miss
 
@@ -245,8 +250,10 @@ Time for my first Gemini-exclusive content! A Gemini page about search engines w
 These engines were originally included in the article, but have since been discontinued.
 
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
+* Gowiki: Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
+=> https://gowiki.com  Gowiki
 
 ## Acknowledgements
 

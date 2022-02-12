@@ -89,7 +89,7 @@ These engines pass most of the tests listed in the "methodology" section.
 
 - [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
-- [Gowiki](https://gowiki.com): Very young, small index, but shows promise. I discovered this in the seirdy.one access logs. Currently only available in the US. Seems down as of early 2022.
+- [Alexandria](https://www.alexandria.org/): A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
 
 ### Smaller indexes, hit-and-miss
 
@@ -182,6 +182,7 @@ Graveyard
 These engines were originally included in the article, but have since been discontinued.
 
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.
+- [Gowiki](https://gowiki.com): Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 
 Acknowledgements
 ----------------
