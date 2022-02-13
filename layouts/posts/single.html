@@ -4,7 +4,7 @@
 		<header id="post-header">
 			<h1 itemprop="name headline" class="p-name">{{ .Title }}</h1>
 			{{ if lt .Date .Lastmod -}}
-				Posted <time class="dt-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{- partial "indieweb-author.html" -}} on his <a class="u-url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
+				Posted <time class="dt-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" class="u-url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
 				{{ with .OutputFormats.Get "gemtext" -}}
 					and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>
 				{{- end -}}
@@ -16,6 +16,8 @@
 					and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>
 				{{- end -}}
 			{{ end }}
+			<br>
+			<small><span itemprop="wordCount">{{ .WordCount }}</span> words, a <span itemprop="timeRequired" content="PT{{ .ReadingTime }}M">{{ .ReadingTime }} minute</span> read</small>
 		</header>
 		<section class="e-content" itemprop="articlebody">
 			{{ partial "processed-content" . -}}
@@ -58,9 +60,9 @@
 					{{- else -}}
 						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc"><span itemprop="name" class="p-content p-name">
 							{{- if $webmention.title -}}
-								{{- $webmention.title -}}
+								{{- $webmention.title | truncate 200 -}}
 							{{- else -}}
-								{{- $webmention.source -}}
+								{{- $webmention.source | truncate 35 -}}
 							{{- end -}}
 						</span></a>
 						{{- if $webmention.author_name }}
