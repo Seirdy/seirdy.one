@@ -46,7 +46,7 @@ _A previous version of this section wasn't clear and accurate. I've since remove
 
 A good measure of password strength is **entropy bits.** The entropy bits in a password is a base-2 logarithm of the number of guesses required to brute-force it.[^1]
 
-A brute-force attack that executes 2<sup>n</sup> guesses is certain to crack a password with _n_ entropy bits, and has a one-in-two chance of cracking a password with _n_+1 entropy bits.
+A brute-force attack that executes 2<sup>n</sup> guesses is certain to crack a password with <var>n</var> entropy bits, and has a one-in-two chance of cracking a password with <var>n</var>+1 entropy bits.
 
 For scale, [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption is currently the industry standard for strong symmetric encryption, and uses key lengths of 256-bits. An exhaustive key search over a 256-bit key space would be up against its 2<sup>256</sup> possible permutations. When using AES-256 encryption with a key derived from a password with more than 256 entropy bits, the entropy of the AES key is the bottleneck; an attacker would fare better by doing an exhaustive key search for the AES key than a brute-force attack for the password.
 
@@ -55,11 +55,11 @@ To calculate the entropy of a password, I recommend using a tool such as [zxcvbn
 The Problem
 -----------
 
-Define a function `P`. `P` determines the probability that MOAC will correctly guess a password with `n` bits of entropy after using `e` energy:
+Define a function <var>P</var>. <var>P</var> determines the probability that MOAC will correctly guess a password with <var>n</var> bits of entropy after using <var>e</var> energy:
 
     P(n, e)
 
-If `P(n, e) ≥ 1`, the MOAC will certainly guess your password before running out of energy. The lower `P(n, e)` is, the less likely it is for the MOAC to guess your password.
+If <var>P</var>(<var>n</var>, <var>e</var>) ≥ 1, the MOAC will certainly guess your password before running out of energy. The lower <var>P</var>(<var>n</var>, <var>e</var>) is, the less likely it is for the MOAC to guess your password.
 
 Caveats and estimates
 ---------------------
@@ -70,7 +70,7 @@ A brute-force attack will just guess a single password until the right one is fo
 
 When estimating, we'll prefer higher estimates that increase the odds of it guessing a password; after all, the point of this exercise is to establish an _upper_ limit on password strength. We'll also simplify: for instance, the MOAC will not waste any heat, and the only way it can guess a password is through brute-forcing. Focusing on too many details would defeat the point of this thought experiment.
 
-Quantum computers can use [Grover's algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) for an exponential speed-up; to account for quantum computers using Grover's algorithm, calculate `P(n/2, e)` instead.
+Quantum computers can use [Grover's algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) for an exponential speed-up; to account for quantum computers using Grover's algorithm, calculate <var>P</var>(<var>n</var>/2, <var>e</var>) instead.
 
 Others are better equipped to explain encryption/hashing/key-derivation algorithms, so I won't; this is just a pure and simple brute-force attack given precomputed password entropy, assuming that the cryptography is bulletproof.
 
@@ -81,11 +81,11 @@ Finally, there's always a non-zero probability of a brute-force attack guessing 
 Computation
 -----------
 
-How much energy does MOAC use per guess during a brute-force attack? In the context of this thought experiment, this number should be unrealistically low. I settled on [`kT`](https://en.wikipedia.org/wiki/KT_(energy)). `k` represents the [Boltzmann Constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (about 1.381×10<sup>-23</sup> J/K) and `T` represents the temperature of the system. Their product corresponds to the amount of heat required to create a 1 nat increase in a system's entropy.
+How much energy does MOAC use per guess during a brute-force attack? In the context of this thought experiment, this number should be unrealistically low. I settled on [<var>k</var><var>T</var>](https://en.wikipedia.org/wiki/KT_(energy)). <var>k</var> represents the [Boltzmann Constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (about 1.381×10<sup>-23</sup> J/K) and <var>T</var> represents the temperature of the system. Their product corresponds to the amount of heat required to create a 1 nat increase in a system's entropy.
 
 A more involved approach to picking a good value might utilize the [Plank-Einstein relation](https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation).
 
-It's also probably a better idea to make this value an estimate for flipping a single bit, and to estimate the average number of bit-flips it takes to make a single password guess. If that bothers you, pick a number `b` you believe to be a good estimate for a bit-flip-count and calculate `P(n+b, e)` instead of `P(n, e)`.
+It's also probably a better idea to make this value an estimate for flipping a single bit, and to estimate the average number of bit-flips it takes to make a single password guess. If that bothers you, pick a number <var>b</var> you believe to be a good estimate for a bit-flip-count and calculate <var>P</var>(<var>n</var>+<var>b</var>, <var>e</var>) instead of <var>P</var>(<var>n</var>, <var>e</var>).
 
 What's the temperature of the system? Three pieces of information help us find out:
 
@@ -93,17 +93,17 @@ What's the temperature of the system? Three pieces of information help us find o
 2. The MOAC will be consuming the entire observable universe
 3. The universe is mostly empty
 
-A good value for `T` would be the average temperature of the entire observable universe. The universe is mostly empty; `T` is around the temperature of cosmic background radiation in space. The lowest reasonable estimate for this temperature is 2.7 degrees Kelvin.[^2] A lower temperature means less energy usage, less energy usage allows more computations, and more computations raises the upper limit on password strength.
+A good value for <var>T</var> would be the average temperature of the entire observable universe. The universe is mostly empty; <var>T</var> is around the temperature of cosmic background radiation in space. The lowest reasonable estimate for this temperature is 2.7 degrees Kelvin.[^2] A lower temperature means less energy usage, less energy usage allows more computations, and more computations raises the upper limit on password strength.
 
-Every guess, the MOAC expends `kT` energy. Let `E` = the total amount of energy the MOAC can use; let `B` = the maximum number of guesses the MOAC can execute before running out of energy.
+Every guess, the MOAC expends <var>k</var><var>T</var> energy. Let <var>E</var> = the total amount of energy the MOAC can use; let <var>B</var> = the maximum number of guesses the MOAC can execute before running out of energy.
 
     B = E/(kT)
 
-Now, given the maximum number of passwords the MOAC can guess `B` and the bits of entropy in our password `n`, we have an equation for the probability that the MOAC will guess our password:
+Now, given the maximum number of passwords the MOAC can guess <var>B</var> and the bits of entropy in our password <var>n</var>, we have an equation for the probability that the MOAC will guess our password:
 
     P(n,B) = B/2ⁿ
 
-Plug in our expression for `B`:
+Plug in our expression for <var>B</var>:
 
     P(n,E) = E/(2ⁿkT)
 
@@ -115,13 +115,13 @@ Just how much energy is that? The mass-energy equivalence formula is quite simpl
 
     E = mc²
 
-We're trying to find `E` and we know `c`, the speed of light, is 299,792,458 m/s. That leaves `m`. What's the mass of the observable universe?
+We're trying to find <var>E</var> and we know <var>c</var>, the speed of light, is 299,792,458 m/s. That leaves <var>m</var>. What's the mass of the observable universe?
 
 ### Calculating the critical density of the observable universe
 
 Critical density is smallest average density of matter required to _almost_ slow the expansion of the universe to a stop. Any more dense, and expansion will stop; any less, and expansion will never stop.
 
-Let `D` = critical density of the observable universe and `V` = volume of the observable universe. Mass is the product of density and volume:
+Let <var>D</var> = critical density of the observable universe and <var>V</var> = volume of the observable universe. Mass is the product of density and volume:
 
     m = DV
 
@@ -129,21 +129,21 @@ We can derive the value of D by solving for it in the [Friedman equations](https
 
     D = 3Hₒ²/(8πG)
 
-Where `G` is the [Gravitational Constant](https://en.wikipedia.org/wiki/Gravitational_constant) and `Hₒ` is the [Hubble Constant](https://en.wikipedia.org/wiki/Hubble%27s_law). `Hₒd` is the rate of expansion at proper distance `d`.
+Where <var>G</var> is the [Gravitational Constant](https://en.wikipedia.org/wiki/Gravitational_constant) and <var>Hₒ</var> is the [Hubble Constant](https://en.wikipedia.org/wiki/Hubble%27s_law). <var>Hₒ</var><var>d</var> is the rate of expansion at proper distance <var>d</var>.
 
-Let's assume the observable universe is a sphere, expanding at the speed of light ever since the Big Bang.[^4] The volume `V` of our spherical universe when given its radius `r` is:
+Let's assume the observable universe is a sphere, expanding at the speed of light ever since the Big Bang.[^4] The volume <var>V</var> of our spherical universe when given its radius <var>r</var> is:
 
     V = (4/3)πr³
 
-To find the radius of the observable universe `r`, we can use the age of the universe `t`:
+To find the radius of the observable universe <var>r</var>, we can use the age of the universe <var>t</var>:
 
     r = ct
 
-Hubble's Law estimates the age of the universe to be around `1/Hₒ`
+Hubble's Law estimates the age of the universe to be around 1/<var>H</var>ₒ
 
 ### Solving for E
 
-Let's plug in all the derived values into our original equation for the mass of the observable universe `m`:
+Let's plug in all the derived values into our original equation for the mass of the observable universe <var>m</var>:
 
     m = DV
 
@@ -246,7 +246,7 @@ Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) and [Ryan Coyler](https
 
 My notes from Thermal Physics weren't enough to write this; various Wikipedia articles were also quite helpful, most of which were linked in the body of the article.
 
-While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon a [blog post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by Bruce Schneier. It contained a useful excerpt from his book _Applied Cryptography_[^6] involving setting the minimum energy per computation to `kT`. I chose a more conservative estimate for `T` than Schneier did, and a _much_ greater source of energy.
+While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon a [blog post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by Bruce Schneier. It contained a useful excerpt from his book _Applied Cryptography_[^6] involving setting the minimum energy per computation to <var>k</var><var>T</var>. I chose a more conservative estimate for <var>T</var> than Schneier did, and a _much_ greater source of energy.
 
 
 [^1]: James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE International Symposium on Information Theory. IEEE. p. 204.
