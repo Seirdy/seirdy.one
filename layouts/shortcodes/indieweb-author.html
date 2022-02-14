@@ -1,4 +1,32 @@
-<!-- re-using the indefinetly-cached favicon to avoid bloating page size -->
-{{ $favicon := resources.Get "/favicon.png" -}}
+<!-- re-using the favicon for the author photo -->
+{{- $favicon := resources.Get "/favicon.png" -}}
 {{- $favicon_base64 := $favicon.Content | base64Encode -}}
-<span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author author vcard"><a itemprop="url" href="https://seirdy.one" rel="author home" class="u-url url"><img itemprop="image" class="u-photo photo" src="data:image/png;base64,{{ $favicon_base64 }}" width="16" height="16" alt="Rohan Kumar"> <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a></span>
+<!--
+	Reader mode implementations use .p-author, itemprop=author, and/or .author to add
+	a byline. Some also strip elements matching the "byline" class to avoid duplicating
+	the byline. Mozilla Readability uses both microformats1 and microformats2 while
+	Chromium Distiller uses microdata + schema.org. This site also needs to be Indieweb
+	compatible for webmentions and such. To support them all, I ended up with
+	microdata, microformats2, microformats1, and the "byline" class.
+
+	I put the byline class around the html that includes this partial so it can hide
+	the whole line.
+
+	Jesus christ.
+
+	Abominations like this also appear elsewhere in the blog btw. This is just the best
+	example. Oh, and then i need to support some parts of hNews as well as hentry *and*
+	h-entry.
+
+	This would be so much simpler if all the parsers just had a mode to detect
+	schema.org and a mode to detect microformats2, and then stuck to those standards.
+
+	(btw this is all made of <span> cuz it is supposed to be inline)
+-->
+<span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author author vcard">
+	<a itemprop="url" href="https://seirdy.one" rel="author home" class="u-url url">
+		<img itemprop="image" class="u-photo photo" src="data:image/png;base64,{{ $favicon_base64 }}" alt="" width="16" height="16">
+		<span itemprop="name" class="p-name fn n">
+			<span itemprop="givenName" class="p-given-name given-name">Rohan</span>
+			<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>
+</span>
