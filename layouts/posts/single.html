@@ -1,17 +1,17 @@
 {{ define "main" }}
-<div itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" class="h-entry">
-	<article itemprop="mainEntityOfPage">
+<div itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+	<article itemprop="mainEntityOfPage" class="h-entry hentry">
 		<header id="post-header">
-			<h1 itemprop="name headline" class="p-name">{{ .Title }}</h1>
+			<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
 			{{ if lt .Date .Lastmod -}}
-				Posted <time class="dt-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" class="u-url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
+				Posted <time class="dt-published published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" class="u-url url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
 				{{ with .OutputFormats.Get "gemtext" -}}
 					and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>
 				{{- end -}}
 				<br>
 				Last updated <time itemprop="dateModified" class="dt-updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }}">Changelog</a>
 			{{ else -}}
-				Posted <a class="u-url" href="https://seirdy.one{{ .RelPermalink }}"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time></a> by {{- partial "indieweb-author.html" -}} on his <a class="u-url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
+				Posted <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" class="u-url url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
 				{{- with .OutputFormats.Get "gemtext" -}}
 					and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>
 				{{- end -}}
@@ -19,7 +19,7 @@
 			<br>
 			<small><span itemprop="wordCount">{{ .WordCount }}</span> words, a <span itemprop="timeRequired" content="PT{{ .ReadingTime }}M">{{ .ReadingTime }} minute</span> read</small>
 		</header>
-		<section class="e-content" itemprop="articlebody">
+		<section class="e-content entry-content" itemprop="articlebody">
 			{{ partial "processed-content" . -}}
 		</section>
 	</article>
