@@ -4,12 +4,12 @@ outputs:
     - gemtext
 title: Seirdy's Home
 ---
-<div class="h-card">
+<div itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author autho h-card vcardr">
 
 Seirdy's Home
 =============
 
-It me! This is the personal website for <span class="h-card p-author vcard"><a href="https://seirdy.one" rel="author home" class="u-url url">{{% indieweb-icon %}}<span class="p-name fn n"><span class="p-given-name given-name">Rohan</span> <span class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span class="p-nickname nickname">Seirdy</span> (online handle).</span>
+It me! This is the personal website for <a itemprop="url" href="https://seirdy.one" rel="author home canonical" class="u-url url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> </span>, a.k.a. <span itemprop="nickname" class="p-nickname nickname">Seirdy</span> (online handle).
 
 Other versions of this website
 ------------------------------
