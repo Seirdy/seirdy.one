@@ -11,8 +11,12 @@ I find it easy to handle views different from my own. I feel more troubled when 
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
 
-1. [Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)
-2. [Keeping Platforms Open](./../../../2021/02/23/keeping-platforms-open.html)
+<nav>
+
+1. **[Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of user domestication and defense measures: FLOSS, open platforms, and simplicity.
+2. **[Keeping Platforms Open](./../../../2021/02/23/keeping-platforms-open.html)**<br>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
+
+</nav>
 
 After two posts spanning over 5000 words, I need to add some nuance.
 
@@ -149,7 +153,7 @@ If you want to get started with fuzzing, I recommend checking out [the quick-sta
 
 A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
-[CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers](https://www.willsroot.io/2022/01/cve-2022-0185.html)
+<cite class="h-cite"><a class="u-url p-name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html" rel="cite">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a> by <span class="h-card vcard"><a class="p-name url fn n" href="https://www.willsroot.io/"><span class="p-nickname">willsroot</span></a></span></cite>
 
 I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
 
