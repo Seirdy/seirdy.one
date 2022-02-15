@@ -7,16 +7,12 @@ outputs:
 footnote_heading: Notes
 title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
-I find it easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.
+I find it quite easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
 
-<nav>
-
-1. **[Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of user domestication and defense measures: FLOSS, open platforms, and simplicity.
+1. **[Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
 2. **[Keeping Platforms Open](./../../../2021/02/23/keeping-platforms-open.html)**<br>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
-
-</nav>
 
 After two posts spanning over 5000 words, I need to add some nuance.
 
