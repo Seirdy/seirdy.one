@@ -4,7 +4,7 @@
 		<header id="post-header">
 			<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
 			<span class="dateline">
-				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 			</span>
 			<span class="byline">
 				by {{- partial "indieweb-author.html" -}}</span> on his <a rel="canonical" itemprop="mainEntityOfPage" class="u-url url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
@@ -13,7 +13,7 @@
 				{{- end -}}
 			{{ if lt .Date .Lastmod -}}
 				<br>
-				Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }}">Changelog</a>
+				Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ .Site.Params.logUrlPrefix }}content/{{ .File.Path }}">Changelog</a>
 			{{ end }}
 			<br>
 			<small>
@@ -47,7 +47,7 @@
 					{{- else -}}
 						<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
 					{{- end }}
-					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
+					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
 					<br>
 					{{ if (eq $webmention.type "like") -}}
 						{{- if $webmention.author_name -}}
