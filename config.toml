@@ -20,6 +20,9 @@ highlight = false
 
 [author]
 name = "Rohan Kumar"
+first = "Rohan"
+last = "Kumar"
+nick = "Seirdy"
 
 [menu]
   [[menu.main]]
