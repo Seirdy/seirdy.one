@@ -1,7 +1,7 @@
 ---
 date: 2020-10-30
 layout: post
-title: Seirdy (Rohan Kumar)
+title: About Seirdy (Rohan Kumar)
 ---
 Rohan Kumar : He/Him : Age 21
 

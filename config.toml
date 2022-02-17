@@ -27,28 +27,28 @@ nick = "Seirdy"
 [menu]
   [[menu.main]]
 	identifier = "posts"
-	name = "posts"
+	name = "Posts"
 	title = "posts"
 	url = "/posts.html"
 	weight = 10
 
   [[menu.main]]
 	identifier = "about"
-	name = "about"
+	name = "About"
 	title = "about"
 	url = "/about.html"
 	weight = 20
 
   [[menu.main]]
 	identifier = "resume"
-	name = "resume"
+	name = "Resume"
 	title = "resume"
 	url = "/resume.html"
 	weight = 30
 
   [[menu.main]]
 	identifier = "rss"
-	name = "rss"
+	name = "RSS"
 	title = "rss"
 	url = "/posts/index.xml"
 	weight = 40
