@@ -8,6 +8,8 @@ I primarily evaluated English-speaking search engines because that’s my primar
 
 This page is a “living document” that I plan on updating indefinitely. Check for updates once in a while if you find this page interesting. Feel free to send me suggestions, updates, and corrections; I’d especially appreciate help from those who speak languages besides English and can evaluate a non-English indexing search engine. Contact info is in the article footer.
 
+I plan on updating the engines in the top two categories with more info comparing the structured/linked data the engines leverage (RDFa vocabularies, microdata, microformats, JSON-LD, etc.) to help authors determine which formats to use.
+
 ## Rationale
 
 Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.²
@@ -125,8 +127,10 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://burf.co/ Burf.co
 => https://entfer.com/ Entfer
 
+* Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 * ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 
+=> https://siik.co/ Siik
 => https://www.chatnoir.eu/ ChatNoir
 => https://commoncrawl.org/ Common Crawl
 => https://github.com/chatnoir-eu ChatNoir source code (GitHub)
