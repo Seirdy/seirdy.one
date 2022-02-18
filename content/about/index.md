@@ -2,6 +2,9 @@
 date: 2020-10-30
 layout: post
 title: About Seirdy (Rohan Kumar)
+outputs:
+    - html
+    - gemtext
 ---
 Rohan Kumar : He/Him : Age 21
 
