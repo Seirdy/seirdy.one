@@ -76,4 +76,4 @@
 		width="{{ $light_png.Width }}" height="{{ $light_png.Height }}"
 		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
 		decoding="async">
-</picture>
+</picture>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}

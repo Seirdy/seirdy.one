@@ -1,14 +1,13 @@
 ---
 date: "2020-11-23T12:21:35-08:00"
-description: A lengthy guide to making small sites that focus on content rather than
-    form.
+description: A lengthy guide to making small sites that focus on content rather than form.
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 footnote_heading: Notes
 tags:
-  - web
-  - minimalism
+    - web
+    - minimalism
 title: An opinionated list of best practices for textual websites
 ---
 _The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites._
@@ -136,6 +135,8 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 <a href="https://seirdy.one/misc/website_colors_large.png">
 {{< picture name="website_colors" alt="This page with a grey background behind black/grey headers and white-on-white code snippets" >}}
 </a>
+
+<p>{{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <a href="https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem">AWebColoursProblem</a>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.</p>
 
 ### Dark themes
 
@@ -265,13 +266,13 @@ The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and al
 
 The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
 
-My favorite website club has to be the [<abbr title="eXtreme HyperText Movement for Luddites">XHTML</abbr> Club](https://xhtml.club/) by <span class="h-card vcard"><a class="p-name url fn n" href="https://uglyduck.ca"><span class="p-given-name given-name">Bradley</span> <span class="p-family-name family-name">Taunt</span></a></span>, the creator of the original [1mb.club](https://1mb.club).
+My favorite website club has to be the [<abbr title="eXtreme HyperText Movement for Luddites">XHTML</abbr> Club](https://xhtml.club/) by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://uglyduck.ca">}}, the creator of the original [1mb.club](https://1mb.club).
 
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
 
 The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
 
-One resource I found useful (that eventually featured this article!) was the "Your page content" section of <span class="h-card vcard"><a class="p-name url fn n" href="https://www.billdietrich.me"><span class="p-given-name given-name">Bill</span> <span class="p-family-name family-name">Dietrich</span>'s</a></span> comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
+One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.
@@ -281,3 +282,5 @@ One resource I found useful (that eventually featured this article!) was the "Yo
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
 [^4]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle `javascript.options.ion`, `javascript.options.baselinejit`, `javascript.options.native_regexp`, `javascript.options.asmjs`, and `javascript.options.wasm` in `about:config`; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+
+

@@ -144,6 +144,12 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 
 It's got a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets
 
+Chris Siebenmann describes this in more detail:
+
+=> https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem AWebColoursProblem
+
+In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
+
 ## Dark themes
 
 If you do explicitly set colors, please also include a dark theme using a media query:

@@ -171,15 +171,15 @@ Translations
 
 Translations are always welcome.
 
-<span class="h-card vcard"><a class="p-name url fn n" href="https://evgenykuznetsov.org/"><span class="p-given-name given-name">Евгений</span> <span class="p-family-name family-name">Кузнецов</span></a></span> translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
+{{<indieweb-person first-name="Евгений" last-name="Кузнецов" url="https://evgenykuznetsov.org/">}} translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
 
 The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to French: <a lang="fr" hreflang="fr" rel="alternate" href="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/">WhatsApp et la domestication des utilisateurs</a>.
 
-<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://web.archive.org/web/20210924154338/https://convorb.im/">Licaon_Kter</a></span> translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
+{{<indieweb-person nickname="Licaon Kter" url="https://web.archive.org/web/20210924154338/https://convorb.im/">}} translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
 
-<span class="h-card vcard"><a class="p-name url fn n" href="https://sgfault.com"><span class="p-given-name given-name">David</span> <span class="p-family-name family-name">Jimenez</span></a></span> translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
+{{<indieweb-person first-name="David" last-name="Jimenez" url="https://sgfault.com">}} translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
 
-<span class="h-card vcard"><a class="p-nickname url nickname n" href="https://www.lealternative.net/author/skariko/">Skariko</a></span> of [Le Alternative](https://lealternative.net/) translated this article to Italian: <a lang="it-IT" hreflang="it-IT" rel="alternate" href="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/">WhatsApp e l’addomesticamento degli utenti</a>.
+{{<indieweb-person nickname="Skariko" url="https://www.lealternative.net/author/skariko/">}} of [Le Alternative](https://lealternative.net/) translated this article to Italian: <a lang="it-IT" hreflang="it-IT" rel="alternate" href="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/">WhatsApp e l’addomesticamento degli utenti</a>.
 
 
 [^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.

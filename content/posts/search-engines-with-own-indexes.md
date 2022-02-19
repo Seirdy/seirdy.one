@@ -193,9 +193,9 @@ Acknowledgements
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
-Matt from Gigablast also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
+{{<indieweb-person first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
 
-<span class="h-card vcard"><a class="p-name url fn n" href="https://emucafe.club/channel/naferrell"><span class="p-given-name given-name">Nicholas</span> A. <span class="p-family-name family-name">Ferrell</span></a></span> of [The New Leaf Journal](https://thenewleafjournal.com/) wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
+{{<indieweb-person first-name="Nicholas" last-name="Ferrell" url="https://emucafe.club/channel/naferrell" org="The New Leaf Journal" org-url="https://thenewleafjournal.com/">}} wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.
