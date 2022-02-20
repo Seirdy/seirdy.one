@@ -240,6 +240,11 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 These engines aren’t ready yet; their indexes are either in a proof-of-concept phase with a handful of sites or aren’t available yet.
 
 * Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server’s access logs; there’s a good chance it’s crawled your site if you have a few backlinks.
+* Ahrefs: Dmitry Gerasimenko from Ahrefs has announced plans for Ahrefs to release a search engine to "share ad revenue with content creators 90/10". This isn’t surprising: its crawlers are quite active and have probably built quite a large index.
+
+=> https://twitter.com/botsbreeder/status/1110889488706760704 Initial announcement
+=> https://medium.com/swlh/investor-money-vs-public-interest-did-google-fail-to-build-a-non-evil-platform-3a054f996ea9 Blog post on Ahrefs' motivation for a new engine
+=> https://twitter.com/botsbreeder/status/1405920654877028357 An update on Ahrefs' search engine (June 2021)
 
 ## Gemini search engines
 
