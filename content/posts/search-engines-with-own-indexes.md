@@ -6,6 +6,9 @@ outputs:
     - gemtext
 tags:
     - web
+sitemap:
+    ChangeFreq: weekly
+    Priority: .7
 footnote_heading: Notes
 title: A look at search engines with their own indexes
 ---
@@ -57,7 +60,7 @@ These are large engines that pass all the above tests and more.
   - (discontinued) Runnaroo
   - SAPO (Portuguese interface, can work with English results)
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
-  - Yahoo
+  - Yahoo (and its sibling engine, [OneSearch](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
   - DuckDuckGo[^3]
   - AOL
   - Qwant (partial)[^4]
@@ -78,7 +81,7 @@ These are large engines that pass all the above tests and more.
   - Swisscows
   - Ask.moe[^7]
   - Partially powers MetaGer by default; this can be turned off
-  - At this point, I stopped adding Bing-based search engines. There are just too many.
+  - At this point, I mostly stopped adding Bing-based search engines. There are just too many.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
   - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.

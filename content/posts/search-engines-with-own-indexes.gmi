@@ -46,7 +46,7 @@ These are large engines that pass all the above tests and more.
 
 2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
 
-* Yahoo
+* Yahoo (and its sibling engine, OneSearch)
 * DuckDuckGo³
 * AOL
 * Qwant (partial)⁴
@@ -67,7 +67,7 @@ These are large engines that pass all the above tests and more.
 * Swisscows
 * Ask.moe⁷
 * Partially powers MetaGer by default; this can be turned off
-* At this point, I stopped adding Bing-based search engines. There are just too many.
+* At this point, I mostly stopped adding Bing-based search engines. There are just too many.
 
 3. Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
 
