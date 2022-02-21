@@ -21,9 +21,12 @@
 <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
+<!-- Don't index the tildeverse mirror, staging site, etc. -->
 {{ if and (ne .Site.BaseURL "https://seirdy.one/") (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <meta name="robots" content="noindex">
 {{ else -}}
+<!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
+<meta name="robots" content="max-image-preview:large, max-snippet=-1">
 <link rel="webmention" href="https://seirdy.one/webmentions/receive">
 {{ end -}}
 <link rel="canonical" href="https://seirdy.one{{ .RelPermalink }}">
