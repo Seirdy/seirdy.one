@@ -249,20 +249,24 @@ These engines aren’t ready yet; their indexes are either in a proof-of-concept
 ## Gemini search engines
 
 Time for my first Gemini-exclusive content! A Gemini page about search engines wouldn't be complete without a few search engines for the Gemini space.
-
-* gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
-* geminispace.info: Another instance of GUS, but with an updated index.
-
-=> gemini://gus.guru/ gus.guru
+* geminispace.info: A GUS instance, but with an updated index. Supports submitting content. The biggest search engine on Gemini.
 => gemini://geminispace.info/ geminispace.info
+
+* AuraGem Search Engine: part of the Ponix capsule, written in Go. A relative newcomer.
+=> gemini://auragem.space/searchengine/ AuraGem Search Engine
+=> https://github.com/krixano/geminiserver Ponix source code
+=> gemini://auragem.space/devlog Ponix devlog
+
 
 ## Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
 
+* gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
 * Gowiki: Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 
+=> gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
 => https://gowiki.com  Gowiki
 
