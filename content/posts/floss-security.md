@@ -23,6 +23,8 @@ One of the biggest parts of the Free and Open Source Software definitions is the
 
 I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective (it certainly makes audits easier), and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
 
+I'll update this post occasionally as I learn more on the subject. If you like it, check back in a month or two to see if it has something new.
+
 _PS: this stance is not absolute; I concede to several good counter-arguments [at the bottom](#good-counter-arguments)!_
 
 How security fixes work
@@ -50,6 +52,7 @@ Source code[^2] is essential to describe a program's high-level, human-comprehen
 - The operating system itself may be poorly understood by the developers, and run a program in a way that contradicts a developer's expectations.
 - Toolchains, interpreters, and operating systems can have bugs that impact program execution.
 - Different compilers and compiler flags can offer different security guarantees and mitigations.
+- Source code [can be deceptive](https://en.wikipedia.org/wiki/Underhanded_C_Contest) by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs (plausible deniability; look up "hypocrite commits" for an example) have all been well-documented.
 - All of the above points apply to each dependency and the underlying operating system, which can impact a program's behavior.
 
 Furthermore, all programmers are flawed mortals who don't always fully understand source code. Everyone who's done a non-trivial amount of programming is familiar with the feeling of encountering a bug during run-time for which the cause is impossible to find...until they notice it staring them in the face on Line 12. Think of all the bugs that _aren't_ so easily noticed.
@@ -112,7 +115,7 @@ The fact that Intel ME has such deep access to the host system and the fact that
 
 I picked Intel ME+AMT to serve as an extreme example: it shows both the power and limitations of the analysis approaches covered. ME isn't made of simple executables you can just run in an OS because it sits far below the OS, in what's sometimes called "Ring -3".[^10] Analysis is limited to external monitoring (e.g. by monitoring network activity) and reverse-engineering unpacked partially-obfuscated firmware updates, with help from official documentation. This is slower and harder than analyzing a typical executable or library.
 
-Answers are a bit complex and...more boring than what sensationalized headlines would say. Reverse engineers such as Igor Skochinsky and Nicola Corna (the developers of [me-tools](https://github.com/skochinsky/me-tools) and [me_cleaner](https://github.com/corna/me_cleaner), respectively) have [analyzed ME](https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf), while researchers such as Vassilios Ververis have [thoroughly analyzed AMT](https://kth.diva-portal.org/smash/get/diva2:508256/FULLTEXT01) in 2010. Interestingly, the former pair argues that auditing binary code is preferable to source code.
+Answers are a bit complex and...more boring than what sensationalized headlines would say. Reverse engineers such as Igor Skochinsky and Nicola Corna (the developers of [me-tools](https://github.com/skochinsky/me-tools) and [me_cleaner](https://github.com/corna/me_cleaner), respectively) have [analyzed ME](https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf), while researchers such as Vassilios Ververis have [thoroughly analyzed AMT](https://kth.diva-portal.org/smash/get/diva2:508256/FULLTEXT01) in 2010. Interestingly, the former pair argues that auditing binary code is preferable to potentially misleading source code: binary analysis allows auditors to "cut the crap" and inspect what software is truly made of. However, this was balanced by a form of binary obfuscation that the pair encountered; I'll describe it in a moment.
 
 Simply monitoring network activity and systematically testing all claims made by the documentation allowed Ververis to uncover a host of security issues in Intel AMT. However, no undocumented features have (to my knowledge) been uncovered. The problematic findings revolved around flawed/insecure implementations of documented functionality. In other words: there's been no evidence of AMT being "a backdoor", but its security flaws could have had a similar impact. Fortunately, AMT can be disabled. What about ME?
 
