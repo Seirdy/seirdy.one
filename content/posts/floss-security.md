@@ -177,6 +177,15 @@ Most of this post is written with the assumption that binaries are inspectable a
 
 Beyond source code, transparency into the development helps assure users of compliance with good security practices. Viewing VCS history, patch reviews, linter configurations, etc. reveal the standards that code is being held up to, some of which can be related to bug-squashing and security.
 
+{{<indieweb-person nickname="Patience" url="https://matrix.to/#/@hypokeimenon:tchncs.de">}} on Matrix also had a great response, which I agree with and adapt below:
+
+Whether or not the source code is available for software does not change how insecure it is. However, there are good security-related incentives to publish source code.
+
+- Doing so improves vulnerability patchability and future architectural improvement by lowering the barrier to contribution. The fixes that follow can be _shared and used by other projects_ across the field, some of which can in turn be used by the vendor. This isn't a zero-sum game; a rising tide lifts all boats.
+- It's generally good practice to assume an attacker has full knowledge of a system instead of relying on security through obscurity. Releasing code provides strong assurance that this assumption is being made. It's a way for vendors to put their money where their mouth is.
+
+Both Patience and {{<indieweb-person first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
+
 Conclusion
 ----------
 
@@ -184,7 +193,7 @@ I've gone over some examples of how analyzing a software's security properties n
 
 Likewise, don't assume software is safer than proprietary alternatives just because its source is visible. There are lots of great reasons to switch from macOS or Windows to Linux (it's been my main OS for years), but security is [low on that list](https://madaidans-insecurities.github.io/linux.html).
 
-All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective. All I argue is that source unavailability does not imply insecurity, and source availability does not imply security. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that the sandboxing employed by Google Chrome or Microsoft Edge is more vulnerable than Pale Moon or most WebKitGTK-based browsers, for instance.
+All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective; I listed some reasons why in the counter-arguments section. Unfortunately, being helpful is not the same as being necessary. All I argue is that source unavailability does not imply insecurity, and source availability does not imply security. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that the sandboxing employed by Google Chrome or Microsoft Edge is more vulnerable than Pale Moon or most WebKitGTK-based browsers, for instance.
 
 Releasing source code is just one thing vendors can do to improve audits; other options include releasing test builds with debug symbols/sanitizers, publishing docs describing their architecture, and/or just keeping software small and simple. We should evaluate software security through _study_ rather than source model. Support the right things for the right reasons, and help others make informed choices with accurate information. There are enough good reasons to support software freedom; we don't need to rely on bad ones.
 
