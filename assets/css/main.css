@@ -48,7 +48,7 @@ nav li {
 
 /* single-line nav on widescreen, multi-line nav on narrow screens */
 @media (min-width: 24em) {
-	nav .unstyled-list li {
+	nav li {
 		display: inline;
 	}
 }
@@ -69,11 +69,13 @@ pre {
 	/* stylelint-disable -- compatibility hack */
 	font-family: monospace, monospace;
 
-	/* csslint ignore:end */
+	/* stylelint-enable */
 }
 
 pre,
-p code {
+/* don't put a border around code within a <pre> block,
+ * just put the border around the <code> */
+:not(pre) > code {
 	border: 1px solid #bbb;
 	padding: 0 0.1em;
 }
