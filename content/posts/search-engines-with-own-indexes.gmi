@@ -168,7 +168,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 => https://plumb.one/ Plumb
 
-* Neeva: Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva managed to get an agreement with Bing that allowed result-mixing. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address to use; after the (rather long) free trial it requires payment as an alternative to ads.
+* Neeva: Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva is one of few exceptions. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address or OAuth to use, and offers a paid tier with additional benefits.
 
 => https://neeva.com/ Neeva
 
