@@ -111,3 +111,16 @@ excludeDestinations = [
 	"https://useplaintext.email/",
 	"https://seirdy.one",
 ]
+
+[imaging.exif]
+ # Regexp matching the fields you want to Exclude from the (massive) set of Exif info
+# available. As we cache this info to disk, this is for performance and
+# disk space reasons more than anything.
+# If you want it all, put ".*" in this config setting.
+# Note that if neither this or ExcludeFields is set, Hugo will return a small
+# default set: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
+includeFields = ""
+
+# Regexp matching the Exif fields you want to exclude. This may be easier to use
+# than IncludeFields above, depending on what you want.
+excludeFields = ""

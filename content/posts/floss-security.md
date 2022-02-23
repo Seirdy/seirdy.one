@@ -184,7 +184,7 @@ Whether or not the source code is available for software does not change how ins
 - Doing so improves vulnerability patchability and future architectural improvement by lowering the barrier to contribution. The fixes that follow can be _shared and used by other projects_ across the field, some of which can in turn be used by the vendor. This isn't a zero-sum game; a rising tide lifts all boats.
 - It's generally good practice to assume an attacker has full knowledge of a system instead of relying on security through obscurity. Releasing code provides strong assurance that this assumption is being made. It's a way for vendors to put their money where their mouth is.
 
-Both Patience and {{<indieweb-person first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
+Both Patience and {{<indieweb-person first-name="Drew" last-name="Devault" url="https://drewdevault.com/" avatar="https://drewdevault.com/avatar.png">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
 
 Conclusion
 ----------
