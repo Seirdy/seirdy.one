@@ -244,6 +244,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 ⁶ This is probably what people in *The Matrix* were using to see that iconic digital rain.
 
 ⁷ This command only lists syscall names, but I did eventually follow the example of sandbox-app-launcher by allowing certain syscalls (e.g. ioctl) only when invoked with certain parameters. Also, I used ripgrep because I'm more familiar with PCRE-style capture groups.
+=> https://github.com/Whonix/sandbox-app-launcher sandbox-app-launcher
 
 ⁸ Decrypting these packets typically involves saving and using key logs, or using endpoints with known pre-master secrets. Didier Stevens wrote a good series on this:
 => https://blog.didierstevens.com/2020/12/14/decrypting-tls-streams-with-wireshark-part-1/ Decrypting TLS Streams With Wireshark: Part 1

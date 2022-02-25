@@ -81,7 +81,7 @@ This also extends to determining how programs utilize the network: packet sniffe
 
 These methods are not flawless. Syscall tracers are only designed to shed light on how a program interacts with the kernel. Kernel interactions tell us plenty (it's sometimes all we need), but they don't give the whole story. Furthermore, packet inspection can be made a bit painful by transit encryption[^8]; tracing a program's execution alongside packet inspection can offer clarity, but this is not easy.
 
-For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/Core_dump), also known as memory dumps. Core dumps share the state of a program during execution or upon crashing, giving us greater visibility into exactly what data a program is processing. Builds containing debugging symbols (e.g. [DWARF](https://dwarfstd.org/)) have more detailed core dumps. Vendors that release daily snapshots of pre-release builds typically include some symbols to give testers more detail concerning the causes of crashes. Web browsers are a common example: Chromium dev snapshots, Chrome Canary, Firefox Nightly, WebKit Canary builds, etc. all include debug symbols. Until recently, _Minecraft: Bedrock Edition_ included debug symbols which were used heavily by the modding community.[^9]
+For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/Core_dump), also known as memory dumps. Core dumps share the state of a program during execution or upon crashing, giving us greater visibility into exactly what data a program is processing. Builds containing debugging symbols (e.g. [DWARF](https://dwarfstd.org/)) have more detailed core dumps. Vendors that release daily snapshots of pre-release builds typically include some symbols to give testers more detail concerning the causes of crashes. Web browsers are a common example: Chromium dev snapshots, Chrome Canary, Firefox Nightly, WebKit Canary builds, etc. all include debug symbols. [Until 2019](https://twitter.com/MisteFr/status/1168597562703716354?s=20), _Minecraft: Bedrock Edition_ included debug symbols which were used heavily by the modding community.[^9]
 
 #### Dynamic analysis example: Zoom
 
@@ -210,7 +210,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 
 [^6]: This is probably what people in _The Matrix_ were using to see that iconic [digital rain](https://en.wikipedia.org/wiki/Matrix_digital_rain).
 
-[^7]: This command only lists syscall names, but I did eventually follow the example of sandbox-app-launcher by allowing certain syscalls (e.g. ioctl) only when invoked with certain parameters. Also, I used [ripgrep](https://github.com/BurntSushi/ripgrep) because I'm more familiar with <abbr title="Perl-Compatible Regular Expressions">PCRE</abbr>-style capture groups.
+[^7]: This command only lists syscall names, but I did eventually follow the example of [sandbox-app-launcher](https://github.com/Whonix/sandbox-app-launcher) by allowing certain syscalls (e.g. ioctl) only when invoked with certain parameters. Also, I used [ripgrep](https://github.com/BurntSushi/ripgrep) because I'm more familiar with <abbr title="Perl-Compatible Regular Expressions">PCRE</abbr>-style capture groups.
 
 [^8]: Decrypting these packets typically involves saving and using key logs, or using endpoints with [known pre-master secrets](https://blog.didierstevens.com/2020/12/14/decrypting-tls-streams-with-wireshark-part-1/).
 
