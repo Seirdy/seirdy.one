@@ -22,20 +22,20 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - No scripts or interactivity (preferably enforced at the CSP level)
 - No cookies
 - No animations
-- No fonts--local or remote--besides `sans-serif` and `monospace`. More on this below.
-- No referrers
+- No fonts--local or remote--besides `sans-serif` and `monospace`.
 - No requests after the page finishes loading
 - No 3rd-party resources (preferably enforced at the CSP level)
-- No lazy loading (more on this below)
-- No custom colors OR explicitly set the both foreground and background colors. More on this below.
+- No lazy loading
+- No custom colors OR explicitly set the both foreground and background colors.
 - A maximum line length for readability
 - Server configured to support compression (gzip, optionally Brotli and Zstandard as well). It's a free speed boost.
 - Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/). A bare minimum would be 50, but it shouldn't be too hard to hit 100.
-- Optimized images. More on image optimization below.
+- Optimized images.
 - All images labeled with alt-text. The page should make sense without images.
 - Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
-- Works well with Tor. More on this below.
+- Works well with Tor and the Tor Browser's safety settings.
+- Preserve link underlines.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies.
 
@@ -258,6 +258,26 @@ These tests start out pretty reasonable, but gradually get more insane as you go
 11. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 10, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+
+In defense of link underlines
+-----------------------------
+
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html), and hyperlinks are no exception. I disagree.
+
+One reason is that underlines make it easy to separate multiple consecutive inline links:
+
+{{< picture name="underlines" alt="a line of three consecutive hyperlinks with and without underlines" >}}
+
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG "A" requirement is for information to not be conveyed solely through color:
+
+<figure>
+	<blockquote cite="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">
+		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)</p>
+	</blockquote>
+	<figcaption>
+	&mdash; <a rel="cite" href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color"><cite>WCAG 2.0</cite>, section 1.4.1</a>
+	</figcaption>
+</figure>
 
 Other places to check out
 -------------------------

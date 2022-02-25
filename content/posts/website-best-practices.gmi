@@ -12,20 +12,20 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No scripts or interactivity (preferably enforced at the CSP level)
 * No cookies
 * No animations
-* No fonts--local or remote--besides sans-serif and monospace. More on this below.
-* No referrers
+* No fonts--local or remote--besides "sans-serif" and "monospace".
 * No requests after the page finishes loading
 * No 3rd-party resources (preferably enforced at the CSP level)
-* No lazy loading (more on this below)
-* No custom colors OR explicitly set the both foreground and background colors. More on this below.
+* No lazy loading
+* No custom colors OR explicitly set the both foreground and background colors.
 * A maximum line length for readability
 * Server configured to support compression (gzip, optionally Brotli and Zstandard as well). It's a free speed boost.
 * Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
 * A good score on Mozilla's HTTP Observatory. A bare minimum would be 50, but it shouldn't be too hard to hit 100.
-* Optimized images. More on image optimization below.
+* Optimized images.
 * All images labeled with alt-text. The page should make sense without images.
 * Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
-* Works well with Tor. More on this below.
+* Works well with Tor and the Tor Browser's safety settings.
+* Preserve link underlines.
 
 => https://observatory.mozilla.org/ HTTP Observatory
 
@@ -298,6 +298,22 @@ These tests start out pretty reasonable, but gradually get more insane as you go
 I'm still on step 10, trying to find new ways to break this page. If you come up with a new test, please share it:
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
+
+## In defense of link underlines
+
+Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
+
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
+
+I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
+
+=> gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
+
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG “A” requirement is for information to not be conveyed solely through color:
+
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)
+
+— WCAG 2.0, section 1.4.1
 
 ## Other places to check out
 
