@@ -309,11 +309,11 @@ I disagree. One reason is that underlines make it easy to separate multiple cons
 
 => gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG “A” requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
-> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
 
-— WCAG 2.0, section 1.4.1
+=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
 
 ## Other places to check out
 

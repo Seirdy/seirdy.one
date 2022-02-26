@@ -268,14 +268,14 @@ One reason is that underlines make it easy to separate multiple consecutive inli
 
 {{< picture name="underlines" alt="a line of three consecutive hyperlinks with and without underlines" >}}
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG "A" requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
-<figure>
-	<blockquote cite="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)</p>
 	</blockquote>
-	<figcaption>
-	&mdash; <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color"><cite>WCAG 2.0</cite>, section 1.4.1</a>
+	<figcaption class="h-cite" itemprop="citation">
+		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG 2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
 	</figcaption>
 </figure>
 
