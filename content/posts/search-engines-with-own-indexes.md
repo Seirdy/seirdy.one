@@ -90,7 +90,7 @@ These are large engines that pass all the above tests and more.
 
 ### Smaller indexes, relevant results
 
-These engines pass most of the tests listed in the "methodology" section.
+These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly.
 
 - [Right Dao](https://rightdao.com): very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
@@ -142,7 +142,7 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 ### Small or non-commercial Web
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
-- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and *my favorite entry on this page*. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi.
+- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and _my favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi.
 - [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 - [Teclis](http://teclis.com/): A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia.
 
@@ -203,6 +203,13 @@ These engines were originally included in the article, but have since been disco
 
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.
 - [Gowiki](https://gowiki.com): Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
+
+Exclusions
+----------
+
+Two engines were excluded from this list for having a far-right focus.
+
+One engine was excluded because it seems to be built using cryptocurrency in a way I'd rather not support.
 
 Acknowledgements
 ----------------

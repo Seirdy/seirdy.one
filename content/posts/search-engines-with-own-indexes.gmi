@@ -82,7 +82,7 @@ These are large engines that pass all the above tests and more.
 
 ### Smaller indexes, relevant results
 
-These engines pass most of the tests listed in the “methodology” section.
+These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly.
 
 * Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁸
 
@@ -290,6 +290,12 @@ These engines were originally included in the article, but have since been disco
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
 => https://gowiki.com  Gowiki
+
+## Exclusions
+
+Two engines were excluded from this list for having a far-right focus.
+
+One engine was excluded because it seems to be built using cryptocurrency in a way I'd rather not support.
 
 ## Acknowledgements
 
