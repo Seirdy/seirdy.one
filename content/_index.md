@@ -3,6 +3,8 @@ outputs:
     - html
     - gemtext
 title: Seirdy's Home
+sitemap:
+    - Priority: 1.0
 ---
 <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author autho h-card vcard">
 

@@ -7,8 +7,8 @@ outputs:
 tags:
     - web
 sitemap:
-    ChangeFreq: weekly
-    Priority: .7
+    ChangeFreq: daily
+    Priority: 0.7
 footnote_heading: Notes
 title: A look at search engines with their own indexes
 ---
