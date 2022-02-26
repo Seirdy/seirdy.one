@@ -156,7 +156,7 @@ Results from these search engines don’t seem at all useful.
 
 ### Semi-independent indexes
 
-Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
+Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.
 
 * Brave Search: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.¹⁰ The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
 
@@ -173,6 +173,12 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 * Qwant: Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
 
 => https://www.qwant.com Qwant
+
+* Kagi Search: The most interesting entry in this category, IMO. Like Neeva, it requires an account; it will eventually require payment. It's powered by its own Teclis index (Teclis can be used independently; see the non-commercial section below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the Kagi.ai intelligent answer service and the TinyGem social bookmarking service, both of which play a role in Kagi.com in the present or future.
+
+=> https://kagi.com/ Kagi Search
+=> https://kagi.ai/ Kagi.ai
+=> https://tinygem.org/ TinyGem
 
 ## Non-generalist search
 
