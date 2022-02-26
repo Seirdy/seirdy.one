@@ -275,7 +275,7 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)</p>
 	</blockquote>
 	<figcaption>
-	&mdash; <a rel="cite" href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color"><cite>WCAG 2.0</cite>, section 1.4.1</a>
+	&mdash; <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color"><cite>WCAG 2.0</cite>, section 1.4.1</a>
 	</figcaption>
 </figure>
 

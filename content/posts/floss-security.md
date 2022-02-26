@@ -138,13 +138,16 @@ Manual invocation of a program paired with a tracer like `strace` won't always e
 
 Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing an API](https://github.com/KissPeter/APIFuzzer/) for a web service) hardly need any implementation details.
 
-Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples. <cite>{{<indieweb-person first-name="Daniel" last-name="Stenberg" url="https://daniel.haxx.se/">}}</cite> wrote about <a href="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/" rel="cite">fuzzing curl</a>:
+Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples.
 
-<blockquote cite="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/">
-<p>
-I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.
-</p>
-</blockquote>
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<p>I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.</p>
+	</blockquote>
+	<figcaption class="h-cite" itemprop="citation">
+		&mdash; {{<indieweb-person first-name="Daniel" last-name="Stenberg" url="https://daniel.haxx.se/" itemprop="author">}}, <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/BlogPosting"><a class="u-url p-name" itemprop="url" href="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/"><span itemprop="name">A Google grant for libcurl work</span></a></cite>
+	</figcaption>
+</figure>
 
 If you want to get started with fuzzing, I recommend checking out [the quick-start guide for American Fuzzy Loop](https://github.com/google/AFL/blob/master/docs/QuickStartGuide.txt). Some languages like Go 1.18 also have fuzzing tools available right in the standard library.
 
@@ -152,9 +155,9 @@ If you want to get started with fuzzing, I recommend checking out [the quick-sta
 
 A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
-<cite class="h-cite">
-<a class="u-url p-name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html" rel="cite">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io">}}
-</cite>
+<span class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">
+	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by <span itemprop="author">{{<indieweb-person nickname="willsroot" url="https://willsroot.io">}}</span>
+</span>
 
 I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
 

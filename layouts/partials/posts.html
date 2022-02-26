@@ -4,7 +4,7 @@
 	{{ else -}}
 	<h2 class="p-name" itemprop="name">Posts</h2>
 	{{ end -}}
-	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> and <a href="https://xkcd.com/1179/">ISO 8601</a></em></p>
+	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite></em></p>
 	<ul class="unstyled-list">
 		{{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
 		<li class="h-entry hentry" itemscope itemtype="https://schema.org/BlogPosting">
