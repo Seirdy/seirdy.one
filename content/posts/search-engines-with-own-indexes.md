@@ -106,7 +106,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [sengine.info](https://www.sengine.info/): only shows domains, not individual pages. Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available.
 - [Meorca](https://meorca.com/): a search engine that claims not to "index pornography or illegal content websites". It also features a public blog with a marketplace and free games. Allows submitting URLs, but requires a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs.
 - [Infotiger](https://alpha.infotiger.com/): A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
-- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^9] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/), but Amidalla doesn't seem to currently be operational. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 - [Kozmonavt](https://kozmonavt.ml/): Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 - [Burf.co](https://burf.co/): Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 - [Entfer](https://entfer.com/): a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information on who made it. Its index is small, but it does seem to return results related to the query.
@@ -129,7 +128,7 @@ Results from these search engines don't seem at all useful.
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, they claim that this should happen less often.
 
-- [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
+- [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^9] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show.
 - [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 - [Neeva](https://neeva.com): Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva is one of few exceptions. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address or OAuth to use, and offers a paid tier with additional benefits.
 - [Qwant](https://www.qwant.com): Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
@@ -137,11 +136,24 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 Non-generalist search
 ---------------------
 
-These indexing search engines don't have a Google-like "ask me anything" endgame; they're trying to do something different.
+These indexing search engines don’t have a Google-like “ask me anything” endgame; they’re trying to do something different. You aren't supposed to use these engines the same way you use GBY.
+
+### Small or non-commercial Web
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
-- [search.marginalia.nu](https://search.marginalia.nu/): A recent addition similar to Wiby. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY.
+- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and *my favorite entry on this page*. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi.
 - [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
+- [Teclis](http://teclis.com/): A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia.
+
+### Site finders
+
+These engines try to find a website, typically at the domain-name level. They don't focus on capturing particular pages within websites.
+
+- [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^10] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+- [Thunderstone](https://search.thunderstone.com/texis/websearch21/): A combined website catalog and search engine that focuses on categorization. Its [about page](https://search.thunderstone.com/texis/websearch19/about.html) claims: <q cite="https://search.thunderstone.com/texis/websearch19/about.html">We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of _sites_ not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you're trying to finding things like _'BillyBob's personal beer can page on AOL'_, try Yahoo or Dogpile.</q> This seems to be the polar opposite of the engines in the ["small or non-commercial Web" category](#small-or-non-commercial-web).
+
+### Other
+
 - Quor: Seems to mainly index large news sites. Site is down as of June 2021; originally available at www dot quor dot com.
 - [Ninfex](https://ninfex.com/): a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 
@@ -173,7 +185,6 @@ Misc
 
 - Ask.com: the main site shut down, but subdomains like [uk.ask.com](https://uk.ask.com) are still alive. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can't pinpoint exactly where their results are coming from.
 - Not evaluated: Apple's search. It's only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
-- Not evaluated: Kagi Search. It's in a closed beta and I haven't yet gotten an invitation.
 - Partially evaluated: [Infinity Search](https://infinitysearch.co): young, small index. It recently split into a paid offering with the main index and [Infinity Decentralized](https://infinitydecentralized.com/), the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn't able to run the tests listed in the "Methodology" section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
 Upcoming engines
@@ -218,8 +229,8 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^8]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
 
-[^9]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^9]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
 
-[^10]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+[^10]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
 
