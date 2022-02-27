@@ -1,15 +1,14 @@
 ---
 date: "2021-02-23T11:54:00-08:00"
-description: "How open platforms become closed, and how standards-driven development
-    can prevent it from happening."
+description: "How open platforms become closed, and how standards-driven development can prevent it from happening."
 footnote_heading: "Notes"
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 tags:
-  - free software
-  - user domestication
-  - platforms
+    - free software
+    - user domestication
+    - platforms
 title: Keeping platforms open
 ---
 This article is the second entry of series of posts exploring situations in which <abbr title="free, libre, and open-source software">FLOSS</abbr> alone isn't enough to secure user freedom.
@@ -124,8 +123,8 @@ The standards- and consensus-driven approach to platform development and the ine
 
 Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
 
-Acknowledgements
-----------------
+Acknowledge&shy;ments
+---------------------
 
 {{<indieweb-person first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section on XMPP.
 
@@ -143,4 +142,5 @@ Thanks to {{<indieweb-person first-name="Barna" last-name="Zsombor" url="https:/
 [^5]: Protonmail offers its own "bridge" program which "translates" the Protonmail API into IMAP, allowing users to use their preferred mail clients. This still doesn't change the fact that users must use official clients; in this case, the official client is the bridge program itself.
 
 [^6]: I decided against using the cheeky sub-heading "Scaling considered harmful" because I worried that readers on a certain orange-colored website might take the joke too seriously.
+
 

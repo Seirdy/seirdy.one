@@ -239,8 +239,8 @@ I didn't try to avoid personalization when testing engines that require account 
 
 I avoided "natural language" queries like questions, focusing instead on keyword searches and search operators. I also mostly ignored infoboxes (also known as "instant answers").
 
-Acknowledgements
-----------------
+Acknowledge&shy;ments
+---------------------
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
@@ -267,6 +267,6 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^9]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
 
-[^10]: Some search engines support the `site:` search operator to limit searches to subpages/subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^10]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
 
 

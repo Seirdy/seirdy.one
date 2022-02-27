@@ -145,7 +145,7 @@ Food for thought
 
 Both of the prior two case studies--Mozilla and Signal--are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
 
-[@paulsnar@mastodon.technology](https://mastodon.technology/@paulsnar) pointed out a potential conflict between simplicity and open platforms:
+[paulsnar](https://mastodon.technology/@paulsnar) pointed out a potential conflict between simplicity and open platforms:
 
 > I feel like there's some tension between simplicity and open platforms; to take Signal, in a way it's simple precisely because it's a de-facto-closed platform, or at least so Moxie has argued. In turn, Matrix is superficially simple, but the protocol is actually (imho) fairly complex exactly because it's an open platform.
 

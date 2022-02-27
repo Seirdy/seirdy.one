@@ -6,14 +6,19 @@
  *    regular text.
  * 3. max text width for readability
  * 4. single-row nav links widescreen, multiline nav on narrow screens
- * 5. Soft border around code in case it looks too similar to regular
- *    text, and to show it continue across more than one line
+ * 5. Soft border around code and images to disginguish from the
+ *    surrounding page. Images with white/black or transparent
+ *    backgrounds should have clear dimensions, and multiple consecutive
+ *    inline <code> spans should look separate. A <code> span that
+ *    continues across multiple lines should not look like multiple different
+ *    spans.
  * 6. Increase the line-spacing a bit so users on mobile devices can
  *    tap links more easily.
  * 7. Horizontally center non-inline images; left-aligned stick out.
  * 8. dark.css changes a few colors if the browser wants dark mode.
  * 9. Support unstyled lists: for webmentions, post lists, nav links.
- * 10. Make blockquotes look okay on narrow screens.
+ * 10. Narrow screen optimization: less-indented blockquotes, overflow
+ *     behavior for <pre>.
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
@@ -61,6 +66,13 @@ img:not(.u-photo) {
 	max-width: 100%;
 }
 
+/* Distinguish images from the background in case their color is
+ * too similar to the page background color */
+img,
+pre {
+	border: 1px solid #bbb;
+}
+
 code,
 pre {
 	/* browsers make <pre> small for some dumb legacy reason
@@ -72,12 +84,16 @@ pre {
 	/* stylelint-enable */
 }
 
-pre,
 /* don't put a border around code within a <pre> block,
  * just put the border around the <code> */
 :not(pre) > code {
 	border: 1px solid #bbb;
 	padding: 0 0.1em;
+	overflow-wrap: break-word;
+}
+
+li.u-comment.h-cite {
+	overflow-wrap: break-word;
 }
 
 /* Allow horizontal scroll in a pre block, but don't clip it vertically */

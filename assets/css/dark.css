@@ -7,11 +7,6 @@
 		color: #ececec;
 	}
 
-	/* IndieWeb u-photo shouldn't look like floating punctuation marks */
-	.u-photo {
-		border: 1px solid #ddc;
-	}
-
 	a {
 		color: #ed7;
 	}
@@ -27,6 +22,7 @@
 	blockquote,
 	:not(pre) > code,
 	hr,
+	img,
 	pre {
 		border-color: #333;
 	}

@@ -239,8 +239,8 @@ One well-known approach to calculating physical limits of computation is [Bremer
 
 [A publication](https://arxiv.org/abs/quant-ph/9908043)[^5] by Seth Lloyd from MIT further explores limits to computation speed on an ideal 1-kilogram computer.
 
-Acknowledgements
-----------------
+Acknowledge&shy;ments
+---------------------
 
 Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) and [Ryan Coyler](https://rcolyer.net/) for helping me over IRC with my shaky physics and pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected an incorrect reference to AES-256 encryption by bringing up salts.
 
