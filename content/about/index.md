@@ -5,6 +5,7 @@ title: About Seirdy (Rohan Kumar)
 outputs:
     - html
     - gemtext
+description: "Get to know Rohan Kumar, a.k.a. Seirdy. Contact info, my projects, interests, etc."
 ---
 Rohan Kumar : He/Him : Age 21
 
