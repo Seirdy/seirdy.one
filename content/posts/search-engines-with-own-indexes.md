@@ -75,7 +75,7 @@ These are large engines that pass all the above tests and more.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
   - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.
-- Mojeek: Claims to be privacy-oriented. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers [eTools.ch](https://www.etools.ch/).
+- Mojeek: Seems privacy-oriented with a large index containing billions of pages. Quality isn't at Google/Bing/Yandex's level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I'd live. Partially powers [eTools.ch](https://www.etools.ch/). At this moment, I think that Mojeek is the best alternative to GBY.
 - [Petal Search](https://petalsearch.com/). A search engine by Huawei that recently switched from searching for Android apps to general search in order to reduce dependence on Western search providers. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
 ### Smaller indexes, relevant results
@@ -200,6 +200,8 @@ Exclusions
 Two engines were excluded from this list for having a far-right focus.
 
 One engine was excluded because it seems to be built using cryptocurrency in a way I'd rather not support.
+
+Some fascinating little engines seem like hobbyist proofs-of-concept. I decided not to include them in this list, but watch them with interest to see if they can become something viable.
 
 Methodology
 -----------
