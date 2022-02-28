@@ -4,7 +4,7 @@
  * 1. sans-serif instead of serif for low-res screens.
  * 2. Consistent font size; <pre> and <code> shouldn't be smaller than
  *    regular text.
- * 3. max text width for readability
+ * 3. max content width for readability
  * 4. single-row nav links widescreen, multiline nav on narrow screens
  * 5. Soft border around code and images to disginguish from the
  *    surrounding page. Images with white/black or transparent
@@ -30,6 +30,7 @@ html {
 	padding: 0 3%;
 }
 
+/* narrow screens: no margin for blockquotes and figures */
 blockquote {
 	border-left: 6px solid #bbb;
 	margin-left: 0;
@@ -47,7 +48,6 @@ nav li {
 
 /* Lists without bullets; navlinks, posts lists, webmentions */
 .unstyled-list {
-	margin: 0;
 	padding: 0;
 }
 
@@ -63,21 +63,6 @@ nav li {
 	}
 }
 
-/* center images that aren't my indieweb icon */
-img:not(.u-photo) {
-	display: block;
-	height: auto;
-	margin: auto;
-	max-width: 100%;
-}
-
-/* Distinguish images from the background in case their color is
- * too similar to the page background color */
-img,
-pre {
-	border: 1px solid #bbb;
-}
-
 code,
 pre {
 	/* browsers make <pre> small for some dumb legacy reason
@@ -89,25 +74,41 @@ pre {
 	/* stylelint-enable */
 }
 
-/* don't put a border around code within a <pre> block,
- * just put the border around the <code> */
+/* Narrow screens: long words can cause content to flow out of the
+ * viewport, triggering horizontal scrolling. Allow breaking words in
+ * content I don't control (comments). For content I do control, I just
+ * add soft hyphens to the HTML. */
+.u-comment,
 :not(pre) > code {
-	border: 1px solid #bbb;
+	overflow-wrap: break-word;
+
+	/* borders shouldn't touch text */
 	padding: 0 0.1em;
-	overflow-wrap: break-word;
 }
 
-/* some webmentions contain full URLs, and these should be broken to fit
- * the viewport on narrow screens */
-.u-comment .h-cite {
-	overflow-wrap: break-word;
-}
-
-/* Allow horizontal scroll in a pre block, but don't clip it vertically */
+/* Narrow screens: allow horizontal scroll in a pre block, but don't
+ * clip it vertically */
 pre {
 	/* csslint ignore:start */
 	overflow: auto visible;
 
 	/* csslint ignore:end */
 	padding: 0.5em;
+}
+
+/* Distinguish images from the background in case their color is
+ * too similar to the page background color. Also put a border around
+ * <pre> so that it looks just like <code> (see below). */
+img,
+pre,
+:not(pre) > code {
+	border: 1px solid #bbb;
+}
+
+/* center images that aren't my indieweb icon */
+img:not(.u-photo) {
+	display: block;
+	height: auto;
+	margin: auto;
+	max-width: 100%;
 }
