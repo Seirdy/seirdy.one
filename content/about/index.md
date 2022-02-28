@@ -23,8 +23,6 @@ Location (Rohan, meatspace)
 
 Currently living at home in Cupertino, CA
 
-Would normally be in Portland, OR during the school year, but COVID-19 happened.
-
 Location (Seirdy, online)
 -------------------------
 
@@ -32,7 +30,7 @@ My handle is "Seirdy" on all the platforms I use.
 
 - The [Tildeverse](https://envs.net/~seirdy).
 - Software forges: [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), [GitLab](https://gitlab.com/Seirdy), and [Codeberg](https://codeberg.org/Seirdy).
-- Social (federated): I'm [@Seirdy @pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
+- Social (federated): I'm [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
 - Social (non-federated): I'm Seirdy on [Hacker News](https://news.ycombinator.com/user?id=Seirdy), [Lobsters](https://lobste.rs/u/Seirdy), [Reddit](https://www.reddit.com/user/Seirdy/), [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
 - Email: my address is <seirdy@seirdy.one>. I typically sign my emails with my public PGP key: [1E892DB2A5F84479](./publickey.asc). My key is also available via WKD.
 - Chat: for IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. I'm also [@seirdy:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one) on Matrix.

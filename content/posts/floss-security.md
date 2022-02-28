@@ -155,9 +155,9 @@ If you want to get started with fuzzing, I recommend checking out [the quick-sta
 
 A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
-<span class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">
-	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by <span itemprop="author">{{<indieweb-person nickname="willsroot" url="https://willsroot.io">}}</span>
-</span>
+<p class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">
+	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io" itemprop="author">}}
+</p>
 
 I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
 

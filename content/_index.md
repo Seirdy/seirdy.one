@@ -17,7 +17,7 @@ It me! This is the personal website for <a itemprop="url" href="https://seirdy.o
 Other versions of this website
 ------------------------------
 
-In addition to its <a class="u-url" href="https://seirdy.one" rel="me canonical author">canonical URL</a>, a "rough draft" of this website also exists on my <a itemprop="sameAs" class="u-url" href="https://envs.net/~seirdy" rel="me">Tildeverse page</a>. This site's content also appears on my <a class="u-syndication" itemprop="sameAs" href="gemini://seirdy.one" rel="me">Gemini space</a>.
+In addition to its [canonical url](https://seirdy.one "{rel='me canonical author' class='u-url'}"), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}").net/~seirdy" rel="me">Tildeverse page</a>. This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").one" rel="me">Gemini space</a>.
 
 About me
 --------
@@ -28,14 +28,14 @@ The Director's Cut of my bio is at my [About page](/about.html).
 I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup.
 </p>
 
-Git repos: <a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a>, <a href="https://github.com/Seirdy" rel="me">GitHub</a>, and <a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
+Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://github.com/Seirdy "{rel='me'}") , and [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
 
 Contact
 -------
 
-Contact me via <a class="u-email" href="mailto:seirdy@seirdy.one" itemprop="email" rel="me">email</a> (<a rel="pgpkey authn" type="application/pgp-keys" class="u-key" href="./publickey.asc">PGP</a>), or on the Fediverse where I'm <a class="u-url" href="https://pleroma.envs.net/seirdy" rel="me" itemprop="sameAs">@Seirdy@pleroma.envs.net</a>.
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
-Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm <a class="u-url" href="https://matrix.to/#/@seirdy:seirdy.one" rel="me">@seirdy:seirdy.one</a> on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
+Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm [@seirdy:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
 
 </div>
 
