@@ -18,7 +18,7 @@
  * 8. dark.css changes a few colors if the browser wants dark mode.
  * 9. Support unstyled lists: for webmentions, post lists, nav links.
  * 10. Narrow screen optimization: less-indented blockquotes, overflow
- *     behavior for <pre>.
+ *     behavior for <pre>, no figure margins.
  * Everything else is browser defaults:
  * default fonts, non-dark-mode colors, etc.
  */
@@ -36,6 +36,10 @@ blockquote {
 	padding-left: 1em;
 }
 
+figure {
+	margin: 0;
+}
+
 /* nav links should be easy to tap with fat fingers */
 nav li {
 	padding-right: 0.5em;
@@ -43,6 +47,7 @@ nav li {
 
 /* Lists without bullets; navlinks, posts lists, webmentions */
 .unstyled-list {
+	margin: 0;
 	padding: 0;
 }
 
@@ -92,7 +97,9 @@ pre {
 	overflow-wrap: break-word;
 }
 
-li.u-comment.h-cite {
+/* some webmentions contain full URLs, and these should be broken to fit
+ * the viewport on narrow screens */
+.u-comment .h-cite {
 	overflow-wrap: break-word;
 }
 
