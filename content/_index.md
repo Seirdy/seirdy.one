@@ -17,7 +17,7 @@ It me! This is the personal website for <a itemprop="url" href="https://seirdy.o
 Other versions of this website
 ------------------------------
 
-In addition to its [canonical url](https://seirdy.one "{rel='me canonical author' class='u-url'}"), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}").net/~seirdy" rel="me">Tildeverse page</a>. This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").one" rel="me">Gemini space</a>.
+In addition to its [canonical url](https://seirdy.one "{rel='me canonical author' class='u-url'}"), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
 
 About me
 --------
