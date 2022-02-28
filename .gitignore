@@ -9,3 +9,4 @@ node_modules/*
 old/
 public/
 public_*/
+.hugo_build.lock
