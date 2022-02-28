@@ -174,7 +174,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 Misc
 ----
 
-- Ask.com: the main site shut down, but subdomains like [uk.ask.com](https://uk.ask.com) are still alive. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can't pinpoint exactly where their results are coming from.
+* Ask.com: The site is back. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from. Also, several sites from the "ask.com network" such as directhit.com, info.com, and kensaq.com have uniqe-looking results.
 - Not evaluated: Apple's search. It's only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
 - Partially evaluated: [Infinity Search](https://infinitysearch.co): young, small index. It recently split into a paid offering with the main index and [Infinity Decentralized](https://infinitydecentralized.com/), the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn't able to run the tests listed in the "Methodology" section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
