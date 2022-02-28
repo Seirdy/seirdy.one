@@ -150,6 +150,10 @@ Chris Siebenmann describes this in more detail:
 
 In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
 
+Chris also describes the importance of visited link colors:
+
+=> https://utcc.utoronto.ca/~cks/space/blog/web/RealBlogUsability RealBlogUsability
+
 ## Dark themes
 
 If you do explicitly set colors, please also include a dark theme using a media query:

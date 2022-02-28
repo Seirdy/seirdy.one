@@ -136,7 +136,9 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 {{< picture name="website_colors" alt="This page with a grey background behind black/grey headers and white-on-white code snippets" >}}
 </a>
 
-<p>{{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <a href="https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem">AWebColoursProblem</a>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.</p>
+A second opinion: {{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <cite>[AWebColoursProblem](https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem)</cite>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
+
+Chris also describes the importance of visited link colors in <cite>[RealBlogUsability](https://utcc.utoronto.ca/~cks/space/blog/web/RealBlogUsability)</cite>.
 
 ### Dark themes
 
