@@ -108,21 +108,24 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * Kozmonavt: Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 * Entfer: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information on who made it. Its index is small, but it does seem to return results related to the query.
+* Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
 => https://meorca.com/  Meorca Search Engine
 => https://alpha.infotiger.com/ Infotiger
 => https://kozmonavt.ml/ Kozmonavt
 => https://burf.co/ Burf.co
 => https://entfer.com/ Entfer
-
-* Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
-* ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
-
 => https://siik.co/ Siik
+
+* ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
+* Secret Search Engine Labs: Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its CashRank algorithm. Allows site submission.
+
 => https://www.chatnoir.eu/ ChatNoir
 => https://commoncrawl.org/ Common Crawl
 => https://github.com/chatnoir-eu ChatNoir source code (GitHub)
 => https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ ChatNoir Announcement
+=> http://www.secretsearchenginelabs.com/ Secret Search Engine Labs
+=> http://www.secretsearchenginelabs.com/tech/cashrank.php CashRank Algorithm
 
 ### Unusable engines, irrelevant results
 
@@ -200,8 +203,10 @@ These engines try to find a website, typically at the domain-name level. They do
 
 * Quor: seems to mainly index large news sites. Site is down as of June 2021. Originally available at www dot quor dot com.
 * Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
+* Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed.
 
 => https://ninfex.com Ninfex
+=> https://www.semanticscholar.org/ Semantic Scholar
 
 ## Other languages
 

@@ -101,6 +101,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [Entfer](https://entfer.com/): a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information on who made it. Its index is small, but it does seem to return results related to the query.
 - [Siik](https://siik.co/): Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
+- [Secret Search Engine Labs](http://www.secretsearchenginelabs.com/): Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its [CashRank algorithm](http://www.secretsearchenginelabs.com/tech/cashrank.php). Allows site submission.
 
 ### Unusable engines, irrelevant results
 
@@ -147,6 +148,7 @@ These engines try to find a website, typically at the domain-name level. They do
 
 - Quor: Seems to mainly index large news sites. Site is down as of June 2021; originally available at www dot quor dot com.
 - [Ninfex](https://ninfex.com/): a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
+- [Semantic Scholar](https://www.semanticscholar.org/): a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed.
 
 Other languages
 ---------------
@@ -175,6 +177,7 @@ Misc
 ----
 
 * Ask.com: The site is back. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from. Also, several sites from the "ask.com network" such as directhit.com, info.com, and kensaq.com have uniqe-looking results.
+
 - Not evaluated: Apple's search. It's only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
 - Partially evaluated: [Infinity Search](https://infinitysearch.co): young, small index. It recently split into a paid offering with the main index and [Infinity Decentralized](https://infinitydecentralized.com/), the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn't able to run the tests listed in the "Methodology" section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
