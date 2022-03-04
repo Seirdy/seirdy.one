@@ -1,4 +1,4 @@
-<div class="h-feed hfeed" itemscope itemtype="https://schema.org/Collection">
+<div class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
 {{ if eq .RelPermalink "/posts.html" -}}
 	<h1 class="p-name" itemprop="name headline">Posts</h1>
 	{{ else -}}
@@ -7,14 +7,17 @@
 	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite></em></p>
 	<ul class="unstyled-list">
 		{{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
-		<li class="h-entry hentry" itemscope itemtype="https://schema.org/BlogPosting">
-			<time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
-			<br>
-			<span itemprop="name headline" class="p-name entry-title">
-				<a href="{{ .Permalink }}" itemprop="url" class="u-url url">
-					{{ .Title }}
-				</a>
-			</span>
+		<li>
+			<article class="h-entry hentry" itemprop="dataFeedElement" itemscope itemtype="https://schema.org/BlogPosting https://schema.org/DataFeedItem">
+				<h3 itemprop="name headline" class="p-name entry-title">
+					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
+						{{ .Title -}}
+					</a>
+				</h3>
+				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>, updated
+				<time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+				<p class="p-summary entry-summary" itemprop="https://schema.org/description">{{ .Description }}</p>
+			</article>
 		</li>
 		{{- end }}
 	</ul>
