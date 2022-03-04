@@ -26,7 +26,7 @@
 html {
 	font: 100%/1.5 sans-serif;
 	margin: auto;
-	max-width: 50em;
+	max-width: 45em;
 	padding: 0 3%;
 }
 
@@ -37,6 +37,7 @@ blockquote {
 	padding-left: 1em;
 }
 
+/* narrow screens: remove figure margin. */
 figure {
 	margin: 0;
 }
@@ -46,9 +47,9 @@ nav li {
 	padding-right: 0.5em;
 }
 
-/* Lists without bullets; navlinks, posts lists, webmentions */
+/* Lists without bullets: navlinks, posts lists, webmentions */
 .unstyled-list {
-	padding: 0;
+	padding-left: 0;
 }
 
 .unstyled-list li {
@@ -63,11 +64,10 @@ nav li {
 	}
 }
 
+/* browsers make <pre> small for some dumb legacy reason
+ * and this somehow fixes that. */
 code,
 pre {
-	/* browsers make <pre> small for some dumb legacy reason
-	 * and this somehow fixes that. */
-
 	/* stylelint-disable -- compatibility hack */
 	font-family: monospace, monospace;
 
