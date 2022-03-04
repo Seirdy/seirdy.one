@@ -1,6 +1,6 @@
 ---
 date: "2020-11-23T12:21:35-08:00"
-description: A lengthy guide to making small sites that focus on content rather than form.
+description: A lengthy guide to making simple and accessible sites that focus on content rather than form. Emphasizes brutalist web design, adaptability, and minimalism.
 outputs:
     - html
     - gemtext
@@ -283,6 +283,25 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 
 Other places to check out
 -------------------------
+
+This page can be thought of as an extension of the principles of Brutalist Web Design:
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<ul>
+		<li>Content is readable on all reasonable screens and devices.</li>
+		<li>Only hyperlinks and buttons respond to clicks.</li>
+		<li>Hyperlinks are underlined and buttons look like buttons.</li>
+		<li>The back button works as expected.</li>
+		<li>View content by scrolling.</li>
+		<li>Decoration when needed and no unrelated content.</li>
+		<li>Performance is a feature.</li>
+		</ul>
+	</blockquote>
+	<figcaption class="h-cite" itemprop="citation">
+		&mdash; {{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/">}}, <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://brutalist-web.design/"><span itemprop="name">Brutalist Web Design</span></a></cite>
+	</figcaption>
+</figure>
 
 The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also rewards websites that have a high ratio of content size to total size.
 

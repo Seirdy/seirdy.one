@@ -321,6 +321,18 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 
 ## Other places to check out
 
+This page can be thought of as an extension of the principles of Brutalist Web Design:
+
+* Content is readable on all reasonable screens and devices.
+* Only hyperlinks and buttons respond to clicks.
+* Hyperlinks are underlined and buttons look like buttons.
+* The back button works as expected.
+* View content by scrolling.
+* Decoration when needed and no unrelated content.
+* Performance is a feature.
+
+=> https://brutalist-web.design/ Brutalist Web Design
+
 The 250kb club gathers websites at or under 250kb, and also rewards websites that have a high ratio of content size to total size.
 
 => https://250kb.club/ The 250kb Club
