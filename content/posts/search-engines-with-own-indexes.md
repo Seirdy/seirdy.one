@@ -93,7 +93,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
 - [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-search.com](https://blog-search.com).
-- [sengine.info](https://www.sengine.info/): only shows domains, not individual pages. Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available.
 - [Infotiger](https://alpha.infotiger.com/): A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 - [Kozmonavt](https://kozmonavt.ml/): Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 - [Burf.co](https://burf.co/): Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
@@ -142,6 +141,7 @@ These engines try to find a website, typically at the domain-name level. They do
 
 - [search.tl](http://www.search.tl/): Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^10] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 - [Thunderstone](https://search.thunderstone.com/texis/websearch21/): A combined website catalog and search engine that focuses on categorization. Its [about page](https://search.thunderstone.com/texis/websearch19/about.html) claims: <q cite="https://search.thunderstone.com/texis/websearch19/about.html">We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of _sites_ not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you're trying to finding things like _'BillyBob's personal beer can page on AOL'_, try Yahoo or Dogpile.</q> This seems to be the polar opposite of the engines in the ["small or non-commercial Web" category](#small-or-non-commercial-web).
+- [sengine.info](https://www.sengine.info/): only shows domains, not individual pages. Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available. Discovered in my access logs.
 
 ### Other
 
@@ -159,6 +159,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - Baidu: Chinese. Very large index; it's a major engine alongside GBY. Offers webmaster tools for site submission.
 - Qihoo 360: Chinese. I'm not sure how independent this one is.
+- Toutiao: Chinese. Not sure how independent this one is either.
 - Sogou: Chinese
 - Yisou: Chinese
 - [Naver](https://search.naver.com): Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.

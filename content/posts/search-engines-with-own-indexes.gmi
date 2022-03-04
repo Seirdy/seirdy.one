@@ -95,13 +95,11 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms (e.g. “Seirdy”), but it’s able to find relevant results in other tests. The server does not support TLS.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 * ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
-* sengine.info: only shows domains, not individual pages. Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available.
 
 => http://www.seekport.com/  seekport (HTTP only)
 => https://www.exalead.com/search/  Exalead
 => https://curlie.org  Curlie
 => https://www.exactseek.com/  ExactSeek
-=> https://www.sengine.info/ sengine.info
 
 * Infotiger: A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 * Kozmonavt: Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
@@ -193,9 +191,11 @@ These engines try to find a website, typically at the domain-name level. They do
 
 * search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.⁹ There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 * Thunderstone: A combined website catalog and search engine that focuses on categorization. Its about page claims: "We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of *sites* not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you’re trying to finding things like 'BillyBob's personal beer can page on AOL', try Yahoo or Dogpile." This seems to be the polar opposite of the engines in the "small or non-commercial Web" category.
+* sengine.info: Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available. Discovered in my access logs.
 
 => http://www.search.tl  search.tl
 => https://search.thunderstone.com/texis/websearch21/ Thunderstone
+=> https://www.sengine.info/ sengine.info
 
 ### Other
 
@@ -216,6 +216,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 * Baidu: Chinese. Very large index; it's a major engine alongside GBY. Offers webmaster tools for site submission.
 * Qihoo 360: Chinese. I’m not sure how independent this one is.
+* Toutiao: Chinese. Not sure how independent this one is either.
 * Sogou: Chinese
 * Yisou: Chinese
 * Naver: Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
