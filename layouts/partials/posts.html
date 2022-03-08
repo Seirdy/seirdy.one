@@ -1,4 +1,4 @@
-<div class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
+<section class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed" aria-labelledby="posts">
 {{ if eq .RelPermalink "/posts.html" -}}
 	<h1 class="p-name" itemprop="name headline">Posts</h1>
 	{{ else -}}
@@ -16,9 +16,9 @@
 				</h3>
 				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>, updated
 				<time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
-				<p class="p-summary entry-summary" itemprop="https://schema.org/description">{{ .Description }}</p>
+				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
 			</article>
 		</li>
 		{{- end }}
 	</ul>
-</div>
+</section>
