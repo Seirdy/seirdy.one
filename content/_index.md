@@ -13,12 +13,12 @@ sitemap:
 Seirdy's Home
 =============
 
-It me! This is the personal website for <a itemprop="url" href="https://seirdy.one" rel="author home canonical" class="u-url url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName nickname" class="p-nickname nickname">Seirdy</span> (online handle).
+It me! This is the personal website for <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName nickname" class="p-nickname nickname">Seirdy</span> (online handle).
 
 Other versions of this website
 ------------------------------
 
-In addition to its [canonical url](https://seirdy.one "{rel='me canonical author' class='u-url'}"), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
+In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
 
 About me
 --------
