@@ -5,12 +5,18 @@
 <link href="https://seirdy.one/webmentions/receive" rel="webmention">
 {{- if and (eq .Site.BaseURL "https://seirdy.one/") (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
-<meta name="robots" content="max-image-preview:large,max-snippet=-1">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
 {{- end }}
+<title>{{ .Title }}{{ if and (lt (len .Title) 66) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+{{ if (eq .RelPermalink "/") -}}
+<meta name="keywords" content="developer,poggies,blog,indieweb,software,opensource,security,search engines,search,linux">
+{{- end -}}
 <meta content="{{ .Site.Author.name }}" name="author">
 <meta property="article:author" content="{{ .Site.Author.name }}">
+{{ if gt .Date 0 -}}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ end -}}
 {{ if lt .Date .Lastmod -}}
 <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
 {{ end -}}
@@ -39,7 +45,6 @@
 {{- end -}}
 {{- $css := $resources | resources.Concat "css/style.css" | minify -}}
 <style>{{ $css.Content | safeCSS }}</style>
-<title>{{ .Title }}{{ if and (lt (len .Title) 66) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ $.Site.Title }}">
 {{- if (eq "page" .Kind) }}
