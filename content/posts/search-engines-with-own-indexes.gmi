@@ -31,6 +31,7 @@ These are large engines that pass all the above tests and more.
 1. Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
 
 * Startpage
+* GMX search
 * (discontinued) Runnaroo
 * SAPO (Portuguese interface, can work with English results)
 
@@ -55,6 +56,7 @@ These are large engines that pass all the above tests and more.
 * Lycos
 * Givero
 * Swisscows
+* Fireball
 * Ask.moe⁷
 * Partially powers MetaGer by default; this can be turned off
 * At this point, I mostly stopped adding Bing-based search engines. There are just too many.
