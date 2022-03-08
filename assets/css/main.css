@@ -58,7 +58,7 @@ nav li {
 }
 
 /* single-line nav on widescreen, multi-line nav on narrow screens */
-@media (min-width: 24em) {
+@media (min-width: 32em) {
 	nav li {
 		display: inline;
 	}

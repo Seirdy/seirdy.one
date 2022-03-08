@@ -33,6 +33,13 @@ nick = "Seirdy"
 	weight = 10
 
   [[menu.main]]
+	identifier = "bookmarks"
+	name = "Bookmarks"
+	title = "bookmarks"
+	url = "/bookmarks.html"
+	weight = 11
+
+  [[menu.main]]
 	identifier = "about"
 	name = "About"
 	title = "about"

@@ -5,7 +5,8 @@ outputs:
 title: Seirdy's Home
 description: "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy. I write about and develop software to promote user autonomy."
 sitemap:
-    - Priority: 1.0
+    - ChangeFreq: weekly
+    - Priority: 0.9
 ---
 <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author autho h-card vcard">
 

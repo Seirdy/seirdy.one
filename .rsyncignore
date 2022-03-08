@@ -6,6 +6,7 @@ music.txt.gz
 music.txt.br
 webmentions/
 noindex/
+data/
 *d3.html
 *d1.html
 *fc.html
