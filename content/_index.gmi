@@ -47,3 +47,9 @@ My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. I
 Orbits (Gemini equivalent of webrings):
 
 => gemini://si3t.ch/cgi-bin/wormhole The Wormhole Experiment
+
+### Fediring
+
+=> gemini://fediring.net/previous/@Seirdy@pleroma.envs.net Previous
+=> gemini://fediring.net/next/@Seirdy@pleroma.envs.net Next
+=> gemini://fediring.net/ Learn more
