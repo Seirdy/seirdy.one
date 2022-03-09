@@ -47,7 +47,7 @@
 <style>{{ $css.Content | safeCSS }}</style>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ $.Site.Title }}">
-{{- if not or (ne "page" .Kind) (eq .RelPermalink "/bookmarks.html") (eq .RelPermalink "/posts.html") }}
+{{- if not (or (ne "page" .Kind) (eq .RelPermalink "/bookmarks.html") (eq .RelPermalink "/posts.html")) }}
 <meta property="og:type" content="article">
 {{- end -}}
 <!-- ANOTHER meta image?! When will it end? -->
