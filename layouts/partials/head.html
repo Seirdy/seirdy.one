@@ -47,10 +47,8 @@
 <style>{{ $css.Content | safeCSS }}</style>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ $.Site.Title }}">
-{{- if (eq "page" .Kind) }}
+{{- if not or (ne "page" .Kind) (eq .RelPermalink "/bookmarks.html") (eq .RelPermalink "/posts.html") }}
 <meta property="og:type" content="article">
-{{- else }}
-<meta property="og:type" content="website">
 {{- end -}}
 <!-- ANOTHER meta image?! When will it end? -->
 {{ $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
@@ -60,8 +58,5 @@
 <meta property="og:image:alt" content="White-on-black colon and semicolon">
 <meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
 <meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
-<meta property="profile:first_name" content="{{ .Site.Author.first }}">
-<meta property="profile:last_name" content="{{ .Site.Author.last }}">
-<meta property="profile:username" content="{{ .Site.Author.nick }}">
 {{ hugo.Generator }}
 </head>
