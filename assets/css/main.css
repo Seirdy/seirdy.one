@@ -106,7 +106,7 @@ pre,
 }
 
 /* center images that aren't my indieweb icon */
-picture:not(.u-photo) img {
+img:not(.u-photo) {
 	display: block;
 	height: auto;
 	margin: auto;
