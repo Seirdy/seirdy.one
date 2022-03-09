@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://seirdy.one{{ .RelPermalink }}" rel="canonical">
 <link href="https://seirdy.one/webmentions/receive" rel="webmention">
-{{- if and (eq .Site.BaseURL "https://seirdy.one/") (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
+{{- if or (eq .Site.BaseURL "https://seirdy.one/") (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 <!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
 {{- end }}
