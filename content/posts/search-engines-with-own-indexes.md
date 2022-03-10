@@ -31,6 +31,8 @@ One way to avoid this conflict of interest is to _use search engines that aren't
 
 There's also a practical, non-ideological reason to try other engines: different providers have different results. Websites that are hard to find on one search engine might be easy to find on another, so using more indexes and ranking algorithms results in access to more content.
 
+No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to [PageRank](https://en.wikipedia.org/wiki/PageRank), which biases them towards sites with many backlinks. Ranking algorithms are gamed by SEO spam, which engines respond to with manual actions (downranking) and adjusting their algorithms' biases. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
+
 About the list
 --------------
 
@@ -49,7 +51,7 @@ These are large engines that pass all the above tests and more.
   - [Startpage](https://www.startpage.com/)
   - [GMX Search](https://search.gmx.com/web)
   - (discontinued) Runnaroo
-	- [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
+  - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
   - Yahoo (and its sibling engine, [OneSearch](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
   - DuckDuckGo[^3]
@@ -70,7 +72,7 @@ These are large engines that pass all the above tests and more.
   - Lycos
   - Givero
   - Swisscows
-	- Fireball
+  - Fireball
   - Ask.moe[^7]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I mostly stopped adding Bing-based search engines. There are just too many.

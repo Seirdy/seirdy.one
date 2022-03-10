@@ -16,6 +16,12 @@ One way to avoid this conflict of interest is to *use search engines that aren't
 
 There's also a practical, non-ideological reason to try other engines: different providers have different results. Websites that are hard to find on one search engine might be easy to find on another, so using more indexes and ranking algorithms results in access to more content.
 
+No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to PageRank, which biases them towards sites with many backlinks.
+
+=> https://en.wikipedia.org/wiki/PageRank
+
+Ranking algorithms are gamed by SEO spam, which engines respond to with manual actions (downranking) and adjusting their algorithms' biases. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
+
 ## About the list
 
 I primarily evaluated English-speaking search engines because that’s my primary language. With some difficulty, I could probably evaluate a Spanish one; however, I wasn’t able to find many Spanish-language engines powered by their own crawlers.
