@@ -2,7 +2,7 @@
 <div class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
 	<h1 id="bookmarks" class="p-name" itemprop="name headline">My book&shy;marks</h1>
 	{{ .Content }}
-	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite></em></p>
+	<p><em>Timestamp format: <code>YYYY-MM-DD HH:MM</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite></p>
 	<ul class="unstyled-list">
 		{{ $bookmarks := getJSON "https://seirdy.one/data/bookmarks.json" -}}
 		{{ range sort $bookmarks "tags" "desc" -}}
