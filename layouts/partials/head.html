@@ -19,12 +19,12 @@
 {{ end -}}
 {{ if lt .Date .Lastmod -}}
 <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-{{ end -}}
+{{- end -}}
 <!--the Tor Browser's safest setting disables SVGs but still downloads them to avoid fingerprinting-->
 {{ if (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
 {{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
 {{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml">` $icon_svg.RelPermalink | safeHTML }}
-{{- fi }}
+{{- end }}
 {{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
 {{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png">` $icon_192.RelPermalink | safeHTML -}}
 {{ $favicon := resources.Get "/favicon.png" -}}
