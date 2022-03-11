@@ -8,25 +8,15 @@ This page is a “living document” that I plan on updating indefinitely. Check
 
 I plan on updating the engines in the top two categories with more info comparing the structured/linked data the engines leverage (RDFa vocabularies, microdata, microformats, JSON-LD, etc.) to help authors determine which formats to use.
 
-## Rationale
-
-Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.²
-
-One way to avoid this conflict of interest is to *use search engines that aren't linked to major content providers;* i.e., use engines with their own independent indexes.
-
-There's also a practical, non-ideological reason to try other engines: different providers have different results. Websites that are hard to find on one search engine might be easy to find on another, so using more indexes and ranking algorithms results in access to more content.
-
-No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to PageRank, which biases them towards sites with many backlinks.
-
-=> https://en.wikipedia.org/wiki/PageRank
-
-Ranking algorithms are gamed by SEO spam, which engines respond to with manual actions (downranking) and adjusting their algorithms' biases. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
-
 ## About the list
 
-I primarily evaluated English-speaking search engines because that’s my primary language. With some difficulty, I could probably evaluate a Spanish one; however, I wasn’t able to find many Spanish-language engines powered by their own crawlers.
+I discuss my motivation for making this page in the "Rationale" section.
 
-See the "Methodology" section at the bottom to see how I evaluated each one.
+I primarily evaluated English-speaking search engines because that’s my primary language. With some difficulty, I could probably evaluate a Spanish one; however, I wasn't able to find many Spanish-language engines powered by their own crawlers.
+
+I mention details like "allows site submissions" and structured data support where I can only to inform authors about their options, not as points in engines' favor.
+
+See the "Methodology" section at the bottom to learn how I evaluated each one.
 
 ## General indexing search-engines
 
@@ -77,6 +67,8 @@ These are large engines that pass all the above tests and more.
 5. Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
 => https://petalsearch.com/  petalsearch.com
+
+Google, Bing, and Yandex support structured data such as microformats1, microdata, RDFa, Open Graph markup, and JSON-LD. Yandex's support for microformats1 is limited; for instance, it can parse h-card metadata for organizations but not people. Open Graph and Schema.org are the only supported vocabularies I'm aware of. Mojeek is evaluating structured data; it's interested in Open Graph and Schema.org vocabularies.
 
 ### Smaller indexes, relevant results
 
@@ -308,6 +300,26 @@ One engine was excluded because it seems to be built using cryptocurrency in a w
 
 Some fascinating little engines seem like hobbyist proofs-of-concept. I decided not to include them in this list, but watch them with interest to see if they can become something viable.
 
+## Rationale
+
+Why bother using non-mainstream search engines?
+
+### Conflicts of interest
+
+Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.²
+
+One way to avoid this conflict of interest is to *use search engines that aren't linked to major content providers;* i.e., use engines with their own independent indexes.
+
+### Information diversity
+
+There's also a practical, less-ideological reason to try other engines: different providers have different results. Websites that are hard to find on one search engine might be easy to find on another, so using more indexes and ranking algorithms results in access to more content.
+
+No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to PageRank, which biases them towards sites with many backlinks.
+
+=> https://en.wikipedia.org/wiki/PageRank PageRank (Wikipedia)
+
+Search engines have to deal with unwanted results occupying the confusing overlap between SEO spam, shock content, and duplicate content. When this content’s manipulation of ranking algos causes it to rank high, engines have to address it through manual action or algorithm refinement. Choosing to address it through either option, or choosing to leave it there for popular queries after receiving user reports, reflects bias. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
+
 ## Methodology
 
 ### Discovery
@@ -371,7 +383,10 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 
 ² Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
-³ DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing).
+³ DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing). Update 2022: DuckDuckGo has the ability to downrank results on its own; it was previously working with Bing to get Bing to remove misinformation and spam:
+
+=> https://web.archive.org/web/20220310222014/https://nitter.pussthecat.org/yegg/status/1501716484761997318 Gabriel Weinberg on Twitter
+=> https://www.nytimes.com/2022/02/23/technology/duckduckgo-conspiracy-theories.html DuckDuckGo's prior approach to moderation
 
 ⁴ Qwant claims to also use its own crawler for results, but it’s still mostly Bing in my experience. See the "semi-independent" section.
 
