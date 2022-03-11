@@ -2,12 +2,10 @@
 {{- $favicon_base64 := $favicon.Content | base64Encode -}}
 {{- $favicon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
 {{- $favicon_bigpng := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
-{{- if (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
-<picture itemprop="image">
-	<source srcset="{{ $favicon_svg.RelPermalink }}" type="image/svg+xml">
+<img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
+{{ if (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
+	src="data:image/png;base64,{{ $favicon_base64 }}" srcset="{{ $favicon_bigpng.RelPermalink }} 2x"
+{{- else -}}
+	src="{{ $favicon_svg.RelPermalink }}"
 {{- end -}}
-	<img class="u-photo photo" src="data:image/png;base64,{{ $favicon_base64 }}" width="16" height="16" alt=""
-		srcset="{{ $favicon_bigpng.RelPermalink }} 2x">
-{{- if (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
-</picture>
-{{- end -}}
+>
