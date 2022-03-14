@@ -106,19 +106,34 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 About lazy loading
 ------------------
 
-Lazy loading often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup occasionally results in packet loss rates above 60% (!!).
+Lazy loading may or may not work. Some browsers, including Firefox and the Tor Browser, disable lazy-loading when the user turns off JavaScript. Turning it off makes sense because lazy-loading, like JavaScript, is a fingerprinting vector. Specifically, it identifies idiosyncratic scrolling patterns:
 
-Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, or switch to another window/app and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a [similar experience](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/) riding the train.
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing images in a page's markup such that a server can track how many images are requested and when.</p>
+	</blockquote>
+	<figcaption class="h-cite" itemprop="citation">
+		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle"><a class="u-url p-name" itemprop="url" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><span itemprop="name">&lt;img&gt;: The Image Embed element</span></a></cite> on <abbr title="Mozilla Developer Network">MDN</abbr>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
+	</figcaption>
+</figure>
+
+If you can't rely on lazy loading, your pages should work well without it. If pages work well without lazy loading, is it worth enabling?
+
+I don't think so: lazy loading often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup occasionally results in packet loss rates above 60%&nbsp;(!!).
+
+Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, and/or switch to another task and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open 10-20 links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a [similar experience](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/) riding the train.
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
 A similar attribute that I _do_ recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
 
-### Wouldn't this be solved by combining lazy loading with pre-loading/pre-fetching?
+### Would pre-loading/pre-fetching solve the issues with lazy-loading?
 
-A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading since linked content may employ dark patterns like tracking without consent.
+Pre-loading essential resources is fine, but speculatively pre-loading content that the user may or may not request isn't.
 
-Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user.
+A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading since pre-loading behavior is fingerprintable.
+
+Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
 ### Can't users on poor connections disable images?
 
@@ -245,14 +260,14 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 ### Sample unorthodox tests
 
-These tests start out pretty reasonable, but gradually get more insane as you go down. Once again, use your judgement.
+These tests start out pretty reasonable, but gradually get more ridiculous. Once again, use your judgement.
 
 1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^4]
 2. Test using the Tor browser with the safest security level enabled (disables JS, SVG, and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
 5. Test with a screen reader.
-6. Test keyboard navigability with the tab key. Even without specifying tab indices, tab selection should follow a logical order if you keep the layout simple.
+6. Test keyboard navigability with the <kbd>TAB</kbd> key. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 7. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 8. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 9. Test in an online website translator tool.
@@ -270,7 +285,7 @@ One reason is that underlines make it easy to separate multiple consecutive inli
 
 {{< picture name="underlines" alt="a line of three consecutive hyperlinks with and without underlines" >}}
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> Level A requirement is for information to not be conveyed solely through color:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 	<blockquote>
