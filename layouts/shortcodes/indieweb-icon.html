@@ -3,7 +3,7 @@
 {{- $favicon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
 {{- $favicon_bigpng := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
 <img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
-{{ if (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
+{{ if in site.BaseURL ".onion" -}}
 	src="data:image/png;base64,{{ $favicon_base64 }}" srcset="{{ $favicon_bigpng.RelPermalink }} 2x"
 {{- else -}}
 	src="{{ $favicon_svg.RelPermalink }}"

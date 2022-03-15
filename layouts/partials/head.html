@@ -3,15 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://seirdy.one{{ .RelPermalink }}" rel="canonical">
 <link href="https://seirdy.one/webmentions/receive" rel="webmention">
-{{- if or (eq .Site.BaseURL "https://seirdy.one/") (eq .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
+{{ if or (eq site.BaseURL "https://seirdy.one/") (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") }}
 <!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
-{{- end }}
+{{ end }}
 <title>{{ .Title }}{{ if and (lt (len .Title) 66) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
-{{ if (eq .RelPermalink "/") -}}
+{{ if (eq .RelPermalink "/") }}
+<!--SearchMySite uses keywords to tag webpages-->
 <meta name="keywords" content="developer,poggies,blog,indieweb,software,opensource,security,search engines,search,linux">
-{{- end -}}
+{{ end -}}
 <meta content="{{ .Site.Author.name }}" name="author">
 <meta property="article:author" content="{{ .Site.Author.name }}">
 {{ if gt .Date 0 -}}
@@ -21,7 +22,7 @@
 <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
 {{- end -}}
 <!--the Tor Browser's safest setting disables SVGs but still downloads them to avoid fingerprinting-->
-{{ if (ne .Site.BaseURL "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/") -}}
+{{ if not (in site.BaseURL ".onion") -}}
 {{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
 {{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml">` $icon_svg.RelPermalink | safeHTML }}
 {{- end }}
@@ -38,7 +39,7 @@
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{- $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link href="%s" rel="manifest">` $webmanifest.RelPermalink | safeHTML }}
-<link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
+<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 <!-- inline CSS; remember to allow it with a hash in the CSP -->
 {{- $resources := slice -}}
 {{- $resources = $resources | append (resources.Get "/css/main.css") -}}
