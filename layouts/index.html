@@ -1,30 +1,5 @@
 {{ define "main" }}
 {{ .Content }}
-{{- partial "posts.html" . -}}
-
-<h2 id="part-of">Webrings</h2>
-
-<p>This site is part of some <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>:</p>
-
-<p>
-		<a href="https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/previous" rel="nofollow ugc">←</a> ·
-		<a href="https://xn--sr8hvo.ws/">An IndieWeb Webring</a> ·
-		<a href="https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/next" rel="nofollow ugc">→</a>
-</p>
-<p>
-		<a href="https://fediring.net/previous?host=seirdy.one" rel="nofollow ugc">←</a> ·
-		<a href="https://fediring.net/">Fediring</a> ·
-		<a href="https://fediring.net/next?host=seirdy.one" rel="nofollow ugc">→</a>
-</p>
-<p>
-		<a href="https://webring.yesterweb.org/noJS/index.php?d=prev&url=https://seirdy.one/" rel="nofollow ugc">←</a> ·
-		<a href="https://yesterweb.org/webring/">The Yesterweb ring</a> ·
-		<a href="https://webring.yesterweb.org/noJS/index.php?d=next&url=https://seirdy.one/" rel="nofollow ugc">→</a>
-</p>
-<p>
-		<a href="https://webring.dinhe.net/prev/https://seirdy.one" rel="nofollow ugc">←</a> ·
-		<a href="https://webring.dinhe.net/">The retronaut webring</a> ·
-		<a href="https://webring.dinhe.net/next/https://seirdy.one" rel="nofollow ugc">→</a>
-</p>
-
+{{ partial "posts.html" . }}
+{{ partial "webrings.html" . }}
 {{ end }}
