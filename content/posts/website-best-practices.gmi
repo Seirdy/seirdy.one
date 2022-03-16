@@ -16,7 +16,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No requests after the page finishes loading
 * No 3rd-party resources (preferably enforced at the CSP level)
 * No lazy loading
-* No custom colors OR explicitly set the both foreground and background colors.
+* No custom colors OR explicitly set both the foreground and background colors for light and dark color schemes, knowing that these can be overridden.
 * A maximum line length for readability
 * Server configured to support compression (gzip, optionally Brotli and Zstandard as well). It's a free speed boost.
 * Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
@@ -52,6 +52,10 @@ All of the simplicity in the world won't protect a page from unsafe content inje
 => https://testssl.sh/ testssl.sh
 => https://webbkoll.dataskydd.net/ Webbkoll
 
+Mozilla's HTTP Observatory offers a subset of Webbkoll's features but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
+
+=> https://observatory.mozilla.org/ HTTP Observatory
+
 A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1.
 
 ### Scripts and the Content Security Policy
@@ -79,7 +83,7 @@ sandbox allow-same-origin
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox "sandbox" CSP directive on MDN
 
-While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).¹ I added the `allow-same-origin` parameter so that these addons will still be able to function.²
+While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).¹ I added the "allow-same-origin" parameter so that these addons will still be able to function.²
 
 ### If you must enable scripts
 
@@ -100,7 +104,7 @@ If you really want, you could use serif instead of sans-serif; however, serif fo
 
 To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! That being said, textual websites in particular don't benefit much from branding. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that should be the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
 
-A personal example: I set my preferred fonts in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
+A personal example: I set my preferred browser font to "sans-serif", and map "sans-serif" to my preferred font in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
 
 ### But most users don't change their fonts...
 
@@ -186,7 +190,7 @@ The Web version of this page is an example application of Technique C25 and the 
 => https://seirdy.one/2020/11/23/website-best-practices.html The Web mirror of this Gemlog post
 => https://www.w3.org/WAI/WCAG22/Techniques/general/G148 Technique G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults
 
-The page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I included horizontal lines further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
+The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included horizontal rules (<hr>) further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
 The aforementioned techniques ensure a clear page layout independently of color scheme.
 
@@ -206,11 +210,22 @@ When setting colors, especially with a dark background, I recommend checking you
 
 => https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
 
-Blue and purple links on a black background have much worse perceptual contrast than yellow or green links. Also, remember that the darker the background, the less battery your website will require devices with OLED screens.
+Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
 Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criterions  1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
 
 CSS filters such as "invert" are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
+
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, esp. for readers who have astigmatism. There has been some experimental and plenty of anecdotal evidence to support this.
+
+=> https://www.laurenscharff.com/research/AHNCUR.html Hill, Alyson (supervised by Scharff, L.V.) Readability Of Websites With Various Foreground / Background Color Combinations, Font Types And Word Styles, 1997
+=> https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/ Never Use White Text on a Black Background: Astygmatism and Conference Slides
+
+I personally like a foreground and background of "#ececec" and "#0c0c0c", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0c0c0c" is barely bright enough to create a soft "glow" capable of minimizing halos.
+
+If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences, called "prefers-contrast". It takes the parameters "no-preference", "less", and "more". You can serve increased-contrast pages to those who request "more", and vice versa. Check MDN for more information:
+
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast prefers-contrast on MDN
 
 ## Image optimization
 
@@ -294,7 +309,7 @@ Neither situation looks great.
 
 ### Sidebar alternatives
 
-Common items in sidebars include article tags, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
+Common items in sidebars include tag clouds, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
 
 Don't boost engagement by providing readers with information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages *after* they've decided they want to read more.
 
@@ -310,11 +325,22 @@ This disables scripts, MathML, some fonts, SVG images, and other features:
 
 => https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
 
-If your site has any SVG images, be sure to provide a fallback to raster formats using a "<picture>" element.
+If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
-If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JS to complete a CAPTCHA. To go above and beyond, try mirroring your site to an onion service to reduce the need for exit nodes.
+If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
+
+To go above and beyond, try mirroring your site to an onion service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser. Normally, optimizing specifically for a given user agent's quirks is a bad practice; however, the Tor Browser is a special case because it sometimes pretends to have Firefox's capabilities. Progressive enhancement and graceful degradation won't work.
+
+For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children with varying formats and a fallback <img> element using a legacy image format.
+
+The Tor browser will download whichever format Firefox would, rather than whichever  formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
+
+I address the issue by not using any SVG images on my hidden service:
+
+=> http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ My Tor hidden service (HTTP+HTML)
+
 
 ## Testing
 
@@ -356,7 +382,7 @@ I disagree. One reason is that underlines make it easy to separate multiple cons
 
 => gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
 > Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
 
@@ -418,7 +444,7 @@ The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific ad
 
 ## Notes
 
-¹ Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.
+¹ Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank "sandbox" directive even if it means breaking these addons.
 
 ² Some addons will have reduced functionality; for instance, Tridactyl can't create an <iframe> for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
 
