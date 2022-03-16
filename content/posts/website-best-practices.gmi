@@ -66,7 +66,7 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP CSP on MDN
 
-For example, here's the CSP for https://seirdy.one:
+For example, here's the CSP for my website:
 
 ```
 content-security-policy: default-src 'none';
@@ -120,7 +120,9 @@ That being said, many users *do* actually override stylesheets. We shouldn't *re
 
 I don't know much about fingerprinting, except that you can't do font enumeration without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font enumeration.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's "privacy.resistFingerprinting" setting, but that setting also understandably overrides user font preferences.
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
+
+=> https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting Firefox's protection against fingerprinting
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 

@@ -18,7 +18,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 
 - Final page weight under 50kb without images, and under 200kb with images. Page weight should usually be much smaller; these are upper-bounds for exceptional cases.
 - Works in Lynx, w3m, links (both graphics and text mode), NetSurf, and Dillo
-- Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
+- Works with popular article-extractors (e.g. Read&shy;ability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
 - No scripts or interactivity, preferably enforced at the Content-Security-Policy (<abbr title="Content Security Policy">CSP</abbr>) level
 - No cookies
 - No animations
@@ -59,7 +59,7 @@ A false sense of security is far worse than transparent insecurity. Don't offer 
 
 Consider taking hardening measures to maximize the security benefits made possible by the simplicity of textual websites, starting with script removal.
 
-JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="content security policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level. For example, here's the CSP for `https://seirdy.one`:
+JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="content security policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level. For example, here's the CSP for my website:
 
 ```
 content-security-policy: default-src 'none';
@@ -105,7 +105,7 @@ That being said, many users _do_ actually override stylesheets. We shouldn't _re
 
 I don't know much about fingerprinting, except that you can't do font enumeration without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font enumeration.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's `privacy.resistFingerprinting` setting, but that setting also understandably overrides user font preferences.
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's [protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 
@@ -146,7 +146,7 @@ Users who click a link _choose_ to load a full page. Loading pages that a user h
 I have two responses:
 
 1. If an image isn't essential, you shouldn't include it inline.
-2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintentionally) made that choice for a large number of users.
+2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
 
 About custom colors
 -------------------
@@ -157,7 +157,7 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 {{< picture name="website_colors" alt="This page with a grey background behind black/grey headers and white-on-white code snippets" >}}
 </a>
 
-A second opinion: {{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <cite>[AWebColoursProblem](https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem)</cite>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
+A second opinion: {{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <cite>[AWebColours&shy;Problem](https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem)</cite>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
 
 Chris also describes the importance of visited link colors in <cite>[RealBlogUsability](https://utcc.utoronto.ca/~cks/space/blog/web/RealBlogUsability)</cite>.
 
@@ -183,8 +183,8 @@ Darker backgrounds draw less power on devices with OLED screens; however, backgr
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check [prefers-contrast on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) for more information.
 
-Image optimization
-------------------
+Image optimiza&shy;tion
+-----------------------
 
 Some image optimization tools I use:
 
@@ -299,7 +299,7 @@ These tests start out pretty reasonable, but gradually get more ridiculous. Once
 5. Test with a screen reader.
 6. Test keyboard navigability with the <kbd>TAB</kbd> key. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 7. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
-8. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+8. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 9. Test in an online website translator tool.
 10. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
 11. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
@@ -313,7 +313,7 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 One reason is that underlines make it easy to separate multiple consecutive inline links:
 
-{{< picture name="underlines" alt="a line of three consecutive hyperlinks with and without underlines" >}}
+{{< picture name="underlines" alt="two lines with two consecutive hyperlinks each, one line with and one without underlines" >}}
 
 Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
@@ -342,7 +342,7 @@ This page can be thought of as an extension of the principles of Brutalist Web D
 		<li>The back button works as expected.</li>
 		<li>View content by scrolling.</li>
 		<li>Decoration when needed and no unrelated content.</li>
-		<li>Performance is a feature.</li>
+		<li>Perform&shy;ance is a feature.</li>
 		</ul>
 	</blockquote>
 	<figcaption class="h-cite" itemprop="citation">
@@ -371,6 +371,6 @@ If you've got some time on your hands, I _highly_ recommend reading the <cite>[W
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle `javascript.options.ion`, `javascript.options.baselinejit`, `javascript.options.native_regexp`, `javascript.options.asmjs`, and `javascript.options.wasm` in `about:config`; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+[^4]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to `about:config` and toggle these options:<pre>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs</br>javascript.options.wasm</pre>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 
