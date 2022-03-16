@@ -95,7 +95,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [Infotiger](https://alpha.infotiger.com/): A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 - [Kozmonavt](https://kozmonavt.ml/): Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 - [Burf.co](https://burf.co/): Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
-- [Entfer](https://entfer.com/): a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information on who made it. Its index is small, but it does seem to return results related to the query.
+- [Entfer](https://entfer.com/): a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information about who made it. Its index is small, but it does seem to return results related to the query.
 - [Siik](https://siik.co/): Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
 - [Secret Search Engine Labs](http://www.secretsearchenginelabs.com/): Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its [CashRank algorithm](http://www.secretsearchenginelabs.com/tech/cashrank.php). Allows site submission.
@@ -104,6 +104,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 Results from these search engines don't seem at all useful.
 
+- [Bloopish](http://aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 - Scopia: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 - [Artado Search](https://www.artadosearch.com/): Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
@@ -173,6 +174,8 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 - [search.ch](https://search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
 - [fastbot](https://www.fastbot.de/): German
 - [Moose.at](https://www.moose.at): German (Austria-based)
+- [SOLOFIELD](https://solofield.net): Japanese
+- [kaz.kz](http://kaz.kz): Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
 
 Misc
 ----
@@ -268,7 +271,7 @@ Acknowledge&shy;ments
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
-{{<indieweb-person first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
+{{<indieweb-person first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
 
 {{<indieweb-person first-name="Nicholas" last-name="Ferrell" url="https://emucafe.club/channel/naferrell" org="The New Leaf Journal" org-url="https://thenewleafjournal.com/">}} wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 

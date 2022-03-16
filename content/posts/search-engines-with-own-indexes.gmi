@@ -104,7 +104,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * Infotiger: A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 * Kozmonavt: Has a small index of almost 5 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
-* Entfer: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information on who made it. Its index is small, but it does seem to return results related to the query.
+* Entfer: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information about who made it. Its index is small, but it does seem to return results related to the query.
 * Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
 => https://alpha.infotiger.com/ Infotiger
@@ -127,17 +127,21 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 Results from these search engines don’t seem at all useful.
 
+* Bloopish: extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 * YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 * Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 * Artado Search: Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
 * Active Search Results: very poor quality
+
+=> http://aibull.io/ Bloopish
+=> https://metager.org  MetaGer
+=> https://www.artadosearch.com/ Artado Search
+=> https://www.activesearchresults.com  Active Search Results
+
 * Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 * Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 * Yioop!: A FLOSS search engine that boasts a very impressive feature-set: it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
-=> https://metager.org  MetaGer
-=> https://www.artadosearch.com/ Artado Search
-=> https://www.activesearchresults.com  Active Search Results
 => https://crawlson.com Crawlson
 => https://www.anoox.com/  Anoox
 => https://archive.is/oVAre Plumb CPO
@@ -235,14 +239,20 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 * Parsijoo: Persian
 * search.ch: Regional search engine for Switzerland; users can restrict searches to their local regions.
 * fastbot: German
-* Moose.at: German (Austria-based)
 
 => https://www.vuhuv.com.tr/ Vuhuv
 => https://tr.vuhuv.com/ Yuhuv (alternate domain)
 => https://www.parsijoo.ir/  Parsijoo
 => https://search.ch  search.ch
 => https://www.fastbot.de/  fastbot
+
+* Moose.at: German (Austria-based)
+* SOLOFIELD: Japanese
+* kaz.kz: Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
+
 => https://www.moose.at  Moose.at
+=> https:solofield.net SOLOFIELD
+=> https://kaz.kz/ kaz.kz
 
 ## Misc
 
@@ -364,7 +374,7 @@ Some of this content came from the Search Engine Map and Search Engine Party. A 
 => https://www.searchenginemap.com/  Search Engine Map
 => https://searchengine.party/  Search Engine Party
 
-Matt from Gigablast also gave me some helpful information on GBY which I included in the "Rationale" section. He's written more about big tech in the Gigablast blog:
+Matt from Gigablast also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the Gigablast blog:
 
 => https://gigablast.com/blog.html Gigablast blog
 
