@@ -29,6 +29,8 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 
 => https://observatory.mozilla.org/ HTTP Observatory
 
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies. My hope is for most readers to consider *some* points I make on this page the next time they build a website. I don't expect--or want--anybody to follow 100% of my advice.
+
 Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and Lobsters users who gave good feedback!
 
 => https://lobste.rs/s/akcw1m Lobsters thread
@@ -166,7 +168,22 @@ Chris also describes the importance of visited link colors:
 
 => https://utcc.utoronto.ca/~cks/space/blog/web/RealBlogUsability RealBlogUsability
 
-## Dark themes
+### Color overrides and accessibility
+
+Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. Technique C25 of the *Web Content Accessibility Guidelines (WCAG) 2.2* describes how doing so can meet the WCAG 2.2's Success Criterion 1.4.8. Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
+
+=> https://www.w3.org/WAI/WCAG22/Techniques/css/C25 Technique C25: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying text and text-background colors
+
+The Web version of this page is an example application of Technique C25 and the similar G148:
+
+=> https://seirdy.one/2020/11/23/website-best-practices.html The Web mirror of this Gemlog post
+=> https://www.w3.org/WAI/WCAG22/Techniques/general/G148 Technique G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults
+
+The page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I included horizontal lines further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
+
+The aforementioned techniques ensure a clear page layout independently of color scheme.
+
+### Dark themes
 
 If you do explicitly set colors, please also include a dark theme using a media query:
 
@@ -184,7 +201,9 @@ When setting colors, especially with a dark background, I recommend checking you
 
 Blue and purple links on a black background have much worse perceptual contrast than yellow or green links. Also, remember that the darker the background, the less battery your website will require devices with OLED screens.
 
-CSS filters such as "invert" are quite expensive to run, so they should be used sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criterions  1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
+
+CSS filters such as "invert" are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 ## Image optimization
 
@@ -252,7 +271,7 @@ Nontrivial use of width-selectors, in CSS or "<source>" tags, is actually a powe
 
 => https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
 
-Achieving this type of layout entails using the Web Content Accessibility Guidelines (WCAG) 2.2 techniques C27 as well as C6:
+Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well as C6:
 
 => https://www.w3.org/WAI/WCAG21/Techniques/css/C27.html C27: Making the DOM order match the visual order
 => https://www.w3.org/WAI/WCAG22/Techniques/css/C6 C6: Positioning content based on structural markup

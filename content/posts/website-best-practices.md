@@ -38,7 +38,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - Preserve link underlines.
 - Handle a wide variety of viewport sizes without dramatic layout changes
 
-I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies.
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies. My hope is for most readers to consider *some* points I make on this page the next time they build a website. I don't expect--or want--anybody to follow 100% of my advice.
 
 Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and [Lobsters](https://lobste.rs/s/akcw1m) users who gave good feedback!
 
@@ -158,13 +158,23 @@ A second opinion: {{% indieweb-person first-name="Chris" last-name="Siebenmann" 
 
 Chris also describes the importance of visited link colors in <cite>[RealBlogUsability](https://utcc.utoronto.ca/~cks/space/blog/web/RealBlogUsability)</cite>.
 
+### Color overrides and accessibility
+
+Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>) 2.2</cite> describes how doing so can meet the WCAG 2.2's [Success Criterion 1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
+
+This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I included horizontal lines further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
+
+The aforementioned techniques ensure a clear page layout independently of color scheme.
+
 ### Dark themes
 
 If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
 When setting colors, especially with a dark background, I recommend checking your page's contrast using <abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr> values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links. Also, remember that the darker the background, the less battery your website will require devices with OLED screens.
 
-CSS filters such as `invert` are quite expensive to run, so they should be used sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criterions  1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
+
+CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 Image optimization
 ------------------
@@ -226,7 +236,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
 
 Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/).
 
-Achieving this type of layout entails using the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
+Achieving this type of layout entails using the WCAG 2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
 ### What about sidebars?
 
@@ -290,7 +300,7 @@ One reason is that underlines make it easy to separate multiple consecutive inli
 
 {{< picture name="underlines" alt="a line of three consecutive hyperlinks with and without underlines" >}}
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> Level A requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for readers with color vision deficiencies to distinguish links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 	<blockquote>
