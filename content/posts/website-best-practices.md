@@ -19,7 +19,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - Final page weight under 50kb without images, and under 200kb with images. Page weight should usually be much smaller; these are upper-bounds for exceptional cases.
 - Works in Lynx, w3m, links (both graphics and text mode), NetSurf, and Dillo
 - Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
-- No scripts or interactivity (preferably enforced at the CSP level)
+- No scripts or interactivity, preferably enforced at the Content-Security-Policy (<abbr title="Content Security Policy">CSP</abbr>) level
 - No cookies
 - No animations
 - No fonts--local or remote--besides `sans-serif` and `monospace`.
@@ -38,9 +38,11 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - Preserve link underlines.
 - Handle a wide variety of viewport sizes without dramatic layout changes
 
-I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies. My hope is for most readers to consider *some* points I make on this page the next time they build a website. I don't expect--or want--anybody to follow 100% of my advice.
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies. My hope is for most readers to consider _some_ points I make on this page the next time they build a website. I don't expect--or want--anybody to follow 100% of my advice.
 
 Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and [Lobsters](https://lobste.rs/s/akcw1m) users who gave good feedback!
+
+I'll also cite the document <cite>[Techniques for WCAG 2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
 Security
 --------
@@ -60,12 +62,13 @@ Consider taking hardening measures to maximize the security benefits made possib
 JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="content security policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level. For example, here's the CSP for `https://seirdy.one`:
 
 ```
-default-src 'none';
+content-security-policy: default-src 'none';
 img-src 'self' data:;
-style-src 'sha256-Amup01ZIYjs1kyVZqHYW1tGhvlStSHIoFDKATF7L7VI='; style-src-attr 'none';
+style-src 'sha256-g8fT13xy415WmQo4vYgG4v4xJiNmrhPYQ9PGDGfXX5Y=';
+style-src-attr 'none';
 frame-ancestors 'none'; base-uri 'none'; form-action 'none';
-manifest-src 'self';
-upgrade-insecure-requests;
+manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
+upgrade-insecure-requests; navigate-to 'none';
 sandbox allow-same-origin
 ```
 
