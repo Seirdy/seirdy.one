@@ -36,6 +36,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
 - Works well with Tor and the Tor Browser's safety settings.
 - Preserve link underlines.
+- Handle a wide variety of viewport sizes without dramatic layout changes
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies.
 
@@ -49,6 +50,8 @@ One of the defining differences between textual websites and advanced Web 2.0 si
 ### TLS
 
 All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with [testssl.sh](https://testssl.sh/) and [Webbkoll](https://webbkoll.dataskydd.net/). Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard.
+
+A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1.
 
 ### Scripts and the Content Security Policy
 
@@ -223,6 +226,8 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
 
 Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/).
 
+Achieving this type of layout entails using the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
+
 ### What about sidebars?
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens on a website with a sidebar, one of two things happens:
@@ -296,6 +301,8 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 	</figcaption>
 </figure>
 
+Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+
 Other places to check out
 -------------------------
 
@@ -329,6 +336,8 @@ Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucki
 The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
 
 One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
+
+If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
 
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.

@@ -44,6 +44,8 @@ All of the simplicity in the world won't protect a page from unsafe content inje
 => https://testssl.sh/ testssl.sh
 => https://webbkoll.dataskydd.net/ Webbkoll
 
+A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1.
+
 ### Scripts and the Content Security Policy
 
 Consider taking hardening measures to maximize the security benefits made possible by the simplicity of textual websites, starting with script removal.
@@ -250,6 +252,11 @@ Nontrivial use of width-selectors, in CSS or "<source>" tags, is actually a powe
 
 => https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
 
+Achieving this type of layout entails using the Web Content Accessibility Guidelines (WCAG) 2.2 techniques C27 as well as C6:
+
+=> https://www.w3.org/WAI/WCAG21/Techniques/css/C27.html C27: Making the DOM order match the visual order
+=> https://www.w3.org/WAI/WCAG22/Techniques/css/C6 C6: Positioning content based on structural markup
+
 ### What about sidebars?
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens on a website with a sidebar, one of two things happens:
@@ -329,6 +336,8 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 
 => https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
 
+Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+
 ## Other places to check out
 
 This page can be thought of as an extension of the principles of Brutalist Web Design:
@@ -371,6 +380,15 @@ The WebBS calculator compares a page's size with the size of a PNG screenshot of
 One resource I found useful (that eventually featured this article!) was the “Your page content” section of Bill Dietrich’s comprehensive guide to setting up your personal website:
 
 => https://www.billdietrich.me/YourPersonalWebSite.html#PageContent Your Personal Website
+
+If you've got some time on your hands, I *highly* recommend reading the WCAG:
+
+=> https://www.w3.org/TR/WCAG22/ Web Content Accessibility Guidelines (WCAG) 2.2
+
+The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the the how-to quick reference. It combines the WCAG with its supplementary list of techniques:
+
+=> https://www.w3.org/WAI/WCAG22/quickref How to Meet WCAG (Quick Reference)
+=> https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
 ## Notes
 
