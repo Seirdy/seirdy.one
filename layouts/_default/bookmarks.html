@@ -21,8 +21,14 @@
 					<p>
 						Bookmarked on: <time class="dt-published published" itemprop="datePublished" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}">{{ dateFormat "2006-01-02 15:04" $timestamp }}</time>
 						<br>Tags: <span itemprop="keywords">
-							{{ printf "<span class=\"p-category\">%s</span>" (index $tags 1) | safeHTML }}
-						{{- range after 2 $tags -}}
+						{{- $start := 2 -}}
+						{{- $firstTag := (index $tags 1) -}}
+						{{- if (eq $firstTag "public") -}}
+							{{- $firstTag = (index $tags 2) -}}
+							{{- $start = 3 -}}
+						{{- end -}}
+						{{- printf "<span class=\"p-category\">%s</span>" $firstTag | safeHTML -}}
+						{{- range after $start $tags -}}
 						{{- $tag := . -}}
 							{{- if (ne $tag "public") -}}
 								{{- printf ", <span class=\"p-category\">%s</span>" $tag | safeHTML -}}
