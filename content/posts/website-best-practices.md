@@ -42,12 +42,12 @@ I'd like to re-iterate yet another time that this only applies to websites that 
 
 Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and [Lobsters](https://lobste.rs/s/akcw1m) users who gave good feedback!
 
-I'll also cite the document <cite>[Techniques for WCAG 2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+I'll also cite the document <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
 Security
 --------
 
-One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites _should_ guarantee some extra safety; however, webmasters need to take some additional measures to ensure limited use of "modern" risky features.
+One of the defining differences between textual websites and advanced Web&nbsp;2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites _should_ guarantee some extra safety; however, webmasters need to take some additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
 
@@ -163,7 +163,7 @@ Chris also describes the importance of visited link colors in <cite>[RealBlogUsa
 
 ### Color overrides and accessibility
 
-Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>) 2.2</cite> describes how doing so can meet the WCAG 2.2's [Success Criterion 1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
+Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>)&nbsp;2.2</cite> describes how doing so can meet the WCAG&nbsp;2.2's [Success Criterion&nbsp;1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
 
 This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included horizontal rules (`<hr>`) further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
@@ -175,7 +175,7 @@ If you do explicitly set colors, please also include a dark theme using a media 
 
 When setting colors, especially with a dark background, I recommend checking your page's contrast using <abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr> values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criterions  1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criterions 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
@@ -243,7 +243,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
 
 Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/).
 
-Achieving this type of layout entails using the WCAG 2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
+Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
 ### What about sidebars?
 
@@ -322,7 +322,7 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level A)</p>
 	</blockquote>
 	<figcaption class="h-cite" itemprop="citation">
-		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG 2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
+		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG&nbsp;2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
 	</figcaption>
 </figure>
 
@@ -362,7 +362,7 @@ The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size wi
 
 One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
-If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
+If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG)&nbsp;2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
 
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.
