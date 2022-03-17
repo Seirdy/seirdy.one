@@ -59,7 +59,14 @@ A false sense of security is far worse than transparent insecurity. Don't offer 
 
 Consider taking hardening measures to maximize the security benefits made possible by the simplicity of textual websites, starting with script removal.
 
-JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="content security policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level. For example, here's the CSP for my website:
+JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="content security policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level.
+
+<figure>
+<figcaption>
+
+This is the CSP for my website:
+
+</figcaption>
 
 ```
 content-security-policy: default-src 'none';
@@ -71,6 +78,8 @@ manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.we
 upgrade-insecure-requests; navigate-to 'none';
 sandbox allow-same-origin
 ```
+
+</figure>
 
 `script-src: 'none'` is implied by `default-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) of potentially insecure actions. While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
 
@@ -183,7 +192,7 @@ Darker backgrounds draw less power on devices with OLED screens; however, backgr
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check [prefers-contrast on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) for more information.
 
-Image optimiza&shy;tion
+Image optimiza&shy;tion {#image-optimization}
 -----------------------
 
 Some image optimization tools I use:
@@ -208,13 +217,20 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
 7. If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
-Here's a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
+<figure>
+<figcaption>
+
+This is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
+
+</figcaption>
 
 ```sh
 convert -resize 75% original.png -colorspace GRAY -format png - \
 	| pngquant -s 1 12 - \
 	| oxipng -o max -Z --fix - --out compressed.png
 ```
+
+</figure>
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
@@ -231,7 +247,14 @@ This is possibly the most subjective item I'm including, and the item with the m
 
 A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content. Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one (1) item. Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing.
 
-Exceptions exist: one or two very simple responsive changes won't hurt. For example, the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
+Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, and layout shifts dramatic enough to cause confusion.
+
+<figure>
+<figcaption>
+
+The only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
+
+</figcaption>
 
 ```
 @media (min-width: 32rem) {
@@ -241,7 +264,9 @@ Exceptions exist: one or two very simple responsive changes won't hurt. For exam
 }
 ```
 
-Nontrivial use of width-selectors, in CSS or `<source>` tags, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/).
+</figure>
+
+Nontrivial use of width-selectors, in CSS or imagesets, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/). This is one of the reasons why I didn't recommend resolution- or dimension-aware imagesets in the [image optimization section](#image-optimization).
 
 Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
@@ -259,6 +284,31 @@ Neither situation looks great.
 Common items in sidebars include tag clouds, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
 
 Don't boost engagement by providing readers with information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages _after_ they've decided they want to read more.
+
+Narrow viewports
+----------------
+
+A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that require excessive scrolling.
+
+Not every phone has a giant screen: millions of people around the world use Web-enabled feature phones. The Jio Phone&nbsp;2, for instance, sports a 6&nbsp;cm (2.4&nbsp;inch) screen that's 240 pixels wide. Furthermore, some programs sport browser windows in sidebars (c.f. Mozilla's [side view](https://addons.mozilla.org/en-US/firefox/addon/side-view/), Vivaldi [Web Panels](https://help.vivaldi.com/desktop/panels/web-panels/)). Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions.
+
+Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (<abbr title="Device Pixel Ratio">DPR</abbr>=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the `&shy;` entity. Prefer breaking off suffixes ("-ing", "-ed", etc).
+
+Most modern browsers support the `hyphens` CSS3 property, but full automatic hyphenation is an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
+
+Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
+
+Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element scrollable in two dimensions is far better than doing so for the whole page.
+
+### Indented elements
+
+Most browser default stylesheets were not optimized for narrow viewports, so narrow-viewport optimization is one of few good reasons to override the defaults. The best example of widescreen bias in browser stylesheets is indentation.
+
+The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element). It recommends placing a `<blockquote>` element inside a `<figure>` and citations in a `<figcaption>` to show a semantic relationship between a quotation and its citation.
+
+Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill a narrow viewport!
+
+I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I only use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements. If you're reading this page in a Web browser with its own stylesheet enabled, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
 Tor
 ---
