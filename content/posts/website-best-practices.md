@@ -53,7 +53,7 @@ One of the defining differences between textual websites and advanced Web&nbsp;2
 
 All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with [testssl.sh](https://testssl.sh/) and [Webbkoll](https://webbkoll.dataskydd.net/). Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
 
-A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1.
+A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1. Vintage computers can run TLS 1.2 implementations such as BearSSL surprisingly efficiently, leverage a TLS terminator, or they can use a plain unencrypted connection. A broken cipher suite is security theater.
 
 ### Scripts and the Content Security Policy
 
@@ -329,10 +329,29 @@ The Tor browser will download whichever format Firefox would, rather than whiche
 
 I address the issue by not using any SVG images on [my hidden service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/).
 
+Non-Browsers: Reading mode
+--------------------------
+
+Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
+
+Reading modes leverage article extractors such as [Readability](https://github.com/mozilla/readability) (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), [DOM Distiller](https://chromium.googlesource.com/chromium/dom-distiller/) (integrated into Chromium), and [Trafilatura](https://trafilatura.readthedocs.io/en/latest/) (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users. Safari's proprietary fork of Readability has grown quite complex compared to upstream.
+
+I don't recommend catering to each tool's non-standard quirks. Studying their design reveals that they observe open standards, to varying degrees. Readability, DOM Distiller, and Trafilatura understand plain-old, semantic HTML (<abbr title="Plain-Old, Semantic HTML">POSH</abbr>).
+
+POSH should be enough for most use-cases, but some authors want to go further. For example, they may want a byline or published date to show up in these modes.
+
+Most extractors fetch these values using open standards for structured data. The most well-supported option is [microformats](https://microformats.org/wiki/microformats) (Readability is one of the few that supports the newer microformats2). Some support [schema.org](https://schema.org/) vocabularies in Microdata or JSON-LD syntaxes, or [Dublin Core](https://www.dublincore.org/) vocabularies in RDFa. Most parse `<meta>` tags from the document `<head>`, but others don't due to misuse and overly aggressive <abbr title="Search Engine Optimization">SEO</abbr>.
+
+Sorry, that was a lot of jargon for a single paragraph. Unfortunately, describing those terms is out of scope for this post. If you'd like to dive down this rabbit hole, read about the "Semantic Web".
+
+Again: avoid catering to non-standard implementations' quirks, especially undocumented proprietary ones. Let's not repeat the history of the [browser wars](https://en.wikipedia.org/wiki/Browser_wars). More information about standard and non-standard behavior of reading modes is in the article <cite>[Web Reading Mode: The non-standard rendering mode](https://www.ctrl.blog/entry/browser-reading-mode-parsers.html)</cite> by {{<indieweb-person first-name="Daniel" last-name="Aleksandersen" url="https://www.daniel.priv.no/">}}.
+
+Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
+
 Testing
 -------
 
-If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand semantic, backward-compatible HTML.
+If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand <abbr title="Plain-Old, Semantic HTML">POSH</abbr>.
 
 In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't look good in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
 
