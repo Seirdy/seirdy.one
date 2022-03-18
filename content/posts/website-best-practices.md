@@ -240,6 +240,31 @@ If you want to include a profile photo (e.g., if your website is part of the Ind
 
 If you really want to go overboard with PNG optimization, you can try a tool like [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool).
 
+### Dark image variants
+
+A `<picture>` element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants too.
+
+<figure>
+<figcaption>
+A minimal example of what this could look like:
+</figcaption>
+
+```
+<source
+  srcset=/p/dark.png
+	type=image/png
+	media="screen and (prefers-color-scheme: dark)">
+<source
+  srcset=/p/light.png
+	type=image/png>
+```
+
+</figure>
+
+Requiring the `screen` media type prevents selection of dark variants when printing. Printer paper is almost always white, so dark images could waste ink. Ink waste is a sensitive issue among many students: school printers sometimes charge students who exceed a given ink quota. Ask me how I know!
+
+Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can cause some of my `<picture>` imagesets to have up to six image variants. I could fully automate the process using my static site generator (Hugo) if I wanted to. Since I do want to inspect each image and compress to the minimum acceptable quality, I settled for partial automation using shell scripts and [a Hugo shortcode](https://git.sr.ht/~seirdy/seirdy.one/tree/master/layouts/shortcodes/picture.html).
+
 Layout
 ------
 
@@ -328,6 +353,48 @@ For example, my website's clearnet version uses some SVG images. Some browsers c
 The Tor browser will download whichever format Firefox would, rather than whichever  formats it actually supports. A `<picture>` element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
 
 I address the issue by not using any SVG images on [my hidden service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/).
+
+Optimal loading
+---------------
+
+Lightweight content isn't the only factor for optimizing load times. There are ways to optimize loading without a <abbr title="Content Delivery Network">CDN</abbr>.
+
+### Blocking resources
+
+HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a `link` HTTP header.
+
+<figure>
+<figcaption>
+
+My website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
+
+</figcaption>
+
+```
+link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
+```
+
+</figure>
+
+Reducing load time is especially useful for users with unreliable connections. For much of the world, connectivity comes in short bursts during which loading time is precious. Chances of a connection failure or packet loss increase with time.
+
+### Inline content
+
+In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a `link` header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the `<head>` using a `<style>` element. Simply inlining stylesheets can pose a security threat, but the `style-src` <abbr title="Content Security Policy">CSP</abbr> directive can mitigate this if you include a hash of your inline stylesheet.
+
+You can do the same with images by using a `data:` URI; my 32-pixel PNG site icon is under 200 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
+
+### Layout shifts
+
+Loading content with unknown dimensions, such as images, can create layout shifts; the <abbr title="Web Incubator Community Group">WICG</abbr>'s <cite>[Layout Instability API](https://wicg.github.io/layout-instability/#sec-intro)</cite> describes the phenomenon in detail. Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including `width` and `height` values, but the `style` attribute could work too. I recommend staying away from the `style` attribute, or at least selectively allowing its use with the `style-src-attr` CSP directive.
+
+### Other server-side tweaks
+
+In-depth server configuration is a bit out of scope, so I'll keep this section brief.
+
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires a [separate module](https://github.com/google/ngx_brotli).
+
+When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
 Non-Browsers: Reading mode
 --------------------------
