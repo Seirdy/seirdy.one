@@ -196,10 +196,12 @@ These engines try to find a website, typically at the domain-name level. They do
 * search.tl: Generalist search for one TLD at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.⁹ There isn't any visible UI for changing the TLD for available results; you need to add/change the "tld" URL paramater. For example, to search .org sites, append "&tld=org" to the URL. It seems to be connected to Amidalla.de. Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 * Thunderstone: A combined website catalog and search engine that focuses on categorization. Its about page claims: "We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of *sites* not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you’re trying to finding things like 'BillyBob's personal beer can page on AOL', try Yahoo or Dogpile." This seems to be the polar opposite of the engines in the "small or non-commercial Web" category.
 * sengine.info: Developed by netEstate GmbH, which specializes in content extraction for inprints and job ads. Also has a German-only version available. Discovered in my access logs.
+* Gnomit: Allows single-keyword queries and returns sites that seem to cover a related topic. I actually kind of enjoy using it; results are old (typically from 2009) and a bit random, but make for a nice way to discover something new. For instance, searching for "IRC" helped me discover new IRC networks I'd never heard of.
 
 => http://www.search.tl  search.tl
 => https://search.thunderstone.com/texis/websearch21/ Thunderstone
 => https://www.sengine.info/ sengine.info
+=> https://www.gnomit.com/ Gnomit
 
 ### Other
 
