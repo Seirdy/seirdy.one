@@ -38,7 +38,7 @@ General indexing search-engines
 
 ### Large indexes, good results
 
-These are large engines that pass all the above tests and more.
+These are large engines that pass all my standard tests and more.
 
 - Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
   - [Startpage](https://www.startpage.com/)
