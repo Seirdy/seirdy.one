@@ -81,7 +81,7 @@ sandbox allow-same-origin
 
 </figure>
 
-`script-src: 'none'` is implied by `default-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) of potentially insecure actions. While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
+`default-src: 'none'` implies `script-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) of potentially insecure actions. While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
 
 ### If you must enable scripts
 
@@ -182,7 +182,7 @@ The aforementioned techniques ensure a clear page layout independently of color 
 
 If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
-When setting colors, especially with a dark background, I recommend checking your page's contrast using <abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr> values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
 Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criterions 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
 
@@ -265,6 +265,14 @@ Requiring the `screen` media type prevents selection of dark variants when print
 
 Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can cause some of my `<picture>` imagesets to have up to six image variants. I could fully automate the process using my static site generator (Hugo) if I wanted to. Since I do want to inspect each image and compress to the minimum acceptable quality, I settled for partial automation using shell scripts and [a Hugo shortcode](https://git.sr.ht/~seirdy/seirdy.one/tree/master/layouts/shortcodes/picture.html).
 
+### SVG images
+
+I only recommend using SVG in images, not embeds/objects or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static)'s [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) that appears in the [SVG Tiny Portable<wbr>/Secure (<abbr title="Portable/Secure">PS</abbr>)](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/) spec. SVG PS is a subset of [SVG Tiny 1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
+
+The above advice might seem daunting, but it's usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode.
+
+Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Don't overdo lossy compression with these tools, since lossy compression can sometimes *reduce* the effectiveness of gzip and Brotli compression.
+
 Layout
 ------
 
@@ -331,9 +339,9 @@ Most browser default stylesheets were not optimized for narrow viewports, so nar
 
 The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element). It recommends placing a `<blockquote>` element inside a `<figure>` and citations in a `<figcaption>` to show a semantic relationship between a quotation and its citation.
 
-Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill a narrow viewport!
+Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I only use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements. If you're reading this page in a Web browser with its own stylesheet enabled, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
+I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I only use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
 Tor
 ---
