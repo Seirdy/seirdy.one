@@ -29,7 +29,7 @@ Assuming a re-write that fundamentally changes a program's architecture is not a
 3. Developers reproduce the issue and understand what caused it
 4. Developers patch the software to fix the vulnerability
 
-Source code is typically helpful (sometimes essential) to Step 3. If someone has completed Step 3, they will require source code in order to proceed to Step 4. Source code *isn't necessary for Steps 1 and 2*; these steps rely on understanding how a program misbehaves. For that, we use *reverse engineering* and/or *fuzzing*.
+Source code is typically helpful (sometimes essential) to Step 3. If someone has completed Step 3, they will require source code to proceed to Step 4. Source code *isn't necessary for Steps 1 and 2*; these steps rely upon understanding how a program misbehaves. For that, we use *reverse engineering* and/or *fuzzing*.
 
 ## Reverse engineering
 
@@ -115,7 +115,7 @@ These reverse-engineering techniques--a combination of tracing, packet sniffing,
 
 => https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64 Falcon Sandbox report for ZoomInstaller.exe
 
-It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, reading info on mounted volumes, and more.
+It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
 
 To try this out yourself, use a sandbox designed for dynamic analysis. Cuckoo is a common and easy-to-use solution, while DRAKVUF is more advanced.
 
@@ -246,7 +246,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 ⁷ This command only lists syscall names, but I did eventually follow the example of sandbox-app-launcher by allowing certain syscalls (e.g. ioctl) only when invoked with certain parameters. Also, I used ripgrep because I'm more familiar with PCRE-style capture groups.
 => https://github.com/Whonix/sandbox-app-launcher sandbox-app-launcher
 
-⁸ Decrypting these packets typically involves saving and using key logs, or using endpoints with known pre-master secrets. Didier Stevens wrote a good series on this:
+⁸ Decrypting these packets typically involves saving and using key logs, or using endpoints with known pre-master secrets. Didier Stevens wrote a good series about this:
 => https://blog.didierstevens.com/2020/12/14/decrypting-tls-streams-with-wireshark-part-1/ Decrypting TLS Streams With Wireshark: Part 1
 
 ⁹ I invite any modders who miss these debug symbols to check out the FLOSS Minetest, perhaps with the MineClone2 game.
@@ -258,7 +258,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 
 ¹¹ As an aside: your security isn't necessarily improved by "disabling" it, since it still runs during the initial boot sequence and does provide some hardening measures of its own (e.g., a TPM).
 
-¹² In 2017, Calibre's author actually planned on sticking to Python 2 after its EOL date and maintaining Python 2 himself:
+¹² In 2017, Calibre's author wanted to stay with Python 2 after its EOL date, and maintain Python 2 himself:
 =>https://bugs.launchpad.net/calibre/+bug/1714107 Calibre bug #1714107: "Python 2 is retiring"
 Users and package maintainers were quite unhappy with this, as Python 2 would no longer be receiving security fixes after 2020. While official releases of Calibre use a bundled Python interpreter, distro packages typically use the system Python package; Calibre's popularity and insistence on using Python 2 made it a roadblock to getting rid of the Python 2 package in most distros. What eventually happened was that community members (especially Eli Schwartz and Flaviu Tamas) submitted patches to migrate Calibre away from Python 2. Calibre migrated to Python 3 by version 5.0:
 =>https://calibre-ebook.com/new-in/fourteen

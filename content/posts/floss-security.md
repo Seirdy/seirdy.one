@@ -21,7 +21,7 @@ One of the biggest parts of the Free and Open Source Software definitions is the
 - Source code describes what a program is designed to do; it is unnecessary and insufficient to determine if what it actually does aligns with its intended design.
 - Vulnerability discovery doesn't require source code.
 
-I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective (it certainly makes audits easier), and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely on source code analysis.
+I'd like to expand on these issues, focusing primarily on compiled binaries. Bear in mind that I do not think that source availability is _useless_ from a security perspective (it certainly makes audits easier), and I _do_ think that source availability is required for user freedom. I'm arguing only that **source unavailability doesn't imply insecurity**, and **source availability doesn't imply security**. It's possible (and often preferable) to perform security analysis on binaries, without necessarily having source code. In fact, vulnerability discovery doesn't typically rely upon source code analysis.
 
 I'll update this post occasionally as I learn more on the subject. If you like it, check back in a month or two to see if it has something new.
 
@@ -39,7 +39,7 @@ Assuming a re-write that fundamentally changes a program's architecture is not a
 3. Developers reproduce the issue and understand what caused it
 4. Developers patch the software to fix the vulnerability
 
-Source code is typically helpful (sometimes essential) to Step 3. If someone has completed Step 3, they will require source code in order to proceed to Step 4. Source code _isn't necessary for Steps 1 and 2_; these steps rely on understanding how a program misbehaves. For that, we use _reverse engineering_ and/or _fuzzing_.
+Source code is typically helpful (sometimes essential) to Step 3. If someone has completed Step 3, they will require source code to proceed to Step 4. Source code _isn't necessary for Steps 1 and 2_; these steps rely upon understanding how a program misbehaves. For that, we use _reverse engineering_ and/or _fuzzing_.
 
 Reverse engineering
 -------------------
@@ -103,7 +103,7 @@ Decompilers are seldom used alone in this context. Instead, they're typically a 
 
 ### Example: malware analysis
 
-These reverse-engineering techniques--a combination of tracing, packet sniffing, binary analysis, and memory dumps--make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, reading info on mounted volumes, and more.
+These reverse-engineering techniques--a combination of tracing, packet sniffing, binary analysis, and memory dumps--make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
 
 To try this out yourself, use a sandbox designed for dynamic analysis. [Cuckoo](https://cuckoosandbox.org/) is a common and easy-to-use solution, while [DRAKVUF](https://drakvuf.com/) is more advanced.
 
@@ -223,7 +223,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 
 [^11]: As an aside: your security isn't necessarily improved by "disabling" it, since it still runs during the initial boot sequence and does provide some hardening measures of its own (e.g., a <abbr title="Trusted Platform Module">TPM</abbr>).
 
-[^12]: In 2017, Calibre's author actually planned on sticking to Python 2 after its EOL date and [maintaining Python 2 himself](https://bugs.launchpad.net/calibre/+bug/1714107). Users and package maintainers were quite unhappy with this, as Python 2 would no longer be receiving security fixes after 2020. While official releases of Calibre use a bundled Python interpreter, distro packages typically use the system Python package; Calibre's popularity and insistence on using Python 2 made it a roadblock to getting rid of the Python 2 package in most distros. What eventually happened was that community members (especially {{<indieweb-person first-name="Eli" last-name="Schwartz" url="https://github.com/eli-schwartz">}} and {{<indieweb-person  first-name="Flaviu" last-name="Tamas" url="https://flaviutamas.com/">}}) submitted patches to migrate Calibre away from Python 2. Calibre migrated to Python 3 by [version 5.0](https://calibre-ebook.com/new-in/fourteen).
+[^12]: In 2017, Calibre's author actually wanted to stay with Python 2 after its EOL date, and [maintain Python 2 himself](https://bugs.launchpad.net/calibre/+bug/1714107). Users and package maintainers were quite unhappy with this, as Python 2 would no longer be receiving security fixes after 2020. While official releases of Calibre use a bundled Python interpreter, distro packages typically use the system Python package; Calibre's popularity and insistence on using Python 2 made it a roadblock to getting rid of the Python 2 package in most distros. What eventually happened was that community members (especially {{<indieweb-person first-name="Eli" last-name="Schwartz" url="https://github.com/eli-schwartz">}} and {{<indieweb-person  first-name="Flaviu" last-name="Tamas" url="https://flaviutamas.com/">}}) submitted patches to migrate Calibre away from Python 2. Calibre migrated to Python 3 by [version 5.0](https://calibre-ebook.com/new-in/fourteen).
 
 [^13]: Linux distributions' CFI+<abbr title="Adress-Space Layout Randomization">ASLR</abbr> implementations rely executables compiled with CFI+PIE support, and ideally with stack-smashing protectors and no-execute bits. These implementations are flawed (see [On the Effectiveness of Full-ASLR on 64-bit Linux](https://web.archive.org/web/20211021222659/http://cybersecurity.upv.es/attacks/offset2lib/offset2lib-paper.pdf) and [Brad Spengler's presentation comparing these with PaX's own implementation](https://grsecurity.net/PaX-presentation.pdf)).
 
