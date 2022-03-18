@@ -305,7 +305,7 @@ I only recommend using SVG in images, not embeds/objects or directly in the body
 
 Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
-The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode.
+The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
 Two tools that can optimize the size of an SVG file are SVGO and the now-discontinued svgcleaner:
 
