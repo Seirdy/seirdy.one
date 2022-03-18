@@ -14,35 +14,35 @@
 	<source
 		srcset="{{ $dark_svg_src.RelPermalink }}"
 		type="image/svg+xml"
-		media="(prefers-color-scheme: dark)">
+		media="screen and (prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $dark_jxl -}}
 	{{ $dark_jxl_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_jxl_src.RelPermalink }}"
 		type="image/jxl"
-		media="(prefers-color-scheme: dark)">
+		media="screen and (prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $dark_avif -}}
 	{{ $dark_avif_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_avif_src.RelPermalink }}"
 		type="image/avif"
-		media="(prefers-color-scheme: dark)">
+		media="screen and (prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $dark_webp -}}
 	{{ $dark_webp_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_webp_src.RelPermalink }}"
 		type="image/webp"
-		media="(prefers-color-scheme: dark)">
+		media="screen and (prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $dark_png -}}
 	{{ $dark_png_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_png_src.RelPermalink }}"
 		type="image/png"
-		media="(prefers-color-scheme: dark)">
+		media="screen and (prefers-color-scheme: dark)">
 	{{ end -}}
 	{{ with $light_svg -}}
 	{{ $light_svg_src := . | resources.Fingerprint "md5" -}}
