@@ -515,6 +515,6 @@ If you've got some time on your hands, I _highly_ recommend reading the <cite>[W
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to `about:config` and toggle these options:<pre>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs</br>javascript.options.wasm</pre>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+[^4]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to `about:config` and toggle these options:<pre>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</pre>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 
