@@ -40,7 +40,7 @@ General indexing search-engines
 
 These are large engines that pass all my standard tests and more.
 
-- Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
+- Google: the biggest index. Allows submitting pages and sitemaps for crawling, and [even supports WebSub](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap) to automate the process. Powers a few other engines:
   - [Startpage](https://www.startpage.com/)
   - [GMX Search](https://search.gmx.com/web)
   - (discontinued) Runnaroo

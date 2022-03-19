@@ -24,7 +24,7 @@ See the "Methodology" section at the bottom to learn how I evaluated each one.
 
 These are large engines that pass all my standard tests and more.
 
-1. Google: the biggest index. Allows submitting pages and sitemaps for crawling, but requires login. Powers a few other engines:
+1. Google: the biggest index. Allows submitting pages and sitemaps for crawling, and even supports WebSub to automate the process. Powers a few other engines:
 
 * Startpage
 * GMX search
