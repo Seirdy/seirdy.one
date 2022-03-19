@@ -345,6 +345,14 @@ I find new engines by:
 * Compiling a list of regular expressions for user-agent strings I'm familiar with. Before I delete my server access logs, I extract user-agents that don't match that list along with the pages they request.
 * Checking the Searx and Searxng projects for new integrations.
 
+### Criteria for inclusion
+
+Engines in this list should have their own indexes built primarily by web spiders. They should not be limited to a set of hand-picked domains.
+
+I'm willing to make one exception: engines in the "non-generalist" section may use indexes primarily made of user-submitted sites, rather than focusing primarily on sites discovered organically through crawling. I'm not willing to budge on the "no hand-picked domains" rule.
+
+I only consider search engines that focus on link results for webpages. Image search engines are out of scope, though I *might* consider some other engines for non-generalist search (e.g., Semantic Scholar finds PDFs rather than webpages).
+
 ### Evaluation
 
 I focused almost entirely on "organic results" (the classic link results), and didn't focus too much on (often glaring) privacy issues, "enhanced" or "instant" results (e.g. Wikipedia sidebars, related searches, Stack Exchange answers), or other elements.
@@ -368,6 +376,20 @@ Professional critics often work anonymously because personalization can damage t
 I didn't try to avoid personalization when testing engines that require account creation. Entries in the "hit-and-miss" and "unusable" sections got less attention: for instance, I didn't spend a lot of effort tracking results over time to see how new entries got added to them.
 
 I avoided "natural language" queries like questions, focusing instead on keyword searches and search operators. I also mostly ignored infoboxes (also known as "instant answers").
+
+## Findings
+
+What I learned by building this list has profoundly changed how I surf.
+
+Using one engine for everything ignores the fact that different engines have different strengths. For example: while Google is focused on being an "answer engine", other engines are better than Google at discovering new websites related to a broad topic. Fortunately, browsers like Chromium and Firefox make it easy to add many search engine shortcuts for easy switching.
+
+When talking to search engine founders, I found that the biggest obstacle to growing an index is getting blocked by sites. Cloudflare is one of the worst offenders. Too many sites block perfectly well-behaved crawlers, only allowing major players like Googlebot, BingBot, and TwitterBot; this cements the current duopoly over English search and is harmful to the health of the Web as a whole.
+
+Too many people optimize sites specifically for Google without considering the long-term consequences of their actions. One of many examples is how Google's JavaScript support rendered the practice of testing a website without JavaScript or images "obsolete": almost no non-GBY engines on this list are JavaScript-aware.
+
+When building webpages, authors need to consider the barriers to entry for a new search engine. The best engines we can build today shouldn't replace Google. They should try to be different. We want to see the Web that Google won't show us, and search engine diversity is an important step in that direction.
+
+Try a "bad" engine from lower in the list. It might show you utter crap. But every garbage heap has an undiscovered treasure. I'm sure that some hidden gems you'll find will be worth your while. Let's add some serendipity to the SEO-filled Web.
 
 ## Acknowledgements
 
