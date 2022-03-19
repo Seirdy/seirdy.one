@@ -45,7 +45,7 @@ These are large engines that pass all my standard tests and more.
   - [GMX Search](https://search.gmx.com/web)
   - (discontinued) Runnaroo
   - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
-- Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
+- Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
   - Yahoo (and its sibling engine, [OneSearch](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
   - DuckDuckGo[^2]
   - AOL
@@ -69,7 +69,7 @@ These are large engines that pass all my standard tests and more.
   - Ask.moe[^6]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I mostly stopped adding Bing-based search engines. There are just too many.
-- Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
+- Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
   - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuckGo's link results instead of Bing.
 - [Mojeek](https://www.mojeek.com/): Seems privacy-oriented with a large index containing billions of pages. Quality isn't at Google/Bing/Yandex's level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I'd live. Partially powers [eTools.ch](https://www.etools.ch/). At this moment, _I think that Mojeek is the best alternative to GBY_ for general search.

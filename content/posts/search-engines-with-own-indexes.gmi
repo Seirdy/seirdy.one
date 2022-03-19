@@ -31,7 +31,7 @@ These are large engines that pass all my standard tests and more.
 * (discontinued) Runnaroo
 * SAPO (Portuguese interface, can work with English results)
 
-2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling, but requires login. Its index powers many other engines:
+2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using the IndexNow API. Its index powers many other engines:
 
 * Yahoo (and its sibling engine, OneSearch)
 * DuckDuckGo³
@@ -57,7 +57,7 @@ These are large engines that pass all my standard tests and more.
 * Partially powers MetaGer by default; this can be turned off
 * At this point, I mostly stopped adding Bing-based search engines. There are just too many.
 
-3. Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Allows submitting pages and sitemaps for crawling, but requires login. Powers:
+3. Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
 * Epic Search (went paid-only by June 2021)
 * Occasionally powers DuckDuckGo’s link results instead of Bing.
