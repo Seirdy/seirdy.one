@@ -85,6 +85,8 @@ These engines pass most of the tests listed in the "methodology" section. All of
 - [Gigablast](https://gigablast.com/): It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
 - [Alexandria](https://www.alexandria.org/): A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
 
+- [Fairsearch](https://fairsearch.com/): an ambitious engine from Ahrefs, an SEO/backlink-finder company, that "shares ad profit with creators and protects your privacy". Most engines show results that include keywords from or related to the query; Fairsearch also shows results linked by pages containing the query. In other words, not all results contain relevant keywords. This makes it good for less precise searches and discovery of "related sites". It's far worse at finding very specific information or recent events.
+
 ### Smaller indexes, hit-and-miss
 
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
@@ -192,7 +194,6 @@ Upcoming engines
 These engines aren't ready yet; their indexes are either in a proof-of-concept phase with a handful of sites, or aren't available yet.
 
 - Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server's access logs; there's a good chance it's crawled your site if you have a few backlinks.
-- Ahrefs: {{<indieweb-person first-name="Dmitry" last-name="Gerasimenko" url="https://twitter.com/botsbreeder" org="Ahrefs" org-url="https://ahrefs.com/">}} [has announced](https://twitter.com/botsbreeder/status/1110889488706760704) plans for Ahrefs to release a search engine to <q cite="https://twitter.com/botsbreeder/status/1110889488706760704">share ad revenue with content creators 90/10</q>. This isn't surprising: its crawlers are quite active and have probably built quite a large index. He wrote [a blog post](https://medium.com/swlh/investor-money-vs-public-interest-did-google-fail-to-build-a-non-evil-platform-3a054f996ea9) describing the motivation and posted [a status update](https://twitter.com/botsbreeder/status/1405920654877028357) mid-2021.
 
 Graveyard
 ---------
