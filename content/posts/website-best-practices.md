@@ -160,11 +160,18 @@ I have two responses:
 About custom colors
 -------------------
 
-Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Here's an example:
+Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Don't strain your eyes trying to read this example:
 
-<a href="https://seirdy.one/misc/website_colors_large.png">
-{{< picture name="website_colors" alt="This page with a grey background behind black/grey headers and white-on-white code snippets" >}}
+<figure>
+<a href="http://bettermotherfuckingwebsite.com/">
+{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker grey background. Details in the caption" >}}
 </a>
+<figcaption>
+
+This is an unreadable screenshot of a website [promoting browser style overrides](http://bettermotherfuckingwebsite.com/) (specifically, the "A little less contrast" section). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
+
+</figcaption>
+</figure>
 
 A second opinion: {{% indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/" %}} describes this in more detail in <cite>[AWebColours&shy;Problem](https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem)</cite>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
 
@@ -246,7 +253,7 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 
 <figure>
 <figcaption>
-A minimal example of what this could look like:
+A minimal example a `picture` with a dark variant:
 </figcaption>
 
 ```
@@ -271,7 +278,7 @@ I only recommend using SVG in images, not embeds/objects or directly in the body
 
 The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
-Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Don't overdo lossy compression with these tools, since lossy compression can sometimes *reduce* the effectiveness of gzip and Brotli compression.
+Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Don't overdo lossy compression with these tools, since lossy compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression.
 
 Layout
 ------
@@ -343,7 +350,7 @@ The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.
 
 Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I only use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
+I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I typically use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements, and my image-based figures tend to have longer captions. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
 Tor
 ---

@@ -165,11 +165,15 @@ I have two responses:
 
 ## About custom colors
 
-Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Here's what this page would look like if it messed with the colors carelessly:
+Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Don't strain your eyes trying to read this example:
 
-=> gemini://seirdy.one/misc/website_colors.png Screenshot of this page with some unreadable text
+=> gemini://seirdy.one/misc/website_colors.png Screenshot of a website with gray text on a darker grey background. Details below.
 
-It's got a grey background, a header with unreadable black/grey text, and unreadable white-on-white code snippets
+This is an unreadable screenshot of a website promoting browser style overrides:
+
+=> http://bettermotherfuckingwebsite.com/ Better Motherfucking Website (see the "A little less contrast" section)
+
+I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
 
 Chris Siebenmann describes this in more detail:
 
@@ -279,6 +283,8 @@ If you really want to go overboard with PNG optimization, you can try a tool lik
 
 A "<picture>" element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants too.
 
+This is a minimal example a `picture` with a dark variant:
+
 ```
 <source
   srcset=/p/dark.png
@@ -387,7 +393,7 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains <ol> or <ul> elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements. I don't find the margins useful because I only use them to annotate non-centered phrasing content, such as <blockquote> and <pre> elements. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
+I chose to remove the margins in <figure> elements. I don't find the margins useful because I typically use them to annotate non-centered phrasing content, such as <blockquote> and <pre> elements, and my image-based figures tend to have longer captions. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
 
 ## Tor
 
