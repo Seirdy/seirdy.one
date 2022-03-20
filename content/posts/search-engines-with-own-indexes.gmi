@@ -53,7 +53,7 @@ These are large engines that pass all my standard tests and more.
 * Givero
 * Swisscows
 * Fireball
-* Ask.moe⁷
+* You.com
 * Partially powers MetaGer by default; this can be turned off
 * At this point, I mostly stopped adding Bing-based search engines. There are just too many.
 
@@ -427,10 +427,6 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 ⁵ Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
 
 ⁶ Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase “Yippy Index”, but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
-
-⁷ Ask.moe was working on a FLOSS indexer; its search page stated an intention to switch to it from Bing at one point. This statement has since been removed.
-
-=> https://git.sr.ht/~danskeren/spider.moe  FLOSS indexer
 
 ⁸ This is based on a statement Right Dao made in on Reddit:
 
