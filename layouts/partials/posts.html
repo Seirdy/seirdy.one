@@ -1,9 +1,9 @@
 <section class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
 {{ if eq .RelPermalink "/posts.html" -}}
-	<h1 class="p-name" itemprop="name headline">Posts</h1>
+	<h2 class="p-name" itemprop="name headline">Posts</h1>
 	{{ else -}}
 	<h2 class="p-name" itemprop="name">Posts</h2>
-	{{ end -}}
+{{ end -}}
 	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite></em></p>
 	<ul class="unstyled-list">
 		{{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
