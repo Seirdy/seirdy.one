@@ -283,16 +283,14 @@ If you really want to go overboard with PNG optimization, you can try a tool lik
 
 A "<picture>" element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants too.
 
-This is a minimal example a `picture` with a dark variant:
+This is a minimal example of a <picture> with a dark variant:
 
 ```
-<source
+<source type=image/png
   srcset=/p/dark.png
-	type=image/png
-	media="screen and (prefers-color-scheme: dark)">
-<source
-  srcset=/p/light.png
-	type=image/png>
+  media="screen and (prefers-color-scheme: dark)">
+<source type=image/png
+  srcset=/p/light.png>
 ```
 
 Requiring the "screen" media type prevents selection of dark variants when printing. Printer paper is almost always white, so dark images could waste ink. Ink waste is a sensitive issue among many students: school printers sometimes charge students who exceed a given ink quota. Ask me how I know!

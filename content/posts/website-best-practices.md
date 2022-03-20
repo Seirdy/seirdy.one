@@ -253,17 +253,15 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 
 <figure>
 <figcaption>
-A minimal example a <code>picture</code> with a dark variant:
+A minimal example of a <code>picture</code> with a dark variant:
 </figcaption>
 
 ```
-<source
+<source type=image/png
   srcset=/p/dark.png
-	type=image/png
-	media="screen and (prefers-color-scheme: dark)">
-<source
-  srcset=/p/light.png
-	type=image/png>
+  media="screen and (prefers-color-scheme: dark)">
+<source type=image/png
+  srcset=/p/light.png>
 ```
 
 </figure>
