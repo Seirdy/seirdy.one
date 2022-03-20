@@ -253,7 +253,7 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 
 <figure>
 <figcaption>
-A minimal example a `picture` with a dark variant:
+A minimal example a <code>picture</code> with a dark variant:
 </figcaption>
 
 ```

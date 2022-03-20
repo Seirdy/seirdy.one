@@ -126,7 +126,7 @@ Perhaps the biggest benefit to abandoning the "move fast and break things" minds
 Acknowledge&shy;ments
 ---------------------
 
-{{<indieweb-person first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section on XMPP.
+{{<indieweb-person first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section about XMPP.
 
 Thanks to {{<indieweb-person first-name="Barna" last-name="Zsombor" url="https://bzsombor.web.elte.hu/">}} and carbolymer for giving good feedback over IRC.
 
