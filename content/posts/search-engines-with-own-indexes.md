@@ -108,7 +108,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 Results from these search engines don't seem at all useful.
 
-- [Bloopish](http://aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
+- [Bloopish](http://aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index. (update: the site seems down. I'll move it to the "graveyard" section if it doesn't come back up).
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 - Scopia: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 - [Artado Search](https://www.artadosearch.com/): Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
