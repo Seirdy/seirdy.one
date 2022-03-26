@@ -4,44 +4,19 @@ This is a "living document" that I add to as I receive feedback.
 
 => https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.gmi See the changelog
 
-I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article that follows it should have *some* useful information for any web content author or front-end web developer.
+I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have *some* useful information for any web content author or front-end web developer.
 
-* Final page weight under 50kb without images, and under 200kb with images. Page weight should usually be much smaller; these are upper-bounds for exceptional cases.
-* Supports machine translation with altered text directions
-* Works in unusual browser engines such as Lynx, w3m, links (both graphics and text mode), NetSurf, and Dillo
-* Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
-* No scripts or interactivity, preferably enforced at the Content-Security-Policy (CSP) level
-* No cookies
-* No animations
-* No fonts--local or remote--besides "sans-serif" and "monospace".
-* No requests after the page finishes loading
-* No 3rd-party resources (preferably enforced at the CSP level)
-* No lazy loading
-* No custom colors OR explicitly set both the foreground and background colors for light *and* dark color schemes, knowing that these can be overridden.
-* A maximum line length for readability
-* Server configured to support compression (gzip, optionally Brotli as well). It's a free speed boost.
-* A good score on Mozilla's HTTP Observatory. A bare minimum would be 50, but it shouldn't be too hard to hit 100.
-* Optimized images.
-* All images labeled with alt-text. The page should make sense without images.
-* Probably HTTP/2. Maybe even HTTP/3. Run some tests to see if this is worth it if you're so inclined.
-* Works well with Tor and the Tor Browser's safety settings.
-* Preserve link underlines.
+My primary focus is supporting *underrepresented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done most of the work already.
 
-=> https://observatory.mozilla.org/ HTTP Observatory
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow 100% of my advice, because doing so would make the Web quite a boring place!
 
-I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (or almost none) of the above list applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow 100% of my advice, because doing so would make the Web quite a boring place!
-
-Earlier revisions of this post generated some responses I thought I should address below. Over time, I continued to expand the below section until it became a reference of sorts. Special thanks to the IRC and Lobsters users who gave good feedback!
-
-=> https://lobste.rs/s/akcw1m Lobsters thread
-
-I'll also cite the document "Techniques for WCAG 2.2" a number of times:
+I'll cite the document "Techniques for WCAG 2.2" a number of times:
 
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
-Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
-## Security
+## Security and privacy
 
 One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
@@ -102,13 +77,19 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 => https://web.dev/trusted-types/ Trusted types
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types CSP trusted types on MDN
 
+### Third-party content
+
+Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-paraty content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user. Avoid third-party content, if at all possible.
+
 ## About fonts
 
-If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits.
+I recommend setting the default font to "sans-serif".
+
+If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits. Accommodate users' default zoom levels by keeping your font size the same as most similar websites.
 
 To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! That being said, textual websites in particular don't benefit much from branding. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that should be the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
 
-A personal example: I set my preferred browser font to "sans-serif", and map "sans-serif" to my preferred font in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
+A personal example: I set my preferred browser font to "sans-serif", and map it to my preferred font in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
 
 ### But most users don't change their fonts...
 
@@ -130,7 +111,7 @@ Other websites can still fingerprint via font enumeration using JavaScript. They
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 
-## About lazy loading
+## Against lazy loading
 
 Lazy loading may or may not work. Some browsers, including Firefox and the Tor Browser, disable lazy-loading when the user turns off JavaScript. Turning it off makes sense because lazy-loading, like JavaScript, is a fingerprinting vector. Specifically, it identifies idiosyncratic scrolling patterns:
 
@@ -152,7 +133,9 @@ A similar attribute that I *do* recommend is the "decoding" attribute. I typical
 
 => https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding <img> decoding on MDN
 
-### Would pre-loading/pre-fetching solve the issues with lazy-loading?
+Pages should finish making all network requests while loading, save for a form submission.
+
+### Would pre-loading or pre-fetching solve the issues with lazy-loading?
 
 Pre-loading essential resources is fine, but speculatively pre-loading content that the user may or may not request isn’t.
 
@@ -305,7 +288,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 ### SVG images
 
-I only recommend using SVG in images, not embeds/objects or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG Tiny PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
+I only recommend using SVG in images; not embeds, objects, or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG Tiny PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
 
 => https://www.w3.org/TR/SVG/conform.html#secure-static-mode SVG conformance, section 2.2.6: Secure static mode
 => https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/ SVG Tiny PS
@@ -444,7 +427,7 @@ I address the issue by not using any SVG images on my hidden service:
 
 ## Optimal loading
 
-Lightweight content isn't the only factor for optimizing load times. There are ways to optimize loading without a CDN.
+Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situation. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
 
 ### Blocking content
 
@@ -460,7 +443,7 @@ Reducing load time is especially useful for users with unreliable connections. F
 
 ### Inline content
 
-In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet.
+In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
 You can do the same with images by using a "data:" URI; my 32-pixel PNG site icon is under 200 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
@@ -488,7 +471,7 @@ Consider caching static assets indefinitely with a year-long duration in the "ca
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
-Reading modes leverage article extractors such as Readability (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users.
+Reading modes leverage article extractors such as Readability.js (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users.
 
 => https://github.com/mozilla/readability Readability.js
 => https://chromium.googlesource.com/chromium/dom-distiller/ DOM Distiller
@@ -556,6 +539,24 @@ Websites following this page's layout advice shouldn't need much adjustment. Ahm
 
 => https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
 
+## In defense of link underlines
+
+Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
+
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
+
+I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
+
+=> gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
+
+Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
+
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+
+=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
+
+Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+
 ## Testing
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand POSH.
@@ -586,23 +587,13 @@ I'm still on step 10, trying to find new ways to break this page. If you come up
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 
-## In defense of link underlines
+## Future updates
 
-Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
+This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
-
-I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
-
-=> gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
-
-Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
-
-> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
-
-=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
-
-Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+* How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
+* A maximum line length for readability
+* All images labeled with alt-text. The page should make sense without images.
 
 ## Other places to check out
 
