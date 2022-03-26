@@ -99,7 +99,7 @@ That being said, many users _do_ actually override stylesheets. We shouldn't _re
 
 ### But wouldn't that allow a website to fingerprint with fonts?
 
-I don't know much about fingerprinting, except that you can't do font enumeration without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font enumeration.
+I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font enumeration.
 
 Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's [protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
 
@@ -129,8 +129,6 @@ Unfortunately, pages with lazy loading don't finish loading off-screen images in
 
 A similar attribute that I _do_ recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
 
-Pages should finish making all network requests while loading, save for a form submission.
-
 ### Would pre-loading or pre-fetching solve the issues with lazy-loading?
 
 Pre-loading essential resources is fine, but speculatively pre-loading content that the user may or may not request isn't.
@@ -145,6 +143,14 @@ I have two responses:
 
 1. If an image isn't essential, you shouldn't include it inline.
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
+
+### Related issues
+
+Pages should finish making all network requests while loading, save for a form submission. I singled out lazy-loading, but other factors can violate this constraint.
+
+One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. This has obvious limits: don't expect users to happily download a 50 thousand word page.
+
+Another common offender is infinite-scrolling. This isn't an issue without JavaScript. Some issues with infinite-scrolling were summed up quite nicely in [a single panel on xkcd](https://xkcd.com/1309/).
 
 About custom colors
 -------------------
@@ -176,7 +182,7 @@ The aforementioned techniques ensure a clear page layout while respecting user-s
 
 ### Dark themes
 
-If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with photosensitivity (like me!) or migraines, and people in dark environments.
 
 When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
@@ -184,7 +190,9 @@ Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this. I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this. I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos, but won't ruin contrast on cheap displays.
+
+"Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check [prefers-contrast on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) for more information.
 
@@ -221,9 +229,10 @@ This is a sample command to compress a PNG image using ImageMagick, `pngquant`, 
 </figcaption>
 
 <pre>
-<code>convert -resize 75% <var translate="yes">ORIGINAL_FILE</var> -colorspace gray -format png - \
-	| pngquant -s 1 12 - \
-	| oxipng -o max -Z --fix - --out <var translate="yes">OUTPUT_FILE</var>
+<code>convert <var translate="yes">ORIGINAL_FILE</var> &bsol;
+  -resize 75% -colorspace gray -format png - &bsol;
+  | pngquant -s 1 12 - &bsol;
+  | oxipng -o max -Z --fix - --out <var translate="yes">OUTPUT_FILE</var>
 </code></pre>
 
 </figure>
@@ -406,13 +415,17 @@ Loading content with unknown dimensions, such as images, can create layout shift
 
 ### Other server-side tweaks
 
-In-depth server configuration is a bit out of scope, so I'll keep this section brief.
+In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
 
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires a [separate module](https://github.com/google/ngx_brotli).
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires a [separate module](https://github.com/google/ngx_brotli) for Brotli compression.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
 Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
+
+Using [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) eliminates the need to connect to a certificate authority, saving users a DNS lookup and allowing them to instead re-use a connection.
+
+Consider the trade-offs involved in enabling 0-<abbr title="Round-Trip Time">RTT</abbr> for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in [appendix E.5](https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5) of the spec.
 
 Non-Browsers: Reading mode
 --------------------------
@@ -434,11 +447,13 @@ Again: avoid catering to non-standard implemen&shy;tations' quirks, especially u
 Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
 
 Machine trans&shy;lation
--------------------
+------------------------
 
 Believe it or not, the entire world doesn't speak your website's languages. Browsers like Chromium, Microsoft Edge, and Safari have integrated machine translation to translate entire pages. Users can also leverage online website translators such as Google Translate or Bing. These "webpage translators" are far more complex than their plain-text predecessors.
 
 Almost every word on your site can be re-written. Prepare for headings to change length, paragraphs to grow and shrink, or hyphenation to disappear. Your site's layout should make sense even when the length of each textual element is changed.
+
+Incorrect spelling and poor grammar in an original work can reduce the accuracy of a machine-translated derivative. Be sure to proofread.
 
 ### POSH helps translation engines
 
@@ -459,7 +474,7 @@ Consider the implications of translating between left-to-right (LTR) and right-t
 Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/">}}'s <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
 
 In defense of link under&shy;lines
------------------------------
+----------------------------------
 
 Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html), and hyperlinks are no exception. I disagree.
 
@@ -514,7 +529,9 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 
 * How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
 * A maximum line length for readability
-* All images labeled with alt-text. The page should make sense without images.
+* Best practices for combining alt-text, figure captions, and image transcripts.
+* How users with hand tremors [depend on negative space](https://axesslab.com/hand-tremors/) in areas with a high density of interactive elements, and where/how to provide this space.
+* How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 
 Other places to check out
 -------------------------
@@ -551,6 +568,8 @@ The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size wi
 One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
 If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG)&nbsp;2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
+
+The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. One of my favorite resources for learning about what the WCAG *doesn't* cover is [Axess Lab](https://axesslab.com/articles/).
 
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.
