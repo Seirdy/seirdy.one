@@ -52,7 +52,9 @@ One of the defining differences between textual websites and advanced Web&nbsp;2
 
 ### TLS
 
-All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with [testssl.sh](https://testssl.sh/) and [Webbkoll](https://webbkoll.dataskydd.net/). Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
+All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with <a translate="no" href="https://testssl.sh/">testssl.sh</a> and [Webbkoll](https://webbkoll.dataskydd.net/).
+
+If your OpenSSL (or equivalent) version is outdated or you don't want to download and run a shell script, SSL Labs' [SSL Server Test](https://www.ssllabs.com/ssltest/) should be equivalent to testssl.sh. Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features and is a bit out of date, but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
 
 A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1. Vintage computers can run TLS 1.2 implementations such as BearSSL surprisingly efficiently, leverage a TLS terminator, or they can use a plain unencrypted connection. A broken cipher suite is security theater.
 
@@ -165,7 +167,7 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 
 <figure>
 <a href="http://bettermotherfuckingwebsite.com/">
-{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker grey background. Details in the caption" >}}
+{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker grey background. Details in the caption." >}}
 </a>
 <figcaption>
 
@@ -225,7 +227,7 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
 7. If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
-<figure>
+<figure id="png-pipeline">
 <figcaption>
 
 This is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
@@ -244,7 +246,7 @@ It might seem odd to create a lossless WebP from a lossy PNG, but I've found tha
 
 In general, avoid using inline images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
-If you want to include a profile photo (e.g., if your website is part of the IndieWeb), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
+If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an h-card), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
 If you really want to go overboard with PNG optimization, you can try a tool like [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool).
 
@@ -325,6 +327,14 @@ Neither situation looks great.
 Common items in sidebars include tag clouds, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
 
 Don't boost engagement by providing readers with information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages _after_ they've decided they want to read more.
+
+### Accessible skimming
+
+Keeping an identical source order, DOM order, and visual order should also result in a logical <kbd>Tab</kbd> order. Just to be sure, always test the order of keyboard-driven focus.
+
+Measuring tab-order is nice, but it doesn't go far enough. Users of [switch access](https://en.wikipedia.org/wiki/Switch_access) controls find it slow and frustrating to navigate long lists of focusable items. Screen readers make it difficult to consume poorly-organized content non-linearly. The list goes on: nearly every reader reliant upon assistive technologies struggles to skim through poorly-organized pages.
+
+Related items need to be semantically grouped together. Group navigation links together in `<nav>` elements; sections under headings, `<section>` elements, or other landmarks; lists under `<ol>`, `<ul>`, or `<dl>`; etc. to give assistive technologies the means to skip over multiple items at once.
 
 Narrow viewports
 ----------------
@@ -416,6 +426,8 @@ Compression--especially static compression--dramatically reduces download sizes.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
+Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
+
 Non-Browsers: Reading mode
 --------------------------
 
@@ -448,11 +460,11 @@ To ensure that pages get machine-translated properly, make proper use of semanti
 
 Elements to pay close attention to include `<code>`, `<samp>`, `<var>`, `<kbd>`, `<abbr>`, and `<address>`. The semantic information conveyed by these elements supplies important context to translation algorithms.
 
-Only after <abbr title="Plain-Old, Semantic HTML">POSH</abbr> is insufficient should you attempt to "override" behavior with the `translate` HTML attribute. Setting `translate="no"` or `translate="yes"` should override the behavior of standards-compliant translation engines.
+Only after <abbr title="Plain-Old, Semantic HTML">POSH</abbr> is insufficient should you attempt to "override" behavior with the `translate` HTML attribute. Setting `translate="no"` or `translate="yes"` should override the behavior of standards-compliant translation engines. If you're unsure whether or not to use a `translate` attribute, search the relevant word or phrase on [Keybot](https://www.keybot.com/) to see how human translators approached it.
 
 For example: machine translation will leave `<code>` and `<samp>` blocks as-is. Perhaps you could annotate comments within code with a `translate="yes"` attribute. However, translation engines should leave variables within those comments as-is.
 
-[Google's style guide](https://developers.google.com/style/placeholders) recommends annotating format placeholders in code blocks with the `<var>` element; consider doing so and adding a `translate="yes"` attribute to placeholder values, at your discretion.
+[Google's style guide](https://developers.google.com/style/placeholders) recommends annotating format placeholders in code blocks with the `<var>` element; consider doing so and adding a `translate="yes"` attribute to placeholder values, at your discretion. For an example, check this article's code sample [describing my PNG optimization pipeline](#png-pipeline).
 
 ### Changing text direction
 
@@ -494,7 +506,7 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 One reason is that underlines make it easy to separate multiple consecutive inline links:
 
-{{< picture name="underlines" alt="two lines with two consecutive hyperlinks each, one line with and one without underlines" >}}
+{{< picture name="underlines" alt="two lines with two consecutive hyperlinks each, one line with and one without underlines." >}}
 
 Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
