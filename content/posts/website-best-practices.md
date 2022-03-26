@@ -232,7 +232,7 @@ It might seem odd to create a lossless WebP from a lossy PNG, but I've found tha
 
 In general, avoid using inline images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
-If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an h-card), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
+If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
 If you really want to go overboard with PNG optimization, you can try a tool like [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool).
 
@@ -345,7 +345,7 @@ The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.
 
 Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I typically use them to annotate non-centered phrasing content, such as `<blockquote>` and `<pre>` elements, and my image-based figures tend to have longer captions. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
+I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I typically use them to annotate non-centered non-phrasing content, such as `<blockquote>` and `<pre>` elements, and my image-based figures tend to have longer captions. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
 Tor
 ---

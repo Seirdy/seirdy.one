@@ -391,7 +391,7 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains <ol> or <ul> elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements. I don't find the margins useful because I typically use them to annotate non-centered phrasing content, such as <blockquote> and <pre> elements, and my image-based figures tend to have longer captions. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
+I chose to remove the margins in <figure> elements. I don't find the margins useful because I typically use them to annotate non-centered non-phrasing content, such as <blockquote> and <pre> elements, and my image-based figures tend to have longer captions. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
 
 ## Tor
 
@@ -427,7 +427,7 @@ I address the issue by not using any SVG images on my hidden service:
 
 ## Optimal loading
 
-Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situation. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
+Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situations. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
 
 ### Blocking content
 
