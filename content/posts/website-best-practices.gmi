@@ -4,10 +4,11 @@ This is a "living document" that I add to as I receive feedback.
 
 => https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.gmi See the changelog
 
-I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text:
+I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article that follows it should have *some* useful information for any web content author or front-end web developer.
 
 * Final page weight under 50kb without images, and under 200kb with images. Page weight should usually be much smaller; these are upper-bounds for exceptional cases.
-* Works in Lynx, w3m, links (both graphics and text mode), NetSurf, and Dillo
+* Supports machine translation with altered text directions
+* Works in unusual browser engines such as Lynx, w3m, links (both graphics and text mode), NetSurf, and Dillo
 * Works with popular article-extractors (e.g. Readability) and HTML-to-Markdown converters. This is a good way to verify that your site uses simple HTML and works with most non-browser article readers (e.g. ebook converters, PDF exports).
 * No scripts or interactivity, preferably enforced at the Content-Security-Policy (CSP) level
 * No cookies
@@ -18,8 +19,8 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 * No lazy loading
 * No custom colors OR explicitly set both the foreground and background colors for light and dark color schemes, knowing that these can be overridden.
 * A maximum line length for readability
-* Server configured to support compression (gzip, optionally Brotli and Zstandard as well). It's a free speed boost.
-* Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons. More on this below.
+* Server configured to support compression (gzip, optionally Brotli as well). It's a free speed boost.
+* Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons.
 * A good score on Mozilla's HTTP Observatory. A bare minimum would be 50, but it shouldn't be too hard to hit 100.
 * Optimized images.
 * All images labeled with alt-text. The page should make sense without images.
@@ -29,9 +30,9 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 
 => https://observatory.mozilla.org/ HTTP Observatory
 
-I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (possibly none) of this article applies. My hope is for most readers to consider *some* points I make on this page the next time they build a website. I don't expect--or want--anybody to follow 100% of my advice.
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less (or almost none) of the above list applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow 100% of my advice, because doing so would make the Web quite a boring place!
 
-Earlier revisions of this post generated some responses I thought I should address below. Special thanks to the IRC and Lobsters users who gave good feedback!
+Earlier revisions of this post generated some responses I thought I should address below. Over time, I continued to expand the below section until it became a reference of sorts. Special thanks to the IRC and Lobsters users who gave good feedback!
 
 => https://lobste.rs/s/akcw1m Lobsters thread
 
@@ -43,7 +44,7 @@ Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document 
 
 ## Security
 
-One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take some additional measures to ensure limited use of "modern" risky features.
+One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
 
@@ -62,7 +63,7 @@ A false sense of security is far worse than transparent insecurity. Don't offer 
 
 Consider taking hardening measures to maximize the security benefits made possible by the simplicity of textual websites, starting with script removal.
 
-JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the content security policy (CSP) level.
+JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the Content Security Policy (CSP) level.
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP CSP on MDN
 
@@ -75,7 +76,7 @@ style-src 'sha256-g8fT13xy415WmQo4vYgG4v4xJiNmrhPYQ9PGDGfXX5Y=';
 style-src-attr 'none';
 frame-ancestors 'none'; base-uri 'none'; form-action 'none';
 manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
-upgrade-insecure-requests; navigate-to 'none';
+upgrade-insecure-requests;
 sandbox allow-same-origin
 ```
 
@@ -198,7 +199,7 @@ The Web version of this page is an example application of Technique C25 and the 
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included horizontal rules (<hr>) further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
-The aforementioned techniques ensure a clear page layout independently of color scheme.
+The aforementioned techniques ensure a clear page layout while respecting user-specified color schemes.
 
 ### Dark themes
 
@@ -218,11 +219,11 @@ When setting colors, especially with a dark background, I recommend checking you
 
 Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criterions  1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
 
 CSS filters such as "invert" are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, esp. for readers who have astigmatism. There has been some experimental and plenty of anecdotal evidence to support this.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. There has been some experimental and plenty of anecdotal evidence to support this.
 
 => https://www.laurenscharff.com/research/AHNCUR.html Hill, Alyson (supervised by Scharff, L.V.) Readability Of Websites With Various Foreground / Background Color Combinations, Font Types And Word Styles, 1997
 => https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/ Never Use White Text on a Black Background: Astygmatism and Conference Slides
@@ -301,7 +302,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 ### SVG images
 
-I only recommend using SVG in images, not embeds/objects or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
+I only recommend using SVG in images, not embeds/objects or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG Tiny PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
 
 => https://www.w3.org/TR/SVG/conform.html#secure-static-mode SVG conformance, section 2.2.6: Secure static mode
 => https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/ SVG Tiny PS
@@ -364,7 +365,7 @@ Don't boost engagement by providing readers with information they didn't ask for
 
 ## Narrow viewports
 
-A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that require excessive scrolling.
+A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
 
 Not every phone has a giant screen: millions of people around the world use Web-enabled feature phones. The Jio Phone 2, for instance, sports a 6 cm (2.4 inch) screen that's 240 pixels wide. Furthermore, some programs sport browser windows in sidebars:
 
@@ -373,13 +374,13 @@ Not every phone has a giant screen: millions of people around the world use Web-
 
 Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions.
 
-Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (DPR=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the "&shy;" entity. Prefer breaking off suffixes ("-ing", "-ed", etc).
+Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (DPR=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the "&shy;" entity.
 
-Most modern browsers support the "hyphens" CSS3 property, but full automatic hyphenation is an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
+Most modern browsers support the "hyphens" CSS3 property, but full automatic hyphenation is usually an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
 
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
-Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element scrollable in two dimensions is far better than doing so for the whole page.
+Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions.
 
 ### Indented elements
 
@@ -411,11 +412,15 @@ Additionally, hopping between nodes in Tor circuits incurs latency, worsening th
 
 If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
 
-To go above and beyond, try mirroring your site to an onion service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser. Normally, optimizing specifically for a given user agent's quirks is a bad practice; however, the Tor Browser is a special case because it sometimes pretends to have Firefox's capabilities. Progressive enhancement and graceful degradation won't work.
+### Hidden services
+
+To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
+
+Normally, optimizing specifically for a given user agent's quirks is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
 
 For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children with varying formats and a fallback <img> element using a legacy image format.
 
-The Tor browser will download whichever format Firefox would, rather than whichever  formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
+The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
 
 I address the issue by not using any SVG images on my hidden service:
 
@@ -465,11 +470,15 @@ When serving many resources at once (e.g., if a page has many images), HTTP/2 co
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
-Reading modes leverage article extractors such as Readability (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users. Safari's proprietary fork of Readability has grown quite complex compared to upstream.
+Reading modes leverage article extractors such as Readability (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users.
 
 => https://github.com/mozilla/readability Readability.js
 => https://chromium.googlesource.com/chromium/dom-distiller/ DOM Distiller
 => https://trafilatura.readthedocs.io/en/latest/ Trafilatura
+
+Safari's proprietary fork of Readability has grown quite complex compared to upstream; Edge's Immersive Reader is a mystery to me:
+
+=> https://techcommunity.microsoft.com/t5/discussions/documentation-on-huerestics-used-during-article-distillation-in/m-p/3266436 Forum post: Documentation on huerestics used during article distillation in Immersive Reader
 
 I don't recommend catering to each tool's non-standard quirks. Studying their design reveals that they observe open standards, to varying degrees. Readability, DOM Distiller, and Trafilatura understand plain-old, semantic HTML (POSH).
 
@@ -492,6 +501,36 @@ More information about standard and non-standard behavior of reading modes is in
 => https://www.ctrl.blog/entry/browser-reading-mode-parsers.html Web Reading Mode: The non-standard rendering mode
 
 Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
+
+## Machine translation
+
+Believe it or not, the entire world doesn't speak your website's languages. Browsers like Chromium, Microsoft Edge, and Safari have integrated machine translation to translate entire pages. Users can also leverage online website translators such as Google Translate or Bing. These "webpage translators" are far more complex than their plain-text predecessors.
+
+Almost every word on your site can be re-written. Prepare for headings to change length, paragraphs to grow and shrink, or hyphenation to disappear. Your site's layout should make sense even when the length of each textual element is changed.
+
+### POSH helps translation engines
+
+To ensure that pages get machine-translated properly, make proper use of semantic HTML. I highly encourage giving this article a read:
+
+=> https://www.ctrl.blog/entry/html-semantic-improve-machine-translation.html Semantic markup improves the quality of machine-translated texts (ctrl.blog)
+
+Elements to pay close attention to include "<code>", "<samp>", "<var>", "<kbd>", "<abbr>", and "<address>". The semantic information conveyed by these elements supplies important context to translation algorithms.
+
+Only after POSH is insufficient should you attempt to "override" behavior with the "translate" HTML attribute. Setting `translate="no"` or `translate="yes"` should override the behavior of standards-compliant translation engines.
+
+For example: machine translation will leave "<code>" and "<samp>" blocks as-is. Perhaps you could annotate comments within code with a `translate="yes"` attribute. However, translation engines should leave variables within those comments as-is.
+
+Google's style guide recommends annotating format placeholders in code blocks with the "<var>" element; consider doing so and adding a `translate="yes"` attribute to placeholder values, at your discretion.
+
+=> https://developers.google.com/style/placeholders Format placeholders (Google Style Guide)
+
+### Changing text direction
+
+Consider the implications of translating between left-to-right (LTR) and right-to-left (RTL) languages. Do a search through your stylesheets for keywords like "left" and "right" to ensure that styles don't depend too heavily on text direction. Once you've cleared the low-hanging fruit, try translating the page to a language like Arabic.
+
+Websites following this page's layout advice shouldn't need much adjustment. Ahmed Shadeed's "RTL Styling 101" is a comprehensive guide to what can go wrong and how to fix issues:
+
+=> https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
 
 ## Testing
 
