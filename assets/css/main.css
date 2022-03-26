@@ -1,4 +1,7 @@
-/* CSS that adds the bare minimum for a simple layout */
+/* CSS that adds the bare minimum for a simple layout.
+ * Nothing here exists purely for aesthetics except the unstyled-list;
+ * everything else addresses a specific a11y, compatibility, or critical
+ * usability need. */
 
 /* This site's CSS does 10 major things:
  * 1. sans-serif instead of serif for low-res screens.
@@ -23,44 +26,62 @@
  * default fonts, non-dark-mode colors, etc.
  */
 
-html {
-	font: 100%/1.5 sans-serif;
+html,
+.e-content {
+	/* Mobile screens benefit from greater line-spacing so links are
+	 * further apart. Dyslexic users prefer the spacing too.
+	 * <100dpi screens: sans-serif is better. Why did browsers settle
+	 * on serif being the default??*/
+	font: 110%/1.5 sans-serif;
+
+	/* WCAG recommends a max line width. Not everyone can resize the
+	 * viewport. TODO: see if this should be reduced.
+	 * Aligning to the center with space on both sides prevents accidental
+	 * link activation on mobile devices.*/
 	margin: auto;
-	max-width: 45em;
+	max-width: 48em;
 	padding: 0 3%;
 }
 
-/* narrow screens: no margin for blockquotes and figures */
+.e-content {
+	max-width: 40em;
+}
+
+/* narrow screens: reduce margin for blockquotes a lot, using
+ * a thick left-side border instead. */
 blockquote {
 	border-left: 6px solid #bbb;
 	margin-left: 0;
 	padding-left: 1em;
 }
 
-/* narrow screens: remove figure margin. */
+/* narrow screens: remove unused figure margin. */
 figure {
 	margin: 0;
 }
 
-/* nav links should be easy to tap with fat fingers */
+/* Mobile optimization: nav links are tappable with fat fingers */
+.unstyled-list li,
 nav li {
-	padding-right: 0.5em;
+	margin-bottom: 0.5em;
 }
 
-/* Lists without bullets: navlinks, posts lists, webmentions */
+/* Lists without bullets: navlinks, posts lists, webmentions.
+ * Those three are lists whose items are already easily distinguishable,
+ * rendering bullet points as unnecessary extra visual noise. */
 .unstyled-list {
 	padding-left: 0;
 }
 
 .unstyled-list li {
 	list-style-type: none;
-	margin-bottom: 0.5em;
 }
 
-/* single-line nav on widescreen, multi-line nav on narrow screens */
+/* single-line nav on widescreen */
 @media (min-width: 32em) {
-	nav li {
+	header nav li {
 		display: inline;
+		padding-right: 0.5em;
 	}
 }
 
@@ -98,17 +119,34 @@ pre {
 
 /* Distinguish images from the background in case their color is
  * too similar to the page background color. Also put a border around
- * <pre> so that it looks just like <code> (see below). */
+ * <pre> so that it looks just like <code> (see below). The use of
+ * borders in place of background colors for distinguishing elements
+ * is an officially documented WCAG technique. */
 img,
 pre,
 :not(pre) > code {
 	border: 1px solid #bbb;
 }
 
-/* center images that aren't my indieweb icon */
+/* center images that aren't my indieweb icon; same justification as
+ * for centering the body contents. */
 img:not(.u-photo) {
 	display: block;
 	height: auto;
 	margin: auto;
 	max-width: 100%;
 }
+
+/* Todo:
+ * - Some browsers don't scale SVGs properly; the img container
+ *   dimensions crop the image rather than scale it. Investigate
+ *   if this only applies to Internet Explorer or if it applies to
+ *   other uncommon browsers too. If any non-IE browsers do this and/or
+ *   if the spec allows this behavior, try to correct it here.
+ * - Investigate reduced-contrast for dark mode
+ * - Wait till Webkit fixes its broken-ass default dark stylesheet
+ *   then consider trimming the dark stylesheet I provide.
+ * - Narrow screen optimization for bullet indents.
+ * - Investigate CSS-based hints to screenreaders.
+ * - See if any "-left" properties should switch to "-right" for users
+ *   who machine-translate the page to a RTL language. */

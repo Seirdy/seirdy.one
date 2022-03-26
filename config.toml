@@ -68,7 +68,8 @@ posts = "/:year/:month/:day/:filename"
 unsafe = true
 
 [markup.tableOfContents]
-ordered = true
+ordered = false
+endLevel = 2
 
 # lifted from https://git.sr.ht/~sircmpwn/drewdevault.com
 [mediaTypes]
