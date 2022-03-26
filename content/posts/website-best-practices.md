@@ -27,10 +27,9 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 - No requests after the page finishes loading
 - No 3rd-party resources (preferably enforced at the CSP level)
 - No lazy loading
-- No custom colors OR explicitly set both the foreground and background colors for light and dark color schemes, knowing that these can be overridden.
+- No custom colors OR explicitly set both the foreground and background colors for light *and* dark color schemes, knowing that these can be overridden.
 - A maximum line length for readability
 - Server configured to support compression (gzip, optionally Brotli as well). It's a free speed boost.
-- Supports dark mode via a CSS media feature and/or works with most "dark mode" browser addons.
 - A good score on Mozilla's [HTTP Observatory](https://observatory.mozilla.org/). A bare minimum would be 50, but it shouldn't be too hard to hit 100.
 - Optimized images.
 - All images labeled with alt-text. The page should make sense without images.
@@ -234,11 +233,11 @@ This is a sample command to compress a PNG image using ImageMagick, `pngquant`, 
 
 </figcaption>
 
-```sh
-convert -resize 75% <var translate="yes">ORIGINAL_FILE</var> -colorspace gray -format png - \
+<pre>
+<code>convert -resize 75% <var translate="yes">ORIGINAL_FILE</var> -colorspace gray -format png - \
 	| pngquant -s 1 12 - \
 	| oxipng -o max -Z --fix - --out <var translate="yes">OUTPUT_FILE</var>
-```
+</code></pre>
 
 </figure>
 
