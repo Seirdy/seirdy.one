@@ -382,7 +382,7 @@ I address the issue by not using any SVG images on [my hidden service](http://wg
 Optimal loading
 ---------------
 
-Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situation. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
+Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situations. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
 
 ### Blocking resources
 
