@@ -8,6 +8,7 @@ footnote_heading: Notes
 toc: true
 tags:
     - web
+    - accessibility
     - minimalism
 title: An opinionated list of best practices for textual websites
 ---
@@ -356,6 +357,19 @@ Browser default stylesheets typically give `<figure>` elements extra margins on 
 
 I chose to remove the margins in `<figure>` elements. I don't find the margins useful because I typically use them to annotate non-centered non-phrasing content, such as `<blockquote>` and `<pre>` elements, and my image-based figures tend to have longer captions. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
+### When indentation helps
+
+Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
+
+For now, I've decided to keep the indents on list elements such as `<ol>` and `<ul>`, since I often fill them with links (see this article's [table of contents](#toc) for an example). This indentation provides important negative space. Readers with hand tremors [depend on this space](https://axesslab.com/hand-tremors/) to scroll without accidentally selecting an interactive element.
+
+On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate space between links. Some examples:
+
+- The [webmention list](#webmentions) below this article separates links with timestamps and some paragraph spacing.
+- The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the top of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with descriptions
+
+Once again, deviating from defaults created additional work to remove an accessibility hazard.
+
 Tor
 ---
 
@@ -530,7 +544,6 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
 * A maximum line length for readability
 * Best practices for combining alt-text, figure captions, and image transcripts.
-* How users with hand tremors [depend on negative space](https://axesslab.com/hand-tremors/) in areas with a high density of interactive elements, and where/how to provide this space.
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 
 Other places to check out
