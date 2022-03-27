@@ -332,6 +332,14 @@ Measuring tab-order is nice, but it doesn't go far enough. Users of [switch acce
 
 Related items need to be semantically grouped together. Group navigation links together in `<nav>` elements; sections under headings, `<section>` elements, or other landmarks; lists under `<ol>`, `<ul>`, or `<dl>`; etc. to give assistive technologies the means to skip over multiple items at once.
 
+### Line length
+
+The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as a AAA guideline in [Success Criterion 1.4.8 Visual Presentation](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
+
+Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `38em`, which typically corresponds to just under 90 characters. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, and others).
+
+I also ensured that my site works very well with CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
+
 Narrow viewports
 ----------------
 
@@ -542,7 +550,6 @@ Future updates
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
 * How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
-* A maximum line length for readability
 * Best practices for combining alt-text, figure captions, and image transcripts.
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 
