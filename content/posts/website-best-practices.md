@@ -340,6 +340,29 @@ Some of my links display long link-text; short line lengths can break these link
 
 I also ensured that my site works very well with CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
+When setting max line lengths, use a CSS media query to ensure that printed versions of a page use the full page width. This should save some paper.
+
+<figure>
+<figcaption>
+I opted to wrap all max-width rules in a media query to ensure that they only get called for the `screen` media type:
+</figcaption>
+
+```
+@media screen {
+  html {
+    max-width: 45em;
+    padding: 0 3%;
+  }
+
+  .e-content {
+    margin: auto;
+    max-width: 38em;
+  }
+}
+```
+
+</figure>
+
 Narrow viewports
 ----------------
 
@@ -593,7 +616,7 @@ One resource I found useful (that eventually featured this article!) was the "Yo
 
 If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG)&nbsp;2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
 
-The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. One of my favorite resources for learning about what the WCAG *doesn't* cover is [Axess Lab](https://axesslab.com/articles/).
+The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. One of my favorite resources for learning about what the WCAG _doesn't_ cover is [Axess Lab](https://axesslab.com/articles/).
 
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.

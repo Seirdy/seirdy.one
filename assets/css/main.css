@@ -30,22 +30,27 @@ html {
 	/* Mobile screens benefit from greater line-spacing so links are
 	 * further apart. Dyslexic users prefer the spacing too.
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
-	 * on serif being the default??*/
+	 * on serif being the default?? */
 	font: 100%/1.5 sans-serif;
 
-	/* WCAG recommends a max line width. Not everyone can resize the
-	 * viewport. TODO: see if this should be reduced.
-	 * Aligning to the center with space on both sides prevents accidental
-	 * link activation on mobile devices.*/
+	/* Aligning to the center with space on both sides prevents accidental
+	* link activation on mobile devices. */
 	margin: auto;
-	max-width: 45em;
-	padding: 0 3%;
 }
 
-.e-content {
-	max-width: 38em;
-	padding: 0;
-	margin: auto;
+/* WCAG recommends a max line width. Not everyone can resize the
+ * viewport.
+ * This should not take effect on printouts, to save paper. */
+@media screen {
+	html {
+		max-width: 45em;
+		padding: 0 3%;
+	}
+
+	.e-content {
+		margin: auto;
+		max-width: 38em;
+	}
 }
 
 /* narrow screens: reduce margin for blockquotes a lot, using
@@ -62,8 +67,8 @@ figure {
 }
 
 /* Mobile optimization: nav links are tappable with fat fingers */
-.unstyled-list li,
-nav li {
+nav li,
+.unstyled-list li {
 	margin-bottom: 0.5em;
 }
 

@@ -387,6 +387,22 @@ Some of my links display long link-text; short line lengths can break these link
 
 I also ensured that my site works very well with CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
+When setting max line lengths, use a CSS media query to ensure that printed versions of a page use the full page width. This should save some paper. I opted to wrap all max-width rules in a media query to ensure that they only get called for the "screen" media type:
+
+```
+@media screen {
+  html {
+    max-width: 45em;
+    padding: 0 3%;
+  }
+
+  .e-content {
+    margin: auto;
+    max-width: 38em;
+  }
+}
+```
+
 ## Narrow viewports
 
 A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
