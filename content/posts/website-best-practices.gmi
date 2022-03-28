@@ -156,7 +156,7 @@ I have two responses:
 
 Pages should finish making all network requests while loading, save for a form submission. I singled out lazy-loading, but other factors can violate this constraint.
 
-One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. This has obvious limits: don't expect users to happily download a 50 thousand word page.
+One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. Displaying content all at once also improves searchability. The single-page approach has obvious limits: don't expect users to happily download a 50 thousand word novella.
 
 Another common offender is infinite-scrolling. This isn't an issue without JavaScript. Some issues with infinite-scrolling were summed up quite nicely in a single panel on xkcd:
 
@@ -475,6 +475,8 @@ If your site has any SVG images, the Tor browser will download these just like F
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
 If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
+
+Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible *by default*. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
 
 ### Hidden services
 
