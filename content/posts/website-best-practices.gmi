@@ -49,14 +49,16 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP CSP on MDN
 
-For example, here's the CSP for my website:
+This is the CSP for my main website:
 
 ```
-content-security-policy: default-src 'none';
+default-src 'none';
 img-src 'self' data:;
-style-src 'sha256-g8fT13xy415WmQo4vYgG4v4xJiNmrhPYQ9PGDGfXX5Y=';
+style-src 'sha256-3U3TNinhti/dtVz2/wuS3peJDYYN8Yym+JcakOiXVes=';
 style-src-attr 'none';
-frame-ancestors 'none'; base-uri 'none'; form-action 'none';
+frame-ancestors 'none';
+base-uri 'none';
+form-action 'none';
 manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
 upgrade-insecure-requests;
 sandbox allow-same-origin
@@ -83,11 +85,26 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 
 ### Third-party content
 
-Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-paraty content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user. Avoid third-party content, if at all possible.
+Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-party content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user.
+
+Some web developers deliver resources using third-party CDNs, such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browsers engines now partition their caches to prevent this behavior:
+
+=> https://privacycg.github.io/storage-partitioning/
+
+Avoid third-party content, if at all possible.
+
+If you must use third-party content, ensure that third-party stylesheets and scripts leverage subresource integrity (SRI):
+
+=> https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity SRI on MDN
+=> https://www.w3.org/TR/SRI/ SRI specification
+
+This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
 
 ## About fonts
 
-I recommend setting the default font to "sans-serif".
+I recommend setting the default font to "sans-serif". Avoid "system-ui": it causes issues among readers whose system fonts don't cover your website's charset.
+
+=> https://infinnie.github.io/blog/2017/systemui.html Never, ever use system-ui as the value of font-family
 
 If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits. Accommodate users' default zoom levels by keeping your font size the same as most similar websites.
 
@@ -101,13 +118,15 @@ The "users don't know better and need us to make decisions for them" mindset isn
 
 ### Can't users globally override stylesheets instead?
 
-It's not a good idea to require users to automatically override website stylesheets. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
+It's not a good idea to require users to automatically override website stylesheets to see their preferred fonts. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
 
 That being said, many users *do* actually override stylesheets. We shouldn't *require* them to do so, but we should keep our pages from breaking in case they do. Pages following this article's advice will probably work perfectly well in these cases without any extra effort.
 
-### But wouldn't that allow a website to fingerprint with fonts?
+### Font fingerprinting concerns
 
-I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font enumeration.
+Some people raised fingerprinting concerns when I suggested using the default "sans-serif" font. Websites could see which font this maps to in order to identify users.
+
+I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
 Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
 
@@ -125,7 +144,7 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 
 If you can’t rely on lazy loading, your pages should work well without it. If pages work well without lazy loading, is it worth enabling?
 
-I don’t think so: lazy loading often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of “dead zones” with abysmal download speeds, and my home’s Wi-Fi repeater setup occasionally results in packet loss rates above 60% (!!).
+The scope of this article is textual content supplemented by images. In that context, I don't think lazy loading is worthwhile because it often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup used to result in packet loss rates above 60% (!!).
 
 Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, and/or switch to another task and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open several links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a similar experience when travelling by train:
 
@@ -152,15 +171,21 @@ I have two responses:
 1. If an image isn't essential, you shouldn't include it inline.
 2. Yes, users could disable images. That's *their* choice. If your page uses lazy loading, you've effectively (and probably unintentionally) made that choice for a large number of users.
 
+Nonetheless, expect some readers to have images disabled (blind readers, metered connections). Follow good practices for alt-text. *Concisely* summarize the image content the best you can, in the context of the surrounding content. Don't include information that isn't present in the image; save supplementary information for a <figcaption> element. If the image is a picture of text from a website, link to that website to allow users to read its contents in context; this can serve as an "image transcript" of sorts.
+
 ### Related issues
 
-Pages should finish making all network requests while loading, save for a form submission. I singled out lazy-loading, but other factors can violate this constraint.
+Pages should finish making all network requests while loading, save for a form submission. This makes it easy to load pages in the background before disconnecting. I singled out lazy-loading, but other factors can violate this constraint.
 
 One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. Displaying content all at once also improves searchability. The single-page approach has obvious limits: don't expect users to happily download a single-page novel.
 
 Another common offender is infinite-scrolling. This isn't an issue without JavaScript. Some issues with infinite-scrolling were summed up quite nicely in a single panel on xkcd:
 
 => https://xkcd.com/1309/ xkcd: Infinite Scrolling
+
+A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
+
+I've discussed loading pages in the background, but what about saving a page offline (e.g. with Ctrl + s)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
 
 ## About custom colors
 
@@ -342,7 +367,7 @@ For example, the only responsive layout change on my website (https://seirdy.one
 }
 ```
 
-Nontrivial use of width-selectors, in CSS or imagesets, is actually a powerful vector for JS-free fingerprinting:
+Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a powerful vector for JS-free fingerprinting:
 
 => https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
 
@@ -418,6 +443,8 @@ Not every phone has a giant screen: millions of people around the world use Web-
 
 Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions.
 
+### Wide items
+
 Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (DPR=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the "&shy;" entity.
 
 Most modern browsers support the "hyphens" CSS3 property, but full automatic hyphenation is usually an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
@@ -425,6 +452,19 @@ Most modern browsers support the "hyphens" CSS3 property, but full automatic hyp
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
 Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions.
+
+### Pictures of text
+
+You should only use pictures of text when the visual presentation of the text is part of the information you're trying to convey. Always be sure to test how such an image looks on a narrow screen.
+
+Images do not reflow their text. When the viewport is narrower than the image dimensions, two options arise:
+
+1. Allow the image to exceed the viewport width, triggering two-dimensional scrolling for the whole page.
+2. Shrink the image with the viewport, causing the text in the image to shrink with it.
+
+I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
+
+The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section near the bottom of this page
 
 ### Indented elements
 
@@ -436,7 +476,9 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains <ol> or <ul> elements, the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements. I don't find the margins useful because I typically use them to annotate non-centered non-phrasing content, such as <blockquote> and <pre> elements, and my image-based figures tend to have longer captions. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
+I chose to remove the margins in <figure> elements. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
+
+Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
 ### When indentation helps
 
@@ -512,7 +554,7 @@ Reducing load time is especially useful for users with unreliable connections. F
 
 In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
-You can do the same with images by using a "data:" URI; my 32-pixel PNG site icon is under 200 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
+Consider inlining images under 500 bytes with a "data:" URI; that's the size at which cache-validation headers might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
 ### Layout shifts
 
@@ -568,9 +610,9 @@ Sorry, that was a lot of jargon for a single paragraph. Unfortunately, describin
 
 Again: avoid catering to non-standard implementations' quirks, especially undocumented proprietary ones. Let's not repeat the history of the browser wars:
 
-=> https://en.wikipedia.org/wiki/Browser_wars
+=> https://en.wikipedia.org/wiki/Browser_wars Browser wars (Wikipedia)
 
-More information about standard and non-standard behavior of reading modes is in this article by Daniel Aleksandersen:
+Remember that some implementations have bugs; consider reporting issues when one arises. More information about standard and non-standard behavior of reading modes is in this article by Daniel Aleksandersen:
 
 => https://www.ctrl.blog/entry/browser-reading-mode-parsers.html Web Reading Mode: The non-standard rendering mode
 
@@ -622,7 +664,7 @@ Some typographers insist that underlined on-screen text is obsolete and hyperlin
 
 I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
 
-=> gemini://seirdy.one/misc/underlines.png A line of three consecutive hyperlinks with and without underlines
+=> gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
 
 Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
@@ -668,19 +710,54 @@ I'm still on step 11, trying to find new ways to break this page. If you come up
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
 * How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
-* Best practices for combining alt-text, figure captions, and image transcripts.
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
 * Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touchscreen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
 * How to phrase sentences such that some meaning can be inferred without understanding numbers, for readers with dyscalculia.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
+* How keyboard navigation can be altered by assistive tools such as screen readers.
+* Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
+* Avoiding "_blank" targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this W3C draft specification matures and its vocabularies gain adoption before going in depth:
 => https://w3c.github.io/personalization-semantics/help/index.html Personalization Help and Support 1.0
 
-## Other places to check out
+## Conclusion
 
-This page can be thought of as an extension of the principles of Brutalist Web Design:
+There are tons of ways to read a page; authors typically cater only to the mainstream ones. Some ways to read a page I covered include:
+
+* Screen readers
+* Switch access
+* Keyboard navigation, with the "Tab" key or caret navigation
+* Navigating with hand-tremors
+* Content extraction (e.g. "Reader Mode")
+* Low-bandwidth connections
+* Unreliable, lossy connections
+* Metered connections
+* Hostile networks
+* Downloading offline copies
+* Very narrow viewports (much narrower than a phablet)
+* Frequent window-resizers (e.g. users of tiled-window setups)
+* Printouts, esp. when paper/ink is rationed (common in schools)
+* Textual browsers
+* Uncommon graphical browsers
+* the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
+* Disabling JavaScript (overlaps with the Tor Browser)
+* Non-default color palettes
+* Aggressive content blocking (e.g. blocking all third-party content, frames, images, and cookies)
+* User-selected custom fonts
+* Stylesheet removal, alteration, or replacement
+* Machine translators
+
+Each of these may be dismissed as a "niche", especially given a profit motive (or worse, a growth imperative). Yet *many niches add up to a large population.* Every person who grows old becomes disabled; every long-distance traveller experiences poor connections.
+
+Moreover, I don't think that the size of a disadvantaged population should always matter. I understand weighing population size if you have to make a trade-off between two conflicting groups with special needs, but I don't think the aesthetic preferences of the majority are more important than supporting a disadvantaged minority.
+
+Before you throw up your hands and decide you can't help everyone, take another skim through this page. Notice how much repetition exists between sections. *Nearly every bullet-point I listed benefits tremendously from plain-old, semantic HTML (POSH)*. If your page is usable with nothing but POSH, you've done half the work already.
+
+## Further reading
+
+Parts of this page can be thought of as an extension to the principles of Brutalist Web Design:
 
 * Content is readable on all reasonable screens and devices.
 * Only hyperlinks and buttons respond to clicks.
@@ -730,7 +807,7 @@ The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific ad
 => https://www.w3.org/WAI/WCAG22/quickref How to Meet WCAG (Quick Reference)
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
-The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. One of my favorite resources for learning about what the WCAG *doesn't* cover is Axess Lab:
+The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. Much of the content on this page simply isn't covered by the WCAG. One of my favorite resources for learning about what the WCAG *doesn't* cover is Axess Lab:
 
 => https://axesslab.com/articles/ Articles on Axess Lab
 
