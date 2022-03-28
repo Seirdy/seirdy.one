@@ -296,8 +296,8 @@ The only responsive layout change on [my website](https://seirdy.one/) is a sing
 </figcaption>
 
 ```
-@media (min-width: 32rem) {
-  nav li {
+@media print, (min-width: 32rem) {
+  header nav li {
     display: inline;
   }
 }

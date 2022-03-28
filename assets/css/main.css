@@ -84,7 +84,7 @@ nav li,
 }
 
 /* single-line nav on widescreen */
-@media (min-width: 32em) {
+@media print, (min-width: 32em) {
 	header nav li {
 		display: inline;
 		padding-right: 0.5em;

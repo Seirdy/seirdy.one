@@ -335,8 +335,8 @@ Exceptions exist: one or two very simple responsive changes won't hurt. The main
 For example, the only responsive layout change on my website (https://seirdy.one) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
 
 ```
-@media (min-width: 32rem) {
-  nav li {
+@media print, (min-width: 32rem) {
+  header nav li {
     display: inline;
   }
 }
