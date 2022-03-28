@@ -18,7 +18,7 @@ This is a "living document" that I add to as I receive feedback. See the [change
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have _some_ useful information for any web content author or front-end web developer.
 
-My primary focus is supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done most of the work already.
+My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/). Specifically, I focus on supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done most of the work already.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider _some_ points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow 100% of my advice, because doing so would make the Web quite a boring place!
 
@@ -416,7 +416,7 @@ If you use a CDN or some over&shy;complicated website security stack, make sure 
 
 To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
 
-Normally, optimizing specifically for a given user agent's quirks is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
+Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
 
 For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a `<picture>` element containing `<source>` children with varying formats and a fallback `<img>` element using a legacy image format.
 
@@ -578,6 +578,8 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
+* Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide; Google recommends raising that to 48 pixels.
+* Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * Ways to improve comprehension by readers who struggle to understand non-literal language (cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the W3C <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
 
 Other places to check out
