@@ -9,10 +9,6 @@
 {{ end }}
 <title>{{ .Title }}{{ if and (lt (len .Title) 66) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
-{{ if (eq .RelPermalink "/") }}
-<!--SearchMySite uses keywords to tag webpages-->
-<meta name="keywords" content="developer,poggies,blog,indieweb,software,opensource,security,search engines,search,linux">
-{{ end -}}
 <meta content="{{ .Site.Author.name }}" name="author">
 <meta property="article:author" content="{{ .Site.Author.name }}">
 {{ if gt .Date 0 -}}
