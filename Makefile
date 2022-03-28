@@ -3,7 +3,7 @@ DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
 HUGO_BASEURL = "https://$(DOMAIN)/"
-HUGO_FLAGS += --gc --minify
+HUGO_FLAGS += --gc --minify --ignoreCache
 USER = deploy@$(DOMAIN)
 WWW_ROOT = /var/www/$(DOMAIN)
 GEMINI_ROOT = /srv/gemini/$(DOMAIN)
@@ -15,8 +15,8 @@ OUTPUT_DIR = public
 RSYNCFLAGS += -rlcv --zc=zstd --zl=6
 # include br, jxl, and gmi in skip-compress
 RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3
-# compression has dimishing returns after this point
-ECT_LEVEL=70109
+# compression gets slow for extreme levels like the old "70109"
+ECT_LEVEL=9
 
 .PHONY: hugo
 hugo: clean
