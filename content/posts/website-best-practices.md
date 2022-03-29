@@ -69,6 +69,26 @@ sandbox allow-same-origin
 
 `default-src: 'none'` implies `script-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) of potentially insecure actions. While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
 
+If you're able to control your HTTP headers, then use headers instead of a `<meta http=equiv>` tag. In addition to not supporting certain directives, a CSP in a `<meta>` tag might let some items slip through:
+
+<figure>
+<blockquote>
+<p>
+At the time of inserting the <code>meta</code> element to the document, it is
+possible that some resources have already been fetched. For example, images might be stored in
+the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
+element with an <code>http-equiv</code> attribute in the Content security policy state.
+Resources that have already been fetched are not guaranteed to be blocked by a <a href="https://w3c.github.io/webappsec-csp/#content-security-policy-object">Content
+Security Policy</a> that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
+</p>
+</blockquote>
+<figcaption>
+
+-- <cite>HTML Living Standard</cite>, [Content Security Policy state](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-content-security-policy)
+
+</figcaption>
+</figure>
+
 ### If you must enable scripts
 
 Please use progressive enhancement (<abbr title="progressive enhancement">PE</abbr>)[^3] throughout your site; every feature possible should be optional, and scripting is no exception.
@@ -207,7 +227,18 @@ Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this. I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos, but won't ruin contrast on cheap displays.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this.
+
+<figure>
+<figcaption>
+
+The following image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
+
+</figcaption>
+{{< picture name="halation" alt="Fuzzy white text on black background reading \"But it is not\"." >}}
+</figure>
+
+I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos, but won't ruin contrast on cheap displays.
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
@@ -661,7 +692,8 @@ Parts of this page can be thought of as an extension to the principles of Brutal
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 	<blockquote>
-		<ul>
+		<p>Raw content true to its construction:</p>
+		<ol>
 		<li>Content is readable on all reasonable screens and devices.</li>
 		<li>Only hyperlinks and buttons respond to clicks.</li>
 		<li>Hyperlinks are underlined and buttons look like buttons.</li>
@@ -669,7 +701,7 @@ Parts of this page can be thought of as an extension to the principles of Brutal
 		<li>View content by scrolling.</li>
 		<li>Decoration when needed and no unrelated content.</li>
 		<li>Perform&shy;ance is a feature.</li>
-		</ul>
+		</ol>
 	</blockquote>
 	<figcaption class="h-cite" itemprop="citation">
 		&mdash; {{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/">}}, <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://brutalist-web.design/"><span itemprop="name">Brutalist Web Design</span></a></cite>
