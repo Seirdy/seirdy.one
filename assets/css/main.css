@@ -58,7 +58,7 @@ html {
 blockquote {
 	border-left: 6px solid #bbb;
 	margin-left: 0;
-	padding-left: 1em;
+	padding-left: 0.75em;
 }
 
 /* narrow screens: remove unused figure margin. */
@@ -74,7 +74,8 @@ nav li,
 
 /* Lists without bullets: navlinks, posts lists, webmentions.
  * Those three are lists whose items are already easily distinguishable,
- * rendering bullet points as unnecessary extra visual noise. */
+ * rendering bullet points as unnecessary extra visual noise. Pretty
+ * much the only purely-aesthetic change in this CSS file. */
 .unstyled-list {
 	padding-left: 0;
 }
@@ -83,7 +84,8 @@ nav li,
 	list-style-type: none;
 }
 
-/* single-line nav on widescreen */
+/* single-line nav on widescreen and print.
+ * Single-line nav on print saves almost half a page. */
 @media print, (min-width: 32em) {
 	header nav li {
 		display: inline;
@@ -91,10 +93,12 @@ nav li,
 	}
 }
 
-/* browsers make <pre> small for some dumb legacy reason
- * and this somehow fixes that. */
+/* browsers make monospace small and unreadable for some dumb legacy
+ * reason and this somehow fixes that without overriding the user's
+ * font size preferences. */
 code,
-pre {
+pre,
+kbd {
 	/* stylelint-disable -- compatibility hack */
 	font-family: monospace, monospace;
 
@@ -113,11 +117,10 @@ pre {
 	padding: 0 0.1em;
 }
 
-/* Narrow screens: allow horizontal scroll in a pre block, but don't
- * clip it vertically */
+/* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
 	/* csslint ignore:start */
-	overflow: auto visible;
+	overflow: auto;
 
 	/* csslint ignore:end */
 	padding: 0.5em;
@@ -135,7 +138,8 @@ pre,
 }
 
 /* center images that aren't my indieweb icon; same justification as
- * for centering the body contents. */
+ * for centering the body contents. Also makes images easier to see
+ * for people holding a device with one hand. */
 img:not(.u-photo) {
 	display: block;
 	height: auto;
@@ -152,7 +156,6 @@ img:not(.u-photo) {
  * - Investigate reduced-contrast for dark mode
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
  *   then consider trimming the dark stylesheet I provide.
- * - Narrow screen optimization for bullet indents.
  * - Investigate CSS-based hints to screenreaders.
  * - See if any "-left" properties should switch to "-right" for users
  *   who machine-translate the page to a RTL language. */
