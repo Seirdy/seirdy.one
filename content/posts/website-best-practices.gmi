@@ -4,13 +4,15 @@ This is a "living document" that I add to as I receive feedback.
 
 => https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.gmi See the changelog
 
+This is also a somewhat long read; for a summary, skip everything between the table of contents and the conclusion.
+
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have *some* useful information for any web content author or front-end web developer.
 
 My primary focus is inclusive design:
 
 => https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/ Accomodation versus inclusive design.
 
-Specifically, I focus on supporting *underrepresented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
+Specifically, I focus on supporting *underrepresented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
@@ -584,9 +586,9 @@ Small phones typically support display rotation. When phones switch to landscape
 
 => gemini://seirdy.one/misc/wcag_quickref.png Website with a banner covering the top half of the screen.
 
-When filtering criteria on the Quickref Reference page, a sticky bar lists active filters in on the top of the screen. This bar can fill the screen in landscape mode if you add more filters. It cannot be dismissed.
+When filtering criteria on the Quickref Reference page, a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
 
-Designers often encourage the use occasional figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
+Designers often use figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
 There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
 
