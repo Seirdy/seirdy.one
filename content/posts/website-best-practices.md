@@ -10,6 +10,9 @@ tags:
     - web
     - accessibility
     - minimalism
+sitemap:
+    ChangeFreq: daily
+    Priority: 0.7
 title: An opinionated list of best practices for textual websites
 ---
 _The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites._
@@ -71,22 +74,25 @@ sandbox allow-same-origin
 
 If you're able to control your HTTP headers, then use headers instead of a `<meta http=equiv>` tag. In addition to not supporting certain directives, a CSP in a `<meta>` tag might let some items slip through:
 
-<figure>
-<blockquote>
-<p>
-At the time of inserting the <code>meta</code> element to the document, it is
-possible that some resources have already been fetched. For example, images might be stored in
-the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
-element with an <code>http-equiv</code> attribute in the Content security policy state.
-Resources that have already been fetched are not guaranteed to be blocked by a <a href="https://w3c.github.io/webappsec-csp/#content-security-policy-object">Content
-Security Policy</a> that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
-</p>
-</blockquote>
-<figcaption>
-
--- <cite>HTML Living Standard</cite>, [Content Security Policy state](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-content-security-policy)
-
-</figcaption>
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<p>
+		At the time of inserting the <code>meta</code> element to the document, it is
+		possible that some resources have already been fetched. For example, images might be stored in
+		the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
+		element with an <code>http-equiv</code> attribute in the Content security policy state.
+		Resources that have already been fetched are not guaranteed to be blocked by a <a href="https://w3c.github.io/webappsec-csp/#content-security-policy-object">Content
+			Security Policy</a> that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
+		</p>
+	</blockquote>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
+				<cite itemprop="name" class="p-name">HTML Living Standard</cite>, section 4.2.5.3: Pragma directives,
+				<a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-content-security-policy">Content Security Policy state</a>
+			</span>
+		</span>
+	</figcaption>
 </figure>
 
 ### If you must enable scripts
@@ -104,6 +110,8 @@ Third-party content will complicate the CSP, allow more actors to track users, p
 Some web developers deliver resources using third-party CDNs, such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browsers engines now [partition their caches](https://privacycg.github.io/storage-partitioning/) to prevent this behavior.
 
 If you must use third-party content, ensure that third-party stylesheets and scripts leverage [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (check the [<abbr title="Subresource Integrity">SRI</abbr> specification](https://www.w3.org/TR/SRI/)). This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
+
+For embedded third-party content (e.g. images), give extra consideration to the ["Beyond alt-text" section](#beyond-alt-text). Your page should be as useful as possible if the embedded content becomes inaccessible.
 
 About fonts
 -----------
@@ -145,8 +153,14 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 	<blockquote>
 		<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing images in a page's markup such that a server can track how many images are requested and when.</p>
 	</blockquote>
-	<figcaption class="h-cite" itemprop="citation">
-		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle"><a class="u-url p-name" itemprop="url" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><span itemprop="name">&lt;img&gt;: The Image Embed element</span></a></cite> on <abbr title="Mozilla Developer Network">MDN</abbr>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
+				<cite><a class="u-url p-name" itemprop="url" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><span itemprop="name">&lt;img&gt;: The Image Embed element</span></a></cite>
+				on <abbr title="Mozilla Developer Network">MDN</abbr>,
+				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
+			</span>
+		</span>
 	</figcaption>
 </figure>
 
@@ -175,7 +189,7 @@ I have two responses:
 1. If an image isn't essential, you shouldn't include it inline.
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
 
-Nonetheless, expect some readers to have images disabled (blind readers, metered connections). Follow good practices for alt-text. _Concisely_ summarize the image content the best you can, in the context of the surrounding content. Don't include information that isn't present in the image; save supplementary information for a `<figcaption>` element. If the image is a picture of text from a website, link to that website to allow users to read its contents in context; this can serve as an "image transcript" of sorts.
+Nonetheless, expect some readers to have images disabled. Refer to the "[Beyond alt-text](#beyond-alt-text)" section to see how to best support this case.
 
 ### Related issues
 
@@ -188,6 +202,83 @@ Another common offender is infinite-scrolling. This isn't an issue without JavaS
 A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with <kbd>Ctrl</kbd> + <kbd>s</kbd>)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
+
+Beyond alt-text
+---------------
+
+Note: this section does not include examples of its own. If you wish to see examples, look at the figures included in the official version of this web page. You're probably on it right now; if not, [here's the canonical location](https://seirdy.one/2020/11/23/website-best-practices.html).
+
+Expect some readers to have images disabled or unloaded. Examples include:
+
+* Blind readers
+* Users of metered connections: sometimes they disable all images, and other times they only disable images above a certain size
+* People experiencing packet loss who only manage to load a few resources
+* Users of textual browsers
+
+Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include information that isn't present in the image; I'll cover how to handle supplementary information in the following subsections.
+
+Alt-text is a good start, but we don't have to stop there.
+
+### Putting images in context
+
+Alt text should be limited to describing content of the image. It lacks context. To make things worse, images can contain a great deal of information. Sighted people can "filter" this information and find areas to focus on; alt text should capture this detail. However, sighted users' understanding of this detail can be informed by surrounding less-essential detail.
+
+Being sighted and loading images can introduce issues of its own. Sometimes, sighted readers might focus on the _wrong_ part of an image. How can you give readers the missing context and tell them what to focus on?
+
+The best solution comes in two parts:
+
+1. Before the image, supply context that prepares readers with what to expect.
+2. After the image, describe your interpretation of important details.
+
+This is somewhat similar to the way most students in primary and secondary schools are taught to cite evidence in essays. On that note: remember that these are weak norms, not rules. Deviate where appropriate, just as students should as they learn to write.
+
+### Figures
+
+A <dfn>figure</dfn> is any sort of self-contained information that is referenced by--but somewhat distinct from--body content. Items that make for good figures are often found in [floating blocks](https://en.wikipedia.org/wiki/Page_layout#Floating_block) of print material.
+
+Consider using a `<figure>` element when employing the previous section's two-part strategy. Place one of the two aforementioned pieces of information in a `<figcaption>`; the caption can come before or after the image.
+
+Figures aren't just for images. Where appropriate, use figures for:
+
+* Blockquotes, captioned with citations
+* Code snippets, captioned with their purpose
+* Some equations, captioned with brief explanations of their behavior, purpose, or significance (equations should also have alt-text!)
+
+Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
+
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. This is what it means for a figure to be a "self-contained" block. The HTML specification explicitly notes this behavior.
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<p>When a <code>figure</code> is referred to from the main content of the document by identifying
+		it by its caption (e.g., by figure number), it enables such content to be easily moved away from
+		that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix,
+		without affecting the flow of the document.</p>
+		<p>If a <code>figure</code> element is <a href="https://html.spec.whatwg.org/multipage/dom.html#referenced">referenced</a> by its relative position, e.g.,
+		"in the photograph above" or "as the next figure shows", then moving the figure would disrupt the
+		page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than
+		using such relative references, so that the page can easily be restyled without affecting the
+		page's meaning.</p>
+	</blockquote>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
+				<cite itemprop="name" class="p-name">HTML Living Standard</cite>, section 4.4.12:
+				<a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">The <code>figure</code> element</a>
+			</span>
+		</span>
+	</figcaption>
+</figure>
+
+### Image trans&shy;cripts {#image-transcripts}
+
+Some images contain text. Only use pictures of text if the visual appearance of the text is part of what you wish communicate.
+
+If the image is a screenshot of text from a website, link to that website to allow users to read its contents in context; this can serve as an "image transcript" of sorts.
+
+A `longdesc` attribute is another way to reference an image transcript. The `longdesc` attribute contains a hyperlink (often an anchor link) to a location that contains more information about an image.
+
+I describe best practices for preparing pictures of text in [a dedicated section](#pictures-of-text).
 
 About custom colors
 -------------------
@@ -465,6 +556,23 @@ On lists without visible bullets, I dropped the default indentation. I had to fi
 
 Once again, deviating from defaults created additional work to remove an accessibility hazard.
 
+### Short viewports
+
+Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
+
+<figure>
+{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." >}}
+<figcaption>
+
+When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a sticky bar on the top half of the screen lists active filters. This bar can fill the screen in landscape mode if you add more filters. It cannot be dismissed.
+
+</figcaption>
+</figure>
+
+Designers often encourage the use occasional figures to "break up" their content, and provide negative space. This is good advice, but I don't think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
+
+There's an ideal range somewhere between "cramped" and "spaced-apart" content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
+
 Tor
 ---
 
@@ -599,8 +707,12 @@ Underlines also make it easy for readers with color vision deficiencies to disti
 	<blockquote>
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or disting&shy;uishing a visual element. (Level A)</p>
 	</blockquote>
-	<figcaption class="h-cite" itemprop="citation">
-		&mdash; <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG&nbsp;2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
+				<cite><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG&nbsp;2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
+			</span>
+		</span>
 	</figcaption>
 </figure>
 
@@ -615,9 +727,9 @@ In addition to standard testing, I recommend testing with unorthodox setups that
 
 Your page should easily pass the harshest of tests without any extra effort if its HTML meets basic standards for well-written code (overlooking bad formatting and a lack of comments). Even if you use a complex static site generator, the final HTML should be simple, readable, and semantic.
 
-### Sample unorthodox tests
+### Sample un&shy;orthodox tests {#sample-unorthodox-tests}
 
-These tests start out pretty reasonable, but gradually get more ridiculous. Once again, use your judgement.
+These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^4]
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
@@ -628,11 +740,13 @@ These tests start out pretty reasonable, but gradually get more ridiculous. Once
 7. Test keyboard navigability with the tab key and with [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 8. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 9. Test in an online website translator tool.
-10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-11. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
-12. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
+12. Try printing out your page in black-and-white from an unorthodox graphical browser.
+13. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
+14. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
-I'm still on step 11, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+I'm still on step 13, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
 Future updates
 --------------
@@ -644,12 +758,13 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
 * Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touchscreen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
-* How to phrase sentences such that some meaning can be inferred without understanding numbers, for readers with dyscalculia.
+* How to choose phrasings such that some meaning can be inferred without understanding numbers, for readers with dyscalculia. This is more applicable to posts whose main focus is not mathematical or quantitative.
+* How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * How keyboard navigation can be altered by assistive tools such as screen readers.
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
-* Ways to improve comprehension by readers who struggle to understand non-literal language (cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the W3C <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
+* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the W3C <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
 
 Conclusion
 ----------
@@ -667,8 +782,9 @@ There are so many ways to read a page; authors typically cater only to the mains
 * Hostile networks
 * Downloading offline copies
 * Very narrow viewports (much narrower than a phablet)
+* Mobile devices in landscape mode
 * Frequent window-resizers (e.g. users of tiled-window setups)
-* Printouts, esp. when paper/ink is rationed (common in schools)
+* Printouts, especially when paper and ink are rationed (common in schools)
 * Textual browsers
 * Uncommon graphical browsers
 * the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
@@ -703,8 +819,11 @@ Parts of this page can be thought of as an extension to the principles of Brutal
 		<li>Perform&shy;ance is a feature.</li>
 		</ol>
 	</blockquote>
-	<figcaption class="h-cite" itemprop="citation">
-		&mdash; {{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/">}}, <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://brutalist-web.design/"><span itemprop="name">Brutalist Web Design</span></a></cite>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			{{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/">}},
+			<cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://brutalist-web.design/"><span itemprop="name">Brutalist Web Design</span></a></cite>
+		</span>
 	</figcaption>
 </figure>
 
