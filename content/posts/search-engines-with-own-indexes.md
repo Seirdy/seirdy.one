@@ -7,7 +7,7 @@ outputs:
 tags:
     - web
 sitemap:
-    ChangeFreq: daily
+    ChangeFreq: weekly
     Priority: 0.7
 footnote_heading: Notes
 title: A look at search engines with their own indexes
@@ -21,6 +21,8 @@ With that in mind, I decided to test and catalog all the different indexing sear
 This page is a "living document" that I plan on updating indefinitely. Check for updates once in a while if you find this page interesting. Feel free to send me suggestions, updates, and corrections; I'd especially appreciate help from those who speak languages besides English and can evaluate a non-English indexing search engine. Contact info is in the article footer.
 
 I plan on updating the engines in the top two categories with more info comparing the structured/linked data the engines leverage (RDFa vocabularies, microdata, microformats, JSON-LD, etc.) to help authors determine which formats to use.
+
+{{<toc>}}
 
 About the list
 --------------
