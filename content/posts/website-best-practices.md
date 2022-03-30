@@ -238,7 +238,7 @@ A <dfn>figure</dfn> is any sort of self-contained information that is referenced
 
 Consider using a `<figure>` element when employing the previous section's two-part strategy. Place one of the two aforementioned pieces of information in a `<figcaption>`; the caption can come before or after the image.
 
-Figures aren't just for images. Where appropriate, use figures for:
+Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Where appropriate, use figures for:
 
 * Blockquotes, captioned with citations
 * Code snippets, captioned with their purpose
@@ -246,7 +246,7 @@ Figures aren't just for images. Where appropriate, use figures for:
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. This is what it means for a figure to be a "self-contained" block. The HTML specification explicitly notes this behavior.
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common with [reading-mode implementations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 	<blockquote>
@@ -323,7 +323,7 @@ Darker backgrounds draw less power on devices with OLED screens; however, backgr
 <figure>
 <figcaption>
 
-The following image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
+This image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
 
 </figcaption>
 {{< picture name="halation" alt="Fuzzy white text on black background reading \"But it is not\"." >}}
@@ -646,7 +646,7 @@ Using [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) eliminates th
 
 Consider the trade-offs involved in enabling 0-<abbr title="Round-Trip Time">RTT</abbr> for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in [appendix E.5](https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5) of the spec.
 
-Non-Browsers: Reading mode
+Non-browsers: reading mode
 --------------------------
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
@@ -762,6 +762,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * How keyboard navigation can be altered by assistive tools such as screen readers.
+* How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the W3C <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.

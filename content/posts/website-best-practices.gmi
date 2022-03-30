@@ -235,7 +235,7 @@ A *figure* is any sort of self-contained information that is referenced by--but 
 
 Consider using a <figure> element when employing the previous section's two-part strategy. Place one of the two aforementioned pieces of information in a <figcaption>; the caption can come before or after the image.
 
-Figures aren't just for images. Where appropriate, use figures for:
+Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an <aside>. Where appropriate, use figures for:
 
 * Blockquotes, captioned with citations
 * Code snippets, captioned with their purpose
@@ -243,7 +243,7 @@ Figures aren't just for images. Where appropriate, use figures for:
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. This is what it means for a figure to be a "self-contained" block. The spec describes this behavior:
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common with reading-mode implementations (see the "Non-browsers: reading mode" section). The HTML specification explicitly notes this behavior.
 
 > When a figure is referred to from the main content of the document by identifying it by its caption (e.g., by figure number), it enables such content to be easily moved away from that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix, without affecting the flow of the document.
 > If a figure element is referenced by its relative position, e.g., "in the photograph above" or "as the next figure shows", then moving the figure would disrupt the page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than using such relative references, so that the page can easily be restyled without affecting the page's meaning.
@@ -672,7 +672,7 @@ Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it 
 
 => https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5 RFC-8446, Appendix E.5.
 
-## Non-Browsers: Reading mode
+## Non-browsers: reading mode
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
@@ -810,6 +810,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * How keyboard navigation can be altered by assistive tools such as screen readers.
+* How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this W3C draft specification matures and its vocabularies gain adoption before going in depth:
