@@ -15,16 +15,17 @@ sitemap:
     Priority: 0.7
 title: An opinionated list of best practices for textual websites
 ---
-
-<aside role="doc-preface">
+<aside><div role="doc-preface">
 
 _The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites._
 
 This is a "living document" that I add to as I receive feedback. See the [changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.md). This is also a somewhat long read; for a summary, just read the introduction and conclusion.
 
-</aside>
+</div></aside>
 
 {{<toc>}}
+
+<section role="doc-introduction">
 
 Introduction
 ------------
@@ -35,7 +36,9 @@ My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/acco
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider _some_ points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
-I'll cite the document <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+
+</section>
 
 Security and privacy
 --------------------
@@ -142,7 +145,7 @@ It's not a good idea to require users to automatically override website styleshe
 
 That being said, many users _do_ actually override stylesheets. We shouldn't _require_ them to do so, but we should keep our pages from breaking in case they do. Pages following this article's advice will probably work perfectly well in these cases without any extra effort.
 
-### Font fingerprinting concerns
+### Font finger&shy;printing concerns
 
 Some people raised fingerprinting concerns when I suggested using the default "sans-serif" font. Websites could see which font this maps to in order to identify users.
 
@@ -220,12 +223,10 @@ Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
 * Users of metered connections: sometimes they disable all images, and other times they only disable images above a certain size
-* People experiencing packet loss who only manage to load a few resources
+* People with packet loss who only manage to load a few resources
 * Users of textual browsers
 
-Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include information that isn't present in the image; I'll cover how to handle supplementary information in the following subsections.
-
-Alt-text is a good start, but we don't have to stop there.
+Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include information that isn't present in the image; I'll cover how to handle supplementary information in the following subsections. The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point.
 
 ### Putting images in context
 
@@ -246,11 +247,16 @@ A <dfn>figure</dfn> is any sort of self-contained information that is referenced
 
 Consider using a `<figure>` element when employing the previous section's two-part strategy. Place one of the two aforementioned pieces of information in a `<figcaption>`; the caption can come before or after the image.
 
-Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Where appropriate, use figures for:
+Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Some example items that could use a caption:
 
-* Blockquotes, captioned with citations
-* Code snippets, captioned with their purpose
-* Some equations, captioned with brief explanations of their behavior, purpose, or significance (equations should also have alt-text!)
+<dl>
+	<dt>Blockquote</dt>
+	<dd>Captioned with a citation</dd>
+	<dt>Code snippet</dt>
+	<dd>Captioned with its purpose or a link to a the larger file from which the snippet was borrowed</dd>
+	<dt>Equation</dt>
+	<dd>Sometimes captioned with a brief explanation of its behavior, purpose, or significance. Remember to add alt-text.</dd>
+</dl>
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
@@ -318,7 +324,7 @@ The aforementioned techniques ensure a clear page layout while respecting user-s
 
 ### Dark themes
 
-If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with photosensitivity (like me!) or migraines, and people in dark environments.
+If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with photosensitivity (like me!), migraines, or dark environments.
 
 When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
@@ -337,7 +343,7 @@ This image is an approximation of what halation looks like, cropped from <a href
 {{< picture name="halation" alt="Fuzzy white text on black background reading \"But it is not\"." >}}
 </figure>
 
-I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos, but won't ruin contrast on cheap displays.
+I personally like a foreground and background of `#ececec` and `#0c0c0c`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0c0c0c` is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a `prefers-contrast: less` media query which lightens the background to `#222`.
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
@@ -394,7 +400,9 @@ If you really want to go overboard with PNG optimization, you can try a tool lik
 
 ### Dark image variants
 
-A `<picture>` element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants too.
+Bright images on an otherwise dark page distract readers, especially readers like me with ADHD. The human iris adjusts to average amounts of light; an object far brighter than its surroundings causes eye strain even among readers with healthy vision.
+
+A `<picture>` element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants to complement a dark stylesheet.
 
 <figure>
 <figcaption>
@@ -748,7 +756,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 7. Test keyboard navigability with the tab key and with [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 8. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 9. Test in an online website translator tool.
-10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+10. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 12. Try printing out your page in black-and-white from an unorthodox graphical browser.
 13. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
@@ -762,10 +770,10 @@ Future updates
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
 * How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
-* How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
+* How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touch&shy;screens.
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
-* Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touchscreen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
+* Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touch&shy;screen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
 * How to choose phrasings such that some meaning can be inferred without understanding numbers, for readers with dyscalculia. This is more applicable to posts whose main focus is not mathematical or quantitative.
 * How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
@@ -773,7 +781,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
-* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the W3C <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
+* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <abbr title="Web Accessibility Initiative">WAI</abbr> <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
 
 Conclusion
 ----------

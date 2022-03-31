@@ -16,7 +16,7 @@ Specifically, I focus on supporting *underrepresented ways to read a page*. Not 
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
-I'll cite the document "Techniques for WCAG 2.2" a number of times:
+I'll cite the Web Accessibility Initiative's (WAI) "Techniques for WCAG 2.2" a number of times:
 
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
@@ -208,6 +208,10 @@ Expect some readers to have images disabled or unloaded. Examples include:
 
 Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include information that isn't present in the image; I'll cover how to handle supplementary information in the following subsections.
 
+The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing alt-text. It's a little lacking in nuance, but makes for a good starting point:
+
+=> https://www.w3.org/WAI/tutorials/images/decision-tree/ An "alt" Decision Tree
+
 Alt-text is a good start, but we don't have to stop there.
 
 Note: this section does not include examples of its own. If you wish to see examples, look at the blockquotes, code snippets, and linkd images in the official version of this Gemini page. You're probably on it right now; if not, here's the canonical location:
@@ -311,7 +315,7 @@ For more info, read the relevant docs:
 
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme prefers-color-scheme docs on MDN
 
-Dark themes are helpful for readers with photosensitivity (like me!) or migraines, and people in dark environments.
+Dark themes are helpful for readers with photosensitivity (like me!), migraines, or dark environments.
 
 When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
 
@@ -333,7 +337,7 @@ Here's an approximation of what this kind of halation looks like:
 => gemini://seirdy.one/misc/halation.png Fuzzy white text on black background reading "But it is not" (image/png)
 => https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism image source
 
-I personally like a foreground and background of "#ececec" and "#0c0c0c", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0c0c0c" is barely bright enough to create a soft "glow" capable of minimizing halos, but won't ruin contrast on cheap displays.
+I personally like a foreground and background of "#ececec" and "#0c0c0c", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0c0c0c" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
@@ -390,7 +394,9 @@ If you really want to go overboard with PNG optimization, you can try a tool lik
 
 ### Dark image variants
 
-A "<picture>" element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants too.
+Bright images on an otherwise dark page distract readers, especially readers like me with ADHD. The human iris adjusts to average amounts of light; an object far brighter than its surroundings causes eye strain even among readers with healthy vision.
+
+A "<picture>" element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants to complement a dark stylesheet.
 
 This is a minimal example of a <picture> with a dark variant:
 
@@ -815,7 +821,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
-* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this W3C draft specification matures and its vocabularies gain adoption before going in depth:
+* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI draft specification matures and its vocabularies gain adoption before going in depth:
 => https://w3c.github.io/personalization-semantics/help/index.html Personalization Help and Support 1.0
 
 ## Conclusion
