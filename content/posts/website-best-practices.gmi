@@ -518,6 +518,8 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 }
 ```
 
+As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, "Text is not justified" is explicitly mentioned in Success Criterion 1.4.8.
+
 ## Narrow viewports
 
 A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
@@ -858,7 +860,9 @@ Moreover, I don't think that the size of a disadvantaged population should alway
 
 Before you throw up your hands and decide you can't help everyone, take another skim through this page. Notice how much repetition exists between sections. *Nearly every bullet-point I listed benefits tremendously from plain-old, semantic HTML (POSH)*. If your page is usable with nothing but POSH, you've done half the work already.
 
-## Further reading
+## Acknowledgements and further reading
+
+Initial versions of this page were inspired by existing advocates for web minimalism.
 
 Parts of this page can be thought of as an extension to the principles of Brutalist Web Design, which favors "raw content true to its construction":
 
@@ -913,6 +917,13 @@ The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific ad
 The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. Much of the content on this page simply isn't covered by the WCAG. One of my favorite resources for learning about what the WCAG *doesn't* cover is Axess Lab:
 
 => https://axesslab.com/articles/ Articles on Axess Lab
+
+I've incorporated much feedback from various places online:
+
+=> https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc A Fediverse subthread asking people to share ideas
+=> https://lobste.rs/s/akcw1m/opinionated_list_best_practices_for An early version of this article posted to Lobsters
+
+A special thanks goes out to GothAlice for the questions she answered in #webdev on Libera.Chat.
 
 ## Notes
 

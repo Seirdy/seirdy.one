@@ -19,7 +19,9 @@ title: An opinionated list of best practices for textual websites
 
 _The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites._
 
-This is a "living document" that I add to as I receive feedback. See the [changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.md). This is also a somewhat long read; for a summary, just read the introduction and conclusion.
+This is a "living document" that I add to as I receive feedback. See the [changelog](https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.md).
+
+If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.
 
 </div></aside>
 
@@ -517,6 +519,8 @@ I opted to wrap all max-width rules in a media query to ensure that they only ge
 
 </figure>
 
+As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, <q cite="https://www.w3.org/TR/WCAG22/#visual-presentation">Text is not justified</q> is explicitly mentioned in Success Criterion 1.4.8.
+
 Narrow viewports
 ----------------
 
@@ -818,8 +822,12 @@ Moreover, I don't think that the size of a disadvantaged population should alway
 
 Before you throw up your hands and decide you can't help everyone, take another skim through this page. Notice how much repetition exists between sections. _Nearly every bullet-point I listed benefits tremendously from plain-old, semantic HTML (<abbr title="Plain-Old, Semantic HTML">POSH</abbr>)_. If your page is usable with nothing but POSH, you've done half the work already.
 
-Further reading
----------------
+<section role="doc-acknowledgments">
+
+Ack&shy;nowledge&shy;ments and further reading {#further-reading}
+----------------------------------------------
+
+Initial versions of this page were inspired by existing advocates for web minimalism.
 
 Parts of this page can be thought of as an extension to the principles of Brutalist Web Design:
 
@@ -860,6 +868,14 @@ If you've got some time on your hands, I _highly_ recommend reading the <cite>[W
 
 The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. Much of the content on this page simply isn't covered by the WCAG. One of my favorite resources for learning about what the WCAG _doesn't_ cover is [Axess Lab](https://axesslab.com/articles/).
 
+I've learned about a great number of underrepresented ways to browse from the Fediverse, particularly from [this subthread asking people to share](https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc). Several responses informed updates to this page.
+
+An early version of this article received useful responses when I [posted it to Lobsters](https://lobste.rs/s/akcw1m/opinionated_list_best_practices_for); I incorporated some feedback shortly afterward.
+
+A special thanks goes out to GothAlice for the questions she answered in `#webdev` on Libera.Chat.
+
+</section>
+
 
 [^1]: Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank `sandbox` directive even if it means breaking these addons.
 
@@ -868,5 +884,4 @@ The WCAG are an excellent starting point for learning about accessibility, but m
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
 [^4]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
-
 
