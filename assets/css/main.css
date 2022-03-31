@@ -53,12 +53,23 @@ html {
 	}
 }
 
-/* narrow screens: reduce margin for blockquotes a lot, using
- * a thick left-side border instead. */
-blockquote {
-	border-left: 6px solid #bbb;
-	margin-left: 0;
-	padding-left: 0.75em;
+@supports (border-inline-start: 6px) {
+	/* narrow screens: reduce margin for blockquotes a lot, using
+	 * a thick left-side border instead. */
+	blockquote {
+		border-inline-start: 6px solid #bbb;
+		margin: 0;
+		padding: 0 0.8em;
+	}
+
+	/* single-line nav on widescreen and print.
+	 * Single-line nav on print saves almost half a page. */
+	@media print, (min-width: 32em) {
+		header nav li {
+			display: inline;
+			padding-inline-end: 0.5em;
+		}
+	}
 }
 
 /* narrow screens: remove unused figure margin. */
@@ -77,20 +88,11 @@ nav li,
  * rendering bullet points as unnecessary extra visual noise. Pretty
  * much the only purely-aesthetic change in this CSS file. */
 .unstyled-list {
-	padding-left: 0;
+	padding: 0;
 }
 
 .unstyled-list li {
 	list-style-type: none;
-}
-
-/* single-line nav on widescreen and print.
- * Single-line nav on print saves almost half a page. */
-@media print, (min-width: 32em) {
-	header nav li {
-		display: inline;
-		padding-right: 0.5em;
-	}
 }
 
 /* browsers make monospace small and unreadable for some dumb legacy
@@ -119,18 +121,15 @@ kbd {
 
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
-	/* csslint ignore:start */
 	overflow: auto;
-
-	/* csslint ignore:end */
 	padding: 0.5em;
 }
 
 /* Distinguish images from the background in case their color is
  * too similar to the page background color. Also put a border around
- * <pre> so that it looks just like <code> (see below). The use of
- * borders in place of background colors for distinguishing elements
- * is an officially documented WCAG technique. */
+ * <pre> and <code> to distinguish them in ways besides font-family. The
+ * use of borders in place of background colors for distinguishing
+ * elements is an officially documented WCAG technique. */
 img,
 pre,
 :not(pre) > code {

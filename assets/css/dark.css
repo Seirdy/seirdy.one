@@ -26,4 +26,12 @@
 	pre {
 		border-color: #333;
 	}
+
+	/* stylelint-disable -- hasn't heard of "prefers-contrast" yet */
+	@media (prefers-contrast: less) {
+	/* stylelint-enable */
+		html {
+			background-color: #222;
+		}
+	}
 }
