@@ -174,7 +174,7 @@ Users who click a link *choose* to load a full page. Loading pages that a user h
 
 I have two responses:
 
-1. If an image isn't essential, you shouldn't include it inline.
+1. If an image isn't essential, you shouldn't include it in the page.
 2. Yes, users could disable images. That's *their* choice. If your page uses lazy loading, you've effectively (and probably unintentionally) made that choice for a large number of users.
 
 Nonetheless, expect some readers to have images disabled. Refer to the "Beyond alt-text" section to see how to best support this case.
@@ -209,8 +209,11 @@ CSS containment allows authors to isolate sub-trees of the DOM. When combined wi
 
 => https://drafts.csswg.org/css-contain/#using-cv-auto CSS Containment Module
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers.
+Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I plan on eventually using it for my site footers and Webmention lists.
 
+Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
+
+=> https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
 
 ## Beyond alt-text
 
@@ -399,7 +402,7 @@ convert ORIGINAL_FILE \
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
-In general, avoid using inline images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
+In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
@@ -535,7 +538,11 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 
 As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, "Text is not justified" is explicitly mentioned in Success Criterion 1.4.8.
 
-## Narrow viewports
+## Small viewports and zoom
+
+Users use a variety of zoom levels and viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
+
+### Narrow viewports
 
 A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
 
@@ -614,6 +621,16 @@ When filtering criteria on the Quickref Reference page, a dickbar lists active f
 Designers often use figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
 There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
+
+### Zoom
+
+Browsers allow users to zoom by adjusting size metrics. In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations (e.g. borders), but they are uncommon.
+
+Set font size and line-spacing with a percentage and a unitless value, respectively:
+
+```
+font: 100%/1.5 sans-serif;
+```
 
 ## Tor
 
@@ -801,7 +818,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁴
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁵
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -953,4 +970,6 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 => https://en.wikipedia.org/wiki/Progressive_enhancement Progressive Enhancement (Wikipedia)
 => https://whalecoiner.com/articles/progressive-enhancement Yes, progressive enhancement is a fucking moral argument
 
-⁴ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+⁴ Decoration is more than cosmetic. The "Color overrides and accessibility" sub-section describes how some decorations, like borders, improve accessibility.
+
+⁵ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".

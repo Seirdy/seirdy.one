@@ -197,7 +197,7 @@ Users who click a link _choose_ to load a full page. Loading pages that a user h
 
 I have two responses:
 
-1. If an image isn't essential, you shouldn't include it inline.
+1. If an image isn't essential, you shouldn't include it in the page.
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
 
 Nonetheless, expect some readers to have images disabled. Refer to the "[Beyond alt-text](#beyond-alt-text)" section to see how to best support this case.
@@ -241,7 +241,9 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 </figcaption>
 </figure>
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers.
+Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I plan on eventually using it for my site footers and Webmention lists.
+
+Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing [layout shifts](#layout-shifts). Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. <cite><a href="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/">Calculating 'contain-intrinsic-size' for 'content-visibility'</a></cite>, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/about-us/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/">}}, is a comprehensive guide to calculating intrinsic size values.
 
 Beyond alt-text
 ---------------
@@ -421,7 +423,7 @@ This is a sample command to compress a PNG image using ImageMagick, `pngquant`, 
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
-In general, avoid using inline images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
+In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
@@ -548,8 +550,12 @@ I opted to wrap all max-width rules in a media query to ensure that they only ge
 
 As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, <q cite="https://www.w3.org/TR/WCAG22/#visual-presentation">Text is not justified</q> is explicitly mentioned in Success Criterion 1.4.8.
 
-Narrow viewports
-----------------
+Small viewports and zoom
+------------------------
+
+Users use a variety of zoom levels and viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
+
+### Narrow viewports
 
 A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
 
@@ -619,6 +625,25 @@ When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/
 Designers often use figures to "break up" their content, and provide negative space. This is good advice, but I don't think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
 There's an ideal range somewhere between "cramped" and "spaced-apart" content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
+
+### Zoom and size-adjustment
+
+Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
+
+In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^4] (e.g. borders), but they are uncommon.
+
+<figure>
+<figcaption>
+
+Set font size and line-spacing with a percentage and a unitless value, respectively.
+
+</figcaption>
+
+```
+font: 100%/1.5 sans-serif;
+```
+
+</figure>
 
 Tor
 ---
@@ -778,7 +803,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^4]
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^5]
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -910,6 +935,8 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+[^4]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
+
+[^5]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 
