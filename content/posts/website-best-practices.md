@@ -186,6 +186,8 @@ Everything else is bullshit.
 </figcaption>
 </figure>
 
+Plenty of other factors exist, but listing them all is beyond the scope of this article.
+
 A supplementary metric to use alongside download size is **round trips.** Estimate the number of bytes and round-trips it takes to do the following:
 
 1. Begin downloading the final blocking resource
@@ -264,7 +266,7 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				{{<cited-work name="&lt;img&gt;: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">}}
+				{{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">}}
 				on <abbr title="Mozilla Developer Network">MDN</abbr>,
 				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
 			</span>
@@ -280,19 +282,21 @@ Users on poor connections have better things to do than idly wait for pages to l
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
-### Would pre-loading or pre-fetching solve the issues with lazy-loading?
+### Against speculative pre-loading
 
-Pre-loading essential resources is fine, but speculatively pre-loading content that the user may or may not request isn't.
+A common objection to my case against lazy-loading is that users may be more likely to click a link than scroll to the bottom, so pages should prioritize pre-loading the link. Pre-loading a page's essential resources is fine. Speculatively pre-loading content on separate pages isn't.
 
-A large number of users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users also generally disable pre-loading since pre-loading behavior is fingerprintable.
+Many users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users (including Tor Browser users) also generally disable speculative pre-loading since pre-loading behavior is fingerprintable.
 
 Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
+
+Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Most marginalized don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
 
 ### Can't users on poor connections disable images?
 
 I have two responses:
 
-1. If an image isn't essential, you shouldn't include it in the page.
+1. If an image isn't essential, don't include it in the page. If an image is essential, assume sighted users want to see it.
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
 
 Nonetheless, expect some readers to have images disabled. Refer to the "[Beyond alt-text](#beyond-alt-text)" section to see how to best support this case.
@@ -317,7 +321,7 @@ A similar attribute that I _do_ recommend is the [`decoding`](https://developer.
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
 
-<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. When combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
+<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. When combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the `hidden` parameter when `auto` is better:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 <blockquote>
@@ -393,7 +397,7 @@ font: 100%/1.5 sans-serif;
 Beyond alt-text
 ---------------
 
-Note: this section does not include examples of its own. If you wish to see examples, look at the figures included in the official version of this web page. You're probably on it right now; if not, [here's the canonical location](https://seirdy.one/2020/11/23/website-best-practices.html).
+Note: this section does not include examples of its own. If you wish to see examples, look at the figures in the official version of this web page. You're probably on it right now; if not, [here's the canonical location](https://seirdy.one/2020/11/23/website-best-practices.html).
 
 Expect some readers to have images disabled or unloaded. Examples include:
 
