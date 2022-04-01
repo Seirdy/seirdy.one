@@ -1,4 +1,4 @@
-The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being good websites.
+The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive.
 
 This is a "living document" that I add to as I receive feedback.
 
@@ -108,41 +108,120 @@ If you must use third-party content, ensure that third-party stylesheets and scr
 
 This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
 
-For embedded third-party content (e.g. images), give extra consideration to the "Beyond alt-text" section. Your page should be as useful as possible if the embedded content becomes inaccessible.
+## Optimal loading
 
-## About fonts
+Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Developing regions lack modern Internet infrastructure; high-ranking executives travel frequently. Everybody hits the bottom of the bell-curve.
 
-I recommend setting the default font to "sans-serif". Avoid "system-ui": it causes issues among readers whose system fonts don't cover your website's charset.
+Reducing load time is especially useful to poorly-connected users. For much of the world, connectivity comes in short bursts during which loading time is precious. Chances of a connection failure or packet loss increase with time.
 
-=> https://infinnie.github.io/blog/2017/systemui.html Never, ever use system-ui as the value of font-family
+Optimal loading is a complex topic. Broadly, it covers three overlapping categories: reducing payload size, delivering content early, and reducing the number of requests and round trips.
 
-If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits. Accommodate users' default zoom levels by keeping your font size the same as most similar websites.
+### Blocking content
 
-To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! That being said, textual websites in particular don't benefit much from branding. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that should be the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
+HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a "link" HTTP header.
 
-A personal example: I set my preferred browser font to "sans-serif", and map it to my preferred font in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
+My website includes a "link" header to load an SVG that serves as my IndieWeb photo and favicon:
 
-### But most users don't change their fonts...
+```
+link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
+```
 
-The "users don't know better and need us to make decisions for them" mindset isn't without merits; however, in my opinion, it's overused. Using system fonts doesn't make your website harder to use, but it does make it smaller and stick out less to the subset of users who care enough about fonts to change them. This argument isn't about making software easier for non-technical users; it's about branding by asserting a personal preference.
+### Inline content
 
-### Can't users globally override stylesheets instead?
+In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
-It's not a good idea to require users to automatically override website stylesheets to see their preferred fonts. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
+Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
-That being said, many users *do* actually override stylesheets. We shouldn't *require* them to do so, but we should keep our pages from breaking in case they do. Pages following this article's advice will probably work perfectly well in these cases without any extra effort.
+### Round-trips
 
-### Font fingerprinting concerns
+Download size matters, especially on metered connections. There's no shortage of advice concerning minimizing this easy-to-understand metric. Unfortunately, it alone doesn't give us the full picture: download size is not the exact same thing as time taken to deliver useful content to users.
 
-Some people raised fingerprinting concerns when I suggested using the default "sans-serif" font. Websites could see which font this maps to in order to identify users.
+Google's answer to this problem is "Core Web Vitals" containing metrics such as "SpeedIndex". These metrics aren't useless, but they are incredibly naive.
 
-I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
+> SpeedIndex is based on the idea that what counts is how fast the visible part of the website renders. It doesn't matter what's happening elsewhere on the page. It doesn't matter if the network is saturated and your phone is hot to the touch. It doesn't matter if the battery is visibly draining. Everything is OK as long as the part of the site in the viewport appears to pop into view right away.
+>
+> Of course, it doesn’t matter how fast the site appears to load if the first thing the completed page does is serve an interstitial ad. Or, if like many mobile users, you start scrolling immediately and catch the 'unoptimized' part of the page with its pants down.
+>
+> There is only one honest measure of web performance: **the time from when you click a link to when you've finished skipping the last ad.**
+>
+> Everything else is bullshit.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
+=> https://idlewords.com/talks/website_obesity.htm Maciej Cegłowski, The Website Obesity Crisis
 
-=> https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting Firefox's protection against fingerprinting
+A supplementary metric to use alongside download size is **round trips.** Estimate the number of bytes and round-trips it takes to do the following:
 
-Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
+1. Begin downloading the final blocking resource
+2. Finish downloading all blocking resources
+3. Finish downloading _two screenfuls of content_
+4. Finish downloading the full page.
+
+Understanding round-trips requires understanding your server's approach to congestion control. TCP Slow-Start typically sets an initial window size to ten TCP packets and grows this value with each round-trip. Under most setups, this means that the first round-trip can include 1460 bytes. The following round-trip can deliver under three kilobytes.⁵ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that *user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip.*
+
+### The golden kilobyte
+
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁶ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this only works if you took my earlier advice to avoid third-party content.
+
+Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
+
+### Layout shifts
+
+Loading content with unknown dimensions, such as images, can create layout shifts; the WICG's Layout Instability API describes the phenomenon in detail.
+
+=> https://wicg.github.io/layout-instability/#sec-intro Layout Instability API
+
+Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including "width" and "height" values, but the "style" attribute could work too. I recommend staying away from the "style" attribute, or at least selectively allowing its use with the "style-src-attr" CSP directive.
+
+### Other server-side tweaks
+
+In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
+
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a "precompressed" directive; Nginx requires a separate module for Brotli compression:
+
+=> https://github.com/google/ngx_brotli The ngx_brotli module
+
+When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
+
+Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
+
+Using OCSP stapling eliminates the need to connect to a certificate authority, saving users a DNS lookup and allowing them to instead re-use a connection.
+
+Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in appendix E.5 of the spec:
+
+=> https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5 RFC-8446, Appendix E.5.
+
+## Tor
+
+Many people use Tor out of necessity. On Tor, additional constraints apply.
+
+For one, Tor users are encouraged to set the Tor Browser Bundle's (TBB) security settings to "safest".
+
+=> https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
+
+This disables scripts, MathML, some fonts, SVG images, and other features:
+
+=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
+
+If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+
+Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
+
+If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
+
+Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible *by default*. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
+
+### Hidden services
+
+To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
+
+Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
+
+For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children with varying formats and a fallback <img> element using a legacy image format.
+
+The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
+
+I address the issue by not using any SVG images on my hidden service:
+
+=> http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ My Tor hidden service (HTTP+HTML)
 
 ## Against lazy loading
 
@@ -214,6 +293,54 @@ Leveraging containment is a progressive enhancement, so there aren't any serious
 Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
 
 => https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
+
+For embedded third-party content (e.g. images), give extra consideration to the "Beyond alt-text" section. Your page should be as useful as possible if the embedded content becomes inaccessible.
+
+## About fonts
+
+I recommend setting the default font to "sans-serif". Avoid "system-ui": it causes issues among readers whose system fonts don't cover your website's charset.
+
+=> https://infinnie.github.io/blog/2017/systemui.html Never, ever use system-ui as the value of font-family
+
+If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's DPI has three digits. Accommodate users' default zoom levels by keeping your font size the same as most similar websites.
+
+To ship custom fonts is to assert that branding is more important than user choice. That might very well be a reasonable thing to do; branding isn't evil! That being said, textual websites in particular don't benefit much from branding. Beyond basic layout and optionally supporting dark mode, authors generally shouldn't dictate the presentation of their websites; that should be the job of the user agent. Most websites are not important enough to look completely different from the rest of the user's system.
+
+A personal example: I set my preferred browser font to "sans-serif", and map it to my preferred font in my computer's fontconfig settings. Now every website that uses sans-serif will have my preferred font. Sites with sans-serif blend into the users' systems instead of sticking out.
+
+### But most users don't change their fonts...
+
+The "users don't know better and need us to make decisions for them" mindset isn't without merits; however, in my opinion, it's overused. Using system fonts doesn't make your website harder to use, but it does make it smaller and stick out less to the subset of users who care enough about fonts to change them. This argument isn't about making software easier for non-technical users; it's about branding by asserting a personal preference.
+
+### Can't users globally override stylesheets instead?
+
+It's not a good idea to require users to automatically override website stylesheets to see their preferred fonts. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
+
+That being said, many users *do* actually override stylesheets. We shouldn't *require* them to do so, but we should keep our pages from breaking in case they do. Pages following this article's advice will probably work perfectly well in these cases without any extra effort.
+
+### Font fingerprinting concerns
+
+Some people raised fingerprinting concerns when I suggested using the default "sans-serif" font. Websites could see which font this maps to in order to identify users.
+
+I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
+
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
+
+=> https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting Firefox's protection against fingerprinting
+
+Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
+
+### Zoom and font size
+
+Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
+
+In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations⁴ (e.g. borders), but they are uncommon.
+
+Set font size and line-spacing with a percentage and a unitless value, respectively:
+
+```
+font: 100%/1.5 sans-serif;
+```
 
 ## Beyond alt-text
 
@@ -538,9 +665,9 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 
 As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, "Text is not justified" is explicitly mentioned in Success Criterion 1.4.8.
 
-## Small viewports and zoom
+## Small viewports
 
-Users use a variety of zoom levels and viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
+People read on a variety of viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
 
 ### Narrow viewports
 
@@ -621,98 +748,6 @@ When filtering criteria on the Quickref Reference page, a dickbar lists active f
 Designers often use figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
 There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
-
-### Zoom
-
-Browsers allow users to zoom by adjusting size metrics. In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations (e.g. borders), but they are uncommon.
-
-Set font size and line-spacing with a percentage and a unitless value, respectively:
-
-```
-font: 100%/1.5 sans-serif;
-```
-
-## Tor
-
-Many people use Tor out of necessity. On Tor, additional constraints apply.
-
-For one, Tor users are encouraged to set the Tor Browser Bundle's (TBB) security settings to "safest".
-
-=> https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
-
-This disables scripts, MathML, some fonts, SVG images, and other features:
-
-=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
-
-If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
-
-Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
-
-If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
-
-Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible *by default*. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
-
-### Hidden services
-
-To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
-
-Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
-
-For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children with varying formats and a fallback <img> element using a legacy image format.
-
-The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
-
-I address the issue by not using any SVG images on my hidden service:
-
-=> http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ My Tor hidden service (HTTP+HTML)
-
-## Optimal loading
-
-Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Optimal loading matters most in these situations. Broadly, it covers three categories: reducing payload size, delivering content early, and reducing the number of round trips.
-
-### Blocking content
-
-HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a "link" HTTP header.
-
-My website includes a "link" header to load an SVG that serves as my IndieWeb photo and favicon:
-
-```
-link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
-```
-
-Reducing load time is especially useful for users with unreliable connections. For much of the world, connectivity comes in short bursts during which loading time is precious. Chances of a connection failure or packet loss increase with time.
-
-### Inline content
-
-In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
-
-Consider inlining images under 500 bytes with a "data:" URI; that's the size at which cache-validation headers might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
-
-### Layout shifts
-
-Loading content with unknown dimensions, such as images, can create layout shifts; the WICG's Layout Instability API describes the phenomenon in detail.
-
-=> https://wicg.github.io/layout-instability/#sec-intro Layout Instability API
-
-Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including "width" and "height" values, but the "style" attribute could work too. I recommend staying away from the "style" attribute, or at least selectively allowing its use with the "style-src-attr" CSP directive.
-
-### Other server-side tweaks
-
-In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
-
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a "precompressed" directive; Nginx requires a separate module for Brotli compression:
-
-=> https://github.com/google/ngx_brotli The ngx_brotli module
-
-When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
-
-Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
-
-Using OCSP stapling eliminates the need to connect to a certificate authority, saving users a DNS lookup and allowing them to instead re-use a connection.
-
-Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in appendix E.5 of the spec:
-
-=> https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5 RFC-8446, Appendix E.5.
 
 ## Non-browsers: reading mode
 
@@ -818,7 +853,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁵
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁷
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -962,14 +997,17 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 ¹ Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank "sandbox" directive even if it means breaking these addons.
 
 ² Some addons will have reduced functionality; for instance, Tridactyl can't create an <iframe> for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
-
 => https://github.com/tridactyl/tridactyl Tridactyl
 
 ³ Here's an overview of PE and my favorite write-up on the subject.
-
 => https://en.wikipedia.org/wiki/Progressive_enhancement Progressive Enhancement (Wikipedia)
 => https://whalecoiner.com/articles/progressive-enhancement Yes, progressive enhancement is a fucking moral argument
 
 ⁴ Decoration is more than cosmetic. The "Color overrides and accessibility" sub-section describes how some decorations, like borders, improve accessibility.
 
-⁵ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+⁵ If you'd like more details about TCP, here's a great introduction:
+=> https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
+
+⁶ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+
+⁷ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
