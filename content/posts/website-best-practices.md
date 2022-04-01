@@ -185,8 +185,6 @@ Users on poor connections have better things to do than idly wait for pages to l
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
-A similar attribute that I _do_ recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
-
 ### Would pre-loading or pre-fetching solve the issues with lazy-loading?
 
 Pre-loading essential resources is fine, but speculatively pre-loading content that the user may or may not request isn't.
@@ -215,6 +213,35 @@ Another common offender is infinite-scrolling. This isn't an issue without JavaS
 A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with <kbd>Ctrl</kbd> + <kbd>s</kbd>)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
+
+### Other ways to defer content
+
+Deferring network requests is a bad idea, but there are other ways to improve large-page performance.
+
+A similar attribute that I _do_ recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
+
+Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
+
+<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. When combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+<blockquote>
+
+`content-visibility: auto` is a more complex value than `hidden`; rather than being similar to `display: none`, it adaptively hides/<wbr>displays an element's contents as they become <a href="https://drafts.csswg.org/css-contain/#relevant-to-the-user">relevant to the user</a>. It also doesn’t hide its <a href="https://drafts.csswg.org/css-contain/#skips-its-contents">skipped contents</a> from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
+
+</blockquote>
+<figcaption>
+	&mdash;
+	<span class="h-cite" itemprop="citation" role="doc-credit">
+		<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
+			<cite itemprop="name" class="p-name">CSS Containment Module Level 2</cite>, section 4.2:
+			<a class="u-url" itemprop="url" href="https://drafts.csswg.org/css-contain/#using-cv-auto">Using <code>content-visibility: auto</code></a>
+		</span>
+	</span>
+</figcaption>
+</figure>
+
+Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers.
 
 Beyond alt-text
 ---------------
@@ -884,4 +911,5 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
 [^4]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+
 
