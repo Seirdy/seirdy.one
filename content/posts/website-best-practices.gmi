@@ -155,7 +155,17 @@ A supplementary metric to use alongside download size is **round trips.** Estima
 3. Finish downloading _two screenfuls of content_
 4. Finish downloading the full page.
 
-Understanding round-trips requires understanding your server's approach to congestion control. TCP Slow-Start typically sets an initial window size to ten TCP packets and grows this value with each round-trip. Under most setups, this means that the first round-trip can include 1460 bytes. The following round-trip can deliver under three kilobytes.⁵ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that *user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip.*
+### Congestion control
+
+Understanding round-trips requires understanding your server's approach to congestion control.
+
+Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁵
+
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
+
+=> https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf "TCP and BBR" slides from APNiC
+
+HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that *user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip.*
 
 ### The golden kilobyte
 

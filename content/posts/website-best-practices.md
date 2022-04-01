@@ -178,8 +178,10 @@ Everything else is bullshit.
 </blockquote>
 <figcaption>
 	&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
-		 {{<indieweb-person first-name="Maciej" last-name="Cegłowski" url="https://idlewords.com/about.htm">}},
-		<cite itemprop="isPartOf" itemscope itemtype="https://schema.org/PresentationDigitalDocument"><a class="u-url p-name" itemprop="url" href="https://idlewords.com/talks/website_obesity.htm"><span itemprop="name">The Website Obesity Crisis</span></a></cite>
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/PresentationDigitalDocument">
+				{{<indieweb-person first-name="Maciej" last-name="Cegłowski" url="https://idlewords.com/about.htm" itemprop="author">}},
+				{{<cited-work name="The Website Obesity Crisis" url="https://idlewords.com/talks/website_obesity.htm">}}
+			</span>
 	</span>
 </figcaption>
 </figure>
@@ -191,11 +193,19 @@ A supplementary metric to use alongside download size is **round trips.** Estima
 3. Finish downloading _two screenfuls of content_
 4. Finish downloading the full page.
 
-Understanding round-trips requires understanding your server's approach to congestion control. TCP Slow-Start typically sets an initial window size to ten TCP packets and grows this value with each round-trip. Under most setups, this means that the first round-trip can include 1460 bytes. The following round-trip can deliver under three kilobytes.[^5] HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
+### Congestion control
+
+Understanding round-trips requires understanding your server's approach to congestion control.
+
+Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.[^4]
+
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
+
+HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^6] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this only works if you took my earlier advice to [avoid third-party content](#third-party-content).
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^5] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this only works if you took my earlier advice to [avoid third-party content](#third-party-content).
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -242,7 +252,6 @@ The Tor browser will download whichever format Firefox would, rather than whiche
 
 I address the issue by not using any SVG images on [my hidden service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/).
 
-
 Against lazy loading
 --------------------
 
@@ -255,7 +264,7 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				<cite><a class="u-url p-name" itemprop="url" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><span itemprop="name">&lt;img&gt;: The Image Embed element</span></a></cite>
+				{{<cited-work name="&lt;img&gt;: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">}}
 				on <abbr title="Mozilla Developer Network">MDN</abbr>,
 				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
 			</span>
@@ -331,7 +340,6 @@ Leveraging containment is a progressive enhancement, so there aren't any serious
 
 Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing [layout shifts](#layout-shifts). Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. <cite><a href="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/">Calculating 'contain-intrinsic-size' for 'content-visibility'</a></cite>, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/about-us/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/">}}, is a comprehensive guide to calculating intrinsic size values.
 
-
 About fonts
 -----------
 
@@ -367,7 +375,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^4] (e.g. borders), but they are uncommon.
+In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^6] (e.g. borders), but they are uncommon.
 
 <figure>
 <figcaption>
@@ -943,8 +951,10 @@ Parts of this page can be thought of as an extension to the principles of Brutal
 	</blockquote>
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
-			{{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/">}},
-			<cite itemprop="isPartOf" itemscope itemtype="https://schema.org/CreativeWork"><a class="u-url p-name" itemprop="url" href="https://brutalist-web.design/"><span itemprop="name">Brutalist Web Design</span></a></cite>
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/WebSite">
+				{{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/" itemprop="author">}},
+				{{<cited-work name="Brutalist Web Design" url="https://brutalist-web.design/">}}
+			</span>
 		</span>
 	</figcaption>
 </figure>
@@ -980,11 +990,11 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
+[^4]: <cite>High-Performance Browser Networking</cite> by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/">}} gives [a great introduction to how TCP works](https://hpbn.co/building-blocks-of-tcp/), if you'd like more details.
 
-[^5]: <cite>High-Performance Browser Networking</cite> by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/">}} gives [a great introduction to how TCP works](https://hpbn.co/building-blocks-of-tcp/), if you'd like more details.
+[^5]: HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
 
-[^6]: HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+[^6]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
 [^7]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 

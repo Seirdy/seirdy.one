@@ -1,4 +1,6 @@
-<span {{ if (.Get "itemprop") -}}itemprop="{{- .Get "itemprop" -}}"{{- end }} itemscope itemtype="https://schema.org/Person" class="h-card vcard">
+<span {{ if (.Get "itemprop") -}}itemprop="{{- .Get "itemprop" -}}"{{- end }}
+	itemscope itemtype="https://schema.org/Person"
+	class="h-card vcard{{if eq (.Get "itemprop") "author"}} p-author{{end}}">
 	<a itemprop="url" href="{{- .Get "url" -}}" class="u-url url">
 		{{- if (.Get "avatar") -}}
 		{{- $avatar_img := (resources.GetRemote (.Get "avatar")).Resize "32x32" -}}
