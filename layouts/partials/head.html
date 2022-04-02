@@ -7,7 +7,7 @@
 <!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
 {{ end }}
-<title>{{ .Title }}{{ if and (lt (len .Title) 66) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
+<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta content="{{ .Site.Author.name }}" name="author">
 <meta property="article:author" content="{{ .Site.Author.name }}">

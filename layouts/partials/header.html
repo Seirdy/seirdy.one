@@ -1,14 +1,16 @@
-	<header id="banner" itemscope itemtype="https://schema.org/WPHeader">
-		<nav>
-			<ul class="unstyled-list">
-				<li itemscope itemtype="https://schema.org/SiteNavigationElement">
-					<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"><span itemprop="name">{{ .Site.Title }}</span></a>
-				</li>
-				{{ range .Site.Menus.main.ByWeight -}}
-				<li itemscope itemtype="https://schema.org/SiteNavigationElement">
-					{{ .Pre }}<a href="{{ .URL }}" itemprop="url" title="{{ .Title }}"><span itemprop="name">{{- .Name -}}</span></a>{{ .Post }}
-				</li>
-				{{- end }}
-			</ul>
-		</nav>
-	</header>
+<header id="banner" itemscope itemtype="https://schema.org/WPHeader">
+	<nav aria-label="Main navigation">
+		<ul class="unstyled-list">
+			{{- $currentPage := . -}}
+			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if eq $currentPage.Permalink .Site.BaseURL -}} aria-current="page"{{- end -}}><span itemprop="name">{{ .Site.Title }}</span></a>
+			</li>
+			{{ range .Site.Menus.main -}}
+			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+				<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}} aria-current="page"{{- end -}}>
+					<span itemprop="name">{{- .Name -}}</span></a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
+</header>
