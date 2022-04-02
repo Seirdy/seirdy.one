@@ -12,9 +12,13 @@ My primary focus is inclusive design:
 
 => https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/ Accomodation versus inclusive design.
 
-Specifically, I focus on supporting *underrepresented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
+Specifically, I focus on supporting *under-represented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
 
-I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider *some* points I make on this page the next time they build a website, and be aware of the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
+One of the core ideas behind the flavor of inclusive design I present is being *inclusive by default.* Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+
+Another focus is minimalism. Progressive enhancement is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. On top of progressive enhancement, I prefer limiting any enhancements to ones that are demonstrated to solve specific accessibility, security, performance, or significant usability problems faced by people besides me.
+
+I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and address the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
 I'll cite the Web Accessibility Initiative's (WAI) "Techniques for WCAG 2.2" a number of times:
 
@@ -255,7 +259,11 @@ Unfortunately, pages with lazy loading don't finish loading off-screen images in
 
 A common objection to my case against lazy-loading is that users may be more likely to click a link than scroll to the bottom, so pages should prioritize pre-loading the link. Pre-loading a page's essential resources is fine. Speculatively pre-loading content on separate pages isn't.
 
-Many users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users (including Tor Browser users) also generally disable speculative pre-loading since pre-loading behavior is fingerprintable.
+Many users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. The overlap between these two groups grows especially pronounced as data cap overages trigger throttling:
+
+=> https://web.archive.org/web/20220402004738/https://nitter.pussthecat.org/yoavweiss/status/1195036487538003968 "In Japan, the web is slower towards the end of the month due to data caps"
+
+Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users (including Tor Browser users) also generally disable speculative pre-loading since pre-loading behavior is fingerprintable.
 
 Users who click a link *choose* to load a full page. Loading pages that a user hasn’t clicked on is making a choice for that user. I encourage adoption of “link” HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
