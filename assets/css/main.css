@@ -1,37 +1,20 @@
 /* CSS that adds the bare minimum for a simple layout.
  * Nothing here exists purely for aesthetics except the unstyled-list;
  * everything else addresses a specific a11y, compatibility, or critical
- * usability need. */
+ * usability need.
+ * I also don't define any non-semantic classes besides unstyled-list.
+ * The the other classnames referenced here are from microformats2. */
 
-/* This site's CSS does 10 major things:
- * 1. sans-serif instead of serif for low-res screens.
- * 2. Consistent font size; <pre> and <code> shouldn't be smaller than
- *    regular text.
- * 3. max content width for readability
- * 4. single-row nav links widescreen, multiline nav on narrow screens
- * 5. Soft border around code and images to disginguish from the
- *    surrounding page. Images with white/black or transparent
- *    backgrounds should have clear dimensions, and multiple consecutive
- *    inline <code> spans should look separate. A <code> span that
- *    continues across multiple lines should not look like multiple different
- *    spans.
- * 6. Increase the line-spacing a bit so users on mobile devices can
- *    tap links more easily.
- * 7. Horizontally center non-inline images; left-aligned stick out.
- * 8. dark.css changes a few colors if the browser wants dark mode.
- * 9. Support unstyled lists: for webmentions, post lists, nav links.
- * 10. Narrow screen optimization: less-indented blockquotes, overflow
- *     behavior for <pre>, no figure margins.
- * Everything else is browser defaults:
- * default fonts, non-dark-mode colors, etc.
- */
+/* Start with browser defaults: default fonts, non-dark-mode colors, etc
+ * Only change things to solve a specific a11y or significant usability
+ * need. One exception: cosmetic improvement for unstyled-list */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
 	 * further apart. Dyslexic users prefer the spacing too.
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
 	 * on serif being the default?? */
-	font: 100%/1.5 sans-serif;
+	font: 105%/1.5 sans-serif;
 
 	/* Aligning to the center with space on both sides prevents accidental
 	* link activation on mobile devices. */
@@ -55,21 +38,30 @@ html {
 
 @supports (border-inline-start: 6px) {
 	/* narrow screens: reduce margin for blockquotes a lot, using
-	 * a thick left-side border instead. */
+	 * a thick left-side border instead, or a right-side border in
+	 * RTL locales. Some browsers like NetSurf or IE don't support this,
+	 * but they're pretty much only used on the desktop where a huge indent
+	 * is less of a problem.*/
 	blockquote {
-		border-inline-start: 6px solid #bbb;
+		border-inline-start: 5px solid #aaa;
 		margin: 0;
 		padding: 0 0.8em;
 	}
+}
 
-	/* single-line nav on widescreen and print.
-	 * Single-line nav on print saves almost half a page. */
-	@media print, (min-width: 32em) {
-		header nav li {
-			display: inline;
-			padding-inline-end: 0.5em;
-		}
+/* single-line nav on widescreen and print.
+ * Single-line nav on print saves almost half a page. */
+@media (min-width: 32em) {
+	header nav li {
+		display: inline;
+		/* inline-end doesn't work in netsurf. -right should stil make sense
+		 * in RTL machine translation, it'll just look a bit indented. */
+		padding-right: 0.5em;
 	}
+}
+
+a[aria-current="page"] {
+	font-weight: bold;
 }
 
 /* narrow screens: remove unused figure margin. */
@@ -133,7 +125,7 @@ pre {
 img,
 pre,
 :not(pre) > code {
-	border: 1px solid #bbb;
+	border: 1px solid #aaa;
 }
 
 /* center images that aren't my indieweb icon; same justification as
@@ -146,15 +138,21 @@ img:not(.u-photo) {
 	max-width: 100%;
 }
 
+/* WCAG Technique C25: use borders to separate sections.
+ * Also use "content-visibility: auto" to improve performance by
+ * reducing the number of DOM nodes rendered at once. */
+footer,
+section[role="doc-endnotes"] {
+	border-top: 1px solid #aaa;
+	content-visibility: auto;
+}
+
 /* Todo:
  * - Some browsers don't scale SVGs properly; the img container
  *   dimensions crop the image rather than scale it. Investigate
  *   if this only applies to Internet Explorer or if it applies to
  *   other uncommon browsers too. If any non-IE browsers do this and/or
  *   if the spec allows this behavior, try to correct it here.
- * - Investigate reduced-contrast for dark mode
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
  *   then consider trimming the dark stylesheet I provide.
- * - Investigate CSS-based hints to screenreaders.
- * - See if any "-left" properties should switch to "-right" for users
- *   who machine-translate the page to a RTL language. */
+ * - Investigate CSS-based hints to screenreaders. */

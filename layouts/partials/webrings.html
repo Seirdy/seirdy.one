@@ -14,9 +14,9 @@
 {{ range $i, $r := after 1 (getCSV "," "/csv/webrings.csv") }}
 <li>
 <p>
-<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">←</a> ·
+<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="previous site">←</a> ·
 <a href="{{- index $r 2 -}}">{{- index $r 0 -}}</a> ·
-<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">→</a>
+<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="next site">→</a>
 </p>
 </li>
 {{ end }}

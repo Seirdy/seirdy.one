@@ -3,8 +3,8 @@
 		/* "background" is short for a bunch of unnecessary CSS rules
 		 * background-color is all I need
 		 * I've been told that pure white on black is a bit harsh */
-		background-color: #0c0c0c;
-		color: #ececec;
+		background-color: #0e0e0e;
+		color: #eee;
 	}
 
 	a {
@@ -21,10 +21,9 @@
 
 	blockquote,
 	:not(pre) > code,
-	hr,
 	img,
 	pre {
-		border-color: #333;
+		border-color: #444;
 	}
 
 	/* stylelint-disable -- hasn't heard of "prefers-contrast" yet */
