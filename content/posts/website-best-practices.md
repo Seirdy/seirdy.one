@@ -535,6 +535,14 @@ I personally like a foreground and background of `#ececec` and `#0c0c0c`, respec
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check [prefers-contrast on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) for more information.
 
+### Contrast under different conditions
+
+Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". {{<indieweb-person first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} explains his experience in <cite><a href="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">Color blindness</a></cite>.
+
+Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test with both high- and low-end displays, especially when designing a dark color scheme.
+
+Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to lower the screen color temperature at night, while some individuals may select a higher one in the morning.
+
 Image optimiza&shy;tion {#image-optimization}
 -----------------------
 
@@ -548,7 +556,7 @@ Some image optimization tools I use:
 
 I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs in my dotfile repo.
 
-You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
@@ -576,13 +584,19 @@ This is a sample command to compress a PNG image using ImageMagick, `pngquant`, 
 
 </figure>
 
-It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
-
-In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping. Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
+In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping.
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
 If you really want to go overboard with PNG optimization, you can try a tool like [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool).
+
+### Breaking conventional wisdom
+
+Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
+
+Most resources on image optimization recommend considering progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead below the 20&nbsp;kb range.
+
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
 ### Dark image variants
 
@@ -901,6 +915,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <abbr title="Web Accessibility Initiative">WAI</abbr> <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
+* Other accessible writing tips, maybe after I get a copy of <span itemscope itemtype="https://schema.org/Book"><a itemprop="url" href="https://rosenfeldmedia.com/books/writing-is-designing/"><cite itemprop="name">Writing Is Designing</cite></a> by {{<indieweb-person first-name="Michael" last-name="Metts" url="https://mjmetts.com/" itemprop="author">}} and {{<indieweb-person first-name="Andy" last-name="Welfe" url="https://www.andy.wtf/" itemprop="author">}}. A relevant excerpt on writing accessibly is [on A List Apart](https://alistapart.com/article/standards-for-writing-accessibly/).
 
 Conclusion
 ----------
