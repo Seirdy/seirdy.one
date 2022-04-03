@@ -435,14 +435,14 @@ Consider using a `<figure>` element when employing the previous section's two-pa
 
 Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Some example items that could use a caption:
 
-<dl>
-	<dt>Blockquote</dt>
-	<dd>Captioned with a citation</dd>
-	<dt>Code snippet</dt>
-	<dd>Captioned with its purpose or a link to a the larger file from which the snippet was borrowed</dd>
-	<dt>Equation</dt>
-	<dd>Sometimes captioned with a brief explanation of its behavior, purpose, or significance. Remember to add alt-text.</dd>
-</dl>
+Blockquote
+: Captioned with a citation
+
+Code snippet
+: Captioned with its purpose or a link to a the larger file from which the snippet was borrowed
+
+Equation
+: Sometimes captioned with a brief explanation of its behavior, purpose, or significance. Remember to add alt-text.
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
@@ -548,24 +548,35 @@ Image optimiza&shy;tion {#image-optimization}
 
 Some image optimization tools I use:
 
-- [`pngquant`](https://pngquant.org) (lossy)
-- [`oxipng`](https://github.com/shssoichiro/oxipng) (lossless)
-- [`jpegoptim`](https://github.com/tjko/jpegoptim) (lossless or lossy)
-- [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp) (lossless or lossy)
-- `avifenc` (lossless or lossy), included in <a href="https://github.com/AOMediaCodec/libavif" translate="no">libavif</a>
+[`pngquant`](https://pngquant.org)
+: lossy PNG compression. Can reduce the size of the color palette.
 
-I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs in my dotfile repo.
+[`oxipng`](https://github.com/shssoichiro/oxipng)
+: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
+
+[`jpegoptim`](https://github.com/tjko/jpegoptim)
+: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata.
+
+[`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
+: The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
+
+`avifenc`
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^7]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+
+[^7]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+
+I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/); I've heard good things about it.
 
 You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1. Re-size and crop the image. Convert to grayscale if colors aren't important.
+1. Re-size and crop the PNG. Convert to grayscale if colors isn't important.
 2. Lossy compression with `pngquant`
 3. Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
 4. Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
 5. Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
-6. Create a lossy AVIF image from the original source image, and include it in the `<picture>` element if it's smaller than the WebP.
+6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
 7. If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
 
 <figure id="png-pipeline">
@@ -596,6 +607,13 @@ Some conventional wisdom for image compression doesn't hold up when compressing 
 
 Most resources on image optimization recommend considering progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead below the 20&nbsp;kb range.
 
+These resources also encourage authors to include different image variants for different viewport sizes, screen resolutions, and pixel densities. They often skip the caveats:
+
+* Using different image files for different viewport sizes can cause the page to request more images as users re-size their window.
+* Sending requests dependent on viewport and display characteristics is a fingerprinting vector, allowing servers to identify users by these properties.
+
+Rather than create separate lanes for different users, I prefer making the defaults as inclusive as possible. A single image should look good under a variety of downscaling algorithms. It should be as small as it can be without losing essential information.
+
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
 
 ### Dark image variants
@@ -609,13 +627,16 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 A minimal example of a <code>picture</code> with a dark variant:
 </figcaption>
 
-```
-<source type=image/png
-  srcset=/p/dark.png
-  media="screen and (prefers-color-scheme: dark)">
-<source type=image/png
-  srcset=/p/light.png>
-```
+<pre>
+<code>&lt;picture&gt;
+&lt;source type="image/png"
+  srcset="/p/dark.png"
+  media="screen and (prefers-color-scheme: dark)"&gt;
+&lt;img src="/p/light.png"
+  alt="<var translate="yes">ALTERNATIVE_TEXT</var>"
+  width="<var translate="yes">WIDTH</var>" height="<var translate="yes">HEIGHT</var>"&gt;
+&lt;picture&gt;</code>
+</pre>
 
 </figure>
 
@@ -629,7 +650,7 @@ I only recommend using SVG in images; avoid using them in embeds, objects, or di
 
 The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implemen&shy;tation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
-Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Don't overdo lossy compression with these tools, since lossy compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression.
+Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Don't overdo lossy compression with these tools, since lossy SVG compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression.
 
 Layout
 ------
@@ -734,7 +755,7 @@ Not every phone has a giant screen: millions of people around the world use Web-
 
 Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (<abbr title="Device Pixel Ratio">DPR</abbr>=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the `&shy;` entity.
 
-Most modern browsers support the `hyphens` CSS3 property, but full automatic hyphenation is usually an overkill solution with a naive implemen&shy;tation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implemen&shy;tations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
+Most modern browsers support the `hyphens` CSS&nbsp;3 property, but full automatic hyphenation is usually an overkill solution with a naive implemen&shy;tation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implemen&shy;tations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
 
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
@@ -759,9 +780,9 @@ Most browser default stylesheets were not optimized for narrow viewports, so nar
 
 The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element). It recommends placing a `<blockquote>` element inside a `<figure>` and citations in a `<figcaption>` to show a semantic relationship between a quotation and its citation.
 
-Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When such a blockquote contains `<ol>` or `<ul>` elements, the indentation alone may fill most of a narrow viewport!
+Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
+I chose to remove the margins in `<figure>` elements. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;3 compliant browser, you might have noticed the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as "padding-inline-start" will render quoted text with default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
@@ -880,7 +901,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^7]
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^8]
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -1021,6 +1042,4 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^6]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
-[^7]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
-
-
+[^8]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
