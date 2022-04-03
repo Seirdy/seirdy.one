@@ -203,7 +203,7 @@ Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it 
 
 => https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5 RFC-8446, Appendix E.5.
 
-## Tor
+## The Tor Browser
 
 Many people use Tor out of necessity. On Tor, additional constraints apply.
 

@@ -15,7 +15,7 @@ sitemap:
     Priority: 0.7
 title: An opinionated list of best practices for textual websites
 ---
-<aside><div role="doc-preface">
+<div role="doc-preface">
 
 _The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive._
 
@@ -23,9 +23,7 @@ This is a "living document" that I add to as I receive feedback. See the [change
 
 If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.
 
-</div></aside>
-
-{{<toc>}}
+</div>
 
 <section role="doc-introduction">
 
@@ -45,6 +43,8 @@ I'd like to re-iterate yet another time that this only applies to websites that 
 I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
 </section>
+
+{{<toc>}}
 
 Security and privacy
 --------------------
@@ -233,8 +233,8 @@ Using [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) eliminates th
 
 Consider the trade-offs involved in enabling 0-<abbr title="Round-Trip Time">RTT</abbr> for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in [appendix E.5](https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5) of the spec.
 
-Tor
----
+The Tor Browser
+---------------
 
 Many people use Tor out of necessity. On Tor, additional constraints apply.
 
@@ -436,12 +436,8 @@ Consider using a `<figure>` element when employing the previous section's two-pa
 Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Some example items that could use a caption:
 
 Blockquote
-: Captioned with a citation
-
-Code snippet
-: Captioned with its purpose or a link to a the larger file from which the snippet was borrowed
-
-Equation
+: Captioned with a citation Code snippet
+: Captioned with its purpose or a link to a the larger file from which the snippet was borrowed Equation
 : Sometimes captioned with a brief explanation of its behavior, purpose, or significance. Remember to add alt-text.
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
@@ -549,21 +545,11 @@ Image optimiza&shy;tion {#image-optimization}
 Some image optimization tools I use:
 
 [`pngquant`](https://pngquant.org)
-: lossy PNG compression. Can reduce the size of the color palette.
-
-[`oxipng`](https://github.com/shssoichiro/oxipng)
-: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
-
-[`jpegoptim`](https://github.com/tjko/jpegoptim)
-: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata.
-
-[`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
-: The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
-
-`avifenc`
+: lossy PNG compression. Can reduce the size of the color palette. [`oxipng`](https://github.com/shssoichiro/oxipng)
+: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression [`jpegoptim`](https://github.com/tjko/jpegoptim)
+: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata. [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
+: The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG. `avifenc`
 : The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^7]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
-
-[^7]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
 I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/); I've heard good things about it.
 
@@ -936,7 +922,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <abbr title="Web Accessibility Initiative">WAI</abbr> <cite>[Personalization Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
-* Other accessible writing tips, maybe after I get a copy of <span itemscope itemtype="https://schema.org/Book"><a itemprop="url" href="https://rosenfeldmedia.com/books/writing-is-designing/"><cite itemprop="name">Writing Is Designing</cite></a> by {{<indieweb-person first-name="Michael" last-name="Metts" url="https://mjmetts.com/" itemprop="author">}} and {{<indieweb-person first-name="Andy" last-name="Welfe" url="https://www.andy.wtf/" itemprop="author">}}. A relevant excerpt on writing accessibly is [on A List Apart](https://alistapart.com/article/standards-for-writing-accessibly/).
+* Other accessible writing tips, maybe after I get a copy of <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Writing Is Designing" url="https://rosenfeldmedia.com/books/writing-is-designing/">}} by {{<indieweb-person first-name="Michael" last-name="Metts" url="https://mjmetts.com/" itemprop="author">}} and {{<indieweb-person first-name="Andy" last-name="Welfe" url="https://www.andy.wtf/" itemprop="author">}}</span>. A relevant excerpt on writing accessibly is [on A List Apart](https://alistapart.com/article/standards-for-writing-accessibly/).
 
 Conclusion
 ----------
@@ -1042,4 +1028,8 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^6]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
+[^7]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+
 [^8]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
+
+
