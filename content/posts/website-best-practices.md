@@ -296,7 +296,7 @@ Some go so far as to disable this behavior to avoid data overages. Savvy privacy
 
 Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
-Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Most marginalized don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
+Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Many marginalized people don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
 
 ### Can't users on poor connections disable images?
 
@@ -436,8 +436,12 @@ Consider using a `<figure>` element when employing the previous section's two-pa
 Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Some example items that could use a caption:
 
 Blockquote
-: Captioned with a citation Code snippet
-: Captioned with its purpose or a link to a the larger file from which the snippet was borrowed Equation
+: Captioned with a citation
+
+Code snippet
+: Captioned with its purpose or a link to a the larger file from which the snippet was borrowed
+
+Equation
 : Sometimes captioned with a brief explanation of its behavior, purpose, or significance. Remember to add alt-text.
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
@@ -545,10 +549,18 @@ Image optimiza&shy;tion {#image-optimization}
 Some image optimization tools I use:
 
 [`pngquant`](https://pngquant.org)
-: lossy PNG compression. Can reduce the size of the color palette. [`oxipng`](https://github.com/shssoichiro/oxipng)
-: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression [`jpegoptim`](https://github.com/tjko/jpegoptim)
-: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata. [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
-: The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG. `avifenc`
+: lossy PNG compression. Can reduce the size of the color palette.
+
+[`oxipng`](https://github.com/shssoichiro/oxipng)
+: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
+
+[`jpegoptim`](https://github.com/tjko/jpegoptim)
+: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata.
+
+[`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
+: The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
+
+`avifenc`
 : The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^7]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/); I've heard good things about it.
