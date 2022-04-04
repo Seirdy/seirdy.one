@@ -132,7 +132,7 @@ link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
 
 ### Inline content
 
-In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your CSS is under a kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
+In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your gzipped CSS is under one kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
 Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
@@ -308,7 +308,7 @@ CSS containment allows authors to isolate sub-trees of the DOM. When combined wi
 
 => https://drafts.csswg.org/css-contain/#using-cv-auto CSS Containment Module
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I plan on eventually using it for my site footers and Webmention lists.
+Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for my site footers and endnotes.
 
 Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
 
@@ -464,7 +464,7 @@ The Web version of this page is an example application of Technique C25 and the 
 => https://seirdy.one/2020/11/23/website-best-practices.html The Web mirror of this Gemlog post
 => https://www.w3.org/WAI/WCAG22/Techniques/general/G148 Technique G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults
 
-The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included horizontal rules (<hr>) further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
+The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
 The aforementioned techniques ensure a clear page layout while respecting user-specified color schemes.
 
@@ -502,7 +502,7 @@ Here's an approximation of what this kind of halation looks like:
 => gemini://seirdy.one/misc/halation.png Fuzzy white text on black background reading "But it is not" (image/png)
 => https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism image source
 
-I personally like a foreground and background of "#ececec" and "#0c0c0c", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0c0c0c" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
+I personally like a foreground and background of "#eee" and "#0e0e0e", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0e0e0e" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
