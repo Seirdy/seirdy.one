@@ -134,7 +134,7 @@ link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
 
 In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your gzipped CSS is under one kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
-Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (recall that the hidden service replaces SVGs with PNGs). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
+Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (that the hidden service replaces SVGs with PNGs; see the section called "The Tor Browser"). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
 ### Round-trips
 
@@ -173,7 +173,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁶ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this only works if you took my earlier advice to avoid third-party content.
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁷ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -288,6 +288,8 @@ Another common offender is infinite-scrolling. This isn't an issue without JavaS
 
 => https://xkcd.com/1309/ xkcd: Infinite Scrolling
 
+Infinite-scrolling makes it difficult for readers to find their old place upon re-visiting a page, thereby creating harsh consequences accidental navigation.
+
 A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with Ctrl + s)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
@@ -310,7 +312,7 @@ CSS containment allows authors to isolate sub-trees of the DOM. When combined wi
 
 Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for my site footers and endnotes.
 
-Using containment for content at the bottom of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
+Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the "contain-intrinsic-size" property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
 
 => https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
 
@@ -516,9 +518,29 @@ Color palettes need to be effective for different types of vision deficiencies (
 
 => https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html Color blindness
 
+Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
+
 Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test with both high- and low-end displays, especially when designing a dark color scheme.
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to lower the screen color temperature at night, while some individuals may select a higher one in the morning.
+
+## In defense of link underlines
+
+Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
+
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
+
+I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
+
+=> gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
+
+Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
+
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+
+=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
+
+Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
 
 ## Image optimization
 
@@ -537,7 +559,7 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif⁷. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif⁸. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
@@ -761,7 +783,7 @@ Images do not reflow their text. When the viewport is narrower than the image di
 
 I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
 
-The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section near the bottom of this page
+The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section.
 
 ### Indented elements
 
@@ -883,24 +905,6 @@ Websites following this page's layout advice shouldn't need much adjustment. Ahm
 
 => https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
 
-## In defense of link underlines
-
-Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
-
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
-
-I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
-
-=> gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
-
-Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
-
-> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
-
-=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
-
-Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
-
 ## Testing
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand POSH.
@@ -913,7 +917,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁸
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁹
 2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -1068,8 +1072,12 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 ⁵ If you'd like more details about TCP, here's a great introduction:
 => https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
 
-⁶ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+⁶ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
 
-⁷ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+=> https://browserleaks.com/fonts BrowserLeaks font fingerprinting demo. Warning: the page might hog your CPU for a while.
 
-⁸ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+⁷ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+
+⁸ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+
+⁹ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
