@@ -179,7 +179,7 @@ Apply these strategies in moderation. Including extra preload directives in your
 
 ### Layout shifts
 
-Loading content with unknown dimensions, such as images, can create layout shifts; the WICG's Layout Instability API describes the phenomenon in detail.
+Loading content of unknown dimensions, such as images, can create layout shifts; the WICG's Layout Instability API describes the phenomenon in detail.
 
 => https://wicg.github.io/layout-instability/#sec-intro Layout Instability API
 
@@ -229,7 +229,7 @@ To go above and beyond, try mirroring your site to a Tor hidden service to reduc
 
 Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
 
-For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children with varying formats and a fallback <img> element using a legacy image format.
+For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children of varying formats and a fallback <img> element using a legacy image format.
 
 The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
 
@@ -280,7 +280,7 @@ Nonetheless, expect some readers to have images disabled. Refer to the "Beyond a
 
 ### Related issues
 
-Pages should finish making all network requests while loading, save for a form submission. This makes it easy to load pages in the background before disconnecting. I singled out lazy-loading, but other factors can violate this constraint.
+Pages should finish making all GET network requests while loading. This makes it easy to load pages in the background before disconnecting. I singled out lazy-loading, but other factors can violate this constraint.
 
 One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. Displaying content all at once also improves searchability. The single-page approach has obvious limits: don't expect users to happily download a single-page novel.
 
@@ -304,7 +304,7 @@ A similar image attribute that I *do* recommend is the "decoding" attribute. I t
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
 
-CSS containment allows authors to isolate sub-trees of the DOM. When combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
+CSS containment allows authors to isolate sub-trees of the DOM. Combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
 
 > content-visibility: auto is a more complex value than hidden; rather than being similar to display: none, it adaptively hides/displays an element’s contents as they become relevant to the user. It also doesn’t hide its skipped contents from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
 
@@ -346,7 +346,7 @@ Some people raised fingerprinting concerns when I suggested using the default "s
 
 I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated with Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
 
 => https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting Firefox's protection against fingerprinting
 
@@ -395,7 +395,7 @@ Being sighted and loading images can introduce issues of its own. Sometimes, sig
 
 The best solution comes in two parts:
 
-1. Before the image, supply context that prepares readers with what to expect.
+1. Before the image, supply context that prepares readers for what to expect.
 2. After the image, describe your interpretation of important details.
 
 This is somewhat similar to the way most students in primary and secondary schools are taught to cite evidence in essays. On that note: remember that these are weak norms, not rules. Deviate where appropriate, just as students should as they learn to write.
@@ -416,7 +416,7 @@ Figures aren't just for images; they're for any self-contained referenced conten
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common with reading-mode implementations (see the "Non-browsers: reading mode" section). The HTML specification explicitly notes this behavior.
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in reading-mode implementations (see the "Non-browsers: reading mode" section). The HTML specification explicitly notes this behavior.
 
 > When a figure is referred to from the main content of the document by identifying it by its caption (e.g., by figure number), it enables such content to be easily moved away from that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix, without affecting the flow of the document.
 > If a figure element is referenced by its relative position, e.g., "in the photograph above" or "as the next figure shows", then moving the figure would disrupt the page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than using such relative references, so that the page can easily be restyled without affecting the page's meaning.
@@ -482,9 +482,9 @@ For more info, read the relevant docs:
 
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme prefers-color-scheme docs on MDN
 
-Dark themes are helpful for readers with photosensitivity (like me!), migraines, or dark environments.
+Dark themes are helpful for readers with migraines, photosensitivity (like me!), or dark environments.
 
-When setting colors, especially with a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
 
 => https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
 
@@ -534,7 +534,7 @@ I disagree. One reason is that underlines make it easy to separate multiple cons
 
 => gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
 
-Underlines also make it easy for readers with color vision deficiencies to distinguish the beginnings and ends of links from surrounding text. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
+Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
 > Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
 
@@ -581,7 +581,7 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 4.  Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using cwebp. Pick the smaller of the two.
 5.  Include the resulting WebP in the page, with a fallback to the PNG using a <picture> element.
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the <picture> element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
-7.  If the image is too light, repeat for a dark version of the image to display with a `prefers-dark-mode` media query.
+7.  If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
 
 Here's a sample command to compress a PNG using ImageMagick, pngquant, and oxipng. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
 
@@ -593,11 +593,11 @@ convert ORIGINAL_FILE \
 ```
 
 
-In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed with lossy compression and cropping.
+In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed by lossy compression and cropping.
 
 If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
-If you really want to go overboard with PNG optimization, you can try a tool like Efficient Compression Tool:
+If you really want to take PNG optimization to the next level, try Efficient Compression Tool:
 
 => https://github.com/fhanau/Efficient-Compression-Tool Efficient Compression Tool on GitHub
 
@@ -614,7 +614,7 @@ These resources also encourage authors to include different image variants for d
 
 Rather than create separate lanes for different users, I prefer making the defaults as inclusive as possible. A single image should look good under a variety of downscaling algorithms. It should be as small as it can be without losing essential information.
 
-It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots with solid backgrounds.
+It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots containing solid backgrounds.
 
 ### Dark image variants
 
@@ -622,7 +622,7 @@ Bright images on an otherwise dark page distract readers, especially readers lik
 
 A <picture> element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants to complement a dark stylesheet.
 
-This is a minimal example of a <picture> with a dark variant:
+This is a minimal example of a <picture> containing a dark variant:
 
 ```
 <picture>
@@ -643,7 +643,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 ### SVG images
 
-I only recommend using SVG in images; not embeds, objects, or directly in the body. Remember that users may save images and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG Tiny PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
+I only recommend using SVG in images; not embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of SVG Static’s secure static processing mode that appears in the SVG Tiny Portable/Secure (PS) spec. SVG Tiny PS is a subset of SVG Tiny 1.2, which is a supported export format in most vector drawing programs.
 
 => https://www.w3.org/TR/SVG/conform.html#secure-static-mode SVG conformance, section 2.2.6: Secure static mode
 => https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/ SVG Tiny PS
@@ -658,7 +658,7 @@ Two tools that can optimize the size of an SVG file are SVGO and the now-discont
 => https://github.com/svg/svgo SVGO
 => https://github.com/RazrFalcon/svgcleaner svgcleaner
 
-Don't overdo lossy compression with these tools, since lossy SVG compression can sometimes *reduce* the effectiveness of gzip and Brotli compression.
+Too much lossy SVG compression can sometimes *reduce* the effectiveness of gzip and Brotli compression. Compress in moderation.
 
 ## Layout
 
@@ -692,7 +692,7 @@ Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well 
 
 ### What about sidebars?
 
-Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens on a website with a sidebar, one of two things happens:
+Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
 
 1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text *and* handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
 2. The site doesn't use responsive design. The navbar and main content are now squeezed together. Readers will probably close the page.
@@ -703,7 +703,7 @@ Neither situation looks great.
 
 Common items in sidebars include tag clouds, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
 
-Don't boost engagement by providing readers with information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages *after* they've decided they want to read more.
+Don't boost engagement by readers information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages *after* they've decided they want to read more.
 
 ### Accessible skimming
 
@@ -727,7 +727,7 @@ However, studies seem to have mixed results; some people find it easier to read 
 
 Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of 38em, which typically corresponds to just under 90 characters. I opted to use "em" instead of "ch" for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, and others).
 
-I also ensured that my site works very well with CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
+I also ensured that my site supports CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
 When setting max line lengths, use a CSS media query to ensure that printed versions of a page use the full page width. This should save some paper. I opted to wrap all max-width rules in a media query to ensure that they only get called for the "screen" media type:
 
@@ -779,7 +779,7 @@ You should only use pictures of text when the visual presentation of the text is
 Images do not reflow their text. When the viewport is narrower than the image dimensions, two options arise:
 
 1. Allow the image to exceed the viewport width, triggering two-dimensional scrolling for the whole page.
-2. Shrink the image with the viewport, causing the text in the image to shrink with it.
+2. Shrink the image to fit the viewport, causing the text in the image to shrink with it.
 
 I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
 
@@ -795,7 +795,7 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (<ol>, <dl>, <ul>), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 3 compliant browser, you might notice that the blockquotes on it are formatted with a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element. Browsers that do not support CSS 3 properties such as "padding-inline-start" will render quoted text with default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in <figure> elements. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 3 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element. Browsers that do not support CSS 3 properties such as "padding-inline-start" will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
@@ -803,7 +803,7 @@ Another example: outside the Web, I prefer indenting code with tabs instead of s
 
 Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
 
-For now, I've decided to keep the indents on list elements such as <ol> and <ul>, since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
+For now, I've decided to keep the indents on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
 
 => https://seirdy.one/2020/11/23/website-best-practices.html#toc Table of contents
 
@@ -829,7 +829,7 @@ When filtering criteria on the Quickref Reference page, a dickbar lists active f
 
 Designers often use figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
-There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially readers with disabilities).
+There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially disabled readers).
 
 ## Non-browsers: reading mode
 
@@ -909,7 +909,7 @@ Websites following this page's layout advice shouldn't need much adjustment. Ahm
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand POSH.
 
-In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't look good in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
+In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't work well in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
 
 Your page should easily pass the harshest of tests without any extra effort if its HTML meets basic standards for well-written code (overlooking bad formatting and a lack of comments). Even if you use a complex static site generator, the final HTML should be simple, readable, and semantic.
 
@@ -918,12 +918,12 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁹
-2. Test using the Tor browser with the safest security level enabled (disables JS and other features).
+2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
-5. Test with accessibility aids such as screen readers, magnifiers, and switch controls.
+5. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
 6. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
-7. Test keyboard navigability with the tab key and with caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
+7. Test keyboard navigability with the tab key and caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 8. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 9. Test in an online website translator tool.
 10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
@@ -942,17 +942,19 @@ I'm still on step 13, trying to find new ways to break this page. If you come up
 
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
-* How purely-cosmetic animations harm users with cognitive disabilities (e.g. attention disorders).
+* How purely-cosmetic animations harm readers with learning and cognitive disabilities (e.g. attention disorders).
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
 * Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touchscreen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
-* How to choose phrasings such that some meaning can be inferred without understanding numbers, for readers with dyscalculia. This is more applicable to posts whose main focus is not mathematical or quantitative.
+* How to choose phrasings such that some meaning can be inferred without understanding numbers, for dyscalculic readers. This is more applicable to posts whose main focus is not mathematical or quantitative.
 * How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * How keyboard navigation can be altered by assistive tools such as screen readers.
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
+* Elaboration on how authors should delegate much of their formatting to the user agent, and how CSS resets are a symptom of a failure to do so.
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
+* Ways to support non-mainstream browsers by supporting subsets of specifications and using progressive enhancement.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI draft specification matures and its vocabularies gain adoption before going in depth:
 => https://w3c.github.io/personalization-semantics/help/index.html Personalization Help and Support 1.0
@@ -987,7 +989,7 @@ There are tons of ways to read a page; authors typically cater only to the mains
 
 Each of these may be dismissed as a "niche", especially given a profit motive (or worse, a growth imperative). Yet *many niches add up to a large population.* Every person who grows old becomes disabled; every long-distance traveller experiences poor connections.
 
-Moreover, I don't think that the size of a disadvantaged population should always matter. I understand weighing population size if you have to make a trade-off between two conflicting groups with special needs, but I don't think the aesthetic preferences of the majority are more important than supporting a disadvantaged minority.
+Moreover, I don't think that the size of a disadvantaged population should always matter. I understand weighing population size if you have to make a trade-off between two conflicting special needs, but I don't think the aesthetic preferences of the majority are more important than supporting a disadvantaged minority.
 
 Before you throw up your hands and decide you can't help everyone, take another skim through this page. Notice how much repetition exists between sections. *Nearly every bullet-point I listed benefits tremendously from plain-old, semantic HTML (POSH)*. If your page is usable with nothing but POSH, you've done half the work already.
 
@@ -1058,7 +1060,7 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 
 ## Notes
 
-¹ Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. On sensitive pages with content such as public key fingerprints, I recommend setting a blank "sandbox" directive even if it means breaking these addons.
+¹ Many addons function by injecting content into pages; this significantly weakens many aspects of the browser security model (e.g. site and origin isolation) and should be avoided if at all possible. For sensitive content such as public key fingerprints, I recommend setting a blank "sandbox" directive even if it means breaking these addons.
 
 ² Some addons will have reduced functionality; for instance, Tridactyl can't create an <iframe> for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
 => https://github.com/tridactyl/tridactyl Tridactyl
