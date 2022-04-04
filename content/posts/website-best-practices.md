@@ -316,7 +316,9 @@ One example is pagination. It's easier to download one long article ahead of tim
 Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences accidental navigation.
 
 <figure>
-{{< picture name="infinite_scrolling" alt="If books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page.">}}
+<a href="https://explainxkcd.com/1309/#Transcript">
+{{< picture name="infinite_scrolling" alt="Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.">}}
+</a>
 <figcaption>
 
 Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/). Transcript [on the "explain xkcd" wiki](https://explainxkcd.com/1309/#Transcript).
@@ -421,11 +423,27 @@ Expect some readers to have images disabled or unloaded. Examples include:
 * People with packet loss who only manage to load a few resources
 * Users of textual browsers
 
-Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include information that isn't present in the image; I'll cover how to handle supplementary information in the following subsections. The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point.
+Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections. The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point.
 
 ### Putting images in context
 
 Alt text should be limited to describing content of the image. It lacks context. To make things worse, images can contain a great deal of information. Sighted people can "filter" this information and find areas to focus on; alt text should capture this detail. However, sighted users' understanding of this detail can be informed by surrounding less-essential detail.
+
+Blind users might struggle to view images in context; they can't easily scan the text before and after an image non-linearly if there's no semantic connection between them.
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote>
+		<p>Try reading your screen through a drinking straw for an hour to get an idea of the limited context that a blind user has. You simply cannot scan the entire page at a glance with a screenreader - you have to listen to the structure of it carefully and remember all that, or read through the entire thing to find stuff, unless there are explicit associations such as longdesc.</p>
+	</blockquote>
+	<figcaption>
+		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/EmailMessage">
+				{{<indieweb-person first-name="Charles" last-name="McCathieNevile" url="https://www.w3.org/People/Charles/" itemprop="sender">}},
+				{{<cited-work name="longdesc Re: Clarification of rational for deprecation..." url="https://lists.w3.org/Archives/Public/public-html/2008Feb/0061.html">}}
+			</span>
+		</span>
+	</figcaption>
+</figure>
 
 Being sighted and loading images can introduce issues of its own. Sometimes, sighted readers might focus on the _wrong_ part of an image. How can you give readers the missing context and tell them what to focus on?
 
@@ -481,11 +499,24 @@ I personally try to maintain the flow of an article even if its figures and capt
 
 ### Image trans&shy;cripts {#image-transcripts}
 
-Some images contain text. Only use pictures of text if the visual appearance of the text is part of what you wish communicate.
+Some images contain text. Only use pictures of text if the visual appearance of the text is an essential part of what you wish communicate.
 
 If the image is a screenshot of text from a website, link to that website to allow users to read its contents in context; this can serve as an "image transcript" of sorts.
 
-A `longdesc` attribute is another way to reference an image transcript. The `longdesc` attribute contains a hyperlink (often an anchor link) to a location that contains more information about an image.
+A `longdesc` attribute used to be another way to reference an image transcript. The `longdesc` attribute contained a hyperlink (often an anchor link) to a location with more information about an image. This attribute [has been obsoleted](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) in the HTML Living Standard.
+
+The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`). Put a short summary in the alt-text, and mention that the hyperlink contains a transcript.
+
+<figure>
+<figcaption>
+The xkcd comic included <a href="#related-issues">earlier in the page</a> had this alt-text:
+</figcaption>
+
+> Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.
+
+</figure>
+
+Image transcripts also help users relying on [machine-translation](#machine-translation), since translation tools rely on textual content (OCR is error-prone). These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
 
 I describe best practices for preparing pictures of text in [a dedicated section](#pictures-of-text).
 
@@ -876,6 +907,8 @@ Machine trans&shy;lation {#machine-translation}
 Believe it or not, the entire world doesn't speak your website's languages. Browsers like Chromium, Microsoft Edge, and Safari have integrated machine translation to translate entire pages. Users can also leverage online website translators such as Google Translate or Bing. These "webpage translators" are far more complex than their plain-text predecessors.
 
 Almost every word on your site can be re-written. Prepare for headings to change length, paragraphs to grow and shrink, or hyphenation to disappear. Your site's layout should make sense even when the length of each textual element is changed.
+
+Machines can't reliably translate images of text, since OCR is error-prone. See the [image transcripts](#image-transcripts) section for remedies.
 
 Incorrect spelling and poor grammar in an original work can reduce the accuracy of a machine-translated derivative. Be sure to proofread.
 
