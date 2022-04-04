@@ -74,6 +74,6 @@
 		type="image/png">
 	<img
 		width="{{ $light_png.Width }}" height="{{ $light_png.Height }}"
-																	 src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'{{with (.Get "longdesc")}} longdesc='{{ . }}'{{end}}
+		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
 		decoding="async">
 </picture>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
