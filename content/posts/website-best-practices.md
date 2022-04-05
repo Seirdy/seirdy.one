@@ -827,6 +827,14 @@ Users employing machine translation will not benefit from your soft hyphens, so 
 
 Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions.
 
+### Keeping text together
+
+Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`.
+
+Practical Typography[^9] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail
+
+One exception to Practical Typography's rules: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
+
 ### Pictures of text
 
 You should only use pictures of text when the visual presentation of the text is part of the information you're trying to convey. Always be sure to test how such an image looks on a narrow screen.
