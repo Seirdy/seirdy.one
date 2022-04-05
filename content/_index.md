@@ -34,7 +34,7 @@ Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://git
 Contact
 -------
 
-Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr>@pleroma.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
 Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm [@seirdy:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
 
