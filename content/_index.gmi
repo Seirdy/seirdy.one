@@ -53,3 +53,10 @@ Orbits (Gemini equivalent of webrings):
 => gemini://fediring.net/previous/@Seirdy@pleroma.envs.net Previous
 => gemini://fediring.net/next/@Seirdy@pleroma.envs.net Next
 => gemini://fediring.net/ Learn more
+
+## Privacy Policy
+
+I don't collect anything except default server logs, purged regularly. More detail on a dedicated page:
+
+=> gemini://seirdy.one/privacy.gmi
+
