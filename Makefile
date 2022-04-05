@@ -13,8 +13,8 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
 RSYNCFLAGS += -rlcv --zc=zstd --zl=6
-# include br, jxl, and gmi in skip-compress
-RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3
+# include br, jxl, and gmi in skip-compress; skip unchanged files.
+RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3 -c
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
 
