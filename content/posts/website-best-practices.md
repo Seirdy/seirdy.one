@@ -55,7 +55,7 @@ One of the defining differences between textual websites and advanced Web&nbsp;2
 
 All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with <a translate="no" href="https://testssl.sh/">testssl.sh</a> and [Webbkoll](https://webbkoll.dataskydd.net/).
 
-If your OpenSSL (or equivalent) version is outdated or you don't want to download and run a shell script, SSL Labs' [SSL Server Test](https://www.ssllabs.com/ssltest/) should be equivalent to testssl.sh. Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features and is a bit out of date, but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
+If your OpenSSL (or equivalent) version is outdated or you don't want to download and run a shell script, SSL Labs' [SSL Server Test](https://www.ssllabs.com/ssltest/) should be equivalent to testssl.sh. Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features and is a bit out of date (and requires JavaScript), but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
 
 A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1. Vintage computers can run TLS 1.2 implemen&shy;tations such as BearSSL surprisingly efficiently, leverage a TLS terminator, or they can use a plain unencrypted connection. A broken cipher suite is security theater.
 
@@ -205,7 +205,7 @@ Understanding round-trips requires understanding your server's approach to conge
 
 Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.[^4]
 
-Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (PDF) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
 
 HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
 
@@ -313,7 +313,7 @@ Pages should finish making all `GET` network requests while loading. This makes 
 
 One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. Displaying content all at once also improves searchability. The single-page approach has obvious limits: don't expect users to happily download a single-page novel.
 
-Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences accidental navigation.
+Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
 
 <figure>
 <a href="https://explainxkcd.com/1309/#Transcript">
@@ -388,7 +388,7 @@ Some people raised fingerprinting concerns when I suggested using the default "s
 
 I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^6] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's [protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^7] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's [protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 
@@ -396,7 +396,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^7] (e.g. borders), but they are uncommon.
+In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^8] (e.g. borders), but they are uncommon.
 
 <figure>
 <figcaption>
@@ -461,6 +461,7 @@ A <dfn>figure</dfn> is any sort of self-contained information that is referenced
 Consider using a `<figure>` element when employing the previous section's two-part strategy. Place one of the two aforementioned pieces of information in a `<figcaption>`; the caption can come before or after the image.
 
 Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an `<aside>`. Some example items that could use a caption:
+
 
 Blockquote
 : Captioned with a citation
@@ -552,8 +553,7 @@ The aforementioned techniques ensure a clear page layout while respecting user-s
 
 If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with migraines, photosensitivity (like me!), or dark environments.
 
-
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://uglyduck.ca/lazy-dev-dark-mode/) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://www.myndex.com/APCA/) (requires JavaScript) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
 Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
 
@@ -587,7 +587,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 In defense of link under&shy;lines {#in-defense-of-link-underlines}
 ----------------------------------
 
-Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html), and hyperlinks are no exception. I disagree.
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^9] and hyperlinks are no exception. I disagree.
 
 One reason is that underlines make it easy to separate multiple consecutive inline links:
 
@@ -615,6 +615,7 @@ Image optimiza&shy;tion {#image-optimization}
 
 Some image optimization tools I use:
 
+
 [`pngquant`](https://pngquant.org)
 : lossy PNG compression. Can reduce the size of the color palette.
 
@@ -628,9 +629,9 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^8]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^10]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
-I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/); I've heard good things about it.
+I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles WebAssembly-compiled encoders; I've heard good things about it.
 
 You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
@@ -715,8 +716,7 @@ I only recommend using SVG in images; avoid using them in embeds, objects, or di
 
 The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implemen&shy;tation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
-Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Too much lossy SVG compression can sometimes *reduce* the effectiveness of gzip and Brotli compression. Compress in moderation.
-
+Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Too much lossy SVG compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression. Compress in moderation.
 
 Layout
 ------
@@ -897,6 +897,8 @@ Most extractors fetch these values using open standards for structured data. The
 
 Sorry, that was a lot of jargon for a single paragraph. Unfortunately, describing those terms is out of scope for this post. If you'd like to dive down this rabbit hole, read about the "Semantic Web".
 
+Some reading-mode implementations also support [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/), but I'd caution against using ARIA when POSH is sufficient: "bad ARIA" can be far more harmful to screen readers than "no ARIA". Only use ARIA to fill in gaps left by POSH.
+
 Again: avoid catering to non-standard implemen&shy;tations' quirks, especially undocumented proprietary ones. Let's not repeat the history of the [browser wars](https://en.wikipedia.org/wiki/Browser_wars). Remember that some implementations have bugs; consider reporting issues when one arises. More information about standard and non-standard behavior of reading modes is in the article <cite>[Web Reading Mode: The non-standard rendering mode](https://www.ctrl.blog/entry/browser-reading-mode-parsers.html)</cite> by {{<indieweb-person first-name="Daniel" last-name="Aleksandersen" url="https://www.daniel.priv.no/">}}.
 
 Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
@@ -943,7 +945,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^9]
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^11]
 2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -1057,7 +1059,7 @@ My favorite website club has to be the [<abbr title="eXtreme HyperText Movement 
 
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
 
-The [WebBS calculator](https://www.webbloatscore.com/) compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
+The [Web Bloat Score calculator](https://www.webbloatscore.com/) is a JavaScript app that compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
 
 One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
@@ -1065,7 +1067,7 @@ If you've got some time on your hands, I _highly_ recommend reading the <cite>[W
 
 The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. Much of the content on this page simply isn't covered by the WCAG. One of my favorite resources for learning about what the WCAG _doesn't_ cover is [Axess Lab](https://axesslab.com/articles/).
 
-I've learned about a great number of underrepresented ways to browse from the Fediverse, particularly from [this subthread asking people to share](https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc). Several responses informed updates to this page.
+I've learned about a great number of underrepresented ways to browse from the Fediverse, particularly from [this subthread asking people to share](https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc) (requires JavaScript; [plaintext mirror](https://gopher.envs.net/pleroma.envs.net:7070/1/notices/AHqp3TEDFoyz0W4nbc)). Several responses informed updates to this page.
 
 An early version of this article received useful responses when I [posted it to Lobsters](https://lobste.rs/s/akcw1m/opinionated_list_best_practices_for); I incorporated some feedback shortly afterward.
 
@@ -1084,12 +1086,18 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^5]: HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
 
-[^6]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [BrowserLeaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
+[^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same reasons are [outlined here](https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/) in the "Accessibility concerns for infinite scroll" section.
 
-[^7]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
+[^7]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [BrowserLeaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
 
-[^8]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+[^8]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
-[^9]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
+[^9]: {{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}} only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+
+    I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
+
+[^10]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+
+[^11]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
 
 

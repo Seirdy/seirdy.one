@@ -41,7 +41,7 @@ If your OpenSSL (or equivalent) version is outdated or you don't want to downloa
 
 => https://www.ssllabs.com/ssltest/ SSL Server Test
 
-Mozilla's HTTP Observatory offers a subset of Webbkoll's features and is a bit out of date, but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
+Mozilla's HTTP Observatory offers a subset of Webbkoll's features and is a bit out of date (and requires JavaScript), but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
 
 => https://observatory.mozilla.org/ HTTP Observatory
 
@@ -167,7 +167,7 @@ Historically, TCP congestion control approaches typically set an initial window 
 
 Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
 
-=> https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf "TCP and BBR" slides from APNiC
+=> https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf "TCP and BBR" slides from APNiC (PDF)
 
 HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that *user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip.*
 
@@ -289,7 +289,10 @@ Another common offender is infinite-scrolling. This isn't an issue without JavaS
 => https://xkcd.com/1309/ xkcd: Infinite Scrolling
 => https://explainxkcd.com/1309/#Transcript Transcript on the "explain xkcd" wiki
 
-Infinite-scrolling makes it difficult for readers to find their old place upon re-visiting a page, thereby creating harsh consequences accidental navigation.
+Infinite-scrolling makes it difficult for readers to find their old place upon re-visiting a page, thereby creating harsh consequences accidental navigation. WordPress documentation lists more problems:
+
+=> https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/ Infinite Scroll: Make WordPress Accessible
+=> https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/ Non-JS adaptation; skip to "Accessibility concerns" section
 
 A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
@@ -547,7 +550,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
 
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography⁸
 
 I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
 
@@ -578,13 +581,13 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif⁸. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif.⁹ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
 => https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image optimize-image
 
-For lossy compression, I typically use GNU Parallel to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who’d rather avoid the command line while performing lossy compression can instead check out Squoosh; I’ve heard good things about it.
+For lossy compression, I typically use GNU Parallel to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who’d rather avoid the command line while performing lossy compression can instead check out Squoosh, a JavaScript app that bundles WebAssembly-compiled encoders; I’ve heard good things about it.
 
 => https://squoosh.app Squoosh
 
@@ -876,6 +879,10 @@ Most extractors fetch these values using open standards for structured data. The
 
 Sorry, that was a lot of jargon for a single paragraph. Unfortunately, describing those terms is out of scope for this post. If you'd like to dive down this rabbit hole, read about the "Semantic Web".
 
+Some reading-mode implementations also support DPUB-ARIA, but I'd caution against using ARIA when POSH is sufficient: "bad ARIA" can be far more harmful to screenreaders than "no ARIA". Only use ARIA to fill in gaps left by POSH.
+
+=> https://www.w3.org/TR/dpub-aria-1.1/ DPUB-ARIA 1.1
+
 Again: avoid catering to non-standard implementations' quirks, especially undocumented proprietary ones. Let's not repeat the history of the browser wars:
 
 => https://en.wikipedia.org/wiki/Browser_wars Browser wars (Wikipedia)
@@ -938,7 +945,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.⁹
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹⁰
 2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -1074,7 +1081,8 @@ The WCAG are an excellent starting point for learning about accessibility, but m
 
 I've incorporated much feedback from various places online:
 
-=> https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc A Fediverse subthread asking people to share ideas
+=> https://pleroma.envs.net/notice/AHqp3TEDFoyz0W4nbc A Fediverse subthread asking people to share ideas (requires JavaScript)
+=> https://gopher.envs.net/pleroma.envs.net:7070/1/notices/AHqp3TEDFoyz0W4nbc Plaintext mirror of Fediverse thread
 => https://lobste.rs/s/akcw1m/opinionated_list_best_practices_for An early version of this article posted to Lobsters
 
 A special thanks goes out to GothAlice for the questions she answered in #webdev on Libera.Chat.
@@ -1096,11 +1104,13 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 => https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
 
 ⁶ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
-
 => https://browserleaks.com/fonts BrowserLeaks font fingerprinting demo. Warning: the page might hog your CPU for a while.
 
 ⁷ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
 
-⁸ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+⁸ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+I find Practical Typography quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-⁹ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+⁹ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+
+¹⁰ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
