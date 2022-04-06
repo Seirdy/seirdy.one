@@ -14,7 +14,7 @@ html {
 	 * further apart. Dyslexic users prefer the spacing too.
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
 	 * on serif being the default?? */
-	font: 105%/1.5 sans-serif;
+	font: 100%/1.5 sans-serif;
 
 	/* Aligning to the center with space on both sides prevents accidental
 	* link activation on mobile devices. */
@@ -27,7 +27,7 @@ html {
 @media screen {
 	html {
 		max-width: 45em;
-		padding: 0 3%;
+		padding: 0 2%;
 	}
 
 	.e-content {
