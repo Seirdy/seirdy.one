@@ -1,10 +1,14 @@
 {{ if .Params.footnote_heading -}}
+
 {{ $references    := `(<section class="footnotes" role="doc-endnotes">
 <hr>)` -}}
-	{{ $heading :=  .Params.footnote_heading -}}
-	{{ $referencesWithHeading := printf `<section class="footnotes" role="doc-endnotes" aria-labelledby="note-hd">
+{{ $heading :=  .Params.footnote_heading -}}
+{{ $referencesWithHeading := printf `<section class="footnotes" role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($heading) -}}
-	{{ .Content | replaceRE $references $referencesWithHeading | safeHTML -}}
+
+{{ $endnote := `(role="doc-endnote")` }}
+{{ $noEndnote := printf "" }}
+{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | safeHTML -}}
 {{ else -}}
 {{ .Content -}}
 {{ end -}}
