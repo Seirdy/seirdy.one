@@ -64,8 +64,9 @@ a[aria-current="page"] {
 	font-weight: bold;
 }
 
-/* narrow screens: reduce unused figure margin in quotations. */
-figure[itemtype="https://schema.org/Quotation"] {
+/* narrow screens: reduce unused figure margins for text figures. */
+figure[itemtype="https://schema.org/Quotation"],
+figure[itemtype="https://schema.org/SoftwareSourceCode"] {
 	margin: 0;
 }
 

@@ -65,10 +65,10 @@ Consider taking hardening measures to maximize the security benefits made possib
 
 JavaScript and WebAssembly are responsible for the bulk of modern web exploits. Ideally, a text-oriented site can enforce a scripting ban at the [<abbr title="Content Security Policy">CSP</abbr>](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) level.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-This is the CSP for my main website:
+<span itemprop="codeSampleType">Code snippet</span>: this is the CSP for my main website.
 
 </figcaption>
 
@@ -145,10 +145,10 @@ Optimal loading is a complex topic. Broadly, it covers three overlapping categor
 
 HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a `link` HTTP header.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-My website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
+<span itemprop="codeSampleType">Code snippet</span>: my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
 
 </figcaption>
 
@@ -400,10 +400,10 @@ Browsers allow users to zoom by adjusting size metrics. Additionally, most brows
 
 In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^8] (e.g. borders), but they are uncommon.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-Set font size and line-spacing with a percentage and a unitless value, respectively.
+<span itemprop="codeSampleType">Code snippet</span>: set font size and line-spacing with a percentage and a unitless value, respectively.
 
 </figcaption>
 
@@ -692,9 +692,9 @@ Bright images on an otherwise dark page distract readers, especially readers lik
 
 A `<picture>` element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants to complement a dark stylesheet.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
-A minimal example of a <code>picture</code> containing a dark variant:
+<span itemprop="codeSampleType">Code snippet</span>: a minimal example of a <code>picture</code> containing a dark variant:
 </figcaption>
 
 <pre>
@@ -733,10 +733,10 @@ A simple layout looks good at a variety of window sizes, rendering responsive la
 
 Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, and layout shifts dramatic enough to cause confusion.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-The only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
+<span itemprop="codeSampleType">Code snippet</span>: the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
 
 </figcaption>
 
@@ -787,9 +787,9 @@ I also ensured that my site supports CSS overrides, window-resizing, zoom levels
 
 When setting max line lengths, use a CSS media query to ensure that printed versions of a page use the full page width. This should save some paper.
 
-<figure>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
-I opted to wrap all max-width rules in a media query to ensure that they only get called for the <code>screen</code> media type:
+<span itemprop="codeSampleType">Code snippet</span>: I opted to wrap all max-width rules in a media query to ensure that they only get called for the <code>screen</code> media type:
 </figcaption>
 
 ```
@@ -860,7 +860,7 @@ The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.
 
 Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements for quotations. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;3 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as `padding-inline-start` will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;3 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as `padding-inline-start` will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
@@ -930,7 +930,6 @@ Increasing the line-spacing a bit will make tap targets larger and improve compr
 </figure>
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr>'s Cognitive and Learning Disabilities Accessibility Task Force [recommends changing this Success Criterion's level](https://w3c.github.io/coga/extension/#changedlevels), finding it too important to be relegated to AAA status.
-
 
 Non-browsers: reading mode
 --------------------------
