@@ -126,7 +126,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 Results from these search engines don't seem at all useful.
 
-- [Bloopish](http://aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index. (update: the site seems down. I'll move it to the "graveyard" section if it doesn't come back up).
+- [Bloopish](https://search.aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 
 - YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 
