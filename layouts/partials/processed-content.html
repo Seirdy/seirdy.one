@@ -3,12 +3,16 @@
 {{ $references    := `(<section class="footnotes" role="doc-endnotes">
 <hr>)` -}}
 {{ $heading :=  .Params.footnote_heading -}}
-{{ $referencesWithHeading := printf `<section class="footnotes" role="doc-endnotes" aria-labelledby="note-hd">
+{{ $referencesWithHeading := printf `<section role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($heading) -}}
 
 {{ $endnote := `(role="doc-endnote")` }}
 {{ $noEndnote := printf "" }}
-{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | safeHTML -}}
+
+{{ $preWithTabIndex := `<pre tabindex="0">` }}
+{{ $preWithoutTabIndex := `<pre>` }}
+
+{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithTabIndex $preWithoutTabIndex | safeHTML -}}
 {{ else -}}
 {{ .Content -}}
 {{ end -}}
