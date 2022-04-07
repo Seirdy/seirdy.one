@@ -220,7 +220,7 @@ Compression--especially static compression--dramatically reduces download sizes.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
-Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
+Consider caching static assets indefinitely with a year-long duration in their "cache-control" headers, possibly with an "immutable" parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an "etag" header on static assets.
 
 Using OCSP stapling eliminates the need to connect to a certificate authority, saving users a DNS lookup and allowing them to instead re-use a connection.
 
@@ -907,7 +907,7 @@ Having clearly distinguished links also helps users decide safe places to tap th
 
 ### Tap targets
 
-Tap targets should be at least 44 pixels tall and wide according to the WCAG, large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
+Tap targets should be at least 44 pixels tall and wide according to the WCAG; this is large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
 
 => https://www.w3.org/TR/WCAG22/#target-size-enhanced WCAG 2.2 Success Criterion 2.5.5: Target Size (Enhanced)
 

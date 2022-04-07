@@ -85,7 +85,7 @@ sandbox allow-same-origin</samp></pre>
 
 </figure>
 
-`default-src: 'none'` implies `script-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) of potentially insecure actions. While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
+`default-src: 'none'` implies `script-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety of risky actions](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox). While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).[^1] I added the `allow-same-origin` parameter so that these addons will still be able to function.[^2]
 
 If you're able to control your HTTP headers, then use headers instead of a `<meta http=equiv>` tag. In addition to not supporting certain directives, a CSP in a `<meta>` tag might let some items slip through:
 
@@ -116,7 +116,7 @@ Please use progressive enhancement (<abbr title="progressive enhancement">PE</ab
 
 I'm sure you're a great person, but your readers might not know that; don't expect them to trust your website. Your scripts should look as safe as possible to an untrusting eye. Avoid requesting permissions or using [sensitive APIs](https://browserleaks.com/javascript).
 
-Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. Some [recent directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types) restrict and enforce proper use of [trusted types](https://web.dev/trusted-types/).
+Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. [Some recent directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types) restrict and enforce proper use of [trusted types](https://web.dev/trusted-types/).
 
 ### Third-party content
 
@@ -162,7 +162,7 @@ Out of privacy concerns, most browsers no longer re-use cached content across si
 
 Requesting a high number of cached resources can decrease performance of the cache, causing browsers to [bypass the cache](https://simonhearne.com/2020/network-faster-than-cache/). The effect is especially pronounced on low-end phones and mechanical hard drives.
 
-One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs.
+One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your `cache-control` headers, and cache-bust modified assets by changing their URLs.
 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
@@ -244,7 +244,7 @@ Compression--especially static compression--dramatically reduces download sizes.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing; use it if you can, but expect many clients to only support HTTP/1.1. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
-Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an `immutable` parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an `etag` header on static assets.
+Consider caching static assets indefinitely with a year-long duration in their `cache-control` headers, possibly with an `immutable` parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an `etag` header on static assets.
 
 Using [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) eliminates the need to connect to a certificate authority, saving users a DNS lookup and allowing them to instead re-use a connection.
 
@@ -381,7 +381,7 @@ Using containment for content at the end of the page is relatively safe. Using i
 About fonts
 -----------
 
-I recommend setting the default font to `sans-serif`. Avoid `system-ui`: [it causes issues](https://infinnie.github.io/blog/2017/systemui.html) among readers whose system fonts don't cover your website's charset.
+I recommend setting the default font to `sans-serif`. [`system-ui` causes issues](https://infinnie.github.io/blog/2017/systemui.html) among readers whose system fonts don't cover your website's charset.
 
 If you really want, you could use serif instead of sans-serif; however, serif fonts tend to look worse on low-res monitors. Not every screen's <abbr title="Dots Per Inch">DPI</abbr> has three digits. Accommodate users' default zoom levels by keeping your font size the same as most similar websites.
 
@@ -405,7 +405,7 @@ Some people raised fingerprinting concerns when I suggested using the default "s
 
 I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^7] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's [protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^7] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by [Firefox's protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 
@@ -523,7 +523,7 @@ The recommended way to link to a transcript is by hyperlinking the image (i.e., 
 
 <figure>
 <figcaption>
-The xkcd comic included <a href="#related-issues">earlier in the page</a> had this alt-text:
+The xkcd comic <a href="#related-issues">included earlier in the page</a> had this alt-text:
 </figcaption>
 
 > Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.
@@ -545,7 +545,7 @@ Some users' browsers set default page colors that aren't black-on-white. For ins
 </a>
 <figcaption>
 
-This is an unreadable screenshot of a website [promoting browser style overrides](http://bettermotherfuckingwebsite.com/) (specifically, the "A little less contrast" section). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
+This is an unreadable screenshot of a [website promoting browser style overrides](http://bettermotherfuckingwebsite.com/) (specifically, the "A little less contrast" section). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
 
 </figcaption>
 </figure>
@@ -646,7 +646,7 @@ Some image optimization tools I use:
 `avifenc`
 : The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^10]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
-I put together a [quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles WebAssembly-compiled encoders; I've heard good things about it.
+I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles WebAssembly-compiled encoders; I've heard good things about it.
 
 You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
@@ -726,7 +726,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 ### SVG images
 
-I only recommend using SVG in images; avoid using them in embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static)'s [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) that appears in the [SVG Tiny Portable<wbr>/Secure (<abbr title="Portable/Secure">PS</abbr>)](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/) spec. SVG Tiny PS is a subset of [SVG Tiny&nbsp;1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
+I only recommend using SVG in images; avoid using them in embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static)'s [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) that appears in the [SVG Tiny Portable<wbr>/Secure (<abbr title="Portable/Secure">PS</abbr>) spec](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/). SVG Tiny PS is a subset of [SVG Tiny&nbsp;1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
 The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implemen&shy;tation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
@@ -909,7 +909,7 @@ Having clearly distinguished links also helps users decide safe places to tap th
 
 ### Tap targets
 
-Tap targets should be at least 44 pixels tall and wide [according to the WCAG](https://www.w3.org/TR/WCAG22/#target-size-enhanced), large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
+Tap targets should be at least 44 pixels tall and wide [according to the WCAG](https://www.w3.org/TR/WCAG22/#target-size-enhanced); this is large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
 
 Google has far more aggressive recommendations: it recommends raising the limit 48 pixels regardless of whether tap targets are inline, going so far as to make tap target size a ranking factor in search.
 
@@ -965,7 +965,7 @@ Believe it or not, the entire world doesn't speak your website's languages. Brow
 
 Almost every word on your site can be re-written. Prepare for headings to change length, paragraphs to grow and shrink, or hyphenation to disappear. Your site's layout should make sense even when the length of each textual element is changed.
 
-Machines can't reliably translate images of text, since OCR is error-prone. See the [image transcripts](#image-transcripts) section for remedies.
+Machines can't reliably translate images of text, since OCR is error-prone. See the [image transcripts section](#image-transcripts) for remedies.
 
 Incorrect spelling and poor grammar in an original work can reduce the accuracy of a machine-translated derivative. Be sure to proofread.
 
