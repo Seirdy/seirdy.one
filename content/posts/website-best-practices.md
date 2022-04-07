@@ -68,12 +68,11 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<span itemprop="codeSampleType">Code snippet</span>: this is the CSP for my main website.
+<strong itemprop="codeSampleType">Code snippet</strong>: this is the CSP for my main website.
 
 </figcaption>
 
-```
-default-src 'none';
+<pre><samp itemprop="text">default-src 'none';
 img-src 'self' data:;
 style-src 'sha256-3U3TNinhti/dtVz2/wuS3peJDYYN8Yym+JcakOiXVes=';
 style-src-attr 'none';
@@ -82,8 +81,7 @@ base-uri 'none';
 form-action 'none';
 manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
 upgrade-insecure-requests;
-sandbox allow-same-origin
-```
+sandbox allow-same-origin</samp></pre>
 
 </figure>
 
@@ -148,15 +146,32 @@ HTML is a blocking resource: images and stylesheets will not load until the user
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<span itemprop="codeSampleType">Code snippet</span>: my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
+<strong itemprop="codeSampleType">Code snippet</strong>: my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
 
 </figcaption>
 
-```
-link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
-```
+<pre><samp itemprop="text">link: &lt;/favicon.072dbf7bc4323646b9ee96243fbd71b2.svg&gt;; rel=preload; as=image</samp></pre>
 
 </figure>
+
+### Don't count on the cache
+
+The browser cache is a valuable tool to save bandwidth and improve page speed, but it's not as reliable as many people seem to believe. Don't focus too much on "repeat view" performance.
+
+Out of privacy concerns, most browsers no longer re-use cached content across sites; refer back to the section on [third-party content](#third-party-content) for more details. Privacy-conscious users (including all users using "private" or "incognito" sessions) will likely have their caches wiped between sessions.
+
+Requesting a high number of cached resources can decrease performance of the cache, causing browsers to [bypass the cache](https://simonhearne.com/2020/network-faster-than-cache/). The effect is especially pronounced on low-end phones and mechanical hard drives.
+
+One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs.
+
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+<figcaption>
+<strong itemprop="codeSampleType">Code snippet</strong>: The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames.
+</figcaption>
+<pre><samp itemprop="text">cache-control: max-age=31557600, immutable</samp></pre>
+</figure>
+
+You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
 ### Inline content
 
@@ -227,7 +242,7 @@ In-depth server configuration is a bit out of scope, so I'll keep each improveme
 
 Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires a [separate module](https://github.com/google/ngx_brotli) for Brotli compression.
 
-When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
+When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing; use it if you can, but expect many clients to only support HTTP/1.1. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
 Consider caching static assets indefinitely with a year-long duration in the "cache-control" header, possibly with an `immutable` parameter. If you have to update a static asset, cache-bust it by altering the URL. This approach should eliminate the need for an `etag` header on static assets.
 
@@ -403,14 +418,10 @@ In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensi
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<span itemprop="codeSampleType">Code snippet</span>: set font size and line-spacing with a percentage and a unitless value, respectively.
+<strong itemprop="codeSampleType">Code snippet</strong>: set font size and line-spacing with a percentage and a unitless value, respectively.
 
 </figcaption>
-
-```
-font: 100%/1.5 sans-serif;
-```
-
+<pre><code itemprop="text">font: 100%/1.5 sans-serif;</code></pre>
 </figure>
 
 Beyond alt-text
@@ -652,14 +663,13 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 <figure id="png-pipeline" itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<span itemprop="codeSampleType">Code snippet</span>: this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
+<strong itemprop="codeSampleType">Code snippet</strong>: this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
 
 </figcaption>
 
-<pre>
-<code>convert <var translate="yes">ORIGINAL_FILE</var> &bsol;
-  -resize 75% -colorspace gray -format png - &bsol;
-  | pngquant -s 1 12 - &bsol;
+<pre><code itemprop="text">convert <var translate="yes">ORIGINAL_FILE</var> \
+  -resize 75% -colorspace gray -format png - \
+  | pngquant -s 1 12 - \
   | oxipng -o max -Z --fix - --out <var translate="yes">OUTPUT_FILE</var>
 </code></pre>
 
@@ -694,11 +704,11 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
-<span itemprop="codeSampleType">Code snippet</span>: a minimal example of a <code>picture</code> containing a dark variant:
+<strong itemprop="codeSampleType">Code snippet</strong>: a minimal example of a <code>picture</code> containing a dark variant:
 </figcaption>
 
 <pre>
-<code>&lt;picture&gt;
+<code itemprop="text">&lt;picture&gt;
 &lt;source type="image/png"
   srcset="/p/dark.png"
   media="screen and (prefers-color-scheme: dark)"&gt;
@@ -736,17 +746,15 @@ Exceptions exist: one or two very simple responsive changes won't hurt. The main
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<span itemprop="codeSampleType">Code snippet</span>: the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
+<strong itemprop="codeSampleType">Code snippet</strong>: the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page:
 
 </figcaption>
 
-```
-@media print, (min-width: 32rem) {
+<pre><code itemprop="text">@media print, (min-width: 32rem) {
   header nav li {
     display: inline;
   }
-}
-```
+}</code></pre>
 
 </figure>
 
@@ -789,11 +797,10 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
-<span itemprop="codeSampleType">Code snippet</span>: I opted to wrap all max-width rules in a media query to ensure that they only get called for the <code>screen</code> media type:
+<strong itemprop="codeSampleType">Code snippet</strong>: I opted to wrap all max-width rules in a media query to ensure that they only get called for the <code>screen</code> media type:
 </figcaption>
 
-```
-@media screen {
+<pre><code itemprop="text">@media screen {
   html {
     max-width: 45em;
     padding: 0 3%;
@@ -803,8 +810,7 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
     margin: auto;
     max-width: 38em;
   }
-}
-```
+}</code></pre>
 
 </figure>
 
@@ -1146,6 +1152,8 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^10]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-[^11]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle these options:</p><pre><code>javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre><p>In Chromium and derivatives, run the browser with <code>--js-flags='--jitless'</code>; in the Tor Browser, set the security level to "Safer".
+[^11]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle some flags under <code>javascript.options</code>.</p><figure itemscope itemtype="https://schema.org/SoftwareSourceCode"><figcaption><strong itemprop="codeSampleType">Code snippet</strong>: Firefox prefs to turn off JIT compilation</figcaption><pre><code itemprop="text">javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre></figure><p>
+
+    In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 

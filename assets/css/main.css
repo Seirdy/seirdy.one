@@ -93,7 +93,8 @@ nav li,
  * font size preferences. */
 code,
 pre,
-kbd {
+kbd,
+samp {
 	/* stylelint-disable -- compatibility hack */
 	font-family: monospace, monospace;
 

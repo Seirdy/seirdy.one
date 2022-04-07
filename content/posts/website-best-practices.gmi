@@ -133,6 +133,27 @@ My website includes a "link" header to load an SVG that serves as my IndieWeb ph
 ```
 link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
 ```
+### Don't count on the cache
+
+The browser cache is a valuable tool to save bandwidth and improve page speed, but it's not as reliable as many people seem to believe. Don't focus too much on "repeat view" performance.
+
+Out of privacy concerns, most browsers no longer re-use cached content across sites; refer back to the "third-party content" section for more details. Privacy-conscious users (including all users using "private" or "incognito" sessions) will likely have their caches wiped between sessions. Don't focus too much on "repeat view" performance until after your "initial view" performance is good enough.
+
+Furthermore: a high number of cached resources can decrease performance of the cache, causing browsers to bypass the cache:
+
+=> https://simonhearne.com/2020/network-faster-than-cache When Network is Faster than Cache
+
+The effect is especially pronounced on low-end phones and mechanical hard drives.
+
+One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs.
+
+The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames:
+
+```
+cache-control: max-age=31557600, immutable
+```
+
+You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
 ### Inline content
 
