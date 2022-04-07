@@ -43,7 +43,7 @@ html {
 	 * but they're pretty much only used on the desktop where a huge indent
 	 * is less of a problem.*/
 	blockquote {
-		border-inline-start: 5px solid #aaa;
+		border-inline-start: 4px solid #aaa;
 		margin: 0;
 		padding: 0 0.8em;
 	}
@@ -64,8 +64,8 @@ a[aria-current="page"] {
 	font-weight: bold;
 }
 
-/* narrow screens: remove unused figure margin. */
-figure {
+/* narrow screens: reduce unused figure margin in quotations. */
+figure[itemtype="https://schema.org/Quotation"] {
 	margin: 0;
 }
 
