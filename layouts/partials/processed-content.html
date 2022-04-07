@@ -9,10 +9,10 @@
 {{ $endnote := `(role="doc-endnote")` }}
 {{ $noEndnote := printf "" }}
 
-{{ $preWithTabIndex := `<pre tabindex="0">` }}
 {{ $preWithoutTabIndex := `<pre>` }}
+{{ $preWithTabIndex := `<pre tabindex="0">` }}
 
-{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithTabIndex $preWithoutTabIndex | safeHTML -}}
+{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithoutTabIndex $preWithTabIndex | safeHTML -}}
 {{ else -}}
 {{ .Content -}}
 {{ end -}}
