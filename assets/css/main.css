@@ -36,22 +36,17 @@ html {
 	}
 }
 
-@supports (border-inline-start: 6px) {
-	/* narrow screens: reduce margin for blockquotes a lot, using
-	 * a thick left-side border instead, or a right-side border in
-	 * RTL locales. Some browsers like NetSurf or IE don't support this,
-	 * but they're pretty much only used on the desktop where a huge indent
-	 * is less of a problem.*/
-	blockquote {
-		border-inline-start: 4px solid #aaa;
-		margin: 0;
-		padding: 0 0.8em;
-	}
+/* narrow screens: reduce margin for blockquotes a lot, using
+ * a thick left-side border instead.*/
+blockquote {
+	border-left: 4px solid #aaa;
+	margin: 0;
+	padding-left: 0.8em;
 }
 
 /* single-line nav on widescreen and print.
  * Single-line nav on print saves almost half a page. */
-@media (min-width: 32em) {
+@media print, (min-width: 32em) {
 	header nav li {
 		display: inline;
 		/* inline-end doesn't work in netsurf. -right should stil make sense
