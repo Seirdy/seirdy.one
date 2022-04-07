@@ -1,1 +1,1 @@
-<cite itemprop="name" class="p-name"><a class="u-url" itemprop="url" href="{{ .Get "url" }}">{{ .Get "name" }} </a></cite>
+<cite itemprop="name{{if .Get "extraName"}} {{ .Get "extraName" }}{{end}}" class="p-name"><a class="u-url" itemprop="url" href="{{ .Get "url" }}">{{ .Get "name" }} </a></cite>

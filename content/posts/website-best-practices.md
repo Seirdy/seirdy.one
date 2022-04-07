@@ -92,7 +92,7 @@ sandbox allow-same-origin
 If you're able to control your HTTP headers, then use headers instead of a `<meta http=equiv>` tag. In addition to not supporting certain directives, a CSP in a `<meta>` tag might let some items slip through:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>
 		At the time of inserting the <code>meta</code> element to the document, it is
 		possible that some resources have already been fetched. For example, images might be stored in
@@ -105,7 +105,7 @@ If you're able to control your HTTP headers, then use headers instead of a `<met
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				<cite itemprop="name" class="p-name">HTML Living Standard</cite>, section 4.2.5.3: Pragma directives,
+				<cite itemprop="name headline" class="p-name">HTML Living Standard</cite>, section 4.2.5.3: Pragma directives,
 				<a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-content-security-policy">Content Security Policy state</a>
 			</span>
 		</span>
@@ -171,7 +171,7 @@ Download size matters, especially on metered connections. There's no shortage of
 Google's answer to this problem is "Core Web Vitals" containing metrics such as "SpeedIndex". These metrics aren't useless, but they are incredibly naive.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-<blockquote>
+<blockquote itemprop="text">
 
 SpeedIndex is based on the idea that what counts is how fast the visible part of the website renders. It doesn't matter what's happening elsewhere on the page. It doesn't matter if the network is saturated and your phone is hot to the touch. It doesn't matter if the battery is visibly draining. Everything is OK as long as the part of the site in the viewport appears to pop into view right away.
 
@@ -186,7 +186,7 @@ Everything else is bullshit.
 	&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/PresentationDigitalDocument">
 				{{<indieweb-person first-name="Maciej" last-name="Cegłowski" url="https://idlewords.com/about.htm" itemprop="author">}},
-				{{<cited-work name="The Website Obesity Crisis" url="https://idlewords.com/talks/website_obesity.htm">}}
+				{{<cited-work name="The Website Obesity Crisis" url="https://idlewords.com/talks/website_obesity.htm" extraName="headline">}}
 			</span>
 	</span>
 </figcaption>
@@ -207,7 +207,7 @@ Understanding round-trips requires understanding your server's approach to conge
 
 Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.[^4]
 
-Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (PDF) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name headline" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (PDF) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
 
 HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
 
@@ -266,13 +266,13 @@ Against lazy loading
 Lazy loading may or may not work. Some browsers, including Firefox and the Tor Browser, disable lazy-loading when the user turns off JavaScript. Turning it off makes sense because lazy-loading, like JavaScript, is a fingerprinting vector. Specifically, it identifies idiosyncratic scrolling patterns:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing images in a page's markup such that a server can track how many images are requested and when.</p>
 	</blockquote>
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				{{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">}}
+				{{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" extraName="headline">}}
 				on <abbr title="Mozilla Developer Network">MDN</abbr>,
 				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
 			</span>
@@ -343,7 +343,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 <dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. Combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the `hidden` parameter when `auto` is better:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-<blockquote>
+<blockquote itemprop="text">
 
 `content-visibility: auto` is a more complex value than `hidden`; rather than being similar to `display: none`, it adaptively hides/<wbr>displays an element's contents as they become <a href="https://drafts.csswg.org/css-contain/#relevant-to-the-user">relevant to the user</a>. It also doesn’t hide its <a href="https://drafts.csswg.org/css-contain/#skips-its-contents">skipped contents</a> from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
 
@@ -352,7 +352,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 	&mdash;
 	<span class="h-cite" itemprop="citation" role="doc-credit">
 		<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-			<cite itemprop="name" class="p-name">CSS Containment Module Level 2</cite>, section 4.2:
+			<cite itemprop="name headline" class="p-name">CSS Containment Module Level 2</cite>, section 4.2:
 			<a class="u-url" itemprop="url" href="https://drafts.csswg.org/css-contain/#using-cv-auto">Using <code>content-visibility: auto</code></a>
 		</span>
 	</span>
@@ -434,14 +434,14 @@ Alt text should be limited to describing content of the image. It lacks context.
 Blind users might struggle to view images in context; they can't easily scan the text before and after an image non-linearly if there's no semantic connection between them.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>Try reading your screen through a drinking straw for an hour to get an idea of the limited context that a blind user has. You simply cannot scan the entire page at a glance with a screenreader - you have to listen to the structure of it carefully and remember all that, or read through the entire thing to find stuff, unless there are explicit associations such as longdesc.</p>
 	</blockquote>
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/EmailMessage">
 				{{<indieweb-person first-name="Charles" last-name="McCathieNevile" url="https://www.w3.org/People/Charles/" itemprop="sender">}},
-				{{<cited-work name="longdesc Re: Clarification of rational for deprecation..." url="https://lists.w3.org/Archives/Public/public-html/2008Feb/0061.html">}}
+				{{<cited-work name="longdesc Re: Clarification of rational for deprecation..." extraName="headline" url="https://lists.w3.org/Archives/Public/public-html/2008Feb/0061.html">}}
 			</span>
 		</span>
 	</figcaption>
@@ -479,7 +479,7 @@ Figures and captions have loose guidelines, and nearly everything I said on the 
 I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in [reading-mode implementations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>When a <code>figure</code> is referred to from the main content of the document by identifying
 		it by its caption (e.g., by figure number), it enables such content to be easily moved away from
 		that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix,
@@ -493,7 +493,7 @@ I personally try to maintain the flow of an article even if its figures and capt
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				<cite itemprop="name" class="p-name">HTML Living Standard</cite>, section 4.4.12:
+				<cite itemprop="name headline" class="p-name">HTML Living Standard</cite>, section 4.4.12:
 				<a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">The <code>figure</code> element</a>
 			</span>
 		</span>
@@ -551,7 +551,7 @@ This page's [canonical location](https://seirdy.one/2020/11/23/website-best-prac
 
 Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode, for instance, makes [more advanced modifications](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/).
 
-In fact, the CSS Working Group is working on a specification for re-coloring websites in {{<cited-work name="CSS Color Adjustment Module Level 1" url="https://drafts.csswg.org/css-color-adjust-1/">}}. The Chromium team's in-progress [auto dark mode](https://chromestatus.com/feature/5672533924773888) will use this specification to darken websites globally. Websites can opt out with the `color-scheme` property, but they really shouldn't have to: stylesheets should be robust enough to handle re-coloring.
+In fact, the CSS Working Group is working on a specification for re-coloring websites in <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="CSS Color Adjustment Module Level 1" extraName="headline" url="https://drafts.csswg.org/css-color-adjust-1/">}}</span>. The Chromium team's in-progress [auto dark mode](https://chromestatus.com/feature/5672533924773888) will use this specification to darken websites globally. Websites can opt out with the `color-scheme` property, but they really shouldn't have to: stylesheets should be robust enough to handle re-coloring.
 
 ### Dark themes
 
@@ -578,11 +578,11 @@ I personally like a foreground and background of `#eee` and `#0e0e0e`, respectiv
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
-If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check section 11.3 of the W3C {{<cited-work url="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast" name="Media Queries Level 5">}} specification for more information.
+If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check section 11.3 of the W3C <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work url="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast" name="Media Queries Level 5" extraName="headline">}}</span> specification for more information.
 
 ### Contrast under different conditions
 
-Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". {{<indieweb-person first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} describes his experience in {{<cited-work name="Color blindness" url="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">}}. Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
+Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". <span itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} describes his experience in {{<cited-work name="Color blindness" extraName="headline" url="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">}}</span>. Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
 
 Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.
 
@@ -600,13 +600,13 @@ One reason is that underlines make it easy to separate multiple consecutive inli
 Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or disting&shy;uishing a visual element. (Level A)</p>
 	</blockquote>
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				<cite><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG&nbsp;2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
+				<cite><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name headline">WCAG&nbsp;2.2</span></a></cite>, <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
 			</span>
 		</span>
 	</figcaption>
@@ -649,10 +649,10 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
 7. If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
 
-<figure id="png-pipeline">
+<figure id="png-pipeline" itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-This is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression:
+<span itemprop="codeSampleType">Code snippet</span>: this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
 
 </figcaption>
 
@@ -835,9 +835,9 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`.
 
-Practical Typography[^9] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail
+<span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^9] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail
 
-One exception to Practical Typography's rules: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
+One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 
 ### Pictures of text
 
@@ -917,13 +917,13 @@ On lists without visible bullets, I dropped the default indentation. I had to fi
 Increasing the line-spacing a bit will make tap targets larger and improve comprehension by readers with cognitive disabilities. A WCAG AAA Success Criterion is to allow 1.5 space units between lines.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.</p>
 	</blockquote>
 	<figcaption>
 		&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
 			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/TechArticle">
-				<cite><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name">WCAG&nbsp;2.2</span></a></cite>, <a href="https://w3c.github.io/wcag/guidelines/22/#visual-presentation">Success Criterion 1.4.8 Visual Presentation</a>
+				<cite><a class="u-url p-name" itemprop="url" href="https://www.w3.org/TR/WCAG22/"><span itemprop="name headline">WCAG&nbsp;2.2</span></a></cite>, <a href="https://w3c.github.io/wcag/guidelines/22/#visual-presentation">Success Criterion 1.4.8 Visual Presentation</a>
 			</span>
 		</span>
 	</figcaption>
@@ -1077,7 +1077,7 @@ Initial versions of this page were inspired by existing advocates for web minima
 Parts of this page can be thought of as an extension to the principles of Brutalist Web Design:
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote>
+	<blockquote itemprop="text">
 		<p>Raw content true to its construction:</p>
 		<ol>
 		<li>Content is readable on all reasonable screens and devices.</li>
@@ -1140,7 +1140,7 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^8]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
-[^9]: {{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}} only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^9]: <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
