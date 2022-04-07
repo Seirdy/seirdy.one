@@ -105,12 +105,16 @@ Some web developers deliver resources using third-party CDNs, such as jsDelivr o
 
 Avoid third-party content, if at all possible.
 
-If you must use third-party content, ensure that third-party stylesheets and scripts leverage subresource integrity (SRI):
+If you must use third-party content, use subresource integrity (SRI):
 
 => https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity SRI on MDN
 => https://www.w3.org/TR/SRI/ SRI specification
 
 This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
+
+Be sure to check the privacy policies for the third party services _and_ subscribe to updates, as their practices could impact the privacy of all your users.
+
+For embedded third-party content (e.g. images), give extra consideration to the "Beyond alt-text" section. Your page should be as useful as possible if the embedded content becomes inaccessible.
 
 ## Optimal loading
 
@@ -320,8 +324,6 @@ Using containment for content at the end of the page is relatively safe. Using i
 
 => https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
 
-For embedded third-party content (e.g. images), give extra consideration to the "Beyond alt-text" section. Your page should be as useful as possible if the embedded content becomes inaccessible.
-
 ## About fonts
 
 I recommend setting the default font to "sans-serif". Avoid "system-ui": it causes issues among readers whose system fonts don't cover your website's charset.
@@ -490,7 +492,19 @@ The Web version of this page is an example application of Technique C25 and the 
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
-The aforementioned techniques ensure a clear page layout while respecting user-specified color schemes.
+Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode (HCM), for instance, makes more advanced modifications:
+
+=> https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/ Accessibility issues concerning Windows HCM
+
+In fact, the CSS Working Group is working on a specification for re-coloring websites:
+
+=> https://drafts.csswg.org/css-color-adjust-1/ CSS Color Adjustment Module Level 1
+
+The Chromium team's in-progress auto dark mode will use this specification to darken websites globally:
+
+=> https://chromestatus.com/feature/5672533924773888 Feature: Auto Dark Mode & support for "only" in CSS color-scheme
+
+Websites can opt out with the "color-scheme" property, but they really shouldn't have to: stylesheets should be robust enough to handle re-coloring.
 
 ### Dark themes
 
@@ -530,8 +544,9 @@ I personally like a foreground and background of "#eee" and "#0e0e0e", respectiv
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
-If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences, called "prefers-contrast". It takes the parameters "no-preference", "less", and "more". You can serve increased-contrast pages to those who request "more", and vice versa. Check MDN for more information:
+If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences, called "prefers-contrast". It takes the parameters "no-preference", "less", and "more". You can serve increased-contrast pages to those who request "more", and vice versa. Check these docs for more information:
 
+=> https://drafts.csswg.org/mediaqueries-5/#prefers-contrast Media Queries Level 5, section 11.3: prefers-contrast
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast prefers-contrast on MDN
 
 ### Contrast under different conditions
@@ -831,29 +846,9 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (<ol>, <dl>, <ul>), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 3 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element. Browsers that do not support CSS 3 properties such as "padding-inline-start" will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in <figure> elements for quotations. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 3 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element. Browsers that do not support CSS 3 properties such as "padding-inline-start" will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
-
-### When indentation helps
-
-Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
-
-For now, I've decided to keep the indents on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
-
-=> https://seirdy.one/2020/11/23/website-best-practices.html#toc Table of contents
-
-This indentation provides important negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element:
-
-=> https://axesslab.com/hand-tremors/ Hand tremors and the giant-button-problem (Axess Lab)
-
-On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate space between links. Some examples from the Web mirror of this Gemini capsule:
-
-=> https://seirdy.one/2020/11/23/website-best-practices.html#webmentions The webmention list below this article separates links with timestamps and some paragraph spacing.
-=> https://seirdy.one/#posts The homepage posts list separates links with descriptions.
-=> https://seirdy.one/2022/02/02/floss-security.html The list of related articles at the top of one of my posts does the same.
-
-Once again, deviating from defaults created additional work to remove an accessibility hazard.
 
 ### Short viewports
 
@@ -865,7 +860,55 @@ When filtering criteria on the Quickref Reference page, a dickbar lists active f
 
 Designers often use figures to “break up” their content, and provide negative space. This is good advice, but I don’t think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
 
-There’s an ideal range somewhere between “cramped” and “spaced-apart” content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially disabled readers).
+## Spacing
+
+The previous "small viewports" section may tempt you to make your content as dense as possible. Please don't overdo it.
+
+There's an ideal range somewhere between "cramped" and "spaced-apart" content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially disabled readers).
+
+### When indentation helps
+
+Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
+
+For now, I've decided to keep the indents on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
+
+=> https://seirdy.one/2020/11/23/website-best-practices.html#toc Table of contents
+
+This indentation provides important non-interactive negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element:
+
+=> https://axesslab.com/hand-tremors/ Hand tremors and the giant-button-problem (Axess Lab)
+
+Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap":
+
+=> gemini://seirdy.one/misc/touch_targets.png Phone screen with three "touch target" rectangles on top of each other, separated by blank sections labeled "space". Image from Axess Lab.
+
+Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information.
+
+### Tap targets
+
+Tap targets should be at least 44 pixels tall and wide according to the WCAG, large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
+
+=> https://www.w3.org/TR/WCAG22/#target-size-enhanced WCAG 2.2 Success Criterion 2.5.5: Target Size (Enhanced)
+
+Google has far more aggressive recommendations: it recommends raising the limit 48 pixels regardless of whether tap targets are inline, going so far as to make tap target size a ranking factor in search.
+
+On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size *and* provide sufficient space for readers with hand-tremors to scroll. Some examples:
+
+=> https://seirdy.one/2020/11/23/website-best-practices.html#webmentions The webmention list below this article separates links with timestamps and some paragraph spacing.
+=> https://seirdy.one/#posts The homepage posts list separates links with descriptions.
+=> https://seirdy.one/2022/02/02/floss-security.html The list of related articles at the top of one of my posts does the same.
+
+### Line spacing
+
+Increasing the line-spacing a bit will make tap targets larger and improve comprehension by readers with cognitive disabilities. A WCAG AAA Success Criterion is to allow 1.5 space units between lines.
+
+> Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.
+
+=> https://w3c.github.io/wcag/guidelines/22/#visual-presentation WCAG 2.2 Success Criterion 1.4.8: Visual Presentation
+
+The WAI's Cognitive and Learning Disabilities Accessibility Task Force recommends changing this level, finding it too important to be relegated to AAA status:
+
+=> https://w3c.github.io/coga/extension/#changedlevels Items where WCAG 2.0 SC should be changed mentions SC 1.4.8
 
 ## Non-browsers: reading mode
 
@@ -988,7 +1031,6 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touchscreens.
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
-* Ways to keep tap targets large. The WCAG recommends tap targets at least 44 pixels tall and wide, large enough to easily tap on a touchscreen. Google recommends raising that to 48 pixels, going so far as to make tap target size a ranking factor in search.
 * How to choose phrasings such that some meaning can be inferred without understanding numbers, for dyscalculic readers. This is more applicable to posts whose main focus is not mathematical or quantitative.
 * How to include equations in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
