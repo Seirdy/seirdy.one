@@ -433,17 +433,21 @@ font: 100%/1.5 sans-serif;
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users of metered connections: sometimes they disable all images, and other times they only disable images above a certain size
-* People experiencing packet loss who only manage to load a few resources
+* Users with metered connections: sometimes they disable all images, and other times they only disable images above a certain size
+* People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
-Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
+Accordingly, follow good practices for alt-text:
+
+* Concisely summarize the image content the best you can, without repeating the surrounding content.
+* Images with a low information density should usually have alt-text under 120 characters.
+* Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 
 The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing alt-text. It's a little lacking in nuance, but makes for a good starting point:
 
 => https://www.w3.org/WAI/tutorials/images/decision-tree/ An "alt" Decision Tree
 
-Alt-text is a good start, but we don't have to stop there.
+Remember that guidelines and "good practices" always have exceptions.
 
 Note: this section does not include examples of its own. If you wish to see examples, look at the blockquotes, code snippets, and linkd images in the official version of this Gemini page. You're probably on it right now; if not, here's the canonical location:
 
@@ -508,7 +512,7 @@ The recommended way to link to a transcript is by hyperlinking the image (i.e., 
 The xkcd comic included earlier in the page had this alt-text:
 
 ```
-Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.
+Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.
 ```
 
 Image transcripts also help users relying on machine-translation, since translation tools rely on textual content (OCR is error-prone). These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
@@ -519,7 +523,7 @@ I describe best practices for preparing pictures of text in the "Pictures of tex
 
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text on top of background images. Don't strain your eyes trying to read this example:
 
-=> gemini://seirdy.one/misc/website_colors.png Screenshot of a website with gray text on a darker grey background. Details below.
+=> gemini://seirdy.one/misc/website_colors.png Screenshot of a website with gray text on a darker gray background. Details below.
 
 This is an unreadable screenshot of a website promoting browser style overrides:
 
@@ -1053,7 +1057,7 @@ This section focuses on ways to improve screen reader support that have not alre
 
 ### Split elements and possessive hyperlinks
 
-Some screen readers for touchscreen devices split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
+Some screen readers split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
 
 This is especially concerning on my website, where I tend to hyperlink peoples' names (a common practice on the IndieWeb): making names possessive with an "apostrophe + s" creates pronunciation issues. "Seirdy's Home" could be read as "Seirdy. Link. S. Home" if the word "Seirdy" is a hyperlink.
 
@@ -1081,7 +1085,7 @@ The best solution for possessive nouns is to include the "apostrophe + s" inside
 
 ### Other tips
 
-Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, and TalkBack all have unique behavior and varying levels of support for HTML and ARIA.
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, TalkBack, and ChromeVox all have unique behavior and varying levels of support for HTML and ARIA.
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 

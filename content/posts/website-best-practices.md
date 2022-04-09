@@ -25,6 +25,8 @@ If you find the article too long, just read the introduction and conclusion. The
 
 </div>
 
+{{<toc>}}
+
 <section role="doc-introduction">
 
 Intro&shy;duction {#introduction}
@@ -43,8 +45,6 @@ I'd like to re-iterate yet another time that this only applies to websites that 
 I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
 </section>
-
-{{<toc>}}
 
 Security and privacy
 --------------------
@@ -334,7 +334,7 @@ Another common offender is infinite-scrolling. In addition to requiring JavaScri
 
 <figure>
 <a href="https://explainxkcd.com/1309/#Transcript">
-{{< picture name="infinite_scrolling" alt="Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.">}}
+{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.">}}
 </a>
 <figcaption>
 
@@ -466,11 +466,17 @@ Note: this section does not include examples of its own. If you wish to see exam
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users of metered connections: sometimes they disable all images, and other times they only disable images above a certain size
-* People with packet loss who only manage to load a few resources
+* Users with metered connections: sometimes they disable all images, and other times they only disable images above a certain size
+* People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
-Accordingly, follow good practices for alt-text. Concisely summarize the image content the best you can, without repeating the surrounding content. Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections. The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point.
+Accordingly, follow good practices for alt-text:
+
+* Concisely summarize the image content the best you can, without repeating the surrounding content.
+* Images with a low information density should usually have alt-text under 120 characters.
+* Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
+
+The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
 
 ### Putting images in context
 
@@ -560,7 +566,7 @@ The recommended way to link to a transcript is by hyperlinking the image (i.e., 
 The xkcd comic <a href="#related-issues">included earlier in the page</a> had this alt-text:
 </figcaption>
 
-> Comic illustrating how if books worked like infinite-scrolling webpages, we'd have to turn pages carefully or risk losing the page. Follow link for transcript.
+> Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.
 
 </figure>
 
@@ -574,9 +580,7 @@ About custom colors
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text on top of background images. Don't strain your eyes trying to read this example:
 
 <figure>
-<a href="http://bettermotherfuckingwebsite.com/">
-{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker grey background. Details in the caption." >}}
-</a>
+{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker gray background. Details in caption." >}}
 <figcaption>
 
 This is an unreadable screenshot of a [website promoting browser style overrides](http://bettermotherfuckingwebsite.com/) (specifically, the "A little less contrast" section). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
@@ -909,7 +913,7 @@ Another example: outside the Web, I prefer indenting code with tabs instead of s
 Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
 
 <figure>
-{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." >}}
+{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.2 >}}
 <figcaption>
 
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
@@ -935,7 +939,7 @@ For now, I've decided to keep the indents on list elements (`<ol>`, `<dl>`, `<ul
 <figure>
 {{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles on top of each other, separated by blank sections labeled \"space\"">}}
 <figcaption>
-Image credit: <a href="https://axesslab.com/hand-tremors/">Axess Labs</a>
+Image credit: <a href="https://axesslab.com/hand-tremors/">Axess Lab</a>
 </figcaption>
 </figure>
 
@@ -1019,7 +1023,7 @@ For example: machine translation will leave `<code>` and `<samp>` blocks as-is. 
 
 Consider the implications of translating between left-to-right (LTR) and right-to-left (RTL) languages. Do a search through your stylesheets for keywords like "left" and "right" to ensure that styles don't depend too heavily on text direction. Once you've cleared the low-hanging fruit, try translating the page to a language like Arabic.
 
-Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="'s">}} <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
+Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="’s">}} <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------
@@ -1028,7 +1032,7 @@ This section focuses on ways to improve screen reader support that have not alre
 
 ### Split elements and possessive hyperlinks
 
-Some screen readers for touchscreen devices split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
+Some screen readers split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
 
 This is especially concerning on my website, where I tend to hyperlink peoples' names (a common practice on the IndieWeb): making names possessive with an "apostrophe + s" creates pronunciation issues. "Seirdy's Home" could be read as "Seirdy. Link. S. Home" if the word "Seirdy" is a hyperlink.
 
@@ -1064,7 +1068,7 @@ The best solution for possessive nouns is to include the "apostrophe + s" inside
 
 ### Other tips
 
-Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, and TalkBack all have unique behavior and varying levels of support for HTML and ARIA.
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, TalkBack, and ChromeVox all have unique behavior and varying levels of support for HTML and ARIA.
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 
@@ -1203,7 +1207,7 @@ Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucki
 
 The [Web Bloat Score calculator](https://www.webbloatscore.com/) is a JavaScript app that compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
 
-One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me" appendString="'s">}} comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
+One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me" appendString="’s">}} comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
 If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG)&nbsp;2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
 

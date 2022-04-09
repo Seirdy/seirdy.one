@@ -6,8 +6,7 @@
 			<span class="dateline">
 				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 			</span>
-			<span class="byline">
-				by {{- partial "indieweb-author.html" -}}</span> on his <a rel="canonical" itemprop="mainEntityOfPage" class="u-url url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
+				by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" itemprop="mainEntityOfPage" class="u-url url" href="https://seirdy.one{{ .RelPermalink }}">Website</a>
 				{{ with .OutputFormats.Get "gemtext" -}}
 					and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>
 				{{- end -}}
