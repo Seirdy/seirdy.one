@@ -59,10 +59,14 @@ a[aria-current="page"] {
 	font-weight: bold;
 }
 
-/* narrow screens: reduce unused figure margins for text figures. */
-figure[itemtype="https://schema.org/Quotation"],
-figure[itemtype="https://schema.org/SoftwareSourceCode"] {
+/* narrow screens: remove unused figure margins for text figures. */
+
+figure {
 	margin: 0;
+}
+
+figure:not([itemtype]) figcaption {
+	margin: 0 10%;
 }
 
 /* Mobile optimization: nav links are tappable with fat fingers */
