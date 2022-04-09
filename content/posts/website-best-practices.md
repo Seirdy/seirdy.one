@@ -27,8 +27,8 @@ If you find the article too long, just read the introduction and conclusion. The
 
 <section role="doc-introduction">
 
-Introduction
-------------
+Intro&shy;duction {#introduction}
+-----------------
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have _some_ useful information for any web content author or front-end web developer.
 
@@ -383,7 +383,16 @@ In-page search
 
 In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>s</kbd>) has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
-Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender (TODO: add an image of this).
+Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
+
+<figure>
+{{<picture name="find" alt="searching for the word \"good\" in the phrase \"I wonder how much good a\" when a \"see more\" link obscures the words \"good a\", before and after revealing the hidden text.">}}
+<figcaption>
+
+Searching for the word "good" before (above) and after (below) a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
+
+</figcaption>
+</figure>
 
 If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "other ways to defer content" section](#other-ways-to-defer-content).
 
@@ -660,7 +669,7 @@ Some image optimization tools I use:
 : lossy PNG compression. Can reduce the size of the color palette.
 
 [`oxipng`](https://github.com/shssoichiro/oxipng)
-: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
+: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implemen&shy;tation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
 
 [`jpegoptim`](https://github.com/tjko/jpegoptim)
 : Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata.
@@ -1170,19 +1179,19 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same reasons are [outlined here](https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/) in the "Accessibility concerns for infinite scroll" section.
 
-[^7]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling the `accessibility.typeaheadfind` preference in `about:config`. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
+[^7]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in `about:config`. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
 
 [^8]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [BrowserLeaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
 
 [^9]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve accessibility.
 
-[^10]: <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^10]: <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
 [^11]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-[^12]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle some flags under <code>javascript.options</code>.</p><figure itemscope itemtype="https://schema.org/SoftwareSourceCode"><figcaption><strong itemprop="codeSampleType">Code snippet</strong>: Firefox prefs to turn off JIT compilation</figcaption><pre><code itemprop="text">javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre></figure><p>
+[^12]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle some flags under <code>javascript<wbr>.options</code>.</p><figure itemscope itemtype="https://schema.org/SoftwareSourceCode"><figcaption><strong itemprop="codeSampleType">Code snippet</strong>: Firefox prefs to turn off JIT compilation</figcaption><pre><code itemprop="text">javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre></figure><p>
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 

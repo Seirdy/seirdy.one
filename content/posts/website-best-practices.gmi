@@ -353,7 +353,9 @@ Using containment for content at the end of the page is relatively safe. Using i
 
 In-page search (e.g., using "Ctrl + s") has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
-Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender (TODO: add an image of this).
+Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
+
+=> gemini://seirdy.one/misc/find.png searching for the word "good" in the phrase "I wonder how much good a" when a "see more" link obscures the words "good a", before and after revealing the hidden text. From the Reddit redesign.
 
 If you need to hide some content for performance reasons, I described a less hostile way to do so in the "other ways to defer content" section.
 
