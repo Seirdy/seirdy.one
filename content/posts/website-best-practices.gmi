@@ -28,7 +28,11 @@ Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document 
 
 ## Security and privacy
 
-One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
+One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. If that isn't reason enough, most non-mainstream search indexes have little to no support for JavaScript:
+
+=> ./../../../2021/03/10/search-engines-with-own-indexes.gmi A look at search engines with their own indexes
+
+The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
 
@@ -345,6 +349,37 @@ Using containment for content at the end of the page is relatively safe. Using i
 
 => https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
 
+## In-page search
+
+In-page search (e.g., using "Ctrl + s") has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
+
+Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender (TODO: add an image of this).
+
+If you need to hide some content for performance reasons, I described a less hostile way to do so in the "other ways to defer content" section.
+
+Searchability is another reason to prefer conveying information textually, when possible: video (especially without accurate captions), pictures of text, etc. aren't so easily searchable.
+
+### The importance of proofreading
+
+Correct, consistent spelling is important to readers who use search. In-page search doesn't currently pick up misspelled words. If in-page search implementations develop such a feature, some users may wish to sometimes turn it off; even Google Search implemented a "verbatim" mode for exact matches.
+
+Moreover, some search implementations (such as the one built into Firefox) support case-sensitive matching. Inconsistent capitalization of proper nouns, acronyms, and initialisms can make searching difficult.
+
+### Problematic overrides
+
+Search is so essential to some users' ability to navigate that some desktop users enable "type-ahead" search, to automatically begin a search upon typing multiple characters:
+
+=> https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/ Enable Firefox' "find as you type" feature
+=> https://github.com/Foxy/chrome-type-ahead Chromium extension to enable type-ahead; note that it requires full-page access and performs script injection to work.
+
+If you ignored my advice to avoid JavaScript, at least think twice before using it to define custom keyboard shortcuts which interfere with this type of functionality. I singled out type-ahead search, but there are countless other examples of uncommon keyboard behavior that JavaScript overrides interfere with.
+
+Another problematic override is scroll-behavior. Enforcing smooth-scrolling (e.g., with the "scroll-behavior" CSS property) can interfere with the use of in-page search by slowing down jumps between matches. Rapidly darting around the page with smooth scrolling can cause motion sickness. Simply relying on users to override default behaviors violates the "inclusive by default" directive I encourage, since user preferences are fingerprintable and shift responsibility away from developers.
+
+There's a complex solution to turn off smooth scrolling for unfocused elements, but it doesn't address separate issues such as anchor-link navigation:
+
+=> https://schepp.dev/posts/smooth-scrolling-and-page-search/ Fixing Smooth Scrolling & Page Search
+
 ## About fonts
 
 I recommend setting the default font to "sans-serif". Avoid "system-ui": it causes issues among readers whose system fonts don't cover your website's charset.
@@ -480,7 +515,7 @@ I describe best practices for preparing pictures of text in the "Pictures of tex
 
 ## About custom colors
 
-Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. Don't strain your eyes trying to read this example:
+Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text on top of background images. Don't strain your eyes trying to read this example:
 
 => gemini://seirdy.one/misc/website_colors.png Screenshot of a website with gray text on a darker grey background. Details below.
 
@@ -561,14 +596,14 @@ Here's an approximation of what this kind of halation looks like:
 => gemini://seirdy.one/misc/halation.png Fuzzy white text on black background reading "But it is not" (image/png)
 => https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism image source
 
-I personally like a foreground and background of "#eee" and "#0e0e0e", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0e0e0e" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
-
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences, called "prefers-contrast". It takes the parameters "no-preference", "less", and "more". You can serve increased-contrast pages to those who request "more", and vice versa. Check these docs for more information:
 
 => https://drafts.csswg.org/mediaqueries-5/#prefers-contrast Media Queries Level 5, section 11.3: prefers-contrast
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast prefers-contrast on MDN
+
+I personally like a foreground and background of "#eee" and "#0e0e0e", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0e0e0e" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
 
 ### Contrast under different conditions
 
@@ -1035,12 +1070,13 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 12. Try printing out your page in black-and-white from an unorthodox graphical browser.
-13. Test on something ridiculous: try your old e-reader's embedded browser, combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if you can fix it by simplifying your page.
-14. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
+13. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
+14. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
 => https://xkcd.com/567/ xkcd: Urgent Mission
 
-I'm still on step 13, trying to find new ways to break this page. If you come up with a new test, please share it:
+I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please share it:
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 
@@ -1059,7 +1095,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
 * Elaboration on how authors should delegate much of their formatting to the user agent, and how CSS resets are a symptom of a failure to do so.
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
-* Ways to support non-mainstream browsers by supporting subsets of specifications and using progressive enhancement.
+* Ways to support non-mainstream and older browsers by supporting subsets of specifications and using progressive enhancement.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI draft specification matures and its vocabularies gain adoption before going in depth:
 => https://w3c.github.io/personalization-semantics/help/index.html Personalization Help and Support 1.0
@@ -1191,3 +1227,6 @@ I find Practical Typography quite useful for printed works, and incorporated a m
 ⁹ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
 ¹⁰ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+
+¹¹ Libreoffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
