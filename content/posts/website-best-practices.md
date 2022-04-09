@@ -381,7 +381,7 @@ Using containment for content at the end of the page is relatively safe. Using i
 In-page search
 --------------
 
-In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>s</kbd>) has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
+In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>f</kbd>) has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
 
@@ -976,7 +976,7 @@ Non-browsers: reading mode
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
-Reading modes leverage article extractors such as [Readability.js](https://github.com/mozilla/readability) (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), [DOM Distiller](https://chromium.googlesource.com/chromium/dom-distiller/) (integrated into Chromium), and [Trafilatura](https://trafilatura.readthedocs.io/en/latest/) (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users. Safari's proprietary fork of Readability has grown quite complex compared to upstream; Edge's Immersive Reader is [a mystery to me](https://techcommunity.microsoft.com/t5/discussions/documentation-on-huerestics-used-during-article-distillation-in/m-p/3266436).
+Reading modes leverage article extractors such as [Readability.js](https://github.com/mozilla/readability) (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), [DOM Distiller](https://chromium.googlesource.com/chromium/dom-distiller/) (integrated into Chromium), and [Trafilatura](https://trafilatura.readthedocs.io/en/latest/) (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users. Safari's proprietary fork of Readability has grown quite complex compared to upstream; Edge's Immersive Reader is [a mystery to me](https://techcommunity.microsoft.com/t5/discussions/documentation-on-huerestics-used-during-article-distillation-in/m-p/3266436), with [a problematic stylesheet](https://feedbackportal.microsoft.com/feedback/idea/e0d9b299-e3b6-ec11-a81c-000d3a7ce453).
 
 I don't recommend catering to each tool's non-standard quirks. Studying their design reveals that they observe open standards, to varying degrees. Readability, DOM Distiller, and Trafilatura understand plain-old, semantic HTML (<abbr title="Plain-Old, Semantic HTML">POSH</abbr>).
 
