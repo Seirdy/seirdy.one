@@ -19,10 +19,8 @@
 		color: #c80;
 	}
 
-	blockquote,
-	:not(pre) > code,
-	img,
-	pre {
+	pre,
+	:not(pre) > code {
 		border-color: #444;
 	}
 

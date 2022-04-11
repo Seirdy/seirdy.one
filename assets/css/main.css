@@ -55,6 +55,7 @@ blockquote {
 	}
 }
 
+/* WCAG guidelines recommend signalling the current page */
 a[aria-current="page"] {
 	font-weight: bold;
 }
@@ -144,7 +145,7 @@ img:not(.u-photo) {
  * reducing the number of DOM nodes rendered at once. */
 footer,
 section[role="doc-endnotes"] {
-	border-top: 1px solid #aaa;
+	border-top: 1px solid;
 	content-visibility: auto;
 }
 
