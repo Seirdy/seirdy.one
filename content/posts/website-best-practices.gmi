@@ -582,13 +582,22 @@ For more info, read the relevant docs:
 
 Dark themes are helpful for readers with migraines, photosensitivity (like me!), or dark environments.
 
+If you include a "theme-color" directive in your document <head>, then recent browsers will automatically switch their default stylesheets to dark-mode. Unfortunately, some older browsers (like Firefox-ESR) don't support this directive, and WebKit's default dark stylesheet has unreadable links:
+
+=> https://bugs.webkit.org/show_bug.cgi?id=209851 Webkit bug: default link colors should adapt to dark color scheme
+=> gemini://seirdy.one/misc/wk_link.png WebKit dark-mode screenshot showing a dark blue link on dark gray background.
+
+WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
+
 When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
 
 => https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
 
 Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA).
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
+
+=> https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
 
 CSS filters such as "invert" are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
