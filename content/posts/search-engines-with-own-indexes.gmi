@@ -118,9 +118,11 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://entfer.com/ Entfer
 => https://siik.co/ Siik
 
+* Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 * ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 * Secret Search Engine Labs: Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its CashRank algorithm. Allows site submission.
 
+=> https://meorca.com/  Meorca Search Engine
 => https://www.chatnoir.eu/ ChatNoir
 => https://commoncrawl.org/ Common Crawl
 => https://github.com/chatnoir-eu ChatNoir source code (GitHub)
@@ -296,12 +298,10 @@ Time for my first Gemini-exclusive content! A Gemini page about search engines w
 
 These engines were originally included in the article, but have since been discontinued.
 
-* Meorca: A UK-based search engine that claimed not to "index pornography or illegal content websites". It also featured a public blog with a marketplace and free games. Allowed submitting URLs, but required a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs. It seems to have dropped everything and pivoted to image-search, which is out of scope for this post.
 * gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
 * Gowiki: Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 
-=> https://meorca.com/  Meorca Search Engine
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
 => https://gowiki.com  Gowiki

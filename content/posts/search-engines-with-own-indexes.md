@@ -118,6 +118,8 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [Siik](https://siik.co/): Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
+- [Meorca](https://meorca.com/): A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
+
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
 
 - [Secret Search Engine Labs](http://www.secretsearchenginelabs.com/): Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its [CashRank algorithm](http://www.secretsearchenginelabs.com/tech/cashrank.php). Allows site submission.
@@ -241,8 +243,6 @@ Graveyard
 ---------
 
 These engines were originally included in the article, but have since been discontinued.
-
-- [Meorca](https://meorca.com/): A UK-based search engine that claimed not to "index pornography or illegal content websites". It also featured a public blog with a marketplace and free games. Allowed submitting URLs, but required a full name, email, phone number, and "business name" to do so. Discovered in the seirdy.one access logs. It seems to have dropped everything and pivoted to image-search, which is out of scope for this post.
 
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.
 
