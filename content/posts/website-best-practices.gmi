@@ -59,17 +59,17 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP CSP on MDN
 
-This is the CSP for my main website:
+This is the CSP for my main website, with hashes removed for readability:
 
 ```
 default-src 'none';
 img-src 'self' data:;
-style-src 'sha256-3U3TNinhti/dtVz2/wuS3peJDYYN8Yym+JcakOiXVes=';
+style-src 'sha256-HASH';
 style-src-attr 'none';
 frame-ancestors 'none';
 base-uri 'none';
 form-action 'none';
-manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
+manifest-src https://seirdy.one/manifest.min.HASH.webmanifest;
 upgrade-insecure-requests;
 sandbox allow-same-origin
 ```
@@ -132,10 +132,10 @@ Optimal loading is a complex topic. Broadly, it covers three overlapping categor
 
 HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a "link" HTTP header.
 
-My website includes a "link" header to load an SVG that serves as my IndieWeb photo and favicon:
+My website includes a "link" header to load an SVG that serves as my IndieWeb photo and favicon (hash removed from filename for readability):
 
 ```
-link: </favicon.072dbf7bc4323646b9ee96243fbd71b2.svg>; rel=preload; as=image
+link: </favicon.HASH.svg>; rel=preload; as=image
 ```
 ### Don't count on the cache
 
@@ -318,7 +318,7 @@ Another common offender is infinite-scrolling. This isn't an issue without JavaS
 => https://xkcd.com/1309/ xkcd: Infinite Scrolling
 => https://explainxkcd.com/1309/#Transcript Transcript on the "explain xkcd" wiki
 
-Infinite-scrolling makes it difficult for readers to find their old place upon re-visiting a page, thereby creating harsh consequences accidental navigation. WordPress documentation lists more problems:
+Infinite-scrolling makes it difficult for readers to find their old place upon re-visiting a page, thereby creating harsh consequences for accidental navigation. WordPress documentation lists more problems:
 
 => https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/ Infinite Scroll: Make WordPress Accessible
 => https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/ Non-JS adaptation; skip to "Accessibility concerns" section
@@ -378,7 +378,7 @@ If you ignored my advice to avoid JavaScript, at least think twice before using 
 
 Another problematic override is scroll-behavior. Enforcing smooth-scrolling (e.g., with the "scroll-behavior" CSS property) can interfere with the use of in-page search by slowing down jumps between matches. Rapidly darting around the page with smooth scrolling can cause motion sickness. Simply relying on users to override default behaviors violates the "inclusive by default" directive I encourage, since user preferences are fingerprintable and shift responsibility away from developers.
 
-There's a complex solution to turn off smooth scrolling for unfocused elements, but it doesn't address separate issues such as anchor-link navigation:
+There's a complex solution to turn off smooth scrolling for un-focused elements, but it doesn't address separate issues such as anchor-link navigation:
 
 => https://schepp.dev/posts/smooth-scrolling-and-page-search/ Fixing Smooth Scrolling & Page Search
 
@@ -1048,6 +1048,46 @@ Consider the implications of translating between left-to-right (LTR) and right-t
 Websites following this page's layout advice shouldn't need much adjustment. Ahmed Shadeed's "RTL Styling 101" is a comprehensive guide to what can go wrong and how to fix issues:
 
 => https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
+
+This section focuses on ways to improve screen reader support that have not already been covered. The most important measures (semantic HTML, good alt-text and image context, correct spelling, etc.) have already been covered in previous sections.
+
+### Split elements and possessive hyperlinks
+
+Some screen readers for touchscreen devices split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
+
+This is especially concerning on my website, where I tend to hyperlink peoples' names (a common practice on the IndieWeb): making names possessive with an "apostrophe + s" creates pronunciation issues. "Seirdy's Home" could be read as "Seirdy. Link. S. Home" if the word "Seirdy" is a hyperlink.
+
+A workaround is to use the "text" ARIA role to remove the semantics of elements.
+
+> To force a screen reader to interpret the heading as one object, I wrapped the text inside the heading in a span and added role=”text”.
+
+```
+<h1>
+  <span role="text">Digital accessibility, <br>
+    for everyone. 
+  </span>
+</h1>
+```
+
+=> https://axesslab.com/text-splitting/ Axess Lab on text splitting
+
+If you're unfamiliar with ARIA, always remember the first rule of ARIA:
+
+=> https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria No ARIA is better than Bad ARIA
+
+ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
+
+The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
+
+### Other tips
+
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, and TalkBack all have unique behavior and varying levels of support for HTML and ARIA.
+
+Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
+
+Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
+
+I'll be adding more tips here shortly; watch this space.
 
 ## Testing
 

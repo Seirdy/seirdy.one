@@ -11,7 +11,7 @@
 			{{ if (.Get "last-name") -}}<span itemprop="familyName" class="p-family-name family-name">{{- .Get "last-name" -}}</span>{{- end -}}
 			{{- if (.Get "nickname") -}}<span itemprop="nickname" class="p-nickname nickname">{{- .Get "nickname" -}}</span>{{- end -}}
 			{{- if (.Get "name") -}}{{- .Get "name" -}}{{- end -}}
-		</span>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
+		</span>{{- if (.Get "appendString") -}}{{- .Get "appendString" -}}{{- end -}}{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 	</a>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 	{{- if (.Get "org") }}
 	from <span class="p-org org" itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">

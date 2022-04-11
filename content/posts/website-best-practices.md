@@ -68,18 +68,18 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<strong itemprop="codeSampleType">Code snippet</strong>: this is the CSP for my main website.
+<strong itemprop="codeSampleType">Code snippet</strong>: this is the CSP for my main website, with hashes removed for readability.
 
 </figcaption>
 
 <pre><samp itemprop="text">default-src 'none';
 img-src 'self' data:;
-style-src 'sha256-3U3TNinhti/dtVz2/wuS3peJDYYN8Yym+JcakOiXVes=';
+style-src 'sha256-<var>HASH</var>';
 style-src-attr 'none';
 frame-ancestors 'none';
 base-uri 'none';
 form-action 'none';
-manifest-src https://seirdy.one/manifest.min.ca9097c5e38b68514ddcee23bc6d4d62.webmanifest;
+manifest-src https://seirdy.one/manifest.min.<var>HASH</var>.webmanifest;
 upgrade-insecure-requests;
 sandbox allow-same-origin</samp></pre>
 
@@ -146,11 +146,11 @@ HTML is a blocking resource: images and stylesheets will not load until the user
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
 
-<strong itemprop="codeSampleType">Code snippet</strong>: my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon:
+<strong itemprop="codeSampleType">Code snippet</strong>: my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon. Hash removed from filename for readability.
 
 </figcaption>
 
-<pre><samp itemprop="text">link: &lt;/favicon.072dbf7bc4323646b9ee96243fbd71b2.svg&gt;; rel=preload; as=image</samp></pre>
+<pre><samp itemprop="text">link: &lt;/favicon.<var>HASH</var>.svg&gt;; rel=preload; as=image</samp></pre>
 
 </figure>
 
@@ -330,7 +330,7 @@ Pages should finish making all `GET` network requests while loading. This makes 
 
 One example is pagination. It's easier to download one long article ahead of time, but inconvenient to load each page separately. Displaying content all at once also improves searchability. The single-page approach has obvious limits: don't expect users to happily download a single-page novel.
 
-Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
+Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences for accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
 
 <figure>
 <a href="https://explainxkcd.com/1309/#Transcript">
@@ -410,7 +410,7 @@ Search is so essential to some users' ability to navigate that some desktop user
 
 Another problematic override is scroll-behavior. Enforcing smooth-scrolling (e.g., with the `scroll-behavior` CSS property) can interfere with the use of in-page search by slowing down jumps between matches. Rapidly darting around the page with smooth scrolling can cause motion sickness. Simply relying on users to override default behaviors violates the "inclusive by default" directive I encourage, since user preferences are fingerprintable and shift responsibility away from developers.
 
-There's a complex solution to [turn off smooth scrolling for unfocused elements](https://schepp.dev/posts/smooth-scrolling-and-page-search/), but it doesn't address separate issues such as anchor-link navigation.
+There's a complex solution to [turn off smooth scrolling for un-focused elements](https://schepp.dev/posts/smooth-scrolling-and-page-search/), but it doesn't address separate issues such as anchor-link navigation.
 
 About fonts
 -----------
@@ -447,7 +447,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, _avoid using `px`_ where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^9] (e.g. borders), but they are uncommon.
+In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^9] (e.g. borders), but they are uncommon.
 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
@@ -760,7 +760,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 ### SVG images
 
-I only recommend using SVG in images; avoid using them in embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick to the subset of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static)'s [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) that appears in the [SVG Tiny Portable<wbr>/Secure (<abbr title="Portable/Secure">PS</abbr>) spec](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/). SVG Tiny PS is a subset of [SVG Tiny&nbsp;1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
+I only recommend using SVG in images; avoid using them in embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick a the subset of the [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static). Specifically, the subset that appears in the [SVG Tiny Portable<wbr>/Secure (<abbr title="Portable/Secure">PS</abbr>) spec](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/). SVG Tiny PS is a subset of [SVG Tiny&nbsp;1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
 The above advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implemen&shy;tation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
 
@@ -1019,7 +1019,58 @@ For example: machine translation will leave `<code>` and `<samp>` blocks as-is. 
 
 Consider the implications of translating between left-to-right (LTR) and right-to-left (RTL) languages. Do a search through your stylesheets for keywords like "left" and "right" to ensure that styles don't depend too heavily on text direction. Once you've cleared the low-hanging fruit, try translating the page to a language like Arabic.
 
-Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/">}}'s <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
+Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="'s">}} <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
+
+Screen reader improve&shy;ments {#screen-reader-improvements}
+-------------------------------
+
+This section focuses on ways to improve screen reader support that have not already been covered. The most important measures (semantic HTML, good alt-text and image context, correct spelling, etc.) have already been covered in previous sections.
+
+### Split elements and possessive hyperlinks
+
+Some screen readers for touchscreen devices split up sections by HTML elements. This means HTML elements in the middle of a sentence will trigger pauses. The problem comes up frequently on sites that use excessive inline formatting.
+
+This is especially concerning on my website, where I tend to hyperlink peoples' names (a common practice on the IndieWeb): making names possessive with an "apostrophe + s" creates pronunciation issues. "Seirdy's Home" could be read as "Seirdy. Link. S. Home" if the word "Seirdy" is a hyperlink.
+
+A workaround is to use the "text" ARIA role to remove the semantics of elements.
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+<blockquote itemprop="text">
+
+To force a screen reader to interpret the heading as one object, I wrapped the text inside the heading in a span and added `role="text"`.
+
+```
+<h1>
+  <span role="text">Digital accessibility, <br>
+    for everyone. 
+  </span>
+</h1>
+```
+
+</blockquote>
+<figcaption>
+	&mdash; <span class="h-cite" itemprop="citation" role="doc-credit">
+			<span itemprop="isPartOf" itemscope itemtype="https://schema.org/BlogPosting">
+				{{<indieweb-person first-name="Hampus" last-name="Sethfords" url="https://axesslab.com/author/hampelusken/" itemprop="author">}},
+				{{<cited-work name="Text Splitting Causes Screen Reader Problems" url="https://axesslab.com/text-splitting/" extraName="headline">}}
+			</span>
+	</span>
+</figcaption>
+</figure>
+
+If you're unfamiliar with ARIA, always remember the first rule of ARIA: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
+
+The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
+
+### Other tips
+
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, and TalkBack all have unique behavior and varying levels of support for HTML and ARIA.
+
+Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
+
+Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
+
+I'll be adding more tips here shortly; watch this space.
 
 Testing
 -------
@@ -1152,7 +1203,7 @@ Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucki
 
 The [Web Bloat Score calculator](https://www.webbloatscore.com/) is a JavaScript app that compares a page's size with the size of a PNG screenshot of the full page content, encouraging site owners to minimize the ratio of the two.
 
-One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me">}}'s comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
+One resource I found useful (that eventually featured this article!) was the "Your page content" section of {{<indieweb-person first-name="Bill" last-name="Dietrich" url="https://www.billdietrich.me" appendString="'s">}} comprehensive guide to [setting up your personal website](https://www.billdietrich.me/YourPersonalWebSite.html#PageContent).
 
 If you've got some time on your hands, I _highly_ recommend reading the <cite>[Web Content Accessibility Guidelines (WCAG)&nbsp;2.2](https://www.w3.org/TR/WCAG22/)</cite>. The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the <cite>[How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref)</cite>. It combines the WCAG with its supplementary [list of techniques](https://www.w3.org/WAI/WCAG22/Techniques/).
 
