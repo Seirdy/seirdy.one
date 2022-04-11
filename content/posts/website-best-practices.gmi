@@ -78,7 +78,7 @@ sandbox allow-same-origin
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox "sandbox" CSP directive on MDN
 
-While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser addon).¹ I added the "allow-same-origin" parameter so that these addons will still be able to function.²
+While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser add-on).¹ I added the "allow-same-origin" parameter so that these add-ons will still be able to function.²
 
 If you're able to control your HTTP headers, then use headers instead of a <meta http=equiv> tag. In addition to not supporting certain directives, a CSP in a <meta> tag might let some items slip through:
 
@@ -103,7 +103,7 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 
 Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-party content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user.
 
-Some web developers deliver resources using third-party CDNs, such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browsers engines now partition their caches to prevent this behavior:
+Some web developers deliver resources using a third-party content delivery network (CDN), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browsers engines now partition their caches to prevent this behavior:
 
 => https://privacycg.github.io/storage-partitioning/
 
@@ -169,7 +169,11 @@ Consider inlining images under 250 bytes with a "data:" URI; that's the size at 
 
 Download size matters, especially on metered connections. There's no shortage of advice concerning minimizing this easy-to-understand metric. Unfortunately, it alone doesn't give us the full picture: download size is not the exact same thing as time taken to deliver useful content to users.
 
-Google's answer to this problem is "Core Web Vitals" containing metrics such as "SpeedIndex". These metrics aren't useless, but they are incredibly naive.
+Google's answer to this problem is "Core Web Vitals" containing metrics such as the Speed Index:
+
+=> https://docs.webpagetest.org/metrics/speedindex/ Speed Index documentation
+
+These metrics aren't useless, but they are incredibly naive.
 
 > SpeedIndex is based on the idea that what counts is how fast the visible part of the website renders. It doesn't matter what's happening elsewhere on the page. It doesn't matter if the network is saturated and your phone is hot to the touch. It doesn't matter if the battery is visibly draining. Everything is OK as long as the part of the site in the viewport appears to pop into view right away.
 >
@@ -1284,5 +1288,5 @@ I find Practical Typography quite useful for printed works, and incorporated a m
 
 ¹⁰ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-¹¹ Libreoffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+¹¹ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
