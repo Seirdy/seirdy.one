@@ -12,7 +12,7 @@ Education: Lewis and Clark College
 
 Bachelor of Arts, Major in Math and Computer Science. Fall 2018 - Spring 2023 (expected)
 
-Certifications
+Certifi&shy;cations {#certifications}
 --------------
 
 CompTIA Security+ (SY0-601), Dec. 2021. Verification available upon request.
@@ -33,11 +33,11 @@ Portfolio
 
 Git repositories mirrored across [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), and [GitLab](https://gitlab.com/Seirdy). Selected projects:
 
-### Clogstats: [sr.ht/~seirdy/clogstats](https://sr.ht/~seirdy/clogstats)
+### Clogstats: [sr.ht<wbr>/~seirdy<wbr>/clogstats](https://sr.ht/~seirdy/clogstats)
 
 Gathers IRC channel activity statistics from WeeChat logs and performs time-series analysis and forecasting on them. It can quantify, rank, and chart chatting activity over time and display forecasts. It can also detect anomalous increases in activity. Written in Python with NumPy and Pandas.
 
-### MOAC: [sr.ht/~seirdy/MOAC](https://sr.ht/~seirdy/MOAC/)
+### MOAC: [sr.ht<wbr>/~seirdy<wbr>/MOAC](https://sr.ht/~seirdy/MOAC/)
 
 Analyze password strength given physical limits to computing, and generate secure passwords. Computes theoretical limits to a brute-force attack limited by given physical quantities (mass, energy, power, temperature, etc.) and generates passwords to withstand them. This provides a future-proof understanding of password strength. Extensively tested. Written in Go.
 
@@ -48,7 +48,7 @@ Technical Skills
 - Operating systems: Linux, BSD, Windows, macOS. Able to adapt to any UNIX-like environment.
 - Linux: various distributions, inc. Fedora, RHEL, Debian, Ubuntu, and OpenSUSE; familiar with components like Systemd, SELinux.
 - Monitoring systems: Grafana and the InfluxData stack (InfluxDB, Telegraf, Kapacitor, Chronograf).
-- Programming languages: Proficient in Go, Python, Lua/MoonScript, and shell languages (Bash, Zsh, POSIX sh). Familiar with Java, C, SageMath.
+- Programming languages: Proficient in Go, Python, Lua, and shell languages (Bash, Zsh, POSIX sh). Familiar with Java, C, SageMath.
 - Python: Familiar with math and data science libraries such as the SciPy stack, Jupyter notebooks, and Pandas.
-- Other tools: Git, Continuous Integration/Delivery (Jenkins, GitLab CI, Travis CI), Nginx.
+- Other tools: Git, Continuous Integration/<wbr>Delivery (Jenkins, GitLab CI, Travis CI), Nginx.
 

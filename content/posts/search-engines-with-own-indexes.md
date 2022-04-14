@@ -47,11 +47,11 @@ These are large engines that pass all my standard tests and more.
   - [Startpage](https://www.startpage.com/)
   - [GMX Search](https://search.gmx.com/web)
   - (discon&shy;tinued) Runnaroo
-  - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
+  - [SAPO](https://www.sapo.pt/) (Portu&shy;guese interface, can work with English results)
 
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
 
-  - Yahoo (and its sibling engine, [OneSearch](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
+  - Yahoo (and its sibling engine, [One&shy;Search](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
   - DuckDuck&shy;Go[^2]
   - AOL
   - Qwant (partial)[^3]
@@ -78,7 +78,7 @@ These are large engines that pass all my standard tests and more.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
   - Epic Search (went paid-only as of June 2021)
-  - Occasionally powers DuckDuck&shy;Go's link results instead of Bing.
+  - Occasion&shy;ally powers DuckDuck&shy;Go's link results instead of Bing.
 
 - [Mojeek](https://www.mojeek.com/): Seems privacy-oriented with a large index containing billions of pages. Quality isn't at GBY's level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I'd live. Partially powers [eTools.ch](https://www.etools.ch/). At this moment, _I think that Mojeek is the best alternative to GBY_ for general search.
 
@@ -106,7 +106,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
 
-- [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
+- [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppen&shy;heimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-search.com](https://blog-search.com).
 
@@ -274,8 +274,8 @@ There's also a practical, less-ideological reason to try other engines: differen
 
 No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to [PageRank](https://en.wikipedia.org/wiki/PageRank), which biases them towards sites with many backlinks. Search engines have to deal with unwanted results occupying the confusing overlap between SEO spam, shock content, and duplicate content. When this content’s manipulation of ranking algos causes it to rank high, engines have to address it through manual action or algorithm refinement. Choosing to address it through either option, or choosing to leave it there for popular queries after receiving user reports, reflects bias. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
 
-Methodology
------------
+Method&shy;ology {#methodology}
+----------------
 
 ### Discovery
 
@@ -335,8 +335,8 @@ When building webpages, authors need to consider the barriers to entry for a new
 
 Try a "bad" engine from lower in the list. It might show you utter crap. But every garbage heap has an undiscovered treasure. I'm sure that some hidden gems you'll find will be worth your while. Let's add some serendipity to the SEO-filled Web.
 
-Acknowledge&shy;ments
----------------------
+Ac&shy;know&shy;ledge&shy;ments {#acknowledgements}
+-------------------------------
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 

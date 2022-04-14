@@ -48,7 +48,7 @@ Compare the situation with email: despite Gmail's dominance, other email provide
 
 XMPP is still alive and well, but its current popularity is a fraction of what it once was.
 
-### Implementation clout
+### Implemen&shy;tation clout {#implementation-clout}
 
 Standards are a form of agreements made to ensure compatibility between implementations. Such agreements need to be agreed upon by the implementations themselves. When one implementation grows dominant, so too does its leverage in the decision-making process over shared standards. Too much dominance can create a monoculture in which the dominant implementation is the only implementation that conforms to the spec.
 
@@ -62,7 +62,7 @@ Since there aren't any third-party clients and servers that can replace the offi
 
 I don't think that Matrix is going to become a fully closed platform anytime soon; the blog post ["On Privacy versus Freedom"](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom/) seems to put it on the right side of the closed/open spectrum. Clients like [gomuks](https://github.com/tulir/gomuks) and [FluffyChat](https://fluffychat.im/) seem to keep up with Element well enough to serve as partial replacements. I do, however, find its current state problematic and much closer to "closed" on the closed/open spectrum than XMPP, IRC, and email.
 
-### Unstandardized feature creep
+### Un&shy;standard&shy;ized feature creep {#unstandardized-feature-creep}
 
 Platforms are more than their protocols. Different implementations have unique behavior to distinguish themselves. Problems arise when dominant implementations' unique unstandardized features grow past a certain point to make a closed superset of an open platform.
 
@@ -123,7 +123,7 @@ The standards- and consensus-driven approach to platform development and the ine
 
 Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
 
-Acknowledge&shy;ments
+Ac&shy;knowledge&shy;ments {#acknowledgements}
 ---------------------
 
 {{<indieweb-person first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section about XMPP.

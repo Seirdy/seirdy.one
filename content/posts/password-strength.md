@@ -78,7 +78,7 @@ Obviously, I'm not taking into account future mathematical advances; my crystal 
 
 Finally, there's always a non-zero probability of a brute-force attack guessing a password with a given entropy. Literal "immunity" is impossible. Lowering this probability to statistical insignificance renders our password practically immune to brute-force attacks.
 
-Computation
+Compu&shy;tation
 -----------
 
 How much energy does MOAC use per guess during a brute-force attack? In the context of this thought experiment, this number should be unrealistically low. I settled on [<var>k</var><var>T</var>](https://en.wikipedia.org/wiki/KT_(energy)). <var>k</var> represents the [Boltzmann Constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (about 1.381×10<sup>-23</sup> J/K) and <var>T</var> represents the temperature of the system. Their product corresponds to the amount of heat required to create a 1 nat increase in a system's entropy.
@@ -171,7 +171,7 @@ Let's copy and paste the values for those constants from Wikipedia and Wolfram A
 - G ≈ 6.67408×10<sup>-11</sup> m³/kg/s²
 - Hₒ ≈ 2.2×10<sup>-18</sup> Hz (uncertain; look up the Hubble tension)
 - T ≈ 2.7 K
-- k ≈ 1.3806503×10<sup>-23</sup> J/K
+- k ≈ 1.38065×10<sup>-23</sup> J/K
 
 Plugging those in and simplifying:
 
@@ -212,7 +212,7 @@ An excerpt from a religious text with a trailing space:
 
 Don't use actual excerpts from pre-existing works as your password.
 
-Conclusion/TLDR
+Conclusion, TLDR
 ---------------
 
 Question: How much entropy should a password have to ensure it will _never_ be vulnerable to a brute-force attack? Can an impossibly efficient computer--the MOAC--crack your password?
@@ -239,7 +239,7 @@ One well-known approach to calculating physical limits of computation is [Bremer
 
 [A publication](https://arxiv.org/abs/quant-ph/9908043)[^5] by Seth Lloyd from MIT further explores limits to computation speed on an ideal 1-kilogram computer.
 
-Acknowledge&shy;ments
+Ac&shy;knowledge&shy;ments {#acknowledgements}
 ---------------------
 
 Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) and [Ryan Coyler](https://rcolyer.net/) for helping me over IRC with my shaky physics and pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected an incorrect reference to AES-256 encryption by bringing up salts.
