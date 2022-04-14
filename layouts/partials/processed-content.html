@@ -1,6 +1,6 @@
 {{ if .Params.footnote_heading -}}
 
-<!--Add heading to footnotes-->
+<!--Add heading to footnotes, remove unused class-->
 {{ $references    := `(<section class="footnotes" role="doc-endnotes">
 <hr>)` -}}
 {{ $heading :=  .Params.footnote_heading -}}
@@ -17,7 +17,7 @@
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
 {{ $tocHeadingOutside := `<h2>Table of Contents</h2><nav id="TableOfContents">` }}
-{{ $tocHeadingInside := `<nav id=TableOfContents><h2>Table of Contents</h2>` }}
+{{ $tocHeadingInside := `<nav id=TableOfContents role="doc-toc"><h2>Table of Contents</h2>` }}
 
 {{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithoutTabIndex $preWithTabIndex | replaceRE $tocHeadingOutside $tocHeadingInside | safeHTML -}}
 {{ else -}}
