@@ -863,22 +863,28 @@ As words-per-line decrease (by increasing zoom or narrowing the viewport), line 
 
 People read on a variety of viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
 
-### Narrow viewports
-
-A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
+### Narrow viewports are popular
 
 Not every phone has a giant screen: millions of people around the world use Web-enabled feature phones. The Jio Phone 2, for instance, is narrow enough to fall through a belt loop: it sports a screen that's just over 3.6 cm (1.44 inches) wide. Furthermore, some programs sport browser windows in sidebars:
 
 => https://addons.mozilla.org/en-US/firefox/addon/side-view/ Mozilla's side view
 => https://help.vivaldi.com/desktop/panels/web-panels/ Vivaldi Web Panels
 
-Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions.
+Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions. Nowadays, even smartwatches have built-in browsers; users who navigate to links in smartwatch message and email apps will use a simplified browser that fits on their wrist.
+
+=> https://developer.apple.com/videos/play/wwdc2018/239/ Apple Watch's version of WebKit (video)
+=> https://brucelawson.co.uk/2018/the-practical-value-of-semantic-html/ Text + image summary of the above video
+=> https://www.tizenhelp.com/samsung-internet-browser-now-support-on-galaxy-watch-4/ Samsung Internet on Wear OS
+
+The Apple Watch Series 6 has a viewport that's 162 CSS pixels wide. Samsung Internet is a popular option for Wear OS users, whose viewports are often just 150 CSS pixels.
 
 ### Wide items
 
+A single element wider than the viewport will trigger horizontal scrolling for the entire page. This is especially problematic for long pages that already require excessive vertical scrolling.
+
 Long words, especially in headings, can trigger horizontal overflow. Test in a viewport that's under 240 pixels wide (DPR=1) and observe any words that trail off of the edge of the screen. Add soft hyphens to these words using the "&shy;" entity.
 
-Most modern browsers support the "hyphens" CSS 3 property, but full automatic hyphenation is usually an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I'm also not aware of a CSS property that only breaks syllables when necessary to avoid horizontal scrolling.
+Most modern browsers support the "hyphens" CSS 3 property, but full automatic hyphenation is usually an overkill solution with a naive implementation. Automatic hyphenation will insert hyphens wherever it can, not necessarily between the best syllables. At the time of writing, humans are still better at hyphenating than most software implementations. I only enable full hyphenation on the narrowest of viewports.
 
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
@@ -945,7 +951,7 @@ There's an ideal range somewhere between "cramped" and "spaced-apart" content. F
 
 Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
 
-For now, I've decided to keep the indents on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
+For now, I've decided to keep some indentation on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
 
 => https://seirdy.one/2020/11/23/website-best-practices.html#toc Table of contents
 

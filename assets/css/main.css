@@ -46,6 +46,29 @@ blockquote {
 	padding-left: 0.8em;
 }
 
+/* narrow screens: reduce list indentation */
+dd,
+ol,
+ul {
+	margin: 0;
+	padding-left: 1.5em;
+}
+
+/* Narrow screens: allow hyphenating titles
+ * I can't add soft hyphens to these. */
+h1 {
+	hyphens: auto;
+}
+
+/* Very narrow screens: full hyphenation */
+@media (max-width: 180px) {
+	article,
+	h2,
+	h3 {
+		hyphens: auto
+	}
+}
+
 /* single-line nav on widescreen and print.
  * Single-line nav on print saves almost half a page. */
 @media print, (min-width: 32em) {
