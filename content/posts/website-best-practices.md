@@ -1067,16 +1067,16 @@ samp {
 
 pre,
 :not(pre) > code {
-	border: 1px solid;
+  border: 1px solid;
 }
 
 /* A black border is too harsh. */
 :not(pre) > code {
-	border-color: #aaa;
+  border-color: #aaa;
 }
 
 kbd {
-	font-weight: bold;
+  font-weight: bold;
 }</code></pre>
 
 </figure>
