@@ -19,7 +19,6 @@
 				<span itemprop="wordCount">{{ .WordCount }}</span> words, a <span itemprop="timeRequired" content="PT{{ .ReadingTime }}M">{{ .ReadingTime }} minute</span> read
 			</small>
 		</header>
-		<hr>
 		<div class="e-content entry-content" itemprop="articleBody">
 			{{ partial "processed-content" . -}}
 		</div>

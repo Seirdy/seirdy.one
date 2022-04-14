@@ -25,11 +25,13 @@ html {
  * viewport.
  * This should not take effect on printouts, to save paper. */
 @media screen {
+	/* 45em is the lowest reasonable width for titles, nav, footers, etc */
 	html {
 		max-width: 45em;
 		padding: 0 2%;
 	}
 
+	/* 45em is too wide for long body text. */
 	.e-content {
 		margin: auto;
 		max-width: 38em;
@@ -37,7 +39,7 @@ html {
 }
 
 /* narrow screens: reduce margin for blockquotes a lot, using
- * a thick left-side border instead.*/
+ * a thick left-side border instead. */
 blockquote {
 	border-left: 4px solid #aaa;
 	margin: 0;
@@ -49,14 +51,18 @@ blockquote {
 @media print, (min-width: 32em) {
 	header nav li {
 		display: inline;
+
 		/* inline-end doesn't work in netsurf. -right should stil make sense
 		 * in RTL machine translation, it'll just look a bit indented. */
 		padding-right: 0.5em;
 	}
 }
 
-/* WCAG guidelines recommend signalling the current page */
-a[aria-current="page"] {
+/* WCAG guidelines recommend signalling the current page.
+ * <kbd> should be distinguished from <code> and surrounding text
+ * in a way beyond font-face; at least two visual distinctions needed */
+a[aria-current="page"],
+kbd {
 	font-weight: bold;
 }
 
@@ -66,6 +72,7 @@ figure {
 	margin: 0;
 }
 
+/* figcaptions should be distinct from surrounding paragraphs tho */
 figure:not([itemtype]) figcaption {
 	margin: 0 10%;
 }
@@ -92,13 +99,9 @@ nav li,
  * reason and this somehow fixes that without overriding the user's
  * font size preferences. */
 code,
-pre,
 kbd,
 samp {
-	/* stylelint-disable -- compatibility hack */
 	font-family: monospace, monospace;
-
-	/* stylelint-enable */
 }
 
 /* Narrow screens: long words can cause content to flow out of the
@@ -127,7 +130,12 @@ pre {
 img,
 pre,
 :not(pre) > code {
-	border: 1px solid #aaa;
+	border: 1px solid;
+}
+
+/* A black border is too harsh. */
+:not(pre) > code {
+	border-color: #aaa;
 }
 
 /* center images that aren't my indieweb icon; same justification as
@@ -149,6 +157,41 @@ section[role="doc-endnotes"] {
 	content-visibility: auto;
 }
 
+/* same as above */
+article header {
+	border-bottom: 1px solid;
+
+	/* padding ensures the border can't be mistaken for an underline */
+	padding-bottom: 1em;
+}
+
+/* Some browser focus indicators are inaccessible; override them with
+ * something more visible. See WCAG 2.x SC 2.4.12. I also tried to
+ * match browser behavior; mainstream browsers use :focus-visible
+ * instead of focus but older/simpler browsers only support :focus.
+ * I borrowed these directives from
+ * https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible
+ * */
+
+/* For browsers that don't support :focus-visible */
+a:focus,
+[tabindex]:focus {
+	outline: 3px solid;
+}
+
+/* Remove :focus styling for browsers that do support :focus-visible */
+@supports selector(:focus-visible) {
+	a:focus:not(:focus-visible),
+	[tabindex]:focus:not(:focus-visible) {
+		outline: none;
+	}
+}
+
+/* Add focus styling back in browsers that do support :focus-visible */
+:focus-visible {
+	outline: 3px solid;
+}
+
 /* Todo:
  * - Some browsers don't scale SVGs properly; the img container
  *   dimensions crop the image rather than scale it. Investigate
@@ -157,4 +200,4 @@ section[role="doc-endnotes"] {
  *   if the spec allows this behavior, try to correct it here.
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
  *   then consider trimming the dark stylesheet I provide.
- * - Investigate CSS-based hints to screenreaders. */
+ * */

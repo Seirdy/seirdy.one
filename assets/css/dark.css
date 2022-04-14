@@ -7,21 +7,21 @@
 		color: #eee;
 	}
 
-	a {
-		color: #ffea77;
+	/* Only color <a> if it's a link; if href is empty, let it be. */
+	a:link {
+		color: #fe8;
 	}
 
 	a:visited {
-		color: #ddc;
+		color: #edc;
 	}
 
 	a:active {
 		color: #c80;
 	}
 
-	pre,
 	:not(pre) > code {
-		border-color: #444;
+		border-color: #555;
 	}
 
 	/* stylelint-disable -- hasn't heard of "prefers-contrast" yet */
