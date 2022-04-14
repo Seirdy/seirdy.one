@@ -1,6 +1,9 @@
 {
-	"extends": "stylelint-config-standard",
+	"extends": "stylelint-config-recommended",
 	"rules": {
-		"indentation": "tab"
+		"font-family-no-duplicate-names": [ true, { "ignoreFontFamilyNames": ["monospace"] } ],
+		"indentation": "tab",
+		"max-nesting-depth": 1,
+		"selector-max-compound-selectors": 3
 	}
 }

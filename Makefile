@@ -36,7 +36,7 @@ clean:
 
 .PHONY: lint-css
 lint-css:
-	stylelint --di --rd --rdd $(CSS_DIR)/main.css $(CSS_DIR)/dark.css
+	pnpx stylelint --di --rd --rdd $(CSS_DIR)/main.css $(CSS_DIR)/dark.css
 	csslint --quiet $(CSS_DIR)
 
 .PHONY: hint
