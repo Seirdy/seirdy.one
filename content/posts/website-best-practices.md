@@ -34,7 +34,7 @@ Intro&shy;duction {#introduction}
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have _some_ useful information for any web content author or front-end web developer.
 
-My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/). Specifically, I focus on supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in [the conclusion](#conclusion). Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
+My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/). Specifically, I focus on supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in [the conclusion](#conclusion). Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (<abbr title="plain-old, semantic HTML">POSH</abbr>), you've done half of the work already.
 
 One of the core ideas behind the flavor of inclusive design I present is being _inclusive by default._ Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under&shy;represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
@@ -234,7 +234,7 @@ Apply these strategies in moderation. Including extra preload directives in your
 
 ### Layout shifts
 
-Loading content of unknown dimensions, such as images, can create layout shifts; the <abbr title="Web Incubator Community Group">WICG</abbr>'s <cite>[Layout Instability API](https://wicg.github.io/layout-instability/#sec-intro)</cite> describes the phenomenon in detail. Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including `width` and `height` values, but the `style` attribute could work too. I recommend staying away from the `style` attribute, or at least selectively allowing its use with the `style-src-attr` CSP directive.
+Loading content of unknown dimensions, such as images, can create layout shifts; the <abbr title="Web Incubator Community Group">WICG</abbr>'s <cite>[Layout Instability API](https://wicg.github.io/layout-instability/#sec-intro)</cite> describes the phenomenon in detail. Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including unitless `width` and `height` values, but the `style` attribute could work too. I recommend staying away from the `style` attribute, or at least selectively allowing its use with the `style-src-attr` CSP directive.
 
 ### Other server-side tweaks
 
@@ -557,7 +557,7 @@ Some images contain text. Only use pictures of text if the visual appearance of 
 
 If the image is a screenshot of text from a website, link to that website to allow users to read its contents in context; this can serve as an "image transcript" of sorts.
 
-A `longdesc` attribute used to be another way to reference an image transcript. The `longdesc` attribute contained a hyperlink (often an anchor link) to a location with more information about an image. This attribute [has been obsoleted](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) in the HTML Living Standard.
+A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image transcript. The `longdesc` attribute contained a hyperlink (often an anchor link) to a location with more information about an image. This attribute [has been obsoleted](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) in the HTML Living Standard.
 
 The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`). Put a short summary in the alt-text, and mention that the hyperlink contains a transcript.
 
@@ -1031,6 +1031,97 @@ For example: machine translation will leave `<code>` and `<samp>` blocks as-is. 
 Consider the implications of translating between left-to-right (LTR) and right-to-left (RTL) languages. Do a search through your stylesheets for keywords like "left" and "right" to ensure that styles don't depend too heavily on text direction. Once you've cleared the low-hanging fruit, try translating the page to a language like Arabic.
 
 Websites following this page's layout advice shouldn't need much adjustment. {{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="’s">}} <cite>[RTL Styling 101](https://rtlstyling.com/posts/rtl-styling/)</cite> is a comprehensive guide to what can go wrong and how to fix issues.
+
+Inaccessible default stylesheets
+--------------------------------
+
+Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
+
+1. Gently adjusting a parameter rather than completely changing an element's appearance. Typically, this involves adjusting dimensions.
+2. Fundamentally altering an element's appearance. I only feel comfortable doing this when the defaults are truly inaccessible, or clash with another accessibility enhancement I made.
+
+My previous advice regarding line spacing and maximum line length fell in the first category. My approach to re-styling `<blockquote>` elements, adding borders, and using `sans-serif` fell in the latter category.
+
+This section contains miscellaneous advice regarding the latter category of stylesheet overrides.
+
+### Monospace handling
+
+By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to `monospace monospace` (sic).
+
+Font family alone is not enough to distinguish an element from its surroundings. For `<pre>`, `<code>`, and `<samp>` elements, I recommend supplementing the font family change with a soft border. As described in [the "Color overrides and accessibility" section](#color-overrides-and-accessibility), borders are preferable to background colors because they don't override the user-agent's preferred foreground and background colors.
+
+Finally, it's important to distinguish `<kbd>` from `<code>`, `<samp>`, and regular body text.
+
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+<figcaption>
+
+<strong itemprop="codeSampleType">Code snippet</strong>: How I distinguish `<code>` and `<samp>`, `<pre>`, and `<kbd>` from each other and from body text.
+
+</figcaption>
+
+<pre><code itemprop="text">code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+}
+
+pre,
+:not(pre) > code {
+	border: 1px solid;
+}
+
+/* A black border is too harsh. */
+:not(pre) > code {
+	border-color: #aaa;
+}
+
+kbd {
+	font-weight: bold;
+}</code></pre>
+
+</figure>
+<!--*-->
+
+### Focus indicators
+
+The default focus indicators are hard to see in certain browsers, especially when the focused element already has a border.
+
+(TODO: add a screenshot).
+
+On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
+
+The WCAG guidelines recommend making focus indicators 2&nbsp;px thick in [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced). While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
+
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.
+
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+<figcaption>
+
+<strong itemprop="codeSampleType">Code snippet</strong>: I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name="Refining focus styles with focus-visible" url="https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible" extraName="headline">}} by {{<indieweb-person nickname="tempertemper" url="https://www.tempertemper.net/" itemprop="author">}}</span>, but modified to work on old browser engines such as KHTML and WebKit&nbsp;537.21.
+
+</figcaption>
+
+<pre>
+<code itemprop="text">a:focus,
+[tabindex]:focus {
+  outline: 3px solid;
+}
+
+/* Undo the above if :focus-visible works */
+@supports selector(:focus-visible) {
+  a:focus:not(:focus-visible),
+  [tabindex]:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid;
+}</code>
+</pre>
+
+</figure>
+<!--*-->
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------

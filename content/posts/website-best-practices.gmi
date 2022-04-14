@@ -12,7 +12,7 @@ My primary focus is inclusive design:
 
 => https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/ Accomodation versus inclusive design.
 
-Specifically, I focus on supporting *under-represented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use semantic HTML, you've done half of the work already.
+Specifically, I focus on supporting *under-represented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (POSH), you've done half of the work already.
 
 One of the core ideas behind the flavor of inclusive design I present is being *inclusive by default.* Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
@@ -216,7 +216,7 @@ Loading content of unknown dimensions, such as images, can create layout shifts;
 
 => https://wicg.github.io/layout-instability/#sec-intro Layout Instability API
 
-Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including "width" and "height" values, but the "style" attribute could work too. I recommend staying away from the "style" attribute, or at least selectively allowing its use with the "style-src-attr" CSP directive.
+Avoid layout shifts by including dimensions in HTML attributes. The simplest way to do so is by including unitless "width" and "height" values, but the "style" attribute could work too. I recommend staying away from the "style" attribute, or at least selectively allowing its use with the "style-src-attr" CSP directive.
 
 ### Other server-side tweaks
 
@@ -1065,6 +1065,91 @@ Consider the implications of translating between left-to-right (LTR) and right-t
 Websites following this page's layout advice shouldn't need much adjustment. Ahmed Shadeed's "RTL Styling 101" is a comprehensive guide to what can go wrong and how to fix issues:
 
 => https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
+
+## Inaccessible default stylesheets
+
+Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
+
+1. Gently adjusting a parameter rather than completely changing an element's appearance. Typically, this involves adjusting dimensions.
+2. Fundamentally altering an element's appearance. I only feel comfortable doing this when the defaults are truly inaccessible, or clash with another accessibility enhancement I made.
+
+My previous advice regarding line spacing and maximum line length fell in the first category. My approach to re-styling "<blockquote>" elements, adding borders, and using "sans-serif" fell in the latter category.
+
+This section contains miscellaneous advice regarding the latter category of stylesheet overrides.
+
+### Monospace handling
+
+By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to "monospace monospace" (sic).
+
+Font family alone is not enough to distinguish an element from its surroundings. For <pre>, <code>, and <samp> elements, I recommend supplementing the font family change with a soft border. As described in the "Color overrides and accessibility" section, borders are preferable to background colors because they don't override the user-agent's preferred foreground and background colors.
+
+Finally, it's important to distinguish <kbd> from <code>, <samp>, and regular body text.
+
+Here's how I distinguish <code> and <samp>, <pre>, and <kbd> from each other and from body text.
+```
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+}
+
+pre,
+:not(pre) > code {
+	border: 1px solid;
+}
+
+/* A black border is too harsh. */
+:not(pre) > code {
+	border-color: #aaa;
+}
+
+kbd {
+	font-weight: bold;
+}
+```
+
+### Focus indicators
+
+The default focus indicators in certain browsers are hard to see, especially when the focused element has a border (see the "Color overrides and accessibility" section).
+
+(TODO: add a screenshot).
+
+On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
+
+The WCAG guidelines recommend making focus indicators 2 px thick in Success Criterion 2.4.12:
+
+=> https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced Success Criterion 2.4.12 Focus Appearance (Enhanced)
+
+While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
+
+You can use ":focus" and ":focus-visible" to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use ":focus-visible" instead of ":focus"; old browsers only support ":focus" and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.
+
+I do not re-style ":focus" when ":focus-visible" works, to match existing behavior. I also override ":focus" styling only on the subset of focusable elements that would normally show an outline. Based on an idea by tempertemper, but modified to work on old browser engines such as KHTML and  WebKit 537.21:
+
+=> https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible Refining focus styles with focus-visible
+
+```
+a:focus,
+[tabindex]:focus {
+  outline: 3px solid;
+}
+
+/* Undo the above if :focus-visible works */
+@supports selector(:focus-visible) {
+  a:focus:not(:focus-visible),
+  [tabindex]:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid;
+}
+```
+
+If your site has elements that need to show focus on clicks rather than on keyboard-navigation (e.g. input, radio buttons), ":focus-visible" alone may not be enough. Some websites specify overrides in their stylesheets on a per-element basis to work around this.
+
+## Screen reader improvements
 
 This section focuses on ways to improve screen reader support that have not already been covered. The most important measures (semantic HTML, good alt-text and image context, correct spelling, etc.) have already been covered in previous sections.
 
