@@ -333,9 +333,7 @@ One example is pagination. It's easier to download one long article ahead of tim
 Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences for accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
 
 <figure>
-<a href="https://explainxkcd.com/1309/#Transcript">
 {{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.">}}
-</a>
 <figcaption>
 
 Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/). Transcript [on the "explain xkcd" wiki](https://explainxkcd.com/1309/#Transcript).
@@ -984,8 +982,8 @@ Increasing the line-spacing a bit will make tap targets larger and improve compr
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr>'s Cognitive and Learning Disabilities Accessibility Task Force [recommends changing this Success Criterion's level](https://w3c.github.io/coga/extension/#changedlevels), finding it too important to be relegated to AAA status.
 
-Non-browsers: reading mode
---------------------------
+Non-<wbr>browsers: reading mode {#non-browsers-reading-mode}
+-------------------------------
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
