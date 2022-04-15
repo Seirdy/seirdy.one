@@ -215,6 +215,17 @@ a:focus,
 	outline: 3px solid;
 }
 
+.skip {
+	position: absolute;
+	top: -2em;
+	left: .25em;
+	color: #00e;
+	background-color: #fff;
+}
+.skip:focus {
+	top: .5em;
+}
+
 /* Todo:
  * - Some browsers don't scale SVGs properly; the img container
  *   dimensions crop the image rather than scale it. Investigate
