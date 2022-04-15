@@ -11,8 +11,8 @@ I find it quite easy to handle views different from my own. I feel more troubled
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
 
-1. **[Whatsapp and the Domestication of Users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
-2. **[Keeping Platforms Open](./../../../2021/02/23/keeping-platforms-open.html)**<br>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
+1. **[Whatsapp and the domestication of users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
+2. **[Keeping platforms open](./../../../2021/02/23/keeping-platforms-open.html)**<br>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
 
 After two posts spanning over 5000 words, I need to add some nuance.
 
@@ -85,7 +85,7 @@ For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/
 
 #### Dynamic analysis example: Zoom
 
-In 2020, Zoom Video Communications came under scrutiny for marketing its "Zoom" software as a secure, end-to-end encrypted solution for video conferencing. Zoom's documentation claimed that it used "AES-256" encryption. Without source code, did we have to take the docs at their word?
+In 2020, Zoom Video Comm&shy;unications came under scrutiny for marketing its "Zoom" software as a secure, end-to-end encrypted solution for video conferencing. Zoom's documentation claimed that it used "AES-256" encryption. Without source code, did we have to take the docs at their word?
 
 [The Citizen Lab](https://citizenlab.ca/) didn't. In April 2020, it published [a report](https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/) revealing critical flaws in Zoom's encryption. It utilized Wireshark and [mitmproxy](https://mitmproxy.org/) to analyze networking activity, and inspected core dumps to learn about its encryption implementation. The Citizen Lab's researchers found that Zoom actually used an incredibly flawed implementation of a weak version of AES-128 (ECB mode), and easily bypassed it.
 
@@ -151,12 +151,12 @@ Fuzzing frequently catches bugs that are only apparent by running a program, not
 
 If you want to get started with fuzzing, I recommend checking out [the quick-start guide for American Fuzzy Loop](https://github.com/google/AFL/blob/master/docs/QuickStartGuide.txt). Some languages like Go 1.18 also have fuzzing tools available right in the standard library.
 
-### Example: CVE-2022-0185
+### Example: CVE-<wbr>2022-0185
 
-A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
+A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-<wbr>2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
 <p class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">
-	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io" itemprop="author">}}
+	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-<wbr>2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io" itemprop="author">}}
 </p>
 
 I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.
@@ -174,7 +174,7 @@ I readily concede to several points in favor of source availability from a secur
 - Closed-source software may or may not have builds available that include sanitizers and debug symbols.
 - Although fuzzing release binaries is possible, fuzzing is much easier to do when source code is available. Vendors of proprietary software seldom release special fuzz-friendly builds, and filtering out false-positives can be quite tedious without understanding high-level design.
 - It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it's not the main way most vulnerabilities are found nowadays (thanks to {{<indieweb-person nickname="X_CLI" url="https://www.broken-by-design.fr/">}} for [reminding me about what source analysis does accomplish](https://lemmy.ml/post/167321/comment/117774)).
-- Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Furthermore, it's difficult to verify which software a server is running.[^14] For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
+- Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Further&shy;more, it's difficult to verify which software a server is running.[^14] For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
 
 Most of this post is written with the assumption that binaries are inspectable and traceable. Binary obfuscation and some forms of content protection/<abbr title="Digital Rights Management">DRM</abbr> violate this assumption and actually do make analysis more difficult.
 
@@ -189,8 +189,8 @@ Whether or not the source code is available for software does not change how ins
 
 Both Patience and {{<indieweb-person first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
 
-Conclusion
-----------
+Con&shy;clusion {#conclusion}
+---------------
 
 I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation/discovery process.
 

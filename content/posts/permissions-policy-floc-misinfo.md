@@ -7,7 +7,7 @@ outputs:
   - html
   - gemtext
 footnote_heading: Notes
-title: "Misinformation about Permissions Policy and FLoC"
+title: "Misinfo about Permissions Policy and FLoC"
 ---
 _Update: I've amended this post with a valid reason to use the header. More info at the bottom._
 
