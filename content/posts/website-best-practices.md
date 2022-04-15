@@ -1086,9 +1086,16 @@ kbd {
 
 ### Focus indicators
 
-The default focus indicators are hard to see in certain browsers, especially when the focused element already has a border.
+The default focus indicators are hard to see in certain browsers (e.g. Firefox and WebKit), especially when the focused element already has a border. We can override them to make them more accessible.
 
-(TODO: add a screenshot).
+<figure>
+{{< picture name="focus" alt="Two screenshots of a focused link, one with a thin dotted outline and one with a thick solid outline." >}}
+<figcaption>
+
+Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
+
+</figcaption>
+</figure>
 
 On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
 
