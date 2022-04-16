@@ -18,7 +18,7 @@ This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \
 
 Content on this site also appears on <a href="gemini://seirdy.one">my Gemini capsule</a>
 
-Location (Rohan, meatspace)
+Location (Rohan, meat&shy;space) {#location-rohan-meatspace}
 ---------------------------
 
 Currently living at home in Cupertino, CA

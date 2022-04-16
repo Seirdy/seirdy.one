@@ -116,7 +116,7 @@ Please use progressive enhancement (<abbr title="progressive enhancement">PE</ab
 
 I'm sure you're a great person, but your readers might not know that; don't expect them to trust your website. Your scripts should look as safe as possible to an untrusting eye. Avoid requesting permissions or using [sensitive APIs](https://browserleaks.com/javascript).
 
-Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. [Some recent directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types) restrict and enforce proper use of [trusted types](https://web.dev/trusted-types/).
+Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. [Some recent CSP directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types) restrict and enforce proper use of [trusted types](https://web.dev/trusted-types/).
 
 ### Third-party content
 
@@ -158,7 +158,7 @@ HTML is a blocking resource: images and stylesheets will not load until the user
 
 The browser cache is a valuable tool to save bandwidth and improve page speed, but it's not as reliable as many people seem to believe. Don't focus too much on "repeat view" performance.
 
-Out of privacy concerns, most browsers no longer re-use cached content across sites; refer back to the section on [third-party content](#third-party-content) for more details. Privacy-conscious users (including all users using "private" or "incognito" sessions) will likely have their caches wiped between sessions.
+Out of privacy concerns, most browsers no longer re-use cached content across sites; refer back to the [section on third-party content](#third-party-content) for more details. Privacy-conscious users (including all users using "private" or "incognito" sessions) will likely have their caches wiped between sessions.
 
 Requesting a high number of cached resources can decrease performance of the cache, causing browsers to [bypass the cache](https://simonhearne.com/2020/network-faster-than-cache/). The effect is especially pronounced on low-end phones and mechanical hard drives.
 
@@ -179,7 +179,7 @@ In addition to HTML, CSS is also a blocking resource. You could pre-load your CS
 
 Consider inlining images under 250&nbsp;bytes with a `data:` URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150&nbsp;bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (the hidden service replaces SVGs with PNGs; see the section on [the Tor Browser](#the-tor-browser)). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implemen&shy;tations.
 
-### Round-trips
+### Round-<wbr>trips {#round-trips}
 
 Download size matters, especially on metered connections. There's no shortage of advice concerning minimizing this easy-to-understand metric. Unfortunately, it alone doesn't give us the full picture: download size is not the exact same thing as time taken to deliver useful content to users.
 
@@ -228,7 +228,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^5] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to [avoid third-party content](#third-party-content).
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^5] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice [to avoid third-party content](#third-party-content).
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -240,7 +240,7 @@ Loading content of unknown dimensions, such as images, can create layout shifts;
 
 In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
 
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires a [separate module](https://github.com/google/ngx_brotli) for Brotli compression.
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires the [ngx_brotli module](https://github.com/google/ngx_brotli) for Brotli compression.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing; use it if you can, but expect many clients to only support HTTP/1.1. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
@@ -259,7 +259,7 @@ For one, Tor users are encouraged to set the Tor Browser Bundle's (<abbr title="
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
-If you use a CDN or some over&shy;complicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
+If you use a CDN or some over&shy;complicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-<wbr>based CAPTCHA will effectively block many Tor users.
 
 Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible _by default_. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
 
@@ -299,7 +299,7 @@ If you can't rely on lazy loading, your pages should work well without it. If pa
 
 The scope of this article is textual content supplemented by images. In that context, I don't think lazy loading is worthwhile because it often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup used to result in packet loss rates above 60%&nbsp;(!!).
 
-Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, and/or switch to another task and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open several links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a [similar experience](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/) riding the train.
+Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, and/or switch to another task and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open several links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a [similar experience riding the train](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/).
 
 Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
@@ -322,7 +322,7 @@ I have two responses:
 1. If an image isn't essential, don't include it in the page. If an image is essential, assume sighted users want to see it.
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintention&shy;ally) made that choice for a large number of users.
 
-Nonetheless, expect some readers to have images disabled. Refer to the "[Beyond alt-text](#beyond-alt-text)" section to see how to best support this case.
+Nonetheless, expect some readers to have images disabled. Refer to [the "Beyond alt-text" section](#beyond-alt-text) to see how to best support this case.
 
 ### Related issues
 
@@ -349,7 +349,7 @@ I've discussed loading pages in the background, but what about saving a page off
 
 Deferring network requests is a bad idea, but there are other ways to improve large-page performance.
 
-A similar image attribute that I _do_ recommend is the [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding) attribute. I typically use `decoding="async"` so that image decoding can be deferred.
+A similar image attribute that I _do_ recommend is the [`decoding` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding). I typically use `decoding="async"` so that image decoding can be deferred.
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
 
@@ -602,9 +602,9 @@ In fact, the CSS Working Group is working on a specification for re-coloring web
 
 ### Dark themes
 
-If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the relevant docs [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with migraines, photosensitivity (like me!), or dark environments.
+If you do explicitly set colors, please also include a dark theme using a media query: `@media (prefers-color-scheme: dark)`. For more info, read the [`prefers-color-scheme` docs on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). Dark themes are helpful for readers with migraines, photosensitivity (like me!), or dark environments.
 
-If you include a `theme-color` directive in your document `<head>`, then recent browsers will automatically switch their default stylesheets to dark-mode. Unfortunately, some older browsers (like Firefox-ESR) don't support this directive, and WebKit's default dark stylesheet has [unreadable links](https://bugs.webkit.org/show_bug.cgi?id=209851). WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
+If you include a `theme-color` directive in your document `<head>`, then recent browsers will automatically switch their default stylesheets to dark-mode. Unfortunately, some older browsers (like Firefox-ESR) don't support this directive, and WebKit's default dark stylesheet [has unreadable links](https://bugs.webkit.org/show_bug.cgi?id=209851). WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
 
 <figure>
 {{<picture name="wk_link" alt="dark blue link on dark gray background.">}}
@@ -691,7 +691,7 @@ Some image optimization tools I use:
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles WebAssembly-compiled encoders; I've heard good things about it.
 
-You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes. More info in the [MDN `<picture>` docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
@@ -933,7 +933,7 @@ Designers often use figures to "break up" their content, and provide negative sp
 Spacing
 -------
 
-The previous [small viewports](#small-viewports) section may tempt you to make your content as dense as possible. Please don't overdo it.
+The previous ["small viewports" section](#small-viewports) may tempt you to make your content as dense as possible. Please don't overdo it.
 
 There's an ideal range somewhere between "cramped" and "spaced-apart" content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially disabled readers).
 
@@ -1207,7 +1207,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 12. Try printing out your page in black-and-white from an unorthodox graphical browser.
 13. Download your webpage and test how multiple word processors render and generate PDFs from it.[^13]
-14. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+14. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).

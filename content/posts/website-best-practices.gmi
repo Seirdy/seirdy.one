@@ -94,7 +94,7 @@ I'm sure you're a great person, but your readers might not know that; don't expe
 
 => https://browserleaks.com/javascript JavaScript Browser Information (BrowserLeaks)
 
-Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. Some recent directives restrict and enforce proper use of trusted types.
+Finally, consider using your CSP to restrict script loading. If you must use inline scripts, selectively allow them with a hash or nonce. Some recent CSP directives restrict and enforce proper use of trusted types:
 
 => https://web.dev/trusted-types/ Trusted types
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types CSP trusted types on MDN
@@ -222,7 +222,7 @@ Avoid layout shifts by including dimensions in HTML attributes. The simplest way
 
 In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
 
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a "precompressed" directive; Nginx requires a separate module for Brotli compression:
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a "precompressed" directive; Nginx requires the ngx_brotli module for Brotli compression:
 
 => https://github.com/google/ngx_brotli The ngx_brotli module
 

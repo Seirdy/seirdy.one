@@ -12,7 +12,7 @@
 					<meta itemprop="headline" content="{{ $bookmark.title }}"> <!--Just because we can't have one headline refer to two items-->
 					<h3 itemprop="sharedContent" itemscope itemtype="https://schema.org/WebPage" class="p-name">
 						<a itemprop="url" href="{{ $bookmark.uri }}" class="u-bookmark-of h-cite">
-							<span itemprop="headline">{{ $bookmark.title }}</span>
+							<span itemprop="headline">{{ $bookmark.title | replaceRE `Defunctionalisation` `Defunction&shy;alisation` | safeHTML }}</span>
 						</a>
 					</h3>
 					{{- $tags := split $bookmark.tags "," -}}
