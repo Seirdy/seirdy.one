@@ -41,7 +41,7 @@ html {
 /* narrow screens: reduce margin for blockquotes a lot, using
  * a thick left-side border instead. */
 blockquote {
-	border-left: 4px solid #aaa;
+	border-left: 4px solid;
 	margin: 0;
 	padding-left: 0.8em;
 }
@@ -61,7 +61,7 @@ h1 {
 }
 
 /* Very narrow screens: full hyphenation */
-@media (max-width: 180px) {
+@media (max-width: 11em) {
 	article,
 	h2,
 	h3 {
@@ -89,7 +89,7 @@ kbd {
 	font-weight: bold;
 }
 
-/* narrow screens: remove unused figure margins for text figures. */
+/* narrow screens: remove unused figure margins */
 
 figure {
 	margin: 0;
