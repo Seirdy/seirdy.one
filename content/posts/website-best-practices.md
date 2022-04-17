@@ -941,12 +941,12 @@ There's an ideal range somewhere between "cramped" and "spaced-apart" content. F
 
 Excessive indentation can [make reading difficult](#indented-elements) for narrow viewports, but preserving some indentation is still useful.
 
-For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`, `<ul>`) since I often fill them with links (see this article's [table of contents](#TableOfContents) for an example). This indentation provides important non-interactive negative space. Readers with hand tremors [depend on this space](https://axesslab.com/hand-tremors/) to scroll without accidentally selecting an interactive element. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap".
+For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`, `<ul>`) since I often fill them with links (see this article's [table of contents](#TableOfContents) for an example). This indentation provides important non-interactive negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element; <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting"><span itemprop="publisher">Axess Lab</span> described the issue in {{<cited-work name="Hand Tremors and the giant button problem" url="https://axesslab.com/hand-tremors/" extraName="headline">}}</span>. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap".
 
 <figure>
 {{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles on top of each other, separated by blank sections labeled \"space\"">}}
 <figcaption>
-Image credit: <a href="https://axesslab.com/hand-tremors/">Axess Lab</a>
+Image credit: Axess Lab
 </figcaption>
 </figure>
 
