@@ -16,7 +16,7 @@
 {{ $preWithTabIndex := `<pre tabindex="0">` }}
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
-{{ $tocHeadingOutside := `<h2 id="toc-hd">Table of Contents</h2><nav id="TableOfContents">` }}
+{{ $tocHeadingOutside := `<h2>Table of Contents</h2><nav id="TableOfContents">` }}
 {{ $tocHeadingInside := `<nav id=TableOfContents role="doc-toc"><h2 id="toc-hd">Table of Contents</h2>` }}
 
 {{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithoutTabIndex $preWithTabIndex | replaceRE $tocHeadingOutside $tocHeadingInside | safeHTML -}}
