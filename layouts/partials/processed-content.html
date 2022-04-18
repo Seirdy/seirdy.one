@@ -1,11 +1,13 @@
+{{ $footnote_heading :=  printf "Footnotes" -}}
 {{ if .Params.footnote_heading -}}
+	{{ $footnote_heading =  .Params.footnote_heading -}}
+{{end}}
 
 <!--Add heading to footnotes, remove unused class-->
-{{ $references    := `(<section class="footnotes" role="doc-endnotes">
+{{ $referencesWithoutHeading    := `(<section class="footnotes" role="doc-endnotes">
 <hr>)` -}}
-{{ $heading :=  .Params.footnote_heading -}}
 {{ $referencesWithHeading := printf `<section role="doc-endnotes" aria-labelledby="note-hd">
-<h2 id="note-hd">%s</h2>` ($heading) -}}
+<h2 id="note-hd">%s</h2>` ($footnote_heading) -}}
 
 <!--Remove deprecated DPUB-ARIA role and unused classes-->
 {{ $endnote := `(role="doc-endnote"|class="footnote-(back)?ref")` }}
@@ -16,10 +18,11 @@
 {{ $preWithTabIndex := `<pre tabindex="0">` }}
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
-{{ $tocHeadingOutside := `<h2>Table of Contents</h2><nav id="TableOfContents">` }}
+{{ $tocHeadingOutside := `<h2>Table of Contents</h2><nav(?:.*)>` }}
 {{ $tocHeadingInside := `<nav id=TableOfContents role="doc-toc"><h2 id="toc-hd">Table of Contents</h2>` }}
 
-{{ .Content | replaceRE $references $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithoutTabIndex $preWithTabIndex | replaceRE $tocHeadingOutside $tocHeadingInside | safeHTML -}}
-{{ else -}}
-{{ .Content -}}
-{{ end -}}
+<!--Give footnote backlinks accessible names-->
+{{ $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` }}
+{{ $footnoteBacklinksGood :=  `<a href="#fnref:${1}" title="back to reference $1" aria-label="back to reference $1"${2}>` }}
+
+{{ .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $endnote $noEndnote | replaceRE $preWithoutTabIndex $preWithTabIndex | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | safeHTML -}}
