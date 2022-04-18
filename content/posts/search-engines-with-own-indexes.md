@@ -10,6 +10,7 @@ sitemap:
     ChangeFreq: weekly
     Priority: 0.7
 footnote_heading: Notes
+featured: true
 title: A look at search engines with their own indexes
 ---
 This is a cursory review of all the indexing search engines I have been able to find.

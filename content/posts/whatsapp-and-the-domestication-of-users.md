@@ -11,6 +11,7 @@ tags:
   - user domestication
   - privacy
   - platforms
+featured: true
 title: WhatsApp and the domestication of users
 ---
 
