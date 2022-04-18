@@ -180,14 +180,6 @@ section[role="doc-endnotes"] {
 	content-visibility: auto;
 }
 
-/* same as above */
-article header {
-	border-bottom: 1px solid;
-
-	/* padding ensures the border can't be mistaken for an underline */
-	padding-bottom: 1em;
-}
-
 /* Some browser focus indicators are inaccessible; override them with
  * something more visible. See WCAG 2.x SC 2.4.12. I also tried to
  * match browser behavior; mainstream browsers use :focus-visible
