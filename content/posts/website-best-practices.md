@@ -749,7 +749,9 @@ A `<picture>` element allows selection of sources based on any CSS media query. 
 
 <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 <figcaption>
-<strong itemprop="codeSampleType">Code snippet</strong>: a minimal example of a <code>picture</code> containing a dark variant:
+
+<strong itemprop="codeSampleType">Code snippet</strong>: a minimal example of a `picture` containing a dark variant:
+
 </figcaption>
 
 <pre>
@@ -1355,7 +1357,20 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^12]: <p>Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <code>about:config</code> and toggle some flags under <code>javascript<wbr>.options</code>.</p><figure itemscope itemtype="https://schema.org/SoftwareSourceCode"><figcaption><strong itemprop="codeSampleType">Code snippet</strong>: Firefox prefs to turn off JIT compilation</figcaption><pre><code itemprop="text">javascript.options.ion<br>javascript.options.baselinejit<br>javascript.options.native_regexp<br>javascript.options.asmjs<br>javascript.options.wasm</code></pre></figure><p>
+[^12]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
+
+    <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+    <figcaption>
+
+    <strong itemprop="codeSampleType">Code snippet</strong>: Firefox prefs to turn off JIT compilation
+
+    </figcaption>
+
+    <pre><code itemprop="text">javascript.options.ion
+    javascript.options.baselinejit
+    javascript.options.native_regexp
+    javascript.options.asmjs
+    javascript.options.wasm</code></pre></figure>
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
