@@ -782,9 +782,33 @@ Two tools that can optimize the size of an SVG file are [SVGO](https://github.co
 Layout
 ------
 
-This is possibly the most subjective item I'm including, and the item with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
+Page layout should be simple, predictable, consistent, familiar, and static. Avoid anything too unusual, since novelty could introduce a learning curve.
 
-The first or second heading in the DOM, and the highest heading level, should be the page title marking the start of your main content (i.e. it should come after the site title, site navigation links, etc). If this is impossible, consider adding a "skip link" instead. Visually-impaired users generally prefer navigating by headings, but screen reader beginners still benefit from a skip-link.
+### Accessible skimming
+
+Keep the source order, DOM order, and visual order identical to ensure consistent behavior when navigating with the mouse, keyboard, assistive-technology, et al. Doing so should also result in a logical <kbd>Tab</kbd> order.
+
+[Guideline 2.4 Navigable](https://www.w3.org/TR/WCAG22/#navigable) of the WCAG lists multiple criteria related to identifying and skipping sections of your pages, and for good reason:
+
+* Users of [switch access controls](https://en.wikipedia.org/wiki/Switch_access) find it slow and frustrating to navigate long lists of focusable items.
+* Screen readers make it difficult to consume poorly-organized content non-linearly.
+* Clients that don't support CSS can't prioritize content using a supplied stylesheet.
+
+The list goes on: nearly every reader reliant upon assistive technologies struggles to skim through poorly-organized pages.
+
+Related items need to be semantically grouped together. Group navigation links together in `<nav>` elements; sections under headings and landmarks; lists under `<ol>`, `<ul>`, or `<dl>`; etc. to give assistive technologies the means to skip over multiple items at once.
+
+The first or second heading in the DOM, and the highest heading level, should be the page title marking the start of your main content (i.e. it should come after the site title, site navigation links, etc). Use elements like `<main>`, `<nav>`, and `<article>` to provide landmarks. If multiple navigation elements exist, give your main navigation element an `aria-label` or a heading.
+
+Remember that not all landmarks are announced by screen readers; for instance, many screen readers don't announce the ending of a `<header>` element in an article. An `<hr>` element is a good way to force the ending of a landmark to be visible: it introduces a thematic break between sections that is visible to assistive technologies and user-agents that don't support CSS.
+
+Consider adding a "skip link" or two. Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners still benefit from a skip-link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
+
+If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content; see [the "Layout shifts" section](#layout-shifts) for more details. If it appears over existing content, it needs to have a solid background; if you set the background color, [set a foreground color too](#about-custom-colors).
+
+### Arbitrary viewports
+
+The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
 A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content. Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one (1) item. Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing.
 
@@ -809,7 +833,7 @@ Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a po
 
 Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
-### What about sidebars?
+### Sidebar pitfalls
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
 
@@ -823,14 +847,6 @@ Neither situation looks great.
 Common items in sidebars include tag clouds, an author bio, and an index of entries; these aren't useful while reading an article. Consider putting them in the article footer or--even better--dedicated pages. This does mean that readers will have to navigate to a different page to see that content, but they probably prefer things that way; almost nobody who clicked on "An opinionated list of best practices for textual websites" did so because they wanted to read my bio.
 
 Don't boost engagement by giving readers information they didn't ask for; earn engagement with good content, and let readers navigate to your other pages _after_ they've decided they want to read more.
-
-### Accessible skimming
-
-Keeping an identical source order, DOM order, and visual order should also result in a logical <kbd>Tab</kbd> order. Just to be sure, always test the order of keyboard-driven focus.
-
-Measuring tab-order is nice, but it doesn't go far enough. Users of [switch access](https://en.wikipedia.org/wiki/Switch_access) controls find it slow and frustrating to navigate long lists of focusable items. Screen readers make it difficult to consume poorly-organized content non-linearly. The list goes on: nearly every reader reliant upon assistive technologies struggles to skim through poorly-organized pages.
-
-Related items need to be semantically grouped together. Group navigation links together in `<nav>` elements; sections under headings, `<section>` elements, or other landmarks; lists under `<ol>`, `<ul>`, or `<dl>`; etc. to give assistive technologies the means to skip over multiple items at once.
 
 ### Line length
 
