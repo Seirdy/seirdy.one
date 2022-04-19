@@ -1199,7 +1199,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-I'll be adding more tips here shortly; watch this space.
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹² It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use "aria-label" atop symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as "right arrow curving left".
 
 ## Testing
 
@@ -1389,3 +1389,5 @@ I find Practical Typography quite useful for printed works, and incorporated a m
 
 ¹¹ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
+
+¹² Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
