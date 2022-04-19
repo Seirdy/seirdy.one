@@ -81,10 +81,8 @@ h1 {
 	}
 }
 
-/* WCAG guidelines recommend signalling the current page.
- * <kbd> should be distinguished from <code> and surrounding text
+/* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed */
-a[aria-current="page"],
 kbd {
 	font-weight: bold;
 }
@@ -207,13 +205,21 @@ a:focus,
 	outline: 3px solid;
 }
 
+/* Skip link is hidden until focused.
+ * Needs background color so it can appear over other elements on narrow
+ * screens. If we set a background color, we must also set a foreground
+ * color. System colors like Canvas and LinkText aren't supported by all
+ * browsers, so we make up our own. */
 .skip {
 	position: absolute;
 	top: -2em;
 	left: .25em;
+	/* #06c is the default link color in FF, IE, and ux.redhat.com
+	 * #00e is the default in WebKit, Blink, and ancient FF. */
 	color: #00e;
 	background-color: #fff;
 }
+
 .skip:focus {
 	top: .5em;
 }

@@ -7,9 +7,15 @@
 				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if eq $currentPage.Permalink .Site.BaseURL -}} aria-current="page"{{- end -}}><span itemprop="name">{{ .Site.Title }}</span></a>
 			</li>
 			{{ range .Site.Menus.main -}}
+			{{ $isCurrent := false }}
 			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
-				<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}} aria-current="page"{{- end -}}>
-					<span itemprop="name">{{- .Name -}}</span></a>
+				<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}}{{- $isCurrent = true -}} aria-current="page"{{- end -}}>
+					{{- if or $isCurrent (eq $currentPage.Section .Title) -}}
+						<strong itemprop="name">{{- .Name -}}</strong>
+					{{- else -}}
+						<span itemprop="name">{{- .Name -}}</span>
+					{{- end -}}
+				</a>
 			</li>
 			{{- end }}
 		</ul>
