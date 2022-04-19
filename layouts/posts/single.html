@@ -25,50 +25,50 @@
 		</div>
 	</article>
 	<footer class="comment">
-		<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
-		<p>This site also supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
-		<section id="webmentions">
-			<h2>Webmen&shy;tions</h2>
-			<ul class="unstyled-list">
-				{{ $target := .RelPermalink -}}
-				{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
-				{{ $webmentions := getJSON $url -}}
-				{{ range $webmentions -}}
-				{{ $webmention := . -}}
-					{{ if (eq $webmention.type "like") -}}
-						<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
-					{{- else -}}
-						<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
-					{{- end }}
-					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
-					<br>
-					{{ if (eq $webmention.type "like") -}}
-						{{- if $webmention.author_name -}}
-							<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-						{{- else if $webmention.title -}}
-							<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
-						{{- else -}}
-							{{ $webmention.source -}}
-						{{- end }}
-						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
-					{{- else -}}
-						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc"><span itemprop="name" class="p-content p-name">
-							{{- if $webmention.title -}}
-								{{- $webmention.title | truncate 200 -}}
-							{{- else -}}
-								{{- $webmention.source | truncate 35 -}}
-							{{- end -}}
-						</span></a>
-						{{- if $webmention.author_name }}
-							by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-							{{- end -}}
-					{{- end }}
-					</li>
-				{{ else -}}
-					<li><p>This post doesn't have any approved Webmentions yet.</p></li>
+		<h2 id="webmentions">Webmen&shy;tions</h2>
+		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
+		<ul class="unstyled-list">
+			{{ $target := .RelPermalink -}}
+			{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
+			{{ $webmentions := getJSON $url -}}
+			{{ range $webmentions -}}
+			{{ $webmention := . -}}
+				{{ if (eq $webmention.type "like") -}}
+					<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
+				{{- else -}}
+					<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
 				{{- end }}
-			</ul>
-		</section>
+				<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
+				<br>
+				{{ if (eq $webmention.type "like") -}}
+					{{- if $webmention.author_name -}}
+						<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+					{{- else if $webmention.title -}}
+						<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
+					{{- else -}}
+						{{ $webmention.source -}}
+					{{- end }}
+					<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
+				{{- else -}}
+					<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc"><span itemprop="name" class="p-content p-name">
+						{{- if $webmention.title -}}
+							{{- $webmention.title | truncate 200 -}}
+						{{- else -}}
+							{{- $webmention.source | truncate 35 -}}
+						{{- end -}}
+					</span></a>
+					{{- if $webmention.author_name }}
+						by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+						{{- end -}}
+				{{- end }}
+				</li>
+			{{ else -}}
+				<li><p>This post doesn't have any approved Webmentions yet.</p></li>
+			{{- end }}
+		</ul>
+		<h2 id="contact">Contact</h2>
+		<p><a href="mailto:~seirdy/seirdy.one-comments@lists.sr.ht">Send an email</a> to leave a comment in the <a href="https://lists.sr.ht/~seirdy/seirdy.one-comments">mailing list</a> for seirdy.one. You'll have to send in plain text; please <a href="https://useplaintext.email/">learn how</a>. Alternatively, send your email <a href="mailto:seirdy@seirdy.one">directly to me</a>; it won’t show up on the mailing list, but I’ll see it.</p>
+		<p></p>
 	</footer>
 </div>
 {{ end }}
