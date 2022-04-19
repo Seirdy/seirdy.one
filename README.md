@@ -14,7 +14,7 @@ Dependencies
 
 To build:
 
-- Hugo 0.90 or later
+- Hugo 0.93 or later
 - Make
 - Git (Hugo uses Git info for features like date last updated)
 - [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool) It's like zopfli but more efficient and faster.

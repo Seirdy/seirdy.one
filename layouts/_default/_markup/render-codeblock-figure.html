@@ -1,0 +1,23 @@
+{{ $contents := .Inner | htmlEscape }}
+{{ $samp := false }}
+{{ with .Attributes }}
+	{{ range $k, $v := . }}
+		{{ if strings.HasPrefix $k "var" }}
+			{{ $after := printf `<var translate="yes">%s</var>` $v }}
+			{{ $contents = $contents | replaceRE $v $after }}
+		{{ else if and (eq $k "samp")}}
+			{{ $samp = $v }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+<pre tabindex="0">
+{{- if $samp -}}
+<samp itemprop="text">
+{{- $contents | safeHTML -}}
+</samp>
+{{- else -}}
+<code itemprop="text">
+{{- $contents | safeHTML -}}
+</code>
+{{- end -}}
+</pre>
