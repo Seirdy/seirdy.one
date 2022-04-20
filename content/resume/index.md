@@ -13,7 +13,7 @@ Education: Lewis and Clark College
 Bachelor of Arts, Major in Math and Computer Science. Fall 2018 - Spring 2023 (expected)
 
 Certifi&shy;cations {#certifications}
---------------
+-------------------
 
 CompTIA Security+ (SY0-601), Dec. 2021. Verification available upon request.
 
@@ -28,6 +28,17 @@ Developed an anomaly detection and seasonal forecasting tool in Go (Golang) to s
 
 Worked with a remote team on YAML-based data serialization and validation of data streamed in from Redfish and Selenium test suites to ensure compliance with a schema. Developed Redshift and Selenium tests for Cisco Intersight's APIs and user interface. Used Python.
 
+Technical Skills
+----------------
+
+- Cloud-native technologies: Docker Podman, Buildah, Skopeo, Kubernetes, OpenShift 4.
+- Operating systems: Linux, BSD, Windows, macOS. Able to adapt to any UNIX-like environment.
+- Linux: various distributions, inc. Fedora, RHEL, Debian, Ubuntu, and OpenSUSE; familiar with components like Systemd, SELinux.
+- Monitoring systems: Grafana and the InfluxData stack (InfluxDB, Telegraf, Kapacitor, Chronograf).
+- Programming languages: Proficient in Go, Python, Lua, and shell languages (Bash, Zsh, POSIX sh). Familiar with Java, C, SageMath.
+- Python: Familiar with math and data science libraries such as the SciPy stack, Jupyter notebooks, and Pandas.
+- Other tools: Git, Continuous Integration/<wbr>Delivery (Jenkins, GitLab CI, Travis CI), Nginx.
+
 Portfolio
 ---------
 
@@ -40,15 +51,3 @@ Gathers IRC channel activity statistics from WeeChat logs and performs time-seri
 ### MOAC: [sr.ht<wbr>/~seirdy<wbr>/MOAC](https://sr.ht/~seirdy/MOAC/)
 
 Analyze password strength given physical limits to computing, and generate secure passwords. Computes theoretical limits to a brute-force attack limited by given physical quantities (mass, energy, power, temperature, etc.) and generates passwords to withstand them. This provides a future-proof understanding of password strength. Extensively tested. Written in Go.
-
-Technical Skills
-----------------
-
-- Cloud-native technologies: Docker Podman, Buildah, Skopeo, Kubernetes, OpenShift 4.
-- Operating systems: Linux, BSD, Windows, macOS. Able to adapt to any UNIX-like environment.
-- Linux: various distributions, inc. Fedora, RHEL, Debian, Ubuntu, and OpenSUSE; familiar with components like Systemd, SELinux.
-- Monitoring systems: Grafana and the InfluxData stack (InfluxDB, Telegraf, Kapacitor, Chronograf).
-- Programming languages: Proficient in Go, Python, Lua, and shell languages (Bash, Zsh, POSIX sh). Familiar with Java, C, SageMath.
-- Python: Familiar with math and data science libraries such as the SciPy stack, Jupyter notebooks, and Pandas.
-- Other tools: Git, Continuous Integration/<wbr>Delivery (Jenkins, GitLab CI, Travis CI), Nginx.
-
