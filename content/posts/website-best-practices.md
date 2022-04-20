@@ -67,12 +67,9 @@ Consider taking hardening measures to maximize the security benefits made possib
 
 JavaScript and WebAssembly are responsible for the bulk of modern web exploits. If that isn't reason enough, most [non-mainstream search indexes](./../../../2021/03/10/search-engines-with-own-indexes.html) have little to no support for JavaScript. Ideally, a text-oriented site can enforce a scripting ban at the [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (<abbr title="Content Security Policy">CSP</abbr>) level.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" >}}
-this is the CSP for my main website, with hashes removed for readability.
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption >}} this is the CSP for my main website, with hashes removed for readability. {{< /codecaption >}}
 
-``` figure {samp=true var1="HASH"}
+```figure {samp=true var1="HASH"}
 default-src 'none';
 img-src 'self' data:;
 style-src 'sha256-HASH';
@@ -85,7 +82,7 @@ upgrade-insecure-requests;
 sandbox allow-same-origin
 ```
 
-</figure>
+{{</codefigure>}}
 
 `default-src: 'none'` implies `script-src: 'none'`, causing a compliant browser to forbid the loading of scripts. Furthermore, the `sandbox` CSP directive forbids a [wide variety of risky actions](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox). While `script-src` restricts script loading, `sandbox` can also restrict script execution with stronger defenses against script injection (e.g. by a browser add-on).[^1] I added the `allow-same-origin` parameter so that these add-ons will still be able to function.[^2]
 
@@ -102,10 +99,10 @@ If you're able to control your HTTP headers, then use headers instead of a `<met
 			Security Policy</a> that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
 		</p>
 	</blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+{{< quotecaption partOfType="TechArticle" >}}
 <cite itemprop="name headline" class="p-name">HTML Living Standard</cite>, section 4.2.5.3: Pragma directives,
 <a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-content-security-policy">Content Security Policy state</a>
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 ### If you must enable scripts
@@ -141,16 +138,13 @@ Optimal loading is a complex topic. Broadly, it covers three overlapping categor
 
 HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a `link` HTTP header.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" >}}
-my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon. Hash removed from filename for readability.
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption >}} my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon. Hash removed from filename for readability. {{< /codecaption >}}
 
-``` figure {var1="HASH" samp=true}
+```figure {var1="HASH" samp=true}
 link: </favicon.HASH.svg>; rel=preload; as=image
 ```
 
-</figure>
+{{</codefigure>}}
 
 ### Don't count on the cache
 
@@ -162,16 +156,13 @@ Requesting a high number of cached resources can decrease performance of the cac
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your `cache-control` headers, and cache-bust modified assets by changing their URLs.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" >}}
-The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames.
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption >}} The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames. {{< /codecaption >}}
 
-``` figure {samp=true}
+```figure {samp=true}
 cache-control: max-age=31557600, immutable
 ```
 
-</figure>
+{{</codefigure>}}
 
 You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
@@ -199,10 +190,10 @@ There is only one honest measure of web performance: **the time from when you cl
 Everything else is bullshit.
 
 </blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+{{< quotecaption partOfType="TechArticle" >}}
 {{<indieweb-person first-name="Maciej" last-name="Cegłowski" url="https://idlewords.com/about.htm" itemprop="author">}},
 {{<cited-work name="The Website Obesity Crisis" url="https://idlewords.com/talks/website_obesity.htm" extraName="headline">}}
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 Plenty of other factors exist, but listing them all is beyond the scope of this article.
@@ -282,11 +273,11 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 	<blockquote itemprop="text">
 		<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing images in a page's markup such that a server can track how many images are requested and when.</p>
 	</blockquote>
-	{{< figcaption type="citation" partof="TechArticle">}}
+	{{< quotecaption partOfType="TechArticle">}}
 {{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" extraName="headline">}}
 on <abbr title="Mozilla Developer Network">MDN</abbr>,
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
-	{{< /figcaption >}}
+	{{< /quotecaption >}}
 </figure>
 
 If you can't rely on lazy loading, your pages should work well without it. If pages work well without lazy loading, is it worth enabling?
@@ -355,10 +346,10 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 `content-visibility: auto` is a more complex value than `hidden`; rather than being similar to `display: none`, it adaptively hides/<wbr>displays an element's contents as they become <a href="https://drafts.csswg.org/css-contain/#relevant-to-the-user">relevant to the user</a>. It also doesn’t hide its <a href="https://drafts.csswg.org/css-contain/#skips-its-contents">skipped contents</a> from the user agent, so screen readers, in-page search, and other tools can still interact with it.
 
 </blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+{{< quotecaption partOfType="TechArticle" >}}
 <cite itemprop="name headline" class="p-name">CSS Containment Module Level 2</cite>, section 4.2:
 <a class="u-url" itemprop="url" href="https://drafts.csswg.org/css-contain/#using-cv-auto">Using <code>content-visibility: auto</code></a>
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for my site footers and endnotes.
@@ -436,16 +427,13 @@ Browsers allow users to zoom by adjusting size metrics. Additionally, most brows
 
 In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations[^9] (e.g. borders), but they are uncommon.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" lang="CSS" >}}
-set font size and line-spacing with a percentage and a unitless value, respectively.
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption lang="CSS" >}} set font size and line-spacing with a percentage and a unitless value, respectively. {{< /codecaption >}}
 
 ```figure
 font: 100%/1.5 sans-serif;
 ```
 
-</figure>
+{{</codefigure>}}
 
 Beyond alt-text
 ---------------
@@ -477,10 +465,10 @@ Blind users might struggle to view images in context; they can't easily scan the
 	<blockquote itemprop="text">
 		<p>Try reading your screen through a drinking straw for an hour to get an idea of the limited context that a blind user has. You simply cannot scan the entire page at a glance with a screenreader - you have to listen to the structure of it carefully and remember all that, or read through the entire thing to find stuff, unless there are explicit associations such as longdesc.</p>
 	</blockquote>
-{{< figcaption type="citation" partOfType="EmailMessage" >}}
+{{< quotecaption partOfType="EmailMessage" >}}
 {{<indieweb-person first-name="Charles" last-name="McCathieNevile" url="https://www.w3.org/People/Charles/" itemprop="sender">}},
 {{<cited-work name="longdesc Re: Clarification of rational for deprecation..." extraName="headline" url="https://lists.w3.org/Archives/Public/public-html/2008Feb/0061.html">}}
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 Being sighted and loading images can introduce issues of its own. Sometimes, sighted readers might focus on the _wrong_ part of an image. How can you give readers the missing context and tell them what to focus on?
@@ -526,10 +514,10 @@ I personally try to maintain the flow of an article even if its figures and capt
 		using such relative references, so that the page can easily be restyled without affecting the
 		page's meaning.</p>
 	</blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+{{< quotecaption partOfType="TechArticle" >}}
 <cite itemprop="name headline" class="p-name">HTML Living Standard</cite>, section 4.4.12:
 <a class="u-url" itemprop="url" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">The <code>figure</code> element</a>
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 ### Image trans&shy;cripts {#image-transcripts}
@@ -640,10 +628,10 @@ Underlines also make it easy for color-blind readers to distinguish both the beg
 	<blockquote itemprop="text">
 		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or disting&shy;uishing a visual element. (Level A)</p>
 	</blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+{{< quotecaption partOfType="TechArticle" >}}
 {{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},
 <a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
@@ -683,12 +671,11 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
 7. If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
 
-<figure id="png-pipeline" itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" lang="shell" >}}
+{{<codefigure id="png-pipeline">}} {{< codecaption lang="shell" >}}
 
 this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
 
-{{< /figcaption >}}
+{{< /codecaption >}}
 
 ```figure {var1=ORIGINAL_FILE,var2=OUTPUT_FILE}
 convert ORIGINAL_FILE \
@@ -726,12 +713,9 @@ Bright images on an otherwise dark page distract readers, especially readers lik
 
 A `<picture>` element allows selection of sources based on any CSS media query. When images have light backgrounds, I like to include dark variants to complement a dark stylesheet.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" lang="HTML" >}}
-a minimal example of a `picture` containing a dark variant:
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption lang="HTML" >}} a minimal example of a `picture` containing a dark variant: {{< /codecaption >}}
 
-``` figure {var1="ALTERNATIVE_TEXT",var2="WIDTH",var3="HEIGHT"}
+```figure {var1="ALTERNATIVE_TEXT",var2="WIDTH",var3="HEIGHT"}
 <picture>
 <source type="image/png"
   srcset="/p/dark.png"
@@ -742,7 +726,7 @@ a minimal example of a `picture` containing a dark variant:
 <picture>
 ```
 
-</figure>
+{{</codefigure>}}
 
 Requiring the `screen` media type prevents selection of dark variants when printing. Printer paper is almost always white, so dark images could waste ink. Ink waste is a sensitive issue among many students: school printers sometimes charge students who exceed a given ink quota. Ask me how I know!
 
@@ -791,10 +775,7 @@ A simple layout looks good at a variety of window sizes, rendering responsive la
 
 Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, and layout shifts dramatic enough to cause confusion.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" lang="CSS" >}}
-the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption lang="CSS" >}} the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page {{< /codecaption >}}
 
 ```figure
 @media print, (min-width: 32rem) {
@@ -804,7 +785,7 @@ the only responsive layout change on [my website](https://seirdy.one/) is a sing
 }
 ```
 
-</figure>
+{{</codefigure>}}
 
 Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/). This is one of the reasons why I didn't recommend resolution- or dimension-aware imagesets in the [image optimization section](#image-optimization).
 
@@ -835,12 +816,9 @@ I also ensured that my site supports CSS overrides, window-resizing, zoom levels
 
 When setting max line lengths, use a CSS media query to ensure that printed versions of a page use the full page width. This should save some paper.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-{{< figcaption type="code" lang="CSS" >}}
-I opted to wrap all max-width rules in a media query to ensure that they only get called for the `screen` media type:
-{{< /figcaption >}}
+{{<codefigure>}} {{< codecaption lang="CSS" >}} I opted to wrap all max-width rules in a media query to ensure that they only get called for the `screen` media type: {{< /codecaption >}}
 
-``` figure
+```figure
 @media screen {
   html {
     max-width: 45em;
@@ -854,7 +832,7 @@ I opted to wrap all max-width rules in a media query to ensure that they only ge
 }
 ```
 
-</figure>
+{{</codefigure>}}
 
 As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, <q cite="https://www.w3.org/TR/WCAG22/#visual-presentation">Text is not justified</q> is explicitly mentioned in Success Criterion 1.4.8.
 
@@ -920,9 +898,9 @@ Small phones typically support display rotation. When phones switch to landscape
 
 <figure>
 {{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.2 >}}
-{{< figcaption >}}
+<figcaption>
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
-{{< /figcaption >}}
+</figcaption>
 </figure>
 
 Designers often use figures to "break up" their content, and provide negative space. This is good advice, but I don't think people pay enough attention to the flipside: splitting up content with too many figures can make reading extremely painful on a short viewport. Design maxims usually lack nuance.
@@ -942,9 +920,9 @@ For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`,
 
 <figure>
 {{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles on top of each other, separated by blank sections labeled \"space\"">}}
-{{< figcaption >}}
+<figcaption>
 Image credit: Axess Lab
-{{< /figcaption >}}
+</figcaption>
 </figure>
 
 Having clearly distinguished links also helps users decide safe places to tap the screen. See the [section on link underlines](#in-defense-of-link-underlines) for more information.
@@ -965,13 +943,13 @@ On lists without visible bullets, I dropped the default indentation. I had to fi
 Increasing the line-spacing a bit will make tap targets larger and improve comprehension by readers with cognitive disabilities. A WCAG AAA Success Criterion is to allow 1.5 space units between lines.
 
 <figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote itemprop="text">
-		<p>Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.</p>
-	</blockquote>
-{{< figcaption type="citation" partOfType="TechArticle" >}}
+<blockquote itemprop="text">
+	<p>Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.</p>
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
 {{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},
 <a href="https://w3c.github.io/wcag/guidelines/22/#visual-presentation">Success Criterion 1.4.8 Visual Presentation</a>
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr>'s Cognitive and Learning Disabilities Accessibility Task Force [recommends changing this Success Criterion's level](https://w3c.github.io/coga/extension/#changedlevels), finding it too important to be relegated to AAA status.
@@ -1046,11 +1024,11 @@ Font family alone is not enough to distinguish an element from its surroundings.
 
 Finally, it's important to distinguish `<kbd>` from `<code>`, `<samp>`, and regular body text.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+{{<codefigure>}}
 
-{{< figcaption type="code" lang="CSS" >}} How I distinguish `<code>` and `<samp>`, `<pre>`, and `<kbd>` from each other and from body text. {{< /figcaption >}}
+{{< codecaption lang="CSS" >}} How I distinguish `<code>` and `<samp>`, `<pre>`, and `<kbd>` from each other and from body text. {{< /codecaption >}}
 
-``` figure
+```figure
 code,
 kbd,
 samp {
@@ -1072,8 +1050,7 @@ kbd {
 }
 ```
 
-</figure>
-<!--*-->
+{{</codefigure>}}
 
 ### Focus indicators
 
@@ -1094,13 +1071,13 @@ The WCAG guidelines recommend making focus indicators 2&nbsp;px thick in [Succes
 
 You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.
 
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+{{<codefigure>}}
 
-{{< figcaption type="code" lang="CSS" >}}
+{{< codecaption lang="CSS" >}}
 
 I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name="Refining focus styles with focus-visible" url="https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible" extraName="headline">}} by {{<indieweb-person nickname="temper­temper" url="https://www.tempertemper.net/" itemprop="author">}}</span>, but modified to work on old browser engines such as KHTML and WebKit&nbsp;537.21.
 
-{{< /figcaption >}}
+{{< /codecaption >}}
 
 ```figure
 a:focus,
@@ -1121,7 +1098,8 @@ a:focus,
 }
 ```
 
-</figure>
+{{</codefigure>}}
+
 <!--*-->
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
@@ -1151,10 +1129,10 @@ To force a screen reader to interpret the heading as one object, I wrapped the t
 ```
 
 </blockquote>
-{{< figcaption type="citation" partOfType="BlogPosting" >}}
+{{< quotecaption partOfType="BlogPosting" >}}
 {{<indieweb-person first-name="Hampus" last-name="Sethfords" url="https://axesslab.com/author/hampelusken/" itemprop="author">}},
 {{<cited-work name="Text Splitting Causes Screen Reader Problems" url="https://axesslab.com/text-splitting/" extraName="headline">}}
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 If you're unfamiliar with ARIA, always remember the first rule of ARIA: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
@@ -1286,10 +1264,10 @@ Parts of this page can be thought of as an extension to the principles of Brutal
 		<li>Perform&shy;ance is a feature.</li>
 		</ol>
 	</blockquote>
-{{< figcaption type="citation" partOfType="WebSite" >}}
+{{< quotecaption partOfType="WebSite" >}}
 {{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/" itemprop="author">}},
 {{<cited-work name="Brutalist Web Design" url="https://brutalist-web.design/">}}
-{{< /figcaption >}}
+{{< /quotecaption >}}
 </figure>
 
 The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also rewards websites that have a high ratio of content size to total size.
@@ -1345,15 +1323,17 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^13]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
 
-    <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
-    {{< figcaption type="code" >}}Firefox prefs to turn off JIT compilation
-    {{< /figcaption >}}
+    {{<codefigure>}}
+
+    {{< codecaption >}}Firefox prefs to turn off JIT compilation {{< /codecaption >}}
 
     <pre tabindex="0"><code itemprop="text">javascript.options.ion
     javascript.options.baselinejit
     javascript.options.native_regexp
     javascript.options.asmjs
-    javascript.options.wasm</code></pre></figure>
+    javascript.options.wasm</code></pre>
+
+    {{<codefigure>}}
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 

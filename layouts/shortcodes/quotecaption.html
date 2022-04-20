@@ -1,0 +1,8 @@
+<figcaption>
+&mdash;
+<span class="h-cite" itemprop="citation" role="doc-credit">
+	<span itemprop="isPartOf" itemscope itemtype="https://schema.org/{{ .Get "partOfType" }}">
+		{{ .Inner | markdownify | safeHTML }}
+	</span>
+</span>
+</figcaption>
