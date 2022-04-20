@@ -3,8 +3,18 @@
 	<nav aria-label="Main navigation">
 		<ul class="unstyled-list">
 			{{- $currentPage := . -}}
+			{{- $isHome := false -}}
+			{{- if eq $currentPage.Permalink .Site.BaseURL -}}
+				{{- $isHome = true -}}
+			{{- end -}}
 			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
-				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if eq $currentPage.Permalink .Site.BaseURL -}} aria-current="page"{{- end -}}><span itemprop="name">{{ .Site.Title }}</span></a>
+				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome -}} aria-current="page"{{- end -}}>
+					{{- if $isHome -}}
+						<strong itemprop="name">{{ .Site.Title }}</strong>
+					{{- else -}}
+						<span itemprop="name">{{ .Site.Title }}</span>
+					{{- end -}}
+				</a>
 			</li>
 			{{ range .Site.Menus.main -}}
 			{{ $isCurrent := false }}

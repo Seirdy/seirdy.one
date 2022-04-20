@@ -1,7 +1,9 @@
-<section class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
-{{ $allPosts := false }}
+{{ $isStandalone := false }}
 {{ if eq .RelPermalink "/posts.html" -}}
-	{{ $allPosts = true }}
+	{{ $isStandalone = true }}
+{{ end }}
+<section class="h-feed hfeed" itemscope itemtype="https://schema.org/{{ if $isStandalone }}Complete{{ end }}DataFeed">
+{{ if $isStandalone -}}
 	<h1 class="p-name" itemprop="name headline" id="posts">Posts</h1>
 	{{ else -}}
 	<h2 class="p-name" itemprop="name" id="posts">Posts</h2>
@@ -11,7 +13,7 @@
 	<p><em>Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite></em></p>
 	<ol class="unstyled-list" reversed>
 		{{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
-		{{- if or ($allPosts) (.Params.featured) -}}
+		{{- if or ($isStandalone) (.Params.featured) -}}
 		<li>
 			<article class="h-entry hentry" itemprop="dataFeedElement" itemscope itemtype="https://schema.org/BlogPosting https://schema.org/DataFeedItem">
 				<h3 itemprop="name headline" class="p-name entry-title">
