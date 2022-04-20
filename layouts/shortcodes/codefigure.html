@@ -1,10 +1,3 @@
-{{ $codeIndex := .Page.Scratch.Get "codeIndex" }}
-{{ $id := .Get "id" }}
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode"
-	{{ if $id }}
-		id="{{ $id }}"
-	{{- else -}}
-			id="code-{{ sub $codeIndex 1 }}"
-	{{ end }}>
+<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
 {{ .Inner | markdownify }}
 </figure>

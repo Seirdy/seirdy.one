@@ -671,7 +671,9 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
 7. If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
 
-{{<codefigure id="png-pipeline">}} {{< codecaption lang="shell" >}}
+{{<codefigure>}}
+
+{{< codecaption lang="shell" id="png-pipeline" >}}
 
 this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
 
@@ -684,7 +686,7 @@ convert ORIGINAL_FILE \
   | oxipng -o max -Z --fix - --out OUTPUT_FILE
 ```
 
-</figure>
+{{</codefigure>}}
 
 In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed by lossy compression and cropping.
 
@@ -1325,17 +1327,17 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^13]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
 
-    {{<codefigure>}}
-
-    {{< codecaption >}}Firefox prefs to turn off JIT compilation {{< /codecaption >}}
+    <figure itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
+    <figcaption>
+    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
+        Firefox prefs to turn off JIT compilation
+        </figcaption>
 
     <pre tabindex="0"><code itemprop="text">javascript.options.ion
     javascript.options.baselinejit
     javascript.options.native_regexp
     javascript.options.asmjs
-    javascript.options.wasm</code></pre>
-
-    {{<codefigure>}}
+    javascript.options.wasm</code></pre></figure>
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
