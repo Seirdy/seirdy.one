@@ -899,7 +899,9 @@ Small phones typically support display rotation. When phones switch to landscape
 <figure>
 {{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.2 >}}
 <figcaption>
+
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
+
 </figcaption>
 </figure>
 
