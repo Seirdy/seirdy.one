@@ -211,7 +211,7 @@ Understanding round-trips requires understanding your server's approach to conge
 
 Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.[^4]
 
-Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name headline" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (PDF) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name headline" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (<span itemprop="encodingFormat">application/<wbr>pdf</span>) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
 
 HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
 
@@ -541,7 +541,7 @@ The xkcd comic <a href="#related-issues">included earlier in the page</a> had th
 
 Image transcripts also help users relying on [machine-translation](#machine-translation), since translation tools rely on textual content (OCR is error-prone). These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
 
-I describe best practices for preparing pictures of text in [a dedicated section](#pictures-of-text).
+I describe best practices for preparing pictures of text in [the "Pictures of text" section](#pictures-of-text).
 
 About custom colors
 -------------------
@@ -567,7 +567,23 @@ Even if you set custom colors, ensure that the page is compatible with color ove
 
 This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up bottom sections, since these elements lack heading-based delineation. When overriding color schemes, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode, for instance, makes [more advanced modifications](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/).
+Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode, for instance, makes more advanced modifications to color palettes.
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+	<blockquote itemprop="text">
+	<ul>
+	<li>Win HCM is a collection of <strong>user defined color themes</strong> that overwrite your definitions in <abbr title="Cascading Style Sheets">CSS</abbr>.</li>
+	<li>It’s not about design but <strong>readability</strong>.</li>
+	<li>Some stuff will disappear in Win HCM, some won’t. Best advice is to use <strong>semantic <abbr title="Hypertext Markup Language">HTML</abbr></strong> to keep things visible.</li>
+	<li>You can use transparent <code>outline</code> to keep things visble like focus indicators and surface boundaries or use <code>currentColor</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
+	<li>You can use a special <strong>media query</strong> combined with special <strong><abbr title="Cascading Style Sheets">CSS</abbr> color keywords</strong> to give elements the user defined colors.</li>
+	</ul>
+	</blockquote>
+{{< quotecaption partOfType="WebSite" >}}
+{{<indieweb-person first-name="Martin" last-name="Mengele" url="https://accessabilly.com/about/" itemprop="author">}},
+{{<cited-work name="Accessibility Issues concerning Windows High Contrast Mode" url="https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/">}}
+{{< /quotecaption >}}
+</figure>
 
 In fact, the CSS Working Group is working on a specification for re-coloring websites in <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="CSS Color Adjustment Module Level 1" extraName="headline" url="https://drafts.csswg.org/css-color-adjust-1/">}}</span>. The Chromium team's in-progress [auto dark mode](https://chromestatus.com/feature/5672533924773888) will use this specification to darken websites globally. Websites can opt out with the `color-scheme` property, but they really shouldn't have to: stylesheets should be robust enough to handle re-coloring.
 
@@ -1327,7 +1343,7 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^13]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
 
-    <figure itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
+    <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
     <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
         Firefox prefs to turn off JIT compilation

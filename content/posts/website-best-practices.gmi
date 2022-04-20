@@ -558,7 +558,13 @@ The Web version of this page is an example application of Technique C25 and the 
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders further down to break up next/prev post navigation as well as separate footers, since these elements lack heading-based delineation. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode (HCM), for instance, makes more advanced modifications:
+Color overrides go well beyond simple foreground and background color changes. Windows’ High Contrast Mode, for instance, makes more advanced modifications:
+
+> Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.
+> It’s not about design but readability.
+> Some stuff will disappear in Win HCM, some won’t. Best advice is to use semantic HTML to keep things visible.
+> You can use transparent outline to keep things visble like focus indicators and surface boundaries or use currentColor to maintain SVG fill colors in Win HCM.
+> You can use a special media query combined with special CSS color keywords to give elements the user defined colors.
 
 => https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/ Accessibility issues concerning Windows HCM
 
