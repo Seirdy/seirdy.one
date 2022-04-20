@@ -18,7 +18,7 @@ See the Director's Cut of my bio in the "about" page:
 
 => about/ About me
 
-I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup.
+I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include accessibility, search engines, security, privacy, and the IndieWeb.
 
 Git repos:
 

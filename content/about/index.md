@@ -57,6 +57,12 @@ Interests, preferences, et cetera
 
 I ought to come up with more interests than these, but that sounds hard.
 
+### Inclusive design
+
+I care a lot about accessibility, resource usage, and compatibility. My Web site may seem simple, but I put [over 15 thousand words of thought into its design](https://seirdy.one/~seirdy/2020/11/23/website-best-practices.html).
+
+Many people frame accessibility and compatibility in terms of "percentage of users impacted" to justify ignoring certain demographics. I find that this mindset somewhat discriminatory. I prefer framing concerns in terms of "populations excluded".
+
 ### Free software
 
 The word "free" in "free software" refers to freedom, not price. I recommend looking it up if you aren't familiar. That being said, I think that simply meeting the definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of [user domestication](https://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.html).

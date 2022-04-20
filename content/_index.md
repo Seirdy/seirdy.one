@@ -26,7 +26,7 @@ About me
 The Director's Cut of my bio is at my [About page](/about.html).
 
 <p class="p-note">
-I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup.
+I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include accessibility, search engines, security, privacy, and the IndieWeb.
 </p>
 
 Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://github.com/Seirdy "{rel='me'}"), [Codeberg](https://codeberg.org/Seirdy "{rel='me'}"), and [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
