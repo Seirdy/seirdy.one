@@ -511,21 +511,52 @@ A "longdesc" attribute used to be another way to reference an image transcript. 
 
 => https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features HTML Living Standard: non-conforming features
 
-The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with <a>) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript. I do this by adding a transcript in a <details> element at the end of a <figcaption>.
+The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with <a>) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript.
 
-A StackOverflow thread about comic transcripts outlines a good approach to semantically group images and transcripts, but I disagree with their interpretation of <figcaption>:
+A StackOverflow thread about comic transcripts outlines a good approach to semantically group images and transcripts:
 
 => https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic What is the semantically correct way to include transcript from a comic?
 
-Nothing in the spec seems to imply that appending a <details> element to the end of a <figcaption> would be improper. Adding <details> to a caption seems to tick all the right boxes: the <figcaption> has semantics indicating a description of the <figure> content; the figure, caption, and transcript are visually close together; and <details> indicates additional hidden-by-default information without presenting it to uninterested readers. Other information is available in the alt-text, surrounding context, and rest of the caption; a blind reader who got the necessary information should only have to expand the transcript if they're interested enough. Having an unusually long caption seems like a small price to pay.
+My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.
 
-The xkcd comic included earlier in the page had this alt-text:
+An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an <article> with a heading, and give the group an "aria-label" that indicates the presence of the three sub-elements. Using an `article` landmark ensures that the figure and caption remain together as a single unit. The html code for the xkcd comic earlier in the page (well, the Web version of this page) is a representative example. Here's a simplified version of it:
 
 ```
-Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.
+<article aria-label="comic, caption, and transcript">
+  <h4>Infinite scrolling</h4>
+  <figure aria-describedby="transcript-xkcd-1309">
+    <img
+      src="SRC"
+      alt="Comic: if books had infinite-scroll, we'd have to
+           turn pages carefully or risk losing the page.">
+    <figcaption>
+      Infinite-scrolling means that accidentally navigating
+      to a link will result in losing your place.
+      See <a href=#transcript-xkcd-1309>transcript</a>.
+    </figcaption>
+  </figure>
+  <details id="transcript-xkcd-1309">
+    <summary>Toggle transcript</summary>
+    <p>
+      Megan stands at a desk, reading a book, touching
+      it very gingerly. Cueball is standing behind her.
+    </p>
+    <dl>
+      <dt>Cueball</dt>
+      <dd>Why are you turning the pages like that?</dd>
+      <dt>Megan</dt>
+      <dd>If I touch the wrong thing, I’ll lose my place and
+          have to start over.</dd>
+      <dt>Caption below the panel</dt>
+      <dd>If books worked like infinite-scrolling webpages</dd>
+    </dl>
+  </details>
+</article>
 ```
 
-Image transcripts also help users relying on machine-translation, since translation tools rely on textual content (OCR is error-prone). These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
+Of course, I take care of most of the boilerplate with shortcodes.
+
+Image transcripts also help users relying on machine-translation, since translation tools rely on textual content. These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
 
 I describe best practices for preparing pictures of text in the "Pictures of text" subsection of "Narrow viewports".
 

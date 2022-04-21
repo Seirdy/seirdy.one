@@ -5,6 +5,9 @@
 		{{ if strings.HasPrefix $k "var" }}
 			{{ $after := printf `<var translate="yes">%s</var>` $v }}
 			{{ $contents = $contents | replaceRE $v $after }}
+		{{ else if strings.HasPrefix $k "str" }}
+			{{ $after := printf `<strong translate="yes">%s</strong>` $v }}
+			{{ $contents = $contents | replaceRE $v $after }}
 		{{ else if and (eq $k "samp")}}
 			{{ $samp = $v }}
 		{{ end }}

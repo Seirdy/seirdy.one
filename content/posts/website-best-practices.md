@@ -317,14 +317,21 @@ One example is pagination. It's easier to download one long article ahead of tim
 
 Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences for accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
 
-<figure>
-{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption." >}}
-<figcaption>
+{{< transcribed-image type="comic" id="xkcd-1309" >}}
+
+#### Infinite scrolling {#infinite-scrolling}
+
+{{< transcribed-image-figure id="xkcd-1309" >}}
+
+{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page." >}}
+
+{{< transcribed-image-figcaption >}}
 
 Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/).
 
-<details>
-<summary>Transcript</summary>
+{{< /transcribed-image-figcaption >}} {{< /transcribed-image-figure >}}
+
+{{< transcribed-image-transcript >}}
 
 Megan stands at a desk, reading a book, touching it very gingerly. Cueball is standing behind her.
 
@@ -338,10 +345,7 @@ Megan
 Caption below the panel
 : If books worked like infinite-scrolling webpages
 
-</details>
-
-</figcaption>
-</figure>
+{{< /transcribed-image-transcript >}} {{< /transcribed-image >}}
 
 A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
@@ -545,20 +549,52 @@ If the image is a screenshot of text from a website, link to that website to all
 
 A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image transcript. The `longdesc` attribute contained a hyperlink (often an anchor link) to a location with more information about an image. This attribute [has been obsoleted](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) in the HTML Living Standard.
 
-The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript. I do this by adding a transcript in a `<details>` element at the end of a `<figcaption>`.
+The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript.
 
-A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, but I disagree with their interpretation of `<figcaption>`. Nothing in the spec seems to imply that appending a `<details>` element to the end of a `<figcaption>` would be improper. Adding `<details>` to a caption seems to tick all the right boxes: the `<figcaption>` has semantics indicating a description of the `<figure>` content; the figure, caption, and transcript are visually close together; and `<details>` indicates additional hidden-by-default information without presenting it to uninterested readers. Other information is available in the alt-text, surrounding context, and rest of the caption; a blind reader who got the necessary information should only have to expand the transcript if they're interested enough. Having an unusually long caption seems like a small price to pay.
+A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use `aria-describedby` to semantically link the figure and the transcript.
 
-<figure>
-<figcaption>
-The xkcd comic <a href="#related-issues">included earlier in the page</a> had this alt-text:
-</figcaption>
+An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an `<article>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using an `article` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#xkcd-comic) is a representative example.
 
-> Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.
+{{<codefigure>}}
 
-</figure>
+{{< codecaption lang="HTML" id="xkcd-html" >}} here's a simplified version of the HTML used to embed a comic in this article. Of course, I take care of most of the boilerplate with shortcodes. {{< /codecaption >}}
 
-Image transcripts also help users relying on [machine-translation](#machine-translation), since translation tools rely on textual content (OCR is error-prone). These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
+```figure {var1="SRC" str1="figure" str2="img" str3="alt" str4="details" str5="article", str6="figcaption" str7="aria-label" str8="aria-describedby"}
+<article aria-label="comic, caption, and transcript">
+  <h4>Infinite scrolling</h4>
+  <figure aria-describedby="transcript-xkcd-1309">
+    <img
+      src="SRC"
+      alt="Comic: if books had infinite-scroll, we'd have to
+           turn pages carefully or risk losing the page.">
+    <figcaption>
+      Infinite-scrolling means that accidentally navigating
+      to a link will result in losing your place.
+      See <a href=#transcript-xkcd-1309>transcript</a>.
+    </figcaption>
+  </figure>
+  <details id="transcript-xkcd-1309">
+    <summary>Toggle transcript</summary>
+    <p>
+      Megan stands at a desk, reading a book, touching
+      it very gingerly. Cueball is standing behind her.
+    </p>
+    <dl>
+      <dt>Cueball</dt>
+      <dd>Why are you turning the pages like that?</dd>
+      <dt>Megan</dt>
+      <dd>If I touch the wrong thing, I’ll lose my place and
+          have to start over.</dd>
+      <dt>Caption below the panel</dt>
+      <dd>If books worked like infinite-scrolling webpages</dd>
+    </dl>
+  </details>
+</article>
+```
+
+{{</codefigure>}}
+
+Image transcripts also help users relying on [machine-translation](#machine-translation), since translation tools rely on textual content. These users won't read alt-text; have an alternative way to discover a transcript. Wherever you put the transcript, ensure it's semantically connected to the image. I linked a transcript in the figure caption.
 
 I describe best practices for preparing pictures of text in [the "Pictures of text" section](#pictures-of-text).
 
@@ -706,9 +742,9 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
 7. If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
 
-{{<codefigure>}}
+{{< codefigure id="png-pipeline" >}}
 
-{{< codecaption lang="shell" id="png-pipeline" >}}
+{{< codecaption lang="shell">}}
 
 this is a sample command to compress a PNG image using ImageMagick, `pngquant`, and `oxipng`. It shrinks the image, turns it grayscale, reduces the color palette, and then applies lossless Zopfli compression.
 
@@ -983,7 +1019,9 @@ Increasing the line-spacing a bit will make tap targets larger and improve compr
 
 <figure itemscope itemtype="https://schema.org/Quotation">
 <blockquote itemprop="text">
-	<p>Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.</p>
+
+Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing.
+
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
 {{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},

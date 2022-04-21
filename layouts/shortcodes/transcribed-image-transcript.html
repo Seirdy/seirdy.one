@@ -1,0 +1,9 @@
+<details
+{{ with .Parent -}}
+	id="transcript-{{ .Get "id" }}"
+{{- end -}}>
+<summary>Toggle transcript</summary>
+<div itemprop="embeddedTextCaption">
+{{ .Inner | markdownify | safeHTML }}
+</div>
+</details>
