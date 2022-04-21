@@ -511,7 +511,13 @@ A "longdesc" attribute used to be another way to reference an image transcript. 
 
 => https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features HTML Living Standard: non-conforming features
 
-The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with <a>). Put a short summary in the alt-text, and mention that the hyperlink contains a transcript.
+The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with <a>) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript. I do this by adding a transcript in a <details> element at the end of a <figcaption>.
+
+A StackOverflow thread about comic transcripts outlines a good approach to semantically group images and transcripts, but I disagree with their interpretation of <figcaption>:
+
+=> https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic What is the semantically correct way to include transcript from a comic?
+
+Nothing in the spec seems to imply that appending a <details> element to the end of a <figcaption> would be improper. Adding <details> to a caption seems to tick all the right boxes: the <figcaption> has semantics indicating a description of the <figure> content; the figure, caption, and transcript are visually close together; and <details> indicates additional hidden-by-default information without presenting it to uninterested readers. Other information is available in the alt-text, surrounding context, and rest of the caption; a blind reader who got the necessary information should only have to expand the transcript if they're interested enough. Having an unusually long caption seems like a small price to pay.
 
 The xkcd comic included earlier in the page had this alt-text:
 

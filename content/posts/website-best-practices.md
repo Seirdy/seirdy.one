@@ -318,10 +318,27 @@ One example is pagination. It's easier to download one long article ahead of tim
 Another common offender is infinite-scrolling. In addition to requiring JavaScript, infinite-scrolling also makes it difficult for readers to find their old place upon re-visiting a page. This creates harsh consequences for accidental navigation. WordPress documentation [lists more problems](https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/)[^6].
 
 <figure>
-{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption.">}}
+{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page. Transcript in caption." >}}
 <figcaption>
 
-Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/). Transcript [on the "explain xkcd" wiki](https://explainxkcd.com/1309/#Transcript).
+Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/).
+
+<details>
+<summary>Transcript</summary>
+
+Megan stands at a desk, reading a book, touching it very gingerly. Cueball is standing behind her.
+
+
+Cueball
+: Why are you turning the pages like that?
+
+Megan
+: If I touch the wrong thing, I'll lose my place and have to start over.
+
+Caption below the panel
+: If books worked like infinite-scrolling webpages
+
+</details>
 
 </figcaption>
 </figure>
@@ -528,7 +545,9 @@ If the image is a screenshot of text from a website, link to that website to all
 
 A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image transcript. The `longdesc` attribute contained a hyperlink (often an anchor link) to a location with more information about an image. This attribute [has been obsoleted](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) in the HTML Living Standard.
 
-The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`). Put a short summary in the alt-text, and mention that the hyperlink contains a transcript.
+The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript. I do this by adding a transcript in a `<details>` element at the end of a `<figcaption>`.
+
+A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, but I disagree with their interpretation of `<figcaption>`. Nothing in the spec seems to imply that appending a `<details>` element to the end of a `<figcaption>` would be improper. Adding `<details>` to a caption seems to tick all the right boxes: the `<figcaption>` has semantics indicating a description of the `<figure>` content; the figure, caption, and transcript are visually close together; and `<details>` indicates additional hidden-by-default information without presenting it to uninterested readers. Other information is available in the alt-text, surrounding context, and rest of the caption; a blind reader who got the necessary information should only have to expand the transcript if they're interested enough. Having an unusually long caption seems like a small price to pay.
 
 <figure>
 <figcaption>
