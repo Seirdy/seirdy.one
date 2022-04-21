@@ -1,3 +1,12 @@
-<figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+{{- $codeIndex := (.Page.Scratch.Get "codeIndex") -}}
+{{- $id := (printf `code-%d` (sub $codeIndex 1)) -}}
+{{- with .Get "id" -}}
+	{{- $id = . -}}
+{{- end -}}
+<!--
+	The full caption is too long for an aria-label;
+	just use the beginning for the label and the full thing for the aria description.
+-->
+<figure aria-labelledby="{{ $id }}" aria-describedby="{{ $id }}-caption" itemscope itemtype="https://schema.org/SoftwareSourceCode">
 {{ .Inner | markdownify }}
 </figure>

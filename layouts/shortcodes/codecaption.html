@@ -1,6 +1,14 @@
-{{ $codeIndex := (.Page.Scratch.Get "codeIndex") }}
-<figcaption>
-	<strong itemprop="name" id="{{ if .Get "id" }}{{.Get "id"}}{{else}}code-{{ $codeIndex }}{{end}}"> <span itemprop="codeSampleType">Code snippet</span> {{ $codeIndex }}</strong>{{with .Get "lang"}} (<span itemprop="programmingLanguage">{{ . }}</span>){{end}}:
+{{- $codeIndex := (.Page.Scratch.Get "codeIndex") -}}
+{{- $id := (printf `code-%d` $codeIndex) -}}
+{{ with .Parent }}
+	{{- with .Get "id" -}}
+		{{- $id = . -}}
+	{{- end -}}
+{{- end -}}
+<figcaption id="{{ $id }}-caption">
+	<span id="{{ $id }}">
+	<strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> {{ $codeIndex }}</strong>{{with .Get "lang"}} (<span itemprop="programmingLanguage">{{ . }}</span>){{ end -}}
+	</span>:
 {{ .Inner | markdownify | safeHTML }}
 </figcaption>
 {{- .Page.Scratch.Set "codeIndex" (add 1 $codeIndex) -}}
