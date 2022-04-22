@@ -385,7 +385,7 @@ In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>f</kbd>) has been a basic fea
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
 
 <figure>
-{{<picture name="find" alt="searching for the word \"good\" in the phrase \"I wonder how much good a\" when a \"see more\" link obscures the words \"good a\"">}}
+{{<picture name="find" alt="searching for the word \"good\" in the phrase \"I wonder how much good a\" when a \"see more\" link obscures the match.">}}
 <figcaption>
 
 Searching for the word "good" before (above) and after (below) a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
@@ -1004,7 +1004,7 @@ Excessive indentation can [make reading difficult](#indented-elements) for narro
 For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`, `<ul>`) since I often fill them with links (see this article's [table of contents](#TableOfContents) for an example). This indentation provides important non-interactive negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element; <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting"><span itemprop="publisher">Axess Lab</span> described the issue in {{<cited-work name="Hand Tremors and the giant button problem" url="https://axesslab.com/hand-tremors/" extraName="headline">}}</span>. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap".
 
 <figure>
-{{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles on top of each other, separated by blank sections labeled \"space\"">}}
+{{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles atop each other, separated by blank sections labeled \"space\".">}}
 <figcaption>
 Image credit: Axess Lab
 </figcaption>
@@ -1144,7 +1144,7 @@ kbd {
 The default focus indicators are hard to see in certain browsers (e.g. Firefox and WebKit), especially when the focused element already has a border. We can override them to make them more accessible.
 
 <figure>
-{{< picture name="focus" alt="Two screenshots of a focused link, one with a thin dotted outline and one with a thick solid outline." >}}
+{{< picture name="focus" alt="Two screenshots of a link: one with a thin dotted outline, one with a thick solid outline." >}}
 <figcaption>
 
 Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.

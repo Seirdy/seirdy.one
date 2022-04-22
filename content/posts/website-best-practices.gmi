@@ -359,7 +359,7 @@ In-page search (e.g., using "Ctrl + f") has been a basic feature in document rea
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
 
-=> gemini://seirdy.one/misc/find.png searching for the word "good" in the phrase "I wonder how much good a" when a "see more" link obscures the words "good a", before and after revealing the hidden text. From the Reddit redesign.
+=> gemini://seirdy.one/misc/find.png searching for the word "good" in the phrase "I wonder how much good a" when a "see more" link obscures the match, before and after revealing the hidden text. From the Reddit redesign.
 
 If you need to hide some content for performance reasons, I described a less hostile way to do so in the "other ways to defer content" section.
 
@@ -1035,7 +1035,7 @@ This indentation provides important non-interactive negative space. Readers with
 
 Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap":
 
-=> gemini://seirdy.one/misc/touch_targets.png Phone screen with three "touch target" rectangles on top of each other, separated by blank sections labeled "space". Image from Axess Lab.
+=> gemini://seirdy.one/misc/touch_targets.png Phone screen with three "touch target" rectangles atop each other, separated by blank sections labeled "space". Image from Axess Lab.
 
 Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information.
 
@@ -1194,7 +1194,7 @@ The default focus indicators are hard to see in certain browsers (e.g. Firefox a
 
 Here's a screenshot demonstrating what I mean:
 
-=> gemini://seirdy.one/misc/focus.png Two screenshots of a focused link, one with a thin dotted outline and one with a thick solid outline.
+=> gemini://seirdy.one/misc/focus.png Two screenshots of a link, one with a thin dotted outline and one with a thick solid outline.
 
 The top image is a screenshot of Firefox's default focus indicator. The bottom image is the focus indicator after my adjustments.
 
