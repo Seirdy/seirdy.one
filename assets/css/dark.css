@@ -8,16 +8,16 @@
 	.skip {
 		/* "background" is short for a bunch of unnecessary CSS rules
 		 * background-color is all I need */
-		background-color: #0e0e0b;
+		background-color: #0f0f0b;
 	}
 
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
-		color: #ffeab3;
+		color: #ffeaba;
 	}
 
 	a:visited {
-		color: #ffdfff;
+		color: #ffe3f9;
 	}
 
 	a:active {

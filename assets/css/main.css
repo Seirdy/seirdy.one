@@ -79,7 +79,8 @@ h1 {
 /* single-line nav on widescreen and print.
  * Single-line nav on print saves almost half a page. */
 @media print, (min-width: 32em) {
-	header nav li {
+	header nav li,
+	footer nav li {
 		display: inline;
 
 		/* inline-end doesn't work in netsurf. -right should stil make sense
