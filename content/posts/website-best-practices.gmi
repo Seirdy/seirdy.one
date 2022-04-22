@@ -636,16 +636,6 @@ If you include a "theme-color" directive in your document <head>, then recent br
 
 WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
 
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
-
-=> https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
-
-Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
-
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
-
-=> https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
-
 CSS filters such as "invert" are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some experimental and plenty of anecdotal evidence to support this:
@@ -667,7 +657,30 @@ If you can't bear the thought of parting with your solid-black background, worry
 
 I personally like a foreground and background of "#eee" and "#0e0e0e", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0e0e0e" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
 
+### Contrast is complex
+
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
+
+=> https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
+
+Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
+
+=> https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
+
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes autistic people.
+
+=> https://www.tpgi.com/beyond-wcag-losing-spoons-online/ Beyond WCAG: Losing Spoons Online
+=> https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/ The Ultimate Guide to Autism Friendly Colours
+
+If you want to use yellow and red, lighten them up so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
+
+Accounting for halation, overstimulation, and high-contrast needs is hard to do if you place minute aesthetics above inclusivity.
+
 ### Contrast under different conditions
+
+Color is a nuanced topic that deserves more attention than current guidelines give.
 
 Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". Rob Pike explains his experience with color blindness:
 

@@ -653,10 +653,6 @@ If you include a `theme-color` directive in your document `<head>`, then recent 
 <figcaption>WebKit's default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
 </figure>
 
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://www.myndex.com/APCA/) (requires JavaScript) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
-
-Note that [the APCA isn't fully mature](https://yatil.net/blog/wcag-3-is-not-ready-yet) as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG&nbsp;2.2 AAA contrast requirements and APCA recommen&shy;dations.
-
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this.
@@ -675,6 +671,20 @@ This image is an approximation of what halation looks like, cropped from <a href
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check section 11.3 of the W3C <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work url="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast" name="Media Queries Level 5" extraName="headline">}}</span> specification for more information.
 
 I personally like a foreground and background of `#eee` and `#0e0e0e`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0e0e0e` is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a `prefers-contrast: less` media query which lightens the background to `#222`.
+
+### Contrast is complex
+
+Color is a nuanced topic that deserves more attention than current guidelines give.
+
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (<abbr title="Advanced Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://www.myndex.com/APCA/) (requires JavaScript) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
+
+Note that [the APCA isn't fully mature](https://yatil.net/blog/wcag-3-is-not-ready-yet) as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG&nbsp;2.2 AAA contrast requirements and APCA recommen&shy;dations.
+
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among [people who deal with overstimulation](https://www.tpgi.com/beyond-wcag-losing-spoons-online/); this includes [autistic people](https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/).
+
+If you want to use yellow and red, lighten them up so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
+
+Accounting for halation, overstimulation, and high-contrast needs is hard to do if you place minute aesthetics above inclusivity.
 
 ### Contrast under different conditions
 
