@@ -321,16 +321,16 @@ Another common offender is infinite-scrolling. In addition to requiring JavaScri
 
 #### Infinite scrolling {#infinite-scrolling}
 
-{{< transcribed-image-figure id="xkcd-1309" >}}
+{{< transcribed-image-figure id="xkcd-1309" has-transcript="true" >}}
 
 {{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page." >}}
 
-{{< transcribed-image-figcaption >}}
+<figcaption>
 
-Infinite-scrolling means that accidentally navigating to a link will result in losing your place. Source: [xkcd](https://xkcd.com/1309/).
+Infinite-scroll means that accidental navigation to a link results in losing your place. Source: [xkcd](https://xkcd.com/1309/).
 
-{{< /transcribed-image-figcaption >}} {{< /transcribed-image-figure >}}
-
+</figcaption>
+{{< /transcribed-image-figure >}}
 {{< transcribed-image-transcript >}}
 
 Megan stands at a desk, reading a book, touching it very gingerly. Cueball is standing behind her.
@@ -565,29 +565,33 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
   <figure aria-describedby="transcript-xkcd-1309">
     <img
       src="SRC"
-      alt="Comic: if books had infinite-scroll, we'd have to
-           turn pages carefully or risk losing the page.">
+      alt="Comic: if books had infinite-scroll,
+           we'd have to turn pages carefully or
+           risk losing the page.">
     <figcaption>
-      Infinite-scrolling means that accidentally navigating
-      to a link will result in losing your place.
+      Infinite-scroll means that accidental navigation
+      to a link results in losing your place.
       See <a href=#transcript-xkcd-1309>transcript</a>.
     </figcaption>
   </figure>
-  <details id="transcript-xkcd-1309">
+  <details>
     <summary>Toggle transcript</summary>
-    <p>
-      Megan stands at a desk, reading a book, touching
-      it very gingerly. Cueball is standing behind her.
-    </p>
-    <dl>
-      <dt>Cueball</dt>
-      <dd>Why are you turning the pages like that?</dd>
-      <dt>Megan</dt>
-      <dd>If I touch the wrong thing, I’ll lose my place and
-          have to start over.</dd>
-      <dt>Caption below the panel</dt>
-      <dd>If books worked like infinite-scrolling webpages</dd>
-    </dl>
+    <div id="transcript-xkcd-1309">
+      <p>
+        Megan stands at a desk, reading a book, touching
+        it very gingerly. Cueball is standing behind her.
+      </p>
+      <dl>
+        <dt>Cueball</dt>
+        <dd>Why are you turning the pages like that?</dd>
+        <dt>Megan</dt>
+        <dd>If I touch the wrong thing, I’ll lose my
+            place and have to start over.</dd>
+        <dt>Caption below the panel</dt>
+        <dd>If books worked like infinite-scrolling
+            webpages</dd>
+      </dl>
+    </div>
   </details>
 </article>
 ```

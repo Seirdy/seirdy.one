@@ -1,5 +1,5 @@
 {{ with .Parent -}}
-<figure aria-describedby="transcript-{{ .Get "id" }}">
+<figure>
 {{- end }}
 {{ .Inner | markdownify | safeHTML }}
 </figure>
