@@ -29,6 +29,13 @@ html {
 	html {
 		max-width: 45em;
 		padding: 0 2%;
+
+		/* Default font sizes are one-size-fits-all; they're optimized for a
+		 * wide variety of complex pages. For single-column websites like
+		 * mine, it's safe to bump it up ever so slightly.
+		 * Only do this on screen, since printouts already improve legibility
+		 * and cost paper + ink. */
+		font-size: 106%;
 	}
 
 	/* 45em is too wide for long body text. */
@@ -90,7 +97,7 @@ kbd {
 /* narrow screens: remove unused figure margins */
 
 figure {
-	margin: 0;
+	margin: 1em 0;
 }
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
@@ -214,7 +221,11 @@ a:focus,
 	position: absolute;
 	top: -2em;
 	left: .25em;
-	/* #06c is the default link color in FF, IE, and ux.redhat.com
+	/* skip-link could appear on top of existing content, so it needs a
+	 * solid background to be legible. If we set the background, we must
+	 * also set the foreground. Not all browsers support system colors
+	 * ("Canvas", "LinkText"), so we need to pick our own colors.
+	 * #06c is the default link color in FF, IE, and ux.redhat.com
 	 * #00e is the default in WebKit, Blink, and ancient FF. */
 	color: #00e;
 	background-color: #fff;
