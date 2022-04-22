@@ -1195,9 +1195,9 @@ While this success criterion is only AAA-level, it's easy enough to meet and ben
 
 You can use ":focus" and ":focus-visible" to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use ":focus-visible" instead of ":focus"; old browsers only support ":focus" and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.
 
-I do not re-style ":focus" when ":focus-visible" works, to match existing behavior. I also override ":focus" styling only on the subset of focusable elements that would normally show an outline. Based on an idea by tempertemper, but modified to work on old browser engines such as KHTML and  WebKit 537.21:
+I do not re-style ":focus" when ":focus-visible" works, to match existing behavior. I also override ":focus" styling only on the subset of focusable elements that would normally show an outline. Based on an idea by TPGi.
 
-=> https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible Refining focus styles with focus-visible
+=> https://www.tpgi.com/focus-visible-and-backwards-compatibility/ :focus-visible and backwards compatibility
 
 ```
 a:focus,
@@ -1218,7 +1218,9 @@ a:focus,
 }
 ```
 
-If your site has elements that need to show focus on clicks rather than on keyboard-navigation (e.g. input, radio buttons), ":focus-visible" alone may not be enough. Some websites specify overrides in their stylesheets on a per-element basis to work around this.
+If you’d like to learn more, Sara Soueidan wrote a far more detailed post on making accessible focus indicators:
+
+=> https://www.sarasoueidan.com/blog/focus-indicators/ A guide to designing accessible, WCAG-compliant focus indicators
 
 ## Screen reader improvements
 

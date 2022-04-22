@@ -553,11 +553,11 @@ The recommended way to link to a transcript is by hyperlinking the image (i.e., 
 
 A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use `aria-describedby` to semantically link the figure and the transcript.
 
-An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an `<article>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using an `article` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#xkcd-comic) is a representative example.
+An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an `<article>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using an `article` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#infinite-scrolling) is a representative example.
 
-{{<codefigure>}}
+{{<codefigure id="xkcd-html">}}
 
-{{< codecaption lang="HTML" id="xkcd-html" >}} here's a simplified version of the HTML used to embed a comic in this article. Of course, I take care of most of the boilerplate with shortcodes. {{< /codecaption >}}
+{{< codecaption lang="HTML" >}} here's a simplified version of the HTML used to embed a comic in this article. Of course, I take care of most of the boilerplate with shortcodes. {{< /codecaption >}}
 
 ```figure {var1="SRC" str1="figure" str2="img" str3="alt" str4="details" str5="article", str6="figcaption" str7="aria-label" str8="aria-describedby"}
 <article aria-label="comic, caption, and transcript">
@@ -1152,7 +1152,7 @@ You can use `:focus` and `:focus-visible` to highlight selected and keyboard-foc
 
 {{< codecaption lang="CSS" >}}
 
-I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name="Refining focus styles with focus-visible" url="https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible" extraName="headline">}} by {{<indieweb-person nickname="temper­temper" url="https://www.tempertemper.net/" itemprop="author">}}</span>, but modified to work on old browser engines such as KHTML and WebKit&nbsp;537.21.
+I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name=":focus-visible and backwards compatibility" url="https://www.tpgi.com/focus-visible-and-backwards-compatibility/" extraName="headline">}} by <span itemprop=author itemscope itemtype=https://schema.org/Organization class="h-card vcard p-author"> <a itemprop=url href=https://www.tpgi.com/ class="u-url url"> <span itemprop=name class="p-name">TPGi</span></a></span></span>.
 
 {{< /codecaption >}}
 
@@ -1177,7 +1177,7 @@ a:focus,
 
 {{</codefigure>}}
 
-<!--*-->
+If you'd like to learn more, <span itemscope itemtype="https://schema.org/BlogPosting">{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}</span> has far more details on making accessible focus indicators.
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------

@@ -1,5 +1,8 @@
 {{- $codeIndex := (.Page.Scratch.Get "codeIndex") -}}
 {{- $id := (printf `code-%d` $codeIndex) -}}
+{{- with .Get "id" -}}
+	{{- $id = . -}}
+{{- end -}}
 {{ with .Parent }}
 	{{- with .Get "id" -}}
 		{{- $id = . -}}
