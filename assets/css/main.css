@@ -27,15 +27,15 @@ html {
 @media screen {
 	/* 45em is the lowest reasonable width for titles, nav, footers, etc */
 	html {
-		max-width: 45em;
-		padding: 0 2%;
-
 		/* Default font sizes are one-size-fits-all; they're optimized for a
 		 * wide variety of complex pages. For single-column websites like
 		 * mine, it's safe to bump it up ever so slightly.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
 		font-size: 106%;
+
+		max-width: 45em;
+		padding: 0 2%;
 	}
 
 	/* 45em is too wide for long body text. */
@@ -219,17 +219,18 @@ a:focus,
  * color. System colors like Canvas and LinkText aren't supported by all
  * browsers, so we make up our own. */
 .skip {
-	position: absolute;
-	top: -2em;
-	left: .25em;
 	/* skip-link could appear on top of existing content, so it needs a
 	 * solid background to be legible. If we set the background, we must
 	 * also set the foreground. Not all browsers support system colors
 	 * ("Canvas", "LinkText"), so we need to pick our own colors.
 	 * #06c is the default link color in FF, IE, and ux.redhat.com
 	 * #00e is the default in WebKit, Blink, and ancient FF. */
-	color: #00e;
 	background-color: #fff;
+	color: #00e;
+
+	position: absolute;
+	left: .25em;
+	top: -2em;
 }
 
 .skip:focus {

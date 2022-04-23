@@ -11,17 +11,27 @@
 		background-color: #0f0f0b;
 	}
 
+	/* Small text needs better contrast */
+	sup a {
+		background-color: #000;
+	}
+
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
 		color: #ffeaba;
 	}
 
-	a:visited {
-		color: #ffe3f9;
-	}
-
 	a:active {
 		color: #c80;
+	}
+
+	a:visited {
+		color: #f9dafa;
+	}
+
+	/* Small text needs better contrast */
+	sup a:visited {
+		color: #fae4ff;
 	}
 
 	:not(pre) > code {
