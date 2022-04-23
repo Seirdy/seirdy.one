@@ -1,5 +1,21 @@
 User-agent: *
-Sitemap: https://seirdy.one/sitemap.xml
 Disallow: /noindex/
 Disallow: /misc/
 Disallow: /webmentions/
+
+User-Agent: TurnitinBot
+Disallow: /
+
+User-Agent: NPBot
+Disallow: /
+
+User-Agent: SlySearch
+Disallow: /
+
+User-Agent: Adsbot
+Disallow: /
+
+User-Agent: AdsBot
+Disallow: /
+
+Sitemap: https://seirdy.one/sitemap.xml
