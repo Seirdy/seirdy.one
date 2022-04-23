@@ -69,7 +69,8 @@ unsafe = true
 
 [markup.tableOfContents]
 ordered = true
-endLevel = 2
+startLevel = 2
+endLevel = 3
 
 # lifted from https://git.sr.ht/~sircmpwn/drewdevault.com
 [mediaTypes]
