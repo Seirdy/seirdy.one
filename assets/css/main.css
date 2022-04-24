@@ -49,11 +49,16 @@ blockquote {
 	padding-left: 0.8em;
 }
 
-/* narrow screens: reduce list indentation */
-dl,
+/* Tap targets: make links in lists easier to tap */
 ol,
 ul {
 	margin: .5em 0 0 0;
+}
+
+/* narrow screens: reduce list indentation */
+dd,
+ol,
+ul {
 	padding-left: 1.5em;
 }
 
