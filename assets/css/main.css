@@ -3,11 +3,7 @@
  * everything else addresses a specific a11y, compatibility, or critical
  * usability need.
  * I also don't define any non-semantic classes besides unstyled-list.
- * The the other classnames referenced here are from microformats2. */
-
-/* Start with browser defaults: default fonts, non-dark-mode colors, etc
- * Only change things to solve a specific a11y or significant usability
- * need. One exception: cosmetic improvement for unstyled-list */
+ * The the other classnames referenced here are from microformats2 */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
@@ -54,7 +50,7 @@ blockquote {
 }
 
 /* narrow screens: reduce list indentation */
-dd,
+dl,
 ol,
 ul {
 	margin: .5em 0 0 0;
@@ -96,7 +92,6 @@ kbd {
 }
 
 /* narrow screens: remove unused figure margins */
-
 figure {
 	margin: 1em 0;
 }
@@ -211,30 +206,6 @@ a:focus,
 /* Add focus styling back in browsers that do support :focus-visible */
 :focus-visible {
 	outline: 3px solid;
-}
-
-/* Skip link is hidden until focused.
- * Needs background color so it can appear over other elements on narrow
- * screens. If we set a background color, we must also set a foreground
- * color. System colors like Canvas and LinkText aren't supported by all
- * browsers, so we make up our own. */
-.skip {
-	/* skip-link could appear on top of existing content, so it needs a
-	 * solid background to be legible. If we set the background, we must
-	 * also set the foreground. Not all browsers support system colors
-	 * ("Canvas", "LinkText"), so we need to pick our own colors.
-	 * #06c is the default link color in FF, IE, and ux.redhat.com
-	 * #00e is the default in WebKit, Blink, and ancient FF. */
-	background-color: #fff;
-	color: #00e;
-
-	position: absolute;
-	left: .25em;
-	top: -2em;
-}
-
-.skip:focus {
-	top: .5em;
 }
 
 /* Todo:
