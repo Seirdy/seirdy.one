@@ -459,8 +459,6 @@ font: 100%/1.5 sans-serif;
 Beyond alt-text
 ---------------
 
-Note: this section does not include examples of its own. If you wish to see examples, look at the figures in the official version of this web page. You're probably on it right now; if not, [here's the canonical location](https://seirdy.one/2020/11/23/website-best-practices.html).
-
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
@@ -562,9 +560,10 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
 ```figure {var1="SRC" str1="figure" str2="img" str3="alt" str4="details" str5="article", str6="figcaption" str7="aria-label" str8="aria-describedby"}
 <article aria-label="comic, caption, and transcript">
   <h4>Infinite scrolling</h4>
-  <figure aria-describedby="transcript-xkcd-1309">
+  <figure>
     <img
       src="SRC"
+      aria-describedby="transcript-xkcd-1309"
       alt="Comic: if books had infinite-scroll,
            we'd have to turn pages carefully or
            risk losing the page.">
@@ -975,7 +974,7 @@ The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.
 
 Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;3 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick gray border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as `padding-inline-start` will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as `padding-inline-start` will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
