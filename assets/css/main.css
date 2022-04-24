@@ -49,7 +49,9 @@ blockquote {
 	padding-left: 0.8em;
 }
 
-/* narrow screens: reduce list indentation */
+/* narrow screens: reduce list indentation
+ * touch screens: lists of links should be
+ * easy to tap so give them some spacing. */
 dd,
 ol,
 ul {

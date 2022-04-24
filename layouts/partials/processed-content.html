@@ -4,7 +4,7 @@
 {{end}}
 
 <!--Add heading to footnotes, remove unused class-->
-{{ $referencesWithoutHeading    := `(<section class="footnotes" role="doc-endnotes">
+{{ $referencesWithoutHeading    := `(<(section|div) class="footnotes" role="doc-endnotes">
 <hr>)` -}}
 {{ $referencesWithHeading := printf `<section role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($footnote_heading) -}}
