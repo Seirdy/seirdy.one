@@ -40,7 +40,7 @@ My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/acco
 
 One of the core ideas behind the flavor of inclusive design I present is being _inclusive by default._ Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
-Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. On top of progressive enhancement, I prefer limiting any enhancements to ones that have been demonstrated to solve specific accessibility, security, performance, or significant usability problems faced by people _besides me._
+Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. In addition to progressive enhancement, I prefer limiting any enhancements to ones that have been demonstrated to solve specific accessibility, security, performance, or significant usability problems faced by people _besides me._
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and _address the trade-offs they make when they deviate._ I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
@@ -128,7 +128,7 @@ For embedded third-party content (e.g. images), give extra consideration to the 
 Optimal loading
 ---------------
 
-Nearly every Internet user has to deal with unreliable connections every now and then, even the top 1%. Developing regions lack modern Internet infrastructure; high-ranking executives travel frequently. Everybody hits the bottom of the bell-curve.
+Nearly every Internet user has to deal with unreliable connections every now and then, even the most privileged. Developing regions lack modern Internet infrastructure; high-ranking executives travel frequently. Everybody hits the worst end of the bell-curve.
 
 Reducing load time is especially useful to poorly-connected users. For much of the world, connectivity comes in short bursts during which loading time is precious. Chances of a connection failure or packet loss increase with time.
 
@@ -229,7 +229,7 @@ Loading content of unknown dimensions, such as images, can create layout shifts;
 
 In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
 
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is around 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires the [ngx_brotli module](https://github.com/google/ngx_brotli) for Brotli compression.
+Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is about 70 kilobytes. Caddy supports this with a `precompressed` directive; Nginx requires the [ngx_brotli module](https://github.com/google/ngx_brotli) for Brotli compression.
 
 When serving many resources at once (e.g., if a page has many images), HTTP/2 could offer a speed boost through multiplexing; use it if you can, but expect many clients to only support HTTP/1.1. HTTP/3 is unlikely to help textual websites much, so run a benchmark to see if it's worthwhile.
 
@@ -256,7 +256,7 @@ Tor users are unable to leverage media queries or client-hints to signal special
 
 To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
 
-Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. On top of that, the Tor Browser sometimes pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
+Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. Sometimes, the Tor Browser pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
 
 For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a `<picture>` element containing `<source>` children of varying formats and a fallback `<img>` element using a legacy image format.
 
@@ -282,15 +282,15 @@ on <abbr title="Mozilla Developer Network">MDN</abbr>,
 
 If you can't rely on lazy loading, your pages should work well without it. If pages work well without lazy loading, is it worth enabling?
 
-The scope of this article is textual content supplemented by images. In that context, I don't think lazy loading is worthwhile because it often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup used to result in packet loss rates above 60%&nbsp;(!!).
+The scope of this article is textual content supplemented by images. In that context, I don't think lazy loading is worthwhile because it often frustrates users on slow connections. I think I can speak for some of these users: mobile data near my home has a number of "dead zones" with abysmal download speeds, and my home's Wi-Fi repeater setup used to result in packet loss rates surpassing 60%&nbsp;(!!).
 
 Users on poor connections have better things to do than idly wait for pages to load. They might open multiple links in background tabs to wait for them all to load at once, and/or switch to another task and come back when loading finishes. They might also open links while on a good connection before switching to a poor connection. For example, I often open several links on Wi-Fi before going out for a walk in a mobile-data dead-zone. A Reddit user reading an earlier version of this article described a [similar experience riding the train](https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/).
 
-Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the bottom to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
+Unfortunately, pages with lazy loading don't finish loading off-screen images in the background. To load this content ahead of time, users need to switch to the loading page and slowly scroll to the end to ensure that all the important content appears on-screen and starts loading. Website owners shouldn't expect users to have to jump through these ridiculous hoops.
 
 ### Against speculative pre-loading
 
-A common objection to my case against lazy-loading is that users may be more likely to click a link than scroll to the bottom, so pages should prioritize pre-loading the link. Pre-loading a page's essential resources is fine. Speculatively pre-loading content on separate pages isn't.
+A common objection to my case against lazy-loading is that users may be more likely to click a link than scroll to the end, so pages should prioritize pre-loading the link. Pre-loading a page's essential resources is fine. Speculatively pre-loading content on separate pages isn't.
 
 Many users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. The overlap between these two groups grows especially pronounced as data cap overages trigger throttling; this is enough to trigger [a seasonal pattern in Japan](https://web.archive.org/web/20220402004738/https://nitter.pussthecat.org/yoavweiss/status/1195036487538003968).
 
@@ -347,7 +347,7 @@ Caption below the panel
 
 {{< /transcribed-image-transcript >}} {{< /transcribed-image >}}
 
-A hybrid between the two is paginated content in which users click a "load next page" link to load the next page below the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
+A hybrid between the two is paginated content in which users click a "load next page" link to insert the next page at the end of the current page (typically using "dynamic content replacement"). It's essentially the same as infinite scrolling, except additional content is loaded after a click rather than by scrolling. This is only slightly less bad than infinite scrolling; it still has the same fundamental issue of allowing readers to lose their place.
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with <kbd>Ctrl</kbd> + <kbd>s</kbd>)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
 
@@ -388,7 +388,7 @@ Web pages that hide content behind "show content" widgets are difficult to searc
 {{<picture name="find" alt="searching for the word \"good\" in the phrase \"I wonder how much good a\" when a \"see more\" link obscures the match.">}}
 <figcaption>
 
-Searching for the word "good" before (above) and after (below) a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
+Searching for the word "good" before and after a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
 
 </figcaption>
 </figure>
@@ -462,7 +462,7 @@ Beyond alt-text
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users with metered connections: sometimes they disable all images, and other times they only disable images above a certain size
+* Users with metered connections: sometimes they disable all images, and other times they only disable images past a certain size threshold
 * People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
@@ -604,7 +604,7 @@ I describe best practices for preparing pictures of text in [the "Pictures of te
 About custom colors
 -------------------
 
-Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text on top of background images. Don't strain your eyes trying to read this example:
+Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text foregrounds with image backgrounds.
 
 <figure>
 {{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker gray background. Details in caption." >}}
@@ -623,7 +623,7 @@ Chris also describes the importance of visited link colors in <cite>[VisitedLink
 
 Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>)&nbsp;2.2</cite> describes how doing so can meet the WCAG&nbsp;2.2's [Success Criterion&nbsp;1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
 
-This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up bottom sections, since these elements lack heading-based delineation. When overriding color schemes, the page layout remains clear.
+This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
 
 Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode, for instance, makes more advanced modifications to color palettes.
 
@@ -687,7 +687,7 @@ Yellow may have great contrast on dark backgrounds, but yellow and red can cause
 
 If you want to use yellow and red, lighten them up so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
 
-Accounting for halation, overstimulation, and high-contrast needs is hard to do if you place minute aesthetics above inclusivity.
+Accounting for halation, overstimulation, and high-contrast needs is hard to do if you prioritize minute aesthetics before inclusivity.
 
 ### Contrast under different conditions
 
@@ -782,7 +782,7 @@ If you really want to take PNG optimization to the next level, try [Efficient Co
 
 Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
-Most resources on image optimization recommend considering progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead below the 20&nbsp;kb range.
+Most resources on image optimization recommend considering progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead for resources of less than 20&nbsp;kb.
 
 These resources also encourage authors to include different image variants for different viewport sizes, screen resolutions, and pixel densities. They often skip the caveats:
 
@@ -861,7 +861,7 @@ A simple layout looks good at a variety of window sizes, rendering responsive la
 
 Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, and layout shifts dramatic enough to cause confusion.
 
-{{<codefigure>}} {{< codecaption lang="CSS" >}} the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the top of the page {{< /codecaption >}}
+{{<codefigure>}} {{< codecaption lang="CSS" >}} the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the beginning of the page {{< /codecaption >}}
 
 ```figure
 @media print, (min-width: 32rem) {
@@ -1023,8 +1023,8 @@ Google has far more aggressive recommen&shy;dations: it recommends raising the l
 
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size _and_ provide sufficient space for readers with hand-tremors to scroll. Some examples:
 
-- The [webmention list](#webmentions) below this article separates links with timestamps and some paragraph spacing.
-- The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the top of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with descriptions
+- The [webmention list](#webmentions) after this article separates links with timestamps and some paragraph spacing.
+- The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the beginning of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with descriptions
 
 ### Line spacing
 
@@ -1175,7 +1175,6 @@ a:focus,
   outline: 3px solid;
 }
 
-/* Undo the above if :focus-visible works */
 @supports selector(:focus-visible) {
   a:focus:not(:focus-visible),
   [tabindex]:focus:not(:focus-visible) {
@@ -1237,7 +1236,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implemen&shy;tations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^12] It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-label` atop symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>.
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^12] It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-label` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>.
 
 I'll be adding more tips here shortly; watch this space.
 
@@ -1269,7 +1268,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 12. Try printing out your page in black-and-white from an unorthodox graphical browser.
 13. Download your webpage and test how multiple word processors render and generate PDFs from it.[^14]
-14. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities on top of each other. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+14. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
