@@ -119,6 +119,8 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [Siik](https://siik.co/): Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
+- [websearchengine.org](https://websearchengine.org) and [tuxdex.com](https://tuxdex.com): Both are run by the same people, powered by their [inetdex.com](https://inetdex.com) index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies.
+
 - [Meorca](https://meorca.com/): A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
