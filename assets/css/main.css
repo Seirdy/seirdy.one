@@ -49,17 +49,16 @@ blockquote {
 	padding-left: 0.8em;
 }
 
-/* Tap targets: make links in lists easier to tap */
-ol,
-ul {
-	margin: .5em 0 0 0;
-}
-
 /* narrow screens: reduce list indentation */
 dd,
 ol,
 ul {
+	margin: .5em 0 0 0;
 	padding-left: 1.5em;
+}
+
+dd {
+	margin: 0;
 }
 
 /* Narrow screens: allow hyphenating titles
