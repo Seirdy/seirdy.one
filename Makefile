@@ -3,7 +3,7 @@ DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
 HUGO_BASEURL = "https://$(DOMAIN)/"
-HUGO_FLAGS = --gc --minify --ignoreCache
+HUGO_FLAGS = --gc --ignoreCache
 USER = deploy@$(DOMAIN)
 WWW_ROOT = /var/www/$(DOMAIN)
 GEMINI_ROOT = /srv/gemini/$(DOMAIN)

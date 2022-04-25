@@ -701,7 +701,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 In defense of link under&shy;lines {#in-defense-of-link-underlines}
 ----------------------------------
 
-Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html), and hyperlinks are no exception. I disagree.
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html)[^12], and that hyperlinks are no exception. I disagree.
 
 One reason is that underlines make it easy to separate multiple consecutive inline links:
 

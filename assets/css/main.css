@@ -182,7 +182,7 @@ img:not(.u-photo) {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
-section[role="doc-endnotes"] {
+div[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;
 }
