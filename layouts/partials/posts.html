@@ -1,5 +1,5 @@
 {{ $isStandalone := false }}
-{{ if eq .RelPermalink "/posts.html" -}}
+{{ if ne .Permalink .Site.BaseURL  -}}
 	{{ $isStandalone = true }}
 {{ end }}
 <section class="h-feed hfeed" itemscope itemtype="https://schema.org/{{ if $isStandalone }}Complete{{ end }}DataFeed">
@@ -16,11 +16,20 @@
 		{{- if or ($isStandalone) (.Params.featured) -}}
 		<li>
 			<article class="h-entry hentry" itemprop="dataFeedElement" itemscope itemtype="https://schema.org/BlogPosting https://schema.org/DataFeedItem">
-				<h3 itemprop="name headline" class="p-name entry-title">
+				{{ if $isStandalone }}
+				<h2
+				{{ else }}
+				<h3
+				{{ end }}
+					itemprop="name headline" class="p-name entry-title">
 					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
 						{{ .Title -}}
 					</a>
+				{{ if $isStandalone }}
+				</h2>
+				{{ else }}
 				</h3>
+				{{ end }}
 				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>, updated
 				<time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
 				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
