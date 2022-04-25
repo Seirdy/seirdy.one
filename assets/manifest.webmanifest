@@ -8,7 +8,9 @@
 	"short_name": "Seirdy",
 	"description": "{{ .Site.Params.Description }}",
 	"lang": "en-US",
-	"display": "browser",
+	"display": "minimal-ui",
+	"theme_color": "#0f0f0b",
+	"background_color": "#0f0f0b",
 	"scope": "/",
 	"start_url": "/",
 	"icons": [

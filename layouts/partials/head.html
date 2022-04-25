@@ -31,7 +31,7 @@
 <!-- Why does apple do this -->
 <meta name="format-detection" content="telephone=no">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#0f0f0b" media="(prefers-color-scheme:dark)">
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)">
 <!-- webmanifest defines even more icons. This is getting ridiculous -->
 {{- $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
