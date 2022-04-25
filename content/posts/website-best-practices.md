@@ -95,8 +95,8 @@ If you're able to control your HTTP headers, then use headers instead of a `<met
 		possible that some resources have already been fetched. For example, images might be stored in
 		the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
 		element with an <code>http-equiv</code> attribute in the Content security policy state.
-		Resources that have already been fetched are not guaranteed to be blocked by a <a href="https://w3c.github.io/webappsec-csp/#content-security-policy-object">Content
-			Security Policy</a> that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
+		Resources that have already been fetched are not guaranteed to be blocked by a Content
+			Security Policy that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
 		</p>
 	</blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
@@ -323,7 +323,7 @@ Another common offender is infinite-scrolling. In addition to requiring JavaScri
 
 {{< transcribed-image-figure id="xkcd-1309" has-transcript="true" >}}
 
-{{< picture name="infinite_scrolling" alt="Comic: if books had infinite-scroll, we'd have to turn pages carefully or risk losing the page." >}}
+{{< picture name="infinite_scrolling" alt="Comic: infinite-scrolling books need careful handling to avoid losing the page." >}}
 
 <figcaption>
 
@@ -385,7 +385,7 @@ In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>f</kbd>) has been a basic fea
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender.
 
 <figure>
-{{<picture name="find" alt="searching for the word \"good\" in the phrase \"I wonder how much good a\" when a \"see more\" link obscures the match.">}}
+{{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
 <figcaption>
 
 Searching for the word "good" before and after a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
@@ -469,10 +469,12 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images with a low information density should usually have alt-text under 120 characters.
+* Images should usually have alt-text under 100 characters.[^10] Save longer descriptions for a caption or `aria-describedby`. Exceptions exist.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supple&shy;mentary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
+
+Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.
 
 ### Putting images in context
 
@@ -564,9 +566,8 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
     <img
       src="SRC"
       aria-describedby="transcript-xkcd-1309"
-      alt="Comic: if books had infinite-scroll,
-           we'd have to turn pages carefully or
-           risk losing the page.">
+      alt="Comic: infinite-scrolling books require careful
+           page-turns to avoid losing the page.">
     <figcaption>
       Infinite-scroll means that accidental navigation
       to a link results in losing your place.
@@ -607,7 +608,7 @@ About custom colors
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text foregrounds with image backgrounds.
 
 <figure>
-{{< picture name="website_colors" alt="Screenshot of a website with gray text on a darker gray background. Details in caption." >}}
+{{< picture name="website_colors" alt="Screenshot: gray text on a darker gray background. Details in caption." >}}
 <figcaption>
 
 This is an unreadable screenshot of a [website promoting browser style overrides](http://bettermotherfuckingwebsite.com/) (specifically, the "A little less contrast" section). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
@@ -704,7 +705,7 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 One reason is that underlines make it easy to separate multiple consecutive inline links:
 
-{{<picture name="underlines" alt="two lines with two consecutive hyperlinks each, one line with and one without underlines.">}}
+{{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them.">}}
 
 Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
 
@@ -739,7 +740,7 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^10]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^11]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles WebAssembly-compiled encoders; I've heard good things about it.
 
@@ -894,7 +895,7 @@ Don't boost engagement by giving readers information they didn't ask for; earn e
 
 ### Line length
 
-The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as a AAA guideline in [Success Criterion 1.4.8 Visual Presentation](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
+The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as [a AAA success criterion (SC 1.4.8)](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
 
 Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `38em`, which typically corresponds to just under 90 characters. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, and others).
 
@@ -949,7 +950,7 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`.
 
-<span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^11] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail
+<span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^12] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail
 
 One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 
@@ -1007,9 +1008,9 @@ Excessive indentation can [make reading difficult](#indented-elements) for narro
 For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`, `<ul>`) since I often fill them with links (see this article's [table of contents](#TableOfContents) for an example). This indentation provides important non-interactive negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element; <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting"><span itemprop="publisher">Axess Lab</span> described the issue in {{<cited-work name="Hand Tremors and the giant button problem" url="https://axesslab.com/hand-tremors/" extraName="headline">}}</span>. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap".
 
 <figure>
-{{<picture name="touch_targets" alt="Phone screen with three \"touch target\" rectangles atop each other, separated by blank sections labeled \"space\".">}}
+{{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
 <figcaption>
-Image credit: Axess Lab
+Interactive content should be separated by non-interactive regions, such as whitespace or plain non-interactive text. Image credit: Axess Lab
 </figcaption>
 </figure>
 
@@ -1147,7 +1148,7 @@ kbd {
 The default focus indicators are hard to see in certain browsers (e.g. Firefox and WebKit), especially when the focused element already has a border. We can override them to make them more accessible.
 
 <figure>
-{{< picture name="focus" alt="Two screenshots of a link: one with a thin dotted outline, one with a thick solid outline." >}}
+{{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
 <figcaption>
 
 Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
@@ -1236,7 +1237,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implemen&shy;tations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^12] It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-label` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>.
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^13] It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-label` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>.
 
 I'll be adding more tips here shortly; watch this space.
 
@@ -1255,7 +1256,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^13]
+1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^14]
 2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 4. Print out the site in black-and-white, preferably with a simple laser printer.
@@ -1267,7 +1268,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 10. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 12. Try printing out your page in black-and-white from an unorthodox graphical browser.
-13. Download your webpage and test how multiple word processors render and generate PDFs from it.[^14]
+13. Download your webpage and test how multiple word processors render and generate PDFs from it.[^15]
 14. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
@@ -1402,15 +1403,17 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
 [^9]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve access&shy;ibility.
 
-[^10]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
+[^10]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommends 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even lower limit of 80 characters.
 
-[^11]: <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^11]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
+
+[^12]: <span itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^12]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^13]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^13]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
+[^14]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to `about:config` and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1426,7 +1429,7 @@ A special thanks goes out to GothAlice for the questions she answered in `#webde
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^14]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^15]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
     Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 

@@ -444,7 +444,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images with a low information density should usually have alt-text under 120 characters.
+* Images should usually have alt-text under 100 characters. Save longer descriptions for a caption or "aria-describedby". Exceptions exist.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 
 The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing alt-text. It's a little lacking in nuance, but makes for a good starting point:
@@ -453,9 +453,9 @@ The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing 
 
 Remember that guidelines and "good practices" always have exceptions.
 
-Note: this section does not include examples of its own. If you wish to see examples, look at the blockquotes, code snippets, and linkd images in the official version of this Gemini page. You're probably on it right now; if not, here's the canonical location:
-
 => gemini://seirdy.one/2020/11/23/website-best-practices.gmi An opinionated list of best practices for textual websites
+
+Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.
 
 On Gemini, much of this section applies to varying degrees. I typically employ this approach when linking to e.g. images. Sometimes, I even do this when linking to gemtext or HTML documents.
 
