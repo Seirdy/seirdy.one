@@ -337,7 +337,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 
 CSS containment allows authors to isolate sub-trees of the DOM. Combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
 
-> content-visibility: auto is a more complex value than hidden; rather than being similar to display: none, it adaptively hides/displays an element’s contents as they become relevant to the user. It also doesn’t hide its skipped contents from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
+> "content-visibility: auto" is a more complex value than "content-visibility: hidden"; rather than being similar to display: none, it adaptively hides/displays an element’s contents as they become relevant to the user. It also doesn’t hide its skipped contents from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
 => https://drafts.csswg.org/css-contain/#using-cv-auto CSS Containment Module
 
 Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for my site footers and endnotes.
@@ -554,6 +554,10 @@ I describe best practices for preparing pictures of text in the "Pictures of tex
 
 ## About custom colors
 
+Always remember that any color palette you define in your stylesheets is merely a suggestion. Any colors you don't define could fall back to arbitrary defaults; all colors you define could be overridden by the user agent or operating system.
+
+### Default colors
+
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text foregrounds with image backgrounds.
 
 => gemini://seirdy.one/misc/website_colors.png Screenshot of a website with gray text on a darker gray background. Details follow.
@@ -587,7 +591,7 @@ The Web version of this page is an example application of Technique C25 and the 
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows’ High Contrast Mode, for instance, makes more advanced modifications:
+Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode, for instance, makes more advanced modifications to color palettes: it colors elements only based on their semantic roles, ignoring ARIA overrides of HTML semantics. Since WHCM sets colors independent of explicitly-defined ARIA roles, it's a good way to test adherence to the First Rule of ARIA (see the "Split elements and posessive hyperlinks" sub-section of the "Screenreader improvements" section). WHCM recently began the process of standardization through the "forced-colors" media feature.
 
 > Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.
 > It’s not about design but readability.
@@ -596,7 +600,9 @@ Color overrides go well beyond simple foreground and background color changes. W
 > You can use a special media query combined with special CSS color keywords to give elements the user defined colors.
 => https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/ Accessibility issues concerning Windows HCM
 
-In fact, the CSS Working Group is working on a specification for re-coloring websites:
+WHCM leads the standardization process for forced colors, but it isn't the only implementation of the underlying idea. If you navigate to about:preferences in Firefox and activate the Colors button in the "Language and Appearance" section, you'll be presented with the option to override website colors with your own.
+
+Not all approaches completely discard a designer's specified color palette. The CSS Working Group is working on a specification for re-coloring websites:
 
 => https://drafts.csswg.org/css-color-adjust-1/ CSS Color Adjustment Module Level 1
 
@@ -1235,7 +1241,7 @@ Some screen readers split up sections by HTML elements. This means HTML elements
 
 This is especially concerning on my website, where I tend to hyperlink peoples' names (a common practice on the IndieWeb): making names possessive with an "apostrophe + s" creates pronunciation issues. "Seirdy's Home" could be read as "Seirdy. Link. S. Home" if the word "Seirdy" is a hyperlink.
 
-A workaround is to use the "text" ARIA role to remove the semantics of elements.
+A workaround is to use the "text" ARIA role to remove the semantics of elements. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
 
 > To force a screen reader to interpret the heading as one object, I wrapped the text inside the heading in a span and added role=”text”.
 ```
@@ -1251,7 +1257,7 @@ If you're unfamiliar with ARIA, always remember the first rule of ARIA:
 
 => https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria No ARIA is better than Bad ARIA
 
-ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
+ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative.
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
