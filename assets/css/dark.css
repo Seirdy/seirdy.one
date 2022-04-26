@@ -33,7 +33,8 @@
 		color: #fae4ff;
 	}
 
-	:not(pre) > code {
+	:not(pre) > code,
+	:not(pre) > samp {
 		border-color: #555;
 	}
 

@@ -34,7 +34,7 @@ html {
 		font-size: 106%;
 
 		max-width: 45em;
-		padding: 0 2%;
+		padding: initial 2%;
 	}
 
 	/* 45em is too wide for long body text. */
@@ -49,7 +49,7 @@ html {
 blockquote {
 	border-left: 4px solid;
 	margin: 0;
-	padding-left: 0.8em;
+	padding-left: .8em;
 }
 
 /* narrow screens: reduce list indentation
@@ -64,6 +64,12 @@ ul {
 
 dd {
 	margin: 0;
+}
+
+ol ol,
+ul ul {
+	padding-left: 1em;
+	hyphens: auto;
 }
 
 /* Narrow screens: allow hyphenating titles
@@ -90,7 +96,7 @@ h1 {
 
 		/* inline-end doesn't work in netsurf. -right should stil make sense
 		 * in RTL machine translation, it'll just look a bit indented. */
-		padding-right: 0.5em;
+		padding-right: .5em;
 	}
 }
 
@@ -110,21 +116,23 @@ kbd {
 }
 
 /* narrow screens: remove unused figure margins
- * print stylesheet: avoid page breaks that split up figures */
+ * print stylesheet: avoid page breaks that split up figures
+ * figure captions shouldn't look like regular paragraphs; there should
+ * be some extra space. */
 figure {
-	margin: 1em 0;
+	margin: 1.5em 0;
 	page-break-inside: avoid;
 }
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
 figure:not([itemtype]) figcaption {
-	margin: 0 10%;
+	margin: initial 10%;
 }
 
 /* Mobile optimization: nav links are tappable with fat fingers */
 nav li,
 .unstyled-list li {
-	margin-bottom: 0.5em;
+	margin-bottom: .5em;
 }
 
 /* Lists without bullets: navlinks, posts lists, webmentions.
@@ -150,10 +158,12 @@ samp {
 
 /* Narrow screens: long words can cause content to flow out of the
  * viewport, triggering horizontal scrolling. Allow breaking words in
- * content I don't control (comments). For content I do control, I just
- * add soft hyphens to the HTML. */
+ * content I don't control (comments, names). For content I do control,
+ * I just add soft hyphens to the HTML. */
 li[itemprop="comment"],
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > samp,
+span[itemtype="https://schema.org/Person"] {
 	overflow-wrap: break-word;
 
 	/* borders shouldn't touch text */
@@ -163,7 +173,7 @@ li[itemprop="comment"],
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
 	overflow: auto;
-	padding: 0.5em;
+	padding: .5em;
 }
 
 /* Distinguish images from the background in case their color is
@@ -173,12 +183,14 @@ pre {
  * elements is an officially documented WCAG technique. */
 img,
 pre,
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > samp {
 	border: 1px solid;
 }
 
 /* A black border is too harsh. */
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > samp {
 	border-color: #aaa;
 }
 
