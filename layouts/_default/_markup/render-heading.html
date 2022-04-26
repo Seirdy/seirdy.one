@@ -15,7 +15,7 @@
 	Yeah I know, the situation isn't optimal.
 -->
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
-{{ if gt .Level 1 -}}
+{{ if and (gt .Level 1) (eq .Page.Section "posts") -}}
 	<a href="#{{ .Anchor | safeURL }}" aria-hidden="true" tabindex="-1">
 		{{- $octothorpes := sub .Level 1 -}}
 		{{- range $i, $sequence := (seq $octothorpes) -}}
