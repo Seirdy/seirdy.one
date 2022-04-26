@@ -27,11 +27,11 @@
 		"resourceSizes": [
 			{
 				"resourceType": "total",
-				"budget": 60
+				"budget": 128
 			},
 			{
 				"resourceType": "document",
-				"budget": 40
+				"budget": 60
 			},
 			{
 				"resourceType": "image",
