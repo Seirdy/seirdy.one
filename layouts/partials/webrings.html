@@ -1,25 +1,22 @@
 <h2 id="part-of">Webrings</h2>
-
 <p>This site is part of some <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>:</p>
-
 <!--
 	Some webrings require the sending of a "Referer" header,
 	but my site has two non-canonical mirrors. Don't add those.
 -->
-{{ $refPol := "no-referrer" }}
-{{ if eq site.BaseURL "https://seirdy.one/" }}
-	{{ $refPol = "strict-origin" }}
-{{ end }}
+{{- $refPol := "no-referrer" -}}
+{{- if eq site.BaseURL "https://seirdy.one/" -}}
+	{{- $refPol = "strict-origin" -}}
+{{ end -}}
 <ul class="unstyled-list">
-{{ range $i, $r := after 1 (getCSV "," "/csv/webrings.csv") }}
-<li>
-<p>
-<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="previous site">←</a> ·
-<a href="{{- index $r 2 -}}">{{- index $r 0 -}}</a> ·
-<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="next site">→</a>
-</p>
-</li>
-{{ end }}
+{{- range $i, $r := after 1 (getCSV "," "/csv/webrings.csv") }}
+	<li>
+		<p>
+			<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="previous site">←</a> ·
+			<a href="{{- index $r 2 -}}">{{- index $r 0 -}}</a> ·
+			<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="next site">→</a>
+		</p>
+	</li>
+{{- end -}}
 </ul>
-
 <p>If you're part of a webring and would like me to join, just ask. I'll probably accept if joining only requires me to add hyperlinks to this page (no scripts, external content, or images), and if the ring doesn't seem to promote anything I find objectionable.</p>

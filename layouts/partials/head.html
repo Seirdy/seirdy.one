@@ -4,10 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://seirdy.one{{ .RelPermalink }}" rel="canonical">
 <link href="https://seirdy.one/webmentions/receive" rel="webmention">
-{{ if or (eq site.BaseURL "https://seirdy.one/") (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") }}
+{{ if or (eq site.BaseURL "https://seirdy.one/") (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
 <!-- IDC how much content is extracted from my pages, go knock yourself out. huge images, long snippets, whatever. -->
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
-{{ end }}
+{{ end -}}
 <title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta content="{{ .Site.Author.name }}" name="author">
