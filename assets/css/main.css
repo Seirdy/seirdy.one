@@ -2,8 +2,9 @@
  * Nothing here exists purely for aesthetics except the unstyled-list;
  * everything else addresses a specific a11y, compatibility, or critical
  * usability need.
- * I also don't define any non-semantic classes besides unstyled-list.
- * The the other classnames referenced here are from microformats2 */
+ * I also don't use any classes besides unstyled-list. My HTML contains
+ * microformats2 classnames for IndieWeb parsers, but I don't actually use
+ * those. */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
@@ -25,7 +26,9 @@ html {
 	html {
 		/* Default font sizes are one-size-fits-all; they're optimized for a
 		 * wide variety of complex pages. For single-column websites like
-		 * mine, it's safe to bump it up ever so slightly.
+		 * mine, it's ideal to bump it up ever so slightly. This also makes
+		 * <sup>, <sub>, <small>, etc. large enough to have decent contrast with
+		 * minimal adjustment.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
 		font-size: 106%;
@@ -35,7 +38,7 @@ html {
 	}
 
 	/* 45em is too wide for long body text. */
-	.e-content {
+	div[itemprop="articleBody"] {
 		margin: auto;
 		max-width: 38em;
 	}
@@ -70,7 +73,7 @@ h1 {
 }
 
 /* Very narrow screens: full hyphenation */
-@media (max-width: 11em) {
+@media (max-width: 11.6em) {
 	article,
 	h2,
 	h3 {
@@ -91,15 +94,26 @@ h1 {
 	}
 }
 
+/* Print: anchor links and nav are useless in printouts. Hide them. */
+@media print {
+	a[aria-hidden],
+	header nav,
+	footer nav {
+		display: none;
+	}
+}
+
 /* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed */
 kbd {
 	font-weight: bold;
 }
 
-/* narrow screens: remove unused figure margins */
+/* narrow screens: remove unused figure margins
+ * print stylesheet: avoid page breaks that split up figures */
 figure {
 	margin: 1em 0;
+	page-break-inside: avoid;
 }
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
@@ -138,7 +152,7 @@ samp {
  * viewport, triggering horizontal scrolling. Allow breaking words in
  * content I don't control (comments). For content I do control, I just
  * add soft hyphens to the HTML. */
-.u-comment,
+li[itemprop="comment"],
 :not(pre) > code {
 	overflow-wrap: break-word;
 
