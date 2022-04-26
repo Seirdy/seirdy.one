@@ -34,7 +34,7 @@ html {
 		font-size: 106%;
 
 		max-width: 45em;
-		padding: initial 2%;
+		padding: 0 2%;
 	}
 
 	/* 45em is too wide for long body text. */
@@ -126,7 +126,7 @@ figure {
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
 figure:not([itemtype]) figcaption {
-	margin: initial 10%;
+	margin: 0 10%;
 }
 
 /* Mobile optimization: nav links are tappable with fat fingers */
