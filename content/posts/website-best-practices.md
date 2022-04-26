@@ -19,7 +19,7 @@ title: An opinionated list of best practices for textual websites
 ---
 <div role="doc-preface">
 
-The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive._
+The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive.
 
 This is a "living document" that I add to as I receive feedback. See the updated date and changelog after the post title.
 
