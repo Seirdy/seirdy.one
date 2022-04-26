@@ -28,7 +28,7 @@ Location (Seirdy, online)
 
 My handle is "Seirdy" on all the platforms I use.
 
-- The [Tildeverse](https://envs.net/~seirdy).
+- My [tildeverse page](https://envs.net/~seirdy).
 - Software forges: [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), [GitLab](https://gitlab.com/Seirdy), and [Codeberg](https://codeberg.org/Seirdy).
 - Social (federated): I'm [@Seirdy<wbr>@pleroma<wbr>.envs.net](https://pleroma.envs.net/seirdy) on the Fediverse.
 - Social (non-federated): I'm Seirdy on [Hacker News](https://news.ycombinator.com/user?id=Seirdy), [Lobsters](https://lobste.rs/u/Seirdy), [Reddit](https://www.reddit.com/user/Seirdy/), [Tildes.net](https://tildes.net/user/Seirdy), and Linux Weekly News.
