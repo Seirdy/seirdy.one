@@ -24,7 +24,7 @@ Adding remotes
 
 This process should pretty straightforward. You can run `git remote add` (see `git-remote(1)`) or edit your repo's `.git/config` directly:
 
-```gitconfig
+```
 [remote "origin"]
 	url = git@git.sr.ht:~seirdy/seirdy.one
 	fetch = +refs/heads/*:refs/remotes/origin/*
@@ -43,7 +43,7 @@ Seamless pushing and pulling
 
 Having multiple remotes is fine, but pushing to and fetching from all of them can be slow. Two simple git aliases fix that:
 
-```gitconfig
+```
 [alias]
 	pushall = !git remote | grep -E 'origin|upstream' | xargs -L1 -P 0 git push --all --follow-tags
 	fetchall = !git remote | grep -E 'origin|upstream' | xargs -L1 -P 0 git fetch
