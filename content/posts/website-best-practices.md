@@ -1438,7 +1438,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
-    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
+    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 12</strong>:
         Firefox prefs to turn off JIT compilation
         </figcaption>
 
