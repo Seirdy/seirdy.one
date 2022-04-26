@@ -19,11 +19,11 @@ title: An opinionated list of best practices for textual websites
 ---
 <div role="doc-preface">
 
-_The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive._
+The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive._
 
 This is a "living document" that I add to as I receive feedback. See the updated date and changelog after the post title.
 
-If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.
+<p role="doc-tip">If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.<p role="doc-tip">
 
 </div>
 
@@ -676,6 +676,8 @@ If you can't bear the thought of parting with your solid-black background, worry
 
 I personally like a foreground and background of `#eee` and `#0e0e0e`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0e0e0e` is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a `prefers-contrast: less` media query which lightens the background to `#222`.
 
+If you use JavaScript: avoid setting colors, especially dark-mode colors, using JavaScript. Using JavaScript to set a styles risks introducing a "Flash of Unstyled Content" (<abbr title="Flash of Unstyled Content">FOUC</abbr>). In the case of a dark theme, this FoUC manifests as a "White Flash of Death" (<abbr title="White Flash of Death">WFoD</abbr>). A WFoD is incredibly irritating for dark-mode users; at worst, it could put photosensitive epileptic users at risk. CSS is a render-blocking resource for a reason.
+
 ### Contrast is complex
 
 Color is a nuanced topic that deserves more attention than current guidelines give.
@@ -1231,15 +1233,29 @@ The best solution for possessive nouns is to include the "apostrophe + s" inside
 
 ### Other tips
 
-Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, NVDA, VoiceOver, TalkBack, and ChromeVox all have unique behavior and varying levels of support for HTML and ARIA.
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, and ChromeVox all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
+
+Beware of `display` and `visibility` CSS properties; they can interfere with content reported to screen readers. Whenever you use one of those properties, re-test with screen readers just to be safe.
+
+<figure itemscope itemtype="https://schema.org/Quotation">
+<blockquote itemprop="text">
+<p>Sometimes doing this can have an unintended effect of nuking the semantics of the elements, as conveyed to screen reading software, in the <a href="https://www.tpgi.com/the-browser-accessibility-tree/">browser accessibility tree</a>. Screen readers and other assistive tech, in general, do not have direct access to the HTML DOM, they are provided access to a subset of information in the HTML DOM via <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-accessibility-api">Accessibility APIs</a>. Sometimes what an element represents in the HTML DOM is not how it is represented in the accessibility tree.</p>
+<p>If what is represented in the accessibility tree does not represent the developer’s intended UI, it’s either (wittingly/unwittingly) the <strong>fault of the developer or the browser</strong>. But what we can be sure of, in these cases, is that it is <strong>not the fault of the screen reader</strong>.</p>
+</blockquote>
+{{< quotecaption partOfType="BlogPosting" >}}
+{{<indieweb-person first-name="Steve" last-name="Faulkner" url="https://twitter.com/stevefaulkner" itemprop="author" org="TPGi" org-url="https://www.tpgi.com/" >}},
+{{<cited-work name="Short note on what CSS display properties do to table semantics" url="https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/" extraName="headline">}}
+{{< /quotecaption >}}
+</figure>
+
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 
 Screen reader implemen&shy;tations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^13] It does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-label` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>.
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^13]
 
-I'll be adding more tips here shortly; watch this space.
+Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
 Testing
 -------
