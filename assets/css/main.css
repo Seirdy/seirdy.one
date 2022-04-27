@@ -2,9 +2,9 @@
  * Nothing here exists purely for aesthetics except the unstyled-list;
  * everything else addresses a specific a11y, compatibility, or critical
  * usability need.
- * I also don't use any classes besides unstyled-list. My HTML contains
- * microformats2 classnames for IndieWeb parsers, but I don't actually use
- * those. */
+ * I also don't use any classes besides unstyled-list and pixelated. My
+ * HTML contains microformats2 classnames for IndieWeb parsers, but I
+ * don't actually use those. */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
@@ -186,6 +186,10 @@ pre,
 :not(pre) > code,
 :not(pre) > samp {
 	border: 1px solid;
+}
+
+.pix {
+	image-rendering: pixelated;
 }
 
 /* A black border is too harsh. */

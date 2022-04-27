@@ -728,7 +728,7 @@ Underlines also make it easy for color-blind readers to distinguish both the beg
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
 
 Image op&shy;timiza&shy;tion {#image-optimization}
------------------------
+----------------------------
 
 Some image optimization tools I use:
 
@@ -990,7 +990,7 @@ Another example: outside the Web, I prefer indenting code with tabs instead of s
 Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
 
 <figure>
-{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.2 >}}
+{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.75 >}}
 <figcaption>
 
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
@@ -1052,7 +1052,7 @@ Line spacing (leading) is at least space-and-a-half within paragraphs, and parag
 The <abbr title="Web Accessibility Initiative">WAI</abbr>'s Cognitive and Learning Disabilities Accessibility Task Force [recommends changing this Success Criterion's level](https://w3c.github.io/coga/extension/#changedlevels), finding it too important to be relegated to AAA status.
 
 Non-<wbr>brow&shy;sers: reading mode {#non-browsers-reading-mode}
--------------------------------
+------------------------------------
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
@@ -1292,6 +1292,15 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+
+<figure>
+{{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 7\"." sf=2 >}}
+<figcaption>
+
+This page in the [SerenityOS](https://serenityos.org/) web browser. TLS&nbsp;1.2 support isn't finished yet; I loaded it from a mirror with a compatible cipher suite.
+
+</figcaption>
+</figure>
 
 Future updates
 --------------

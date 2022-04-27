@@ -9,13 +9,17 @@
 {{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) -}}
 {{ $dark_jxl := resources.GetMatch (printf "/p/%s_dark.jxl" (.Get "name")) -}}
 
+{{- $isPix := false -}}
 {{- $img_width := $light_png.Width -}}
 {{- $img_height := $light_png.Height -}}
 {{- with (.Get "sf") -}}
 	{{- $img_width = (mul $img_width . ) -}}
 	{{- $img_height = (mul $img_height . ) -}}
+	{{- if eq . 2 -}}
+		{{- $isPix = true -}}
+	{{- end -}}
 {{- end -}}
-<picture>
+<picture{{ if $isPix }} class="pix"{{ end }}>
 	{{ with $dark_svg -}}
 	{{ $dark_svg_src := . | resources.Fingerprint "md5" -}}
 	<source
@@ -82,10 +86,9 @@
 	<img
 		width="{{ $img_width }}" height="{{ $img_height }}"
 		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
-		{{- with .Parent -}}
+		{{ with .Parent -}}
 		{{- with .Get "id" -}}
-		aria-describedby="transcript-{{ . }}"	
-		{{- end -}}
-		{{- end }}
+		aria-describedby="transcript-{{ . }}"
+		{{ end }}{{ end -}}
 		decoding="async">
 </picture>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
