@@ -31,7 +31,7 @@ html {
 		 * minimal adjustment.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
-		font-size: 106%;
+		font-size: 105%;
 
 		max-width: 45em;
 		padding: 0 2%;
