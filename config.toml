@@ -132,7 +132,10 @@ includeFields = ""
 
 # Regexp matching the Exif fields you want to exclude. This may be easier to use
 # than IncludeFields above, depending on what you want.
-excludeFields = ""
+excludeFields = ".*"
 
-[minify.tdewolff.html]
-keepWhitespace = true
+# don't minify html but minify other resources, esp the fulltext rss feed
+[minify]
+minifyOutput = true
+disableXML = false
+disableHTML = true

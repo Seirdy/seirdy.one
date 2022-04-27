@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{- default "" .Site.LanguageCode -}}" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# cc: http://creativecommons.org/ns#">
+<html lang={{- default "" .Site.LanguageCode }} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# cc: http://creativecommons.org/ns#">
 {{ partial "head.html" . -}}
 <body itemscope itemtype="https://schema.org/Blog https://schema.org/WebPage">
 {{ partial "header.html" . -}}
