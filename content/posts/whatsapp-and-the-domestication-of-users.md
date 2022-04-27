@@ -178,7 +178,7 @@ The Framalang translators at [Framasoft](https://framasoft.org/) translated this
 
 {{<indieweb-person nickname="Licaon Kter" url="https://web.archive.org/web/20210924154338/https://convorb.im/">}} translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
 
-{{<indieweb-person first-name="David" last-name="Jimenez" url="https://sgfault.com">}} translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/2021/02/21/whatsapp-y-la-domesticacion-de-usuarios.html">WhatsApp y la domesticación de usuarios</a>.
+{{<indieweb-person first-name="David" last-name="Jimenez" url="https://sgfault.com">}} translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/post/2021/02/2021-02-21-whatsapp-y-la-domesticacion-de-usuarios/">WhatsApp y la domesticación de usuarios</a>.
 
 {{<indieweb-person nickname="Skariko" url="https://www.lealternative.net/author/skariko/">}} of [Le Alternative](https://lealternative.net/) translated this article to Italian: <a lang="it-IT" hreflang="it-IT" rel="alternate" href="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/">WhatsApp e l’addomesticamento degli utenti</a>.
 
