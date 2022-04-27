@@ -1412,7 +1412,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^4]: <cite>High-Performance Browser Networking</cite> by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/">}} gives [a great introduction to how TCP works](https://hpbn.co/building-blocks-of-tcp/), if you'd like more details.
 
-[^5]: HPACK and QPACK header compression includes dictionaries containing common header names, and some common header values; HPACK lists them in the table from Appendix A of <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="RFC 7541" url="https://datatracker.ietf.org/doc/html/rfc7541#appendix-A">}}</span>. If a header name or name-value pair one of these predefined table entries, its effective size can be reduced to a single byte. If a header has a value that isn't covered by the table, consider minifying it by removing unnecessary whitespace.
+[^5]: HPACK and QPACK header compression includes dictionaries containing common header names, and some common header values; HPACK lists them in "Appendix A" of <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="RFC 7541" url="https://datatracker.ietf.org/doc/html/rfc7541#appendix-A">}}</span>. If a header name or name-value pair one of these predefined table entries, its effective size can be reduced to a single byte. If a header has a value that isn't covered by the table, consider minifying it by removing unnecessary whitespace.
 
     Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimi&shy;zations. Real bottlenecks lie elsewhere.
 
