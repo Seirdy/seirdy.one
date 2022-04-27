@@ -69,7 +69,7 @@ style-src-attr 'none';
 frame-ancestors 'none';
 base-uri 'none';
 form-action 'none';
-manifest-src https://seirdy.one/manifest.min.HASH.webmanifest;
+manifest-src 'self';
 upgrade-insecure-requests;
 sandbox allow-same-origin
 ```
@@ -1457,6 +1457,8 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 => https://browserleaks.com/fonts BrowserLeaks font fingerprinting demo. Warning: the page might hog your CPU for a while.
 
 ⁷ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+=> https://datatracker.ietf.org/doc/html/rfc7541#appendix-A RFC 7541: HPACK static table definition
+=> https://quicwg.org/base-drafts/draft-ietf-quic-qpack.html#appendix-A QPACK: Header Compression for HTTP/3
 
 ⁸ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 I find Practical Typography quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.

@@ -77,7 +77,7 @@ style-src-attr 'none';
 frame-ancestors 'none';
 base-uri 'none';
 form-action 'none';
-manifest-src https://seirdy.one/manifest.min.HASH.webmanifest;
+manifest-src 'self';
 upgrade-insecure-requests;
 sandbox allow-same-origin
 ```
@@ -1412,7 +1412,9 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^4]: <cite>High-Performance Browser Networking</cite> by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/">}} gives [a great introduction to how TCP works](https://hpbn.co/building-blocks-of-tcp/), if you'd like more details.
 
-[^5]: HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimi&shy;zations. Real bottlenecks lie elsewhere.
+[^5]: HPACK and QPACK header compression includes dictionaries containing common header names, and some common header values; HPACK lists them in the table from Appendix A of <span itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="RFC 7541" url="https://datatracker.ietf.org/doc/html/rfc7541#appendix-A">}}</span>. If a header name or name-value pair one of these predefined table entries, its effective size can be reduced to a single byte. If a header has a value that isn't covered by the table, consider minifying it by removing unnecessary whitespace.
+
+    Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimi&shy;zations. Real bottlenecks lie elsewhere.
 
 [^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same reasons are [outlined here](https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/) in the "Accessibility concerns for infinite scroll" section.
 
