@@ -13,7 +13,7 @@ sitemap:
 Seirdy's Home
 =============
 
-It me! I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName nickname" class="p-nickname nickname">Seirdy</span> (online handle).
+I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName nickname" class="p-nickname nickname">Seirdy</span> (online handle).
 
 Other versions of this website
 ------------------------------
@@ -36,7 +36,7 @@ Contact
 
 Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr>@pleroma<wbr>.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
-Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm [@seirdy<wbr>:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
+Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr>:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
 
 </div>
 
