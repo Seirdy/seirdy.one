@@ -2,9 +2,9 @@
  * Nothing here exists purely for aesthetics except the unstyled-list;
  * everything else addresses a specific a11y, compatibility, or critical
  * usability need.
- * I also don't use any classes besides unstyled-list and pixelated. My
+ * I also don't use any classes besides "unstyled-list" and "pix". My
  * HTML contains microformats2 classnames for IndieWeb parsers, but I
- * don't actually use those. */
+ * don't actually use those for styling. */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
@@ -12,18 +12,11 @@ html {
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
 	 * on serif being the default?? */
 	font: 100%/1.5 sans-serif;
-
-	/* Aligning to the center with space on both sides prevents accidental
-	* link activation on mobile devices. */
-	margin: auto;
 }
 
-/* WCAG recommends a max line width. Not everyone can resize the
- * viewport.
- * This should not take effect on printouts, to save paper. */
+/* This should not take effect on printouts, to save paper. */
 @media screen {
-	/* 45em is the lowest reasonable width for titles, nav, footers, etc */
-	html {
+	body {
 		/* Default font sizes are one-size-fits-all; they're optimized for a
 		 * wide variety of complex pages. For single-column websites like
 		 * mine, it's ideal to bump it up ever so slightly. This also makes
@@ -33,6 +26,13 @@ html {
 		 * and cost paper + ink. */
 		font-size: 105%;
 
+		/* Aligning to the center with space on both sides prevents accidental
+		* link activation on tablets. */
+		margin: auto;
+
+		/* WCAG recommends a max line width. Not everyone can resize the
+		 * viewport.
+		 * 45em is the lowest reasonable width for titles, nav, footers, etc */
 		max-width: 45em;
 		padding: 0 2%;
 	}
@@ -42,6 +42,15 @@ html {
 		margin: auto;
 		max-width: 38em;
 	}
+}
+
+/* Small text is easier to read when slightly bolder.
+ * This is important in the dark theme where I set my own colors and
+ * try to maintain good perceptual contrast even for small text, but
+ * I don't want toggling the theme to impact anything besides color so
+ * I set the weight here. */
+sup {
+	font-weight: 600;
 }
 
 /* narrow screens: reduce margin for blockquotes a lot, using
@@ -68,8 +77,8 @@ dd {
 
 ol ol,
 ul ul {
-	padding-left: 1em;
 	hyphens: auto;
+	padding-left: 1em;
 }
 
 /* Narrow screens: allow hyphenating titles
@@ -100,15 +109,6 @@ h1 {
 	}
 }
 
-/* Print: anchor links and nav are useless in printouts. Hide them. */
-@media print {
-	a[aria-hidden],
-	header nav,
-	footer nav {
-		display: none;
-	}
-}
-
 /* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed */
 kbd {
@@ -121,7 +121,6 @@ kbd {
  * be some extra space. */
 figure {
 	margin: 1.5em 0;
-	page-break-inside: avoid;
 }
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
@@ -188,14 +187,15 @@ pre,
 	border: 1px solid;
 }
 
-.pix {
-	image-rendering: pixelated;
-}
-
 /* A black border is too harsh. */
 :not(pre) > code,
 :not(pre) > samp {
-	border-color: #aaa;
+	border-color: #999;
+}
+
+/* Some images look blurry when scaled */
+.pix {
+	image-rendering: pixelated;
 }
 
 /* center images that aren't my indieweb icon; same justification as
@@ -227,14 +227,16 @@ div[role="doc-endnotes"] {
 
 /* For browsers that don't support :focus-visible */
 a:focus,
-[tabindex]:focus {
+summary:focus,
+pre[tabindex]:focus {
 	outline: 3px solid;
 }
 
 /* Remove :focus styling for browsers that do support :focus-visible */
 @supports selector(:focus-visible) {
 	a:focus:not(:focus-visible),
-	[tabindex]:focus:not(:focus-visible) {
+	summary:focus:not(:focus-visible),
+	pre[tabindex]:focus:not(:focus-visible) {
 		outline: none;
 	}
 }

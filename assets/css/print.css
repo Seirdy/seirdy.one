@@ -1,0 +1,24 @@
+/* Print stylesheet: hide stuff that we don't need. */
+@media print {
+	/* Currently only used for transcripts */
+	details,
+	/* Currently only used for anchors */
+	span[aria-hidden],
+  /* You can't navigate in a printout. */
+	footer nav {
+		display: none;
+	}
+}
+
+/* Print: don't orphan headings */
+h2,
+h3,
+h4 {
+	break-after: avoid;
+}
+
+figure,
+article article,
+div[role="doc-endnotes"] ol li {
+	break-inside: avoid;
+}

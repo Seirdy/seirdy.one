@@ -41,6 +41,7 @@
 {{- if not (eq $dark "off") -}}
 {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
 {{- end -}}
+{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
 {{- $css := $resources | resources.Concat "css/style.css" | minify -}}
 <style>{{ $css.Content | safeCSS }}</style>
 <meta property="og:title" content="{{ .Title }}">
