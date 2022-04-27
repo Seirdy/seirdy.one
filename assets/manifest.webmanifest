@@ -28,7 +28,7 @@
 		},
 		{
 			"src": "{{ $1024svg.Permalink }}",
-			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152",
+			"sizes": "1024x1024 512x512 384x384 192x192 180x180 152x152 112x112 56x56",
 			"type": "image/svg+xml",
 			"purpose": "any"
 		},
