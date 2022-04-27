@@ -16,7 +16,7 @@
 
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
-		color: #f1e6af;
+		color: #f1e7b2;
 	}
 
 	a:active {
