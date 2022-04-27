@@ -1,0 +1,5 @@
+<span itemprop="wordCount">{{ .WordCount }}</span> words
+{{- with .ReadingTime }},
+			a{{ if hasPrefix (string .) "8" }}n
+{{- end }}
+			<span itemprop="timeRequired" content="PT{{ . }}M">{{ . }} minute</span> read{{ end -}}
