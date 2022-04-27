@@ -516,8 +516,7 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
 <article aria-label="comic, caption, and transcript">
   <h4>Infinite scrolling</h4>
   <figure>
-    <img
-      src="SRC"
+    <img src="SRC"
       aria-describedby="transcript-xkcd-1309"
       alt="Comic: if books had infinite-scroll, we'd have to
            turn pages carefully or risk losing the page.">
@@ -1164,20 +1163,18 @@ Finally, it's important to distinguish <kbd> from <code>, <samp>, and regular bo
 
 Here's how I distinguish <code> and <samp>, <pre>, and <kbd> from each other and from body text.
 ```
-code,
-kbd,
-samp {
+code, kbd, samp {
   font-family: monospace, monospace;
 }
 
 pre,
-:not(pre) > code {
+:not(pre) > code, :not(pre) > samp {
   border: 1px solid;
 }
 
-/* A black border is too harsh. */
-:not(pre) > code {
-  border-color: #aaa;
+/* Dark borders in text are too harsh */
+:not(pre) > code, :not(pre) > samp {
+  border-color: #999;
 }
 
 kbd {

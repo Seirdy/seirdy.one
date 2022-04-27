@@ -563,8 +563,7 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
 <article aria-label="comic, caption, and transcript">
   <h4>Infinite scrolling</h4>
   <figure>
-    <img
-      src="SRC"
+    <img src="SRC"
       aria-describedby="transcript-xkcd-1309"
       alt="Comic: infinite-scrolling books require
            careful page-turns to avoid losing the page.">
@@ -990,7 +989,7 @@ Another example: outside the Web, I prefer indenting code with tabs instead of s
 Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
 
 <figure>
-{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.75 >}}
+{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.5 >}}
 <figcaption>
 
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
@@ -1125,21 +1124,19 @@ Finally, it's important to distinguish `<kbd>` from `<code>`, `<samp>`, and regu
 
 {{< codecaption lang="CSS" >}} How I distinguish `<code>` and `<samp>`, `<pre>`, and `<kbd>` from each other and from body text. {{< /codecaption >}}
 
-```figure
-code,
-kbd,
-samp {
+```figure {trans1="Dark borders in text are harsh",str1="code",str2="kbd",str3="samp",str4="pre"}
+code, kbd, samp {
   font-family: monospace, monospace;
 }
 
 pre,
-:not(pre) > code {
+:not(pre) > code, :not(pre) > samp {
   border: 1px solid;
 }
 
-/* A black border is too harsh. */
-:not(pre) > code {
-  border-color: #aaa;
+/* Dark borders in text are harsh */
+:not(pre) > code, :not(pre) > samp {
+  border-color: #999;
 }
 
 kbd {

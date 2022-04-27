@@ -6,7 +6,10 @@
 			{{- $after := printf `<var translate="yes">%s</var>` $v -}}
 			{{- $contents = $contents | replaceRE $v $after -}}
 		{{- else if strings.HasPrefix $k "str" -}}
-			{{- $after := printf `<strong translate="yes">%s</strong>` $v -}}
+			{{- $after := printf `<strong>%s</strong>` $v -}}
+			{{- $contents = $contents | replaceRE $v $after -}}
+		{{- else if strings.HasPrefix $k "trans" -}}
+			{{- $after := printf `<span translate="yes">%s</span>` $v -}}
 			{{- $contents = $contents | replaceRE $v $after -}}
 		{{- else if and (eq $k "samp")}}
 			{{- $samp = $v -}}
