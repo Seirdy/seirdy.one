@@ -1,0 +1,7 @@
+{{- $itemprop := "mentions" -}}
+{{- with .Get "itemprop" -}}
+	{{- $itemprop = . -}}
+{{- end -}}
+<figure itemprop="{{ $itemprop }}"{{ with .Get "id" }} id="{{ . }}"{{ end }} itemscope itemtype="https://schema.org/Quotation">
+{{ .Inner | markdownify }}
+</figure>

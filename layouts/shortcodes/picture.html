@@ -13,8 +13,8 @@
 {{- $img_width := $light_png.Width -}}
 {{- $img_height := $light_png.Height -}}
 {{- with (.Get "sf") -}}
-	{{- $img_width = (mul $img_width . ) -}}
-	{{- $img_height = (mul $img_height . ) -}}
+	{{- $img_width = (mul $img_width . | math.Round) -}}
+	{{- $img_height = (mul $img_height . | math.Round ) -}}
 	{{- if eq . 2 -}}
 		{{- $isPix = true -}}
 	{{- end -}}
