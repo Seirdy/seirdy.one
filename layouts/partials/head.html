@@ -1,15 +1,16 @@
 <head>
+{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 <meta charset="utf-8">
 <meta name="disabled-adaptations" content="watch"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ if or (eq site.BaseURL "https://seirdy.one/") (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
+{{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
 {{ end -}}
-<link href="https://seirdy.one{{ .RelPermalink }}" rel="canonical">
-<link href="https://seirdy.one/webmentions/receive" rel="webmention">
+<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical">
+<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention">
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link href="%s" rel="manifest">` $webmanifest.RelPermalink | safeHTML }}
 <link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
-<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne .RelPermalink "/") }} - Seirdy{{ end }}</title>
+<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
 <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 <meta name="author" content="{{ .Site.Author.name }}">
 <meta property="article:author" content="{{ .Site.Author.name }}">
@@ -46,7 +47,7 @@
 <style>{{ $css.Content | safeCSS }}</style>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ $.Site.Title }}">
-{{- if not (or (ne "page" .Kind) (eq .RelPermalink "/bookmarks.html") (eq .RelPermalink "/posts.html")) }}
+{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks.html") (eq $canonicalRelPermalink "/posts.html")) }}
 <meta property="og:type" content="article">
 {{- end -}}
 <!-- ANOTHER meta image?! When will it end? -->
@@ -55,7 +56,7 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:height" content="512"><meta property="og:image:width" content="512">
 <meta property="og:image:alt" content="White-on-black colon and semicolon">
-<meta property="og:url" content="https://seirdy.one{{ .RelPermalink }}">
+<meta property="og:url" content="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 <meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 {{ hugo.Generator }}
 </head>

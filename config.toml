@@ -1,4 +1,4 @@
-baseURL = "https://seirdy.one/"
+baseURL = "https://seirdy.one/" # just the default, I have mirrors
 languageCode = "en-us"
 title = "Seirdy's Home"
 
@@ -13,6 +13,8 @@ disableKinds = ["taxonomy", "term"]
 [params]
 description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
 src = "https://sr.ht/~seirdy/seirdy.one/"
+canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
+webmentionEndpoint = "https://seirdy.one/webmentions/receive"
 logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
 copyright = "Copyright © 2021 Rohan Kumar"
 dark = "auto"
