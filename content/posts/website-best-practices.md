@@ -704,7 +704,7 @@ Color palettes need to be effective for different types of vision deficiencies (
 
 Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.
 
-Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to lower the screen color temperature at night, while some individuals may select a higher one in the morning.
+Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
 In defense of link under&shy;lines {#in-defense-of-link-underlines}
 ----------------------------------
@@ -1249,7 +1249,7 @@ To force a screen reader to interpret the heading as one object, I wrapped the t
 {{< /quotecaption >}}
 {{</quotation>}}
 
-If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria">First Rule of ARIA</dfn>: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative.
+If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria">First Rule of ARIA</dfn>: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. Furthermore, `role="text"` isn't actually standard ARIA; its proposed inclusion into the ARIA specification was controversial. See [issue 870 of WAI-ARIA](https://github.com/w3c/aria/issues/870#issuecomment-589282781) for some problems with it.
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
@@ -1453,7 +1453,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^9]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve access&shy;ibility.
 
-[^10]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommends 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even lower limit of 80 characters.
+[^10]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommends 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters.
 
 [^11]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors independent of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 

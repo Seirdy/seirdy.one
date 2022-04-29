@@ -442,8 +442,6 @@ The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing 
 
 Remember that guidelines and "good practices" always have exceptions.
 
-=> gemini://seirdy.one/2020/11/23/website-best-practices.gmi An opinionated list of best practices for textual websites
-
 Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.
 
 On Gemini, much of this section applies to varying degrees. I typically employ this approach when linking to e.g. images. Sometimes, I even do this when linking to gemtext or HTML documents.
@@ -682,7 +680,7 @@ Color blindness manifests in complex ways. Testing in grayscale is a great start
 
 Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test with both high- and low-end displays, especially when designing a dark color scheme.
 
-Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to lower the screen color temperature at night, while some individuals may select a higher one in the morning.
+Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
 ## In defense of link underlines
 
@@ -1250,7 +1248,9 @@ If you're unfamiliar with ARIA, always remember the first rule of ARIA:
 
 => https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria No ARIA is better than Bad ARIA
 
-ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative.
+ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. Furthermore, `role="text"` isn't actually standard ARIA; its proposed inclusion into the ARIA specification was controversial. See issue 870 of WAI-ARIA for some problems with it:
+
+=> https://github.com/w3c/aria/issues/870#issuecomment-589282781 WAI-ARIA Issue 870: Consider early re-add of role=text
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
