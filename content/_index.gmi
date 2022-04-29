@@ -9,8 +9,8 @@ Canonical versions:
 => https://seirdy.one Canonical Web site
 
 Staging/rough-draft Tildeverse mirror:
-=> gemini://envs.net/~seirdy Tildeverse Gemini capsule
-=> https://envs.net/~seirdy Tildeverse Web site
+=> gemini://envs.net/~seirdy/ Tildeverse Gemini capsule
+=> https://envs.net/~seirdy/ Tildeverse Web site
 
 ## About me
 

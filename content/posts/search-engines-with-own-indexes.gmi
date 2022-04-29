@@ -256,7 +256,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 => https://www.vuhuv.com.tr/ Vuhuv
 => https://tr.vuhuv.com/ Yuhuv (alternate domain)
 => https://www.parsijoo.ir/  Parsijoo
-=> https://search.ch  search.ch
+=> https://www.search.ch  search.ch
 => https://www.fastbot.de/  fastbot
 
 * Moose.at: German (Austria-based)

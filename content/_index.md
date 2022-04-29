@@ -18,7 +18,7 @@ I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" c
 Other versions of this website
 ------------------------------
 
-In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
+In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/ "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
 
 About me
 --------

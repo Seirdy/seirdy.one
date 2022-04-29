@@ -11,10 +11,10 @@
 --
 ## Other versions of this website
 
-=> https://seirdy.one Canonical WWW version
-=> https://envs.net/%7Eseirdy Tildeverse "rough draft" WWW version
-=> gemini://seirdy.one Canonical Gemini space
-=> gemini://envs.net/%7Eseirdy Tildeverse "rough draft" Gemini space
+=> https://seirdy.one/ Canonical WWW version
+=> https://envs.net/%7Eseirdy/ Tildeverse "rough draft" WWW version
+=> gemini://seirdy.one/ Canonical Gemini capsule
+=> gemini://envs.net/%7Eseirdy/ Tildeverse "rough draft" Gemini capsule
 
 {{ .Site.Params.copyright }}
 => {{ .Site.Params.src }} Website source code

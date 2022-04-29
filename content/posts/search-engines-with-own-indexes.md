@@ -109,7 +109,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppen&shy;heimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 
-- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr>search.com](https://blog-search.com).
+- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr>search.com](https://www.blog-search.com).
 
 - [Infotiger](https://alpha.infotiger.com/): A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 
@@ -141,7 +141,7 @@ Results from these search engines don't seem at all useful.
 
 - [Active Search Results](https://www.activesearchresults.com): very poor quality
 
-- [Crawlson](https://crawlson.com): young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
+- [Crawlson](https://www.crawlson.com): young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 
 - [Anoox](https://www.anoox.com/): Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 
@@ -221,7 +221,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [Vuhuv](https://www.vuhuv.com.tr/): Turkish. [alt domain](https://tr.vuhuv.com/)
 - [Parsijoo](https://www.parsijoo.ir/): Persian
-- [search.ch](https://search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
+- [search.ch](https://www.search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
 - [fastbot](https://www.fastbot.de/): German
 - [Moose.at](https://www.moose.at): German (Austria-based)
 - [SOLOFIELD](https://solofield.net): Japanese
