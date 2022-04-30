@@ -96,16 +96,26 @@ h1 {
 	}
 }
 
+/* Compensate for misalignment caused by a padding increase. */
+header nav,
+footer nav {
+	margin-left: -.25em;
+}
+
+/* Increase nav link tap target size a bit */
+header nav li a,
+footer nav li a {
+	/* inline-end doesn't work in netsurf. -right should stil make sense
+	 * in RTL machine translation, it'll just look a bit indented. */
+	padding: .25em;
+}
+
 /* single-line nav on widescreen and print.
  * Single-line nav on print saves almost half a page. */
 @media print, (min-width: 32em) {
 	header nav li,
 	footer nav li {
 		display: inline;
-
-		/* inline-end doesn't work in netsurf. -right should stil make sense
-		 * in RTL machine translation, it'll just look a bit indented. */
-		padding-right: .5em;
 	}
 }
 
