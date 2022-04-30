@@ -6,7 +6,7 @@ This is a "living document" that I add to as I receive feedback.
 
 This is also a somewhat long read; for a summary, skip everything between the table of contents and the conclusion.
 
-I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have *some* useful information for any web content author or front-end web developer.
+I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have at least some useful information for any web content author or front-end web developer.
 
 My primary focus is inclusive design:
 
@@ -78,7 +78,7 @@ sandbox allow-same-origin
 
 => https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox "sandbox" CSP directive on MDN
 
-While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser add-on).¹ I added the "allow-same-origin" parameter so that these add-ons will still be able to function.²
+While "script-src" restricts script loading, "sandbox" can also restrict script execution with stronger defenses against script injection (e.g. by a browser add-on).¹ I added the "allow-same-origin" parameter so that signed scripts (e.g. from add-ons) will still be able to function.²
 
 If you're able to control your HTTP headers, then use headers instead of a <meta http=equiv> tag. In addition to not supporting certain directives, a CSP in a <meta> tag might let some items slip through:
 
@@ -102,7 +102,7 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 
 Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-party content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user.
 
-Some web developers deliver resources using a third-party content delivery network (CDN), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browsers engines now partition their caches to prevent this behavior:
+Some web developers deliver resources using a third-party content delivery network (CDN), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browser engines now partition their caches to prevent this behavior:
 
 => https://privacycg.github.io/storage-partitioning/
 
@@ -146,7 +146,9 @@ Furthermore: a high number of cached resources can decrease performance of the c
 
 => https://simonhearne.com/2020/network-faster-than-cache When Network is Faster than Cache
 
-The effect is especially pronounced on low-end phones and mechanical hard drives.
+The effect is especially pronounced on low-end phones and mechanical hard drives. Firefox calls this feature "Race Cache With Network":
+
+=> https://bugzilla.mozilla.org/show_bug.cgi?id=1358038 Bug 1358038: Add "Race Cache With Network" status to netmonitor
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs. You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
@@ -348,7 +350,7 @@ Using containment for content at the end of the page is relatively safe. Using i
 
 In-page search (e.g., using "Ctrl + f") has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
-Searchability is a good reason to reason to prefer conveying information textually, when possible: video (especially without accurate captions), pictures of text, etc. aren't so easily searchable.
+Searchability is a good reason to prefer conveying information textually, when possible: video (especially without accurate captions), pictures of text, etc. aren't so easily searchable.
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in the "other ways to defer content" section.
 
@@ -582,7 +584,7 @@ The Web version of this page is an example application of Technique C25 and the 
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode (WHCM) is perhaps the best example. WHCM makes advanced modifications to color palettes: it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides. Since WHCM sets colors independent of explicitly-defined ARIA roles, it's a good way to test adherence to the First Rule of ARIA (see the "Split elements and posessive hyperlinks" sub-section of the "Screenreader improvements" section).
+Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode (WHCM) is perhaps the best example. WHCM makes advanced modifications to color palettes: it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides. Since WHCM sets colors independently of explicitly-defined ARIA roles, it's a good way to test adherence to the First Rule of ARIA (see the "Split elements and posessive hyperlinks" sub-section of the "Screenreader improvements" section).
 
 > Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.
 > It’s not about design but readability.
@@ -649,13 +651,19 @@ If you use JavaScript: avoid setting colors, especially dark-mode colors, using 
 
 ### Contrast is complex
 
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Advanced Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences.
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences. I recommend using the web app.
 
-=> https://www.myndex.com/APCA/simple Online ACPA Contrast Calculator
+=> https://www.myndex.com/APCA/ Online ACPA Contrast Calculator
+
+The APCA takes several factors into account:
+
+* The human retina has few blue-sensitive cone cells, so blue appears "darker" than green and red. Yellow appears brightest.
+* Small, thin fonts are difficult to see and require greater contrast.
+* It's possible to have too much contrast, especially for large/bold text (note that the APCA version built into Chromium does not yet take this into account).
 
 Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages that need to comply with the WCAG should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
 
 => https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
 
@@ -726,7 +734,7 @@ For lossy compression, I typically use GNU Parallel to mass-generate images usin
 
 => https://squoosh.app Squoosh
 
-You also might want to use the HTML <picture> element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings are more significant than a couple hundred bytes.
+You also might want to use the HTML <picture> element, using JPEG/PNG as a fallback for more efficient formats such as WebP or AVIF, but only if the size savings (or quality improvements at a similar size) are significant.
 
 => https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture <picture> docs on MDN
 
@@ -980,6 +988,8 @@ Images do not reflow their text. When the viewport is narrower than the image di
 I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
 
 The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section.
+
+If the text needs to be readable, check its contrast; see the prior "contrast is complex" section. At large sizes, the contrast shouldn't be too high; at small sizes, it shouldn't be too low.
 
 ### Indented elements
 
