@@ -2,7 +2,7 @@
 <html lang={{- default "" .Site.LanguageCode }} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# cc: http://creativecommons.org/ns#">
 {{ partial "head.html" . -}}
 <body itemscope itemtype="https://schema.org/Blog https://schema.org/WebPage">
-{{ partialCached "header.html" . .Section -}}
+{{ partial "header.html" . -}}
 {{- block "main" . }}{{- end -}}
 {{ partialCached "footer.html" . }}
 </body>
