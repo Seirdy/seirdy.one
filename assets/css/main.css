@@ -67,7 +67,6 @@ blockquote {
 dd,
 ol,
 ul {
-	margin: .5em 0 0 0;
 	padding-left: 1.5em;
 }
 
@@ -105,12 +104,22 @@ footer nav {
 	margin: -.375em;
 }
 
+nav li {
+	line-height: 2;
+}
+
+/* Increase nav link tap target size a bit */
+nav li a,
+nav li a {
+	padding: .125em;
+}
+
 /* Save some space and paper by making the nav single-line, but bump
  * up the line-height to increase space between tap-targets (a11y) */
 header nav li,
 footer nav li {
+	margin: .25em;
 	display: inline;
-	line-height: 2.125;
 }
 
 /* Lists without bullets: navlinks, posts lists, webmentions.
@@ -125,13 +134,6 @@ footer nav li {
 	list-style-type: none;
 }
 
-
-/* Increase nav link tap target size a bit */
-header nav li a,
-footer nav li a {
-	margin: .25em;
-	padding: .125em;
-}
 
 /* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed */
