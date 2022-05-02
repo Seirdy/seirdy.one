@@ -1,5 +1,5 @@
 {{- $isStandalone := false -}}
-{{- if ne .Permalink .Site.BaseURL -}}
+{{- if and (ne .Permalink .Site.BaseURL) (ne .RelPermalink "/") -}}
 	{{- $isStandalone = true -}}
 {{- end -}}
 <section class="h-feed hfeed" itemscope itemtype="https://schema.org/{{ if $isStandalone }}Complete{{ end }}DataFeed">
