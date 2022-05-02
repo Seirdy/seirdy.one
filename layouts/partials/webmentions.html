@@ -28,7 +28,7 @@
 						{{- if $webmention.title -}}
 							{{- $webmention.title | truncate 200 -}}
 						{{- else -}}
-							{{- $webmention.source | truncate 35 -}}
+							{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
 						{{- end -}}
 					</span></a>
 					{{- if $webmention.author_name }}
