@@ -20,8 +20,8 @@ html {
 		/* Default font sizes are one-size-fits-all; they're optimized for a
 		 * wide variety of complex pages. For single-column websites like
 		 * mine, it's ideal to bump it up ever so slightly. This also makes
-		 * <sup>, <sub>, <small>, etc. large enough to have decent contrast with
-		 * minimal adjustment.
+		 * <sup>, <sub>, <small>, etc. large enough to have decent contrast
+		 * with minimal adjustment.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
 		font-size: 105%;
@@ -32,7 +32,7 @@ html {
 
 		/* WCAG recommends a max line width. Not everyone can resize the
 		 * viewport.
-		 * 45em is the lowest reasonable width for titles, nav, footers, etc */
+		 * 45em = lowest acceptable width for titles, nav, footers, etc */
 		max-width: 45em;
 		padding: 0 3%;
 	}
@@ -61,7 +61,7 @@ blockquote {
 	padding-left: .8em;
 }
 
-/* narrow screens: reduce list indentation
+/* narrow screens: reduce list indentation, hyphenate nested lists
  * touch screens: lists of links should be
  * easy to tap so give them some spacing. */
 dd,
@@ -96,36 +96,34 @@ h1 {
 }
 
 /* Compensate for misalignment caused by a padding increase. */
-header nav {
-	margin-left: -.375em;
-}
-
+header nav,
 footer nav {
 	margin: -.375em;
+}
+
+/* Increase nav link tap target size a bit */
+nav a {
+	padding: .125em;
+}
+
+/* Save some space and paper by making the site nav and footer
+ * links single-line, but bump up the line-height to increase
+ * space between tap-targets (a11y) */
+header li,
+footer li {
+	display: inline-block;
+	margin: .25em;
 }
 
 nav li {
 	line-height: 2;
 }
 
-/* Increase nav link tap target size a bit */
-nav li a,
-nav li a {
-	padding: .125em;
-}
-
-/* Save some space and paper by making the nav single-line, but bump
- * up the line-height to increase space between tap-targets (a11y) */
-header nav li,
-footer nav li {
-	margin: .25em;
-	display: inline;
-}
-
 /* Lists without bullets: navlinks, posts lists, webmentions.
- * Those three are lists whose items are already easily distinguishable,
- * rendering bullet points as unnecessary extra visual noise. Pretty
- * much the only purely-aesthetic change in this CSS file. */
+ * Those three are lists whose items are already easily
+ * distinguishable, rendering bullet points as unnecessary extra
+ * visual noise. Pretty much the only purely-aesthetic change in this
+ * CSS file. */
 .unstyled-list {
 	padding: 0;
 }
@@ -219,6 +217,7 @@ img:not(.u-photo) {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
+section[aria-labelledby="webmentions"],
 div[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;

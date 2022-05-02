@@ -4,9 +4,11 @@
     "@hint/hint-doctype": "^3.3.10",
     "@hint/hint-https-only": "^2.4.10",
     "@hint/hint-performance-budget": "^2.4.10",
-    "@lhci/cli": "^0.8.0",
     "hint": "^6.1.4",
-    "stylelint": "^14.6.1",
+    "stylelint": "^14.8.1",
     "stylelint-config-standard": "^25.0.0"
+  },
+  "dependencies": {
+    "stylelint-config-recommended": "^7.0.0"
   }
 }

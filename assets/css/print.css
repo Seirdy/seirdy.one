@@ -6,7 +6,7 @@
 	span[aria-hidden],
   /* You can't navigate in a printout. */
 	footer nav,
-	header nav li a:not([aria-current]) {
+	header nav a:not([rel="home"]) span {
 		display: none;
 	}
 }
