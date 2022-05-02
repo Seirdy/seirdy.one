@@ -5,7 +5,8 @@
 	/* Currently only used for anchors */
 	span[aria-hidden],
   /* You can't navigate in a printout. */
-	footer nav {
+	footer nav,
+	header nav li a:not([aria-current]) {
 		display: none;
 	}
 }
@@ -19,6 +20,6 @@ h4 {
 
 figure,
 article article,
-div[role="doc-endnotes"] ol li {
+li {
 	break-inside: avoid;
 }

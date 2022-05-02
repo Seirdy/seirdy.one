@@ -890,18 +890,6 @@ Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a po
 
 Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, layout shifts dramatic enough to cause confusion, and making requests based on media queries that reveal fingerprintable information.
 
-{{<codefigure>}} {{< codecaption lang="CSS" >}} the only responsive layout change on [my website](https://seirdy.one/) is a single CSS declaration to switch between inline and multi-line navigation links at the beginning of the page.{{< /codecaption >}}
-
-```figure
-@media print, (min-width: 32rem) {
-  header nav li {
-    display: inline;
-  }
-}
-```
-
-{{</codefigure>}}
-
 ### Sidebar pitfalls
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
@@ -1482,7 +1470,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
-    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 12</strong>:
+    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
         Firefox prefs to turn off JIT compilation
         </figcaption>
 

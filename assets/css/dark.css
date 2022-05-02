@@ -19,12 +19,12 @@
 		color: #f1e7b2;
 	}
 
-	a:active {
-		color: #b93;
-	}
-
 	a:visited {
 		color: #fdf;
+	}
+
+	a:active {
+		color: #b93;
 	}
 
 	/* stylelint-disable -- hasn't heard of "prefers-contrast" yet */

@@ -415,14 +415,6 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations⁴ (e.g. borders), but they are uncommon.
-
-Set font size and line-spacing with a percentage and a unitless value, respectively:
-
-```
-font: 100%/1.5 sans-serif;
-```
-
 ## Beyond alt-text
 
 Expect some readers to have images disabled or unloaded. Examples include:
@@ -876,15 +868,7 @@ Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a po
 => https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
 
 
-Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, layout shifts dramatic enough to cause confusion, and making requests based on media queries that reveal fingerprintable information. For example, the only responsive layout change on my website (https://seirdy.one) is a single CSS declaration to switch between inline and multi-line navigation links at the beginning of the page:
-
-```
-@media print, (min-width: 32rem) {
-  header nav li {
-    display: inline;
-  }
-}
-```
+Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, layout shifts dramatic enough to cause confusion, and making requests based on media queries that reveal fingerprintable information.
 
 ### What about sidebars?
 
