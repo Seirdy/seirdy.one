@@ -96,7 +96,7 @@ If you're able to control your HTTP headers, then use headers instead of a `<met
 	the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
 	element with an <code>http-equiv</code> attribute in the Content security policy state.
 	Resources that have already been fetched are not guaranteed to be blocked by a Content
-		Security Policy that's <a href="https://w3c.github.io/webappsec-csp/#enforced">enforced</a> late.
+	Security Policy that's enforced late.
 	</p>
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
@@ -117,7 +117,7 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 
 Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-party content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user. Avoid third-party content, if at all possible.
 
-Some web developers deliver resources using a third-party content delivery network (<abbr title="content delivery network">CDN</abbr>), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browser engines now [partition their caches](https://privacycg.github.io/storage-partitioning/) to prevent this behavior.
+Some web developers deliver resources using a third-party content delivery network (<abbr title="content delivery network">CDN</abbr>), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, [mainstream browsers partition their caches](https://privacycg.github.io/storage-partitioning/) to prevent this behavior.
 
 If you must use third-party content, use [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (check the [<abbr title="Subresource Integrity">SRI</abbr> specification](https://www.w3.org/TR/SRI/)). This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
 
@@ -152,7 +152,7 @@ The browser cache is a valuable tool to save bandwidth and improve page speed, b
 
 Out of privacy concerns, most browsers no longer re-use cached content across sites; refer back to the [section on third-party content](#third-party-content) for more details. Privacy-conscious users (including all users using "private" or "incognito" sessions) will likely have their caches wiped between sessions.
 
-Requesting a high number of cached resources can decrease performance of the cache, causing browsers to [bypass the cache](https://simonhearne.com/2020/network-faster-than-cache/). The effect is especially pronounced on low-end phones and mechanical hard drives. Firefox calls this feature "Race Cache With Network", documented in [Bug 1358038](https://bugzilla.mozilla.org/show_bug.cgi?id=1358038).
+Requesting a high number of cached resources can decrease performance of the cache, causing browsers to [bypass the cache](https://simonhearne.com/2020/network-faster-than-cache/). The effect is especially pronounced on low-end phones and mechanical hard drives. Firefox calls this feature "Race Cache With Network", documented in [Mozilla Bug 1358038](https://bugzilla.mozilla.org/show_bug.cgi?id=1358038).
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your `cache-control` headers, and cache-bust modified assets by changing their URLs. You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
@@ -214,7 +214,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^5] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice [to avoid third-party content](#third-party-content).
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^5] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took [my advice to avoid third-party content](#third-party-content).
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -241,7 +241,9 @@ The Tor Browser
 
 Many people use Tor out of necessity. On Tor, additional constraints apply.
 
-For one, Tor users are encouraged to set the Tor Browser Bundle's (<abbr title="Tor Browser Bundle">TBB</abbr>) [security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, some fonts, SVG images, and [other features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+### Constraints of the Tor Browser
+
+Tor users are encouraged to set the Tor Browser's  [security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, some fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
@@ -521,7 +523,7 @@ I personally try to maintain the flow of an article even if its figures and capt
 	it by its caption (e.g., by figure number), it enables such content to be easily moved away from
 	that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix,
 	without affecting the flow of the document.</p>
-	<p>If a <code>figure</code> element is <a href="https://html.spec.whatwg.org/multipage/dom.html#referenced">referenced</a> by its relative position, e.g.,
+	<p>If a <code>figure</code> element is referenced by its relative position, e.g.,
 	"in the photograph above" or "as the next figure shows", then moving the figure would disrupt the
 	page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than
 	using such relative references, so that the page can easily be restyled without affecting the
@@ -598,9 +600,9 @@ Always remember that any color palette you define in your stylesheets is merely 
 
 Some users' browsers set default page colors that aren't black-on-white. For instance, Linux users who enable GTK style overrides might default to having white text on a dark background. Websites that explicitly set foreground colors but leave the default background color (or vice-versa) end up being difficult to read. The same phenomenon occurs on pages with text foregrounds with image backgrounds.
 
-A second opinion: <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{< indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/"  itemprop="author" >}} describes this in more detail in {{<cited-work name="AWebColoursProblem" url="https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem" extraName="headline">}}</span>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
+A second opinion: <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{< indieweb-person first-name="Chris" last-name="Siebenmann" url="https://utcc.utoronto.ca/~cks/"  itemprop="author" >}} describes this in more detail in {{<cited-work name="A Web Colours Problem" url="https://utcc.utoronto.ca/~cks/space/blog/web/AWebColoursProblem" extraName="headline">}}</span>. In short: when setting colors, always set both the foreground and the background color. Don't set just one of the two.
 
-Chris also describes the importance of visited link colors in <cite>[VisitedLinks<wbr>Usability](https://utcc.utoronto.ca/~cks/space/blog/web/VisitedLinksUsability)</cite>.
+Chris also describes the importance of visited link colors in <cite>[Visited Links Usability](https://utcc.utoronto.ca/~cks/space/blog/web/VisitedLinksUsability)</cite>.
 
 {{< transcribed-image type="screenshot" id="better-mf-website" >}}
 
@@ -666,7 +668,7 @@ If you include a `theme-color` directive in your document `<head>`, then recent 
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) evidence to support this.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
 
 <figure>
 <figcaption>
@@ -687,7 +689,7 @@ I personally like a foreground and background of `#eee` and `#0e0e0e`, respectiv
 
 Color is a nuanced topic that deserves more attention than current guidelines give.
 
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (<abbr title="Accessible Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online checker](https://www.myndex.com/APCA/) (requires JavaScript) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). I recommend using the web app.
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (<abbr title="Accessible Perceptual Contrast Algorithm">APCA</abbr>) values. You can do so in an [online APCA checker](https://www.myndex.com/APCA/) (requires JavaScript) or Chromium's developer tools (you might have to enable them in a menu for experimental preferences). I recommend using the web app.
 
 The APCA takes several factors into account:
 
@@ -870,11 +872,13 @@ Remember that not all landmarks are announced by screen readers; for instance, m
 
 If this isn't possible, consider adding a "skip link" or two. Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners still benefit from a skip-link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
 
-If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content; see [the "Layout shifts" section](#layout-shifts) for more details. If it appears over existing content, it needs to have a solid background; if you set the background color, [set a foreground color too](#about-custom-colors).
+If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content; see [the "Layout shifts" section](#layout-shifts) for more details. If it appears over existing content, it needs to have a solid background; if you set the background color, set a foreground color too as described in [the "About custom colors" section](#about-custom-colors).
 
 ### Friendly navigation
 
 Users of <abbr title="assistive technology">AT</abbr>s such as screen readers primarily navigate through landmarks, headings, and paragraphs. Sometimes they also navigate between links. Headings and link names need to be unique and descriptive enough to serve as navigational aids; paragraphs shouldn't be too long.
+
+Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
 Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^14] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
@@ -926,7 +930,7 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
     padding: 0 3%;
   }
 
-  .e-content {
+  div[itemprop="articleBody"] {
     margin: auto;
     max-width: 38em;
   }
@@ -977,7 +981,7 @@ I already covered the first option in the prior subsection. If you expect viewer
 
 The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good example, see the "[In defense of link underlines](#in-defense-of-link-underlines)" section.
 
-If the text needs to be readable, [check its contrast](#contrast-is-complex). At large sizes, the contrast shouldn't be too high; at small sizes, it shouldn't be too low.
+If the text needs to be readable, [check its APCA levels](#contrast-is-complex). At large sizes, the contrast shouldn't be too high; at small sizes, it shouldn't be too low.
 
 ### Indented elements
 
@@ -1106,8 +1110,8 @@ Consider the implications of translating between left-to-right (LTR) and right-t
 
 Websites following this page's layout advice shouldn't need much adjustment. <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="’s" itemprop="author">}} {{<cited-work name="RTL Styling 101" url="https://rtlstyling.com/posts/rtl-styling/" extraName="headline">}}</span> is a comprehensive guide to what can go wrong and how to fix issues.
 
-In&shy;accessible default style&shy;sheets {#inaccessible-default-stylesheets}
-------------------------------------------
+In&shy;access&shy;ible default style&shy;sheets {#inaccessible-default-stylesheets}
+-----------------------------------------------
 
 Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
 
@@ -1281,31 +1285,58 @@ If your site is simple enough, it should automatically handle the vast majority 
 
 No matter how simple a page is, I don't think simplicity eliminates the need for testing. I outlined the need to analyze actual run-time behavior in [another post exploring how code alone doesn't give the full picture](https://seirdy.one/2022/02/02/floss-security.html).
 
+### Automated tests
+
+Automated tests--especially accessibility tests--are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
+
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.
+
+1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've recommended elsewhere on this page. Watch out for false positives.
+
+2. [axe-core](https://github.com/dequelabs/axe-core): The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
+
+3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
+
+4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively[^17].
+
+5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core.
+
+6. [AInspec&shy;tor](https://ainspector.disability.illinois.edu/): a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
+
+7. [Firefox's Access&shy;ibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues): supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. The keyboard audits have false-positives on non-interactive horizontally-scrollable elements, which need to be focusable.
+
+8. [Chrom&shy;ium's CSS Overview](https://developer.chrome.com/docs/devtools/css-overview/): can show some basic accessibility violations, including contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
+
+9. [testssl.sh (cli)](https://testssl.sh/) or [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/): basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
+
+10. [Webbkoll](https://webbkoll.dataskydd.net/): basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Ob&shy;servatory.
+
+### Un&shy;orthodox tests {#unorthodox-tests}
+
 In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't work well in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
 
 Your page should easily pass the harshest of tests without any extra effort if its HTML meets basic standards for well-written code (overlooking bad formatting and a lack of comments). Even if you use a complex static site generator, the final HTML should be simple, readable, and semantic.
 
-### Sample un&shy;orthodox tests {#sample-unorthodox-tests}
-
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^17]
-2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
-3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
-4. Print out the site in black-and-white, preferably with a simple laser printer.
-5. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
-6. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
-7. Test keyboard navigability with the <kbd>Tab</kbd> key and [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
-8. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
-9. Test in an online website translator tool.
-10. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
-12. Try printing out your page in black-and-white from an unorthodox graphical browser.
-13. Download your webpage and test how multiple word processors render and generate PDFs from it.[^18]
-14. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
-15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+1. Test in all three major browser engines: Blink, Gecko, and WebKit.
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^18]
+3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
+4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
+5. Print some pages in black-and-white, preferably with a simple laser printer.
+6. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
+7. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
+8. Test keyboard navigability with the <kbd>Tab</kbd> key and [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
+9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
+10. Test in an online website translator tool.
+11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+12. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
+13. Try printing out your page in black-and-white from an unorthodox graphical browser.
+14. Download your webpage and test how multiple word processors render and generate PDFs from it.[^19]
+15. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+16. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
-I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+I'm still on step 15, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
 <figure>
 {{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 7\"." sf=2 >}}
@@ -1440,7 +1471,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimi&shy;zations. Real bottlenecks lie elsewhere.
 
-[^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same reasons are [outlined here](https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/) in the "Accessibility concerns for infinite scroll" section.
+[^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same issues with infinte scroll are outlined in the "Accessibility concerns for infinite scroll" section of <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work url="https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/" name="Infinite Scroll without Layout Shifts" extraName="headline">}} by {{<indieweb-person itemprop="author" first-name="Addy" last-name="Osmani" url="https://addyosmani.com/">}}</span>.
 
 [^7]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
 
@@ -1466,7 +1497,9 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^16]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^17]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
+[^17]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its content-type recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+
+[^18]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1482,7 +1515,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^18]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^19]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
     Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 

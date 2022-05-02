@@ -102,7 +102,7 @@ Finally, consider using your CSP to restrict script loading. If you must use inl
 
 Third-party content will complicate the CSP, allow more actors to track users, possibly slow page loading, and create more points of failure. Some privacy-conscious users actually block third-party content: while doing so is fingerprintable, it can reduce the amount of data collected about an already-identified user.
 
-Some web developers deliver resources using a third-party content delivery network (CDN), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, all mainstream browser engines now partition their caches to prevent this behavior:
+Some web developers deliver resources using a third-party content delivery network (CDN), such as jsDelivr or Unpkg. Traditional wisdom held that doing so would allow different websites to re-use cached resources; however, mainstream browsers partition their caches to prevent this behavior:
 
 => https://privacycg.github.io/storage-partitioning/
 
@@ -148,7 +148,7 @@ Furthermore: a high number of cached resources can decrease performance of the c
 
 The effect is especially pronounced on low-end phones and mechanical hard drives. Firefox calls this feature "Race Cache With Network":
 
-=> https://bugzilla.mozilla.org/show_bug.cgi?id=1358038 Bug 1358038: Add "Race Cache With Network" status to netmonitor
+=> https://bugzilla.mozilla.org/show_bug.cgi?id=1358038 Mozilla Bug 1358038: Add "Race Cache With Network" status to netmonitor
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs. You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
@@ -235,11 +235,13 @@ Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it 
 
 Many people use Tor out of necessity. On Tor, additional constraints apply.
 
-For one, Tor users are encouraged to set the Tor Browser Bundle's (TBB) security settings to "safest".
+## Constrainsts of the Tor Browser
+
+Tor users are encouraged to set the Tor Browser's (TBB) security settings to "safest".
 
 => https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
 
-This disables scripts, MathML, some fonts, SVG images, and other features:
+This disables scripts, MathML, some fonts, SVG images, and other unsafe Firefox features:
 
 => https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
 
@@ -643,7 +645,7 @@ If you use JavaScript: avoid setting colors, especially dark-mode colors, using 
 
 ### Contrast is complex
 
-When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (APCA) values. You can do so in an online checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences. I recommend using the web app.
+When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (APCA) values. You can do so in an online APCA checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences. I recommend using the web app.
 
 => https://www.myndex.com/APCA/ Online ACPA Contrast Calculator
 
@@ -852,6 +854,8 @@ If your skip link toggles visibility states when focused, ensure that it doesn't
 
 Users of ATs such as screen readers primarily navigate through landmarks, headings, and paragraphs. Sometimes they also navigate between links. Headings and link names need to be unique and descriptive enough to serve as navigational aids; paragraphs shouldn't be too long.
 
+Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
+
 Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists; AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices. When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
 ### Arbitrary viewports
@@ -973,7 +977,7 @@ I already covered the first option in the prior subsection. If you expect viewer
 
 The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section.
 
-If the text needs to be readable, check its contrast; see the prior "contrast is complex" section. At large sizes, the contrast shouldn't be too high; at small sizes, it shouldn't be too low.
+If the text needs to be readable, check its APCA levels; see the prior "contrast is complex" section. At large sizes, the contrast shouldn't be too high; at small sizes, it shouldn't be too low.
 
 ### Indented elements
 
@@ -1274,33 +1278,71 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 => gemini://seirdy.one/2022/02/02/floss-security.gmi The right thing for the wrong reasons: FLOSS doesn't imply security
 
+### Automated tests
+
+Automated tests--especially accessibility tests--are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
+
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.
+
+1. Nu HTML checker: The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've recommended elsewhere on this page. Watch out for false positives.
+=> https://validator.nu/ Nu HTML checker
+
+2. axe-core: The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
+=> https://github.com/dequelabs/axe-core axe-core repository
+
+3. Lighthouse: An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Accessibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
+=> https://developers.google.com/web/tools/lighthouse/ Lighthouse documentation
+
+4. Webhint: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively (you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document).
+=> https://webhint.io/ webhint website
+
+5. IBM Equal Access Accessibility Checker: Has a scope similar to axe-core.
+=> https://www.ibm.com/able/toolkit/verify/automated/ IBM automated accessibility tools
+
+6. AInspector: a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
+=> https://ainspector.disability.illinois.edu/ AInspector website
+
+7. Firefox's Accessibility Inspector: supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. Horizontally-scrollable elements may only become interactive on narrow viewports, so I recommend running the keyboard audits after reducing the viewport width.
+=> https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues Firefox Accessibility Inspector documentation
+
+8. Chromium's CSS Overview: can show contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
+=> https://developer.chrome.com/docs/devtools/css-overview/ CSS Overview documentation
+
+9. testssl.sh (cli) or SSL Labs' SSL Server Test (web, proprietary): basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
+=> https://testssl.sh/ testssl.sh
+=> https://www.ssllabs.com/ssltest/ Qualys SSL Labs' SSL Server Test
+
+10. Webbkoll: basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Observatory.
+=> https://webbkoll.dataskydd.net/ Webbkoll
+
+### Unorthodox tests
+
 In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't work well in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.
 
 Your page should easily pass the harshest of tests without any extra effort if its HTML meets basic standards for well-written code (overlooking bad formatting and a lack of comments). Even if you use a complex static site generator, the final HTML should be simple, readable, and semantic.
 
-### Sample unorthodox tests
-
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
-1. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹⁰
-2. Test using the Tor Browser's safest security level enabled (disables JS and other features).
-3. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
-4. Print out the site in black-and-white, preferably with a simple laser printer.
-5. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
-6. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
-7. Test keyboard navigability with the tab key and caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
-8. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
-9. Test in an online website translator tool.
-10. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-11. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
-12. Try printing out your page in black-and-white from an unorthodox graphical browser.
-13. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
-14. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
-15. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
+1. Test in all three major browser engines: Blink, Gecko, and WebKit.
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹⁰
+3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
+4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
+5. Print some pages in black-and-white, preferably with a simple laser printer.
+6. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
+7. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
+8. Test keyboard navigability with the tab key and caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
+9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
+10. Test in an online website translator tool.
+11. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+12. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
+13. Try printing out your page in black-and-white from an unorthodox graphical browser.
+14. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
+15. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+16. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
 => https://xkcd.com/567/ xkcd: Urgent Mission
 
-I'm still on step 14, trying to find new ways to break this page. If you come up with a new test, please share it:
+I'm still on step 15, trying to find new ways to break this page. If you come up with a new test, please share it:
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 
