@@ -9,6 +9,12 @@
 	header nav a:not([rel="home"]) span {
 		display: none;
 	}
+
+	/* unerlines in TOC get in the way. */
+	nav[role="doc-toc"] a {
+		text-decoration: none;
+	}
+
 }
 
 /* Print: don't orphan headings */

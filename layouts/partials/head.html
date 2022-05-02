@@ -30,9 +30,8 @@
 {{ $favicon := resources.Get "/favicon.png" -}}
 {{ $favicon_base64 := $favicon.Content | base64Encode }}
 {{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png">` $favicon_base64 | safeHTML -}}
-<!-- Why does apple do this -->
 <meta name="color-scheme" content="light dark">
-<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="telephone=no"><!-- Why does apple do this -->
 <meta name="theme-color" content="#0f0f0b" media="(prefers-color-scheme:dark)">
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)">
 <!-- inline CSS; remember to allow it with a hash in the CSP -->

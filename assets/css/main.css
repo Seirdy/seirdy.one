@@ -42,6 +42,22 @@ html {
 		margin: auto;
 		max-width: 38em;
 	}
+
+	/* Compensate for misalignment caused by a padding increase. */
+	header nav,
+	footer nav {
+		margin: -.375em;
+	}
+
+	/* Increase nav link tap target size a bit */
+	nav a {
+		padding: .125em;
+	}
+
+
+	nav li {
+		line-height: 2;
+	}
 }
 
 /* Small text is easier to read when slightly bolder.
@@ -95,17 +111,6 @@ h1 {
 	}
 }
 
-/* Compensate for misalignment caused by a padding increase. */
-header nav,
-footer nav {
-	margin: -.375em;
-}
-
-/* Increase nav link tap target size a bit */
-nav a {
-	padding: .125em;
-}
-
 /* Save some space and paper by making the site nav and footer
  * links single-line, but bump up the line-height to increase
  * space between tap-targets (a11y) */
@@ -115,9 +120,6 @@ footer li {
 	margin: .25em;
 }
 
-nav li {
-	line-height: 2;
-}
 
 /* Lists without bullets: navlinks, posts lists, webmentions.
  * Those three are lists whose items are already easily
