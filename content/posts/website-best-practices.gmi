@@ -16,7 +16,9 @@ Specifically, I focus on supporting *under-represented ways to read a page*. Not
 
 One of the core ideas behind the flavor of inclusive design I present is being *inclusive by default.* Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
-Another focus is minimalism. Progressive enhancement is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. In addition to progressive enhancement, I prefer limiting any enhancements to ones that are demonstrated to solve specific accessibility, security, performance, or significant usability problems faced by people besides me.
+Another focus is minimalism. Progressive enhancement is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
+
+Restricted enhancement limits all enhancements to those that solve specific accessibility, security, performance, or significant usability problems faced by people besides the author. These enhancements must be made progressively when possible, with a preference for using older or more widespread features, taking into account unorthodox user-agents. Purely-cosmetic changes should be kept to a minimum.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and address the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
@@ -25,6 +27,8 @@ I'll cite the Web Accessibility Initiative's (WAI) "Techniques for WCAG 2.2" a n
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
 Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+
+Our goal: make a textual website maximally inclusive, using restricted enhancement.
 
 ## Security and privacy
 
@@ -1391,6 +1395,7 @@ There are tons of ways to read a page; authors typically cater only to the mains
 * the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
 * Disabling JavaScript (overlaps with the Tor Browser)
 * Non-default color palettes
+* Forced color palettes
 * Aggressive content blocking (e.g. blocking all third-party content, frames, images, and cookies)
 * User-selected custom fonts
 * Stylesheet removal, alteration, or replacement

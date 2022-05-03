@@ -15,7 +15,7 @@ sitemap:
     ChangeFreq: daily
     Priority: 0.7
 featured: true
-title: An opinionated list of best practices for textual websites
+title: Best practices for inclusive textual websites
 ---
 <div role="doc-preface">
 
@@ -23,7 +23,7 @@ The following applies to minimal websites that focus primarily on text. It does 
 
 This is a "living document" that I add to as I receive feedback. See the updated date and changelog after the post title.
 
-<p role="doc-tip">If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.<p role="doc-tip">
+<p role="doc-tip">If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.</p>
 
 </div>
 
@@ -40,11 +40,15 @@ My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/acco
 
 One of the core ideas behind the flavor of inclusive design I present is being _inclusive by default._ Web pages shouldn't use accessible overlays, reduced-data modes, or other personal&shy;izations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personal&shy;ization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
-Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. In addition to progressive enhancement, I prefer limiting any enhancements to ones that have been demonstrated to solve specific accessibility, security, performance, or significant usability problems faced by people _besides me._
+Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
+
+<dfn>Restricted enhancement</dfn> limits all enhancements to those that solve specific accessibility, security, performance, or significant usability problems faced by people besides the author. These enhancements must be made progressively when possible, with a preference for using older or more widespread features, taking into account unorthodox user agents. Purely-cosmetic changes should be kept to a minimum.
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and _address the trade-offs they make when they deviate._ I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
 I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+
+Our goal: make a textual website maximally inclusive, using restricted enhancement.
 
 </section>
 
@@ -472,7 +476,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images should usually have alt-text under 100 char&shy;acters.[^10] Save longer descriptions for a caption or `aria-describedby`. Exceptions exist.
+* Images should usually have alt-text under 100 char&shy;acters.[^10] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supple&shy;mentary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
@@ -547,7 +551,7 @@ A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image t
 
 The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript in a visible caption.
 
-A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use `aria-describedby` to semantically link the figure and the transcript.
+A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically group images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use <code>aria-<wbr>des&shy;cribedby</code> to semantically link the figure and the transcript.
 
 An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an `<article>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using an `article` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#infinite-scrolling) is a representative example.
 
@@ -645,7 +649,7 @@ Not all approaches completely discard a designer's specified color palette. The 
 <li>Win HCM is a collection of <strong>user defined color themes</strong> that overwrite your definitions in <abbr title="Cascading Style Sheets">CSS</abbr>.</li>
 <li>It’s not about design but <strong>readability</strong>.</li>
 <li>Some stuff will disappear in Win HCM, some won’t. Best advice is to use <strong>semantic <abbr title="Hypertext Markup Language">HTML</abbr></strong> to keep things visible.</li>
-<li>You can use transparent <code>outline</code> to keep things visble like focus indicators and surface boundaries or use <code>currentColor</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
+<li>You can use transparent <code>outline</code> to keep things visble like focus indicators and surface boundaries or use <code>current<wbr>Color</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
 <li>You can use a special <strong>media query</strong> combined with special <strong><abbr title="Cascading Style Sheets">CSS</abbr> color key&shy;words</strong> to give elements the user defined colors.</li>
 </ul>
 </blockquote>
@@ -1291,13 +1295,13 @@ Automated tests--especially accessibility tests--are a supplement to manual test
 
 These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^17]
 
-1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've recommended elsewhere on this page. Watch out for false positives.
+1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've reco&shy;mmended elsewhere on this page. Watch out for false positives.
 
 2. [axe-core](https://github.com/dequelabs/axe-core): The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
 
 3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
-4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively[^18].
+4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^18].
 
 5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core.
 
@@ -1394,6 +1398,7 @@ There are so many ways to read a page; authors typically cater only to the mains
 * the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
 * Disabling JavaScript (overlaps with the Tor Browser)
 * Non-default color palettes
+* Forced color palettes
 * Aggressive content blocking (e.g. blocking all third-party content, frames, images, and cookies)
 * User-selected custom fonts
 * Stylesheet removal, alteration, or replacement
@@ -1473,7 +1478,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^6]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same issues with infinte scroll are outlined in the "Accessibility concerns for infinite scroll" section of <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work url="https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/" name="Infinite Scroll without Layout Shifts" extraName="headline">}} by {{<indieweb-person itemprop="author" first-name="Addy" last-name="Osmani" url="https://addyosmani.com/">}}</span>.
 
-[^7]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
+[^7]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:<wbr>config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
 
 [^8]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [Browser&shy;Leaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
 
@@ -1481,7 +1486,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^10]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters.
 
-[^11]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors independently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
+[^11]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors indepen&shy;dently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 
 [^12]: <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
@@ -1497,11 +1502,11 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^16]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^17]: I excluded Security Headers, since it tends to cargo-cult headers regardless of whether or not they are necessary. For instance, it penalizes forgoing the `Permissions-Policy` header even if the CSP blocks script loading and execution. I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse.
+[^17]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommen&shy;ding headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Per&shy;missions-<wbr>Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Per&shy;missions-<wbr>Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^18]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its content-type recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^18]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommen&shy;dations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommen&shy;dations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
-[^19]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
+[^19]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
