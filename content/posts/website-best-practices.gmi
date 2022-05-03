@@ -1315,6 +1315,8 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 10. Webbkoll: basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Observatory.
 => https://webbkoll.dataskydd.net/ Webbkoll
 
+I excluded Security Headers, since it tends to cargo-cult headers regardless of whether or not they are necessary. For instance, it penalizes forgoing the "Permissions-Policy" header even if the CSP blocks script loading and execution. I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse.
+
 ### Unorthodox tests
 
 In addition to standard testing, I recommend testing with unorthodox setups that are unlikely to be found in the wild. If a website doesn't work well in one of these tests, there's a good chance that it uses an advanced Web feature that can serve as a point of failure in other cases. Simple sites should be able to look good in a variety of situations out of the box.

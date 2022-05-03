@@ -1289,7 +1289,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests--especially accessibility tests--are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^17]
 
 1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've recommended elsewhere on this page. Watch out for false positives.
 
@@ -1297,7 +1297,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 
 3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
-4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively[^17].
+4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively[^18].
 
 5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core.
 
@@ -1320,7 +1320,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^18]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^19]
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 5. Print some pages in black-and-white, preferably with a simple laser printer.
@@ -1332,7 +1332,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 12. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
 13. Try printing out your page in black-and-white from an unorthodox graphical browser.
-14. Download your webpage and test how multiple word processors render and generate PDFs from it.[^19]
+14. Download your webpage and test how multiple word processors render and generate PDFs from it.[^20]
 15. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 16. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
@@ -1497,9 +1497,11 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^16]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^17]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its content-type recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^17]: I excluded Security Headers, since it tends to cargo-cult headers regardless of whether or not they are necessary. For instance, it penalizes forgoing the `Permissions-Policy` header even if the CSP blocks script loading and execution. I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse.
 
-[^18]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
+[^18]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its content-type recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+
+[^19]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1515,7 +1517,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^19]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^20]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
     Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
