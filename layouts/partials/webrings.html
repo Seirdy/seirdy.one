@@ -1,22 +1,21 @@
-<h2 id="part-of">Webrings</h2>
-<p>This site is part of some <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>:</p>
 <!--
 	Some webrings require the sending of a "Referer" header,
 	but my site has two non-canonical mirrors. Don't add those.
--->
-{{- $refPol := "no-referrer" -}}
+-->{{- $refPol := "no-referrer" -}}
 {{- if eq site.BaseURL "https://seirdy.one/" -}}
 	{{- $refPol = "strict-origin" -}}
-{{ end -}}
+{{- end -}}
+<h2 id="webrings">Webrings</h2>
+<p>This site is part of some <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>. A webring is a collection of sites in a circular doubly-linked list; each website links to the next and previous site in the list.</p>
+{{ $webringData := after 1 (getCSV "," "/csv/webrings.csv") -}}
+<p>Each of the following {{ len $webringData }} webrings has three links: the <span id="prev-name">previous site</span> in the ring, the webring homepage, and the <span id="next-name">next site</span> in the ring.</p>
 <ul class="unstyled-list">
-{{- range $i, $r := after 1 (getCSV "," "/csv/webrings.csv") }}
-	<li>
-		<p>
-			<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="previous site">←</a> ·
-			<a href="{{- index $r 2 -}}">{{- index $r 0 -}}</a> ·
-			<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-label="next site">→</a>
-		</p>
-	</li>
+{{- range $i, $r := $webringData }}
+	<li><p>
+		<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-labelledby="prev-name">←</a> ·
+		<a href="{{- index $r 2 -}}">{{- index $r 0 -}}</a> ·
+		<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}" aria-labelledby="next-name">→</a>
+	</p></li>
 {{- end -}}
 </ul>
 <p>If you&rsquo;re part of a webring and would like me to join, just ask. I&rsquo;ll probably accept if joining only requires me to add hyperlinks to this page (no scripts, external content, or images), and if the ring doesn&rsquo;t seem to promote anything I find objectionable.</p>
