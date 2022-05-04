@@ -341,7 +341,7 @@ Infinite-scroll means that accidental navigation to a link results in losing you
 {{< /transcribed-image-figure >}}
 {{< transcribed-image-transcript >}}
 
-Megan stands at a desk, reading a book, touching it very gingerly. Cueball is standing behind her.
+Megan stands at a desk, touching a book gingerly. Cueball stands behind her.
 
 
 Cueball
@@ -575,9 +575,8 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
   <details>
     <summary>Toggle transcript</summary>
     <div id="transcript-xkcd-1309">
-      <p>Megan stands at a desk, reading a book,
-         touching it very gingerly. Cueball is
-         standing behind her.</p>
+      <p>Megan stands at a desk, touching a book
+         gingerly. Cueball stands behind her.</p>
       <dl>
         <dt>Cueball</dt>
         <dd>Why are you turning the pages like that?</dd>

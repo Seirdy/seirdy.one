@@ -516,29 +516,29 @@ The html code for the xkcd comic earlier in the page (well, the Web version of t
   <figure>
     <img src="SRC"
       aria-describedby="transcript-xkcd-1309"
-      alt="Comic: if books had infinite-scroll, we'd have to
-           turn pages carefully or risk losing the page.">
+      alt="Comic: infinite-scrolling books require
+           careful page-turns to avoid losing the page.">
     <figcaption>
-      Infinite-scrolling means that accidentally navigating
-      to a link will result in losing your place.
-      See <a href=#transcript-xkcd-1309>transcript</a>.
+      Infinite-scroll means that accidental navigation
+      to a link results in losing your place.
     </figcaption>
   </figure>
-  <details id="transcript-xkcd-1309">
+  <details>
     <summary>Toggle transcript</summary>
-    <p>
-      Megan stands at a desk, reading a book, touching
-      it very gingerly. Cueball is standing behind her.
-    </p>
-    <dl>
-      <dt>Cueball</dt>
-      <dd>Why are you turning the pages like that?</dd>
-      <dt>Megan</dt>
-      <dd>If I touch the wrong thing, I’ll lose my place and
-          have to start over.</dd>
-      <dt>Caption below the panel</dt>
-      <dd>If books worked like infinite-scrolling webpages</dd>
-    </dl>
+    <div id="transcript-xkcd-1309">
+      <p>Megan stands at a desk, touching a book
+         gingerly. Cueball stands behind her.</p>
+      <dl>
+        <dt>Cueball</dt>
+        <dd>Why are you turning the pages like that?</dd>
+        <dt>Megan</dt>
+        <dd>If I touch the wrong thing, I’ll lose my
+            place and have to start over.</dd>
+        <dt>Caption below the panel</dt>
+        <dd>If books worked like infinite-scrolling
+            webpages</dd>
+      </dl>
+    </div>
   </details>
 </article>
 ```
