@@ -1,10 +1,16 @@
 /* CSS that adds the bare minimum for a simple layout.
- * Nothing here exists purely for aesthetics except the unstyled-list;
- * everything else addresses a specific a11y, compatibility, or critical
+ * Nothing here exists purely for aesthetics; everything addresses a
+ * specific a11y, compatibility, or critical
  * usability need.
- * I also don't use any classes besides "unstyled-list" and "pix". My
- * HTML contains microformats2 classnames for IndieWeb parsers, but I
- * don't actually use those for styling.
+ *
+ * I also don't use any classes besides "pix". My HTML contains
+ * microformats2 classnames for IndieWeb parsers, but I don't actually
+ * use those for styling.
+ *
+ * To keep myself from caring about minute details, I limited myself to
+ * only defining spacing in increments of .125em. Borders are either
+ * 1px (separators) or 3px (block indicators). This also improves
+ * compression. No more "finding the perfect value".
  *
  * I cite WCAG 2.2 success criterions with "SC". */
 
@@ -31,7 +37,7 @@ html {
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
-		* more used to. */
+		* more used to for articles. */
 		margin: auto;
 
 		/* WCAG recommends a max line width. Not everyone can resize the
@@ -49,46 +55,25 @@ html {
 		max-width: 36em;
 	}
 
-	/* Compensate for misalignment and wasted space caused by a padding
-	 * increase. */
+	/* Compensate for misalignment and wasted space caused by padding
+	 * and margin adjustments in nav children made to meet SC 2.5.5 */
 	nav:not([role="doc-toc"]) {
-		margin: -.5em 0 -.5em -.25em;
+		margin: -.5em 0 -.5em -.125em;
 	}
 
 	/* SC 2.5.5: Increase nav link tap target size a bit */
 	nav:not([role="doc-toc"]) a {
-		padding: .75em .25em;
+		padding: .875em .125em;
 	}
 
 	nav li {
-		margin-bottom: .75em;
-		margin-top: .75em;
+		margin: .875em 0;
 	}
 }
 
-/* Save some space and paper by making the site nav and footer
- * links single-line, but bump up the line-height to increase
- * space between tap-targets (a11y) */
-header li,
-footer li {
-	display: inline-block;
-	margin-right: .75em;
-	line-height: 1.75
-}
-
-
-
-/* narrow screens: reduce margin for blockquotes a lot, using
- * a thick left-side border instead. */
-blockquote {
-	border-left: 4px solid;
-	margin: 0;
-	padding-left: .8em;
-}
-
 /* narrow screens: reduce list indentation, hyphenate nested lists
- * touch screens: lists of links should be
- * easy to tap so give them some spacing. */
+ * touch screens: lists of links should be easy to tap so give them
+ * some spacing (partial SC 2.5.5). */
 dd,
 ol,
 ul {
@@ -105,6 +90,31 @@ ul ul {
 	padding-left: 1em;
 }
 
+/* Save some space and paper by making the site nav and footer
+ * links single-line without bullets, but bump up the line-height to
+ * increase space between tap-targets (SC 2.5.5). */
+nav ul {
+	padding: 0
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 1.75;
+	list-style-type: none;
+	margin-right: .375em;
+}
+
+
+/* narrow screens: reduce margin for blockquotes a lot, using
+ * a border instead. Put it on the left and right to make it
+ * LTR/RTL-neutral, for machine translators that change text
+ * direction (e.g. the one in Edge). */
+blockquote {
+	border-left: 3px solid;
+	margin: 0;
+	padding: 0 1em;
+}
+
 /* Narrow screens: allow hyphenating titles
  * I can't add soft hyphens to these. */
 h1 {
@@ -119,20 +129,6 @@ h1 {
 		hyphens: auto;
 	}
 }
-
-/* Lists without bullets: navlinks, posts lists, webmentions.
- * Those three are lists whose items are already easily
- * distinguishable, rendering bullet points as unnecessary extra
- * visual noise. Pretty much the only purely-aesthetic change in this
- * CSS file. */
-.unstyled-list {
-	padding: 0;
-}
-
-.unstyled-list li {
-	list-style-type: none;
-}
-
 
 /* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed
@@ -180,15 +176,14 @@ span[itemtype="https://schema.org/Person"] {
 
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
-	padding: .5em;
 	overflow: auto;
+	padding: .5em;
 }
 
 /* Distinguish images from the background in case their color is
  * too similar to the page background color. Also put a border around
- * <pre> and <code> to distinguish them in ways besides font-family. The
- * use of borders in place of background colors for distinguishing
- * elements is an officially documented WCAG technique. */
+ * <pre> and <code> to distinguish them in ways besides font-family.
+ * This is Technique C25 of SC 1.4.8 */
 img,
 pre,
 :not(pre) > code,
@@ -196,13 +191,27 @@ pre,
 	border: 1px solid;
 }
 
-/* A black border is too harsh. */
+/* A black border is too harsh; the extra visual noise is distracting
+ * to users with eye-tracking or ADHD. Only special items like headings
+ * should draw gaze. */
 :not(pre) > code,
 :not(pre) > samp {
 	border-color: #999;
 
 	/* borders shouldn't touch text */
-	padding: 0 0.1em;
+	padding: 0 0.125em;
+}
+
+/* center standalone images; same justification as
+ * for centering the body contents. Also makes images easier to see
+ * for people holding a device with one hand.
+ * Extending images to the full width causes problems in some browsers,
+ * so just extend them to 95%. */
+img:not([itemprop="image"]) {
+	display: block;
+	height: auto;
+	margin: auto;
+	max-width: 95%;
 }
 
 /* Some images look blurry when scaled; this makes them easier to
@@ -211,23 +220,13 @@ pre,
 	image-rendering: pixelated;
 }
 
-/* center images that aren't my indieweb icon; same justification as
- * for centering the body contents. Also makes images easier to see
- * for people holding a device with one hand. */
-img:not(.u-photo) {
-	display: block;
-	height: auto;
-	margin: auto;
-	max-width: 95%;
-}
-
 /* WCAG Technique C25: use borders to separate sections.
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
 section[aria-labelledby="webmentions"],
 div[role="doc-endnotes"] {
-	border-top: 2px solid;
+	border-top: 1px solid;
 	content-visibility: auto;
 }
 
