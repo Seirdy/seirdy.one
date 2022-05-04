@@ -17,7 +17,8 @@ sitemap:
 featured: true
 title: Best practices for inclusive textual websites
 ---
-<div role="doc-preface">
+<section role="doc-preface">
+<h2 id="before-you-begin">Before you begin</h2>
 
 The following applies to minimal websites that focus primarily on text. It does not apply to websites that have a lot of non-textual content. It also does not apply to websites that focus more on generating revenue or pleasing investors than being inclusive.
 
@@ -25,7 +26,7 @@ This is a "living document" that I add to as I receive feedback. See the updated
 
 <p role="doc-tip">If you find the article too long, just read the introduction and conclusion. The table of contents should help you skim.</p>
 
-</div>
+</section>
 
 {{<toc>}}
 

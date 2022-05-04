@@ -1,10 +1,10 @@
 <article class="h-entry hentry">
-		<header>
-			<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
-			{{ partial "post-meta.html" . }}
-			<hr>
-		</header>
-		<div class="e-content entry-content" itemprop="articleBody">
-			{{ partial "processed-content" . -}}
-		</div>
-	</article>
+<header>
+	<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
+	{{ partial "post-meta.html" . }}
+	<hr>
+</header>
+<div class="e-content entry-content" itemprop="articleBody">
+	{{ partial "processed-content" . -}}
+</div>
+</article>

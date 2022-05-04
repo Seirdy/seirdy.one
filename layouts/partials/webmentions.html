@@ -8,36 +8,40 @@
 			{{ range $webmentions -}}
 			{{ $webmention := . -}}
 				{{ if (eq $webmention.type "like") -}}
-					<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
+				<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
 				{{- else -}}
-					<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
+				<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
 				{{- end }}
-				<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
-				<br>
-				{{ if (eq $webmention.type "like") -}}
-					{{- if $webmention.author_name -}}
-						<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-					{{- else if $webmention.title -}}
-						<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
-					{{- else -}}
-						{{ $webmention.source -}}
-					{{- end }}
-					<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
-				{{- else -}}
-					<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc"><span itemprop="name" class="p-content p-name">
-						{{- if $webmention.title -}}
-							{{- $webmention.title | truncate 200 -}}
-						{{- else -}}
-							{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
-						{{- end -}}
-					</span></a>
-					{{- if $webmention.author_name }}
+				<p>
+					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
+					<br>
+					{{ if (eq $webmention.type "like") -}}
+						{{ if $webmention.author_name -}}
+							<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+						{{ else if $webmention.title -}}
+							<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
+						{{ else -}}
+							{{ $webmention.source -}}
+						{{ end -}}
+						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
+					{{ else -}}
+						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">
+						<span itemprop="name" class="p-content p-name">
+							{{ if $webmention.title -}}
+								{{ $webmention.title | truncate 200 -}}
+							{{ else -}}
+								{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
+							{{ end }}
+						</span>
+					</a>
+						{{- if $webmention.author_name }}
 						by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-						{{- end -}}
-				{{- end }}
-				</li>
+							{{- end -}}
+					{{- end }}
+				</p>
+			</li>
 			{{ else -}}
-				<li><p>This post doesn't have any approved Webmentions yet.</p></li>
+			<li><p>This post doesn't have any approved Webmentions yet.</p></li>
 			{{- end }}
 		</ul>
 		<p></p>
