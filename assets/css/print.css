@@ -6,23 +6,18 @@
 	span[aria-hidden],
   /* You can't navigate in a printout. */
 	footer nav,
-	header nav a:not([rel="home"]) span {
+	nav a:not([rel="home"]) span {
 		display: none;
 	}
-
-	/* unerlines in TOC get in the way. */
-	nav[role="doc-toc"] a {
-		text-decoration: none;
-	}
-
 }
 
-/* Print: don't orphan headings */
-h2,
-h3,
-h4 {
-	break-after: avoid;
-}
+/* Print: don't orphan headings
+ * Commented out bc most browsers don't obey this yet. */
+/* h2, */
+/* h3, */
+/* h4 { */
+/* 	break-after: avoid; */
+/* } */
 
 figure,
 article article,

@@ -4,11 +4,14 @@
  * usability need.
  * I also don't use any classes besides "unstyled-list" and "pix". My
  * HTML contains microformats2 classnames for IndieWeb parsers, but I
- * don't actually use those for styling. */
+ * don't actually use those for styling.
+ *
+ * I cite WCAG 2.2 success criterions with "SC". */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
 	 * further apart. Dyslexic users prefer the spacing too.
+	 * Necessary to meet SC 1.4.8.
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
 	 * on serif being the default?? */
 	font: 100%/1.5 sans-serif;
@@ -21,53 +24,59 @@ html {
 		 * wide variety of complex pages. For single-column websites like
 		 * mine, it's ideal to bump it up ever so slightly. This also makes
 		 * <sup>, <sub>, <small>, etc. large enough to have decent contrast
-		 * with minimal adjustment.
+		 * with minimal adjustment, and makes tap-targets larger.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
-		font-size: 105%;
+		font-size: 110%;
 
 		/* Aligning to the center with space on both sides prevents accidental
-		* link activation on tablets. */
+		* link activation on tablets, and is a common practice that users are
+		* more used to. */
 		margin: auto;
 
 		/* WCAG recommends a max line width. Not everyone can resize the
-		 * viewport.
+		 * viewport. This isn't for large blocks of text yet, so we don't have
+		 * to go by SC 1.4.8.
 		 * 45em = lowest acceptable width for titles, nav, footers, etc */
 		max-width: 45em;
 		padding: 0 3%;
 	}
 
-	/* 45em is too wide for long body text. */
+	/* 45em is too wide for long body text.
+	 * Typically meets SC 1.4.8, plus or minus a few characters. */
 	div[itemprop="articleBody"] {
 		margin: auto;
-		max-width: 38em;
+		max-width: 36em;
 	}
 
-	/* Compensate for misalignment caused by a padding increase. */
-	header nav,
-	footer nav {
-		margin: -.375em;
+	/* Compensate for misalignment and wasted space caused by a padding
+	 * increase. */
+	nav:not([role="doc-toc"]) {
+		margin: -.5em 0 -.5em -.25em;
 	}
 
-	/* Increase nav link tap target size a bit */
-	nav a {
-		padding: .125em;
+	/* SC 2.5.5: Increase nav link tap target size a bit */
+	nav:not([role="doc-toc"]) a {
+		padding: .75em .25em;
 	}
-
 
 	nav li {
-		line-height: 2;
+		margin-bottom: .75em;
+		margin-top: .75em;
 	}
 }
 
-/* Small text is easier to read when slightly bolder.
- * This is important in the dark theme where I set my own colors and
- * try to maintain good perceptual contrast even for small text, but
- * I don't want toggling the theme to impact anything besides color so
- * I set the weight here. */
-sup {
-	font-weight: 600;
+/* Save some space and paper by making the site nav and footer
+ * links single-line, but bump up the line-height to increase
+ * space between tap-targets (a11y) */
+header li,
+footer li {
+	display: inline-block;
+	margin-right: .75em;
+	line-height: 1.75
 }
+
+
 
 /* narrow screens: reduce margin for blockquotes a lot, using
  * a thick left-side border instead. */
@@ -103,23 +112,13 @@ h1 {
 }
 
 /* Very narrow screens: full hyphenation */
-@media (max-width: 11.6em) {
+@media (max-width: 12em) {
 	article,
 	h2,
 	h3 {
-		hyphens: auto
+		hyphens: auto;
 	}
 }
-
-/* Save some space and paper by making the site nav and footer
- * links single-line, but bump up the line-height to increase
- * space between tap-targets (a11y) */
-header li,
-footer li {
-	display: inline-block;
-	margin: .25em;
-}
-
 
 /* Lists without bullets: navlinks, posts lists, webmentions.
  * Those three are lists whose items are already easily
@@ -136,8 +135,14 @@ footer li {
 
 
 /* <kbd> should be distinguished from <code> and surrounding text
- * in a way beyond font-face; at least two visual distinctions needed */
-kbd {
+ * in a way beyond font-face; at least two visual distinctions needed
+ * Also, Small text is easier to read when slightly bolder.
+ * This is important in the dark theme where I set my own colors and
+ * try to maintain good perceptual contrast even for small text, but
+ * I don't want toggling the theme to impact anything besides color so
+ * I set the weight here. */
+kbd,
+sup {
 	font-weight: bold;
 }
 
@@ -171,15 +176,12 @@ li[itemprop="comment"],
 :not(pre) > samp,
 span[itemtype="https://schema.org/Person"] {
 	overflow-wrap: break-word;
-
-	/* borders shouldn't touch text */
-	padding: 0 0.1em;
 }
 
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
-	overflow: auto;
 	padding: .5em;
+	overflow: auto;
 }
 
 /* Distinguish images from the background in case their color is
@@ -198,9 +200,13 @@ pre,
 :not(pre) > code,
 :not(pre) > samp {
 	border-color: #999;
+
+	/* borders shouldn't touch text */
+	padding: 0 0.1em;
 }
 
-/* Some images look blurry when scaled */
+/* Some images look blurry when scaled; this makes them easier to
+ * read. */
 .pix {
 	image-rendering: pixelated;
 }
@@ -212,7 +218,7 @@ img:not(.u-photo) {
 	display: block;
 	height: auto;
 	margin: auto;
-	max-width: 100%;
+	max-width: 95%;
 }
 
 /* WCAG Technique C25: use borders to separate sections.
@@ -221,7 +227,7 @@ img:not(.u-photo) {
 footer,
 section[aria-labelledby="webmentions"],
 div[role="doc-endnotes"] {
-	border-top: 1px solid;
+	border-top: 2px solid;
 	content-visibility: auto;
 }
 
