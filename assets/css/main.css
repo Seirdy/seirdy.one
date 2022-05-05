@@ -68,35 +68,55 @@ html {
 
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
-	nav:not([role="doc-toc"]) {
+	header nav,
+	footer nav {
 		margin: -.5em 0 -.75em -.25em;
 	}
 
+	/* Google a11y: ensure tap targets have >=8px space between them */
+	nav li,
+	details li {
+		padding: 1em 0;
+	}
+
 	/* SC 2.5.5: Increase nav link tap target size a bit */
-	nav:not([role="doc-toc"]) a {
+	nav a,
+	summary,
+	details li a {
 		padding: .875em .25em;
 	}
 
-	nav li {
-		margin: 1em 0;
+	details summary {
+		/* The tappable region of a <summary> extends across the page.
+		 * we need to tell users that the full space is interactive.
+		 * Use a border for that. */
+		border: 1px solid #999;
+
+		/* Google a11y: ensure tap targets have >=8 px space between them */
+		margin: .25em 0;
+	}
+
+
+	/* Prevent nested lists from overlapping */
+	nav li ol {
+		padding-top: 1em;
 	}
 }
 
 /* narrow screens: reduce list indentation, hyphenate nested lists
  * touch screens: lists of links should be easy to tap so give them
- * some spacing (partial SC 2.5.5). */
+ * some spacing (partial SC 2.5.5). There should be non-interactive
+ * space to the left that's safe to tap. */
 dd,
 ol,
 ul {
-	padding-left: 1.5em;
-}
-
-dd {
 	margin: 0;
+	padding-left: 1.625em;
 }
 
 ol ol,
 ul ul {
+	-webkit-hyphens: auto;
 	hyphens: auto;
 	padding-left: 1em;
 }
@@ -116,8 +136,6 @@ nav ul {
  * pixels between tap targets. */
 nav ul li {
 	display: inline-block;
-	line-height: 1.75;
-	list-style-type: none;
 	margin-right: .375em;
 }
 
@@ -135,6 +153,7 @@ blockquote {
 /* Narrow screens: allow hyphenating titles
  * I can't add soft hyphens to these. */
 h1 {
+	-webkit-hyphens: auto;
 	hyphens: auto;
 }
 
@@ -142,6 +161,7 @@ h1 {
 @media (max-width: 13em) {
 	body {
 		font-size: 100%;
+		-webkit-hyphens: auto;
 		hyphens: auto;
 		padding: 0 5%;
 	}
@@ -202,9 +222,7 @@ pre {
  * <pre> and <code> to distinguish them in ways besides font-family.
  * This is Technique C25 of SC 1.4.8 */
 img,
-pre,
-:not(pre) > code,
-:not(pre) > samp {
+pre {
 	border: 1px solid;
 }
 
@@ -213,7 +231,7 @@ pre,
  * should draw gaze. */
 :not(pre) > code,
 :not(pre) > samp {
-	border-color: #999;
+	border: 1px solid #999;
 
 	/* borders shouldn't touch text */
 	padding: 0 0.125em;
@@ -239,8 +257,8 @@ img:not([itemprop="image"]) {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
-section[aria-labelledby="webmentions"],
-div[role="doc-endnotes"] {
+section:not([role]),
+section[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;
 }

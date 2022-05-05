@@ -1,7 +1,7 @@
 /* Print stylesheet: hide stuff that we don't need. */
 @media print {
 	/* Currently only used for transcripts */
-	details,
+	article details,
 	/* Currently only used for in-page heading anchors,
 	 * useless in printouts. */
 	span[aria-hidden],
@@ -9,6 +9,10 @@
 	footer nav,
 	nav a:not([rel="home"]) span {
 		display: none;
+	}
+
+	summary {
+		list-style: none;
 	}
 }
 

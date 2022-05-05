@@ -14,7 +14,7 @@ tags:
 sitemap:
     ChangeFreq: daily
     Priority: 0.7
-featured: true
+featured: 2
 title: Best practices for inclusive textual websites
 ---
 <section role="doc-preface">

@@ -11,7 +11,7 @@ tags:
   - user domestication
   - privacy
   - platforms
-featured: true
+featured: 3
 title: WhatsApp and the domestication of users
 ---
 
@@ -125,7 +125,7 @@ For the record, **I don't think Mozilla is a bad organization;** rather, I think
 
 ### Open platforms
 
-To prevent a network effect from turning into vendor lock-in, software that naturally encourages a network effect needs to be part of an open platform. In the case of communication/messaging software, it should be possible to make alternative clients and servers that are compatible with each other to prevent completion of user domestication's first two steps.
+To prevent a network effect from turning into vendor lock-in, software that naturally encourages a network effect needs to be part of an open platform. In the case of messaging software, it should be possible to make alternative clients and servers that are compatible with each other to prevent completion of user domestication's first two steps.
 
 #### Case study: Signal
 

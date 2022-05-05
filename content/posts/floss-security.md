@@ -5,7 +5,7 @@ outputs:
     - html
     - gemtext
 footnote_heading: Notes
-featured: true
+featured: 4
 title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
 I find it quite easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.

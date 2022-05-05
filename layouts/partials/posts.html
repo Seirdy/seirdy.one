@@ -5,18 +5,22 @@
 {{- if $isStandalone }}
 <main itemprop="mainEntity" class="h-feed hfeed" itemscope itemtype="https://schema.org/CompleteDataFeed">
 	<h1 class="p-name" itemprop="name headline" id="posts">Posts</h1>
+	<p>These are all of my posts, sorted by date (newest first).</p>
 {{- else  }}
 <section class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
 	<h2 class="p-name" itemprop="name" id="posts">Posts</h2>
-	<p>Here&rsquo;s a selection of my best posts. To see the rest, visit <a href="/posts.html">my Posts page</a>.</p>
+	<p>Here&rsquo;s a selection of my best posts, in featured order. To see the rest, visit <a href="/posts.html">my Posts page</a>.</p>
 {{- end }}
 	<p>I edit some of these posts quite often; some are updated indefinitely. Check the &ldquo;updated&rdquo; timestamps.</p>
 	<p role="doc-tip">
 		Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite>
 	</p>
-	<ol class="unstyled-list" reversed>
-		{{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
-		{{- if or ($isStandalone) (.Params.featured) }}
+	<ol>
+		{{- $posts := (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+		{{- if not $isStandalone -}}
+			{{- $posts = sort (where $posts "Params.featured" ">" 0) "Params.featured" -}}
+		{{- end -}}
+		{{- range $posts -}}
 		<li>
 			<article class="h-entry hentry" itemprop="dataFeedElement" itemscope itemtype="https://schema.org/BlogPosting https://schema.org/DataFeedItem">
 				{{ if $isStandalone -}}
@@ -38,7 +42,6 @@
 				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
 			</article>
 		</li>
-		{{- end }}
 		{{- end }}
 	</ol>
 {{ if $isStandalone -}}
