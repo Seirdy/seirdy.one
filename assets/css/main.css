@@ -9,10 +9,13 @@
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .125em. Borders are either
- * 1px (separators) or 3px (block indicators). This also improves
+ * 1px or 3px; percentages are in increments of 5%. This also improves
  * compression. No more "finding the perfect value".
  *
- * I cite WCAG 2.2 success criterions with "SC". */
+ * I cite WCAG 2.2 success criteria with "SC". I also tried to meet
+ * the Google a11y requirement of 48px tap targets separated by atl
+ * 8px, excluding inline links. This involved increasing font size,
+ * padding, line-height, and margins. */
 
 html {
 	/* Mobile screens benefit from greater line-spacing so links are
@@ -33,7 +36,7 @@ html {
 		 * with minimal adjustment, and makes tap-targets larger.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
-		font-size: 110%;
+		font-size: 105%;
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
@@ -45,7 +48,15 @@ html {
 		 * to go by SC 1.4.8.
 		 * 45em = lowest acceptable width for titles, nav, footers, etc */
 		max-width: 45em;
-		padding: 0 3%;
+
+		/* Phone cases can cover the edges. Swipe-from-edge navigations
+		 * should not conflict with the page elements. Focus outlines for
+		 * heavily-padded nav links should not be cut-off. All three concerns
+		 * are addressed by adding some body padding.
+		 * I followed Google's a11y recommendations of "at least 8px space
+		 * between tappables" by creating margins/paddings between nav links;
+		 * re-use that same amount of space here. 1em + .25em = 1.25em */
+		padding: 0 1.25em;
 	}
 
 	/* 45em is too wide for long body text.
@@ -58,16 +69,16 @@ html {
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
 	nav:not([role="doc-toc"]) {
-		margin: -.5em 0 -.5em -.125em;
+		margin: -.5em 0 -.75em -.25em;
 	}
 
 	/* SC 2.5.5: Increase nav link tap target size a bit */
 	nav:not([role="doc-toc"]) a {
-		padding: .875em .125em;
+		padding: .875em .25em;
 	}
 
 	nav li {
-		margin: .875em 0;
+		margin: 1em 0;
 	}
 }
 
@@ -90,13 +101,19 @@ ul ul {
 	padding-left: 1em;
 }
 
-/* Save some space and paper by making the site nav and footer
- * links single-line without bullets, but bump up the line-height to
- * increase space between tap-targets (SC 2.5.5). */
+/* Save some space and paper by making the site nav and footer links
+ * single-line without bullets. The title should be visible in the fold
+ * on most screens so users can identify the current page. */
+
+/* Step 1 to making the single-line nav: remove the bullet padding. */
 nav ul {
 	padding: 0
 }
 
+/* step 2: remove bullets and make elements inline.
+ * Also: bump up the line-height and margins to increase space
+ * between tap-targets (SC 2.5.5). Google a11y guidelines require 8 CSS
+ * pixels between tap targets. */
 nav ul li {
 	display: inline-block;
 	line-height: 1.75;
@@ -122,11 +139,11 @@ h1 {
 }
 
 /* Very narrow screens: full hyphenation */
-@media (max-width: 12em) {
-	article,
-	h2,
-	h3 {
+@media (max-width: 13em) {
+	body {
+		font-size: 100%;
 		hyphens: auto;
+		padding: 0 5%;
 	}
 }
 
@@ -204,14 +221,12 @@ pre,
 
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
- * for people holding a device with one hand.
- * Extending images to the full width causes problems in some browsers,
- * so just extend them to 95%. */
+ * for people holding a device with one hand. */
 img:not([itemprop="image"]) {
 	display: block;
 	height: auto;
 	margin: auto;
-	max-width: 95%;
+	max-width: 100%;
 }
 
 /* Some images look blurry when scaled; this makes them easier to
