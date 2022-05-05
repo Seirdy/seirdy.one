@@ -1013,7 +1013,7 @@ The previous "small viewports" section may tempt you to make your content as den
 
 There's an ideal range somewhere between "cramped" and "spaced-apart" content. Finding this range is difficult. The best way to resolve such difficult and subjective issues is to ask your readers for feedback, giving disproportionate weight to readers with under-represented needs (especially disabled readers).
 
-### When indentation helps
+### Non-interactive space
 
 Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
 
@@ -1029,7 +1029,7 @@ Readers who double-tap to jump or zoom can't do so if there's no screen region t
 
 => gemini://seirdy.one/misc/touch_targets.png Phone screen with three "touch target" rectangles atop each other, separated by blank sections labeled "space". Image from Axess Lab.
 
-Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information.
+Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information. Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#tap-target).
 
 ### Tap targets
 
@@ -1037,7 +1037,7 @@ Tap targets should be at least 44 pixels tall and wide according to the WCAG; th
 
 => https://www.w3.org/TR/WCAG22/#target-size-enhanced WCAG 2.2 Success Criterion 2.5.5: Target Size (Enhanced)
 
-Google has more aggressive tap-target recommendations: it recommends raising the limit 48 px with with 8 px gaps regardless of whether tap targets are inline, going so far as to make tap target size a ranking factor in search.
+Google has more aggressive tap-target recommendations: it recommends raising the limit 48 px with with 8 px gaps, going so far as to make tap target size a ranking factor in search.
 => https://web.dev/tap-targets/ Google's tap target guidelines
 
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
