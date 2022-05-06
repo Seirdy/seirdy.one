@@ -87,8 +87,14 @@
 		width="{{ $img_width }}" height="{{ $img_height }}"
 		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
 		{{ with .Parent -}}
-		{{- with .Get "id" -}}
+		{{ if eq .Name "transcribed-image-figure" -}}
+		{{ with .Get "id" -}}
 		aria-describedby="transcript-{{ . }}"
-		{{ end }}{{ end -}}
+		{{ end -}}
+		{{ end -}}
+		{{ if or (eq .Name "image-figure") (eq .Name "transcribed-image-figure") -}}
+		itemprop="contentURL url"
+		{{ end -}}
+		{{- end -}}
 		decoding="async">
 </picture>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}

@@ -328,15 +328,15 @@ I've discussed loading pages in the background, but what about saving a page off
 
 {{< transcribed-image type="comic" id="xkcd-1309" >}}
 
-#### xkcd comic: infinite scrolling {#infinite-scrolling}
+#### <span itemprop="name">xkcd comic: infinite scrolling</span> {#infinite-scrolling}
 
 {{< transcribed-image-figure id="xkcd-1309" has-transcript="true" >}}
 
 {{< picture name="infinite_scrolling" alt="Comic: infinite-scrolling books need careful handling to avoid losing the page." >}}
 
-<figcaption>
+<figcaption itemprop="caption">
 
-Infinite-scroll means that accidental navigation to a link results in losing your place. Source: [xkcd](https://xkcd.com/1309/).
+Infinite-scroll means that accidental navigation to a link results in losing your place. From [xkcd](https://xkcd.com/1309/ "{itemprop='url'}").
 
 </figcaption>
 {{< /transcribed-image-figure >}}
@@ -392,14 +392,14 @@ Searchability is a good reason to prefer conveying information textually, when p
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; [Reddit's atrocious redesign](#reddit-redesign) is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "other ways to defer content" section](#other-ways-to-defer-content).
 
-<figure id="reddit-redesign">
+{{<image-figure id="reddit-redesign">}}
 {{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
-<figcaption>
+<figcaption itemprop="caption">
 
 Searching for the word "good" before and after a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
 
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 ### The importance of proofreading
 
@@ -616,9 +616,9 @@ Chris also describes the importance of visited link colors in <cite>[Visited Lin
 
 {{< picture name="website_colors" alt="Gray text on a darker gray background. Details in caption." >}}
 
-<figcaption>
+<figcaption itemprop="caption">
 
-This is an unreadable screenshot of a [website promoting browser style overrides](http://bettermotherfuckingwebsite.com/). I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
+This is an unreadable screenshot of <span itemprop="encodesCreativeWork" itemscope itemtype="https://schema.org/WebSite">{{<cited-work name="Better Motherfucking Website" url="http://bettermotherfuckingwebsite.com/">}}</span>. I had set my browser foreground and background colors to white and dark gray, respectively. The website overrode the foreground colors while assuming that everyone browses with a white background.
 
 </figcaption>
 {{< /transcribed-image-figure >}}
@@ -665,23 +665,23 @@ If you do explicitly set colors, please also include a dark theme using a media 
 
 If you include a `theme-color` directive in your document `<head>`, then recent browsers will automatically switch their default stylesheets to dark-mode. Unfortunately, some older browsers (like Firefox-ESR) don't support this directive, and WebKit's default dark stylesheet [has unreadable links](https://bugs.webkit.org/show_bug.cgi?id=209851). WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
 
-<figure>
+{{<image-figure>}}
 {{<picture name="wk_link" alt="dark blue link on dark gray background.">}}
-<figcaption>WebKit's default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
-</figure>
+<figcaption itemprop="caption">WebKit's default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
+{{</image-figure>}}
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
 Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
 
-<figure>
-<figcaption>
+{{<image-figure>}}
+<figcaption itemprop="caption">
 
 This image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
 
 </figcaption>
 {{< picture name="halation" alt="Fuzzy white text on black background reading \"But it is not\"." >}}
-</figure>
+{{</image-figure>}}
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
 
@@ -724,14 +724,14 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
-<figure>
+{{<image-figure>}}
 {{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them.">}}
-<figcaption>
+<figcaption itemprop="caption">
 
 It's impossible to discern the number of links in a sequence without some sort of separator. Whitespace alone isn't sufficient.
 
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 A basic WCAG Level A requirement is for information to not be conveyed solely through color.
 
@@ -1005,14 +1005,14 @@ Designers often use figures to "break up" their content, and provide negative sp
 
 Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
 
-<figure>
+{{<image-figure>}}
 {{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.5 >}}
-<figcaption>
+<figcaption itemprop="caption">
 
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
 
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 Spacing
 -------
@@ -1031,12 +1031,12 @@ Readers with hand tremors depend on this space to scroll without accidentally se
 
 Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#google-tap-target).
 
-<figure>
+{{<image-figure>}}
 {{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
-<figcaption>
+<figcaption itemprop="caption">
 Interactive content should be separated by non-interactive regions, such as whitespace or plain non-interactive text. Image credit: Axess Lab
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 ### Tap targets
 
@@ -1200,14 +1200,14 @@ a:focus,
 
 {{</codefigure>}}
 
-<figure>
+{{<image-figure>}}
 {{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
-<figcaption>
+<figcaption itemprop="caption">
 
 Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
 
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------
@@ -1344,14 +1344,14 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 I'm still on step 15, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
-<figure>
-{{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 7\"." sf=2 >}}
-<figcaption>
+{{<image-figure representative="True">}}
+{{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." sf=2 >}}
+<figcaption itemprop="caption">
 
 This page in the [SerenityOS](https://serenityos.org/) web browser. TLS&nbsp;1.2 support isn't finished yet; I loaded it from a mirror with a compatible cipher suite.
 
 </figcaption>
-</figure>
+{{</image-figure>}}
 
 Future updates
 --------------

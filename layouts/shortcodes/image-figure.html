@@ -1,0 +1,8 @@
+<figure itemscope itemtype="https://schema.org/ImageObject"
+	{{- with .Get "id" }} id="{{ . }}"{{ end -}}
+	{{- if .Get "representative" }} itemprop="image">
+<meta itemprop="representativeOfPage" content="True">
+	{{- else }} itemprop="hasPart">
+{{- end }}
+{{ .Inner | markdownify | safeHTML }}
+</figure>

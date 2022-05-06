@@ -1,5 +1,3 @@
-{{ with .Parent -}}
 <figure>
-{{- end }}
 {{ .Inner | markdownify | safeHTML }}
 </figure>
