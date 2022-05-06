@@ -1,7 +1,7 @@
 <section aria-labelledby="webmentions">
 		<h2 id="webmentions">Webmen&shy;tions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
-		<ul class="unstyled-list">
+		<ul>
 			{{ $target := .RelPermalink -}}
 			{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
 			{{ $webmentions := getJSON $url -}}
