@@ -70,7 +70,7 @@ html {
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
 	header nav,
 	footer nav {
-		margin: -.5em 0 -.75em -.25em;
+		margin: 0 0 -.75em -.25em;
 	}
 
 	/* Google a11y: ensure tap targets have >=8px space between them */
