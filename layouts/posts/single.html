@@ -1,6 +1,7 @@
 {{- define "main" -}}
+{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 {{- .Scratch.Set "codeIndex" 1 -}}
-<main itemprop="blogPost mainEntity" itemscope itemtype="https://schema.org/BlogPosting">
+<main itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 	{{ partial "full-article.html" . }}
 	{{ partial "webmentions.html" . }}
 </main>

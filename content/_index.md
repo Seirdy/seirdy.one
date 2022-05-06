@@ -8,7 +8,7 @@ sitemap:
     - ChangeFreq: weekly
     - Priority: 0.9
 ---
-<div itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author author h-card vcard">
+<div itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
 Seirdy's Home
 =============

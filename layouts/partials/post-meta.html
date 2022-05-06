@@ -9,4 +9,4 @@ Posted <time itemprop="dateCreated datePublished" class="dt-published published"
 			<span itemprop="wordCount">{{ .WordCount }}</span> words
 			{{- with .ReadingTime }},
 			a{{ if hasPrefix (string .) "8" }}n{{ end }}
-			<span itemprop="timeRequired" content="PT{{ . }}M">{{ . }} minute</span> read{{- end }}
+			<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ . }} minute</time> read{{- end }}
