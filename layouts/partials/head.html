@@ -11,7 +11,13 @@
 {{- printf `<link href="%s" rel="manifest">` $webmanifest.RelPermalink | safeHTML }}
 <link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
 <title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
-<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+{{ $description := .Site.Params.Description -}}
+{{- if .Params.description -}}
+	{{- $description = .Params.Description -}}
+{{- else if eq $canonicalRelPermalink "/posts.html" -}}
+	{{- $description = "All the posts on Seirdy's Home" -}}
+{{- end -}}
+<meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ .Site.Author.name }}">
 <meta property="article:author" content="{{ .Site.Author.name }}">
 {{ if gt .Date 0 -}}
@@ -56,6 +62,6 @@
 <meta property="og:image:height" content="512"><meta property="og:image:width" content="512">
 <meta property="og:image:alt" content="White-on-black colon and semicolon">
 <meta property="og:url" content="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
-<meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+<meta property="og:description" content="{{ $description }}">
 {{ hugo.Generator }}
 </head>
