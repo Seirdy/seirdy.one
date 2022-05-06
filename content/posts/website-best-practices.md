@@ -1445,7 +1445,7 @@ The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and al
 
 The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for note&shy;worthiness, to avoid low-hanging fruit like mostly-blank pages.
 
-My favorite website club has to be the [<abbr title="eXtreme HyperText Movement for Luddites">XHTML</abbr> Club](https://xhtml.club/) by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://tdarb.org">}}, the creator of the original [1mb.club](https://1mb.club).
+My favorite website club has to be the <span itemprop="mentions" itemscope itemtype="https://schema.org/WebSite">{{< cited-work name="XHTML Club" url="https://xhtml.club/" >}} by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://tdarb.org" itemprop="author">}}</span>, the creator of the original [1mb.club](https://1mb.club).
 
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
 
@@ -1510,9 +1510,9 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^19]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
-    <figure itemscope itemtype="https://schema.org/SoftwareSourceCode">
+    <figure itemprop="hasPart" itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
-    <strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
+    <strong id="code-snippet=11" itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
         Firefox prefs to turn off JIT compilation
         </figcaption>
 

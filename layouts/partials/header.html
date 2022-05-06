@@ -1,4 +1,4 @@
-<header id="banner" itemscope itemtype="https://schema.org/WPHeader">
+<header id="banner" itemprop="hasPart" itemscope itemtype="https://schema.org/WPHeader">
 	<nav aria-label="Global">
 		<ul class="unstyled-list">
 			{{- $currentPage := . -}}
@@ -6,7 +6,7 @@
 			{{- if eq $currentPage.Permalink .Site.BaseURL -}}
 				{{- $isHome = true -}}
 			{{- end }}
-			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+			<li itemprop="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
 				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome }} aria-current="page"{{- end -}}>
 					{{- if $isHome -}}
 						<strong itemprop="name">{{ .Site.Title }}</strong>
@@ -17,7 +17,7 @@
 			</li>
 			{{ range .Site.Menus.main -}}
 			{{ $isCurrent := false }}
-			<li itemscope itemtype="https://schema.org/SiteNavigationElement">
+			<li itemProp="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
 				<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}}{{- $isCurrent = true }} aria-current="page"{{- end -}}>
 					{{- if or $isCurrent (eq $currentPage.Section .Title) -}}
 						<strong itemprop="name">{{- .Name -}}</strong>
