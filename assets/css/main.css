@@ -257,7 +257,8 @@ img:not([itemprop="image"]) {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
-section:not([role]),
+/* independent section */
+:not(details) > section:not([role]):not([itemprop="hasPart"]),
 section[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;
