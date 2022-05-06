@@ -1029,7 +1029,7 @@ For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`,
 
 Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element; <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting"><span itemprop="publisher">Axess Lab</span> described the issue in {{<cited-work name="Hand Tremors and the giant button problem" url="https://axesslab.com/hand-tremors/" extraName="headline">}}</span>. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap". Having clearly distinguished links also helps users decide safe places to tap the screen; see the [section on link underlines](#in-defense-of-link-underlines) for more information.
 
-Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#tap-target).
+Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#google-tap-target).
 
 <figure>
 {{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
@@ -1042,7 +1042,7 @@ Interactive content should be separated by non-interactive regions, such as whit
 
 Tap targets should be at least 44 pixels tall and wide [according to the WCAG](https://www.w3.org/TR/WCAG22/#target-size-enhanced); this is large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
 
-[Google has more aggressive tap-target recommen&shy;dations](https://web.dev/tap-targets/): it recommends raising the limit 48&nbsp;px with with 8&nbsp;px gaps, going so far as to make tap target size a ranking factor in search.
+[Google has more aggressive tap-target recommen&shy;dations](https://web.dev/tap-targets/ "{id='google-tap-target'}"): it recommends raising the limit 48&nbsp;px with with 8&nbsp;px gaps, going so far as to make tap target size a ranking factor in search.
 
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
