@@ -63,5 +63,5 @@
 <meta property="og:image:alt" content="White-on-black colon and semicolon">
 <meta property="og:url" content="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 <meta property="og:description" content="{{ $description }}">
-{{ hugo.Generator }}
+{{ hugo.Generator | replaceRE " />" ">" | safeHTML}}
 </head>

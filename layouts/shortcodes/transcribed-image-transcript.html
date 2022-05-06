@@ -1,9 +1,11 @@
 <details>
 <summary>Toggle transcript</summary>
-<div itemprop="embeddedTextCaption"
 {{ with .Parent -}}
-	id="transcript-{{ .Get "id" }}"
-{{- end -}}>
+<section id="transcript-{{ .Get "id" }}">
+<h5>Image transcript.</h5>
+{{- end -}}
+<div itemprop="embeddedTextCaption">
 {{ .Inner | markdownify | safeHTML }}
 </div>
+</section>
 </details>
