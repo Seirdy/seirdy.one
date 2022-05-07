@@ -9,7 +9,7 @@
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .125em. Borders are either
- * 1px or 3px; percentages are in increments of 5%. This also improves
+ * 1px or 3px; percentages are in increments of 2.5%. This also improves
  * compression. No more "finding the perfect value".
  *
  * I cite WCAG 2.2 success criteria with "SC". I also tried to meet
@@ -36,7 +36,7 @@ html {
 		 * with minimal adjustment, and makes tap-targets larger.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink. */
-		font-size: 105%;
+		font-size: 107.5%;
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
@@ -174,8 +174,7 @@ h1 {
  * try to maintain good perceptual contrast even for small text, but
  * I don't want toggling the theme to impact anything besides color so
  * I set the weight here. */
-kbd,
-sup {
+kbd, {
 	font-weight: bold;
 }
 

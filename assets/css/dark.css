@@ -14,6 +14,11 @@
 		color: #e9e9e9;
 	}
 
+	/* Small text needs higher contrast */
+	sup {
+		background-color: #0b0b0b;
+	}
+
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
 		color: #f1e7b2;
