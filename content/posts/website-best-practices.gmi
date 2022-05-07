@@ -738,7 +738,7 @@ You also might want to use the HTML <picture> element, using JPEG/PNG as a fallb
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1. Re-size and crop the PNG. Convert to grayscale if colors isn't important.
+1. Re-size and crop the PNG. Convert to grayscale if color isn't important.
 2.  Lossy compression with pngquant
 3.  Losslessly optimize the result with Oxipng and its Zopfli backend (slow)
 4.  Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using cwebp. Pick the smaller of the two.
@@ -882,7 +882,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. The main
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
 
-1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text *and* handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
+1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text and handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
 2. The site doesn't use responsive design. The navbar and main content are now squeezed together. Readers will probably close the page.
 
 Neither situation looks great.
@@ -1015,7 +1015,7 @@ There's an ideal range somewhere between "cramped" and "spaced-apart" content. F
 
 ### Non-interactive space
 
-Excessive indentation can make reading difficult for narrow viewports, but preserving some indentation is still useful.
+Excessive indentation makes reading difficult on narrow viewports, but preserving some indentation is still useful.
 
 For now, I've decided to keep some indentation on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
 
@@ -1256,7 +1256,7 @@ ARIA exposes a host of accessibility hazards when used improperly, so only use t
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
-### Other tips
+### Other tips for screen readers
 
 Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, and ChromeVox all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
 
@@ -1294,13 +1294,13 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 2. axe-core: The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
 => https://github.com/dequelabs/axe-core axe-core repository
 
-3. Lighthouse: An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Accessibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
+3. Lighthouse: An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Accessibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 => https://developers.google.com/web/tools/lighthouse/ Lighthouse documentation
 
 4. Webhint: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too aggressively (you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document).
 => https://webhint.io/ webhint website
 
-5. IBM Equal Access Accessibility Checker: Has a scope similar to axe-core.
+5. IBM Equal Access Accessibility Checker: Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
 => https://www.ibm.com/able/toolkit/verify/automated/ IBM automated accessibility tools
 
 6. AInspector: a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
@@ -1340,15 +1340,16 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 10. Test in an online website translator tool.
 11. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-12. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
-13. Try printing out your page in black-and-white from an unorthodox graphical browser.
-14. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
-15. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
-16. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
+12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
+13. Test how your page renders in ancient browsers, like Netscape Navigator. Use a TLS terminator or serve over HTTP from localhost.
+14. Try printing out your page in black-and-white from an unorthodox graphical browser.
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
+16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
 => https://xkcd.com/567/ xkcd: Urgent Mission
 
-I'm still on step 15, trying to find new ways to break this page. If you come up with a new test, please share it:
+I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please share it:
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 

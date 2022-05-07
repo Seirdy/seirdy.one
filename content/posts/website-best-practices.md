@@ -248,7 +248,7 @@ Many people use Tor out of necessity. On Tor, additional constraints apply.
 
 ### Constraints of the Tor Browser
 
-Tor users are encouraged to set the Tor Browser's  [security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, some fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+Tor users are encouraged to set the [Tor Browser's security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, some fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
@@ -392,8 +392,8 @@ Searchability is a good reason to prefer conveying information textually, when p
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; [Reddit's atrocious redesign](#reddit-redesign) is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "other ways to defer content" section](#other-ways-to-defer-content).
 
-{{<image-figure id="reddit-redesign">}}
-{{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
+{{<image-figure id="reddit-redesign">}} {{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
+
 <figcaption itemprop="caption">
 
 Searching for the word "good" before and after a "see more" link is clicked. Both situations show a match, but only one of them allows us to view the match. Both screenshots are from the Reddit redesign.
@@ -665,8 +665,8 @@ If you do explicitly set colors, please also include a dark theme using a media 
 
 If you include a `theme-color` directive in your document `<head>`, then recent browsers will automatically switch their default stylesheets to dark-mode. Unfortunately, some older browsers (like Firefox-ESR) don't support this directive, and WebKit's default dark stylesheet [has unreadable links](https://bugs.webkit.org/show_bug.cgi?id=209851). WebKit versions in the wild are often out of date, so a fixed stylesheet would need to be out for many years before I would consider using default dark stylesheets.
 
-{{<image-figure>}}
-{{<picture name="wk_link" alt="dark blue link on dark gray background.">}}
+{{<image-figure>}} {{<picture name="wk_link" alt="dark blue link on dark gray background.">}}
+
 <figcaption itemprop="caption">WebKit's default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
 {{</image-figure>}}
 
@@ -675,6 +675,7 @@ CSS filters such as `invert` are expensive to run, so use them sparingly. Simply
 Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
 
 {{<image-figure>}}
+
 <figcaption itemprop="caption">
 
 This image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
@@ -724,8 +725,8 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
-{{<image-figure>}}
-{{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them.">}}
+{{<image-figure>}} {{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them.">}}
+
 <figcaption itemprop="caption">
 
 It's impossible to discern the number of links in a sequence without some sort of separator. Whitespace alone isn't sufficient.
@@ -773,7 +774,7 @@ You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fal
 
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
-1. Re-size and crop the PNG. Convert to grayscale if colors isn't important.
+1. Re-size and crop the PNG. Convert to grayscale if color isn't important.
 2. Lossy compression with `pngquant`
 3. Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
 4. Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
@@ -902,7 +903,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. The main
 
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
 
-1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text _and_ handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
+1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text and handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
 2. The site doesn't use responsive design. The navbar and main content are now squeezed together. Readers will probably close the page.
 
 Neither situation looks great.
@@ -1005,8 +1006,8 @@ Designers often use figures to "break up" their content, and provide negative sp
 
 Small phones typically support display rotation. When phones switch to landscape-mode, vertical space becomes precious. Fixed elements (e.g. dickbars) become a major usability hazard. Ironically, the WCAG's own interactive Techniques reference is a perfect example of how fixed elements impact usability on short screens.
 
-{{<image-figure>}}
-{{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.5 >}}
+{{<image-figure>}} {{< picture name="wcag_quickref" alt="Website with banner covering top half of screen." sf=1.5 >}}
+
 <figcaption itemprop="caption">
 
 When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&showtechniques=134%2C124&levels=a&technologies=js%2Cserver%2Csmil%2Cpdf%2Cflash%2Csl), a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
@@ -1023,7 +1024,7 @@ There's an ideal range somewhere between "cramped" and "spaced-apart" content. F
 
 ### Non-interactive space
 
-Excessive indentation can [make reading difficult](#indented-elements) for narrow viewports, but preserving some indentation is still useful.
+[Excessive indentation makes reading difficult](#indented-elements) on narrow viewports, but preserving some indentation is still useful.
 
 For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`, `<ul>`) since I often fill them with links (see this article's [table of contents](#TableOfContents) for an example). This indentation provides important non-interactive negative space.
 
@@ -1031,8 +1032,8 @@ Readers with hand tremors depend on this space to scroll without accidentally se
 
 Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#google-tap-target).
 
-{{<image-figure>}}
-{{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
+{{<image-figure>}} {{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
+
 <figcaption itemprop="caption">
 Interactive content should be separated by non-interactive regions, such as whitespace or plain non-interactive text. Image credit: Axess Lab
 </figcaption>
@@ -1200,8 +1201,8 @@ a:focus,
 
 {{</codefigure>}}
 
-{{<image-figure>}}
-{{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
+{{<image-figure>}} {{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
+
 <figcaption itemprop="caption">
 
 Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
@@ -1258,7 +1259,7 @@ If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria"
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
-### Other tips
+### Other tips for screen readers
 
 Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, and ChromeVox all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
 
@@ -1301,11 +1302,11 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 
 2. [axe-core](https://github.com/dequelabs/axe-core): The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
 
-3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" audits, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
+3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
 4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^18].
 
-5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core.
+5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
 
 6. [AInspec&shy;tor](https://ainspector.disability.illinois.edu/): a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
 
@@ -1336,16 +1337,17 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 10. Test in an online website translator tool.
 11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-12. Test with unorthodox graphical browser engines, like NetSurf, Servo, or the Serenity OS browser.
-13. Try printing out your page in black-and-white from an unorthodox graphical browser.
-14. Download your webpage and test how multiple word processors render and generate PDFs from it.[^20]
-15. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
-16. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
+13. Test how your page renders in ancient browsers, like Netscape Navigator. Use a TLS terminator or serve over HTTP from localhost.
+14. Try printing out your page in black-and-white from an unorthodox graphical browser.
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^20]
+16. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
-I'm still on step 15, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
-{{<image-figure representative="True">}}
-{{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." sf=2 >}}
+{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." sf=2 >}}
+
 <figcaption itemprop="caption">
 
 This page in the [SerenityOS](https://serenityos.org/) web browser. TLS&nbsp;1.2 support isn't finished yet; I loaded it from a mirror with a compatible cipher suite.
