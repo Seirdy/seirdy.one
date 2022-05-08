@@ -213,7 +213,7 @@ Understanding round-trips requires understanding your server's approach to conge
 
 Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.[^4]
 
-Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name headline" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (<span itemprop="encodingFormat">application/<wbr>pdf</span>) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNIC" org-url="https://www.apnic.net/">}} </span>
+Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small. Find more details in the slides from <span class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/PresentationDigitalDocument"> <cite class="p-name" itemprop="name headline" ><a class="u-url" itemprop="url" href="https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf">TCP and BBR</a></cite> (<span itemprop="encodingFormat">application/<wbr>pdf</span>) by {{<indieweb-person first-name="Geoff" last-name="Huston" itemprop="author" url="https://www.potaroo.net/" org="APNiC" org-url="https://www.apnic.net/">}}</span>.
 
 HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the important thing to remember is that _user agents should be aware of all blocking resources **before** finishing the earliest possible round-trip._
 
@@ -303,7 +303,7 @@ Some go so far as to disable this behavior to avoid data overages. Savvy privacy
 
 Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
-Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Many marginalized people don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
+Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Many marginalized groups don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
 
 ### Can't users on poor connections disable images?
 
@@ -364,7 +364,7 @@ A similar image attribute that I _do_ recommend is the [`decoding` attribute](ht
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
 
-<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. Combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the `hidden` parameter when `auto` is better:
+<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. Combined with a property like `content-visibility`, it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the `hidden` parameter when `auto` is better:
 
 {{<quotation>}}
 
@@ -459,7 +459,7 @@ set font size and line-spacing with a percentage and a unitless value, respectiv
 {{< /codecaption >}}
 
 ```figure
-font: 100%/1.5 sans-serif;
+font: 107.5%/1.5 sans-serif;
 ```
 
 {{</codefigure>}}
@@ -920,7 +920,7 @@ As words-per-line decrease (by increasing zoom or narrowing the viewport), line 
 
 The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as [a AAA success criterion (SC 1.4.8)](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
 
-Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `38em`, which typically corresponds to just under 90 characters. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, and others).
+Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `36em`, which typically corresponds to just over 80 characters. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
 
 I also ensured that my site supports CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implemen&shy;tations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
@@ -937,7 +937,7 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 
   div[itemprop="articleBody"] {
     margin: auto;
-    max-width: 38em;
+    max-width: 36em;
   }
 }
 ```
@@ -953,7 +953,7 @@ People read on a variety of viewport sizes. Page structure must be simple enough
 
 Not every phone has a giant screen: millions of people around the world use Web-enabled feature phones. The Jio Phone&nbsp;2, for instance, is narrow enough to fall through a belt loop: it sports a screen that's just over 3.6&nbsp;cm (1.44&nbsp;inches) wide. Furthermore, some programs sport browser windows in sidebars (c.f. Mozilla's [side view](https://addons.mozilla.org/en-US/firefox/addon/side-view/), Vivaldi [Web Panels](https://help.vivaldi.com/desktop/panels/web-panels/)). Users who leverage floating or tiling windows rather than maximizing everything could use viewports of arbitrary dimensions.
 
-Nowadays, even tiny smartwatches have built-in browsers; users who navigate to links in smartwatch message and email apps will use simplified browsers that fit on their wrists. Apple published a [video about WebKit on WatchOS](https://developer.apple.com/videos/play/wwdc2018/239/) (here's [a text summary of the video](https://brucelawson.co.uk/2018/the-practical-value-of-semantic-html/), starting at the "New types of devices" section); the Apple Watch Series 6 has a viewport that's 162 CSS pixels wide. Samsung Internet is a popular option for Wear OS users, whose viewports are often just 150 CSS pixels.
+Nowadays, even tiny smartwatches have built-in browsers; users who navigate to links in smartwatch message and email apps will use simplified browsers that fit on their wrists. Apple published a [video about WebKit on WatchOS](https://developer.apple.com/videos/play/wwdc2018/239/) (here's [a text summary of the video](https://brucelawson.co.uk/2018/the-practical-value-of-semantic-html/), starting at the "New types of devices" section). The Apple Watch Series 6 has a viewport that's 162 CSS pixels wide; it emulates an iPhone's viewport and shows a zoomed-out version of the page unless the page includes a "device-adjust" meta tag, the same way phones emulate desktop viewports without a "viewport" meta tag. Samsung Internet is a popular option for Wear OS users, whose viewports are often just 150 CSS pixels.
 
 ### Wide items
 
@@ -996,7 +996,9 @@ The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.
 
 Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element. Browsers that do not support CSS&nbsp;3 properties such as `padding-inline-start` will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
+
+Indented elements can be difficult to distinguish when nested. A `<blockquote>` may not be visible if it contains an `<ol>` or `<ul>`. My left-border approach resolves this ambiguity.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
@@ -1043,7 +1045,7 @@ Interactive content should be separated by non-interactive regions, such as whit
 
 Tap targets should be at least 44 pixels tall and wide [according to the WCAG](https://www.w3.org/TR/WCAG22/#target-size-enhanced); this is large enough to easily tap on a touch&shy;screen. The WCAG makes an exception for inline targets, like links in a paragraph.
 
-[Google has more aggressive tap-target recommen&shy;dations](https://web.dev/tap-targets/ "{id='google-tap-target'}"): it recommends raising the limit 48&nbsp;px with with 8&nbsp;px gaps, going so far as to make tap target size a ranking factor in search.
+[Google has more aggressive tap-target recommen&shy;dations](https://web.dev/tap-targets/ "{id='google-tap-target'}"): it recommends raising the limit 48&nbsp;px with with 8&nbsp;px gaps, going so far as to make tap target size a ranking factor in search. The edges of a touch screen are often tap-targets (the top edge might toggle navigation or scroll to the top, the bottom may have home/back buttons, and the right side may have a scrollbar), so keep elements slightly away from those.
 
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
@@ -1109,7 +1111,7 @@ Only after <abbr title="Plain-Old, Semantic HTML">POSH</abbr> is insufficient sh
 
 For example: machine translation will leave `<code>` and `<samp>` blocks as-is. Perhaps you could annotate comments within code with a `translate="yes"` attribute. However, translation engines should leave variables within those comments as-is.
 
-[Google's style guide](https://developers.google.com/style/placeholders) recommends annotating format placeholders in code blocks with the `<var>` element; consider doing so and adding a `translate="yes"` attribute to placeholder values, at your discretion. For an example, check this article's code sample [describing my PNG optimization pipeline](#png-pipeline).
+[Google's style guide](https://developers.google.com/style/placeholders) recommends annotating format placeholders in code blocks with the `<var>` element; consider doing so and adding a `translate="yes"` attribute to placeholder values, at your discretion. For an example, check this article's code sample [describing my PNG optimization pipeline](#png-pipeline). Most implementations do not yet support `translate="yes"` embedded inside untranslated blocks, but I'm counting on this changing.
 
 ### Chan&shy;ging text direction {#changing-text-direction}
 
@@ -1131,7 +1133,7 @@ This section contains miscellaneous advice regarding the latter category of styl
 
 ### Mono&shy;space handling {#monospace-handling}
 
-By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to `monospace monospace` (sic).
+By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to `monospace, monospace` (sic).
 
 Font family alone is not enough to distinguish an element from its surroundings. For `<pre>`, `<code>`, and `<samp>` elements, I recommend supplementing the font family change with a soft border. As described in [the "Color overrides and accessibility" section](#color-overrides-and-accessibility), borders are preferable to background colors because they don't override the user-agent's preferred foreground and background colors.
 

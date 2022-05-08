@@ -421,6 +421,12 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
+In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations (e.g. borders), but they are uncommon. Set font size and line-spacing with a percentage and a unitless value, respectively:
+
+```
+font: 107.5%/1.5 sans-serif;
+```
+
 ## Beyond alt-text
 
 Expect some readers to have images disabled or unloaded. Examples include:
@@ -903,7 +909,7 @@ The WCAG recommends a max line length of 80 characters (40 characters for CJK la
 
 However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
 
-Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of 38em, which typically corresponds to just under 90 characters. I opted to use "em" instead of "ch" for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, and others).
+Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of 36em, which typically corresponds to just over 80 characters. I opted to use "em" instead of "ch" for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
 
 I also ensured that my site supports CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
@@ -916,9 +922,9 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
     padding: 0 3%;
   }
 
-  .e-content {
+  div[itemprop="articleBody"] {
     margin: auto;
-    max-width: 38em;
+    max-width: 36em;
   }
 }
 ```
@@ -940,7 +946,7 @@ Users who leverage floating or tiling windows rather than maximizing everything 
 => https://brucelawson.co.uk/2018/the-practical-value-of-semantic-html/ Text + image summary of that video
 => https://www.tizenhelp.com/samsung-internet-browser-now-support-on-galaxy-watch-4/ Samsung Internet on Wear OS
 
-The Apple Watch Series 6 has a viewport that's 162 CSS pixels wide. Samsung Internet is a popular option for Wear OS users, whose viewports are often just 150 CSS pixels.
+The Apple Watch Series 6 has a viewport that's 162 CSS pixels wide; it emulates an iPhone's viewport and shows a zoomed-out version of the page unless the page includes a "device-adjust" meta tag, the same way phones emulate desktop viewports without a "viewport" meta tag. Samsung Internet is a popular option for Wear OS users, whose viewports are often just 150 CSS pixels.
 
 ### Wide items
 
@@ -993,7 +999,9 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (<ol>, <dl>, <ul>), the indentation alone may fill most of a narrow viewport!
 
-I chose to remove the margins in <figure> elements for quotations. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element. Browsers that do not support CSS 3 properties such as "padding-inline-start" will render quoted text using default stylesheets (probably with an indent), which are perfectly usable if a bit inconvenient.
+I chose to remove the margins in <figure> elements for quotations. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
+
+Indented elements can be difficult to distinguish when nested. A <blockquote> may not be visible if it contains an <ol> or <ul>. My left-border approach resolves this ambiguity.
 
 Another example: outside the Web, I prefer indenting code with tabs instead of spaces. Tab widths are user-configurable, while spaces aren't. HTML pre-formatted code blocks, however, are best indented with two spaces. Default browser stylesheets typically represent tabs with an excessive indent, which can be annoying on narrow viewports.
 
@@ -1039,6 +1047,8 @@ Tap targets should be at least 44 pixels tall and wide according to the WCAG; th
 
 Google has more aggressive tap-target recommendations: it recommends raising the limit 48 px with with 8 px gaps, going so far as to make tap target size a ranking factor in search.
 => https://web.dev/tap-targets/ Google's tap target guidelines
+
+The edges of a touch screen are often tap-targets (the top edge might toggle navigation or scroll to the top, the bottom may have home/back buttons, and the right side may have a scrollbar), so keep elements slightly away from those.
 
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
@@ -1130,6 +1140,8 @@ For an example, check the HTML version of this article's code sample describing 
 
 => https://seirdy.one/2021/03/10/search-engines-with-own-indexes.html#png-pipeline PNG pipeline
 
+Most implementations do not yet support `translate="yes"` embedded inside untranslated blocks, but I'm counting on this changing.
+
 ### Changing text direction
 
 Consider the implications of translating between left-to-right (LTR) and right-to-left (RTL) languages. Do a search through your stylesheets for keywords like "left" and "right" to ensure that styles don't depend too heavily on text direction. Once you've cleared the low-hanging fruit, try translating the page to a language like Arabic.
@@ -1151,7 +1163,7 @@ This section contains miscellaneous advice regarding the latter category of styl
 
 ### Monospace handling
 
-By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to "monospace monospace" (sic).
+By default, most browsers render monospace text at a reduced size. If you want your monospace text to be readable, set its font family to "monospace, monospace" (sic).
 
 Font family alone is not enough to distinguish an element from its surroundings. For <pre>, <code>, and <samp> elements, I recommend supplementing the font family change with a soft border. As described in the "Color overrides and accessibility" section, borders are preferable to background colors because they don't override the user-agent's preferred foreground and background colors.
 
