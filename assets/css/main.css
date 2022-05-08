@@ -56,7 +56,7 @@ html {
 		 * I followed Google's a11y recommendations of "at least 8px space
 		 * between tappables" by creating margins/paddings between nav links;
 		 * re-use that same amount of space here. 1em + .25em = 1.25em */
-		padding: 0 1.25em;
+		padding: 0 24px;
 	}
 
 	/* 45em is too wide for long body text.
