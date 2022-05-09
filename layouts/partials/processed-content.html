@@ -24,7 +24,7 @@
 </section>` -}}
 
 {{- $badNoteRef := ` role="doc-noteref">([0-9]*)</a>` -}}
-{{- $goodNoteRef := ` role="doc-noteref">note ${1}</a>` -}}
+{{- $goodNoteRef := ` role="doc-noteref">note&nbsp;${1}</a>` -}}
 
 <!--Remove deprecated DPUB-ARIA role and unused classes-->
 {{- $endnote := `(role="doc-endnote"|class="footnote-(back)?ref")` -}}

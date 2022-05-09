@@ -1,6 +1,6 @@
-<figcaption>
 {{- with .Parent -}}
 	{{- if eq .Name "quotation" -}}
+<figcaption>
 		&mdash;
 	{{- else if eq .Name "codefigure" -}}
 		Taken from
@@ -11,4 +11,7 @@
 		{{ .Inner | markdownify | safeHTML }}
 	</span>
 </span>
+{{- with .Parent -}}{{ if eq .Name "quotation" }}
 </figcaption>
+{{- end -}}
+{{- end }}

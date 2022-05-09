@@ -519,7 +519,7 @@ Mathematical notation
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in [reading-mode implemen&shy;tations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior.
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in [reading-mode implemen&shy;tations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior; [Pandoc's](https://pandoc.org/) HTML-to-LaTeX conversion and [PrintFriendly](https://www.printfriendly.com/) are examples of software that move figure elements around to improve pagination.
 
 {{<quotation>}}
 
@@ -672,7 +672,7 @@ If you include a `theme-color` directive in your document `<head>`, then recent 
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes halation, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes <dfn id="halation">halation</dfn>, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
 
 {{<image-figure>}}
 
@@ -714,14 +714,14 @@ Accounting for halation, overstimulation, and high-contrast needs is hard to do 
 
 Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} describes his experience in {{<cited-work name="Color blindness" extraName="headline" url="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">}}</span>. Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
 
-Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.
+Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.[^12]
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
 In defense of link under&shy;lines {#in-defense-of-link-underlines}
 ----------------------------------
 
-Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html)[^12], and that hyperlinks are no exception. I disagree.
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html)[^13], and that hyperlinks are no exception. I disagree.
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
@@ -766,7 +766,7 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^13]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif)[^14]. AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles Web&shy;Assembly-compiled encoders; I've heard good things about it.
 
@@ -885,7 +885,7 @@ Users of <abbr title="assistive technology">AT</abbr>s such as screen readers pr
 
 Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
-Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^14] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
+Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^15] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
 ### Arbitrary viewports
 
@@ -969,7 +969,7 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 ### Keeping text together
 
-Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^12] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
+Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^13] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
 
 One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 
@@ -1032,14 +1032,14 @@ For now, I've decided to keep some indentation on list elements (`<ol>`, `<dl>`,
 
 Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element; <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting"><span itemprop="publisher">Axess Lab</span> described the issue in {{<cited-work name="Hand Tremors and the giant button problem" url="https://axesslab.com/hand-tremors/" extraName="headline">}}</span>. Readers who double-tap to jump or zoom can't do so if there's no screen region that's "safe to tap". Having clearly distinguished links also helps users decide safe places to tap the screen; see the [section on link underlines](#in-defense-of-link-underlines) for more information.
 
-Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#google-tap-target).
-
 {{<image-figure>}} {{<picture name="touch_targets" alt="Phone screen has three touch-targets separated by sections labeled \"space\".">}}
 
 <figcaption itemprop="caption">
 Interactive content should be separated by non-interactive regions, such as whitespace or plain non-interactive text. Image credit: Axess Lab
 </figcaption>
 {{</image-figure>}}
+
+Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#google-tap-target).
 
 ### Tap targets
 
@@ -1169,17 +1169,26 @@ kbd {
 
 The default focus indicators are hard to see in certain browsers (e.g. Firefox and WebKit), especially when the focused element already has a border. We can override them to make them more accessible.
 
+{{<image-figure>}} {{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
+
+<figcaption itemprop="caption">
+
+Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
+
+</figcaption>
+{{</image-figure>}}
+
 On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
 
 The WCAG guidelines recommend making focus indicators 2&nbsp;px thick in [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced). While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
-You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^15]
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^16]
 
 {{<codefigure>}}
 
 {{< codecaption lang="CSS" >}}
 
-I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name=":focus-visible and backwards compatibility" url="https://www.tpgi.com/focus-visible-and-backwards-compatibility/" extraName="headline">}} by <span itemprop=author itemscope itemtype=https://schema.org/Organization class="h-card vcard p-author"> <a itemprop=url href=https://www.tpgi.com/ class="u-url url"> <span itemprop=name class="p-name">TPGi</span></a></span></span>.
+I do not re-style `:focus` when `:focus-visible` works, to match existing behavior. I also override `:focus` styling only on the subset of focusable elements that would normally show an outline. Based on the post <span itemprop="isBasedOn" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name=":focus-visible and backwards compatibility" url="https://www.tpgi.com/focus-visible-and-backwards-compatibility/" extraName="headline">}} by <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization" class="h-card vcard p-author"> <a itemprop="url" href="https://www.tpgi.com/" class="u-url url"> <span itemprop="name" class="p-name">TPGi</span></a></span></span>.
 
 {{< /codecaption >}}
 
@@ -1202,15 +1211,6 @@ a:focus,
 ```
 
 {{</codefigure>}}
-
-{{<image-figure>}} {{< picture name="focus" alt="Screenshots of link outlines: one thin and dotted, one thick and solid." >}}
-
-<figcaption itemprop="caption">
-
-Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
-
-</figcaption>
-{{</image-figure>}}
 
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------
@@ -1236,13 +1236,9 @@ This is especially concerning on my website, where I tend to hyperlink peoples' 
 
 A workaround is to use the "text" ARIA role to remove the semantics of elements. This workaround doesn't work in certain screen readers, including Orca, so don't count on it.
 
-{{<quotation>}}
+{{<codefigure>}} {{< codecaption lang="HTML" >}} An example of using `role="text"` to prevent splitting in a multi-line heading. By {{< quotecaption partOfType="BlogPosting" >}} {{<indieweb-person first-name="Hampus" last-name="Sethfords" url="https://axesslab.com/author/hampelusken/" itemprop="author" org="Axess Lab" org-url="https://axesslab.com">}}, {{<cited-work name="Text Splitting Causes Screen Reader Problems" url="https://axesslab.com/text-splitting/" extraName="headline">}} {{< /quotecaption >}} {{< /codecaption >}}
 
-<blockquote itemprop="text">
-
-To force a screen reader to interpret the heading as one object, I wrapped the text inside the heading in a span and added `role="text"`.
-
-```
+```figure {str1="text" str2="br"}
 <h1>
   <span role="text">Digital accessibility, <br>
     for everyone. 
@@ -1250,12 +1246,7 @@ To force a screen reader to interpret the heading as one object, I wrapped the t
 </h1>
 ```
 
-</blockquote>
-{{< quotecaption partOfType="BlogPosting" >}}
-{{<indieweb-person first-name="Hampus" last-name="Sethfords" url="https://axesslab.com/author/hampelusken/" itemprop="author">}},
-{{<cited-work name="Text Splitting Causes Screen Reader Problems" url="https://axesslab.com/text-splitting/" extraName="headline">}}
-{{< /quotecaption >}}
-{{</quotation>}}
+{{</codefigure>}}
 
 If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria">First Rule of ARIA</dfn>: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. Furthermore, `role="text"` isn't actually standard ARIA; its proposed inclusion into the ARIA specification was controversial. See [issue 870 of WAI-ARIA](https://github.com/w3c/aria/issues/870#issuecomment-589282781) for some problems with it.
 
@@ -1269,7 +1260,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implemen&shy;tations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^16]
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^17]
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1278,7 +1269,7 @@ Beware of `display` and `visibility` CSS properties; they can interfere with con
 {{<quotation id="display-props">}}
 
 <blockquote itemprop="text">
-<p>Sometimes doing this can have an unintended effect of nuking the semantics of the elements, as conveyed to screen reading software, in the <a href="https://www.tpgi.com/the-browser-accessibility-tree/">browser accessibility tree</a>. Screen readers and other assistive tech, in general, do not have direct access to the HTML DOM, they are provided access to a subset of information in the HTML DOM via <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-accessibility-api">Accessi&shy;bility APIs</a>. Sometimes what an element represents in the HTML DOM is not how it is represented in the accessibility tree.</p>
+<p>Sometimes [using <code>display</code> properties] can have an unintended effect of nuking the semantics of the elements, as conveyed to screen reading software, in the <a href="https://www.tpgi.com/the-browser-accessibility-tree/">browser accessibility tree</a>. Screen readers and other assistive tech, in general, do not have direct access to the HTML DOM, they are provided access to a subset of information in the HTML DOM via <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-accessibility-api">Accessi&shy;bility APIs</a>. Sometimes what an element represents in the HTML DOM is not how it is represented in the accessibility tree.</p>
 <p>If what is represented in the accessibility tree does not represent the devel&shy;oper’s intended UI, it’s either (wittingly / unwittingly) the <strong>fault of the developer or the browser</strong>. But what we can be sure of, in these cases, is that it is <strong>not the fault of the screen reader</strong>.</p>
 </blockquote>
 {{< quotecaption partOfType="BlogPosting" >}}
@@ -1298,7 +1289,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests--especially accessibility tests--are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^17]
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^18]
 
 1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've reco&shy;mmended elsewhere on this page. Watch out for false positives.
 
@@ -1306,7 +1297,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 
 3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
-4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^18].
+4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^19].
 
 5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
 
@@ -1329,7 +1320,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^19]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^20]
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 5. Print some pages in black-and-white, preferably with a simple laser printer.
@@ -1340,9 +1331,9 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 10. Test in an online website translator tool.
 11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
-13. Test how your page renders in ancient browsers, like Netscape Navigator. Use a TLS terminator or serve over HTTP from localhost.
+13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^20]
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^21]
 16. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
@@ -1494,29 +1485,31 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^11]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors indepen&shy;dently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 
-[^12]: <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^12]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good compromise.
+
+[^13]: <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^13]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
+[^14]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
 
-[^14]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
+[^15]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
 
     Mobile users wishing to temporarily switch modes have to stop, change their navigation mode, perform a navigation gesture, and switch back. Mobile users trying to skim an article don't always find this worth the effort and sometimes stick to heading-based navigation even when a different mode would be optimal.
 
-[^15]: If you'd like to learn more, <span itemprop="mentions" itemscope itemtype="https://schema.org/BlogPosting">{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}</span> has far more details on making accessible focus indicators.
+[^16]: If you'd like to learn more, <span itemprop="mentions" itemscope itemtype="https://schema.org/BlogPosting">{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}</span> has far more details on making accessible focus indicators.
 
-[^16]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^17]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^17]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommen&shy;ding headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Per&shy;missions-<wbr>Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Per&shy;missions-<wbr>Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^18]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommen&shy;ding headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Per&shy;missions-<wbr>Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Per&shy;missions-<wbr>Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^18]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommen&shy;dations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommen&shy;dations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^19]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommen&shy;dations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommen&shy;dations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
-[^19]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
+[^20]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemprop="hasPart" itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
-    <strong id="code-snippet=11" itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 11</strong>:
+    <strong id="code-snippet=12" itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> 12</strong>:
         Firefox prefs to turn off JIT compilation
         </figcaption>
 
@@ -1528,7 +1521,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^20]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^21]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
     Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 

@@ -486,7 +486,7 @@ Figures aren't just for images; they're for any self-contained referenced conten
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in reading-mode implementations (see the "Non-browsers: reading mode" section). The HTML specification explicitly notes this behavior.
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in reading-mode implementations (see the "Non-browsers: reading mode" section). The HTML specification explicitly notes this behavior; Pandoc's HTML-to-LaTeX conversion and PrintFriendly.com are examples of software that move figure elements around to improve pagination.
 
 > When a figure is referred to from the main content of the document by identifying it by its caption (e.g., by figure number), it enables such content to be easily moved away from that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix, without affecting the flow of the document.
 > If a figure element is referenced by its relative position, e.g., "in the photograph above" or "as the next figure shows", then moving the figure would disrupt the page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than using such relative references, so that the page can easily be restyled without affecting the page's meaning.
@@ -691,6 +691,8 @@ Color palettes need to be effective for different types of vision deficiencies (
 Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
 
 Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test with both high- and low-end displays, especially when designing a dark color scheme.
+
+When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to prevent halation. Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good compromise.
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
@@ -1282,7 +1284,7 @@ Default verbosity does, however, convey symbols and emoji. Use symbols and emoji
 
 Beware of "display" and "visibility" CSS properties; they can interfere with content reported to screen readers. Whenever you use one of those properties, re-test with screen readers just to be safe.
 
-> Sometimes doing this can have an unintended effect of nuking the semantics of the elements, as conveyed to screen reading software, in the browser accessibility tree. Screen readers and other assistive tech, in general, do not have direct access to the HTML DOM, they are provided access to a subset of information in the HTML DOM via Accessibility APIs. Sometimes what an element represents in the HTML DOM is not how it is represented in the accessibility tree.
+> Sometimes [using display properties] can have an unintended effect of nuking the semantics of the elements, as conveyed to screen reading software, in the browser accessibility tree. Screen readers and other assistive tech, in general, do not have direct access to the HTML DOM, they are provided access to a subset of information in the HTML DOM via Accessibility APIs. Sometimes what an element represents in the HTML DOM is not how it is represented in the accessibility tree.
 > If what is represented in the accessibility tree does not represent the developer’s intended UI, it’s either (wittingly/unwittingly) the fault of the developer or the browser. But what we can be sure of, in these cases, is that it is not the fault of the screen reader.
 => https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/ Short note on what CSS display properties do to table semantics
 
@@ -1353,7 +1355,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 10. Test in an online website translator tool.
 11. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
-13. Test how your page renders in ancient browsers, like Netscape Navigator. Use a TLS terminator or serve over HTTP from localhost.
+13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
 15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
 16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
