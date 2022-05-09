@@ -9,17 +9,13 @@
 {{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) -}}
 {{ $dark_jxl := resources.GetMatch (printf "/p/%s_dark.jxl" (.Get "name")) -}}
 
-{{- $isPix := false -}}
 {{- $img_width := $light_png.Width -}}
 {{- $img_height := $light_png.Height -}}
 {{- with (.Get "sf") -}}
 	{{- $img_width = (mul $img_width . | math.Round) -}}
 	{{- $img_height = (mul $img_height . | math.Round ) -}}
-	{{- if eq . 2 -}}
-		{{- $isPix = true -}}
-	{{- end -}}
 {{- end -}}
-<picture{{ if $isPix }} class="pix"{{ end }}>
+<picture>
 	{{ with $dark_svg -}}
 	{{ $dark_svg_src := . | resources.Fingerprint "md5" -}}
 	<source
@@ -83,7 +79,7 @@
 	<source
 		srcset="{{ $light_png_src.RelPermalink }}"
 		type="image/png">
-	<img
+	<img{{ with .Get "class" }} class="{{ . }}"{{ end }}
 		width="{{ $img_width }}" height="{{ $img_height }}"
 		src="{{ $light_png.RelPermalink }}" alt='{{ .Get "alt" }}'
 		{{ with .Parent -}}

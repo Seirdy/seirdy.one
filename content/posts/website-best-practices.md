@@ -725,7 +725,7 @@ Some typographers insist that [underlined on-screen text is obsolete](https://pr
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
-{{<image-figure>}} {{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them.">}}
+{{<image-figure>}} {{<picture name="underlines" alt="Multiple multi-word hyperlinks with and without underlines separating them." sf=0.75 >}}
 
 <figcaption itemprop="caption">
 
@@ -1339,7 +1339,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
-{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." sf=2 >}}
+{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." class="pix" sf=2 >}}
 
 <figcaption itemprop="caption">
 
