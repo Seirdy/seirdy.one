@@ -1469,7 +1469,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: <span itemprop="citation" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="High-Performance Browser Networking" url="https://hpbn.co/building-blocks-of-tcp/" extraName="headline">}} by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/" itemprop="url">}}</span> gives a great introduction to how TCP works, if you'd like more details.
+[^4]: <span itemprop="citation" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="High-Performance Browser Networking" url="https://hpbn.co/building-blocks-of-tcp/" extraName="headline">}} by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/" itemprop="author">}}</span> gives a great introduction to how TCP works, if you'd like more details.
 
 [^5]: HPACK and QPACK header compression includes dictionaries containing common header names, and some common header values; HPACK lists them in "Appendix A" of <span itemprop="citation" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="RFC 7541" extraName="headline" url="https://datatracker.ietf.org/doc/html/rfc7541#appendix-A">}}</span>. If a header name or name-value pair one of these predefined table entries, its effective size can be reduced to a single byte. If a header has a value that isn't covered by the table, consider minifying it by removing unnecessary whitespace.
 
