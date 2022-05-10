@@ -1,6 +1,6 @@
 /* Print stylesheet: hide stuff that we don't need. */
 @media print {
-	/* Currently only used for transcripts */
+	/* Currently only used for transcripts and TOC */
 	article details,
 	/* Currently only used for in-page heading anchors,
 	 * useless in printouts. */
@@ -11,6 +11,8 @@
 		display: none;
 	}
 
+	/* The triangle bullet on summary elements gives no actionable
+	 * information on print. */
 	summary {
 		list-style: none;
 	}

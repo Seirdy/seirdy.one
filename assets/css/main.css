@@ -3,9 +3,11 @@
  * specific a11y, compatibility, or critical
  * usability need.
  *
- * I also don't use any classes besides "pix". My HTML contains
- * microformats2 classnames for IndieWeb parsers, but I don't actually
- * use those for styling.
+ * I also don't use any classes except for image presentation. (e.g. to
+ * specify that an image should have pixelated rendering or be inverted
+ * in dark mode).
+ * My HTML contains microformats2 classnames for IndieWeb parsers, but I
+ * don't actually use those for styling.
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .125em. Borders are either
@@ -55,7 +57,9 @@ html {
 		 * are addressed by adding some body padding.
 		 * I followed Google's a11y recommendations of "at least 8px space
 		 * between tappables" by creating margins/paddings between nav links;
-		 * re-use that same amount of space here. 1em + .25em = 1.25em */
+		 * re-use that same amount of space here. 24px is what it takes to
+		 * create atl 48px of non-interactive space on <ul> and <ol> elements
+		 * containing lists of interactives. */
 		padding: 0 24px;
 	}
 
@@ -91,11 +95,13 @@ html {
 		 * we need to tell users that the full space is interactive.
 		 * Use a border for that. */
 		border: 1px solid #999;
-
-		/* Google a11y: ensure tap targets have >=8 px space between them */
-		margin: .25em 0;
 	}
 
+	/* If we have a list of disclosure widgets, we need some
+	 * non-interactive space on the screen that's safe to tap. */
+	li details {
+		margin: .5em .25em;
+	}
 
 	/* Prevent nested lists from overlapping */
 	nav li ol {
