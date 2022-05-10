@@ -59,7 +59,9 @@ html {
 		 * between tappables" by creating margins/paddings between nav links;
 		 * re-use that same amount of space here. 24px is what it takes to
 		 * create atl 48px of non-interactive space on <ul> and <ol> elements
-		 * containing lists of interactives. */
+		 * containing lists of interactives.
+		 * Don't use relative units here; this margin shouldn't scale with
+		 * zoom, or else text will get narrower with zoom. */
 		padding: 0 24px;
 	}
 
@@ -103,8 +105,12 @@ html {
 		margin: .5em .25em;
 	}
 
-	/* Prevent nested lists from overlapping */
 	nav li ol {
+		/* Don't duplicate bottom space: the last list item in the nested
+		 * list and the list item that is the entire nested list will both
+		 * have bottom padding */
+		margin-bottom: -1em;
+		/* Prevent nested lists from overlapping */
 		padding-top: 1em;
 	}
 }
@@ -169,7 +175,7 @@ h1 {
 		font-size: 100%;
 		-webkit-hyphens: auto;
 		hyphens: auto;
-		padding: 0 5%;
+		padding: 0 8px;
 	}
 }
 
@@ -180,7 +186,7 @@ h1 {
  * try to maintain good perceptual contrast even for small text, but
  * I don't want toggling the theme to impact anything besides color so
  * I set the weight here. */
-kbd, {
+kbd {
 	font-weight: bold;
 }
 
@@ -245,7 +251,7 @@ pre {
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
-img:not([itemprop="image"]) {
+picture img {
 	display: block;
 	height: auto;
 	margin: auto;
@@ -262,8 +268,7 @@ img:not([itemprop="image"]) {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
-/* independent section */
-:not(details) > section:not([role]):not([itemprop="hasPart"]),
+section[aria-labelledby="webmentions"],
 section[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;

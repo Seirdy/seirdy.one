@@ -1,7 +1,15 @@
 /* Print stylesheet: hide stuff that we don't need. */
 @media print {
-	/* Currently only used for transcripts and TOC */
-	article details,
+	/* The triangle bullet on summary elements gives no actionable
+	 * information on print. */
+	summary {
+		list-style: none;
+	}
+
+	/* An un-opened summary inside an article has no use in print.
+	 * Outside an article it's used in my webring list where it has some
+	 * use, see below. */
+	article summary,
 	/* Currently only used for in-page heading anchors,
 	 * useless in printouts. */
 	span[aria-hidden],
@@ -9,12 +17,6 @@
 	footer nav,
 	nav a:not([rel="home"]) span {
 		display: none;
-	}
-
-	/* The triangle bullet on summary elements gives no actionable
-	 * information on print. */
-	summary {
-		list-style: none;
 	}
 }
 
