@@ -1,4 +1,5 @@
 CSS_DIR = assets/css
+SRCFILES = layouts/**/*.html layouts/**/*.xml content/**/*.md $(CSS_DIR)/*.css static/*.svg assets/*.svg config.toml csv/*
 DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
@@ -12,17 +13,15 @@ WWW_RSYNC_DEST = $(USER):$(WWW_ROOT)
 GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
-RSYNCFLAGS += -rlcv --zc=zstd --zl=6
-# include br, jxl, and gmi in skip-compress; skip unchanged files.
-RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3 -c
+RSYNCFLAGS += -rlcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
 
 VNU ?= vnu
 
 .PHONY: hugo
-hugo: clean
-	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS)
+hugo: $(SRCFILES)
+	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
 
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
@@ -37,13 +36,13 @@ clean:
 	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports mentions.json
 
 .PHONY: lint-css
-lint-css:
-	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/print.css
+lint-css: $(CSS_DIR)/*.css
+	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/*.css
 	@#csslint --quiet $(CSS_DIR)
 
 .PHONY: lint-html
-lint-html: hugo
-	$(VNU) --stdout --format json --skip-non-html --also-check-svg public | jq --from-file linter-configs/vnu_filter.jq
+lint-html:
+	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | jq --from-file linter-configs/vnu_filter.jq
 
 .PHONY: hint
 hint: hugo .hintrc-local
@@ -70,16 +69,19 @@ check-links: hugo
 .PHONY: test
 test: lint-css hint-devserver check-links
 
-.PHONY: build
-build: hugo
-ifndef NO_STATIC
+gz:
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
 		| grep -v gemini \
 		| xargs ect -$(ECT_LEVEL) -gzip
+
+brotli:
 	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
 		| grep -v gemini \
 		| xargs brotli -q 11 --
-endif
+
+compress: gz brotli
+
+.PHONY: compress gz brotli
 
 # save webmentions to a file, don't send yet
 mentions.json: hugo
@@ -91,11 +93,11 @@ mentions.json: hugo
 	rm mentions.json.unfiltered
 
 .PHONY: deploy-html
-deploy-html: build
+deploy-html:
 	rsync $(RSYNCFLAGS) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete
 
 .PHONY: deploy-gemini
-deploy-gemini: hugo
+deploy-gemini:
 	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude '*.br' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
 	rsync $(RSYNCFLAGS) $(OUTPUT_DIR)/posts/gemini.xml $(GEMINI_RSYNC_DEST)/feed.xml
 
@@ -110,3 +112,30 @@ test-staging: deploy-html
 
 .PHONY: all
 all: test deploy
+
+.PHONY: deploy-envs
+deploy-envs:
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs hugo
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
+
+.PHONY: deploy-prod
+deploy-prod:
+	@$(MAKE) clean
+	@$(MAKE) hugo
+	@$(MAKE) compress
+	@$(MAKE) deploy
+
+
+.PHONY: deploy-staging
+deploy-staging:
+	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging clean
+	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging hugo
+	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging lint-local compress
+	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy
+
+.PHONY: deploy-onion
+deploy-onion:
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion clean
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion hugo
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion compress
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion deploy-html

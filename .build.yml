@@ -3,7 +3,7 @@ image: alpine/edge
 packages:
   - rsync
   - git  # for Hugo's gitInfo
-  - make
+  - bmake
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
@@ -15,12 +15,10 @@ triggers:
 tasks:
   - deps: |
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
-      rsync -v deploy@seirdy.one:/home/deploy/binaries.tar.gz .
+      rsync -Wv deploy@seirdy.one:/home/deploy/binaries.tar.gz .
       mkdir -p ~/bin
       tar xzf binaries.tar.gz -oC ~/bin
-      cd seirdy.one
   - build_deploy: |
       cd seirdy.one
       export PATH=~/bin:$PATH
-      make clean deploy
-      make WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' clean deploy-html
+      bmake deploy-prod deploy-onion
