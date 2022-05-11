@@ -18,6 +18,8 @@ RSYNCFLAGS += --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
 
+VNU ?= vnu
+
 .PHONY: hugo
 hugo: clean
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS)
@@ -25,10 +27,10 @@ hugo: clean
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
 .hintrc-local: .hintrc
-	jq --tab '.connector .name = "local" | del(.connector .options)' <.hintrc >.hintrc-local
+	jq --tab '.connector .name = "local" | del(.connector .options)' <linter-configs/hintrc >.hintrc-local
 
 .hintrc-devserver: .hintrc
-	jq --tab '.extends = ["development"] | .hints["http-compression","https-only","ssllabs","sri"] = "off"' <.hintrc >.hintrc-devserver
+	jq --tab '.extends = ["development"] | .hints["http-compression","https-only","ssllabs","sri"] = "off"' <linter-configs/hintrc >.hintrc-devserver
 
 .PHONY: clean
 clean:
@@ -36,8 +38,12 @@ clean:
 
 .PHONY: lint-css
 lint-css:
-	pnpx stylelint --di --rd --rdd $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/print.css
-	csslint --quiet $(CSS_DIR)
+	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/main.css $(CSS_DIR)/dark.css $(CSS_DIR)/print.css
+	@#csslint --quiet $(CSS_DIR)
+
+.PHONY: lint-html
+lint-html: hugo
+	$(VNU) --stdout --format json --skip-non-html --also-check-svg public | jq --from-file linter-configs/vnu_filter.jq
 
 .PHONY: hint
 hint: hugo .hintrc-local
@@ -45,7 +51,7 @@ hint: hugo .hintrc-local
 	rm .hintrc-local
 
 .PHONY: lint-local
-lint-local: lint-css hint
+lint-local: lint-css lint-html
 
 # dev server
 .PHONY: serve
@@ -79,7 +85,7 @@ endif
 mentions.json: hugo
 	# gather old version of the site
 	# rsync $(RSYNCFLAGS) --exclude '*.gz' --exclude '*.br' --exclude '*.png' --exclude-from .rsyncignore $(WWW_RSYNC_DEST)/ old
-	static-webmentions -f mentions.json.unfiltered find 
+	static-webmentions -f mentions.json.unfiltered find
 	# filter the webmentions a bit; jq offers more flexibility than config.toml
 	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|archive.is|en.wikipedia.org|matrix.to|([a-z]*.)?reddit.com|github.com)") | not) ]' <mentions.json.unfiltered >mentions.json
 	rm mentions.json.unfiltered
