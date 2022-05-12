@@ -1,5 +1,6 @@
 ---
 date: "2022-02-02T23:16:00+00:00"
+lastmod: "2022-03-17T23:32:15-07:00"
 description: "While source code is critical for user autonomy, it isn't required to evaluate software security or understand run-time behavior."
 outputs:
     - html
@@ -8,14 +9,30 @@ footnote_heading: Notes
 featured: 4
 title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
+<section role="doc-preface" itemprop="backstory">
+
+<h2 id="background">Background</h2>
+
 I find it quite easy to handle views different from my own. I feel more troubled when I see people agree with me for the wrong reasons.
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
 
-1. **[Whatsapp and the domestication of users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html)**<br>The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
-2. **[Keeping platforms open](./../../../2021/02/23/keeping-platforms-open.html)**<br>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
+[Whatsapp and the domestication of users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html "{itemprop='mentions'}")
+: The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
+
+[Keeping platforms open](./../../../2021/02/23/keeping-platforms-open.html "{itemprop='mentions'}")
+: How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
 
 After two posts spanning over 5000 words, I need to add some nuance.
+
+</section>
+
+{{<toc>}}
+
+<section role="doc-introduction">
+
+Introduction
+------------
 
 One of the biggest parts of the Free and Open Source Software definitions is the freedom to study a program and modify it; in other words, access to editable source code. I agree that such access is essential; however, far too many people support source availability for the _wrong_ reasons. One such reason is that source code is necessary to have any degree of transparency into how a piece of software operates, and is therefore necessary to determine if it is at all secure or trustworthy. Although security through obscurity is certainly not a robust measure, this claim has two issues:
 
@@ -27,6 +44,8 @@ I'd like to expand on these issues, focusing primarily on compiled binaries. Bea
 I'll update this post occasionally as I learn more on the subject. If you like it, check back in a month or two to see if it has something new.
 
 _PS: this stance is not absolute; I concede to several good counter-arguments [at the bottom](#good-counter-arguments)!_
+
+</section>
 
 How security fixes work
 -----------------------
@@ -50,10 +69,15 @@ Understanding _how a program is designed_ is not the same as understanding _what
 Source code[^2] is essential to describe a program's high-level, human-comprehensible design; it represents a contract that outlines how a developer _expects_ a program to behave. A compiler or interpreter[^3] must then translate it into machine instructions. But source code isn't always easy to map directly to machine instructions because it is part of a complex system:
 
 - Compilers (sometimes even interpreters) can apply optimizations and hardening measures that are difficult to reason about. This is especially true for <abbr title="Just-In-Time">JIT</abbr> compilers that leverage run-time information.
+
 - The operating system itself may be poorly understood by the developers, and run a program in a way that contradicts a developer's expectations.
+
 - Toolchains, interpreters, and operating systems can have bugs that impact program execution.
+
 - Different compilers and compiler flags can offer different security guarantees and mitigations.
+
 - Source code [can be deceptive](https://en.wikipedia.org/wiki/Underhanded_C_Contest) by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs (plausible deniability; look up "hypocrite commits" for an example) have all been well-documented.
+
 - All of the above points apply to each dependency and the underlying operating system, which can impact a program's behavior.
 
 Furthermore, all programmers are flawed mortals who don't always fully understand source code. Everyone who's done a non-trivial amount of programming is familiar with the feeling of encountering a bug during run-time for which the cause is impossible to find...until they notice it staring them in the face on Line 12. Think of all the bugs that _aren't_ so easily noticed.
@@ -126,7 +150,7 @@ Unfortunately, some components are poorly understood due to being obfuscated usi
 
 Skochinsky's and Corna's analysis was sufficient to clarify (but not completely contradict) sensationalism claiming that ME can remotely lock any PC (it was a former opt-in feature), can spy on anything the user does (they clarified that access is limited to unblocked parts of the host memory and the integrated GPU, but doesn't include e.g. the framebuffer), etc.
 
-While claims such as "ME is a black box that can do anything" are misleading, ME not without its share of vulnerabilities. My favorite look at its issues is a presentation by {{<indieweb-person first-name="Mark" last-name="Ermolov" url="https://www.blackhat.com/eu-17/speakers/Mark-Ermolov.html">}} and {{<indieweb-person first-name="Maxim" last-name="Goryachy" url="https://www.blackhat.com/eu-17/speakers/Maxim-Goryachy.html">}} at Black Hat Europe 2017: [How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine](https://www.blackhat.com/docs/eu-17/materials/eu-17-Goryachy-How-To-Hack-A-Turned-Off-Computer-Or-Running-Unsigned-Code-In-Intel-Management-Engine-wp.pdf).
+While claims such as "ME is a black box that can do anything" are misleading, ME not without its share of vulnerabilities. My favorite look at its issues is a presentation by <span itemprop="mentions" itemscope itemtype="https://schema.org/PresentationDigitalDocument">{{<indieweb-person itemprop="author" first-name="Mark" last-name="Ermolov" url="https://www.blackhat.com/eu-17/speakers/Mark-Ermolov.html">}} and {{<indieweb-person itemprop="author" first-name="Maxim" last-name="Goryachy" url="https://www.blackhat.com/eu-17/speakers/Maxim-Goryachy.html">}} at Black Hat Europe 2017: [How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine](https://www.blackhat.com/docs/eu-17/materials/eu-17-Goryachy-How-To-Hack-A-Turned-Off-Computer-Or-Running-Unsigned-Code-In-Intel-Management-Engine-wp.pdf)</span>.
 
 In short: ME being proprietary doesn't mean that we can't find out how (in)secure it is. Binary analysis when paired with runtime inspection can give us a good understanding of what trade-offs we make by using it. While ME has a history of serious vulnerabilities, they're nowhere near what [borderline conspiracy theories](https://web.archive.org/web/20210302072839/themerkle.com/what-is-the-intel-management-engine-backdoor/) claim.[^11]
 
@@ -141,14 +165,17 @@ Fuzzing doesn't necessarily depend on access to source code, as it is a black-bo
 
 Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples.
 
-<figure itemscope itemtype="https://schema.org/Quotation">
-	<blockquote itemprop="text">
-		<p>I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.</p>
-	</blockquote>
-	<figcaption class="h-cite" itemprop="citation">
-		&mdash; {{<indieweb-person first-name="Daniel" last-name="Stenberg" url="https://daniel.haxx.se/" itemprop="author">}}, <cite itemprop="isPartOf" itemscope itemtype="https://schema.org/BlogPosting"><a class="u-url p-name" itemprop="url" href="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/"><span itemprop="name">A Google grant for libcurl work</span></a></cite>
-	</figcaption>
-</figure>
+{{<quotation>}}
+<blockquote itemprop="text">
+
+I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.
+
+</blockquote>
+{{<quotecaption partOfType="BlogPosting">}}
+{{<indieweb-person first-name="Daniel" last-name="Stenberg" url="https://daniel.haxx.se/" itemprop="author">}},
+{{<cited-work url="https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/" name="A Google grant for libcurl work" extraName="headline">}}
+{{</quotecaption>}}
+{{</quotation>}}
 
 If you want to get started with fuzzing, I recommend checking out [the quick-start guide for American Fuzzy Loop](https://github.com/google/AFL/blob/master/docs/QuickStartGuide.txt). Some languages like Go 1.18 also have fuzzing tools available right in the standard library.
 
@@ -170,25 +197,31 @@ Good counter-arguments
 I readily concede to several points in favor of source availability from a security perspective:
 
 - Source code can make analysis _easier_ by _supplementing_ source-independent approaches. The lines between the steps I mentioned in the [four-step vulnerability-fixing process](#how-security-fixes-work) are blurry.
+
 - Patching vulnerabilities is important. Source availability makes it possible for the community, package maintainers, or reporters of a vulnerability to patch software. Package maintainers often blur the line between "packager" and "contributor" by helping projects migrate away from abandoned/insecure dependencies. One example that comes to mind is the Python 2 to Python 3 transition for projects like Calibre.[^12] Being able to fix issues independent of upstream support is an important mitigation against [user domestication](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html).
+
 - Some developers/vendors don't distribute binaries that make use of modern toolchain-level exploit mitigations (e.g. <abbr title="Position-Independent Executables">PIE</abbr>, <abbr title="ReLocation Read-Only">RELRO</abbr>, stack canaries, automatic variable initialization, [<abbr title="Control-Flow Integrity">CFI</abbr>](https://clang.llvm.org/docs/ControlFlowIntegrity.html), etc.[^13]). In these cases, building software yourself with these mitigations (or delegating it to a distro that enforces them) requires source code availability (or at least some sort of intermediate representation).
+
 - Closed-source software may or may not have builds available that include sanitizers and debug symbols.
+
 - Although fuzzing release binaries is possible, fuzzing is much easier to do when source code is available. Vendors of proprietary software seldom release special fuzz-friendly builds, and filtering out false-positives can be quite tedious without understanding high-level design.
-- It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it's not the main way most vulnerabilities are found nowadays (thanks to {{<indieweb-person nickname="X_CLI" url="https://www.broken-by-design.fr/">}} for [reminding me about what source analysis does accomplish](https://lemmy.ml/post/167321/comment/117774)).
+
+- It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it's not the main way most vulnerabilities are found nowadays (thanks to {{<indieweb-person itemprop="mentions" nickname="X_CLI" url="https://www.broken-by-design.fr/">}} for [reminding me about what source analysis does accomplish](https://lemmy.ml/post/167321/comment/117774)).
+
 - Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Further&shy;more, it's difficult to verify which software a server is running.[^14] For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
 
 Most of this post is written with the assumption that binaries are inspectable and traceable. Binary obfuscation and some forms of content protection/<abbr title="Digital Rights Management">DRM</abbr> violate this assumption and actually do make analysis more difficult.
 
 Beyond source code, transparency into the development helps assure users of compliance with good security practices. Viewing VCS history, patch reviews, linter configurations, etc. reveal the standards that code is being held up to, some of which can be related to bug-squashing and security.
 
-{{<indieweb-person nickname="Patience" url="https://matrix.to/#/@hypokeimenon:tchncs.de">}} on Matrix also had a great response, which I agree with and adapt below:
+{{<indieweb-person itemprop="mentions" nickname="Patience" url="https://matrix.to/#/@hypokeimenon:tchncs.de">}} on Matrix also had a great response, which I agree with and adapt below:
 
 Whether or not the source code is available for software does not change how insecure it is. However, there are good security-related incentives to publish source code.
 
 - Doing so improves vulnerability patchability and future architectural improvement by lowering the barrier to contribution. The fixes that follow can be _shared and used by other projects_ across the field, some of which can in turn be used by the vendor. This isn't a zero-sum game; a rising tide lifts all boats.
 - It's generally good practice to assume an attacker has full knowledge of a system instead of relying on security through obscurity. Releasing code provides strong assurance that this assumption is being made. It's a way for vendors to put their money where their mouth is.
 
-Both Patience and {{<indieweb-person first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
+Both Patience and {{<indieweb-person itemprop="mentions" first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
 
 Con&shy;clusion {#conclusion}
 ---------------
@@ -208,7 +241,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 
 [^3]: Or a JIT compiler, or a [bunch of clockwork](https://en.wikipedia.org/wiki/Analytical_Engine), or...
 
-[^4]: For completeness, I should add that there is one source-based approach that can verify correctness: formal proofs. Functional programming languages that [support dependent types](https://en.wikipedia.org/wiki/Dependent_type) can be provably correct at the source level. Assuming their self-hosted toolchains have similar guarantees, developers using these languages might have to worry less about bugs they couldn't find in the source code. This can alleviate concerns that their language runtimes can make it hard to reason about low-level behavior. Thanks to {{<indieweb-person first-name="Adrian" last-name="Cochrane" url="https://adrian.geek.nz/">}} for pointing this out.
+[^4]: For completeness, I should add that there is one source-based approach that can verify correctness: formal proofs. Functional programming languages that [support dependent types](https://en.wikipedia.org/wiki/Dependent_type) can be provably correct at the source level. Assuming their self-hosted toolchains have similar guarantees, developers using these languages might have to worry less about bugs they couldn't find in the source code. This can alleviate concerns that their language runtimes can make it hard to reason about low-level behavior. Thanks to {{<indieweb-person itemprop="mentions" first-name="Adrian" last-name="Cochrane" url="https://adrian.geek.nz/">}} for pointing this out.
 
 [^5]: For example: C, C++, Objective-C, Go, Fortran, and others can utilize sanitizers from Clang and/or GCC.
 
@@ -224,7 +257,7 @@ Releasing source code is just one thing vendors can do to improve audits; other 
 
 [^11]: As an aside: your security isn't necessarily improved by "disabling" it, since it still runs during the initial boot sequence and does provide some hardening measures of its own (e.g., a <abbr title="Trusted Platform Module">TPM</abbr>).
 
-[^12]: In 2017, Calibre's author actually wanted to stay with Python 2 after its EOL date, and [maintain Python 2 himself](https://bugs.launchpad.net/calibre/+bug/1714107). Users and package maintainers were quite unhappy with this, as Python 2 would no longer be receiving security fixes after 2020. While official releases of Calibre use a bundled Python interpreter, distro packages typically use the system Python package; Calibre's popularity and insistence on using Python 2 made it a roadblock to getting rid of the Python 2 package in most distros. What eventually happened was that community members (especially {{<indieweb-person first-name="Eli" last-name="Schwartz" url="https://github.com/eli-schwartz">}} and {{<indieweb-person  first-name="Flaviu" last-name="Tamas" url="https://flaviutamas.com/">}}) submitted patches to migrate Calibre away from Python 2. Calibre migrated to Python 3 by [version 5.0](https://calibre-ebook.com/new-in/fourteen).
+[^12]: In 2017, Calibre's author actually wanted to stay with Python 2 after its EOL date, and [maintain Python 2 himself](https://bugs.launchpad.net/calibre/+bug/1714107). Users and package maintainers were quite unhappy with this, as Python 2 would no longer be receiving security fixes after 2020. While official releases of Calibre use a bundled Python interpreter, distro packages typically use the system Python package; Calibre's popularity and insistence on using Python 2 made it a roadblock to getting rid of the Python 2 package in most distros. What eventually happened was that community members (especially {{<indieweb-person itemprop="mentions" first-name="Eli" last-name="Schwartz" url="https://github.com/eli-schwartz">}} and {{<indieweb-person itemprop="mentions" first-name="Flaviu" last-name="Tamas" url="https://flaviutamas.com/">}}) submitted patches to migrate Calibre away from Python 2. Calibre migrated to Python 3 by [version 5.0](https://calibre-ebook.com/new-in/fourteen).
 
 [^13]: Linux distributions' CFI+<abbr title="Adress-Space Layout Randomization">ASLR</abbr> implementations rely executables compiled with CFI+PIE support, and ideally with stack-smashing protectors and no-execute bits. These implementations are flawed (see [On the Effectiveness of Full-ASLR on 64-bit Linux](https://web.archive.org/web/20211021222659/http://cybersecurity.upv.es/attacks/offset2lib/offset2lib-paper.pdf) and [Brad Spengler's presentation comparing these with PaX's own implementation](https://grsecurity.net/PaX-presentation.pdf)).
 

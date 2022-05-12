@@ -1,5 +1,6 @@
 ---
 date: "2021-04-16T17:28:06-07:00"
+lastmod: "2021-06-11T15:08:29-07:00"
 description: Recently, people have been telling webmasters to add a Permissions-Policy
     header to their sites to opt out of FLoC. The reality of the situation isn't so
     simple.

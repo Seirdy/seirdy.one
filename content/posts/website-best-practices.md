@@ -864,7 +864,9 @@ Keep the source order, DOM order, and visual order identical to ensure consisten
 [Guideline 2.4 Navigable](https://www.w3.org/TR/WCAG22/#navigable) of the WCAG lists multiple criteria related to identifying and skipping sections of your pages, and for good reason:
 
 * Users of [switch access controls](https://en.wikipedia.org/wiki/Switch_access) find it slow and frustrating to navigate long lists of focusable items.
+
 * Screen readers make it difficult to consume poorly-organized content non-linearly.
+
 * Clients that don't support CSS can't prioritize content using a supplied stylesheet.
 
 The list goes on: nearly every reader reliant upon assistive technologies (<abbr title="assistive technology">AT</abbr>) struggles to skim through poorly-organized pages.
@@ -1052,6 +1054,7 @@ The edges of a touch screen are often tap-targets (the top edge might toggle nav
 On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
 - The [webmention list](#webmentions) after this article separates links with timestamps and some paragraph spacing.
+
 - The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the beginning of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with non-interactive text descriptions
 
 ### Line spacing
@@ -1322,21 +1325,37 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
+
 2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^20]
+
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
+
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
+
 5. Print some pages in black-and-white, preferably with a simple laser printer.
+
 6. Test with assistive technologies such as screen readers, magnifiers, and switch controls.
+
 7. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
+
 8. Test keyboard navigability with the <kbd>Tab</kbd> key and [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
+
 9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
+
 10. Test in an online website translator tool.
+
 11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
+
 13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
+
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
+
 15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^21]
+
 16. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+
 17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
 
 I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
@@ -1356,20 +1375,35 @@ Future updates
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
 * How purely-cosmetic animations harm readers with learning and cognitive disabilities (e.g. attention disorders).
+
 * How exposing new content on hover is inaccessible to users with magnifiers, hand tremors, switch access, and touch&shy;screens.
+
 * Notes on improving support for braille displays.
+
 * How to work well with caret-based navigation.
+
 * How to choose phrasings such that some meaning can be inferred without understan&shy;ding numbers, for [dyscalculic readers](https://en.wikipedia.org/wiki/Dyscalculia). This is more applicable to posts whose main focus is not mathematical or quantitative.
+
 * How to include equations in a way that maximizes compatibility and accessibility.
+
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
+
 * How keyboard navigation can be altered by assistive tools such as screen readers.
+
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
+
 * Elaboration on how authors should delegate much of their formatting to the user agent, and how CSS resets are a symptom of a failure to do so.
+
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
+
 * Ways to support non-mainstream and older browsers by supporting subsets of specifications and using progressive enhance&shy;ment.
+
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
+
 * Ways to improve compre&shy;hension by readers who struggle to understand non-literal language (certain cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <abbr title="Web Accessibility Initiative">WAI</abbr> <cite>[Personali&shy;zation Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
+
 * Other accessible writing tips, maybe after I get a copy of <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Writing Is Designing" url="https://rosenfeldmedia.com/books/writing-is-designing/">}} by {{<indieweb-person first-name="Michael" last-name="Metts" url="https://mjmetts.com/" itemprop="author">}} and {{<indieweb-person first-name="Andy" last-name="Welfe" url="https://www.andy.wtf/" itemprop="author">}}</span>. A relevant excerpt on writing accessibly is [on A List Apart](https://alistapart.com/article/standards-for-writing-accessibly/).
+
 * Rules for descriptive link text, for screen reader navigation and for user-agents that display links as footnotes (e.g. some textual browsers with the `dump` flag).
 
 Con&shy;clusion {#conclusion}

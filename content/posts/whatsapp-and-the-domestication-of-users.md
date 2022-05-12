@@ -1,30 +1,44 @@
 ---
 date: "2021-01-27T16:13:36-08:00"
-description: WhatsApp's rise and recent PR efforts highlight a class of business models
-    that I call "user domestication".
+lastmod: "2021-12-13T15:26:03-08:00"
+description: WhatsApp's rise and recent PR efforts highlight a class of business models that I call "user domestication".
 footnote_heading: References and endnotes
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 tags:
-  - free software
-  - user domestication
-  - privacy
-  - platforms
+    - free software
+    - user domestication
+    - privacy
+    - platforms
 featured: 3
 title: WhatsApp and the domestication of users
 ---
+<section role="doc-introduction">
 
-*Update: I wrote a follow up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting.*
+Intro&shy;duction {#introduction}
+-----------------
+
+<div role="note">
+
+_Update: I wrote a follow up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting._
+
+</div>
+
+<div itemprop="backstory">
 
 I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
+
+</div>
 
 WhatsApp wasn't the first instant messenger of its kind, and probably won't be the last. I simply chose to focus on WhatsApp since its recent privacy issues have made it a hot topic.
 
 With the meta-explanation out of the way, let us begin.
 
+</section>
+
 Whats&shy;App's rise {#whatsapps-rise}
----------------
+--------------------
 
 For those unfamiliar, WhatsApp is a tool that makes it convenient and easy to help Facebook further its core mission: the optimization and auctioning of human behavior (colloquially known as "targeted advertising"). It originally persuaded people to consent to this by allowing them to send text to each other over the Internet, something that was [already possible](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_protocols), and combining an easy-to-learn UI with successful marketing. It then expanded to include features such as free voice and video calls. Free calls helped it grow to become the de-facto communication platform in many regions. I'm stunned at its ubiquity every time I visit my extended family in India; I'm frequently greeted by looks of confusion when I remind them that I don't use WhatsApp.
 
@@ -68,9 +82,41 @@ Those of us who were sounding the alarm a few years ago experienced a brief mome
 
 ### An attempt at damage control
 
-The bait-and-switch operation incurred backlash significant enough for a noticeable minority of users to actually migrate; this number turned out to be slightly more than the rounding error WhatsApp was likely expecting. In response, WhatsApp delayed the change and published the following ad:
+The bait-and-switch operation incurred backlash significant enough for a noticeable minority of users to actually migrate; this number turned out to be slightly more than the rounding error WhatsApp was likely expecting. In response, WhatsApp delayed the change and published an ad to improve its image.
+
+{{<transcribed-image id="whatsapp-ad">}}
+
+#### <span itemprop="name">Whatsapp Ad</span> {#whatsapp-ad-hd}
+
+{{< transcribed-image-figure id="whatsapp-ad" has-transcript="true" >}}
 
 {{< picture name="whatsapp_ad" alt="WhatsApp ad describing data not collected" >}}
+
+<figcaption itemprop="caption">
+
+WhatsApp ad, taken from <span itemprop="encodesCreativeWork" itemscope itemtype="https://schema.org/WebPage">{{<cited-work name="Answering your questions about WhatsApp’s Privacy Policy" url="https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy">}} (archived: <a href="https://web.archive.org/web/20210121163337/https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" itemprop="archivedAt">Wayback Machine <time datetime="2021-01-21T16:33:37+00:00">2021-01-21</time> snapshot</a>)</span>
+
+</figcaption>
+{{< /transcribed-image-figure >}}
+{{< transcribed-image-transcript >}}
+
+WhatsApp Protects and Secures Your Personal Messages.
+
+- WhatsApp cannot see your personal messages or hear your calls and neither can Facebook.
+
+- WhatsApp does not keep logs of who everyone is messaging or calling.
+
+- WhatsApp cannot see your shared location and neither can Facebook.
+
+- WhatsApp does not share your contacts with Facebook.
+
+- WhatsApp groups remain private.
+
+- You can set your messages to disappear.
+
+- You can download your data.
+
+{{< /transcribed-image-transcript >}} {{< /transcribed-image >}}
 
 The ad lists various data that WhatsApp doesn't collect or share. Allaying data collection concerns by listing data _not_ collected is misleading. WhatsApp doesn't collect hair samples or retinal scans either; not collecting that information doesn't mean it respects privacy because it doesn't change the information WhatsApp _does_ collect.
 
@@ -172,22 +218,23 @@ Translations
 
 Translations are always welcome.
 
-{{<indieweb-person first-name="Евгений" last-name="Кузнецов" url="https://evgenykuznetsov.org/">}} translated this article to Russian: <a lang="ru" hreflang="ru" rel="alternate" href="https://evgenykuznetsov.org/posts/2021/domestication/">WhatsApp и одомашнивание пользователей</a>.
+- <span itemprop="workTranslation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" first-name="Евгений" last-name="Кузнецов" url="https://evgenykuznetsov.org/">}} translated this article to <span itemprop="inLanguage">Russian</span>: {{<cited-work lang="ru" rel="alternate" url="https://evgenykuznetsov.org/posts/2021/domestication/" name="WhatsApp и одомашнивание пользователей">}}</span>.
 
-The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to French: <a lang="fr" hreflang="fr" rel="alternate" href="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/">WhatsApp et la domestication des utilisateurs</a>.
+- <span itemprop="workTranslation" itemscope itemtype="https://schema.org/BlogPosting">The Framalang translators at [Framasoft](https://framasoft.org/) translated this article to <span itemprop="inLanguage">French</span>: {{<cited-work lang="fr" rel="alternate" url="https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/" name="WhatsApp et la domestication des utilisateurs">}}</span>.
 
-{{<indieweb-person nickname="Licaon Kter" url="https://web.archive.org/web/20210924154338/https://convorb.im/">}} translated this article to Romanian: <a lang="ro" hreflang="ro" rel="alternate" href="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html">WhatsApp și domesticirea utilizatorilor</a>.
+- <span itemprop="workTranslation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" nickname="Licaon Kter" url="https://web.archive.org/web/20210924154338/https://convorb.im/">}} translated this article to <span itemprop="inLanguage">Romanian</span>: {{<cited-work lang="ro" rel="alternate" url="https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html" name="WhatsApp și domesticirea utilizatorilo">}}</span>.
 
-{{<indieweb-person first-name="David" last-name="Jimenez" url="https://sgfault.com">}} translated this article to Spanish: <a lang="es" hreflang="es" rel="alternate" href="https://sgfault.com/post/2021/02/2021-02-21-whatsapp-y-la-domesticacion-de-usuarios/">WhatsApp y la domesticación de usuarios</a>.
+- <span itemprop="workTranslation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" first-name="David" last-name="Jimenez" url="https://sgfault.com">}} translated this article to <span itemprop="inLanguage">Spanish</span>: {{<cited-work lang="es" rel="alternate" url="https://sgfault.com/post/2021/02/2021-02-21-whatsapp-y-la-domesticacion-de-usuarios/" name="WhatsApp y la domesticación de usuario">}}</span>.
 
-{{<indieweb-person nickname="Skariko" url="https://www.lealternative.net/author/skariko/">}} of [Le Alternative](https://lealternative.net/) translated this article to Italian: <a lang="it-IT" hreflang="it-IT" rel="alternate" href="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/">WhatsApp e l’addomesticamento degli utenti</a>.
+- <span itemprop="workTranslation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" nickname="Skariko" url="https://www.lealternative.net/author/skariko/" org="Le Alternative" org-url="https://lealternative.net/">}} translated this article to <span itemprop="inLanguage">Italian</span>: {{<cited-work lang="it-IT" rel="alternate" url="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/" name="WhatsApp e l’addomesticamento degli utent">}}</span>.
 
 
-[^1]: Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.
+[^1]: <span itemprop="citation">Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.</span>
 
 [^2]: Many within the free software movement dislike the term "open source" for a [number of reasons](https://www.gnu.org/philosophy/open-source-misses-the-point.html); others use the terms "free" and "open source" [interchangeably](https://drewdevault.com/2019/09/17/The-wrong-words-but-the-right-ideas.html). Finally, many vendors use the word "free" to refer to price rather than freedom, prompting some free software supporters to adopt the term "libre" instead. All this can be quite confusing, which is why I prefer acronyms like FLOSS to describe these terms' intersection.
 
 [^3]: See [Defective by Design](https://www.defectivebydesign.org/). DRM is another classic example of user domestication. For the record, Mozilla opposed making DRM a Web standard. It implemented DRM support after it lost to the other W3C members. This doesn't excuse putting DRM in a browser, but at least there wasn't malicious intent. The same can't be said for the pro-DRM members of the W3C.
 
 [^4]: Moxie's blog post generated many responses. Two good follow-ups are on [Linux Weekly News](https://lwn.net/Articles/687294/) and a [blog post](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom/) by Matrix.org
+
 

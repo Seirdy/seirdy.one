@@ -14,7 +14,9 @@ Scope
 This privacy policy applies to the following services:
 
 1. The Web site <https://seirdy.one>
+
 2. The hidden Web service [http://wgq3\[...\]d<wbr>.onion](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ "{title='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion'}"), accessible over the Tor network
+
 3. The Gemini capsule <gemini://seirdy.one>
 
 This policy only applies if served by one of those three services.

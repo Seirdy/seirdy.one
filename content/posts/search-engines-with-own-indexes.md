@@ -13,6 +13,11 @@ footnote_heading: Notes
 featured: 1
 title: A look at search engines with their own indexes
 ---
+
+<section role="doc-preface">
+
+<h2 id="preface">Preface</h2>
+
 This is a cursory review of all the indexing search engines I have been able to find.
 
 The three dominant English search engines with their own indexes[^1] are Google, Bing, and Yandex (<abbr title="Google, Bing, Yandex">GBY</abbr>). Many alternatives to GBY exist, but almost none of them have their own results; instead, they just source their results from GBY.
@@ -22,6 +27,8 @@ With that in mind, I decided to test and catalog all the different indexing sear
 This page is a "living document" that I plan on updating indefinitely. Check for updates once in a while if you find this page interesting. Feel free to send me suggestions, updates, and corrections; I'd especially appreciate help from those who speak languages besides English and can evaluate a non-English indexing search engine. Contact info is in the article footer.
 
 I plan on updating the engines in the top two categories with more info comparing the structured/linked data the engines leverage (RDFa vocabularies, microdata, microformats, JSON-LD, etc.) to help authors determine which formats to use.
+
+</section>
 
 {{<toc>}}
 
@@ -45,14 +52,17 @@ These are large engines that pass all my standard tests and more.
 
 - Google: the biggest index. Allows submitting pages and sitemaps for crawling, and [even supports WebSub](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap) to automate the process. Powers a few other engines:
 
-  - [Startpage](https://www.startpage.com/)
-  - [GMX Search](https://search.gmx.com/web)
+  - [Startpage](https://www.startpage.com/), possibly the most popular Google proxy.
+
+  - [GMX Search](https://search.gmx.com/web), run by a popular German email provider.
+
   - (discon&shy;tinued) Runnaroo
+
   - [SAPO](https://www.sapo.pt/) (Portu&shy;guese interface, can work with English results)
 
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
 
-  - Yahoo (and its sibling engine, [One&shy;Search](https://www.yahoo.com/now/verizon-launches-search-engine-onesearch-132901132.html))
+  - Yahoo (and its sibling engine, One&shy;Search)
   - DuckDuck&shy;Go[^2]
   - AOL
   - Qwant (partial)[^3]
@@ -208,31 +218,46 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 ### Big indexes
 
 - Baidu: Chinese. Very large index; it's a major engine alongside GBY. Offers webmaster tools for site submission.
+
 - Qihoo 360: Chinese. I'm not sure how independent this one is.
+
 - Toutiao: Chinese. Not sure how independent this one is either.
+
 - Sogou: Chinese
+
 - Yisou: Chinese
+
 - [Naver](https://search.naver.com): Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
+
 - [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
+
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
+
 - [go.mail.ru](https://go.mail.ru/): Russian
 
 ### Smaller indexes
 
 - [Vuhuv](https://www.vuhuv.com.tr/): Turkish. [alt domain](https://tr.vuhuv.com/)
+
 - [Parsijoo](https://www.parsijoo.ir/): Persian
+
 - [search.ch](https://www.search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
+
 - [fastbot](https://www.fastbot.de/): German
+
 - [Moose.at](https://www.moose.at): German (Austria-based)
+
 - [SOLOFIELD](https://solofield.net): Japanese
+
 - [kaz.kz](http://kaz.kz): Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
 
 Misc
 ----
 
-* Ask.com: The site is back. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from. Also, several sites from the "ask.com network" such as directhit.com, info.com, and kensaq.com have uniqe-looking results.
+- Ask.com: The site is back. They claim to outsource search results. The results seem similar to Google, Bing, and Yandex; however, I can’t pinpoint exactly where their results are coming from. Also, several sites from the "ask.com network" such as directhit.com, info.com, and kensaq.com have uniqe-looking results.
 
 - Not evaluated: Apple's search. It's only accessible through a search widget in iOS and macOS and shows very few results. This might change; see the next section.
+
 - Partially evaluated: [Infinity Search](https://infinitysearch.co): young, small index. It recently split into a paid offering with the main index and [Infinity Decentralized](https://infinitydecentralized.com/), the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn't able to run the tests listed in the "Methodology" section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
 Upcoming engines
@@ -308,9 +333,13 @@ I compared results for esoteric queries side-by-side; if the first 20 results we
 I tried to pick queries that should have a good number of results and show variance between search engines. An incomplete selection of queries I tested:
 
 - "vim", "emacs", "neovim", and "nvimrc": Search engines with relevant results for "nvimrc" typically have a big index. Finding relevant results for the text editors "vim" and "emacs" instead of other topics that share the name is a challenging task.
+
 - "vim cleaner": should return results related to a [line of cleaning products](https://en.wikipedia.org/wiki/Vim_%28cleaning_product%29) rather than the Correct Text Editor.
+
 - "Seirdy": My site is relatively low-traffic, but my nickname is pretty unique and visible on several of the highest-traffic sites out there.
+
 - "Project London": a small movie made with volunteers and <abbr title="Free, Libre, Open-Source Software">FLOSS</abbr> without much advertising. If links related to the movie show up, the engine's really good.
+
 - "oppenheimer": a name that could refer to many things. Without context, it should refer to the physicist who worked on the atomic bomb in Los Alamos. Other historical queries: "magna carta" (intermediate), "the prince" (very hard).
 
 Some less-mainstream engines have noticed this article, which is great! I've had excellent discussions with people who work on several of these engines. Unfortunately, this article's visibility also incentivizes some engines to optimize specifically for any methodology I describe. I've addressed this by keeping a long list of test queries to myself. The simple queries above are a decent starting point for simple quick evaluations, but I also test for common search operators, keyword length, and types of domain-specific jargon. I also use queries designed to pull up specific pages with varying levels of popularity and recency to gauge the size, scope, and growth of an index.
@@ -343,9 +372,9 @@ Ac&shy;know&shy;ledge&shy;ments {#acknowledgements}
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
-{{<indieweb-person first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
+{{<indieweb-person itemprop="mentions" first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
 
-{{<indieweb-person first-name="Nicholas" last-name="Ferrell" url="https://emucafe.club/channel/naferrell" org="The New Leaf Journal" org-url="https://thenewleafjournal.com/">}} wrote a [great post](https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/) on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
+<span itemprop="mentions" itemscope itemtype="https://schema.org/BlogPosting">{{<cited-work name="A 2021 List of Alternative Search Engines and Search Resources" url="https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/">}} by {{<indieweb-person itemprop="author" first-name="Nicholas" last-name="Ferrell" url="https://emucafe.club/channel/naferrell" org="The New Leaf Journal" org-url="https://thenewleafjournal.com/">}}</span> is a great post on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.

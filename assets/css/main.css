@@ -10,9 +10,9 @@
  * don't actually use those for styling.
  *
  * To keep myself from caring about minute details, I limited myself to
- * only defining spacing in increments of .125em. Borders are either
- * 1px or 3px; percentages are in increments of 2.5%. This also improves
- * compression. No more "finding the perfect value".
+ * only defining spacing in increments of .125em. Pixels are 1px or
+ * multiples of 3px; percentages are in increments of 2.5%. This also
+ * improves compression. No more "finding the perfect value".
  *
  * I cite WCAG 2.2 success criteria with "SC". I also tried to meet
  * the Google a11y requirement of 48px tap targets separated by atl
@@ -26,6 +26,9 @@ html {
 	 * <100dpi screens: sans-serif is better. Why did browsers settle
 	 * on serif being the default?? */
 	font: 100%/1.5 sans-serif;
+	/* Nearly every page on my site is taller than the viewport.
+	 * Paint the scrollbar ASAP to prevent layout shifts. */
+	overflow-y: scroll;
 }
 
 /* This should not take effect on printouts, to save paper. */
@@ -74,35 +77,38 @@ html {
 
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
-	header nav,
-	footer nav {
+	header > nav,
+	footer > nav {
 		margin: 0 0 -.75em -.25em;
 	}
 
-	/* Google a11y: ensure tap targets have >=8px space between them */
-	nav li,
-	details li {
-		padding: 1em 0;
-	}
-
-	/* SC 2.5.5: Increase nav link tap target size a bit */
-	nav a,
-	summary,
-	details li a {
-		padding: .875em .25em;
-	}
-
-	details summary {
+	summary {
 		/* The tappable region of a <summary> extends across the page.
 		 * we need to tell users that the full space is interactive.
 		 * Use a border for that. */
 		border: 1px solid #999;
+		/* It's not obvious that a <summary> has button semantics.
+		 * "cursor: pointer" is used on MDN, web.dev, GitHub, gov.uk, and
+		 * others so it's not "novel" and won't surprise users. */
+		cursor: pointer;
 	}
 
 	/* If we have a list of disclosure widgets, we need some
 	 * non-interactive space on the screen that's safe to tap. */
 	li details {
 		margin: .5em .25em;
+	}
+
+	/* Google a11y: ensure tap targets have >=8px space between them */
+	nav li,
+	li details li {
+		padding: 1em 0;
+	}
+
+	/* SC 2.5.5, Google a11y: Increase tap target size a bit */
+	summary,
+	li > a {
+		padding: .875em .25em;
 	}
 
 	nav li ol {
@@ -192,13 +198,22 @@ kbd {
 
 /* narrow screens: remove unused figure margins
  * figure captions shouldn't look like regular paragraphs; there should
- * be some extra space. */
+ * be some extra space.
+ * This does not hold true for figures in nested articles; the nested
+ * article should instead get the spacing. */
+article,
 figure {
 	margin: 1.5em 0;
 }
 
+div[itemprop="articleBody"] > article > figure {
+	margin: 0;
+}
+
 /* figcaptions should be distinct from surrounding paragraphs tho */
-figure:not([itemtype]) figcaption {
+article[itemtype="https://schema.org/ImageObject"] figcaption,
+figure[itemtype="https://schema.org/ImageObject"] figcaption {
+	contain: content;
 	margin: 0 10%;
 }
 
@@ -207,6 +222,7 @@ figure:not([itemtype]) figcaption {
  * font size preferences. */
 code,
 kbd,
+pre, /* Needed for ancient browsers */
 samp {
 	font-family: monospace, monospace;
 }
@@ -251,7 +267,8 @@ pre {
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
-picture img {
+picture > img {
+	/* Don't decode the image until it's near the fold */
 	display: block;
 	height: auto;
 	margin: auto;
@@ -273,6 +290,12 @@ section[role="doc-endnotes"] {
 	border-top: 1px solid;
 	content-visibility: auto;
 }
+
+/* Contain figures that are not images. */
+:not(div[itemprop="articleBody"]) > :not(article) > figure:not([itemtype="https://schema.org/ImageObject"]) {
+	contain: content;
+}
+
 
 /* Some browser focus indicators are inaccessible; override them with
  * something more visible. See WCAG 2.x SC 2.4.12. I also tried to

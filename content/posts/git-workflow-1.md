@@ -2,14 +2,23 @@
 date: "2020-11-18T18:31:15-08:00"
 description: Efficient redundancy via repository mirroring with nothing but git.
 outputs:
-  - html
-  - gemtext
+    - html
+    - gemtext
 tags:
-  - git
-  - foss
+    - git
+    - foss
 title: "Resilient Git, Part 1: Hydra Hosting"
 ---
-This is Part 1 of a series called [Resilient Git](/2020/11/17/git-workflow-0.html).
+<div role="note">
+
+This is Part 1 of a series called [Resilient Git](/2020/11/17/git-workflow-0.html "{itemprop='relatedLink'}").
+
+</div>
+
+<section role="doc-introduction">
+
+Intro&shy;duction {#introduction}
+-----------------
 
 The most important part of a project is its code. Resilient projects should have their code in multiple places of equal weight so that work continues normally if a single remote goes down.
 
@@ -18,6 +27,8 @@ Many projects already do something similar: they have one "primary" remote and s
 Having multiple primary remotes of equal status might sound like a bad idea. If there are multiple remotes, how do people know which one to use? Where do they file bug reports, get code, or send patches? Do maintainers need to check multiple places?
 
 No. Of course not. A good distributed system should automatically keep its nodes in sync to avoid the hassle of checking multiple places for updates.
+
+</section>
 
 Adding remotes
 --------------

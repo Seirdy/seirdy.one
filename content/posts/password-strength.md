@@ -1,5 +1,6 @@
 ---
 date: "2021-01-12T00:03:10-08:00"
+lastmod: "2021-12-01T22:01:21-08:00"
 description: Using thermal physics, cosmology, and computer science to calculate password vulnerability to the biggest possible brute-force attack.
 outputs:
     - html
@@ -10,20 +11,36 @@ tags:
 title: Becoming physically immune to brute-force attacks
 footnote_heading: References and endnotes
 ---
+<section role="doc-preface">
+
+<h2 id="preface">Preface</h2>
+
 This is a tale of the intersection between thermal physics, cosmology, and a tiny amount of computer science to answer a seemingly innocuous question: "How strong does a password need to be for it to be physically impossible to brute-force, ever?"
 
 [TLDR](#conclusion-tldr) at the bottom.
 
+<div role="doc-tip">
+
 _Note: this post contains equations. Since none of the equations were long or complex, I decided to just write them out in code blocks instead of using images or MathML the way Wikipedia does._
+
+</div>
 
 _Update: I implemented the ideas in this blog post (and more) in a program/library, [MOAC](https://sr.ht/~seirdy/MOAC/)_
 
-Introduction
-------------
+</section>
+
+{{<toc>}}
+
+<section role="doc-introduction">
+
+Intro&shy;duction {#introduction}
+-----------------
 
 I realize that advice on password strength can get outdated. As supercomputers grow more powerful, password strength recommendations need to be updated to resist stronger brute-force attacks. Passwords that are strong today might be weak in the future. **How long should a password be in order for it to be physically impossible to brute-force, ever?**
 
 This question might not be especially practical, but it's fun to analyze and offers interesting perspective regarding sane upper-limits on password strength.
+
+</section>
 
 Asking the right question
 -------------------------
@@ -79,7 +96,7 @@ Obviously, I'm not taking into account future mathematical advances; my crystal 
 Finally, there's always a non-zero probability of a brute-force attack guessing a password with a given entropy. Literal "immunity" is impossible. Lowering this probability to statistical insignificance renders our password practically immune to brute-force attacks.
 
 Compu&shy;tation
------------
+----------------
 
 How much energy does MOAC use per guess during a brute-force attack? In the context of this thought experiment, this number should be unrealistically low. I settled on [<var>k</var><var>T</var>](https://en.wikipedia.org/wiki/KT_(energy)). <var>k</var> represents the [Boltzmann Constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (about 1.381×10<sup>-23</sup> J/K) and <var>T</var> represents the temperature of the system. Their product corresponds to the amount of heat required to create a 1 nat increase in a system's entropy.
 
@@ -213,7 +230,7 @@ An excerpt from a religious text with a trailing space:
 Don't use actual excerpts from pre-existing works as your password.
 
 Conclusion, TLDR
----------------
+----------------
 
 Question: How much entropy should a password have to ensure it will _never_ be vulnerable to a brute-force attack? Can an impossibly efficient computer--the MOAC--crack your password?
 
@@ -237,28 +254,24 @@ This article's approach deliberately disregards computation speed, focusing only
 
 One well-known approach to calculating physical limits of computation is [Bremermann's limit](https://en.wikipedia.org/wiki/Bremermann%27s_limit), which calculates the speed of computation given a finite amount of mass. This article's approach disregards time, focusing only on mass-energy equivalence.
 
-[A publication](https://arxiv.org/abs/quant-ph/9908043)[^5] by Seth Lloyd from MIT further explores limits to computation speed on an ideal 1-kilogram computer.
+<span itemprop="mentions" itemscope itemtype="https://schema.org/ScholarlyArticle">{{<cited-work name="Ultimate physical limits to computation" extraName="headline" url="https://arxiv.org/abs/quant-ph/9908043">}} by {{<indieweb-person itemprop="author" first-name="Seth" last-name="Lloyd" url="https://meche.mit.edu/people/faculty/SLLOYD@MIT.EDU">}}</span> further explores limits to computation speed on an ideal 1-kilogram computer.
 
 Ac&shy;knowledge&shy;ments {#acknowledgements}
----------------------
+--------------------------
 
-Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) and [Ryan Coyler](https://rcolyer.net/) for helping me over IRC with my shaky physics and pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected an incorrect reference to AES-256 encryption by bringing up salts.
+Thanks to {{<indieweb-person itemprop="mentions" first-name="Barna" last-name="Zsombor" url="https://bzsombor.web.elte.hu/">}} and {{<indieweb-person itemprop="mentions" first-name="Ryan" last-name="Coyler" url="https://rcolyer.net/">}} for helping me over IRC with my shaky physics and pointing out the caveats of my approach. u/RisenSteam on Reddit also corrected an incorrect reference to AES-256 encryption by bringing up salts.
 
 My notes from Thermal Physics weren't enough to write this; various Wikipedia articles were also quite helpful, most of which were linked in the body of the article.
 
-While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon a [blog post](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) by Bruce Schneier. It contained a useful excerpt from his book _Applied Cryptography_[^6] involving setting the minimum energy per computation to <var>k</var><var>T</var>. I chose a more conservative estimate for <var>T</var> than Schneier did, and a _much_ greater source of energy.
+While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Applied Cryptography" url="https://www.schneier.com/books/applied-cryptography/">}} by {{<indieweb-person first-name="Bruce" last-name="Schneier" url="https://schneier.com/">}}</span>. An excerpt [on his blog](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) involving setting the minimum energy per computation to <var>k</var><var>T</var>. I chose a more conservative estimate for <var>T</var> than Schneier did, and a _much_ greater source of energy.
 
 
-[^1]: James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE International Symposium on Information Theory. IEEE. p. 204.
+[^1]: <span itemprop="citation">James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE International Symposium on Information Theory. IEEE. p. 204.</span>
 
-[^2]: Assis, A. K. T.; Neves, M. C. D. (3 July 1995). "History of the 2.7 K Temperature Prior to Penzias and Wilson"
+[^2]: <span itemprop="citation">Assis, A. K. T.; Neves, M. C. D. (3 July 1995). "History of the 2.7 K Temperature Prior to Penzias and Wilson"</span>
 
 [^3]: The MOAC 2 was supposed to be able to consume other sources of energy such as dark matter and dark energy. Unfortunately, Intergalactic Business Machines ran out of funds since all their previous funds, being made of matter, were consumed by the original MOAC.
 
 [^4]: This is a massive oversimplification; there isn't a single answer to the question "What is the volume of the observable universe?" Using this speed-of-light approach is one of multiple valid perspectives. The absolute size of the observable universe is much greater due to the way expansion works, but stuffing that into the MOAC's furnace would require moving mass faster than the speed of light.
-
-[^5]: Lloyd, S., "Ultimate Physical Limits to Computation," Nature 406.6799, 1047-1054, 2000.
-
-[^6]: Schneier, Bruce. Applied Cryptography, Second Edition, John Wiley & Sons, 1996.
 
 

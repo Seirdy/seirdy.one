@@ -20,6 +20,9 @@ copyright = "Copyright © 2021 Rohan Kumar"
 dark = "auto"
 highlight = false
 
+[frontmatter]
+lastmod = ['lastmod', ':git', 'date', 'publishDate']
+
 [author]
 name = "Rohan Kumar"
 first = "Rohan"

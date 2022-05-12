@@ -1,5 +1,6 @@
 ---
 date: "2021-02-23T11:54:00-08:00"
+lastmod: "2021-03-02T23:04:04-08:00"
 description: "How open platforms become closed, and how standards-driven development can prevent it from happening."
 footnote_heading: "Notes"
 outputs:
@@ -13,11 +14,18 @@ title: Keeping platforms open
 ---
 This article is the second entry of series of posts exploring situations in which <abbr title="free, libre, and open-source software">FLOSS</abbr> alone isn't enough to secure user freedom.
 
+<section role="doc-introduction">
+
+Intro&shy;duction {#introduction}
+-----------------
+
 My previous article, [Whatsapp and the domestication of users](/2021/01/27/whatsapp-and-the-domestication-of-users.html), got more attention than I was expecting. Some responses gave me a lot to think about,[^1] especially regarding _actions_ we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FLOSS, simplicity, and open platforms.
 
 Hard problems, by definition, lack easy solutions. Simply choosing (or creating) a platform that avoids user domestication isn't enough if that platform can change. The price of freedom is eternal vigilance; in addition to settling on the right platform, we must ensure that it honors its users in both the present _and the future_. Keeping a platform FLOSS and simple is more straightforward[^2] than keeping a platform "open".
 
 How do we keep an open platform from becoming a closed platform in the future?
+
+</section>
 
 How open platforms become closed
 --------------------------------
@@ -70,9 +78,22 @@ Platforms are more than their protocols. Different implementations have unique b
 
 After reading my previous article, a few people contacted me to ask for my thoughts regarding certain email providers. There's not much that can set a standard email provider apart if it just hosts a simple email server. To distinguish themselves, email providers often implement many features beyond email standards compliance.
 
-The vast majority of email accounts come from a small handful of dominant providers backed by large companies (Gmail, Yahoo! Mail, Yandex Mail, Mail.ru, iCloud, and others). Providers such as Gmail are notorious for implementing advanced spam filters prejudiced against non-mainstream email providers. Users who self-host email servers or use small providers frequently trigger false positives and end up having their messages incorrectly labeled as spam until they can build up a "reputation".[^4] The addition of such a complex spam-prevention filter strengthens the email oligopoly by creating a barrier to entry for newcomers. Low-volume senders are discriminated against, as Migadu [found out](https://archive.is/rJnSs#deliverability):
+The vast majority of email accounts come from a small handful of dominant providers backed by large companies (Gmail, Yahoo! Mail, Yandex Mail, Mail.ru, iCloud, and others). Providers such as Gmail are notorious for implementing advanced spam filters prejudiced against non-mainstream email providers. Users who self-host email servers or use small providers frequently trigger false positives and end up having their messages incorrectly labeled as spam until they can build up a "reputation".[^4] The addition of such a complex spam-prevention filter strengthens the email oligopoly by creating a barrier to entry for newcomers. Low-volume senders are discriminated against, as Migadu found out:
 
-> We’ve already seen our share of bad spam filters and misconfigured servers. In some cases recipient servers intentionally rejected correct emails just because we are a low volume sender. Ironically that is how an ideal sender should be. To improve the “receiveability” they of course offer their own hosted email service at a hefty price.
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+We've already seen our share of bad spam filters and misconfigured servers. In some cases recipient servers intentionally rejected correct emails just because we are a low volume sender. Ironically that is how an ideal sender should be. To improve the "receiveability" they of course offer their own hosted email service at a hefty price.
+
+</blockquote>
+{{<quotecaption partOfType="Article">}}
+
+{{<cited-work name="How's Migadu's Deliverability?" url="https://archive.is/rJnSs#deliverability" extraName="headline">}}, section "So, Finally, How’s The Deliverability?"
+
+{{</quotecaption>}}
+
+{{</quotation>}}
 
 Another example: email providers such as Hey.com, Protonmail, and Tutanota offer many features that are incompatible with IMAP/POP3. Protonmail and Tutanota use their own non-standard E2EE implementation (rather than focusing on improving the UX for vanilla PGP), and Hey.com offers server-side mail organization. Users of these services must use official Web, desktop, and mobile clients.[^5] These three providers control both the client and the server, giving them the means for vendor lock-in. Of course, there's a limit to the amount of lock-in these providers can achieve: as I explained in the [XMPP case study](#case-study-the-boxing-of-xmpp), these providers still need to support SMTP to stay compatible with the wider email landscape.
 
@@ -108,7 +129,7 @@ For example, Element and the Matrix.org Foundation would alleviate most of my co
 Drawbacks
 ---------
 
-The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. As Moxie [argues](https://signal.org/blog/the-ecosystem-is-moving/), Signal might not have been able to implement as many features if it was an open platform; spec-constrained development is, by definition, _constrained_. Users are limited by the lowest common denominator among popular participating implementations.
+The biggest drawback to the advice I've presented is development speed. Keeping compatibility and spec compliance slows down the rate at which new features can be added. [As Moxie argues](https://signal.org/blog/the-ecosystem-is-moving/), Signal might not have been able to implement as many features if it was an open platform; spec-constrained development is, by definition, _constrained_. Users are limited by the lowest common denominator among popular participating implementations.
 
 Open platforms with multiple providers and implementations often suffer from poorer usability, especially with regards to onboarding. Instead of just opening the official app/website, users need to choose from multiple clients and providers. This can be a turn-off for casual users just wanting to try something out. One of the best ways to improve the onboarding experience is to offer recommendations to your non-technical friends; you know them well and can probably help them make an informed decision.
 
@@ -117,18 +138,29 @@ Parallels to other situations
 
 Programming languages driven by a standard rather than a reference implementation typically have greater portability, many good implementations, and are unlikely to fade away with time. Examples include C, C++, Common Lisp, JavaScript, and POSIX Shell. Compare this with a language like Python: so many packages depend on the CPython reference implementation's approach to C extensions that alternative implementations such as PyPy must perpetually remain second-class citizens.
 
-The standards- and consensus-driven approach to platform development and the inefficiency that comes with it is a trade-off visible in many places outside software development. Most forms of democracy suffer from bureaucracy and in-fighting that stifle progress. Some have argued that democracy's inefficiency is a feature, not a bug. As Nathan Myhrvold [puts it](https://slate.com/news-and-politics/1996/10/the-virtue-of-inefficient-government.html):
+The standards- and consensus-driven approach to platform development and the inefficiency that comes with it is a trade-off visible in many places outside software development. Most forms of democracy suffer from bureaucracy and in-fighting that stifle progress. Some have argued that democracy's inefficiency is a feature, not a bug. As Nathan Myhrvold puts it:
 
-> The reason societies with democratic governments are better places to live in than their alternatives isn’t because of some goodness intrinsic to democracy, but because its hopeless inefficiency helps blunt the basic potential for evil. The constraint of maintaining constant popularity is simply too large a burden to bear. So, happily, very little gets done that is extremely bad–or extremely good.
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+The reason societies with democratic governments are better places to live in than their alternatives isn’t because of some goodness intrinsic to democracy, but because its hopeless inefficiency helps blunt the basic potential for evil. The constraint of maintaining constant popularity is simply too large a burden to bear. So, happily, very little gets done that is extremely bad–or extremely good.
 
 Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
 
+</blockquote>
+{{<quotecaption partOfType="OpinionNewsArticle">}}
+{{<indieweb-person first-name="Nathan" last-name="Myhrvold" url="http://www.nathanmyhrvold.com/" itemprop="author">}},
+{{<cited-work name="The Virtue of Inefficient Government" url="https://slate.com/news-and-politics/1996/10/the-virtue-of-inefficient-government.html" extraName="headline">}}
+{{</quotecaption>}}
+{{</quotation>}}
+
 Ac&shy;knowledge&shy;ments {#acknowledgements}
----------------------
+--------------------------
 
-{{<indieweb-person first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section about XMPP.
+{{<indieweb-person itemprop="mentions" first-name="Denver" last-name="Gingerich" url="https://ossguy.com/">}} helped me brainstorm early in the writing process and provided useful information for the section about XMPP.
 
-Thanks to {{<indieweb-person first-name="Barna" last-name="Zsombor" url="https://bzsombor.web.elte.hu/">}} and carbolymer for giving good feedback over IRC.
+Thanks to {{<indieweb-person itemprop="mentions" first-name="Barna" last-name="Zsombor" url="https://bzsombor.web.elte.hu/">}} and carbolymer for giving good feedback over IRC.
 
 
 [^1]: [This Hacker News comment](https://news.ycombinator.com/item?id=25961895) in particular planted quite a few seeds for this article.
