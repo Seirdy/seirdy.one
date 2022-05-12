@@ -1,7 +1,9 @@
 <article class="h-entry hentry">
 <header>
 	<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
+	{{- if not .Params.disableMeta }}
 	{{ partial "post-meta.html" . }}
+	{{- end }}
 	<hr>
 </header>
 <div class="e-content entry-content" itemprop="articleBody">
