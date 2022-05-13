@@ -10,7 +10,8 @@
 -->
 {{- $referencesWithoutHeading    := `(<div class="footnotes" role="doc-endnotes">
 <hr>)` -}}
-{{- $referencesWithHeading := printf `<section role="doc-endnotes" aria-labelledby="note-hd">
+{{- $referencesWithHeading := printf `<hr>
+<section role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($footnote_heading) -}}
 
 {{- $endnotesClosingDiv := `</a></p>
@@ -23,22 +24,23 @@
 </ol>
 </section>` -}}
 
-{{- $badNoteRef := ` role="doc-noteref">([0-9]*)</a>` -}}
-{{- $goodNoteRef := ` role="doc-noteref">note&nbsp;${1}</a>` -}}
-
-<!--Remove deprecated DPUB-ARIA role and unused classes-->
-{{- $endnote := `(role="doc-endnote"|class="footnote-(back)?ref")` -}}
-{{- $noEndnote := printf "" -}}
+<!--Descriptive footnote link names, remove unused class-->
+{{- $badNoteRef := `class="footnote-ref" role="doc-noteref">([0-9]*)</a>` -}}
+{{- $goodNoteRef := `role="doc-noteref">note&nbsp;${1}</a>` -}}
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
 {{- $tocHeadingOutside := `<h2>Table of Contents</h2><nav(?:.*)>` -}}
 {{- $tocHeadingInside := `<nav id=TableOfContents role="doc-toc"><h2 id="toc-hd">Table of Contents</h2>` -}}
 
 <!--Give footnote backlinks accessible names-->
-{{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
+{{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:.*)?)>` -}}
 {{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" aria-label="back to reference ${1}"${2}>` -}}
 
-{{- $repeatedFootnoteBacklinksBad  :=  `<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
-{{- $repeatedFootnoteBacklinksGood :=  `<a href="#fnref${1}:${2}" aria-label="back to reference ${2}, repeated instance ${1}"${3}>` -}}
+<!--
+	If two backlinks exist, give them different names.
+	I currently don't have any triple backlinks; if I ever do, I'll implement this properly with a loop.
+-->
+{{- $repeatedFootnoteBacklinksBad  :=  `"back to reference ([0-9]*)"(.*)<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
+{{- $repeatedFootnoteBacklinksGood :=  `"back to reference ${1}, instance 1"${2}<a href="#fnref${3}:${4}" aria-label="back to reference ${4}, instance 2"${5}>` -}}
 
-{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $endnote $noEndnote | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | safeHTML -}}
+{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | safeHTML -}}

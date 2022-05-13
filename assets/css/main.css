@@ -211,11 +211,10 @@ section[itemprop="mentions"] > figure {
 	margin: 0;
 }
 
-/* figcaptions should be distinct from surrounding paragraphs tho */
 section[itemtype="https://schema.org/ImageObject"] figcaption,
-figure[itemtype="https://schema.org/ImageObject"] figcaption {
+figure[itemtype="https://schema.org/ImageObject"] figcaption,
+div[itemprop="articleBody"] > figure:not([itemtype="https://schema.org/ImageObject"]) {
 	contain: content;
-	margin: 0 10%;
 }
 
 /* browsers make monospace small and unreadable for some dumb legacy
@@ -269,7 +268,6 @@ pre {
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
 picture > img {
-	/* Don't decode the image until it's near the fold */
 	display: block;
 	height: auto;
 	margin: auto;
@@ -286,15 +284,9 @@ picture > img {
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
 footer,
-section[aria-labelledby="webmentions"],
-section[role="doc-endnotes"] {
+section[aria-labelledby="webmentions"] {
 	border-top: 1px solid;
 	content-visibility: auto;
-}
-
-/* Contain figures that are not images. */
-:not(section[itemprop="mentions"]) > figure:not([itemtype="https://schema.org/ImageObject"]) {
-	contain: content;
 }
 
 
@@ -306,10 +298,10 @@ section[role="doc-endnotes"] {
  * https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible
  * */
 
-/* For browsers that don't support :focus-visible */
 a:focus,
 summary:focus,
-pre[tabindex]:focus {
+pre[tabindex]:focus,
+:focus-visible {
 	outline: 3px solid;
 }
 
@@ -320,11 +312,6 @@ pre[tabindex]:focus {
 	pre[tabindex]:focus:not(:focus-visible) {
 		outline: none;
 	}
-}
-
-/* Add focus styling back in browsers that do support :focus-visible */
-:focus-visible {
-	outline: 3px solid;
 }
 
 /* Todo:

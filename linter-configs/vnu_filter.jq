@@ -5,7 +5,7 @@
 		(
 			( # See https://github.com/w3c/css-validator/issues/361
 				.message == "CSS: Parse Error."
-				and .extract == "){outline:none}}:focus-visible"
+				and .extract == "){outline:none}}@media(prefers"
 				and .hiliteLength == 1
 			)
 			or
