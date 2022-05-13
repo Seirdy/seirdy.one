@@ -2,7 +2,7 @@
 <summary>Toggle transcript</summary>
 {{ with .Parent -}}
 <section id="transcript-{{ .Get "id" }}">
-<h5>Image transcript.</h5>
+<h5>{{ .Get "type" | humanize}} transcript.</h5>
 {{- end -}}
 <div itemprop="embeddedTextCaption">
 {{ .Inner | markdownify | safeHTML }}
