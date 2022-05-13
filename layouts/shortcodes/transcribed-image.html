@@ -3,6 +3,6 @@
 {{- $type = . -}}
 {{- end -}}
 
-<article aria-label="{{ $type }}, caption, and transcript" itemprop="mentions" itemscope itemtype="https://schema.org/ImageObject" id="{{ .Get "id" }}">
+<section aria-label="{{ $type }}, caption, and transcript" itemprop="mentions" itemscope itemtype="https://schema.org/ImageObject" id="{{ .Get "id" }}">
 {{ .Inner | markdownify | safeHTML }}
-</article>
+</section>

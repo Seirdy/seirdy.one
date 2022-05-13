@@ -20,17 +20,9 @@
 	}
 }
 
-/* Print: don't orphan headings
- * Commented out bc most browsers don't obey this yet. */
-/* h2, */
-/* h3, */
-/* h4 { */
-/* 	break-after: avoid; */
-/* } */
-
 /* Print: don't break up self-contained items. */
 figure,
-article article,
+section[itemprop="mentions"],
 li {
 	break-inside: avoid;
 }

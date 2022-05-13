@@ -199,19 +199,20 @@ kbd {
 /* narrow screens: remove unused figure margins
  * figure captions shouldn't look like regular paragraphs; there should
  * be some extra space.
- * This does not hold true for figures in nested articles; the nested
- * article should instead get the spacing. */
-article,
+ * This does not hold true for figures in somewhat distinct sections; the
+ * section should instead get the spacing. A section that constitutes a
+ * separate schema.org object would qualify. */
+section[itemprop="mentions"],
 figure {
 	margin: 1.5em 0;
 }
 
-div[itemprop="articleBody"] > article > figure {
+section[itemprop="mentions"] > figure {
 	margin: 0;
 }
 
 /* figcaptions should be distinct from surrounding paragraphs tho */
-article[itemtype="https://schema.org/ImageObject"] figcaption,
+section[itemtype="https://schema.org/ImageObject"] figcaption,
 figure[itemtype="https://schema.org/ImageObject"] figcaption {
 	contain: content;
 	margin: 0 10%;
@@ -292,7 +293,7 @@ section[role="doc-endnotes"] {
 }
 
 /* Contain figures that are not images. */
-:not(div[itemprop="articleBody"]) > :not(article) > figure:not([itemtype="https://schema.org/ImageObject"]) {
+:not(section[itemprop="mentions"]) > figure:not([itemtype="https://schema.org/ImageObject"]) {
 	contain: content;
 }
 

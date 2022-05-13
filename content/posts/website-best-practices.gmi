@@ -164,7 +164,7 @@ cache-control: max-age=31557600, immutable
 
 ### Inline content
 
-In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your gzipped CSS is under one kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
+In addition to HTML, CSS is also a blocking resource. You could pre-load your CSS using a "link" header. Alternatively: if your compressed CSS is under one kilobyte, consider inlining it in the <head> using a <style> element. Simply inlining stylesheets can pose a security threat, but the "style-src" CSP directive can mitigate this if you include a hash of your inline stylesheet sans trailing whitespace.
 
 Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (that the hidden service replaces SVGs with PNGs; see the section called "The Tor Browser"). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
@@ -510,14 +510,14 @@ A StackOverflow thread about comic transcripts outlines a good approach to seman
 
 => https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic What is the semantically correct way to include transcript from a comic?
 
-My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.
+My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.⁸
 
-An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside an <article> with a heading, and give the group an "aria-label" that indicates the presence of the three sub-elements. Using an article landmark ensures that the figure and caption remain together as a single unit.
+An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside a <section> with a heading, and give the group an "aria-label" that indicates the presence of the three sub-elements. Using a section landmark ensures that the figure and caption remain together as a single unit.
 
 The html code for the xkcd comic earlier in the page (well, the Web version of this page) is a representative example. I took care of most boilerplate using shortcodes. Here's a simplified version of the final result:
 
 ```
-<article aria-label="comic, caption, and transcript">
+<section aria-label="comic, caption, and transcript">
   <h4>Infinite scrolling</h4>
   <figure>
     <img src="SRC"
@@ -546,7 +546,7 @@ The html code for the xkcd comic earlier in the page (well, the Web version of t
       </dl>
     </div>
   </details>
-</article>
+</section>
 ```
 
 ## About custom colors
@@ -700,7 +700,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
 
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography⁸
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography⁹
 
 I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
 
@@ -730,7 +730,7 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif.⁹ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif.¹⁰ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
@@ -970,7 +970,7 @@ Soft hyphens are great for splitting up text, but some text should stay together
 10&nbsp;cm
 ```
 
-Practical Typography⁸ describes where to use the non-breaking space in more detail:
+Practical Typography⁹ describes where to use the non-breaking space in more detail:
 
 => https://practicaltypography.com/nonbreaking-spaces.html nonbreaking spaces, Butterick's Practical Typography
 
@@ -1278,7 +1278,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹²
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹³
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use "aria-labelledby" on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1344,7 +1344,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹⁰
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹¹
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 5. Print some pages in black-and-white, preferably with a simple laser printer.
@@ -1357,7 +1357,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
 13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹¹
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹²
 16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
@@ -1511,14 +1511,18 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 => https://datatracker.ietf.org/doc/html/rfc7541#appendix-A RFC 7541: HPACK static table definition
 => https://quicwg.org/base-drafts/draft-ietf-quic-qpack.html#appendix-A QPACK: Header Compression for HTTP/3
 
-⁸ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+⁸ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
+=> https://a11ysupport.io/tech/aria/aria-details_attribute Current support for aria-details
+=> https://www.w3.org/TR/wai-aria-1.2/#aria-details aria-details specification
+
+⁹ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 I find Practical Typography quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-⁹ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+¹⁰ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-¹⁰ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+¹¹ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-¹¹ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+¹² LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
-¹² Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+¹³ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.

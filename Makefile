@@ -116,7 +116,7 @@ all: test deploy
 .PHONY: deploy-envs
 deploy-envs:
 	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs hugo
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local deploy
 
 .PHONY: deploy-prod
 deploy-prod:
@@ -126,6 +126,7 @@ deploy-prod:
 	@$(MAKE) deploy
 
 
+# linting and compression can happen in parallel
 .PHONY: deploy-staging
 deploy-staging:
 	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging clean
