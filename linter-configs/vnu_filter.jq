@@ -16,9 +16,8 @@
 			)
 			or
 			( # See https://w3c.github.io/aria/#comment
-				.message == "Bad value “comment” for attribute “role” on element “li”."
+				.message == "Bad value “comment” for attribute “role” on element “p”."
 				and (.extract | test("u-comment"))
-				and (.extract | test("itemprop=\"comment\""))
 			)
 		) | not
 	)
