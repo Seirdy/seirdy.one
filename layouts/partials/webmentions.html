@@ -2,7 +2,7 @@
 		<h2 id="webmentions">Webmen&shy;tions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
 		<ul>
-			{{ $target := .RelPermalink -}}
+			{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 			{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
 			{{ $webmentions := getJSON $url -}}
 			{{ range $webmentions -}}
@@ -10,7 +10,7 @@
 				{{ if (eq $webmention.type "like") -}}
 				<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
 				{{- else -}}
-				<li itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
+				<li itemprop="comment" role="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
 				{{- end }}
 				<p>
 					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
