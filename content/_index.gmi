@@ -18,7 +18,9 @@ See the Director's Cut of my bio in the "about" page:
 
 => about/ About me
 
-I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include accessibility, search engines, security, privacy, and the IndieWeb.
+Tech stuff: I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
+
+My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
 
 Git repos:
 
@@ -40,7 +42,7 @@ Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFT
 
 => https://matrix.to/#/@seirdy:seirdy.one @seirdy:seirdy.one
 
-My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. I was previously @seirdy:envs.net.
+My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space.
 
 ## Links
 

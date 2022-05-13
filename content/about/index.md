@@ -14,9 +14,13 @@ Online Handle: Seirdy
 Other versions of this website
 ------------------------------
 
+This website's canonical location is on seirdy.one.
+
 This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \*nix computers that let people sign up for shell accounts. A typical shell account features clients for IRC and email, common terminal/commandline utilities, and (most importantly) web hosting. Read about the tildeverse's [origins](https://web.archive.org/web/20180917091804/https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf), read [the FAQ](https://tilde.club/wiki/faq.html), pick [a tilde](https://tilde.club/%7Epfhawkins/othertildes.html) and [get started](https://tilde.club/~anthonydpaul/primer.html). My Tildeverse pages will serve as a "rough draft".
 
-Content on this site also appears on <a href="gemini://seirdy.one">my Gemini capsule</a>
+Content on this site also appears on <a href="gemini://seirdy.one">my Gemini capsule</a>. My Web and Gemini content may be slightly different: I often phrase things differently to accommodate the strengths and weaknesses of each medium.
+
+I have a [Tor hidden Web service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/) which mirrors this site's contents, except for the fact that it replaces some SVGs with PNGs.
 
 Location (Rohan, meat&shy;space) {#location-rohan-meatspace}
 --------------------------------
@@ -64,17 +68,23 @@ I ought to come up with more interests than these, but that sounds hard.
 
 ### Inclusive design
 
-I care a lot about accessibility, resource usage, and compatibility. My Web site may seem simple, but I put [over 15 thousand words of thought into its design](https://seirdy.one/~seirdy/2020/11/23/website-best-practices.html).
+I care a lot about accessibility, resource usage, and compatibility. My Web site may seem simple, but I put [almost 20 thousand words of thought into its design](https://seirdy.one/~seirdy/2020/11/23/website-best-practices.html) in an effort to maximize its inclusivity. This site should work well whether you're using Lynx, NetSurf, the Tor Browser with a screen reader, or a printout.
 
 Many people frame accessibility and compatibility in terms of "percentage of users impacted" to justify ignoring certain demographics. I find that this mindset somewhat discriminatory. I prefer framing concerns in terms of "populations excluded".
 
-### Free software
+I have some skin in the game: I rely on forced colors and use often use screen readers for web browsing. This is a really helpful measure to reduce overstimulation, given my anxiety and ADHD. I encourage others in similar situations to try these measures.
 
-The word "free" in "free software" refers to freedom, not price. I recommend looking it up if you aren't familiar. That being said, I think that simply meeting the definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of [user domestication](https://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.html).
+### Software freedom
 
-I lean towards simplicity; I usually prefer CLIs that follow the UNIX philosophy over TUIs, and TUIs over GUIs. If a piece of software is complex enough to require a funding round, I would rather avoid it. There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all.
+While I care very much about "free software" (the name is confusing, it refers to freedom rather than price), I don't share the same perspective as most "fossbros" and organizations like the FSF. Software freedom is important because it gives people agency instead of delegating control to an authority; it's not valuable in and of itself, and promoting a "FOSS" alternative that has vulnerabilities and accessibility issues is sometimes counterproductive.
 
-Some software I use: Fedora, Alpine Linux, SwayWM, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, Foot, and zsh.
+I think that simply meeting GNU's definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of [user domestication](https://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.html).
+
+I lean towards simplicity; I usually prefer line-mode command-line interfaces that follow the UNIX philosophy. If a piece of software is complex enough to require a funding round, I would rather avoid it. My reasons for preferring simplicity also relate to user autonomy: extremely complex software can't be forked easily, creating dependence on the vendor. It's also because I'm a bit paranoid and want to know everything that happens on my system.
+
+There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all. When I use a graphical program, it's typically for things for which graphics are an inherent requirement or for accessibility reasons (most textual user interfaces don't play well with screen readers).
+
+Some other software I use: Sway, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, Foot, and zsh.
 
 More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles); check its README.
 
@@ -92,9 +102,8 @@ I watch anime. Some of my favorites, in no particular order:
 - Monogatari
 - Attack on Titan
 
+I think that at least one entry in that list has some problematic messages, but my personal interpretation was a bit unorthodox.
+
 ### Music
 
 I've put together a periodically-updated [list of tracks](music.txt) that I've rated 8/10 or higher in my mpd stickers database, auto-generated by some of my [mpd-scripts](https://git.sr.ht/~seirdy/mpd-scripts/tree/master/smart-playlists). I'm a fan of glitch, trailer music, and symphonic and power metal; I've also recently been getting into Japanese rock thanks to a few anime openings. Some of my favorite artists are The Glitch Mob, Pretty Lights, Beats Antique, Hammerfall, Badflower, Celldweller and Scandroid, Helloween, Two Steps from Hell, Nightwish, Mili, and MYTH & ROID.
-
-<!--vi:ft=markdown.pandoc.gfm-->
-

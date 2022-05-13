@@ -25,9 +25,13 @@ About me
 
 The Director's Cut of my bio is at my [About page](/about.html).
 
-<p class="p-note">
-I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include accessibility, search engines, security, privacy, and the IndieWeb.
-</p>
+<div class="p-note">
+
+I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
+
+My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
+
+</div>
 
 Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://github.com/Seirdy "{rel='me'}"), [Codeberg](https://codeberg.org/Seirdy "{rel='me'}"), and [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
 
@@ -36,7 +40,7 @@ Contact
 
 Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr>@pleroma<wbr>.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
-Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr>:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`. I was previously `@seirdy:envs.net`.
+Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr>:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`.
 
 </div>
 
