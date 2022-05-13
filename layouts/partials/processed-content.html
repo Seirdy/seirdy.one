@@ -36,9 +36,9 @@
 
 <!--Give footnote backlinks accessible names-->
 {{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
-{{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" title="back to reference ${1}" aria-label="back to reference ${1}"${2}>` -}}
+{{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" aria-label="back to reference ${1}"${2}>` -}}
 
 {{- $repeatedFootnoteBacklinksBad  :=  `<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
-{{- $repeatedFootnoteBacklinksGood :=  `<a href="#fnref${1}:${2}" title="back to reference ${2}, repeated instance ${1}" aria-label="back to reference ${2}, repeated instance ${1}"${3}>` -}}
+{{- $repeatedFootnoteBacklinksGood :=  `<a href="#fnref${1}:${2}" aria-label="back to reference ${2}, repeated instance ${1}"${3}>` -}}
 
 {{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $endnote $noEndnote | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | safeHTML -}}
