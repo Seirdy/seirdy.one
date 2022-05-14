@@ -296,12 +296,13 @@ section[aria-labelledby="webmentions"] {
  * instead of focus but older/simpler browsers only support :focus.
  * I borrowed these directives from
  * https://www.tempertemper.net/blog/refining-focus-styles-with-focus-visible
+ * To my knowledge: <a>, <summary>, and <pre tabindex=0> are the only
+ * focusable elements.
  * */
 
 a:focus,
 summary:focus,
-pre[tabindex]:focus,
-:focus-visible {
+pre[tabindex]:focus {
 	outline: 3px solid;
 }
 
