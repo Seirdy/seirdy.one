@@ -470,14 +470,14 @@ Beyond alt-text
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users with metered connections: sometimes they disable all images, and other times they only disable images past a certain size threshold
+* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshold[^10]
 * People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images should usually have alt-text under 100 char&shy;acters.[^10] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
+* Images should usually have alt-text under 100 char&shy;acters.[^11] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supple&shy;mentary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
@@ -552,7 +552,7 @@ A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image t
 
 The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript in a visible caption.
 
-A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically grouping images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use <code>aria-<wbr>des&shy;cribedby</code> to semantically link the figure and the transcript.[^11]
+A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically grouping images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use <code>aria-<wbr>des&shy;cribedby</code> to semantically link the figure and the transcript.[^12]
 
 An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside a `<section>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using a `section` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#infinite-scrolling) is a representative example.
 
@@ -634,9 +634,9 @@ Black on white? How often do you see that kind of contrast in real life? Tone it
 
 Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>)&nbsp;2.2</cite> describes how doing so can meet the WCAG&nbsp;2.2's [Success Criterion&nbsp;1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
 
-This page's [canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
+[This page's canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows High Contrast Mode (<abbr title="Windows High Contrast Mode">WHCM</abbr>) is perhaps the best example. [WHCM makes advanced modifications to color palettes](#win-hcm): it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides.[^12]
+Color overrides go well beyond simple foreground and background color changes. Windows High Contrast Mode (<abbr title="Windows High Contrast Mode">WHCM</abbr>) is perhaps the best example. [WHCM makes advanced modifications to color palettes](#win-hcm): it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides.[^13]
 
 <abbr title="Windows High Contrast Mode">WHCM</abbr> leads the standardization process for the `forced-colors` CSS media feature, but it isn't the only implementation of the underlying idea. If you navigate to <samp>about:preferences</samp> in Firefox and activate the <samp translate="yes">Colors</samp> button in the "Language and Appearance" section, you'll be presented with the option to override website palettes with [your own default colors](#default-colors).
 
@@ -646,11 +646,11 @@ Not all approaches completely discard a designer's specified color palette. The 
 
 <blockquote itemprop="text">
 <ul>
-<li>Win HCM is a collection of <strong>user defined color themes</strong> that overwrite your definitions in <abbr title="Cascading Style Sheets">CSS</abbr>.</li>
-<li>It’s not about design but <strong>readability</strong>.</li>
-<li>Some stuff will disappear in Win HCM, some won’t. Best advice is to use <strong>semantic <abbr title="Hypertext Markup Language">HTML</abbr></strong> to keep things visible.</li>
-<li>You can use transparent <code>outline</code> to keep things visble like focus indicators and surface boundaries or use <code>current<wbr>Color</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
-<li>You can use a special <strong>media query</strong> combined with special <strong><abbr title="Cascading Style Sheets">CSS</abbr> color key&shy;words</strong> to give elements the user defined colors.</li>
+<li>Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.</li>
+<li>It’s not about design but readability.</li>
+<li>Some stuff will disappear in Win HCM, some won’t. Best advice is to use semantic HTML to keep things visible.</li>
+<li>You can use transparent <code>outline</code> to keep things visible like focus indicators and surface boundaries or use <code>current<wbr>Color</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
+<li>You can use a special media query combined with special CSS color key&shy;words to give elements the user defined colors.</li>
 </ul>
 </blockquote>
 {{< quotecaption partOfType="WebSite" >}}
@@ -688,7 +688,7 @@ This image is an approximation of what halation looks like, cropped from <a href
 
 If you can't bear the thought of parting with your solid-black background, worry not: there exists a CSS media feature and client-hint for contrast preferences called `prefers-contrast`. It takes the parameters `no-preference`, `less`, and `more`. You can serve increased-contrast pages to those who request `more`, and vice versa. Check section 11.3 of the W3C <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work url="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast" name="Media Queries Level 5" extraName="headline">}}</span> specification for more information.
 
-I personally like a foreground and background of `#eee` and `#0e0e0e`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#0e0e0e` is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a `prefers-contrast: less` media query which lightens the background to `#222`.
+I personally like a foreground and background of `#E9E9E9` and `#111`, respectively. These shades seem to be as far apart as possible without causing accessibility issues: `#111` is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a `prefers-contrast: less` media query which lightens the background to `#222`.
 
 ### Contrast is complex
 
@@ -702,11 +702,11 @@ The APCA takes several factors into account:
 * Small, thin fonts are difficult to see and require greater contrast.
 * It's possible to have too much contrast, especially for large/bold text (note that the APCA version built into Chromium does not yet take this into account).
 
-Note that [the APCA isn't fully mature](https://yatil.net/blog/wcag-3-is-not-ready-yet) as of early 2022. Until version 3.0 of the WCAG is ready, pages that need to comply with the WCAG should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG&nbsp;2.2 AAA contrast requirements and APCA recommen&shy;dations.
+Note that [the APCA isn't fully mature](https://yatil.net/blog/wcag-3-is-not-ready-yet) as of early 2022. Until version 3.0 of the WCAG is ready, pages that are required to comply with the WCAG should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG&nbsp;2.2 AAA contrast requirements and APCA recommen&shy;dations.
 
-Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among [people who deal with overstimulation](https://www.tpgi.com/beyond-wcag-losing-spoons-online/); this includes [autistic people](https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/).
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among [people who deal with overstimulation](https://www.tpgi.com/beyond-wcag-losing-spoons-online/); this includes [people on the autism spectrum](https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/).
 
-If you want to use yellow and red, lighten them up so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
+If you want to use yellow and red, de-saturate them so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
 
 Accounting for halation, overstimulation, and high-contrast needs is hard to do if you prioritize minute aesthetics before inclusivity.
 
@@ -714,14 +714,14 @@ Accounting for halation, overstimulation, and high-contrast needs is hard to do 
 
 Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". <span itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">{{<indieweb-person itemprop="author" first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} describes his experience in {{<cited-work name="Color blindness" extraName="headline" url="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">}}</span>. Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
 
-Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.[^13]
+Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.[^14]
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
 In defense of link under&shy;lines {#in-defense-of-link-underlines}
 ----------------------------------
 
-Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^14] and that hyperlinks are no exception. I disagree.
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^15] and that hyperlinks are no exception. I disagree.
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
@@ -766,7 +766,7 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^15] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^16] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles Web&shy;Assembly-compiled encoders; I've heard good things about it.
 
@@ -887,15 +887,17 @@ Users of <abbr title="assistive technology">AT</abbr>s such as screen readers pr
 
 Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
-Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^16] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
+Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^17] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
 ### Arbitrary viewports
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
-A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content. Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one (1) item. Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing.
+A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content.
 
-Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
+Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one significant [grouping element](https://html.spec.whatwg.org/dev/grouping-content.html). The "source order viewer" in Chromium's DevTools can assist with this process.
+
+Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
 Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/). This is one of the reasons why I didn't recommend resolution- or dimension-aware imagesets in the [image optimization section](#image-optimization).
 
@@ -920,9 +922,11 @@ Don't boost engagement by giving readers information they didn't ask for; earn e
 
 As words-per-line decrease (by increasing zoom or narrowing the viewport), line lengths grow more varied. Justifying text will cause uncomfortable amounts of whitespace. In fact, <q cite="https://www.w3.org/TR/WCAG22/#visual-presentation">Text is not justified</q> is explicitly mentioned in the WCAG Success Criterion 1.4.8.
 
-The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as [a AAA success criterion (SC 1.4.8)](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
+The WCAG recommends a max line length of 80 characters (40 characters for <abbr title="Chinese, Japanese, and Korean">CJK</abbr> languages) as [a AAA success criterion (SC 1.4.8)](https://www.w3.org/TR/WCAG22/#visual-presentation). However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark.
 
-Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `36em`, which typically corresponds to just over 80 characters. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
+I think the WCAG over-simplified a complex issue to make this success criterion easier to understand. The guideline in its current form encourages wrapping lines at uneven lengths, since proportional text can take up varying amounts of space for a given character count. It would be better to specify an average character length, allowing lines with narrow characters (e.g. "I", "l") to exceed it. Then again, the AAA level was never intended to be a blanket requirement.
+
+Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of `36em`, which corresponds to just over 80 characters on most default stylesheets. I opted to use `em` instead of `ch` for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
 
 I also ensured that my site supports CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implemen&shy;tations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
@@ -971,7 +975,7 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 ### Keeping text together
 
-Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^14] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
+Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^15] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
 
 One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 
@@ -1187,7 +1191,7 @@ On one hand, users who need enhanced focus visibility may override the default f
 
 The WCAG guidelines recommend making focus indicators 2&nbsp;px thick in [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced). While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
-You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^17]
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^18]
 
 {{<codefigure>}}
 
@@ -1265,7 +1269,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implemen&shy;tations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^18]
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^19]
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1294,7 +1298,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests--especially accessibility tests--are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^19]
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^20]
 
 1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've reco&shy;mmended elsewhere on this page. Watch out for false positives.
 
@@ -1302,7 +1306,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 
 3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
-4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^20].
+4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^21].
 
 5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
 
@@ -1326,7 +1330,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
 
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^21]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^22]
 
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 
@@ -1352,7 +1356,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
 
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^22]
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^23]
 
 16. Combine conversion tools. Combine an HTML-<wbr>to-<wbr>EPUB converter and an EPUB-<wbr>to-<wbr>PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 
@@ -1517,33 +1521,35 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^9]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve access&shy;ibility.
 
-[^10]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters.
+[^10]: uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
 
-[^11]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr>des&shy;cribedby</code> for more complex descriptions. Right now, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}</span> describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
+[^11]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters.
 
-[^12]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors indepen&shy;dently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
+[^12]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr>des&shy;cribedby</code> for more complex descriptions. Right now, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}</span> describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
 
-[^13]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good compromise.
+[^13]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors indepen&shy;dently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 
-[^14]: <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^14]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good compromise.
+
+[^15]: <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span> only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implemen&shy;tation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^15]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
+[^16]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accu&shy;rately.
 
-[^16]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
+[^17]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
 
     Mobile users wishing to temporarily switch modes have to stop, change their navigation mode, perform a navigation gesture, and switch back. Mobile users trying to skim an article don't always find this worth the effort and sometimes stick to heading-based navigation even when a different mode would be optimal.
 
-[^17]: If you'd like to learn more, <span itemprop="mentions" itemscope itemtype="https://schema.org/BlogPosting">{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}</span> has far more details on making accessible focus indicators.
+[^18]: If you'd like to learn more, <span itemprop="mentions" itemscope itemtype="https://schema.org/BlogPosting">{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}</span> has far more details on making accessible focus indicators.
 
-[^18]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^19]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^19]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommen&shy;ding headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Per&shy;missions-<wbr>Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Per&shy;missions-<wbr>Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^20]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommen&shy;ding headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Per&shy;missions-<wbr>Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Per&shy;missions-<wbr>Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^20]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommen&shy;dations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommen&shy;dations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^21]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommen&shy;dations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommen&shy;dations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
-[^21]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
+[^22]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnera&shy;bilities. In Firefox, navigate to <samp>about:<wbr>config</samp> and toggle some flags under <code>javascript<wbr>.options</code>.
 
     <figure itemprop="hasPart" itemscope itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1559,7 +1565,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^22]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^23]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
     Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 

@@ -195,7 +195,7 @@ A supplementary metric to use alongside download size is **round trips.** Estima
 
 Understanding round-trips requires understanding your server's approach to congestion control.
 
-Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁵
+Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁶
 
 Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
 
@@ -205,7 +205,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁷ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁸ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -432,7 +432,7 @@ font: 107.5%/1.5 sans-serif;
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users with metered connections: sometimes they disable all images, and other times they only disable images past a certain size threshold
+* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshold⁵
 * People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
@@ -510,7 +510,7 @@ A StackOverflow thread about comic transcripts outlines a good approach to seman
 
 => https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic What is the semantically correct way to include transcript from a comic?
 
-My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.⁸
+My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.⁹
 
 An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside a <section> with a heading, and give the group an "aria-label" that indicates the presence of the three sub-elements. Using a section landmark ensures that the figure and caption remain together as a single unit.
 
@@ -586,14 +586,14 @@ The Web version of this page is an example application of Technique C25 and the 
 => https://seirdy.one/2020/11/23/website-best-practices.html The Web mirror of this Gemlog post
 => https://www.w3.org/WAI/WCAG22/Techniques/general/G148 Technique G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults
 
-The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. I also set a custom color for the borders and ensure that the image backgrounds don't match the border colors. I included borders to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
+The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
 
 Color overrides go well beyond simple foreground and background color changes. Windows' High Contrast Mode (WHCM) is perhaps the best example. WHCM makes advanced modifications to color palettes: it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides. Since WHCM sets colors independently of explicitly-defined ARIA roles, it's a good way to test adherence to the First Rule of ARIA (see the "Split elements and posessive hyperlinks" sub-section of the "Screenreader improvements" section).
 
 > Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.
 > It’s not about design but readability.
 > Some stuff will disappear in Win HCM, some won’t. Best advice is to use semantic HTML to keep things visible.
-> You can use transparent outline to keep things visble like focus indicators and surface boundaries or use currentColor to maintain SVG fill colors in Win HCM.
+> You can use transparent outline to keep things visible like focus indicators and surface boundaries or use currentColor to maintain SVG fill colors in Win HCM.
 > You can use a special media query combined with special CSS color keywords to give elements the user defined colors.
 => https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/ Accessibility issues concerning Windows HCM
 
@@ -649,7 +649,7 @@ If you can't bear the thought of parting with your solid-black background, worry
 => https://drafts.csswg.org/mediaqueries-5/#prefers-contrast Media Queries Level 5, section 11.3: prefers-contrast
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast prefers-contrast on MDN
 
-I personally like a foreground and background of "#eee" and "#0e0e0e", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#0e0e0e" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
+I personally like a foreground and background of "#E9E9E9" and "#111", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#111" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
 
 If you use JavaScript: avoid setting colors, especially dark-mode colors, using JavaScript. Using JavaScript to set a styles risks introducing a "Flash of Unstyled Content" (FOUC). In the case of a dark theme, this FoUC manifests as a "White Flash of Death" (WFoD). A WFoD is incredibly irritating for dark-mode users; at worst, it could put photosensitive epileptic users at risk. CSS is a render-blocking resource for a reason.
 
@@ -667,16 +667,16 @@ The APCA takes several factors into account:
 
 Blue and purple links on a black background have much worse perceptual contrast than yellow or green links.
 
-Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages that need to comply with the WCAG should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
+Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the WCAG is ready, pages that are required to comply with the WCAG should also conform to the contrast ratios described in the WCAG 2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG 2.2 AAA contrast requirements and APCA recommendations.
 
 => https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
 
-Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes autistic people.
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes people on the autism spectrum.
 
 => https://www.tpgi.com/beyond-wcag-losing-spoons-online/ Beyond WCAG: Losing Spoons Online
 => https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/ The Ultimate Guide to Autism Friendly Colours
 
-If you want to use yellow and red, lighten them up so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
+If you want to use yellow and red, de-saturate them so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
 
 Accounting for halation, overstimulation, and high-contrast needs is hard to do if you prioritize minute aesthetics before inclusivity.
 
@@ -700,7 +700,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
 
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography⁹
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography¹⁰
 
 I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
 
@@ -730,7 +730,7 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif.¹⁰ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif.¹¹ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
@@ -874,7 +874,13 @@ Think twice before placing important content immediately after skippable content
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
-A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content. Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one (1) item. Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well as C6:
+A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content.
+
+Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one significant grouping element. The "source order viewer" in Chromium's DevTools can assist with this process.
+
+=> https://html.spec.whatwg.org/dev/grouping-content.html#grouping-content "HTML living standard, section 4.4: Grouping content" lists grouping elements.
+
+Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well as C6:
 
 => https://www.w3.org/WAI/WCAG21/Techniques/css/C27.html C27: Making the DOM order match the visual order
 => https://www.w3.org/WAI/WCAG22/Techniques/css/C6 C6: Positioning content based on structural markup
@@ -909,9 +915,11 @@ The WCAG recommends a max line length of 80 characters (40 characters for CJK la
 
 => https://www.w3.org/TR/WCAG22/#visual-presentation Success Criterion 1.4.8 Visual Presentation.
 
-However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark. I think the WCAG over-simplified simplified a complex issue. Then again, the AAA level was never intended to be a requirement.
+However, studies seem to have mixed results; some people find it easier to read lines around 90 characters long, while others struggle beyond the 50-character mark.
 
-Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of 36em, which typically corresponds to just over 80 characters. I opted to use "em" instead of "ch" for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
+I think the WCAG over-simplified a complex issue to make this success criterion easier to understand. The guideline in its current form encourages wrapping lines at uneven lengths, since proportional text can take up varying amounts of space for a given character count. It would be better to specify an average character length, allowing lines with narrow characters (e.g. "I", "l") to exceed it. Then again, the AAA level was never intended to be a blanket requirement.
+
+Some of my links display long link-text; short line lengths can break these link texts too much, which can slightly hurt readability. Of course, narrow viewports will obviously make short line lengths non-negotiable. I decided to give article bodies a width of 36em, which corresponds to just over 80 characters on most default stylesheets. I opted to use "em" instead of "ch" for consistency and for better compatibility with some uncommon browsers (NetSurf, Dillo, old versions of mainstream browsers, and others).
 
 I also ensured that my site supports CSS overrides, window-resizing, zoom levels past 200%, and most "reading mode" implementations. This should help accommodate a wide range of line-length preferences while still looking accessible enough by default.
 
@@ -970,7 +978,7 @@ Soft hyphens are great for splitting up text, but some text should stay together
 10&nbsp;cm
 ```
 
-Practical Typography⁹ describes where to use the non-breaking space in more detail:
+Practical Typography¹⁰ describes where to use the non-breaking space in more detail:
 
 => https://practicaltypography.com/nonbreaking-spaces.html nonbreaking spaces, Butterick's Practical Typography
 
@@ -1278,7 +1286,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹³
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹⁴
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use "aria-labelledby" on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1344,7 +1352,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹¹
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹²
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 5. Print some pages in black-and-white, preferably with a simple laser printer.
@@ -1357,7 +1365,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
 13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹²
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹³
 16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
@@ -1501,28 +1509,30 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 
 ⁴ Decoration is more than cosmetic. The "Color overrides and accessibility" sub-section describes how some decorations, like borders, improve accessibility.
 
-⁵ If you'd like more details about TCP, here's a great introduction:
+⁵ uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
+
+⁶ If you'd like more details about TCP, here's a great introduction:
 => https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
 
-⁶ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
+⁷ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
 => https://browserleaks.com/fonts BrowserLeaks font fingerprinting demo. Warning: the page might hog your CPU for a while.
 
-⁷ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+⁸ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
 => https://datatracker.ietf.org/doc/html/rfc7541#appendix-A RFC 7541: HPACK static table definition
 => https://quicwg.org/base-drafts/draft-ietf-quic-qpack.html#appendix-A QPACK: Header Compression for HTTP/3
 
-⁸ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
+⁹ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
 => https://a11ysupport.io/tech/aria/aria-details_attribute Current support for aria-details
 => https://www.w3.org/TR/wai-aria-1.2/#aria-details aria-details specification
 
-⁹ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+¹⁰ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 I find Practical Typography quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-¹⁰ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+¹¹ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-¹¹ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+¹² Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-¹² LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+¹³ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
-¹³ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+¹⁴ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
