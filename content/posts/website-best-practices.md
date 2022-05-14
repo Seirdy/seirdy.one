@@ -971,7 +971,7 @@ Most modern browsers support the `hyphens` CSS&nbsp;3 property, but full automat
 
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
-Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions.
+Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
 ### Keeping text together
 
@@ -1128,6 +1128,16 @@ Consider the implications of translating between left-to-right (LTR) and right-t
 
 Websites following this page's layout advice shouldn't need much adjustment. <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<indieweb-person first-name="Ahmed" last-name="Shadeed" url="https://ishadeed.com/" appendString="’s" itemprop="author">}} {{<cited-work name="RTL Styling 101" url="https://rtlstyling.com/posts/rtl-styling/" extraName="headline">}}</span> is a comprehensive guide to what can go wrong and how to fix issues.
 
+### Current limitations
+
+Machine translation is always improving. Today, it has some limitations which I expect will be resolved with time.
+
+`translate="yes"` attributes nested inside un-translated blocks (code snippets, blocks with `translate="no"`, etc.) are not yet supported by most translation tools. It's a relatively new attribute, so flaky support is understandable.
+
+Machine translators often skip `aria-label` and `aria-description`. For this reason, authors prefer using `aria-labelledby` and `aria-describedby` instead.
+
+Microsoft Edge is the only browser I know of to adjust text-direction during translation, but it breaks when faced with inline `<code>` and `<span>` elements.
+
 In&shy;access&shy;ible default style&shy;sheets {#inaccessible-default-stylesheets}
 -----------------------------------------------
 
@@ -1189,7 +1199,7 @@ Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indica
 
 On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
 
-The WCAG guidelines recommend making focus indicators 2&nbsp;px thick in [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced). While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
+The WCAG [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced) recommends making focus indicators 2&nbsp;px thick. While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
 You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^18]
 
@@ -1263,7 +1273,7 @@ The best solution for possessive nouns is to include the "apostrophe + s" inside
 
 ### Other tips for screen readers
 
-Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, and ChromeVox all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, ChromeVox, KaiOS Readout, et al. all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 
@@ -1388,7 +1398,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 
 * How to choose phrasings such that some meaning can be inferred without understan&shy;ding numbers, for [dyscalculic readers](https://en.wikipedia.org/wiki/Dyscalculia). This is more applicable to posts whose main focus is not mathematical or quantitative.
 
-* How to include equations in a way that maximizes compatibility and accessibility.
+* How to include mathematical notation in a way that maximizes compatibility and accessibility.
 
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 

@@ -472,7 +472,7 @@ This is somewhat similar to the way most students in primary and secondary schoo
 
 ### Figures
 
-A *figure* is any sort of self-contained information that is referenced by--but somewhat distinct from--body content. Items that make for good figures are often found in floating blocks of print material. 
+A *figure* is any sort of self-contained information that is referenced by--but somewhat distinct from--body content. Items that make for good figures are often found in floating blocks of print material.
 
 => https://en.wikipedia.org/wiki/Page_layout#Floating_block Floating block (Wikipedia)
 
@@ -968,7 +968,7 @@ Most modern browsers support the "hyphens" CSS 3 property, but full automatic hy
 
 Users employing machine translation will not benefit from your soft hyphens, so don't expect them to always work as intended. Translation tools might also replace short words with long ones. Soft hyphens and automatic hyphenation are both flawed solutions, but I find soft hyphens to be less problematic.
 
-Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions.
+Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
 ### Keeping text together
 
@@ -1160,6 +1160,16 @@ Websites following this page's layout advice shouldn't need much adjustment. Ahm
 
 => https://rtlstyling.com/posts/rtl-styling/ RTL Styling 101
 
+### Current limitations
+
+Machine translation is always improving. Today, it has some limitations which I expect will be resolved with time.
+
+`translate="yes"` attributes nested inside un-translated blocks (code snippets, blocks with `translate="no"`, etc.) are not yet supported by most translation tools. It's a relatively new attribute, so flaky support is understandable.
+
+Machine translators often skip "aria-label" and "aria-description". For this reason, authors prefer using "aria-labelledby" and "aria-describedby" instead.
+
+Microsoft Edge is the only browser I know of to adjust text-direction during translation, but it breaks when faced with inline "<code>" and "<span>" elements.
+
 ## Inaccessible default stylesheets
 
 Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
@@ -1212,7 +1222,7 @@ The top image is a screenshot of Firefox's default focus indicator. The bottom i
 
 On one hand, users who need enhanced focus visibility may override the default focus indicators in their browser preferences; I'd like to support such overrides. On the other hand, relying on these customizations would violate the "accessible by default" directive. This would exclude Tor Browser and fingerprinting-averse readers, as well as anybody who has to borrow a machine or browser they don't own or haven't customized yet. This is another one of the few areas where I'd recommend overriding browser default stylesheets.
 
-The WCAG guidelines recommend making focus indicators 2 px thick in Success Criterion 2.4.12:
+The WCAG Success Criterion 2.4.12 recommends making focus indicators 2 px thick:
 
 => https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced Success Criterion 2.4.12 Focus Appearance (Enhanced)
 
@@ -1262,7 +1272,7 @@ A workaround is to use the "text" ARIA role to remove the semantics of elements.
 ```
 <h1>
   <span role="text">Digital accessibility, <br>
-    for everyone. 
+    for everyone.
   </span>
 </h1>
 ```
@@ -1280,7 +1290,7 @@ The best solution for possessive nouns is to include the "apostrophe + s" inside
 
 ### Other tips for screen readers
 
-Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, and ChromeVox all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
+Designers already test their websites with multiple browser engines to ensure cross-browser compatibility. Screen readers deserve the same treatment. Orca, VoiceOver, NVDA, Narrator, JAWS, TalkBack, ChromeVox, KaiOS Readout, et al. all have unique behavior. In addition, different browsers--even different Chromium forks--expose content to screen readers differently. You'll need to test multiple screen readers in multiple browsers, and keep track of updates to both. See why standards compliance is important?
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 
@@ -1384,7 +1394,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Notes on improving support for braille displays.
 * How to work well with caret-based navigation.
 * How to choose phrasings such that some meaning can be inferred without understanding numbers, for dyscalculic readers. This is more applicable to posts whose main focus is not mathematical or quantitative.
-* How to include equations in a way that maximizes compatibility and accessibility.
+* How to include mathematical notation in a way that maximizes compatibility and accessibility.
 * Keypad-based navigation on feature phones (c.f. KaiOS devices).
 * How keyboard navigation can be altered by assistive tools such as screen readers.
 * How to avoid relying too much on formatting, for user agents that display unformatted text (e.g. textual feed readers like Newsboat)
