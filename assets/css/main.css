@@ -211,12 +211,6 @@ section[itemprop="mentions"] > figure {
 	margin: 0;
 }
 
-section[itemtype="https://schema.org/ImageObject"] figcaption,
-figure[itemtype="https://schema.org/ImageObject"] figcaption,
-div[itemprop="articleBody"] > figure:not([itemtype="https://schema.org/ImageObject"]) {
-	contain: content;
-}
-
 /* browsers make monospace small and unreadable for some dumb legacy
  * reason and this somehow fixes that without overriding the user's
  * font size preferences. */
