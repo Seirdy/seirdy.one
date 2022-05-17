@@ -39,7 +39,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 
 My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/). Specifically, I focus on supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in [the conclusion](#conclusion). Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (<abbr title="plain-old, semantic HTML">POSH</abbr>), you've done half of the work already.
 
-One of the core ideas behind the flavor of inclusive design I present is being _inclusive by default._ Web pages shouldn't use accessible overlays, reduced-data modes, or other personal&shy;izations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personal&shy;ization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+One of the core ideas behind the flavor of inclusive design I present is <dfn id="inc-by-default">inclusivity by default</dfn>. Web pages shouldn't use accessible overlays, reduced-data modes, or other personal&shy;izations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personal&shy;ization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
 Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
 
@@ -56,7 +56,7 @@ Our goal: make a textual website maximally inclusive, using restricted enhanceme
 Security and privacy
 --------------------
 
-One of the defining differences between textual websites and advanced Web&nbsp;2.0 sites/apps is safety. Most browser vulnera&shy;bilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites _should_ guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
+One of the defining differences between textual websites and advanced Web&nbsp;2.0 sites/apps is safety. Most browser vulnera&shy;bilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites should guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
 
@@ -126,7 +126,7 @@ Some web developers deliver resources using a third-party content delivery netwo
 
 If you must use third-party content, use [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (check the [<abbr title="Subresource Integrity">SRI</abbr> specification](https://www.w3.org/TR/SRI/)). This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
 
-Be sure to check the privacy policies for the third party services _and_ subscribe to updates, as their practices could impact the privacy of all your users.
+Be sure to check the privacy policies for the third party services and subscribe to updates, as their practices could impact the privacy of all your users.
 
 For embedded third-party content (e.g. images), give extra consideration to the ["Beyond alt-text" section](#beyond-alt-text). Your page should be as useful as possible if the embedded content becomes inaccessible.
 
@@ -175,6 +175,37 @@ In addition to HTML, CSS is also a blocking resource. You could pre-load your CS
 
 Consider inlining images under 250&nbsp;bytes with a `data:` URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150&nbsp;bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (the hidden service replaces SVGs with PNGs; see the section on [the Tor Browser](#the-tor-browser)). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implemen&shy;tations.
 
+### Transfer size and user flows
+
+I find advice on page weight to be too simplistic. I prefer the perspective of what the industry calls "user flows".
+
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.
+
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
+{{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},
+<a href="https://w3c.github.io/wcag/guidelines/22/#multiple-ways">Success Criterion 2.4.5 Multiple Ways</a>
+{{< /quotecaption >}}
+{{</quotation>}}
+
+Here are some example flows that start with loading a homepage:
+
+* A homepage has a link to a list of pages in a category. Your reader loads the homepage, navigates to the list page, and then navigates to the target page.
+
+* A homepage contains a link to a post which has "next post" and "previous post" links at the bottom. Your reader navigates to the post and clicks "next post" until they reach the target page.
+
+* A homepage has a "search" box. The reader searches for the target page and clicks a result on the result page.
+
+Assume one of your readers has caching enabled, but their current cache is empty. They have a link to your homepage. Your reader should be able to perform at least two different flows to reach a target page, starting with navigating to your homepage. The total size transferred across their entire flow is the metric worth optimizing, not the weight of a single page. Set a performance budget for this flow.
+
+Data is a scarce resource on metered connections; don't waste it on unnecessary information. At least half the data transferred across the flow should be semantically-meaningful compressed markup. Try testing a "lite" version of a page with non-semantic markup removed: strip any `<div>` or `<span>` elements, or attributes that don't have semantic value. Compare this "lite" page's compressed markup size with the total download size of an actual page. Do this for every page across a flow.
+
+I personally found this to be too much work. I skipped the creation of "lite" pages by removing non-semantic markup from my HTML: with the exception of a single utility CSS class for `image-rendering`, my markup is made of semantically-relevant POSH, ARIA, Microdata, and microformats classes.
+
 ### Core Web Vitals aren't enough
 
 Download size matters, especially on metered connections. There's no shortage of advice concerning minimizing this easy-to-understand metric. Unfortunately, it alone doesn't give us the full picture: download size is not the exact same thing as time taken to deliver useful content to users.
@@ -202,11 +233,11 @@ Everything else is bullshit.
 
 ### Round trips
 
-A supplementary metric to use alongside download size is **round trips.** Estimate the number of bytes and round-trips it takes to do the following:
+A supplementary metric to use alongside download size is round trips. Estimate the number of bytes and round-trips it takes to do the following:
 
 1. Begin downloading the final blocking resource
 2. Finish downloading all blocking resources
-3. Finish downloading _two screenfuls of content_
+3. Finish downloading two screenfuls of content
 4. Finish downloading the full page.
 
 Understanding round-trips requires understanding your server's approach to congestion control.
@@ -254,7 +285,7 @@ Additionally, hopping between nodes in Tor circuits incurs latency, worsening th
 
 If you use a CDN or some over&shy;complicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-<wbr>based CAPTCHA will effectively block many Tor users.
 
-Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible _by default_. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
+Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible by default, as per the ["inclusive by default" directive outlined earlier](#inc-by-default). This should be a given, but it's doubly important when serving fingerprinting-averse readers.
 
 ### Hidden services
 
@@ -301,7 +332,7 @@ Many users with poor connections also have capped data, and would prefer that pa
 
 Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users (including Tor Browser users) also generally disable speculative pre-loading since pre-loading behavior is fingerprintable.
 
-Users who click a link _choose_ to load a full page. Loading pages that a user hasn't clicked on is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
+Users who click a link choose to download its contents, [within a reasonable size limit](#transfer-size-and-user-flows). Loading pages that a user hasn't navigated to is making a choice for that user. I encourage adoption of "link" HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
 Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent _in terms they fully understand_ demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Many marginalized groups don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
 
@@ -975,7 +1006,7 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 ### Keeping text together
 
-Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}</span>[^15] describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
+Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}} by {{<indieweb-person first-name="Matthew" last-name="Butterick" url="https://mbtype.com/bio.html">}},[^15] a typographer,</span> describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
 
 One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 

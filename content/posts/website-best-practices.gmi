@@ -14,7 +14,7 @@ My primary focus is inclusive design:
 
 Specifically, I focus on supporting *under-represented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (POSH), you've done half of the work already.
 
-One of the core ideas behind the flavor of inclusive design I present is being *inclusive by default.* Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+One of the core ideas behind the flavor of inclusive design I present is "inclusivity by default". Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
 Another focus is minimalism. Progressive enhancement is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
 
@@ -36,7 +36,7 @@ One of the defining differences between textual websites and advanced Web 2.0 si
 
 => ./../../../2021/03/10/search-engines-with-own-indexes.gmi A look at search engines with their own indexes
 
-The simplicity of basic textual websites *should* guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
+The simplicity of basic textual websites should guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
 
@@ -119,7 +119,7 @@ If you must use third-party content, use subresource integrity (SRI):
 
 This prevents alteration without your consent. If you wish to be extra careful, you could use SRI for first-party resources too.
 
-Be sure to check the privacy policies for the third party services _and_ subscribe to updates, as their practices could impact the privacy of all your users.
+Be sure to check the privacy policies for the third party services and subscribe to updates, as their practices could impact the privacy of all your users.
 
 For embedded third-party content (e.g. images), give extra consideration to the "Beyond alt-text" section. Your page should be as useful as possible if the embedded content becomes inaccessible.
 
@@ -168,6 +168,25 @@ In addition to HTML, CSS is also a blocking resource. You could pre-load your CS
 
 Consider inlining images under 250 bytes with a "data:" URI; that's the size at which cache-validation requests might outweigh the size of the image. My 32-pixel PNG site icon is under 150 bytes and inlines quite nicely. On this site's hidden service, it's often the only image on a page (that the hidden service replaces SVGs with PNGs; see the section called "The Tor Browser"). Inlining this image and the stylesheet allows my hidden service's homepage to load in a single request, which is a welcome improvement given the round-trip latency that plagues onion routing implementations.
 
+### Transfer size and user flows
+
+I find advice on page weight to be too simplistic. I prefer the perspective of what the industry calls "user flows".
+
+> More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.
+=> https://w3c.github.io/wcag/understanding/multiple-ways.html WCAG: Understanding Success Criterion 2.4.5: Multiple Ways
+
+Here are some example flows that start with loading a homepage:
+
+* A homepage has a link to a list of pages in a category. Your reader loads the homepage, navigates to the list page, and then navigates to the target page.
+* A homepage contains a link to a post which has "next post" and "previous post" links at the bottom. Your reader navigates to the post and clicks "next post" until they reach the target page.
+* A homepage has a "search" box. The reader searches for the target page and clicks a result on the result page.
+
+Assume one of your readers has caching enabled, but their current cache is empty. They have a link to your homepage. Your reader should be able to perform at least two different flows to reach a target page, starting with navigating to your homepage. The total size transferred across their entire flow is the metric worth optimizing, not the weight of a single page. Set a performance budget for this flow.
+
+Data is a scarce resource on metered connections; don't waste it on unnecessary information. At least half the data transferred across the flow should be semantically-meaningful compressed markup. Try testing a "lite" version of a page with non-semantic markup removed: strip any <div> or <span> elements, or attributes that don't have semantic value. Compare this "lite" page's compressed markup size with the total download size of an actual page. Do this for every page across a flow.
+
+I personally found this to be too much work. I skipped the creation of "lite" pages by removing non-semantic markup from my HTML: with the exception of a single utility CSS class for "image-rendering", my markup is made of semantically-relevant POSH, ARIA, Microdata, and microformats classes.
+
 ### Core Web Vitals aren't enough
 
 Download size matters, especially on metered connections. There's no shortage of advice concerning minimizing this easy-to-understand metric. Unfortunately, it alone doesn't give us the full picture: download size is not the exact same thing as time taken to deliver useful content to users.
@@ -186,11 +205,11 @@ These metrics aren't useless, but they are incredibly naive: they only take into
 
 ### Round trips
 
-A supplementary metric to use alongside download size is **round trips.** Estimate the number of bytes and round-trips it takes to do the following:
+A supplementary metric to use alongside download size is round trips. Estimate the number of bytes and round-trips it takes to do the following:
 
 1. Begin downloading the final blocking resource
 2. Finish downloading all blocking resources
-3. Finish downloading _two screenfuls of content_
+3. Finish downloading two screenfuls of content
 4. Finish downloading the full page.
 
 Understanding round-trips requires understanding your server's approach to congestion control.
@@ -255,7 +274,7 @@ Additionally, hopping between nodes in Tor circuits incurs latency, worsening th
 
 If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
 
-Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible *by default*. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
+Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible by default, as per the "inclusive by default" directive outlined in the introduction. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
 
 ### Hidden services
 
@@ -298,7 +317,7 @@ Many users with poor connections also have capped data, and would prefer that pa
 
 Some go so far as to disable this behavior to avoid data overages. Savvy privacy-conscious users (including Tor Browser users) also generally disable speculative pre-loading since pre-loading behavior is fingerprintable.
 
-Users who click a link *choose* to load a full page. Loading pages that a user hasn’t clicked on is making a choice for that user. I encourage adoption of “link” HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
+Users who click a link choose to download its contents, within a reasonable size limit (see the "Transfer size and user flows" section). Loading pages that a user hasn’t navigated to is making a choice for that user. I encourage adoption of “link” HTTP headers to pre-load essential and above-the-fold resources when possible, but doing so does not resolve the issues with lazy-loading: the people who are harmed by lazy loading are more likely to have pre-fetching disabled.
 
 Moreover, determining the pages to prioritize for speculative pre-loading typically requires analytics and/or A/B testing. Enrolling users in a study (e.g. by collecting information about their behavior) without prior informed consent *in terms they fully understand* demonstrates a disrespect for their autonomy. Furthermore: analytics typically represent all users equally, when developers should be giving disproportionate attention to marginalized users (e.g., disabled users). The convenience of the majority should not generally outweigh the needs of the minority. Many marginalized don't wish to broadcast the fact that they have special needs, so don't rely on being able to figure out who's whom.
 
@@ -978,7 +997,7 @@ Soft hyphens are great for splitting up text, but some text should stay together
 10&nbsp;cm
 ```
 
-Practical Typography¹⁰ describes where to use the non-breaking space in more detail:
+Practical Typography by Matthew Butterick,¹⁰ a typographer, describes where to use the non-breaking space in more detail:
 
 => https://practicaltypography.com/nonbreaking-spaces.html nonbreaking spaces, Butterick's Practical Typography
 
