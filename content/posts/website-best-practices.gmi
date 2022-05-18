@@ -214,7 +214,7 @@ A supplementary metric to use alongside download size is round trips. Estimate t
 
 Understanding round-trips requires understanding your server's approach to congestion control.
 
-Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁶
+Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁷
 
 Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
 
@@ -224,7 +224,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁸ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
+Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁹ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
@@ -430,7 +430,7 @@ Some people raised fingerprinting concerns when I suggested using the default "s
 
 I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system, the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system,⁸ the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
 
 => https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting Firefox's protection against fingerprinting
 
@@ -440,7 +440,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations (e.g. borders), but they are uncommon. Set font size and line-spacing with a percentage and a unitless value, respectively:
+In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations (e.g. borders),⁵ but they are uncommon. Set font size and line-spacing with a percentage and a unitless value, respectively:
 
 ```
 font: 107.5%/1.5 sans-serif;
@@ -451,7 +451,7 @@ font: 107.5%/1.5 sans-serif;
 Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers
-* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshold⁵
+* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshol⁶
 * People experiencing packet loss who fail to download some images
 * Users of textual browsers
 
@@ -529,7 +529,7 @@ A StackOverflow thread about comic transcripts outlines a good approach to seman
 
 => https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic What is the semantically correct way to include transcript from a comic?
 
-My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.⁹
+My approach is similar. I group an image, alt-text, and caption in a <figure> element and follow it with a transcript in a <details> element. I use "aria-describedby" to semantically link the figure and the transcript.¹⁰
 
 An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside a <section> with a heading, and give the group an "aria-label" that indicates the presence of the three sub-elements. Using a section landmark ensures that the figure and caption remain together as a single unit.
 
@@ -719,7 +719,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
 
-=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography¹⁰
+=> https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography¹¹
 
 I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
 
@@ -749,7 +749,7 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif.¹¹ AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif.¹² AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
@@ -997,7 +997,7 @@ Soft hyphens are great for splitting up text, but some text should stay together
 10&nbsp;cm
 ```
 
-Practical Typography by Matthew Butterick,¹⁰ a typographer, describes where to use the non-breaking space in more detail:
+Practical Typography by Matthew Butterick,¹¹ a typographer, describes where to use the non-breaking space in more detail:
 
 => https://practicaltypography.com/nonbreaking-spaces.html nonbreaking spaces, Butterick's Practical Typography
 
@@ -1315,7 +1315,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹⁴
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as <em>, <code>, or <strong>. Ensure that your meaning carries through without these semantics.¹⁵
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use "aria-labelledby" on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1381,7 +1381,7 @@ Your page should easily pass the harshest of tests without any extra effort if i
 These tests begin reasonably, but gradually grow absurd. Once again, use your judgement.
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹²
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's JIT compilation disabled.¹³
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 4. Load just the HTML. No CSS, no images, etc. Try loading without inline CSS as well for good measure.
 5. Print some pages in black-and-white, preferably with a simple laser printer.
@@ -1394,7 +1394,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
 13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 14. Try printing out your page in black-and-white from an unorthodox graphical browser.
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹³
+15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹⁴
 16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
@@ -1536,32 +1536,38 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 => https://en.wikipedia.org/wiki/Progressive_enhancement Progressive Enhancement (Wikipedia)
 => https://whalecoiner.com/articles/progressive-enhancement Yes, progressive enhancement is a fucking moral argument
 
-⁴ Decoration is more than cosmetic. The "Color overrides and accessibility" sub-section describes how some decorations, like borders, improve accessibility.
+⁴ Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet a AAA WCAG criterion:
 
-⁵ uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
+=> https://w3c.github.io/wcag/understanding/location.html Success Criterion 2.4.8: "Location"
 
-⁶ If you'd like more details about TCP, here's a great introduction:
+I opted to meet the criterion a different way. Since all my pages are linked by my site's global navigation or my "posts" page (also in the global navigation), I just used "aria-current" and made the currently-relevant entry in my global navigation a <strong> element.
+
+⁵ Decoration is more than cosmetic. The "Color overrides and accessibility" sub-section describes how some decorations, like borders, improve accessibility.
+
+⁶ uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
+
+⁷ If you'd like more details about TCP, here's a great introduction:
 => https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
 
-⁷ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
+⁸ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
 => https://browserleaks.com/fonts BrowserLeaks font fingerprinting demo. Warning: the page might hog your CPU for a while.
 
-⁸ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
+⁹ HPACK and QPACK header compression includes dictionaries containing common headers. If a header matches one of these common values, its effective size can be reduced to a single byte. If a header has an uncommon value, consider minifying it by removing unnecessary whitespace. Remember that if your golden first kilobyte already lists all essential resources, these could be considered premature optimizations. Real bottlenecks lie elsewhere.
 => https://datatracker.ietf.org/doc/html/rfc7541#appendix-A RFC 7541: HPACK static table definition
 => https://quicwg.org/base-drafts/draft-ietf-quic-qpack.html#appendix-A QPACK: Header Compression for HTTP/3
 
-⁹ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
+¹⁰ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
 => https://a11ysupport.io/tech/aria/aria-details_attribute Current support for aria-details
 => https://www.w3.org/TR/wai-aria-1.2/#aria-details aria-details specification
 
-¹⁰ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+¹¹ Practical Typography only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 I find Practical Typography quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-¹¹ libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+¹² libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-¹² Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
+¹³ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-¹³ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+¹⁴ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
-¹⁴ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+¹⁵ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
