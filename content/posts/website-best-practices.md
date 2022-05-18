@@ -15,7 +15,9 @@ sitemap:
     ChangeFreq: daily
     Priority: 0.7
 featured: 2
-title: Best practices for inclusive textual websites
+image: "serenity-4x.png"
+image_alt: "Retro-looking web browser with bitmap fonts showing this article's \"code snippet 4\"."
+title: "Best practices for inclusive textual websites"
 ---
 <section role="doc-preface">
 <h2 id="before-you-begin">Before you begin</h2>

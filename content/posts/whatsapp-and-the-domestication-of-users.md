@@ -12,6 +12,8 @@ tags:
     - privacy
     - platforms
 featured: 3
+image: "whatsapp_ad_dark.png"
+image_alt: "WhatsApp PR notice describing data not collected; analysis in article."
 title: WhatsApp and the domestication of users
 ---
 <section role="doc-introduction">
@@ -84,13 +86,13 @@ Those of us who were sounding the alarm a few years ago experienced a brief mome
 
 The bait-and-switch operation incurred backlash significant enough for a noticeable minority of users to actually migrate; this number turned out to be slightly more than the rounding error WhatsApp was likely expecting. In response, WhatsApp delayed the change and published an ad to improve its image.
 
-{{<transcribed-image id="whatsapp-ad">}}
+{{<transcribed-image id="whatsapp-notice">}}
 
-#### <span itemprop="name">Whatsapp Ad</span> {#whatsapp-ad-hd}
+#### <span itemprop="name">Whatsapp Ad</span> {#whatsapp-notice-hd}
 
-{{< transcribed-image-figure id="whatsapp-ad" has-transcript="true" >}}
+{{< transcribed-image-figure id="whatsapp-notice" has-transcript="true" >}}
 
-{{< picture name="whatsapp_ad" alt="WhatsApp ad describing data not collected" >}}
+{{< picture name="whatsapp_ad" alt="WhatsApp notice describing data not collected." >}}
 
 <figcaption itemprop="caption">
 
