@@ -21,17 +21,13 @@ title: WhatsApp and the domestication of users
 Intro&shy;duction {#introduction}
 -----------------
 
-<div role="note">
+<p role="note">
+<em>Update: I wrote a follow up: <a href="../../../2021/02/23/keeping-platforms-open.html">Keeping platforms open</a>. Check it out if you found this article interesting.</em>
+</p>
 
-_Update: I wrote a follow up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting._
-
-</div>
-
-<div itemprop="backstory">
-
-I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it's the perfect case study to help understand a class of businesses models I call "user domestication". The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
-
-</div>
+<p itemprop="backstory">
+I have never used WhatsApp, and never will. Despite this, I still feel the need to write an article about WhatsApp since it’s the perfect case study to help understand a class of businesses models I call “user domestication”. The domestication of users is high on my list of problems plaguing the human race, and is worth a detailed explanation.
+</p>
 
 WhatsApp wasn't the first instant messenger of its kind, and probably won't be the last. I simply chose to focus on WhatsApp since its recent privacy issues have made it a hot topic.
 

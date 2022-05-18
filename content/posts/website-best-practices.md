@@ -6,17 +6,17 @@ outputs:
     - gemtext
 footnote_heading: Notes
 toc: true
-featured: true
 tags:
-    - web
+    - long
     - accessibility
-    - minimalism
+    - featured
+    - web
 sitemap:
     ChangeFreq: daily
     Priority: 0.7
 featured: 2
 image: "serenity-4x.png"
-image_alt: "Retro-looking web browser with bitmap fonts showing this article's \"code snippet 4\"."
+image_alt: "Retro-looking browser with bitmap fonts showing this article's \"code snippet 4\"."
 title: "Best practices for inclusive textual websites"
 ---
 <section role="doc-preface">
@@ -510,7 +510,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images should usually have alt-text under 100 char&shy;acters.[^12] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
+* Images should usually have alt-text under 100 char&shy;acters, excluding punctuation.[^12] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supple&shy;mentary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
@@ -870,7 +870,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
   media="screen and (prefers-color-scheme: dark)">
 <source type="image/png" srcset="/p/dark.png"
   media="screen and (prefers-color-scheme: dark)">
-<img src="/p/light.png" alt="ALTERNATIVE_TEXT"
+<img src="/p/light.png" alt="ALTERNATIVE_TEXT."
   width="WIDTH" height="HEIGHT">
 <picture>
 ```
@@ -1407,7 +1407,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
-{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking web browser with bitmap fonts showing this article's \"Code snippet 4\"." class="pix" sf=2 >}}
+{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking browser with bitmap fonts showing this article's \"Code snippet 4\"." class="pix" sf=2 >}}
 
 <figcaption itemprop="caption">
 
@@ -1568,7 +1568,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^11]: uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
 
-[^12]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters.
+[^12]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
 
 [^13]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr>des&shy;cribedby</code> for more complex descriptions. Right now, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}</span> describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
 
