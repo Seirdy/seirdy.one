@@ -77,11 +77,16 @@ html {
 
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
+	header > nav,
+	footer > nav,
+	h2 + a {
+		margin-left: -.25em;
+	}
 	header > nav {
-		margin: 0 0 -.75em -.25em;
+		margin-bottom: -.75em;
 	}
 	footer > nav {
-		margin: -.75em 0 0 -.25em;
+		margin-top: -.75em;
 	}
 
 	summary {
@@ -107,8 +112,14 @@ html {
 		padding: 1em 0;
 	}
 
-	/* SC 2.5.5, Google a11y: Increase tap target size a bit */
+	/* SC 2.5.5, Google a11y: Increase tap target size a bit
+	 * - Summary is a tappable button
+	 * - standalone links in lists are usually parts of collections of
+	 *   links that should be easy to fat-finger
+	 * - links that directly follow h2 without being contained in a
+	 *   paragraph are section permalinks. */
 	summary,
+	h2 + a,
 	li > a {
 		padding: .875em .25em;
 	}

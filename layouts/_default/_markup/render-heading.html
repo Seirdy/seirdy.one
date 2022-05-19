@@ -1,29 +1,11 @@
-<!--
-	For now, make the anchor link invisible to screen readers.
-		1. The anchor would need an accessible name, but aria-labels don't
-		   translate well with machine translation. It would need to be
-			 labelledby another element hidden by CSS, which would crowd the
-			 page for non-CSS users.
-		2. Screen reader users don't depend on visually identifying heading
-		   levels and can easily jump between headings without scrolling to
-			 the table of contents, so these anchor links are slightly less
-			 useful to them.
-		3. These links don't expose new functionality, since users could
-		   already copy heading anchor links in the TOC. This just makes some
-			 existing functionality slightly more easily. So it's less of a big
-			 deal
-		4. This reliably hides them from certain reading-mode implementations
-		   (e.g. Readability)
-	Yeah I know, the situation isn't optimal.
--->{{- with . -}}
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML -}}
-{{- if and (gt .Level 1) (eq .Page.Section "posts") -}}
-	<span aria-hidden="true"> <!--Wrap in a span so the whitespace before the link is also hidden-->
-		<a href="#{{ .Anchor | safeURL }}" tabindex="-1">
-			{{- $octothorpes := sub .Level 1 -}}
-			{{- range $i, $sequence := (seq $octothorpes) -}}
-			{{- print `#` -}}
-			{{- end -}}
-		</a></span>
+{{- if and (eq .Level 2) (eq .Page.Section "posts") }}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}-hd">{{ .Text | safeHTML -}}</h{{ .Level }}>
+<a
+	id="{{ .Anchor | safeURL }}" href="#{{ .Anchor | safeURL }}"
+	aria-labelledby="{{ .Anchor | safeURL }}-prefix {{ .Anchor | safeURL }}-hd">
+	<span id="{{ .Anchor | safeURL }}-prefix">Permalink to section</span>
+</a>
+{{- else }}
+{{- with . -}}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML -}}</h{{ .Level }}>{{ end -}}
 {{- end }}
-</h{{ .Level }}>{{ end }}

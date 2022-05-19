@@ -16,7 +16,7 @@
 
 	/* Small text needs higher contrast */
 	sup {
-		background-color: #0b0b0b;
+		background-color: #000;
 	}
 
 	/* Only color <a> if it's a link; if href is empty, let it be. */
@@ -24,12 +24,17 @@
 		color: #f1e7b2;
 	}
 
+	a:active {
+		color: #b93;
+	}
+
 	a:visited {
 		color: #fdf;
 	}
 
-	a:active {
-		color: #b93;
+	/* Small text needs higher contrast */
+	sup a:visited {
+		color: #ffe3ff;
 	}
 
 	/* stylelint-disable -- hasn't heard of "prefers-contrast" yet */
