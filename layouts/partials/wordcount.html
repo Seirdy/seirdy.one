@@ -1,4 +1,19 @@
-<span itemprop="wordCount">{{ .WordCount }}</span> words
-				{{- with .ReadingTime }},
-				a{{ if lt . 10 }} short{{ else if and (gt . 20) (lt . 30) }} somewhat long{{ else if and (gt . 29) (lt . 60) }} long{{ else if gt . 59 }} very long{{ end }}
-				<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ . }} minute</time> read{{- end }}
+{{ $displayCount := string .WordCount -}}
+{{- if gt .WordCount 5000 -}}
+{{- $thousands := string (div .WordCount 1000) -}}
+{{- $displayCount = printf "%s thousand" $thousands -}}
+About
+{{- end }}
+<data value="{{ .WordCount }}" itemprop="wordCount">
+	{{ $displayCount }}
+</data> words
+{{- with .ReadingTime -}}
+	{{- $displayTime := string . -}}
+	{{- if gt . 60 -}}
+		{{- $hours := div . 60 -}}
+		{{- $minutes := mod . 60 -}}
+		{{- $displayTime = (printf "%d hour, %d minute" $hours $minutes) -}}
+	{{- end -}}
+	; a{{ if lt . 10 }} short{{ else if and (gt . 20) (lt . 30) }} somewhat long{{ else if and (gt . 29) (lt . 60) }} long{{ else if gt . 59 }} very long{{ end }}
+	<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ $displayTime }} minute</time> read
+{{- end }}
