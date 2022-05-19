@@ -13,7 +13,7 @@
 				<li itemprop="comment" itemscope itemtype="https://schema.org/Comment">
 				{{- end }}
 				<p role="comment" class="u-comment h-cite">
-					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
+					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
 					<br>
 					{{ if (eq $webmention.type "like") -}}
 						{{ if $webmention.author_name -}}

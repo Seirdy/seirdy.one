@@ -6,7 +6,7 @@ title: Privacy policy
 description: "Privacy policy for seirdy.one"
 date: "2022-04-06T00:00:00+00:00"
 ---
-This privacy policy is effective as of <time datetime="2022-04-06T00:00:00+00:00" title="2022-04-06T00:00:00+00:00">2022-04-06</time>. In short: I only collect standard server logs, I purge them regularly, and I only share sanitized excerpts (e.g. when filing bug reports).
+This privacy policy is effective as of <time datetime="2022-04-06T00:00:00+00:00">2022-04-06</time>. In short: I only collect standard server logs, I purge them regularly, and I only share sanitized excerpts (e.g. when filing bug reports).
 
 Scope
 -----

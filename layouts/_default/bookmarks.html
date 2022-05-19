@@ -21,7 +21,7 @@
 					{{- $firstTag := index $tags 0 }}
 					{{- $timestamp := dateFormat "2006-01-02 15:04:05-0700" $firstTag }}
 					<p>
-						Bookmarked on: <time class="dt-published published" itemprop="datePublished" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}" title="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}">{{ dateFormat "2006-01-02 15:04" $timestamp }}</time>
+						Bookmarked on: <time class="dt-published published" itemprop="datePublished" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}">{{ dateFormat "2006-01-02 15:04" $timestamp }}</time>
 						<br>Tags: <span itemprop="keywords">
 						{{- $start := 2 -}}
 						{{- $firstTag := (index $tags 1) -}}

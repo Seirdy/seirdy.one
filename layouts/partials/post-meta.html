@@ -1,10 +1,10 @@
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 {{- $logURL := printf "%scontent/%s" .Site.Params.logUrlPrefix .File.Path }}
-Posted <time itemprop="dateCreated datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+Posted <time itemprop="dateCreated datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 			by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" itemprop="mainEntityOfPage url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>{{- end -}}.
 			{{ if lt .Date .Lastmod -}}
 			<br>
-			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ $logURL | strings.ReplaceRE `\.md` `.gmi` }}">Changelog</a>.
+			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ $logURL | strings.ReplaceRE `\.md` `.gmi` }}">Changelog</a>.
 			{{- end }}
 			<br>
 			{{ partial "wordcount.html" . }}
