@@ -12,7 +12,7 @@ About
 	{{- if gt . 60 -}}
 		{{- $hours := div . 60 -}}
 		{{- $minutes := mod . 60 -}}
-		{{- $displayTime = (printf "%d hour and %d minute" $hours $minutes) -}}
+		{{- $displayTime = (printf "%d hour and %d" $hours $minutes) -}}
 	{{- end -}}
 	; a{{ if lt . 10 }} short{{ else if and (gt . 20) (lt . 30) }} somewhat long{{ else if and (gt . 29) (lt . 60) }} long{{ else if gt . 59 }} very long{{ end }}
 	<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ $displayTime }} minute</time> read
