@@ -30,7 +30,7 @@
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
 {{- $tocHeadingOutside := `<h2>Table of Contents</h2><nav(?:.*)>` -}}
-{{- $tocHeadingInside := `<nav id=TableOfContents role="doc-toc"><h2 id="toc-hd">Table of Contents</h2>` -}}
+{{- $tocHeadingInside := `<nav id=TableOfContents role="doc-toc" aria-labelledby="toc-hd"><h2 id="toc-hd">Table of Contents</h2>` -}}
 
 <!--Give footnote backlinks accessible names-->
 {{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:.*)?)>` -}}
