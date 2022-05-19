@@ -205,6 +205,8 @@ These metrics aren't useless, but they are incredibly naive: they only take into
 
 ### Round trips
 
+Note: this section is overkill for most use-cases.
+
 A supplementary metric to use alongside download size is round trips. Estimate the number of bytes and round-trips it takes to do the following:
 
 1. Begin downloading the final blocking resource
@@ -895,7 +897,7 @@ The remainder of the "Layout" section is possibly the most subjective part of th
 
 A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content.
 
-Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one significant grouping element. The "source order viewer" in Chromium's DevTools can assist with this process.
+Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one landmark. Ideally, it shouldn't intersect multiple different grouping elements either. The "source order viewer" in Chromium's DevTools can assist with this process.
 
 => https://html.spec.whatwg.org/dev/grouping-content.html#grouping-content "HTML living standard, section 4.4: Grouping content" lists grouping elements.
 
