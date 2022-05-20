@@ -72,11 +72,12 @@ html {
 	 * Typically meets SC 1.4.8, plus or minus a few characters. */
 	div[itemprop="articleBody"] {
 		margin: auto;
-		max-width: 36em;
+		max-width: 35em;
 	}
 
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
+	dt > a,
 	header > nav,
 	footer > nav,
 	h2 + a {
@@ -118,6 +119,8 @@ html {
 	 *   links that should be easy to fat-finger
 	 * - links that directly follow h2 without being contained in a
 	 *   paragraph are section permalinks. */
+	dt,
+	dt > a,
 	summary,
 	h2 + a,
 	li > a {
@@ -243,7 +246,7 @@ span[hidden] {
  * viewport, triggering horizontal scrolling. Allow breaking words in
  * content I don't control (comments, names). For content I do control,
  * I just add soft hyphens to the HTML. */
-li[itemprop="comment"],
+div[itemprop="comment"],
 :not(pre) > code,
 :not(pre) > samp,
 span[itemtype="https://schema.org/Person"] {

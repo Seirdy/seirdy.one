@@ -15,7 +15,7 @@
 	article summary,
 	/* Currently only used for in-page heading anchors,
 	 * useless in printouts. */
-	span[aria-hidden],
+	h2 + a,
   /* You can't navigate in a printout. */
 	footer nav,
 	nav a:not([rel="home"]) span {

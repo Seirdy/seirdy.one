@@ -18,11 +18,11 @@
 {{- end -}}
 <pre tabindex="0">
 {{- if $samp -}}
-<samp itemprop="text">
+<samp translate="no" itemprop="text">
 {{- $contents | safeHTML -}}
 </samp>
 {{- else -}}
-<code itemprop="text">
+<code translate="no" itemprop="text">
 {{- $contents | safeHTML -}}
 </code>
 {{- end -}}

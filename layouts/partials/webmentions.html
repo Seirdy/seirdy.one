@@ -21,7 +21,7 @@
 							{{ dateFormat "2006-01-02" $webmention.created_at }}
 						</time>
 					</dt>
-					<dd><p>
+					<dd>
 						{{ if (eq $webmention.type "like") -}}
 							{{ if $webmention.author_name -}}
 								<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
@@ -45,7 +45,7 @@
 							by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
 								{{- end -}}
 						{{- end }}
-					</p></dd>
+					</dd>
 			</div>
 			{{ else -}}
 			<dt>Nothing here</dt>
