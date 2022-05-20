@@ -10,8 +10,7 @@
 -->
 {{- $referencesWithoutHeading    := `(<div class="footnotes" role="doc-endnotes">
 <hr>)` -}}
-{{- $referencesWithHeading := printf `<hr>
-<section role="doc-endnotes" aria-labelledby="note-hd">
+{{- $referencesWithHeading := printf `<section role="doc-endnotes" aria-labelledby="note-hd">
 <h2 id="note-hd">%s</h2>` ($footnote_heading) -}}
 
 {{- $endnotesClosingDiv := `</a></p>
