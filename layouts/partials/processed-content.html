@@ -24,23 +24,32 @@
 </ol>
 </section>` -}}
 
-<!--Descriptive footnote link names, remove unused class-->
-{{- $badNoteRef := `class="footnote-ref" role="doc-noteref">([0-9]*)</a>` -}}
-{{- $goodNoteRef := `role="doc-noteref">note&nbsp;${1}</a>` -}}
+<!--
+	Descriptive footnote link names, remove unused class, put
+	backlink id in <a> since <a> is focusable, remove unused class.
+-->
+{{- $badNoteRef := `<sup id="fnref([0-9\:]*)"><a( [^>]*)class="footnote-ref" role="doc-noteref">([0-9]*)</a>` -}}
+{{- $goodNoteRef := `<sup><a${2}id="fnref${1}" role="doc-noteref">note&nbsp;${3}</a>` -}}
 
 <!--Move the Table of Contents heading *inside* the <nav> element-->
 {{- $tocHeadingOutside := `<h2>Table of Contents</h2><nav(?:.*)>` -}}
-{{- $tocHeadingInside := `<nav id=TableOfContents role="doc-toc" aria-labelledby="toc-hd"><h2 id="toc-hd">Table of Contents</h2>` -}}
+{{- $tocHeadingInside := `<nav id=TableOfContents role="doc-toc" aria-labelledby="toc-hd" tabindex="-1">
+	<h2 id="toc-hd">Table of Contents</h2>` -}}
 
 <!--Give footnote backlinks accessible names-->
-{{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:.*)?)>` -}}
-{{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" aria-label="back to reference ${1}"${2}>` -}}
+{{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
+{{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" aria-labelledby="bl-${1}"${2}>${3} <span id="bl-${1}" hidden>back to reference ${1}</span>` -}}
 
 <!--
 	If two backlinks exist, give them different names.
 	I currently don't have any triple backlinks; if I ever do, I'll implement this properly with a loop.
 -->
-{{- $repeatedFootnoteBacklinksBad  :=  `"back to reference ([0-9]*)"(.*)<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:.*)?)>` -}}
-{{- $repeatedFootnoteBacklinksGood :=  `"back to reference ${1}, instance 1"${2}<a href="#fnref${3}:${4}" aria-label="back to reference ${4}, instance 2"${5}>` -}}
+{{- $repeatedFootnoteBacklinksBad  :=  `<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
+{{- $repeatedFootnoteBacklinksGood :=  `<a href="#fnref${1}:${2}" aria-labelledby="bl-${2}-2"${3}>${4} <span id="bl-${2}-2" hidden>back to reference ${2}, instance 2</span>` -}}
 
-{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | safeHTML -}}
+<!--Make endnotes focusable by ATs. Necessary for VoiceOver compatibility.-->
+{{- $endNotesNotFocusable := `<li id="fn:([0-9]*)">` -}}
+{{- $endNotesFocusable := `<li id="fn:${1}" tabindex="-1">` -}}
+
+
+{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | replaceRE $endNotesNotFocusable $endNotesFocusable | safeHTML -}}

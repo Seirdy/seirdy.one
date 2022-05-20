@@ -9,7 +9,7 @@
 	{{- end -}}
 {{- end -}}
 <figcaption id="{{ $id }}-caption">
-	<span id="{{ $id }}">
+	<span id="{{ $id }}" tabindex="-1">
 	<strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> {{ $codeIndex }}</strong>{{with .Get "lang"}} (<span itemprop="programmingLanguage">{{ . }}</span>){{ end -}}
 	</span>:
 {{ .Inner | markdownify | safeHTML }}

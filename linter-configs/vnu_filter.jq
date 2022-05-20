@@ -14,11 +14,6 @@
 				and .firstColumn == 1
 				and (.extract | test(" name=\"theme-color\""))
 			)
-			or
-			( # See https://w3c.github.io/aria/#comment
-				.message == "Bad value “comment” for attribute “role” on element “p”."
-				and (.extract | test("u-comment"))
-			)
 		) | not
 	)
 )

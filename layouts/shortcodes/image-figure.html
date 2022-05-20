@@ -1,5 +1,5 @@
 <figure itemscope itemtype="https://schema.org/ImageObject"
-	{{- with .Get "id" }} id="{{ . }}"{{ end -}}
+	{{- with .Get "id" }} id="{{ . }}" tabindex="-1"{{ end -}}
 	{{- if .Get "representative" }} itemprop="image">
 <meta itemprop="representativeOfPage" content="true">
 	{{- else }} itemprop="hasPart">

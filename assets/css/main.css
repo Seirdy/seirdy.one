@@ -62,7 +62,7 @@ html {
 		 * between tappables" by creating margins/paddings between nav links;
 		 * re-use that same amount of space here. 24px is what it takes to
 		 * create atl 48px of non-interactive space on <ul> and <ol> elements
-		 * containing lists of interactives.
+		 * containing lists of interactives, with 8px in between.
 		 * Don't use relative units here; this margin shouldn't scale with
 		 * zoom, or else text will get narrower with zoom. */
 		padding: 0 24px;
@@ -234,6 +234,11 @@ samp {
 	font-family: monospace, monospace;
 }
 
+/* Some browsers don't support the hidden attr */
+span[hidden] {
+	display: none;
+}
+
 /* Narrow screens: long words can cause content to flow out of the
  * viewport, triggering horizontal scrolling. Allow breaking words in
  * content I don't control (comments, names). For content I do control,
@@ -292,6 +297,7 @@ picture > img {
  * reducing the number of DOM nodes rendered at once. */
 aside,
 footer,
+section[role="doc-endnotes"],
 section[aria-labelledby="webmentions"] {
 	border-top: 1px solid;
 	content-visibility: auto;

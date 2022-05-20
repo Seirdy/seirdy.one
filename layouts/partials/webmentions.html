@@ -1,48 +1,56 @@
 <section aria-labelledby="webmentions">
-		<h2 id="webmentions">Webmen&shy;tions</h2>
+		<h2 id="webmentions" tabindex="-1">Webmen&shy;tions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear below after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
-		<ul>
+		<dl>
 			{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 			{{ $url := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
 			{{ $webmentions := getJSON $url -}}
 			{{ range $webmentions -}}
 			{{ $webmention := . -}}
 				{{ if (eq $webmention.type "like") -}}
-				<li itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
+				<div itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
 				{{- else -}}
-				<li itemprop="comment" itemscope itemtype="https://schema.org/Comment">
-				{{- end }}
-				<p role="comment" class="u-comment h-cite">
-					<time class="dt-published" itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">{{ dateFormat "2006-01-02" $webmention.created_at }}</time>
-					<br>
-					{{ if (eq $webmention.type "like") -}}
-						{{ if $webmention.author_name -}}
-							<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-						{{ else if $webmention.title -}}
-							<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
-						{{ else -}}
-							{{ $webmention.source -}}
-						{{ end -}}
-						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
-					{{ else -}}
-						<a class="u-url" href="{{ $webmention.source }}" rel="nofollow ugc">
-						<span itemprop="name" class="p-content p-name">
-							{{ if $webmention.title -}}
-								{{ $webmention.title | truncate 200 -}}
+				<div itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
+				{{- end -}}
+				<!--Will eventually add role="comment" once WAI-ARIA 1.3 starts seeing some adoption.-->
+					<dt>
+						<time
+							class="dt-published"
+							itemprop="{{ if (eq $webmention.type "like") -}}startTime{{ else }}datePublished{{ end }}"
+							datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $webmention.created_at }}">
+							{{ dateFormat "2006-01-02" $webmention.created_at }}
+						</time>
+					</dt>
+					<dd><p>
+						{{ if (eq $webmention.type "like") -}}
+							{{ if $webmention.author_name -}}
+								<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+							{{ else if $webmention.title -}}
+								<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
 							{{ else -}}
-								{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
-							{{ end }}
-						</span>
-					</a>
-						{{- if $webmention.author_name }}
-						by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
-							{{- end -}}
-					{{- end }}
-				</p>
-			</li>
+								{{ $webmention.source -}}
+							{{ end -}}
+								<a class="u-url" itemprop="url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
+						{{ else -}}
+							<a class="u-url" itemprop="url" href="{{ $webmention.source }}" rel="nofollow ugc">
+								<span itemprop="name" class="p-content p-name">
+									{{ if $webmention.title -}}
+										{{ $webmention.title | truncate 200 -}}
+									{{ else -}}
+										{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
+									{{ end }}
+								</span>
+							</a>
+							{{- if $webmention.author_name }}
+							by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+								{{- end -}}
+						{{- end }}
+					</p></dd>
+			</div>
 			{{ else -}}
-			<li><p>This post doesn't have any approved Webmentions yet.</p></li>
+			<dt>Nothing here</dt>
+			<dd>This post does not have any approved Webmentions yet.</dd>
 			{{- end }}
-		</ul>
+		</dl>
 		<p></p>
 	</section>

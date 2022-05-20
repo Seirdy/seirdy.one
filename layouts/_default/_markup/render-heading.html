@@ -1,11 +1,8 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" tabindex="-1">{{ .Text | safeHTML -}}</h{{ .Level }}>
 {{- if and (eq .Level 2) (eq .Page.Section "posts") }}
-<h{{ .Level }} id="{{ .Anchor | safeURL }}-hd">{{ .Text | safeHTML -}}</h{{ .Level }}>
 <a
-	id="{{ .Anchor | safeURL }}" href="#{{ .Anchor | safeURL }}"
-	aria-labelledby="{{ .Anchor | safeURL }}-prefix {{ .Anchor | safeURL }}-hd">
+	id="{{ .Anchor | safeURL }}-anchor" href="#{{ .Anchor | safeURL }}"
+	aria-labelledby="{{ .Anchor | safeURL }}-prefix {{ .Anchor | safeURL }}">
 	<span id="{{ .Anchor | safeURL }}-prefix">Permalink to section</span>
 </a>
-{{- else }}
-{{- with . -}}
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML -}}</h{{ .Level }}>{{ end -}}
 {{- end }}
