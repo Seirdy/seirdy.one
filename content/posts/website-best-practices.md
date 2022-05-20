@@ -41,7 +41,7 @@ I realize not everybody's going to ditch the Web and switch to Gemini or Gopher 
 
 My primary focus is [inclusive design](https://100daysofa11y.com/2019/12/03/accommodation-versus-inclusive-design/). Specifically, I focus on supporting _under&shy;represented ways to read a page_. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implemen&shy;tations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in [the conclusion](#conclusion). Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (<abbr title="plain-old, semantic HTML">POSH</abbr>), you've done half of the work already.
 
-One of the core ideas behind the flavor of inclusive design I present is <dfn id="inc-by-default">inclusivity by default</dfn>. Web pages shouldn't use accessible overlays, reduced-data modes, or other personal&shy;izations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personal&shy;ization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+One of the core ideas behind the flavor of inclusive design I present is <dfn id="inc-by-default" tabindex="-1">inclusivity by default</dfn>. Web pages shouldn't use accessible overlays, reduced-data modes, or other personal&shy;izations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personal&shy;ization is a fallback strategy to resolve conflicting needs. Dispro&shy;portionately under&shy;represented needs deserve dispro&shy;portionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
 
 Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
 
@@ -504,15 +504,20 @@ Beyond alt-text
 
 Expect some readers to have images disabled or unloaded. Examples include:
 
-* Blind readers
-* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshold[^12]
-* People experiencing packet loss who fail to download some images
-* Users of textual browsers
+* Blind readers.
+
+* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size threshold.[^12]
+
+* People experiencing packet loss who fail to download some images.
+
+* Users of textual browsers.
 
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
+
 * Images should usually have alt-text under 100 char&shy;acters, excluding punctuation.[^13] Save longer descriptions for a caption or <code>aria-<wbr>des&shy;cribedby</code>. Exceptions exist.
+
 * Don't include significant information that isn't present in the image; I'll cover how to handle supple&shy;mentary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
@@ -680,13 +685,17 @@ Not all approaches completely discard a designer's specified color palette. The 
 {{<quotation id="win-hcm">}}
 
 <blockquote itemprop="text">
-<ul>
-<li>Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.</li>
-<li>It’s not about design but readability.</li>
-<li>Some stuff will disappear in Win HCM, some won’t. Best advice is to use semantic HTML to keep things visible.</li>
-<li>You can use transparent <code>outline</code> to keep things visible like focus indicators and surface boundaries or use <code>current<wbr>Color</code> to maintain SVG <code>fill</code> colors in Win HCM.</li>
-<li>You can use a special media query combined with special CSS color key&shy;words to give elements the user defined colors.</li>
-</ul>
+
+- Win HCM is a collection of user defined color themes that overwrite your definitions in CSS.
+
+- It's not about design but readability.
+
+- Some stuff will disappear in Win HCM, some won't. Best advice is to use semantic HTML to keep things visible.
+
+- You can use transparent `outline` to keep things visible like focus indicators and surface boundaries or use <code>current<wbr>Color</code> to maintain SVG `fill` colors in Win HCM.
+
+- You can use a special media query combined with special CSS color key&shy;words to give elements the user defined colors.
+
 </blockquote>
 {{< quotecaption partOfType="WebSite" >}}
 {{<indieweb-person first-name="Martin" last-name="Mengele" url="https://accessabilly.com/about/" itemprop="author">}},
@@ -707,7 +716,7 @@ If you include a `theme-color` directive in your document `<head>`, then recent 
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
 
-Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes <dfn id="halation">halation</dfn>, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
+Darker backgrounds draw less power on devices with OLED screens; however, backgrounds should never be solid black. White text on a black background causes <dfn id="halation" tabindex="-1">halation</dfn>, especially among astigmatic readers. Halation comes from the word "halo", and refers to a type of "glow" or ghosting around words. There has been some [experimental color research](https://www.laurenscharff.com/research/AHNCUR.html) and plenty of [anecdotal evidence from astigmatic users](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) to support this.
 
 {{<image-figure>}}
 
@@ -734,7 +743,9 @@ When setting colors, especially for a dark background, I recommend checking your
 The APCA takes several factors into account:
 
 * The human retina has few blue-sensitive cone cells, so blue appears "darker" than green and red. Yellow appears brightest.
+
 * Small, thin fonts are difficult to see and require greater contrast.
+
 * It's possible to have too much contrast, especially for large/bold text (note that the APCA version built into Chromium does not yet take this into account).
 
 Note that [the APCA isn't fully mature](https://yatil.net/blog/wcag-3-is-not-ready-yet) as of early 2022. Until version 3.0 of the WCAG is ready, pages that are required to comply with the WCAG should also conform to the contrast ratios described in the WCAG&nbsp;2.2's success criteria 1.4.3 (Contrast: Minimum, level AA) or 1.4.6 (Contrast: Enhanced, level AAA). This site's dark-mode stylesheet is an example of a palette that conforms to both the WCAG&nbsp;2.2 AAA contrast requirements and APCA recommen&shy;dations.
@@ -753,8 +764,23 @@ Different screens and display-calibrations render color differently; what may lo
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
-In defense of link under&shy;lines {#in-defense-of-link-underlines}
-----------------------------------
+Visible interactive semantics
+-----------------------------
+
+{{<quotation>}}
+
+<blockquote itemprop="text">
+	<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or disting&shy;uishing a visual element. (Level A)</p>
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
+{{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},
+<a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
+{{< /quotecaption >}}
+{{</quotation>}}
+
+A basic WCAG Level A requirement is for information to not be conveyed solely through color. Bothe the presence and type of interactivity need to be visually communicated by other means. Links should not look like buttons, and vice-versa.
+
+### In defense of link under&shy;lines {#in-defense-of-link-underlines}
 
 Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^17] and that hyperlinks are no exception. I disagree.
 
@@ -769,18 +795,24 @@ It's impossible to discern the number of links in a sequence without some sort o
 </figcaption>
 {{</image-figure>}}
 
-A basic WCAG Level A requirement is for information to not be conveyed solely through color.
+### Buttons versus links
 
-{{<quotation>}}
+Buttons are another type of interactive element. Users are accustomed to recognizing buttons by their visually distinct interactive region. While hyperlinks are only signified by color and a text underline, buttons are signified by a background-color change and/or a visible border. Do not conflate the two!
 
-<blockquote itemprop="text">
-	<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or disting&shy;uishing a visual element. (Level A)</p>
-</blockquote>
-{{< quotecaption partOfType="TechArticle" >}}
-{{< cited-work name="WCAG 2.2" extraName="headline" url="https://www.w3.org/TR/WCAG22/" >}},
-<a href="https://www.w3.org/TR/WCAG22/#distinguishable">section 1.4.1</a>
-{{< /quotecaption >}}
-{{</quotation>}}
+The purpose of a hyperlink is specifically to navigate to a different location. If a button exists to do the same thing, it shouldn't be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
+
+In addition to [offering ample non-interactive space](#non-interactive-space), ensure that non-interactive and interactive space regions are visually distinct. The backgrounds of regions containing multiple visible elements should be non-interactive.
+
+GitHub's mobile website is a serious offender; see [this screenshot of the GitHub bug tracker](#gh-interactive) for an example. The background region of the visible issue is interactive, and so are its contents. However, the header of the issues list has a non-interactive background that looks the same. Visual appearance does not convey the difference between a button and a hyperlink. The "enhancement" link points to a unique location, yet it loses its interactivity on narrow viewports with no visual change; tapping it navigates to a different location depending on viewport width.
+
+{{<image-figure id="gh-interactive">}} {{<picture name="gh_interactive" alt="Screenshot of GitHub issues on mobile with non-underlined links and links that look like buttons.">}}
+
+<figcaption itemprop="caption">
+Screenshot of the <a href="https://github.com/nihui/waifu2x-ncnn-vulkan/issues">GitHub issues for waifu2x-ncnn-vulkan</a>.
+</figcaption>
+{{</image-figure>}}
+
+Someone using the GitHub issues interface for the first time will struggle to identify interactive regions and discern whether they trigger navigations or different actions.
 
 Image op&shy;timiza&shy;tion {#image-optimization}
 ----------------------------
@@ -928,7 +960,7 @@ Think twice before placing important content immediately after skippable content
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
-A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content.
+A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, side-to-side exactly once to read all its content.
 
 Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one landmark. Ideally it shouldn't intersect multiple different [grouping elements](https://html.spec.whatwg.org/dev/grouping-content.html) either. The "source order viewer" in Chromium's DevTools can assist with this process.
 
@@ -1035,7 +1067,7 @@ Most browser default stylesheets were not optimized for narrow viewports, so nar
 
 The HTML standard's section 4.4.4 [covers blockquotes](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element). It recommends placing a `<blockquote>` element inside a `<figure>` and citations in a `<figcaption>` to show a semantic relationship between a quotation and its citation.
 
-Browser default stylesheets typically give `<figure>` elements extra margins on the left and right. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
+Browser default stylesheets typically give `<figure>` elements extra margins on either side. `<blockquote>` elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (`<ol>`, `<dl>`, `<ul>`), the indentation alone may fill most of a narrow viewport!
 
 I chose to remove the margins in `<figure>` elements for quotations and code snippets. If you're reading this page with its own stylesheet enabled, in a CSS&nbsp;2 compliant browser, you might have noticed the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a `<figure>` element.
 
@@ -1227,7 +1259,7 @@ The default focus indicators are hard to see in certain browsers (e.g. Firefox a
 
 <figcaption itemprop="caption">
 
-Top: a screenshot of Firefox's default focus indicator. Bottom: the focus indicator after my adjustments.
+Firefox 99's default focus indicator, before and after my adjustments.
 
 </figcaption>
 {{</image-figure>}}
@@ -1302,7 +1334,7 @@ A workaround is to use the "text" ARIA role to remove the semantics of elements.
 
 {{</codefigure>}}
 
-If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria">First Rule of ARIA</dfn>: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. Furthermore, `role="text"` isn't actually standard ARIA; its proposed inclusion into the ARIA specification was controversial. See [issue 870 of WAI-ARIA](https://github.com/w3c/aria/issues/870#issuecomment-589282781) for some problems with it.
+If you're unfamiliar with ARIA, always remember the <dfn id="first-rule-of-aria" tabindex="-1">First Rule of ARIA</dfn>: [No ARIA is better than Bad ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). ARIA exposes a host of accessibility hazards when used improperly, so only use this approach when there's no good alternative. Furthermore, `role="text"` isn't actually standard ARIA; its proposed inclusion into the ARIA specification was controversial. See [issue 870 of WAI-ARIA](https://github.com/w3c/aria/issues/870#issuecomment-589282781) for some problems with it.
 
 The best solution for possessive nouns is to include the "apostrophe + s" inside the hyperlink.
 
@@ -1345,25 +1377,36 @@ Automated tests--especially accessibility tests--are a supplement to manual test
 
 These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^22]
 
-1. [Nu HTML checker](https://validator.nu/): The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've reco&shy;mmended elsewhere on this page. Watch out for false positives.
 
-2. [axe-core](https://github.com/dequelabs/axe-core): The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
+[Nu HTML checker](https://validator.nu/)
+: The W3C's official HTML validator. Valid HTML ensures broader compatibility with a wider range of agents. Note that it uses Jigsaw under the hood for CSS validation, which hasn't implemented support for certain CSS features I've reco&shy;mmended elsewhere on this page. Watch out for false positives.
 
-3. [Light&shy;house](https://developers.google.com/web/tools/lighthouse/): An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
+[axe-core](https://github.com/dequelabs/axe-core)
+: The current standard in accessibility testing. Most website auditors that run accessibility checks use this library under the hood.
 
-4. [Webhint](https://webhint.io/): Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively[^23].
+[Light&shy;house](https://developers.google.com/web/tools/lighthouse/)
+: An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
-5. [IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/): Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
+[Webhint](https://webhint.io/)
+: Similar to Light&shy;house. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^23]
 
-6. [AInspec&shy;tor](https://ainspector.disability.illinois.edu/): a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
+[IBM Equal Access Access&shy;ibility Checker](https://www.ibm.com/able/toolkit/verify/automated/)
+: Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
 
-7. [Firefox's Access&shy;ibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues): supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. The keyboard audits have false-positives on non-interactive horizontally-scrollable elements, which need to be focusable.
+[AInspec&shy;tor](https://ainspector.disability.illinois.edu/)
+: a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
 
-8. [Chrom&shy;ium's CSS Overview](https://developer.chrome.com/docs/devtools/css-overview/): can show some basic accessibility violations, including contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
+[Firefox's Access&shy;ibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues)
+: supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. The keyboard audits have false-positives on non-interactive horizontally-scrollable elements, which need to be focusable.
 
-9. [testssl.sh (cli)](https://testssl.sh/) or [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/): basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
+[Chrom&shy;ium's CSS Overview](https://developer.chrome.com/docs/devtools/css-overview/)
+: can show some basic accessibility violations, including contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
 
-10. [Webbkoll](https://webbkoll.dataskydd.net/): basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Ob&shy;servatory.
+[testssl.sh (cli)](https://testssl.sh/) or [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/)
+: basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
+
+[Webbkoll](https://webbkoll.dataskydd.net/)
+: basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Ob&shy;servatory.
 
 ### Un&shy;orthodox tests {#unorthodox-tests}
 
@@ -1556,7 +1599,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^5]: <span itemprop="citation" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="High-Performance Browser Networking" url="https://hpbn.co/building-blocks-of-tcp/" extraName="headline">}} by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/" itemprop="author">}}</span> gives a great introduction to how TCP works, if you'd like more details.
 
-[^6]: This one-kilobyte limit is a semi-arbitrary rule-of-thumb I came up with. It's a simple number easier to work with than the number of bytes left in the earliest contentful round-trip, yet it typically falls within that quota.
+[^6]: This one-kilobyte limit is a semi-arbitrary rule-of-thumb I came up with. It's a simple number easier to work with than the number of bytes remaining in the earliest contentful round-trip, yet it typically falls within that quota.
 
 [^7]: HPACK and QPACK header compression includes dictionaries containing common header names, and some common header values; HPACK lists them in "Appendix A" of <span itemprop="citation" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="RFC 7541" extraName="headline" url="https://datatracker.ietf.org/doc/html/rfc7541#appendix-A">}}</span>. If a header name or name-value pair one of these predefined table entries, its effective size can be reduced to a single byte. If a header has a value that isn't covered by the table, consider minifying it by removing unnecessary whitespace.
 
@@ -1574,7 +1617,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^13]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
 
-[^14]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr>des&shy;cribedby</code> for more complex descriptions. Right now, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}</span> describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
+[^14]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr>des&shy;cribedby</code> for more complex descriptions. At the time of writing, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). <span itemprop="mentions" itemscope itemtype="https://schema.org/TechArticle">{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}</span> describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
 
 [^15]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors indepen&shy;dently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 

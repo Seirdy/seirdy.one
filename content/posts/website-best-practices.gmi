@@ -717,7 +717,14 @@ When making an earlier version of this site's dark-mode color palette, I made th
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
-## In defense of link underlines
+## Visible interactive semantics
+
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
+
+A basic WCAG Level A requirement is for information to not be conveyed solely through color. Bothe the presence and type of interactivity need to be visually communicated by other means. Links should not look like buttons, and vice-versa.
+
+### In defense of link underlines
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
 
@@ -727,12 +734,25 @@ I disagree. One reason is that underlines make it easy to separate multiple cons
 
 => gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
 
-Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links. A basic WCAG Level A requirement is for information to not be conveyed solely through color:
-
-> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
-=> https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
+Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links.
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+
+### Buttons versus links
+
+Buttons are another type of interactive element. Users are accustomed to recognizing buttons by their visually distinct interactive region. While hyperlinks are only signified by color and a text underline, buttons are signified by a background-color change and/or a visible border. Do not conflate the two!
+
+The purpose of a hyperlink is specifically to navigate to a different location. If a button exists to do the same thing, it shouldn't be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
+
+In addition to offering ample non-interactive space (see the prior "non-interactive space" section), ensure that non-interactive and interactive space regions are visually distinct. The backgrounds of regions containing multiple visible elements should be non-interactive.
+
+GitHub's mobile website is a serious offender:
+
+=> gemini://seirdy.one/misc/gh_interactive.png Screenshot of the GitHub bug tracker for waifu2x-ncnn-vulkan
+
+The background region of the visible issue is interactive, and so are its contents. However, the header of the issues list has a non-interactive background that looks the same. Visual appearance does not convey the difference between a button and a hyperlink. The "enhancement" link points to a unique location, yet it loses its interactivity on narrow viewports with no visual change; tapping it navigates to a different location depending on viewport width.
+
+Someone using the GitHub issues interface for the first time will struggle to identify interactive regions and discern whether they trigger navigations or different actions.
 
 ## Image optimization
 
@@ -895,7 +915,7 @@ Think twice before placing important content immediately after skippable content
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
-A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, left-to-right (or right-to-left, depending on the locale) exactly once to read all its content.
+A simple layout looks good at a variety of window sizes, rendering responsive layout changes unnecessary. Textual websites really don't need more than a single column; readers should be able to scan a page top-to-bottom, side-to-side exactly once to read all its content.
 
 Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one landmark. Ideally, it shouldn't intersect multiple different grouping elements either. The "source order viewer" in Chromium's DevTools can assist with this process.
 
@@ -1028,7 +1048,7 @@ The HTML spec's blockquote section recommends placing a <blockquote> element ins
 
 => https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element HTML living standard: Grouping Content, section 4.4.4
 
-Browser default stylesheets typically give <figure> elements extra margins on the left and right. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (<ol>, <dl>, <ul>), the indentation alone may fill most of a narrow viewport!
+Browser default stylesheets typically give <figure> elements extra margins on the either side. <blockquote> elements have a large indent. Combining these two properties gives the final quotation an excessive visual indent, wasting precious vertical screen space. When quoted text contains list elements (<ol>, <dl>, <ul>), the indentation alone may fill most of a narrow viewport!
 
 I chose to remove the margins in <figure> elements for quotations. If you're reading the Web version of this page with its own stylesheet enabled, in a CSS 2 compliant browser, you might notice that the blockquotes on it have a minimal indent and a thick border on the left rather than a full indent. These two adjustments allow blockquotes containing bulleted lists to fit on most narrow viewports, even when wrapped by a <figure> element.
 
@@ -1558,7 +1578,7 @@ I opted to meet the criterion a different way. Since all my pages are linked by 
 => https://datatracker.ietf.org/doc/html/rfc7541#appendix-A RFC 7541: HPACK static table definition
 => https://quicwg.org/base-drafts/draft-ietf-quic-qpack.html#appendix-A QPACK: Header Compression for HTTP/3
 
-¹⁰ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. Right now, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
+¹⁰ Once it gains basic support across all browsers and screen readers, I might recommend using aria-details instead of aria-describedby for more complex descriptions. At the time of writing, aria-details is only supported by JAWS. WAI-ARIA 1.2 describes aria-details with an example similar to the one I gave for image transcripts.
 => https://a11ysupport.io/tech/aria/aria-details_attribute Current support for aria-details
 => https://www.w3.org/TR/wai-aria-1.2/#aria-details aria-details specification
 
