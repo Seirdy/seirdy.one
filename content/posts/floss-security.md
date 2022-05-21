@@ -7,6 +7,7 @@ outputs:
     - gemtext
 footnote_heading: Notes
 featured: 4
+techarticle: true
 title: "The right thing for the wrong reasons: FLOSS doesn't imply security"
 ---
 <section role="doc-preface" itemprop="backstory">

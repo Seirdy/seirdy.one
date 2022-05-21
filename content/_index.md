@@ -13,7 +13,7 @@ sitemap:
 Seirdy's Home
 =============
 
-I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName nickname" class="p-nickname nickname">Seirdy</span> (online handle).
+I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (online handle).
 
 Other versions of this website
 ------------------------------

@@ -1,5 +1,6 @@
 ---
 date: "2020-11-18T18:31:15-08:00"
+lastmod: "2020-11-19T12:23:18-08:00"
 description: Efficient redundancy via repository mirroring with nothing but git.
 outputs:
     - html
@@ -7,6 +8,7 @@ outputs:
 tags:
     - git
     - foss
+techarticle: true
 title: "Resilient Git, Part 1: Hydra Hosting"
 ---
 <div role="note">

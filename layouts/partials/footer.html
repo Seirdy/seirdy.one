@@ -1,6 +1,6 @@
-<footer id="site-footer">
+<footer>
 	<p>
-		Copyright<span aria-hidden="true"> ©</span> <span itemprop="copyrightYear">{{now.Year}}</span> <span itemprop="copyrightHolder">{{- partial "indieweb-author.html" -}}</span>
+	Copyright<span aria-hidden="true"> ©</span> <time itemprop="copyrightYear" datetime="{{now.Year}}">{{now.Year}}</time> {{- partial "indieweb-author.html" -}}
 	</p>
 	<nav aria-label="site info">
 		<ul>

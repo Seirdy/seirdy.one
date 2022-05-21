@@ -17,6 +17,7 @@ sitemap:
 featured: 2
 image: "serenity-4x.png"
 image_alt: "Retro-looking browser with bitmap fonts showing this article's \"code snippet 4\"."
+techarticle: true
 title: "Best practices for inclusive textual websites"
 ---
 <section role="doc-preface">
@@ -1042,7 +1043,7 @@ Where long inline `<code>` elements can trigger horizontal scrolling, consider a
 
 ### Keeping text together
 
-Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}} by {{<indieweb-person first-name="Matthew" last-name="Butterick" url="https://mbtype.com/bio.html">}},[^17] a typographer,</span> describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
+Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10&nbsp;cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the `&nbsp;` HTML entity instead of a space: `10&nbsp;cm`. <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}} by {{<indieweb-person itemprop="author" first-name="Matthew" last-name="Butterick" url="https://mbtype.com/bio.html">}},[^17] a typographer</span>, describes [where to use the non-breaking space](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) in more detail.
 
 One exception to the rules from <cite>Practical Typography</cite>: don't use a non-breaking space if it would trigger two-dimensional scrolling on a narrow viewport. Between broken text and two-dimensional scrolling, broken text is the lesser evil. I personally set a cutoff at 2.5&nbsp;cm (1&nbsp;inch) at 125% zoom.
 

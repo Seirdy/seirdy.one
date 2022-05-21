@@ -1,5 +1,6 @@
 ---
 date: "2020-11-17T13:13:03-08:00"
+lastmod: "2020-11-19T12:23:18-08:00"
 description: A seires on setting up resilient git-based project workflows, free of vendor lock-in.
 outputs:
     - html
@@ -7,6 +8,7 @@ outputs:
 tags:
     - git
     - foss
+techarticle: true
 title: "Resilient Git, Part 0: Introduction"
 ---
 

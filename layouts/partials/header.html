@@ -1,12 +1,20 @@
-<header id="banner" itemprop="hasPart" itemscope itemtype="https://schema.org/WPHeader">
+<header>
 	<nav aria-label="Global">
 		<ul>
 			{{- $currentPage := . -}}
+			{{- $canonicalRelPermalink := $currentPage.RelPermalink | replaceRE "^/~seirdy/" "/" }}
 			{{- $isHome := false -}}
-			{{- if eq $currentPage.Permalink .Site.BaseURL -}}
+			{{- if eq $currentPage.RelPermalink "/" -}}
 				{{- $isHome = true -}}
 			{{- end }}
-			<li itemprop="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
+			<li
+				{{ if $isHome -}}
+					itemprop="sameAs"
+				{{ else -}}
+					itemprop="isPartOf"
+				{{ end -}}
+				itemscope itemtype="https://schema.org/Blog https://schema.org/WebSite"
+				itemid="{{ .Site.Params.CanonicalBaseURL }}/">
 				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome }} aria-current="page"{{- end -}}>
 					{{- if $isHome -}}
 						<strong itemprop="name">{{ .Site.Title }}</strong>
