@@ -22,8 +22,8 @@
 		{{- end -}}
 		{{- range $posts -}}
 		{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
-		<li itemprop="dataFeedElement" itemscope itemtype="https://schema.org/DataFeedItem https://schema.org/BlogPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
-			<article class="h-entry hentry">
+		<li itemprop="dataFeedElement" itemscope itemtype="https://schema.org/DataFeedItem">
+			<article class="h-entry hentry" itemprop="item" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 				{{ if $isStandalone -}}
 				<h2
 				{{- else -}}
