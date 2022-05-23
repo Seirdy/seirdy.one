@@ -1,6 +1,6 @@
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 {{- $logURL := printf "%scontent/%s" .Site.Params.logUrlPrefix .File.Path }}
-Posted <time itemprop="dateCreated datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+Posted <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 			by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" itemprop="mainEntityOfPage url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>{{- end -}}.
 			{{ if lt .Date .Lastmod -}}
 			<br>

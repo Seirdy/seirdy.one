@@ -10,6 +10,7 @@ sitemap:
     ChangeFreq: weekly
     Priority: 0.7
 footnote_heading: Notes
+evergreen: true
 featured: 1
 title: A look at search engines with their own indexes
 ---
