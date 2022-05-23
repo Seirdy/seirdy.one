@@ -11,8 +11,8 @@
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .125em. Pixels are 1px or
- * multiples of 3px; percentages are in increments of 2.5%. This also
- * improves compression. No more "finding the perfect value".
+ * multiples of 3px. This also improves compression. No more "finding
+ * the perfect value".
  *
  * I cite WCAG 2.2 success criteria with "SC". I also tried to meet
  * the Google a11y requirement of 48px tap targets separated by atl
@@ -40,8 +40,11 @@ html {
 		 * <sup>, <sub>, <small>, etc. large enough to have decent contrast
 		 * with minimal adjustment, and makes tap-targets larger.
 		 * Only do this on screen, since printouts already improve legibility
-		 * and cost paper + ink. */
-		font-size: 107.5%;
+		 * and cost paper + ink.
+		 * 108.75% is the minimum required to get superscripts to reach 14.5
+		 * CSS pixels with most default stylesheets. At that size, my dark
+		 * color palette has sufficient contrast.*/
+		font-size: 108.75%;
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
@@ -125,6 +128,11 @@ html {
 	h2 + a,
 	li > a {
 		padding: .875em .25em;
+	}
+
+	/* Make superscripts a bit easier to tap. */
+	sup > a {
+		padding-bottom: .25em;
 	}
 
 	nav li ol {
