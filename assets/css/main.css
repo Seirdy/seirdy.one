@@ -169,7 +169,7 @@ ul ul {
 
 /* Step 1 to making the single-line nav: remove the bullet padding. */
 nav ul {
-	padding: 0
+	padding: 0;
 }
 
 /* step 2: remove bullets and make elements inline.
@@ -180,7 +180,6 @@ nav ul li {
 	display: inline-block;
 	margin-right: .375em;
 }
-
 
 /* narrow screens: reduce margin for blockquotes a lot, using
  * a border instead. Put it on the left and right to make it
