@@ -8,25 +8,28 @@
 <h2 id="webrings">Webrings</h2>
 {{ $webringData := after 1 (getCSV "," "/csv/webrings.csv") -}}
 <p>This site is part of {{ len $webringData }} <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>. A webring is a collection of sites in a circular doubly-linked list; each website links to the next and previous site in the list.</p>
-<ol>
-{{- range $i, $r := $webringData }}
-	{{- $webringName := index $r 0 }}
-	<li>
-		<details>
-			<summary>{{- $webringName -}}</summary>
-			<ol>
-				<li>
-					<a href="{{- index $r 2 -}}">{{- $webringName }} webring home</a>
-				</li>
-				<li>
-					<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Previous {{ $webringName }} site</a>
-				</li>
-				<li>
-					<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Next {{ $webringName }} site</a>
-				</li>
-			</ol>
-		</details>
-	</li>
-{{- end -}}
-</ol>
+<details>
+	<summary>Toggle webrings list</summary>
+	<ol>
+	{{- range $i, $r := $webringData }}
+		{{- $webringName := index $r 0 }}
+		<li>
+			<details>
+				<summary>{{- $webringName -}}</summary>
+				<ol>
+					<li>
+						<a href="{{- index $r 2 -}}">{{- $webringName }} webring home</a>
+					</li>
+					<li>
+						<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Previous {{ $webringName }} site</a>
+					</li>
+					<li>
+						<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Next {{ $webringName }} site</a>
+					</li>
+				</ol>
+			</details>
+		</li>
+	{{- end -}}
+	</ol>
+</details>
 <p>If you&rsquo;re part of a webring and would like me to join, just ask. I&rsquo;ll probably accept if joining only requires me to add hyperlinks to this page (no scripts, external content, or images), and if the ring doesn&rsquo;t seem to promote anything I find objectionable.</p>
