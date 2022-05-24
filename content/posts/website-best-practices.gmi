@@ -911,7 +911,7 @@ Try using a tool to view a list of all your link names. Just about every screen 
 
 Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists; AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices. When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
-### Arbitrary viewports
+### Single-column layout
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
@@ -921,7 +921,11 @@ Verify this using the horizontal-line test: mentally draw a horizontal line acro
 
 => https://html.spec.whatwg.org/dev/grouping-content.html#grouping-content "HTML living standard, section 4.4: Grouping content" lists grouping elements.
 
-Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well as C6:
+Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. It also ensures that selection behavior and caret movements during caret navigation remain predictable.
+
+=> https://en.wikipedia.org/wiki/Caret_navigation Wikipedia: Caret navigation
+
+Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well as C6:
 
 => https://www.w3.org/WAI/WCAG21/Techniques/css/C27.html C27: Making the DOM order match the visual order
 => https://www.w3.org/WAI/WCAG22/Techniques/css/C6 C6: Positioning content based on structural markup
@@ -1101,11 +1105,12 @@ Google has more aggressive tap-target recommendations: it recommends raising the
 
 The edges of a touch screen are often tap-targets (the top edge might toggle navigation or scroll to the top, the bottom may have home/back buttons, and the right side may have a scrollbar), so keep elements slightly away from those.
 
-On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
+On lists with many links, I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
-=> https://seirdy.one/2020/11/23/website-best-practices.html#webmentions The webmention list after this article separates links with timestamps and some paragraph spacing.
-=> https://seirdy.one/#posts The homepage posts list separates links with non-interactive text descriptions
-=> https://seirdy.one/2022/02/02/floss-security.html The list of related articles at the beginning of one of my posts does the same.
+=> https://seirdy.one/2020/11/23/website-best-practices.html#webmentions 1. The webmention list after this article separates links with timestamps and some paragraph spacing.
+2. Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer, 
+=> https://seirdy.one/#posts 3. The homepage posts list separates links with non-interactive text descriptions
+=> https://seirdy.one/2022/02/02/floss-security.html 4. The list of related articles at the beginning of one of my posts does the same.
 
 ### Line spacing
 

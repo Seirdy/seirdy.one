@@ -18,6 +18,7 @@ featured: 2
 image: "serenity-4x.png"
 image_alt: "Retro-looking browser with bitmap fonts showing this article's \"code snippet 4\"."
 techarticle: true
+evergreen: true
 title: "Best practices for inclusive textual websites"
 ---
 <section role="doc-preface">
@@ -957,7 +958,7 @@ Try using a tool to view a list of all your link names. Just about every screen 
 
 Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^19] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
-### Arbitrary viewports
+### Single-column layout
 
 The remainder of the "Layout" section is possibly the most subjective part of this article, and the part with the most exceptions. Consider it more of a weak suggestion than hard advice. Use your own judgement.
 
@@ -965,7 +966,7 @@ A simple layout looks good at a variety of window sizes, rendering responsive la
 
 Verify this using the horizontal-line test: mentally draw a horizontal line across your page, and make sure it doesn't intersect more than one landmark. Ideally it shouldn't intersect multiple different [grouping elements](https://html.spec.whatwg.org/dev/grouping-content.html) either. The "source order viewer" in Chromium's DevTools can assist with this process.
 
-Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
+Keeping a single-column layout that doesn't require responsive layout changes ensures smooth window re-sizing. Doing so while keeping an identical source, DOM, and visual order ensures layout consistency: spatial references such as "the paragraph above this heading" or "the bottom image of a section" will be unambiguous to screen reader, phone, and desktop users. It also ensures that selection behavior and caret movements during [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation) remain predictable. Achieving this type of layout entails using the WCAG&nbsp;2.2 techniques <cite>[C27: Making the DOM order match the visual order](https://www.w3.org/WAI/WCAG22/Techniques/css/C27.html)</cite> as well as <cite>[C6: Positioning content based on structural markup](https://www.w3.org/WAI/WCAG22/Techniques/css/C6)</cite>.
 
 Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a powerful vector for [JS-free fingerprinting](https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/). This is one of the reasons why I didn't recommend resolution- or dimension-aware imagesets in the [image optimization section](#image-optimization).
 
@@ -1123,11 +1124,15 @@ Tap targets should be at least 44 pixels tall and wide [according to the WCAG](h
 
 The edges of a touch screen are often tap-targets (the top edge might toggle navigation or scroll to the top, the bottom may have home/back buttons, and the right side may have a scrollbar), so keep elements slightly away from those. Keeping away from edges is doubly important on phones: they may have rounded edges that are easy to miss-tap, or reinforced cases that make the very edge of a screen difficult to reach.
 
-On lists without visible bullets, I dropped the default indentation. I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
+On lists with many links, I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
 - The [webmention list](#webmentions) after this article separates links with timestamps and some paragraph spacing.
 
+- Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer, 
+
 - The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the beginning of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with non-interactive text descriptions
+
+- This list separates two list-items containing links with a third list-item that lacks links.
 
 ### Line spacing
 
@@ -1431,7 +1436,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 7. Ensure the page responds correctly to browser zoom. No sizes or dimensions should remain "fixed" across zoom levels.
 
-8. Test keyboard navigability with the <kbd>Tab</kbd> key and [caret navigation](https://en.wikipedia.org/wiki/Caret_navigation). Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
+8. Test keyboard navigability with the <kbd>Tab</kbd> key and caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 
 9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 
