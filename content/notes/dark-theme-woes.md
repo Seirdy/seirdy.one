@@ -1,6 +1,6 @@
 ---
 title: "Dark theme woes"
-date: 2022-05-25T00:00:32-07:00
+date: 2022-05-24T23:53:32-00:00
 ---
 I try to have limited reliance on CSS media queries in favor of being inclusive by as many people as possible by default, including fingerprinting-averse readers. Unfortunately, I have concluded that it is impossible to set one single website color palette that ticks all of the following boxes:
 
