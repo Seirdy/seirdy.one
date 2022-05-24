@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+https://seirdy.one
+http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion
+https://envs.net/~seirdy
+https://seirdy.envs.net
+
+# This is the valid /mirrors.txt file for seirdy.one and an example of the OMG standard:
+# - https://dark.fail/spec/omg.txt
+# - (mirror) https://raw.githubusercontent.com/DarkDotFail/archive/main/spec/omg.txt
+#
+# Mirrors.txt Rules:
+#  - Mirrors must be signed by a PGP key which is in /pgp.txt hosted at all of your URLs.
+#  - Any line in this file which begins with “http://“ or “https://“ is an official mirror of your site.
+#  - Mirrors must all host the same content. No forums, no link lists. Place those in /related.txt following these same standards.
+#  - All valid mirrors must only contain a scheme and domain name, no ports or paths.
+#  - /pgp.txt and /mirrors.txt must have the same content on all of your URLs.
+#  - Text which is not intended to be parsed as an official mirror must be commented out with a “#” as the first character on the line.
+## gemini mirrors:
+# gemini://seirdy.one
+# gemini://envs.net/~seirdy
+# gemini://seirdy.envs.net
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEErGrx+DjfPcwuR6bPHoktsqX4RHkFAmKNPW4ACgkQHoktsqX4
+RHnDbg//ZDgtwNkdWE/VoA8rqICRGOImmtgkT5pJVJjF4OtpHIaQlzkhH7Xq7DTg
+Ke+2h7fnwg956l4okp0yNlkbx4mbpsEpjyMB3GCu9WigzDYwpX482/TIWdTP7gHJ
+N8wJPH2gEdjZP1zIvcU/m1UMjHrykCjGTxWnsR6NDvH7ky6zdHjc1E92hNz0Feyp
+rht3CvAZ9PMlXq2afBMKU6H2AFvcnCH/qgIYfCuDF8Xjnl+SA2khwYvO3BBeJcn9
+RvzlB9pJudK7C42DKcXRBPaAOrrVPFng6/R7nQasHddsuABTd1+Vtqvl1C8LJdts
+Pm+Cuyx81PbT58x7KsjJ8MYNxy01ue2Ta3LevHXsvG0rEX5iVyjWMFRwUQjUqvz2
+xg4zcTKENob/I8YF6AT/JP3EWtesaP3CLGmvQllwZY5QOcLtTywFewla+OfuRIw/
+51F3qA2VJbP5ICT9IeawE1xCLns8oJJoinKi1AcrI7yq3lftFiEfX9vwdZMEkjxs
+Jzam8cpba1iaVx2ABkJMAYdVgquAjlX8QOfJwWTzp+unojSnxMapInICOft0iQoA
++3Zqkclauf5XXZ60+UIHcFE23/LyPdpiOUo7Bjl29pRgJW0/BBfqazWgu4kiqJcn
+kuFbEGYGkucLqaC+JhPp2bzDu+F/jWc52HLddRzCf5TX667qY1s=
+=qVE/
+-----END PGP SIGNATURE-----
