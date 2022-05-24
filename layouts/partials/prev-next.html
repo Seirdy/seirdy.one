@@ -1,3 +1,7 @@
+{{ $name := "post" -}}
+{{- if eq .Page.Section "notes" -}}
+	{{- $name = "note" -}}
+{{- end -}}
 <aside aria-labelledby="continue-hd">
 	<nav aria-labelledby="continue-hd">
 		<h2 id="continue-hd">Continue reading</h2>
@@ -6,7 +10,7 @@
 			<li>Previous post: <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a></li>
 			{{- end -}}
 			{{- with .NextInSection }}
-			<li>Next post: <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a></li>
+			<li>Next {{ $name }}: <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a></li>
 			{{- end }}
 		</ul>
 	</nav>

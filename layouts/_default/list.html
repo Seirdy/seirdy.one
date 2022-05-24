@@ -1,3 +1,7 @@
 {{ define "main" }}
+{{- if eq .Page.Section "notes" -}}
+{{- partial "notes.html" . -}}
+{{- else -}}
 {{- partial "posts.html" . -}}
+{{- end -}}
 {{ end }}

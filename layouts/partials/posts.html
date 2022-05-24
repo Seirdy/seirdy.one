@@ -16,7 +16,7 @@
 		Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite>
 	</p>
 	<ol>
-		{{- $posts := (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+		{{- $posts := (where site.RegularPages "Section" "posts") -}}
 		{{- if not $isStandalone -}}
 			{{- $posts = sort (where $posts "Params.featured" ">" 0) "Params.featured" -}}
 		{{- end -}}
@@ -38,8 +38,11 @@
 				{{- else -}}
 				</h3>
 				{{- end }}
-				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>, updated
-				<time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+				{{- if lt .Date .Lastmod -}}
+					, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+				{{- end }}
+
 				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
 				<p>{{- partial "wordcount.html" . -}}</p>
 			</article>

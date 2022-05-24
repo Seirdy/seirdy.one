@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main itemprop="mainEntity" class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
+	<h1 class="p-name" itemprop="name headline" id="posts">Notes</h1>
+	<p>This is my microblog. These are my short informal posts, sorted by date (newest first). For longer posts, <a href="../posts.html">see my blog</a>.</p>
+	<p role="doc-tip">
+		Timestamp format: <code>YYYY-MM-DD HH:MM:SS</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite>
+	</p>
+	<ol>
+		{{- $posts := (where site.RegularPages "Section" "notes") -}}
+		{{- range $posts -}}
+		{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+		<li itemprop="dataFeedElement" itemscope itemtype="https://schema.org/DataFeedItem">
+			<article class="h-entry hentry" itemprop="item" itemscope itemtype="https://schema.org/SocialMediaPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+				<h2 itemprop="name headline" class="p-name entry-title">
+					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
+						{{ .Title }}
+					</a>
+				</h2>
+				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04:05" }}</time>
+				{{- if lt .Date .Lastmod -}}
+					, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04:05" }}</time>
+				{{- end }}
+				<div class="e-content entry-content" itemprop="articleBody">{{ .Content }}</div>
+			</article>
+		</li>
+		{{- end }}
+	</ol>
+</main>
+{{ end }}

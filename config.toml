@@ -1,6 +1,8 @@
 baseURL = "https://seirdy.one/" # just the default, I have mirrors
 languageCode = "en-us"
 title = "Seirdy's Home"
+timeZone = "UTC"
+summaryLength = 150
 
 enableInlineShortcodes = true
 enableGitInfo = true
@@ -37,36 +39,44 @@ nick = "Seirdy"
 	url = "/posts.html"
 	weight = 10
 
+	[[menu.main]]
+	identifier = "notes"
+	name = "Notes"
+	title = "notes"
+	url = "/notes.html"
+	weight = 15
+
   [[menu.main]]
 	identifier = "bookmarks"
 	name = "Bookmarks"
 	title = "bookmarks"
 	url = "/bookmarks.html"
-	weight = 11
+	weight = 20
 
   [[menu.main]]
 	identifier = "about"
 	name = "About"
 	title = "about"
 	url = "/about.html"
-	weight = 20
+	weight = 30
 
   [[menu.main]]
 	identifier = "resume"
 	name = "Resume"
 	title = "resume"
 	url = "/resume.html"
-	weight = 30
+	weight = 40
 
   [[menu.main]]
 	identifier = "rss"
 	name = "RSS feed"
 	title = "rss feed"
 	url = "/posts/index.xml"
-	weight = 40
+	weight = 50
 
 [permalinks]
 posts = "/:year/:month/:day/:filename"
+notes = "/notes/:year/:month/:day/:filename"
 
 [markup.goldmark.renderer]
 # Allows HTML in Markdown

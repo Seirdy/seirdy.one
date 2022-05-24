@@ -14,6 +14,8 @@
 {{ $description := .Site.Params.Description -}}
 {{- if .Params.description -}}
 	{{- $description = .Params.Description -}}
+{{- else if .Summary -}}
+	{{- $description = .Summary | replaceRE `\n` ` ` | safeHTML -}}
 {{- else if eq $canonicalRelPermalink "/posts.html" -}}
 	{{- $description = "All the posts on Seirdy's Home" -}}
 {{- end -}}

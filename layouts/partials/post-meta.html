@@ -6,5 +6,7 @@ Posted <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished
 			<br>
 			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ $logURL | strings.ReplaceRE `\.md` `.gmi` }}">Changelog</a>.
 			{{- end }}
+			{{ if not (eq .Page.Section "notes") -}}
 			<br>
-			{{ partial "wordcount.html" . }}
+			{{ partial "wordcount.html" . -}}
+			{{ end }}
