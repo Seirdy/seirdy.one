@@ -7,7 +7,7 @@
 		<h2 id="continue-hd">Continue reading</h2>
 		<ul>
 			{{- with .PrevInSection }}
-			<li>Previous post: <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a></li>
+			<li>Previous {{ $name }} <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a></li>
 			{{- end -}}
 			{{- with .NextInSection }}
 			<li>Next {{ $name }}: <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a></li>
