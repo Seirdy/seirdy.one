@@ -254,7 +254,7 @@ This article's approach deliberately disregards computation speed, focusing only
 
 One well-known approach to calculating physical limits of computation is [Bremermann's limit](https://en.wikipedia.org/wiki/Bremermann%27s_limit), which calculates the speed of computation given a finite amount of mass. This article's approach disregards time, focusing only on mass-energy equivalence.
 
-<span itemprop="mentions" itemscope itemtype="https://schema.org/ScholarlyArticle">{{<cited-work name="Ultimate physical limits to computation" extraName="headline" url="https://arxiv.org/abs/quant-ph/9908043">}} by {{<indieweb-person itemprop="author" first-name="Seth" last-name="Lloyd" url="https://meche.mit.edu/people/faculty/SLLOYD@MIT.EDU">}}</span> further explores limits to computation speed on an ideal 1-kilogram computer.
+{{<mention-work itemtype="ScholarlyArticle">}}{{<cited-work name="Ultimate physical limits to computation" extraName="headline" url="https://arxiv.org/abs/quant-ph/9908043">}} by {{<indieweb-person itemprop="author" first-name="Seth" last-name="Lloyd" url="https://meche.mit.edu/people/faculty/SLLOYD@MIT.EDU">}}{{</mention-work>}} further explores limits to computation speed on an ideal 1-kilogram computer.
 
 Ac&shy;knowledge&shy;ments {#acknowledgements}
 --------------------------
@@ -263,7 +263,7 @@ Thanks to {{<indieweb-person itemprop="mentions" first-name="Barna" last-name="Z
 
 My notes from Thermal Physics weren't enough to write this; various Wikipedia articles were also quite helpful, most of which were linked in the body of the article.
 
-While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon <span itemprop="mentions" itemscope itemtype="https://schema.org/Book">{{<cited-work name="Applied Cryptography" url="https://www.schneier.com/books/applied-cryptography/">}} by {{<indieweb-person itemprop="author" first-name="Bruce" last-name="Schneier" url="https://schneier.com/">}}</span>. An excerpt [on his blog](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) involving setting the minimum energy per computation to <var>k</var><var>T</var>. I chose a more conservative estimate for <var>T</var> than Schneier did, and a _much_ greater source of energy.
+While I was struggling to come up with a good expression for the minimum energy used per password guess, I stumbled upon {{<mention-work itemprop="citation" itemtype="Book">}}{{<cited-work name="Applied Cryptography" url="https://www.schneier.com/books/applied-cryptography/">}} by {{<indieweb-person itemprop="author" first-name="Bruce" last-name="Schneier" url="https://schneier.com/">}}{{</mention-work>}}. An excerpt [on his blog](https://www.schneier.com/blog/archives/2009/09/the_doghouse_cr.html) involving setting the minimum energy per computation to <var>k</var><var>T</var>. I chose a more conservative estimate for <var>T</var> than Schneier did, and a _much_ greater source of energy.
 
 
 [^1]: <span itemprop="citation">James Massey (1994). "Guessing and entropy" (PDF). Proceedings of 1994 IEEE International Symposium on Information Theory. IEEE. p. 204.</span>

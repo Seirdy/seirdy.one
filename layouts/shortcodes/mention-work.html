@@ -1,0 +1,7 @@
+{{- $itemprop := "mentions" -}}
+{{- with .Get "itemprop" -}}
+	{{ $itemprop = . }}
+{{- end -}}
+<span class="h-cite" itemprop="{{ $itemprop }}"{{ with .Get "role" }} role="{{ . }}"{{ end }} itemscope itemtype="https://schema.org/{{ .Get "itemtype" }}">
+	{{- .Inner | markdownify | safeHTML -}}
+</span>

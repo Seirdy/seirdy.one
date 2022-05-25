@@ -160,7 +160,7 @@ In short: ME being proprietary doesn't mean that we can't find out how (in)secur
 Fuzzing
 -------
 
-Manual invocation of a program paired with a tracer like `strace` won't always exercise all code paths or find edge-cases. [Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) helps to bridge this gap: it automates the process of causing a program to fail by generating random or malformed data to feed it. Researchers then study failures and failure-conditions to isolate a bug.
+Manual invocation of a program paired with a tracer like `strace` won't always exercise all code paths or find edge-cases. [Fuzzing helps bridge this gap](https://en.wikipedia.org/wiki/Fuzzing): it automates the process of causing a program to fail by generating random or malformed data to feed it. Researchers then study failures and failure-conditions to isolate a bug.
 
 Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing an API](https://github.com/KissPeter/APIFuzzer/) for a web service) hardly need any implementation details.
 
