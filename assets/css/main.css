@@ -305,7 +305,7 @@ picture > img {
 /* WCAG Technique C25: use borders to separate sections.
  * Also use "content-visibility: auto" to improve performance by
  * reducing the number of DOM nodes rendered at once. */
-aside,
+aside nav,
 footer,
 section[role="doc-endnotes"],
 section[aria-labelledby="webmentions"] {
