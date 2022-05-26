@@ -8,6 +8,7 @@
 <h2 id="webrings">Webrings</h2>
 {{ $webringData := after 1 (getCSV "," "/csv/webrings.csv") -}}
 <p>This site is part of {{ len $webringData }} <a href="https://en.wikipedia.org/wiki/Webring">webrings</a>. A webring is a collection of sites in a circular doubly-linked list; each website links to the next and previous site in the list.</p>
+<p>Some of the “next” and “previous” links contain JavaScript; you need to enable it to be re-directed to the correct page. I’ve marked these links with “JS”.</p>
 <details>
 	<summary>Toggle webrings list</summary>
 	<ol>
