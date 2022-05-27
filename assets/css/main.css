@@ -3,6 +3,9 @@
  * specific a11y, compatibility, or critical
  * usability need.
  *
+ * One exception: I re-set the input styles so Safari wouldn't make them
+ * pill-shaped.
+ *
  * I also don't use any classes except for image presentation. (e.g. to
  * specify that an image should have pixelated rendering or be inverted
  * in dark mode).
@@ -193,6 +196,7 @@ form > div {
 
 /* Don't shrink the size of the text in forms. */
 input {
+	appearance: none;
 	font-size: inherit;
 }
 
