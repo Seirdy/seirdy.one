@@ -3,7 +3,9 @@
  * stays within the ideal APCA ranges, not lower and preferably not
  * higher either. */
 @media (prefers-color-scheme: dark) {
-	html {
+	button,
+	html,
+	input {
 		/* Pure white on black causes halation.
 		 * "background" is short for a bunch of unnecessary CSS rules
 		 * background-color is all I need.

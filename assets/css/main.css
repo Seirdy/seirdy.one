@@ -80,17 +80,14 @@ html {
 
 	/* Compensate for misalignment and wasted space caused by padding
 	 * and margin adjustments in nav children made to meet SC 2.5.5 */
-	dt > a,
-	header > nav,
 	footer > nav,
+	header > nav,
+	dt > a,
 	h2 + a {
 		margin-left: -.25em;
 	}
 	header > nav {
 		margin-bottom: -.75em;
-	}
-	footer > nav {
-		margin-top: -.75em;
 	}
 
 	summary {
@@ -110,12 +107,6 @@ html {
 		margin: .5em .25em;
 	}
 
-	/* Google a11y: ensure tap targets have >=8px space between them */
-	nav li,
-	li details li {
-		padding: 1em 0;
-	}
-
 	/* SC 2.5.5, Google a11y: Increase tap target size a bit
 	 * - Summary is a tappable button
 	 * - standalone links in lists are usually parts of collections of
@@ -126,7 +117,10 @@ html {
 	dt > a,
 	summary,
 	h2 + a,
-	li > a {
+	li > a,
+	nav li,
+	li details li,
+	input {
 		padding: .875em .25em;
 	}
 
@@ -181,6 +175,27 @@ nav ul li {
 	margin-right: .375em;
 }
 
+/* Make search box and submit button wide enough */
+form {
+	display: table;
+	width: 100%
+}
+
+input[type="search"] {
+	display: table-cell;
+	width: 100%;
+}
+
+form > div {
+	display: table-cell;
+	width: 1%;
+}
+
+/* Don't shrink the size of the text in forms. */
+input {
+	font-size: inherit;
+}
+
 /* narrow screens: reduce margin for blockquotes a lot, using
  * a border instead. Put it on the left and right to make it
  * LTR/RTL-neutral, for machine translators that change text
@@ -198,8 +213,9 @@ h1 {
 	hyphens: auto;
 }
 
-/* Very narrow screens: full hyphenation */
-@media (max-width: 13em) {
+/* Very narrow screens: full hyphenation.
+ * This is the typical width of a smart feature phone. */
+@media (max-width: 15em) {
 	body {
 		font-size: 100%;
 		-webkit-hyphens: auto;
@@ -270,6 +286,7 @@ pre {
  * too similar to the page background color. Also put a border around
  * <pre> and <code> to distinguish them in ways besides font-family.
  * This is Technique C25 of SC 1.4.8 */
+input,
 img,
 pre {
 	border: 1px solid;
@@ -326,11 +343,13 @@ section[aria-labelledby="webmentions"] {
 
 a:focus,
 summary:focus,
-pre[tabindex]:focus {
+pre[tabindex]:focus,
+form :focus {
 	outline: 3px solid;
 }
 
-/* Remove :focus styling for browsers that do support :focus-visible */
+/* Remove :focus styling for browsers that do support :focus-visible.
+ * Leave it on for form stuff. */
 @supports selector(:focus-visible) {
 	a:focus:not(:focus-visible),
 	summary:focus:not(:focus-visible),
