@@ -2,6 +2,7 @@
 <main itemprop="mainEntity" class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
 	<h1 class="p-name" itemprop="name headline" id="posts">Notes</h1>
 	<p>This is my microblog. These are my short informal posts, sorted by date (newest first). For longer posts, <a href="./posts.html">see my blog</a>.</p>
+	<p>An <a href="./notes/index.xml">RSS feed for these notes</a> is available.</p>
 	<p role="doc-tip">
 		Timestamp format: <code>YYYY-MM-DD HH:MM:SS</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite>
 	</p>
@@ -16,8 +17,8 @@
 						{{ .Title }}
 					</a>
 				</h2>
-				Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04:05" }}</time>
-				{{- if lt .Date .Lastmod -}}
+				Noted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04:05" }}</time>
+				{{ if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
 					, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04:05" }}</time>
 				{{- end }}
 				<div class="e-content entry-content" itemprop="articleBody">{{ .Content }}</div>

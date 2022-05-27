@@ -9,7 +9,16 @@
 <link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention">
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 {{- printf `<link href="%s" rel="manifest">` $webmanifest.RelPermalink | safeHTML }}
-<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="{{ $.Site.Title }}">
+<!--Feeds for both notes and posts; posts come first unless we're in the notes section.-->
+{{- $isNotes := false -}}
+{{- if or (eq .Section "notes") (eq .Title "Notes") -}}
+{{- $isNotes = true -}}
+<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}notes/index.xml" title="Notes">
+{{- end }}
+<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="Posts">
+{{ if not $isNotes -}}
+<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}notes/index.xml" title="Notes">
+{{- end }}
 <title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
 {{ $description := .Site.Params.Description -}}
 {{- if .Params.description -}}

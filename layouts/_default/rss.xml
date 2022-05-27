@@ -10,6 +10,7 @@
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
 {{- end -}}
+{{- $currentSection := .Section -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -27,7 +28,7 @@
 		{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ range where .Site.Pages "Kind" "page" }}
-    {{ if or (eq .Section "posts") (eq .Section "post") }}
+    {{ if (eq .Section $currentSection ) }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

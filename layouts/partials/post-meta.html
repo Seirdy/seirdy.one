@@ -1,16 +1,20 @@
-{{ $isNote := (eq .Page.Section "notes") -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+{{- $isNotes := false -}}
+{{- $action := "Posted" -}}
 {{- $logURL := printf "%scontent/%s" .Site.Params.logUrlPrefix .File.Path -}}
-{{- if not $isNote -}}
+{{- if or (eq .Page.Section "notes") (eq .Page.Title "Notes") -}}
+	{{- $isNotes = true -}}
+	{{- $action = "Noted" -}}
+{{- else -}}
 	{{- $logURL = $logURL | strings.ReplaceRE `\.md` `.gmi` -}}
 {{- end -}}
-Posted <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+{{- $action }} <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 			by {{- partial "indieweb-author.html" -}} on his <a rel="canonical" itemprop="mainEntityOfPage url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>{{- end -}}.
-			{{ if lt .Date .Lastmod -}}
+			{{ if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
 			<br>
 			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>. <a href="{{ $logURL }}">Changelog</a>.
 			{{- end }}
-			{{ if not $isNote -}}
+			{{ if not $isNotes -}}
 			<br>
 			{{ partial "wordcount.html" . -}}
 			{{ end }}
