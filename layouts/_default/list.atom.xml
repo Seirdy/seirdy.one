@@ -1,0 +1,32 @@
+{{- $pages := (where site.RegularPages "Section" .Section) -}}
+{{- if .IsHome }}
+  {{- $pages = where .Site.RegularPages "Section" "" -}}
+{{ end -}}
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ .Site.LanguageCode }}">
+  <title>{{ .Site.Title }}</title>
+	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
+  <icon>{{ .Site.Params.icon | absURL }}</icon>
+  <subtitle>{{ .Site.Params.Description }}</subtitle>
+  <author>
+    <name>Rohan Kumar</name>
+		<uri>https://seirdy.one/</uri>
+  </author>
+  <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+  <id>{{ .Permalink }}</id>
+  {{ range $pages }}
+  <entry>
+    <title type="html"><![CDATA[{{ .Title | safeHTML }}]]></title>
+    <link href="{{ .Permalink }}" />
+    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    <author>
+      <name>Rohan Kumar</name>
+			<uri>https://seirdy.one/</uri>
+    </author>
+    <id>{{ .Permalink }}</id>
+    <rights>CC-BY-SA 4.0 by Rohan Kumar</rights>
+    <content type="html"><![CDATA[{{ .Content | safeHTML }}]]></content>
+  </entry>
+  {{ end }}
+</feed>

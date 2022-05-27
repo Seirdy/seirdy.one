@@ -13,11 +13,11 @@
 {{- $isNotes := false -}}
 {{- if or (eq .Section "notes") (eq .Title "Notes") -}}
 {{- $isNotes = true -}}
-<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}notes/index.xml" title="Notes">
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes.xml" title="Notes">
 {{- end }}
-<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}posts/index.xml" title="Posts">
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts.xml" title="Posts">
 {{ if not $isNotes -}}
-<link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}notes/index.xml" title="Notes">
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes.xml" title="Notes">
 {{- end }}
 <title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
 {{ $description := .Site.Params.Description -}}
@@ -25,8 +25,6 @@
 	{{- $description = .Params.Description -}}
 {{- else if .Summary -}}
 	{{- $description = .Summary | replaceRE `\n` ` ` | safeHTML -}}
-{{- else if eq $canonicalRelPermalink "/posts.html" -}}
-	{{- $description = "All the posts on Seirdy's Home" -}}
 {{- end -}}
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ .Site.Author.name }}">
@@ -63,7 +61,7 @@
 <style>{{ $css.Content | safeCSS }}</style>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:site_name" content="{{ $.Site.Title }}">
-{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks.html") (eq $canonicalRelPermalink "/posts.html")) }}
+{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks/") (eq $canonicalRelPermalink "/posts/")) }}
 <meta property="og:type" content="article">
 {{- end -}}
 <!-- ANOTHER meta image?! When will it end? -->

@@ -5,8 +5,8 @@ It me! I'm Rohan Kumar, a.k.a. Seirdy (online handle).
 ## Other versions of this site
 
 Canonical versions:
-=> gemini://seirdy.one Canonical Gemini capsule
-=> https://seirdy.one Canonical Web site
+=> gemini://seirdy.one/ Canonical Gemini capsule
+=> https://seirdy.one/ Canonical Web site
 
 Staging/rough-draft Tildeverse mirror:
 => gemini://envs.net/~seirdy/ Tildeverse Gemini capsule
@@ -60,5 +60,5 @@ Orbits (Gemini equivalent of webrings):
 
 I don't collect anything except default server logs, purged regularly. More detail on a dedicated page:
 
-=> gemini://seirdy.one/privacy.gmi
+=> gemini://seirdy.one/privacy/
 

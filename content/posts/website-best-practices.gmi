@@ -34,7 +34,7 @@ Our goal: make a textual website maximally inclusive, using restricted enhanceme
 
 One of the defining differences between textual websites and advanced Web 2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. If that isn't reason enough, most non-mainstream search indexes have little to no support for JavaScript:
 
-=> ./../../../2021/03/10/search-engines-with-own-indexes.gmi A look at search engines with their own indexes
+=> ../../../../2021/03/10/search-engines-with-own-indexes/ A look at search engines with their own indexes
 
 The simplicity of basic textual websites should guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
@@ -604,7 +604,7 @@ Even if you set custom colors, ensure that the page is compatible with color ove
 
 The Web version of this page is an example application of Technique C25 and the similar G148:
 
-=> https://seirdy.one/2020/11/23/website-best-practices.html The Web mirror of this Gemlog post
+=> https://seirdy.one/posts/2020/11/23/website-best-practices/ The Web mirror of this Gemlog post
 => https://www.w3.org/WAI/WCAG22/Techniques/general/G148 Technique G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults
 
 The Web version of this page only uses non-default colors when a user agent requests a dark color scheme (using the "prefers-color-scheme" CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes or disabling CSS altogether, the page layout remains clear.
@@ -1082,7 +1082,7 @@ Excessive indentation makes reading difficult on narrow viewports, but preservin
 
 For now, I've decided to keep some indentation on list elements (<ol>, <dl>, <ul>) since I often fill them with links. See see this article's table of contents on its Web mirror for an example:
 
-=> https://seirdy.one/2020/11/23/website-best-practices.html#toc Table of contents
+=> https://seirdy.one/posts/2020/11/23/website-best-practices/#toc Table of contents
 
 This indentation provides important non-interactive negative space. Readers with hand tremors depend on this space to scroll without accidentally selecting an interactive element:
 
@@ -1107,10 +1107,10 @@ The edges of a touch screen are often tap-targets (the top edge might toggle nav
 
 On lists with many links, I had to find other ways to ensure adequate tap-target size and provide sufficient non-interactive space for readers with hand-tremors to scroll. Some examples:
 
-=> https://seirdy.one/2020/11/23/website-best-practices.html#webmentions 1. The webmention list after this article separates links with timestamps and some paragraph spacing.
+=> https://seirdy.one/posts/2020/11/23/website-best-practices/#webmentions 1. The webmention list after this article separates links with timestamps and some paragraph spacing.
 2. Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer, 
 => https://seirdy.one/#posts 3. The homepage posts list separates links with non-interactive text descriptions
-=> https://seirdy.one/2022/02/02/floss-security.html 4. The list of related articles at the beginning of one of my posts does the same.
+=> https://seirdy.one/posts/2022/02/02/floss-security/ 4. The list of related articles at the beginning of one of my posts does the same.
 
 ### Line spacing
 
@@ -1194,7 +1194,7 @@ Google's style guide recommends annotating format placeholders in code blocks wi
 
 For an example, check the HTML version of this article's code sample describing my PNG optimization pipeline:
 
-=> https://seirdy.one/2021/03/10/search-engines-with-own-indexes.html#png-pipeline PNG pipeline
+=> https://seirdy.one/posts/2021/03/10/search-engines-with-own-indexes/#png-pipeline PNG pipeline
 
 Most implementations do not yet support `translate="yes"` embedded inside untranslated blocks, but I'm counting on this changing.
 
@@ -1358,7 +1358,7 @@ If your site is simple enough, it should automatically handle the vast majority 
 
 No matter how simple a page is, I don't think simplicity eliminates the need for testing. I outlined the need to analyze actual run-time behavior in another post exploring how code alone doesn't give the full picture:
 
-=> gemini://seirdy.one/2022/02/02/floss-security.gmi The right thing for the wrong reasons: FLOSS doesn't imply security
+=> ../../../../2022/02/02/floss-security/ The right thing for the wrong reasons: FLOSS doesn't imply security
 
 ### Automated tests
 

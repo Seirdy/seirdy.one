@@ -12,7 +12,7 @@ tags:
     - featured
     - web
 sitemap:
-    ChangeFreq: daily
+    ChangeFreq: weekly
     Priority: 0.7
 featured: 2
 image: "serenity-4x.png"
@@ -74,7 +74,7 @@ A false sense of security is far worse than transparent insecurity. Don't offer 
 
 Consider taking hardening measures to maximize the security benefits made possible by the simplicity of textual websites, starting with script removal.
 
-JavaScript and WebAssembly are responsible for the bulk of modern web exploits. If that isn't reason enough, most [non-mainstream search indexes](./../../../2021/03/10/search-engines-with-own-indexes.html) have little to no support for JavaScript. Ideally, a text-oriented site can enforce a scripting ban at the [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (<abbr title="Content Security Policy">CSP</abbr>) level.
+JavaScript and WebAssembly are responsible for the bulk of modern web exploits. If that isn't reason enough, most [non-mainstream search indexes](../../../../2021/03/10/search-engines-with-own-indexes/) have little to no support for JavaScript. Ideally, a text-oriented site can enforce a scripting ban at the [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (<abbr title="Content Security Policy">CSP</abbr>) level.
 
 {{<codefigure>}} {{< codecaption >}} this is the CSP for my main website, with hashes removed for readability. {{< /codecaption >}}
 
@@ -373,7 +373,7 @@ I've discussed loading pages in the background, but what about saving a page off
 
 <figcaption itemprop="caption">
 
-Infinite-scroll means that accidental navigation to a link results in losing your place. From [xkcd](https://xkcd.com/1309/ "{itemprop='url'}").
+Infinite-scroll means that accidental navigation to a link results in losing your place. From <a itemprop="url" href="https://xkcd.com/1309/">xkcd</a>
 
 </figcaption>
 {{< /transcribed-image-figure >}}
@@ -676,7 +676,7 @@ Black on white? How often do you see that kind of contrast in real life? Tone it
 
 Even if you set custom colors, ensure that the page is compatible with color overrides: elements shouldn't be distinguished solely by foreground and background color. [Technique C25](https://www.w3.org/WAI/WCAG22/Techniques/css/C25) for the <cite>Web Content Accessibility Guidelines (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>)&nbsp;2.2</cite> describes how doing so can meet the WCAG&nbsp;2.2's [Success Criterion&nbsp;1.4.8](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation). Specifically, it describes using default colors in combination with visible borders. The latter helps distinguish elements from surrounding content without relying on a custom color palette.
 
-[This page's canonical location](https://seirdy.one/2020/11/23/website-best-practices.html) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
+[This page's canonical location](https://seirdy.one/posts/2020/11/23/website-best-practices/) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
 
 Color overrides go well beyond simple foreground and background color changes. Windows High Contrast Mode (<abbr title="Windows High Contrast Mode">WHCM</abbr>) is perhaps the best example. [WHCM makes advanced modifications to color palettes](#win-hcm): it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides.[^15]
 
@@ -1110,7 +1110,7 @@ Readers with hand tremors depend on this space to scroll without accidentally se
 {{<image-figure>}} {{<picture name="touch_targets" alt="List of rectangles with a 56 pixel wide square to its left, filling negative space.">}}
 
 <figcaption itemprop="caption">
-I made sure to leave enough non-interactive space in <a href="../../../#webrings">my homepage&rsquo;s webring list</a> to accommodate a 48&nbsp;px tap target, with extra space in between.
+I made sure to leave enough non-interactive space in <a href="../../../../#webrings">my homepage&rsquo;s webring list</a> to accommodate a 48&nbsp;px tap target, with extra space in between.
 </figcaption>
 {{</image-figure>}}
 
@@ -1130,7 +1130,7 @@ On lists with many links, I had to find other ways to ensure adequate tap-target
 
 - Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer, 
 
-- The [homepage posts list](https://seirdy.one/#posts) and the list of related articles at the beginning of [one of my posts](https://seirdy.one/2022/02/02/floss-security.html) separates links with non-interactive text descriptions
+- The [posts list](../../../../) and the list of related articles at the beginning of [one of my posts](../../../../2022/02/02/floss-security/) separates links with non-interactive text descriptions
 
 - This list separates two list-items containing links with a third list-item that lacks links.
 
@@ -1375,7 +1375,7 @@ Testing
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand <abbr title="Plain-Old, Semantic HTML">POSH</abbr>.
 
-No matter how simple a page is, I don't think simplicity eliminates the need for testing. I outlined the need to analyze actual run-time behavior in [another post exploring how code alone doesn't give the full picture](https://seirdy.one/2022/02/02/floss-security.html).
+No matter how simple a page is, I don't think simplicity eliminates the need for testing. I outlined the need to analyze actual run-time behavior in [another post exploring how code alone doesn't give the full picture](../../../../2022/02/02/floss-security/).
 
 ### Automated tests
 

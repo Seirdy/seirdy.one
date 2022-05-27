@@ -13,7 +13,7 @@ title: "Resilient Git, Part 1: Hydra Hosting"
 ---
 <div role="note">
 
-This is Part 1 of a series called [Resilient Git](/2020/11/17/git-workflow-0.html "{itemprop='relatedLink'}").
+This is Part 1 of a series called <a itemprop="relatedLink" href="../../../../2020/11/17/git-workflow-0/">Resilient Git</a>
 
 </div>
 

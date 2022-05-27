@@ -22,7 +22,7 @@ Intro&shy;duction {#introduction}
 -----------------
 
 <p role="note">
-<em>Update: I wrote a follow up: <a href="../../../2021/02/23/keeping-platforms-open.html">Keeping platforms open</a>. Check it out if you found this article interesting.</em>
+<em>Update: I wrote a follow up: <a href="../../../../2021/02/23/keeping-platforms-open/">Keeping platforms open</a>. Check it out if you found this article interesting.</em>
 </p>
 
 <p itemprop="backstory">
@@ -209,7 +209,7 @@ I initially decided to expand it to its current form for personal reasons. Nowad
 
 This article extends the guiding philosophies of the Free Software and Copyleft movements. Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) for giving good feedback over IRC.
 
-Since 2900 words wasn't quite enough, I wrote a follow-up: [Keeping platforms open](/2021/02/23/keeping-platforms-open.html). Check it out if you found this article interesting.
+Since 2900 words wasn't quite enough, I wrote a follow-up: [Keeping platforms open](../../../../2021/02/23/keeping-platforms-open/). Check it out if you found this article interesting.
 
 Translations
 ------------

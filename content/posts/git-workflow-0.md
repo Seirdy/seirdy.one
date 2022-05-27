@@ -22,7 +22,7 @@ Following the drama, I'm putting together a multi-part guide on how to leverage 
 
 I'll update this post as I add articles to the series. At the moment, I've planned to write the following articles:
 
-1. [Hydra Hosting](/2020/11/18/git-workflow-1.html): repository hosting.
+1. [Hydra Hosting](../../../../2020/11/18/git-workflow-1/): repository hosting.
 
 2. Community feedback (issues, support, etc.)
 
@@ -55,5 +55,5 @@ Q: I'm not interested in trying anything new, no matter what the benefits are.
 
 A: First of all, that wasn't a question. Second, this series isn't for you. You should not read this. I recommend doing literally anything else.
 
-Next: Resilient Git, Part 1: [Hydra Hosting](/2020/11/18/git-workflow-1.html)
+Next: Resilient Git, Part 1: [Hydra Hosting](../../../../2020/11/18/git-workflow-1/)
 

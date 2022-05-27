@@ -59,7 +59,7 @@ These logs are purged _every two days._
 
 ### How I use your information
 
-I use server logs to detect <abbr title="Denial of Service">DoS</abbr> attacks, misbehaving bots, and search engines to add to [my public collection](https://seirdy.one/2021/03/10/search-engines-with-own-indexes.html).
+I use server logs to detect <abbr title="Denial of Service">DoS</abbr> attacks, misbehaving bots, and search engines to add to [my public collection](../posts/2021/03/10/search-engines-with-own-indexes/).
 
 Information I share
 -------------------

@@ -2,7 +2,7 @@ This article is the second entry of series of posts exploring situations in whic
 
 My previous article, Whatsapp and the domestication of users, got more attention than I was expecting. Some responses gave me a lot to think about,¹ especially regarding *actions* we can take. I suggest reading that article first; it explained what "user domestication" is and why it's a problem. It enumerated three countermeasures: FLOSS, simplicity, and open platforms.
 
-=>  ./../../../2021/01/27/whatsapp-and-the-domestication-of-users.gmi Whatsapp and the Domestication of Users
+=>  ../../../../2021/01/27/whatsapp-and-the-domestication-of-users/ Whatsapp and the Domestication of Users
 
 Hard problems, by definition, lack easy solutions. Simply choosing (or creating) a platform that avoids user domestication isn't enough if that platform can change. The price of freedom is eternal vigilance; in addition to settling on the right platform, we must ensure that it honors its users in both the present *and the future*. Keeping a platform FLOSS and simple is more straightforward² than keeping a platform "open".
 
@@ -56,7 +56,7 @@ Matrix is an open and federated instant-messaging platform similar to XMPP, with
 
 Since there aren't any third-party clients and servers that can replace the official ones, one vendor is close to controlling all parts of the platform. The growing complexity required of clients and servers can also further entrench these dominant implementations, as I explained in the previous article's "Simplicity" section:
 
-=> gemini://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.gmi
+=> ../../../../2021/01/27/whatsapp-and-the-domestication-of-users/
 
 Matrix is close to being a boxed platform because the official client and server can iterate independently of the greater ecosystem.
 

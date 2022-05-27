@@ -18,11 +18,12 @@ I find it quite easy to handle views different from my own. I feel more troubled
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source software (<abbr title="Free, Libre, and Open-Source Software">FLOSS</abbr>) is necessary but insufficient to preserve user autonomy:
 
-[Whatsapp and the domestication of users](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html "{itemprop='mentions'}")
-: The phenomenon of a class of predatory businesses models I call "user domestication" and defense measures: FLOSS, open platforms, and simplicity.
-
-[Keeping platforms open](./../../../2021/02/23/keeping-platforms-open.html "{itemprop='mentions'}")
-: How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.
+<dl>
+<dt><a href="../../../../2021/01/27/whatsapp-and-the-domestication-of-users/" itemprop="mentions">Whatsapp and the domestication of users</a></dt>
+<dd>The phenomenon of a class of predatory businesses models I call &ldquo;user domestication&rdquo; and defense measures: FLOSS, open platforms, and simplicity.</dd>
+<dt><a href="../../../../2021/02/23/keeping-platforms-open/" itemprop="mentions">Keeping platforms open</a></dt>
+<dd>How open platforms can lose their openness, and what measures can prevent this. The Web, XMPP, email, and Matrix are examples that highlight both sides of the issue.</dd>
+</dl>
 
 After two posts spanning over 5000 words, I need to add some nuance.
 
@@ -199,7 +200,7 @@ I readily concede to several points in favor of source availability from a secur
 
 - Source code can make analysis _easier_ by _supplementing_ source-independent approaches. The lines between the steps I mentioned in the [four-step vulnerability-fixing process](#how-security-fixes-work) are blurry.
 
-- Patching vulnerabilities is important. Source availability makes it possible for the community, package maintainers, or reporters of a vulnerability to patch software. Package maintainers often blur the line between "packager" and "contributor" by helping projects migrate away from abandoned/insecure dependencies. One example that comes to mind is the Python 2 to Python 3 transition for projects like Calibre.[^12] Being able to fix issues independent of upstream support is an important mitigation against [user domestication](./../../../2021/01/27/whatsapp-and-the-domestication-of-users.html).
+- Patching vulnerabilities is important. Source availability makes it possible for the community, package maintainers, or reporters of a vulnerability to patch software. Package maintainers often blur the line between "packager" and "contributor" by helping projects migrate away from abandoned/insecure dependencies. One example that comes to mind is the Python 2 to Python 3 transition for projects like Calibre.[^12] Being able to fix issues independent of upstream support is an important mitigation against [user domestication](../../../../2021/01/27/whatsapp-and-the-domestication-of-users/).
 
 - Some developers/vendors don't distribute binaries that make use of modern toolchain-level exploit mitigations (e.g. <abbr title="Position-Independent Executables">PIE</abbr>, <abbr title="ReLocation Read-Only">RELRO</abbr>, stack canaries, automatic variable initialization, [<abbr title="Control-Flow Integrity">CFI</abbr>](https://clang.llvm.org/docs/ControlFlowIntegrity.html), etc.[^13]). In these cases, building software yourself with these mitigations (or delegating it to a distro that enforces them) requires source code availability (or at least some sort of intermediate representation).
 

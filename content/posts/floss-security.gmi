@@ -4,8 +4,8 @@ I find it easy to handle views different from my own. I feel more troubled when 
 
 It's no secret that I'm a passionate supporter of software freedom: I've written two posts about how Free, Libre, and Open-Source Software (FLOSS) is necessary but insufficient to preserve user autonomy:
 
-=> ./../../../2021/01/27/whatsapp-and-the-domestication-of-users.gmi Whatsapp and the domestication of users
-=> ./../../../2021/02/23/keeping-platforms-open.gmi Keeping platforms open
+=> ../../../../2021/01/27/whatsapp-and-the-domestication-of-users/ Whatsapp and the domestication of users
+=> ../../../../2021/02/23/keeping-platforms-open/ Keeping platforms open
 
 After two posts spanning over 5000 words, I need to add some nuance.
 

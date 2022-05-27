@@ -68,7 +68,7 @@ Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection
 
 Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry:
 
-=> gemini://seirdy.one/2021/01/12/password-strength.gmi Becoming physically immune to brute-force attacks
+=> ../posts//2021/01/12/password-strength/ Becoming physically immune to brute-force attacks
 
 Written in Go.
 
@@ -80,7 +80,7 @@ I ought to come up with more interests than these, but that sounds hard.
 
 I care a lot about accessibility, resource usage, and compatibility. My Web site may seem simple, but I put almost 20 thousand words of thought into its design in an effort to maximize its inclusivity:
 
-=> gemini://seirdy.one/2020/11/23/website-best-practices.gmi Best practices for inclusive textual websites
+=> ../posts/2020/11/23/website-best-practices/ Best practices for inclusive textual websites
 
 This site should work well whether you're using Lynx, NetSurf, the Tor Browser with a screen reader, or a printout
 
@@ -94,7 +94,7 @@ While I care very much about "free software" (the name is confusing, it refers t
 
 I think that simply meeting GNU's definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of user domestication:
 
-=> gemini://seirdy.one/2021/01/27/whatsapp-and-the-domestication-of-users.gmi Whatsapp and the domestication of users
+=> ../posts/2021/01/27/whatsapp-and-the-domestication-of-users/ Whatsapp and the domestication of users
 
 I lean towards simplicity; I usually prefer line-mode command-line interfaces that follow the UNIX philosophy. If a piece of software is complex enough to require a funding round, I would rather avoid it. My reasons for preferring simplicity also relate to user autonomy: extremely complex software can't be forked easily, creating dependence on the vendor. It's also because I'm a bit paranoid and want to know everything that happens on my system.
 

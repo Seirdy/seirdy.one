@@ -7,150 +7,151 @@ summaryLength = 150
 enableInlineShortcodes = true
 enableGitInfo = true
 disableHugoGeneratorInject = true  # I inject it explicitly at the BOTTOM of <head>
-uglyurls = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+uglyurls = false
+pygmentsCodeFences = false
+pygmentsUseClasses = false
 disableKinds = ["taxonomy", "term"]
 
 [params]
-description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
-src = "https://sr.ht/~seirdy/seirdy.one/"
-canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
-webmentionEndpoint = "https://seirdy.one/webmentions/receive"
-logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
-copyright = "Copyright © 2021 Rohan Kumar"
-dark = "auto"
-highlight = false
+	description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
+	src = "https://sr.ht/~seirdy/seirdy.one/"
+	canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
+	webmentionEndpoint = "https://seirdy.one/webmentions/receive"
+	logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
+	copyright = "Copyright © 2021 Rohan Kumar"
+	dark = "auto"
+	highlight = false
+	icon = "/favicon.svg"
 
 [frontmatter]
-lastmod = ['lastmod', ':git', 'date', 'publishDate']
+	lastmod = ['lastmod', ':git', 'date', 'publishDate']
 
 [author]
-name = "Rohan Kumar"
-first = "Rohan"
-last = "Kumar"
-nick = "Seirdy"
+	name = "Rohan Kumar"
+	url = "https://seirdy.one/"
+	first = "Rohan"
+	last = "Kumar"
+	nick = "Seirdy"
 
 [menu]
-  [[menu.main]]
-	identifier = "posts"
-	name = "Posts"
-	title = "posts"
-	url = "/posts.html"
-	weight = 10
+	[[menu.main]]
+		identifier = "posts"
+		name = "Posts"
+		title = "posts"
+		url = "/posts/"
+		weight = 10
 
 	[[menu.main]]
-	identifier = "notes"
-	name = "Notes"
-	title = "notes"
-	url = "/notes.html"
-	weight = 15
+		identifier = "notes"
+		name = "Notes"
+		title = "notes"
+		url = "/notes/"
+		weight = 15
 
-  [[menu.main]]
-	identifier = "bookmarks"
-	name = "Bookmarks"
-	title = "bookmarks"
-	url = "/bookmarks.html"
-	weight = 20
+	[[menu.main]]
+		identifier = "bookmarks"
+		name = "Bookmarks"
+		title = "bookmarks"
+		url = "/bookmarks/"
+		weight = 20
 
-  [[menu.main]]
-	identifier = "about"
-	name = "About"
-	title = "about"
-	url = "/about.html"
-	weight = 30
+	[[menu.main]]
+		identifier = "about"
+		name = "About"
+		title = "about"
+		url = "/about/"
+		weight = 30
 
-  [[menu.main]]
-	identifier = "resume"
-	name = "Resume"
-	title = "resume"
-	url = "/resume.html"
-	weight = 40
+	[[menu.main]]
+		identifier = "resume"
+		name = "Resume"
+		title = "resume"
+		url = "/resume/"
+		weight = 40
 
-  [[menu.main]]
-	identifier = "rss"
-	name = "RSS feed"
-	title = "rss feed"
-	url = "/posts/index.xml"
-	weight = 50
+	[[menu.main]]
+		identifier = "rss"
+		name = "RSS feed"
+		title = "rss feed"
+		url = "/posts/index.xml"
+		weight = 50
 
 [permalinks]
-posts = "/:year/:month/:day/:filename"
-notes = "/notes/:year/:month/:day/:filename"
+	posts = "/posts/:year/:month/:day/:filename"
+	notes = "/notes/:year/:month/:day/:filename"
 
 [markup.goldmark.renderer]
-# Allows HTML in Markdown
-unsafe = true
+	unsafe = true
 
 [markup.tableOfContents]
-ordered = true
-startLevel = 2
-endLevel = 3
+	ordered = true
+	startLevel = 2
+	endLevel = 3
 
 # lifted from https://git.sr.ht/~sircmpwn/drewdevault.com
 [mediaTypes]
 [mediaTypes."text/gemini"]
-suffixes = ["gmi"]
+	suffixes = ["gmi"]
 [mediaTypes."application/manifest+json"]
-suffixes = ["webmanifest"]
+	suffixes = ["webmanifest"]
 
 [outputFormats]
-[outputFormats.Gemini]
-name = "GEMTEXT"
-isPlainText = true
-isHTML = false
-mediaType = "text/gemini"
-protocol = "gemini://"
-permalinkable = true
-path = "gemini/"
+	[outputFormats.Gemini]
+		name = "GEMTEXT"
+		isPlainText = true
+		isHTML = false
+		mediaType = "text/gemini"
+		protocol = "gemini://"
+		permalinkable = true
+		path = "gemini/"
 
-[outputFormats.GEMRSS]
-name = "GEMRSS"
-isHTML = false
-mediaType = "application/rss+xml"
-protocol = "gemini://"
-path = "gemini/"
+	[outputFormats.atom]
+		baseName="atom"
+		isPlainText = true
+		mediaType = "application/xml"
 
 [outputs]
-section = ["HTML", "RSS", "GEMRSS"]
+	home = ["HTML", "atom", "GEMTEXT", "RSS"]
+	section = ["HTML", "atom", "RSS"]
+	posts = ["HTML", "atom", "RSS"]
+	notes = ["HTML", "atom", "RSS"]
 
 # https://github.com/nekr0z/static-webmentions
 [webmentions]
-newDir = "public"
-oldDir = "old"
-webmentionsFile = "mentions.json"
-excludeSources = [
-  "/tags/*",                    # only trailing * are supported at the moment
-  "/posts/*",                     # this only excludes /posts/index.html, not /posts/somepost/
-  "/",                          # same as "/index.html"
-]
+	newDir = "public"
+	oldDir = "old"
+	webmentionsFile = "mentions.json"
+	excludeSources = [
+		"/tags/*",                    # only trailing * are supported at the moment
+		"/posts/*",                     # this only excludes /posts/index.html, not /posts/somepost/
+		"/",                          # same as "/index.html"
+	]
 
-# addresses that we don't want to send webmentions to
-# other schemes and stuff that I link to too often
-excludeDestinations = [
-  "mailto:",
-	"gemini:",
-	"https://web.archive.org",
-	"https://lists.sr.ht/~seirdy/seirdy.one-comments",
-	"https://useplaintext.email/",
-	"https://seirdy.one",
-]
+	# addresses that we don't want to send webmentions to
+	# other schemes and stuff that I link to too often
+	excludeDestinations = [
+		"mailto:",
+		"gemini:",
+		"https://web.archive.org",
+		"https://lists.sr.ht/~seirdy/seirdy.one-comments",
+		"https://seirdy.one",
+	]
 
 [imaging.exif]
- # Regexp matching the fields you want to Exclude from the (massive) set of Exif info
-# available. As we cache this info to disk, this is for performance and
-# disk space reasons more than anything.
-# If you want it all, put ".*" in this config setting.
-# Note that if neither this or ExcludeFields is set, Hugo will return a small
-# default set: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
-includeFields = ""
+	# Regexp matching the fields you want to Exclude from the (massive) set of Exif info
+	# available. As we cache this info to disk, this is for performance and
+	# disk space reasons more than anything.
+	# If you want it all, put ".*" in this config setting.
+	# Note that if neither this or ExcludeFields is set, Hugo will return a small
+	# default set: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
+	includeFields = ""
 
-# Regexp matching the Exif fields you want to exclude. This may be easier to use
-# than IncludeFields above, depending on what you want.
-excludeFields = ".*"
+	# Regexp matching the Exif fields you want to exclude. This may be easier to use
+	# than IncludeFields above, depending on what you want.
+	excludeFields = ".*"
 
-# don't minify html but minify other resources, esp the fulltext rss feed
+# don't minify html but minify other resources, esp the fulltext rss/atom feeds
 [minify]
-minifyOutput = true
-disableXML = false
-disableHTML = true
+	minifyOutput = false
+	disableXML = false
+	disableHTML = true
