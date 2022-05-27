@@ -11,7 +11,7 @@
 		 * background-color is all I need.
 		 * This is the brightest background that still achieves an APCA
 		 * contrast of 90 Lc.*/
-		background-color: #1a1919;
+		background-color: #191919;
 		/* Dimming the default text color is not the same as reducing screen
 		 * brightness, since other colors in this stylesheet have brighter
 		 * red and blue channels than the default text. */

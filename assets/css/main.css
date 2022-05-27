@@ -106,8 +106,9 @@ html {
 
 	/* If we have a list of disclosure widgets, we need some
 	 * non-interactive space on the screen that's safe to tap. */
+	form,
 	li details {
-		margin: .5em .25em;
+		margin: .5em 0;
 	}
 
 	/* SC 2.5.5, Google a11y: Increase tap target size a bit
@@ -178,25 +179,37 @@ nav ul li {
 	margin-right: .375em;
 }
 
-/* Make search box and submit button wide enough */
+/* Make search box and submit button as wide as possible while keeping
+ * them next to each other. */
+
+/* Use table-style layout (no, not actual tables. eww.). It's like a
+ * single-row flexbox that supports more browsers. Kanged this CSS from
+ * ww.gov.uk. Give the entire width of the row to the search box, but
+ * allow the minimum width for the submit button. */
 form {
 	display: table;
 	width: 100%
 }
 
+/* A text box should not look like a button */
 input[type="search"] {
 	display: table-cell;
-	width: 100%;
+	width: 98%;
 }
 
 form > div {
 	display: table-cell;
+	vertical-align: top; /* IE and some botique browsers need this */
 	width: 1%;
 }
 
-/* Don't shrink the size of the text in forms. */
 input {
+	/* Browsers like Safari make the submit button pill-shaped which
+	 * clashes with the input box. The only purely-cosmetic change on this
+	 * site. */
 	appearance: none;
+
+	/* Don't shrink the size of the text in forms. */
 	font-size: inherit;
 }
 
