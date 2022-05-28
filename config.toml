@@ -69,13 +69,6 @@ disableKinds = ["taxonomy", "term"]
 		url = "/resume/"
 		weight = 40
 
-	[[menu.main]]
-		identifier = "rss"
-		name = "RSS feed"
-		title = "rss feed"
-		url = "/posts/index.xml"
-		weight = 50
-
 [permalinks]
 	posts = "/posts/:year/:month/:day/:filename"
 	notes = "/notes/:year/:month/:day/:filename"
