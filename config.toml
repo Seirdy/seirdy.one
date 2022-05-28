@@ -145,6 +145,6 @@ disableKinds = ["taxonomy", "term"]
 
 # don't minify html but minify other resources, esp the fulltext rss/atom feeds
 [minify]
-	minifyOutput = false
+	minifyOutput = true
 	disableXML = false
 	disableHTML = true
