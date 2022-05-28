@@ -7,6 +7,8 @@
 	<hr>
 </header>
 <div class="e-content entry-content" itemprop="articleBody">
-	{{ partial "processed-content" . -}}
+	<meta itemprop="author" content="Rohan Kumar" itemid="https://seirdy.one/#seirdy">
+	<!--That was needed bc some reading modes get confused by other authors referenced in the text-->
+	{{- partial "processed-content" . -}}
 </div>
 </article>
