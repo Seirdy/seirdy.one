@@ -181,7 +181,7 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 
 - Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
 
-- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and _my favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi.
+- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and _my favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. <ins cite="https://memex.marginalia.nu/log/58-marginalia-open-source.gmi" datetime="2022-05-28T14:09:00-07:00">Update 2022-05-28: [Marginalia.nu is now open source.](https://memex.marginalia.nu/log/58-marginalia-open-source.gmi)</ins>
 
 - [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 
