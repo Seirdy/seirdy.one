@@ -209,7 +209,8 @@ input {
 	 * site. */
 	appearance: none;
 
-	/* Don't shrink the size of the text in forms. */
+	/* Don't shrink the size of the text in forms or make it system-ui. */
+	font-family: sans-serif;
 	font-size: inherit;
 }
 
