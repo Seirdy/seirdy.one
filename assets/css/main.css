@@ -252,6 +252,12 @@ kbd {
 	font-weight: bold;
 }
 
+/* <ins> should not be mistaken for hyperlinks. */
+ins {
+	text-decoration: none;
+	font-style: italic;
+}
+
 /* narrow screens: remove unused figure margins
  * figure captions shouldn't look like regular paragraphs; there should
  * be some extra space.
