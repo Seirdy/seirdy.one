@@ -27,6 +27,13 @@
     <id>{{ .Permalink }}</id>
     <rights>CC-BY-SA 4.0 by Rohan Kumar</rights>
     <content type="html"><![CDATA[{{ .Content | safeHTML }}]]></content>
+		<object-type xmlns="http://activitystrea.ms/spec/1.0/">
+			{{- if eq .Section "notes" -}}
+				note
+			{{- else if eq .Section "posts" -}}
+				article
+			{{- end -}}
+		</object-type>
   </entry>
   {{ end }}
 </feed>
