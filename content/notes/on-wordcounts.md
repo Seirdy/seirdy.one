@@ -7,7 +7,7 @@ Reply to {{< mention-work itemprop="about" itemtype="SocialMediaPosting" reply=t
 {{</mention-work>}}
 </aside>
 
-Some of my posts are long. My longest post is almost 20k words as of right now (60-80 pages printed out), and will get longer as I update it. A WebKit browser
+Some of my posts are long. My longest post is almost 20k words as of right now (60-80 pages printed out), and will get longer as I update it.
 
 Length is an imperfect yet useful measure of the amount of detail one can expect. There are many "lists of practices" on the Web about web design. By communicating that mine would take an hour and a half to read, I communicate that my list has some more thought put into it.
 
