@@ -1,7 +1,7 @@
 <head>
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 <meta charset="utf-8">
-<meta name="disabled-adaptations" content="watch"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="disabled-adaptations" content="watch"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1">
 {{ end -}}
