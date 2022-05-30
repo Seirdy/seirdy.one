@@ -1,7 +1,7 @@
 <section aria-labelledby="webmentions">
 		<h2 id="webmentions" tabindex="-1">Webmen&shy;tions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
-		{{ partial "webmention-form.html" }}
+		{{ partial "webmention-form.html" . }}
 		<dl>
 			{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 			{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
