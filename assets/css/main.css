@@ -179,41 +179,6 @@ nav ul li {
 	margin-right: .375em;
 }
 
-/* Make search box and submit button as wide as possible while keeping
- * them next to each other. */
-
-/* Use table-style layout (no, not actual tables. eww.). It's like a
- * single-row flexbox that supports more browsers. Kanged this CSS from
- * ww.gov.uk. Give the entire width of the row to the search box, but
- * allow the minimum width for the submit button. */
-form > div {
-	display: table;
-	width: 100%
-}
-
-/* A text box should not look like a button */
-input:not([type="submit"]) {
-	display: table-cell;
-	width: 98%;
-}
-
-form > div > div {
-	display: table-cell;
-	vertical-align: top; /* IE and some botique browsers need this */
-	width: 1%;
-}
-
-input {
-	/* Browsers like Safari make the submit button pill-shaped which
-	 * clashes with the input box. The only purely-cosmetic change on this
-	 * site. */
-	appearance: none;
-
-	/* Don't shrink the size of the text in forms or make it system-ui. */
-	font-family: sans-serif;
-	font-size: inherit;
-}
-
 /* narrow screens: reduce margin for blockquotes a lot, using
  * a border instead. Put it on the left and right to make it
  * LTR/RTL-neutral, for machine translators that change text
@@ -284,8 +249,11 @@ samp {
 	font-family: monospace, monospace;
 }
 
-/* Some browsers don't support the hidden attr */
-span[hidden] {
+/* Some browsers don't support the hidden attr.
+ * I use hidden spans in backlinks to provide ARIA labels.
+ * Some ancient browsers don't support input[type="hidden"] */
+span[hidden],
+input[type="hidden"] {
 	display: none;
 }
 
@@ -352,6 +320,42 @@ section[role="doc-endnotes"],
 section[aria-labelledby="webmentions"] {
 	border-top: 1px solid;
 	content-visibility: auto;
+}
+
+/* Make search box and submit button as wide as possible while keeping
+ * them next to each other. */
+
+/* Use table-style layout (no, not actual tables. eww.). It's like a
+ * single-row flexbox that supports more browsers. Kanged this CSS from
+ * ww.gov.uk. Give the entire width of the row to the search box, but
+ * allow the minimum width for the submit button. */
+form > div {
+	display: table;
+	width: 100%
+}
+
+input {
+	/* Browsers like Safari make the submit button pill-shaped which
+	 * clashes with the input box. The only purely-cosmetic change on this
+	 * site. */
+	appearance: none;
+
+	/* Don't shrink the size of the text in forms or make it system-ui. */
+	font-family: sans-serif;
+	font-size: inherit;
+}
+
+/* A text box should take all available width */
+input:not([type="submit"]) {
+	display: table-cell;
+	width: 98%;
+}
+
+/* Pseudo-table-cell containing the submit button */
+form > div > div {
+	display: table-cell;
+	vertical-align: top; /* IE and some botique browsers need this */
+	width: 1%;
 }
 
 
