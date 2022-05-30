@@ -62,3 +62,5 @@ I don't collect anything except default server logs, purged regularly. More deta
 
 => gemini://seirdy.one/privacy/
 
+Poggies.
+

@@ -50,6 +50,8 @@ If you find a "Seirdy" somewhere else and don't know whether or not it's me, ple
 
 My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub, GitLab, and Codeberg too.
 
+<small>Poggies</small>
+
 Selected projects
 -----------------
 
