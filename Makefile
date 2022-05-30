@@ -52,10 +52,10 @@ hint: hugo .hintrc-local
 .PHONY: lint-local
 lint-local: lint-css lint-html
 
-# dev server
+# dev server, includes future and draft posts
 .PHONY: serve
 serve:
-	hugo serve --disableLiveReload $(HUGO_FLAGS)
+	hugo serve --disableLiveReload $(HUGO_FLAGS) -FwDb http://localhost:1313/
 
 .PHONY: hint-devserver
 hint-devserver: .hintrc-devserver
@@ -69,19 +69,16 @@ check-links: hugo
 .PHONY: test
 test: lint-css hint-devserver check-links
 
-gz:
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
-		| grep -v gemini \
-		| xargs ect -$(ECT_LEVEL) -gzip
-
+gzip:
+	sh scripts/compress.sh $(OUTPUT_DIR) gzip $(ECT_LEVEL)
 brotli:
-	find $(OUTPUT_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.xml' -o -name '*.webmanifest' -o -name '*.*.svg' \
-		| grep -v gemini \
-		| xargs brotli -q 11 --
+	sh scripts/compress.sh $(OUTPUT_DIR) brotli
+compress: gzip brotli
+.PHONY: gzip brotli compress
 
-compress: gz brotli
-
-.PHONY: compress gz brotli
+.PHONY: xhtmlize
+xhtmlize:
+	sh scripts/xhtmlize.sh $(OUTPUT_DIR)
 
 # save webmentions to a file, don't send yet
 mentions.json: hugo
@@ -98,44 +95,47 @@ deploy-html:
 
 .PHONY: deploy-gemini
 deploy-gemini:
-	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.gz' --exclude '*.br' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
+	rsync $(RSYNCFLAGS) --exclude '*.html' --exclude '*.xml' --exclude '*.xhtml' --exclude '*.gz' --exclude '*.br' --exclude-from .rsyncignore $(OUTPUT_DIR)/gemini/ $(OUTPUT_DIR)/about $(OUTPUT_DIR)/posts $(OUTPUT_DIR)/publickey.* $(GEMINI_RSYNC_DEST)/ --delete
 
 .PHONY: deploy
 deploy: deploy-html deploy-gemini
 
-## stuff for the staging server
-.PHONY: test-staging
-test-staging: deploy-html
-	yq e '.ci .collect .url | .[]' .lighthouserc.yml | xargs npx hint -f codeframe
-	npx lhci autorun
-
-.PHONY: all
-all: test deploy
-
-.PHONY: deploy-envs
-deploy-envs:
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs hugo
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local deploy
-
-.PHONY: deploy-prod
-deploy-prod:
+.PHONY: .prepare-deploy
+.prepare-deploy:
 	@$(MAKE) clean
 	@$(MAKE) hugo
 	@$(MAKE) compress
+	@$(MAKE) xhtmlize
+
+# deploy steps need to happen one at a time
+.PHONY: deploy-prod
+deploy-prod: .prepare-deploy
 	@$(MAKE) deploy
-
-
-# linting and compression can happen in parallel
-.PHONY: deploy-staging
-deploy-staging:
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging clean
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging hugo
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy
 
 .PHONY: deploy-onion
 deploy-onion:
-	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion clean
-	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion hugo
-	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion compress
-	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion deploy-html
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion deploy-prod
+
+# we only deploy html to the staging site
+.PHONY: deploy-staging
+deploy-staging:
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
+
+# we can lint and compress in parallel if cores are available
+.PHONY: .lint-and-prepare-deploy
+.lint-and-prepare-deploy:
+	@$(MAKE) clean
+	@$(MAKE) hugo
+	@$(MAKE) lint-local compress
+	@$(MAKE) xhtmlize
+
+.PHONY: lint-and-deploy-staging
+lint-and-deploy-staging:
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .lint-and-prepare-deploy
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
+
+.PHONY: deploy-envs
+deploy-envs:
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .lint-and-prepare-deploy
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
