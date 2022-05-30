@@ -41,9 +41,9 @@
 										{{ $webmention.title | truncate 200 -}}
 									{{ else -}}
 										{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
-									{{ end }}
-								</span>
-							</a>
+									{{ end -}}
+								</span
+							></a>
 							{{- if $webmention.author_name }}
 							by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
 								{{- end -}}
