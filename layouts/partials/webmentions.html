@@ -1,5 +1,5 @@
 <section aria-labelledby="webmentions">
-		<h2 id="webmentions" tabindex="-1">Webmen&shy;tions</h2>
+		<h2 id="webmentions" tabindex="-1">Webmen&#173;tions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>. Webmentions received for this post will appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
 		{{ partial "webmention-form.html" . }}
 		<dl>
@@ -11,9 +11,9 @@
 			{{ range sort $webmentions "created_at" -}}
 			{{ $webmention := . -}}
 				{{ if (eq $webmention.type "like") -}}
-				<div itemprop="potentialAction" itemscope itemtype="https://schema.org/LikeAction" class="u-like h-cite">
+				<div itemprop="potentialAction" itemscope="" itemtype="https://schema.org/LikeAction" class="u-like h-cite">
 				{{- else -}}
-				<div itemprop="comment" itemscope itemtype="https://schema.org/Comment" class="u-comment h-cite">
+				<div itemprop="comment" itemscope="" itemtype="https://schema.org/Comment" class="u-comment h-cite">
 				{{- end -}}
 				<!--Will eventually add role="comment" once WAI-ARIA 1.3 starts seeing some adoption.-->
 					<dt>
@@ -27,7 +27,7 @@
 					<dd>
 						{{ if (eq $webmention.type "like") -}}
 							{{ if $webmention.author_name -}}
-								<span itemprop="agent" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+								<span itemprop="agent" itemscope="" itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
 							{{ else if $webmention.title -}}
 								<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
 							{{ else -}}
@@ -45,7 +45,7 @@
 								</span
 							></a>
 							{{- if $webmention.author_name }}
-							by <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
+							by <span itemprop="author" itemscope="" itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
 								{{- end -}}
 						{{- end }}
 					</dd>

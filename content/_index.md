@@ -8,9 +8,9 @@ sitemap:
     - ChangeFreq: weekly
     - Priority: 0.9
 ---
-<div itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
+<div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
-Seirdy's Home
+Seirdy’s Home
 =============
 
 I'm <a itemprop="url" href="https://seirdy.one" rel="author home canonical me" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span> <span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (online handle).
@@ -38,9 +38,9 @@ Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://git
 Contact
 -------
 
-Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr>@pleroma<wbr>.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
-Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr>:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`.
+Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`.
 
 </div>
 

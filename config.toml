@@ -74,6 +74,7 @@ disableKinds = ["taxonomy", "term"]
 	notes = "/notes/:year/:month/:day/:filename"
 
 [markup.goldmark.renderer]
+	xhtml = true
 	unsafe = true
 
 [markup.tableOfContents]
@@ -102,6 +103,9 @@ disableKinds = ["taxonomy", "term"]
 		baseName="atom"
 		isPlainText = true
 		mediaType = "application/xml"
+	
+	[outputformats.html]
+		mediaType = "application/xhtml+xml"
 
 [outputs]
 	home = ["HTML", "atom", "GEMTEXT", "RSS"]

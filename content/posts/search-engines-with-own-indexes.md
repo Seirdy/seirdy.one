@@ -85,7 +85,7 @@ These are large engines that pass all my standard tests and more.
   - Fireball
   - You.com
   - Partially powers MetaGer by default; this can be turned off
-  - At this point, I mostly stopped adding Bing-<wbr>based search engines. There are just too many.
+  - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
@@ -112,7 +112,7 @@ These engines pass most of the tests listed in the "methodology" section. All of
 
 FairSearch supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data.
 
-### Smaller indexes, hit-and-<wbr>miss {#smaller-indexes-hit-and-miss}
+### Smaller indexes, hit-and-<wbr />miss {#smaller-indexes-hit-and-miss}
 
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
 
@@ -120,7 +120,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppen&shy;heimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 
-- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr>search.com](https://www.blog-search.com).
+- [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr />search.com](https://www.blog-search.com).
 
 - [Infotiger](https://alpha.infotiger.com/): A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 

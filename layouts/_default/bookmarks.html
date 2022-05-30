@@ -1,7 +1,7 @@
 {{ define "main" }}
-<main itemprop="mainEntity" class="h-feed hfeed" itemscope itemtype="https://schema.org/DataFeed">
-	<h1 id="bookmarks" class="p-name" itemprop="name headline">My book&shy;marks</h1>
-	{{ .Content }}
+<main itemprop="mainEntity" class="h-feed hfeed" itemscope="" itemtype="https://schema.org/DataFeed">
+	<h1 id="bookmarks" class="p-name" itemprop="name headline">My book&#173;marks</h1>
+	{{ partial "processed-content.html" . }}
 	<p role="doc-tip">
 		Timestamp format: <code>YYYY-MM-DD HH:MM</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite>
 	</p>
@@ -12,18 +12,18 @@
 			{{- $tags := split $bookmark.tags "," -}}
 			{{- $firstTag := index $tags 0 }}
 			{{- $timestamp := dateFormat "2006-01-02 15:04:05-0700" $firstTag }}
-			<li itemprop="dataFeedElement" itemscope itemtype="https://schema.org/DataFeedItem">
-				<meta itemprop="dateCreated" content="{{ $timestamp }}"><!--Just because we can't have one timestap refer to two items-->
-				<article class="h-entry hentry" itemprop="item" itemscope itemtype="https://schema.org/SocialMediaPosting">
-					<meta itemprop="headline" content="{{ $bookmark.title }}"><!--Just because we can't have one headline refer to two items-->
-					<h2 itemprop="sharedContent" itemscope itemtype="https://schema.org/WebPage" class="p-name">
+			<li itemprop="dataFeedElement" itemscope="" itemtype="https://schema.org/DataFeedItem">
+				<meta itemprop="dateCreated" content="{{ $timestamp }}" /><!--Just because we can't have one timestap refer to two items-->
+				<article class="h-entry hentry" itemprop="item" itemscope="" itemtype="https://schema.org/SocialMediaPosting">
+					<meta itemprop="headline" content="{{ $bookmark.title }}" /><!--Just because we can't have one headline refer to two items-->
+					<h2 itemprop="sharedContent" itemscope="" itemtype="https://schema.org/WebPage" class="p-name">
 						<a itemprop="url" href="{{ $bookmark.uri }}" class="u-bookmark-of h-cite">
-							<span itemprop="headline">{{ $bookmark.title | replaceRE `Defunctionalisation` `Defunction&shy;alisation` | safeHTML }}</span>
+							<span itemprop="headline">{{ $bookmark.title | replaceRE `Defunctionalisation` `Defunction&#173;alisation` | safeHTML }}</span>
 						</a>
 					</h2>
 					<p>
 						Bookmarked on: <time class="dt-published published" itemprop="datePublished" datetime="{{ dateFormat "2006-01-02 15:04:05Z07:00" $timestamp }}">{{ dateFormat "2006-01-02 15:04" $timestamp }}</time>
-						<br>Tags: <span itemprop="keywords">
+						<br />Tags: <span itemprop="keywords">
 						{{- $start := 2 -}}
 						{{- $firstTag := (index $tags 1) -}}
 						{{- if (eq $firstTag "public") -}}
@@ -39,7 +39,7 @@
 						{{- end }}
 						</span>
 					</p>
-					<p class="e-summary entry-summary" itemprop="description">{{ markdownify $bookmark.description }}</p>
+					<p class="e-summary entry-summary" itemprop="description">{{ $bookmark.description | markdownify | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘` | safeHTML }}</p>
 				</article>
 			</li>
 		{{- end }}

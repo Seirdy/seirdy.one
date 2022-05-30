@@ -130,7 +130,7 @@ Decompilers are seldom used alone in this context. Instead, they're typically a 
 
 ### Example: malware analysis
 
-These reverse-engineering techniques--a combination of tracing, packet sniffing, binary analysis, and memory dumps--make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
+These reverse-engineering techniques---a combination of tracing, packet sniffing, binary analysis, and memory dumps---make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
 
 To try this out yourself, use a sandbox designed for dynamic analysis. [Cuckoo](https://cuckoosandbox.org/) is a common and easy-to-use solution, while [DRAKVUF](https://drakvuf.com/) is more advanced.
 
@@ -152,7 +152,7 @@ Unfortunately, some components are poorly understood due to being obfuscated usi
 
 Skochinsky's and Corna's analysis was sufficient to clarify (but not completely contradict) sensationalism claiming that ME can remotely lock any PC (it was a former opt-in feature), can spy on anything the user does (they clarified that access is limited to unblocked parts of the host memory and the integrated GPU, but doesn't include e.g. the framebuffer), etc.
 
-While claims such as "ME is a black box that can do anything" are misleading, ME not without its share of vulnerabilities. My favorite look at its issues is a presentation by <span itemprop="mentions" itemscope itemtype="https://schema.org/PresentationDigitalDocument">{{<indieweb-person itemprop="author" first-name="Mark" last-name="Ermolov" url="https://www.blackhat.com/eu-17/speakers/Mark-Ermolov.html">}} and {{<indieweb-person itemprop="author" first-name="Maxim" last-name="Goryachy" url="https://www.blackhat.com/eu-17/speakers/Maxim-Goryachy.html">}} at Black Hat Europe 2017: [How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine](https://www.blackhat.com/docs/eu-17/materials/eu-17-Goryachy-How-To-Hack-A-Turned-Off-Computer-Or-Running-Unsigned-Code-In-Intel-Management-Engine-wp.pdf)</span>.
+While claims such as "ME is a black box that can do anything" are misleading, ME not without its share of vulnerabilities. My favorite look at its issues is a presentation by <span class="h-cite" itemprop="mentions" itemscope="" itemtype="https://schema.org/PresentationDigitalDocument">{{<indieweb-person itemprop="author" first-name="Mark" last-name="Ermolov" url="https://www.blackhat.com/eu-17/speakers/Mark-Ermolov.html">}} and {{<indieweb-person itemprop="author" first-name="Maxim" last-name="Goryachy" url="https://www.blackhat.com/eu-17/speakers/Maxim-Goryachy.html">}} at Black Hat Europe 2017: [How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine](https://www.blackhat.com/docs/eu-17/materials/eu-17-Goryachy-How-To-Hack-A-Turned-Off-Computer-Or-Running-Unsigned-Code-In-Intel-Management-Engine-wp.pdf)</span>.
 
 In short: ME being proprietary doesn't mean that we can't find out how (in)secure it is. Binary analysis when paired with runtime inspection can give us a good understanding of what trade-offs we make by using it. While ME has a history of serious vulnerabilities, they're nowhere near what [borderline conspiracy theories](https://web.archive.org/web/20210302072839/themerkle.com/what-is-the-intel-management-engine-backdoor/) claim.[^11]
 
@@ -181,12 +181,12 @@ I've said it before but let me say it again: fuzzing is really the top method to
 
 If you want to get started with fuzzing, I recommend checking out [the quick-start guide for American Fuzzy Loop](https://github.com/google/AFL/blob/master/docs/QuickStartGuide.txt). Some languages like Go 1.18 also have fuzzing tools available right in the standard library.
 
-### Example: CVE-<wbr>2022-0185
+### Example: CVE-<wbr />2022-0185
 
-A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-<wbr>2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
+A recent example of how fuzzing helps spot a vulnerability in an open-source project is [CVE-<wbr />2022-0185](https://www.openwall.com/lists/oss-security/2022/01/18/7): a Linux 0-day found by the Crusaders of Rust a few weeks ago. It was discovered using the [syzkaller](https://github.com/google/syzkaller) kernel fuzzer. The process was documented on Will's Root:
 
-<p class="h-cite" itemprop="citation" itemscope itemtype="https://schema.org/BlogPosting">
-	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-<wbr>2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io" itemprop="author">}}
+<p class="h-cite" role="doc-credit" itemprop="citation" itemscope="" itemtype="https://schema.org/BlogPosting">
+	<cite><a class="u-url p-name" itemprop="name" href="https://www.willsroot.io/2022/01/cve-2022-0185.html">CVE-<wbr />2022-0185 - Winning a $31337 Bounty after Pwning Ubuntu and Escaping Google's KCTF Containers</a></cite> by {{<indieweb-person nickname="willsroot" url="https://willsroot.io" itemprop="author">}}
 </p>
 
 I _highly_ encourage giving it a read; it's the perfect example of fuzzing with sanitizers to find a vulnerability, reproducing the vulnerability (by writing a tiny C program), _then_ diving into the source code to find and fix the cause, and finally reporting the issue (with a patch!). When source isn't available, the vendor would assume responsibility for the "find and fix" steps.

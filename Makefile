@@ -128,10 +128,10 @@ deploy-prod:
 # linting and compression can happen in parallel
 .PHONY: deploy-staging
 deploy-staging:
-	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging clean
-	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging hugo
-	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging lint-local compress
-	@$(MAKE) HUGO_BASEURL=https://staging.seirdy.one HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging clean
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging hugo
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
+	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy
 
 .PHONY: deploy-onion
 deploy-onion:

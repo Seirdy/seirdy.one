@@ -1,5 +1,5 @@
 <span {{ if (.Get "itemprop") -}}itemprop="{{- .Get "itemprop" -}}"{{- end }}
-	itemscope itemtype="https://schema.org/Person"
+	itemscope="" itemtype="https://schema.org/Person"
 	class="h-card vcard{{if eq (.Get "itemprop") "author"}} p-author{{end}}">
 	<a itemprop="url" href="{{- .Get "url" -}}" class="u-url url">
 		{{- if (.Get "avatar") -}}
@@ -14,7 +14,7 @@
 		</span>{{- if (.Get "appendString") -}}{{- .Get "appendString" -}}{{- end -}}{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 	</a>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 	{{- if (.Get "org") }}
-	from <span class="p-org org" itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
+	from <span class="p-org org" itemprop="affiliation" itemscope="" itemtype="https://schema.org/Organization">
 		<a itemprop="url" class="organization-name" href="{{- .Get "org-url" -}}">
 			<span itemprop="name">{{- .Get "org" -}}</span>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 		</a></span>

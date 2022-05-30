@@ -232,7 +232,7 @@ Don't use actual excerpts from pre-existing works as your password.
 Conclusion, TLDR
 ----------------
 
-Question: How much entropy should a password have to ensure it will _never_ be vulnerable to a brute-force attack? Can an impossibly efficient computer--the MOAC--crack your password?
+Question: How much entropy should a password have to ensure it will _never_ be vulnerable to a brute-force attack? Can an impossibly efficient computer---the MOAC---crack your password?
 
 Answer: limited only by energy, if a computer with the highest level of efficiency physically possible is made of matter, does work to compute, and obeys the conservation of energy:
 

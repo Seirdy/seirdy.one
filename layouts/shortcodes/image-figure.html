@@ -1,7 +1,7 @@
-<figure itemscope itemtype="https://schema.org/ImageObject"
+<figure itemscope="" itemtype="https://schema.org/ImageObject"
 	{{- with .Get "id" }} id="{{ . }}" tabindex="-1"{{ end -}}
 	{{- if .Get "representative" }} itemprop="image">
-<meta itemprop="representativeOfPage" content="true">
+<meta itemprop="representativeOfPage" content="true" />
 	{{- else }} itemprop="hasPart">
 {{- end }}
 {{ .Inner | markdownify | safeHTML }}

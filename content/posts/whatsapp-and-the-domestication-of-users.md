@@ -92,7 +92,7 @@ The bait-and-switch operation incurred backlash significant enough for a noticea
 
 <figcaption itemprop="caption">
 
-WhatsApp ad, taken from <span itemprop="encodesCreativeWork" itemscope itemtype="https://schema.org/WebPage">{{<cited-work name="Answering your questions about WhatsApp’s Privacy Policy" url="https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy">}} (archived: <a href="https://web.archive.org/web/20210121163337/https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" itemprop="archivedAt">Wayback Machine <time datetime="2021-01-21T16:33:37+00:00">2021-01-21</time> snapshot</a>)</span>
+WhatsApp ad, taken from <span itemprop="encodesCreativeWork" itemscope="" itemtype="https://schema.org/WebPage">{{<cited-work name="Answering your questions about WhatsApp’s Privacy Policy" url="https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy">}} (archived: <a href="https://web.archive.org/web/20210121163337/https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" itemprop="archivedAt">Wayback Machine <time datetime="2021-01-21T16:33:37+00:00">2021-01-21</time> snapshot</a>)</span>
 
 </figcaption>
 {{< /transcribed-image-figure >}}
@@ -188,7 +188,7 @@ Despite not liking Signal, I still recommended it to my non-technical friends be
 Food for thought
 ----------------
 
-Both of the prior two case studies--Mozilla and Signal--are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
+Both of the prior two case studies---Mozilla and Signal---are examples of well-meaning organizations unintentionally leaving users vulnerable to user domestication. The former represents a lack of simplicity but the presence of an open platform. The latter represents a closed platform with a higher degree of simplicity. Intent isn't in the picture when examining the three steps and countermeasures to user domestication.
 
 [paulsnar](https://mastodon.technology/@paulsnar) pointed out a potential conflict between simplicity and open platforms:
 
@@ -205,7 +205,7 @@ Closing notes
 
 Before it turned into a manifesto of sorts, this post was intended to be an expanded version of a comment I left under a [Fediverse post](https://fosstodon.org/@binyamin/105608407071699797) by [Binyamin Green](https://binyam.in/).
 
-I initially decided to expand it to its current form for personal reasons. Nowadays, people demand a thorough explanation every time I refuse to use something that "everybody" uses (WhatsApp, Microsoft Office, Windows, macOS, Google Docs...). They'll usually ignore the explanation, but they expect one anyway. By the next time I meet them, they'll have forgotten our prior conversation and will re-enact the same dialogue again. Justifying all my life choices by sending logically correct statements into the void--knowing that everything I say will be ignored--is an emotionally draining process that has taken a toll on my mental health for the past few years; sending my friends this article and changing the subject should save me a few gray hairs in the years to come.
+I initially decided to expand it to its current form for personal reasons. Nowadays, people demand a thorough explanation every time I refuse to use something that "everybody" uses (WhatsApp, Microsoft Office, Windows, macOS, Google Docs...). They'll usually ignore the explanation, but they expect one anyway. By the next time I meet them, they'll have forgotten our prior conversation and will re-enact the same dialogue again. Justifying all my life choices by sending logically correct statements into the void---knowing that everything I say will be ignored---is an emotionally draining process that has taken a toll on my mental health for the past few years; sending my friends this article and changing the subject should save me a few gray hairs in the years to come.
 
 This article extends the guiding philosophies of the Free Software and Copyleft movements. Thanks to [Barna Zsombor](https://bzsombor.web.elte.hu/) for giving good feedback over IRC.
 

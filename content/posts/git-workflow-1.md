@@ -49,7 +49,7 @@ This process should pretty straightforward. You can run `git remote add` (see `g
 	fetch = +refs/heads/*:refs/remotes/gh_upstream/*
 ```
 
-If that's too much work--a perfectly understandable complaint--automating the process is trivial. Here's [an example from my dotfiles](https://git.sr.ht/~seirdy/dotfiles/tree/master/Executables/shell-scripts/bin/git-remote-setup).
+If that's too much work---a perfectly understandable complaint---automating the process is trivial. Here's [an example from my dotfiles](https://git.sr.ht/~seirdy/dotfiles/tree/master/Executables/shell-scripts/bin/git-remote-setup).
 
 Seamless pushing and pulling
 ----------------------------

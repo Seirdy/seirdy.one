@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-{{ .Content }}
+{{ partial "processed-content.html" . }}
 {{ partial "posts.html" . }}
 {{ partial "webrings.html" . }}
 </main>

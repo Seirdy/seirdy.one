@@ -1,8 +1,8 @@
 {{- define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 {{- .Scratch.Set "codeIndex" 1 -}}
-<main itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting{{ if .Params.techarticle }} https://schema.org/TechArticle{{ end }}" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
-	<link itemprop="isPartOf" href="{{ .Site.Params.CanonicalBaseURL }}/">
+<main itemprop="hasPart" itemscope="" itemtype="https://schema.org/BlogPosting{{ if .Params.techarticle }} https://schema.org/TechArticle{{ end }}" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+	<link itemprop="isPartOf" href="{{ .Site.Params.CanonicalBaseURL }}/" />
 	{{ partial "full-article.html" . }}
 	{{ partial "webmentions.html" . }}
 </main>
