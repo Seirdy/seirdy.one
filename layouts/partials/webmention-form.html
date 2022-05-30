@@ -1,0 +1,12 @@
+<form
+	itemprop="potentialAction" itemscope itemtype="https://schema.org/CommentAction"
+	action="https://seirdy.one/webmentions/receive" method="post">
+	<meta itemprop="actionStatus" content="PotentialActionStatus">
+	<label for="menchie">Publish a response on your own website and share the link here to send me a webmention! Include a link to this page's canonical location for it to be accepted.</label>
+	{{ $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+	<input type="hidden" name="target" value="{{ .Site.Params.canonicalBaseURL }}{{ $canonicalRelPermalink }}">
+	<div><!--We need the extra divs to serve as pseudo-table-cells.-->
+		<input id="menchie" type="url" name="source">
+		<div><input type="submit" value="submit"></div>
+	</div>
+</form>

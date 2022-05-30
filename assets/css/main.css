@@ -186,18 +186,18 @@ nav ul li {
  * single-row flexbox that supports more browsers. Kanged this CSS from
  * ww.gov.uk. Give the entire width of the row to the search box, but
  * allow the minimum width for the submit button. */
-form {
+form > div {
 	display: table;
 	width: 100%
 }
 
 /* A text box should not look like a button */
-input[type="search"] {
+input:not([type="submit"]) {
 	display: table-cell;
 	width: 98%;
 }
 
-form > div {
+form > div > div {
 	display: table-cell;
 	vertical-align: top; /* IE and some botique browsers need this */
 	width: 1%;
