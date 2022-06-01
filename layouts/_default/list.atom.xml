@@ -28,7 +28,7 @@
     <rights>CC-BY-SA 4.0 by Rohan Kumar</rights>
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					{{ partial "processed-content.html" . | replaceRE `(?: )?item(type|scope|prop|id|ref)="[^"]*"` "" | safeHTML }}
+					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | safeHTML }}
 			</div>
 		</content>
 		<object-type xmlns="http://activitystrea.ms/spec/1.0/">
