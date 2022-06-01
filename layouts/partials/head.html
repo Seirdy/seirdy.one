@@ -13,11 +13,11 @@
 {{- $isNotes := false -}}
 {{- if or (eq .Section "notes") (eq .Title "Notes") -}}
 {{- $isNotes = true -}}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes.xml" title="Notes" />
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
 {{- end }}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts.xml" title="Posts" />
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
 {{ if not $isNotes -}}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes.xml" title="Notes" />
+<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}/notes/atom.xml" title="Notes" />
 {{- end }}
 <title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
 {{ $description := .Site.Params.Description -}}
