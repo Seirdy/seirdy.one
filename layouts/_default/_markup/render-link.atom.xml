@@ -8,5 +8,5 @@
 	{{- $href := printf "%s%s%s" $baseURL $parsedDest.Path $fragment | absURL -}}
 	<a href="{{ $href }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
 {{- else -}}
-	<a href="{{ .Destination }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+	<a href="{{ .Destination | htmlEscape }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
 {{- end -}}
