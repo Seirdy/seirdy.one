@@ -11,13 +11,7 @@
 			or
 			( # See https://github.com/validator/validator/issues/1166
 				.message == "Attribute “media” not allowed on element “meta” at this point."
-				and .firstColumn == 1
 				and (.extract | test(" name=\"theme-color\""))
-			)
-			or
-			( # XHTML5 gang
-				.message == "Bad value “application/xhtml+xml; charset=utf-8” for attribute “content” on element “meta”: The legacy encoding declaration did not start with “text/html;”."
-				and .firstColumn == 1
 			)
 		) | not
 	)

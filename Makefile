@@ -104,8 +104,8 @@ deploy: deploy-html deploy-gemini
 .prepare-deploy:
 	@$(MAKE) clean
 	@$(MAKE) hugo
-	@$(MAKE) compress
 	@$(MAKE) xhtmlize
+	@$(MAKE) compress
 
 # deploy steps need to happen one at a time
 .PHONY: deploy-prod
@@ -127,8 +127,8 @@ deploy-staging:
 .lint-and-prepare-deploy:
 	@$(MAKE) clean
 	@$(MAKE) hugo
-	@$(MAKE) lint-local compress
 	@$(MAKE) xhtmlize
+	@$(MAKE) lint-local compress
 
 .PHONY: lint-and-deploy-staging
 lint-and-deploy-staging:

@@ -1,5 +1,5 @@
 <head>
-<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta charset="UTF-8" />
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 <meta name="disabled-adaptations" content="watch" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 {{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
@@ -8,7 +8,7 @@
 <link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
 <link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
 {{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
-{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML }}
+{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
 <!--Feeds for both notes and posts; posts come first unless we're in the notes section.-->
 {{- $isNotes := false -}}
 {{- if or (eq .Section "notes") (eq .Title "Notes") -}}
