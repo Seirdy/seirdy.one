@@ -1010,7 +1010,7 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
     padding: 0 3%;
   }
 
-  div[itemprop="articleBody"] {
+  div[itemprop='articleBody'] {
     margin: auto;
     max-width: 36em;
   }
