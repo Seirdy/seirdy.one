@@ -1,6 +1,6 @@
 ---
 template: "posts.html"
-description: "All the posts on Seirdy's Home"
+description: "All the long-form posts on Seirdy's Home"
 title: "Posts"
 sitemap:
     ChangeFreq: weekly

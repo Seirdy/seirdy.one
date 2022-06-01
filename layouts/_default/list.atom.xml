@@ -7,7 +7,7 @@
 	<title>{{ .Section | humanize}} on {{ .Site.Title }}</title>
 	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
   <icon>{{ .Site.Params.icon | absURL }}</icon>
-  <subtitle>{{ .Site.Params.Description }}</subtitle>
+  <subtitle>{{ .Params.Description }}</subtitle>
   <author>
     <name>Rohan Kumar</name>
 		<uri>https://seirdy.one/</uri>

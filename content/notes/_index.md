@@ -1,6 +1,6 @@
 ---
 template: "notes.html"
-description: "All the notes on Seirdy's Home"
+description: "All the microblogs (\"notes\") on Seirdy's Home"
 title: "Notes"
 sitemap:
     ChangeFreq: daily
