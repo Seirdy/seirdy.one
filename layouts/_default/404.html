@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{- default "" .Site.LanguageCode }}" xml:lang="{{- default "" .Site.LanguageCode }}" prefix="cc: http://creativecommons.org/ns#">
+<head>
+<meta charset="UTF-8" />
+<meta name="disabled-adaptations" content="watch" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="robots" content="noindex,nofollow" />
+<title>{{ .Title }}</title>
+{{ if not (in site.BaseURL ".onion") -}}
+{{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
+{{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
+{{- end }}
+{{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png" />` $icon_192.RelPermalink | safeHTML -}}
+{{ $favicon := resources.Get "/favicon.png" -}}
+{{ $favicon_base64 := $favicon.Content | base64Encode }}
+{{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png" />` $favicon_base64 | safeHTML }}
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#111" media="(prefers-color-scheme:dark)" />
+<meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)" />
+<!-- inline CSS; remember to allow it with a hash in the CSP -->
+{{- $resources := slice -}}
+{{- $resources = $resources | append (resources.Get "/css/main.css") -}}
+{{ $dark := .Site.Params.dark | default "auto" -}}
+{{- if not (eq $dark "off") -}}
+{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+{{- end -}}
+{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
+{{- $css := $resources | resources.Concat "css/style.css" | minify -}}
+<style>{{ $css.Content | safeCSS }}</style>
+{{ hugo.Generator }}
+</head>
+<body>
+<header>
+	<nav aria-label="Global">
+		<ul>
+			<li>
+				<a rel="home" href="https://seirdy.one/">Seirdy&#39;s Home</a>
+			</li>
+			<li>
+				<a href="/posts/">Posts</a>
+			</li>
+			<li>
+				<a href="/notes/">Notes</a>
+			</li>
+			<li>
+				<a href="/bookmarks/">Bookmarks</a>
+			</li>
+			<li>
+				<a href="/about/">About</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<h1>{{ .Title }}</h1>
+	{{ partial "processed-content.html" . -}}
+</main>
+<footer>
+	<nav aria-label="site info">
+		<ul>
+			<li>
+				<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+			</li>
+			<li>
+				<a rel="source" href="{{ .Site.Params.src }}">Source code</a>
+			</li>
+			<li>
+				<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor mirror</a>
+			</li>
+			<li>
+				<a href="{{ site.BaseURL }}privacy/">Privacy</a>
+			</li>
+			<li>
+				<a href="{{ site.BaseURL }}about/#location-seirdy-online">Contact</a>
+			</li>
+		</ul>
+	</nav>
+</footer>
+</body>
+</html>
