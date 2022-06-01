@@ -4,15 +4,11 @@
 			{{- $currentPage := . -}}
 			{{- $canonicalRelPermalink := $currentPage.RelPermalink | replaceRE "^/~seirdy/" "/" }}
 			{{- $isHome := false -}}
-			{{- if eq $currentPage.RelPermalink "/" -}}
+			{{- if eq $canonicalRelPermalink "/" -}}
 				{{- $isHome = true -}}
 			{{- end }}
 			<li
-				{{ if $isHome -}}
-					itemprop="sameAs"
-				{{ else -}}
-					itemprop="isPartOf"
-				{{ end -}}
+				itemprop="isPartOf"
 				itemscope="" itemtype="https://schema.org/Blog https://schema.org/WebSite"
 				itemid="{{ .Site.Params.CanonicalBaseURL }}/">
 				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome }} aria-current="page"{{- end -}}>
