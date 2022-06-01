@@ -7,7 +7,7 @@ Reply to {{< mention-work itemprop="about" itemtype="SocialMediaPosting" reply=t
 {{</mention-work>}}
 </aside>
 
-Commodification means something else; I'm assuming you're referring to "commoditize", as in "commoditize your complement". Although in this context the words have some _really interesting_ overlap, which is why I brought it up. See {{<mention-work itemprop="citation" role="doc-cite" itemtype="BlogPosting">}}{{<cited-work url="https://rushkoff.com/commodified-vs-commoditized/" name="Commodified vs. Commoditized">}} by {{<indieweb-person first-name="Douglas" last-name="Rushkoff" url="https://rushkoff.com">}}{{</mention-work>}}.
+Commodification means something else; I'm assuming you're referring to "commoditize", as in "commoditize your complement". Although in this context the words have some _really interesting_ overlap, which is why I brought it up. See {{<mention-work itemprop="citation" role="doc-credit" itemtype="BlogPosting">}}{{<cited-work url="https://rushkoff.com/commodified-vs-commoditized/" name="Commodified vs. Commoditized">}} by {{<indieweb-person first-name="Douglas" last-name="Rushkoff" url="https://rushkoff.com">}}{{</mention-work>}}.
 
 We are first commodified by being made a complement to a product, then gradually commoditized as complements ideally are.
 
