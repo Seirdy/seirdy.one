@@ -26,7 +26,7 @@
     </author>
     <id>{{ .Permalink }}</id>
     <rights>CC-BY-SA 4.0 by Rohan Kumar</rights>
-		<content type="xhtml">
+		<content type="xhtml" xml:base="{{ .Permalink }}">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | safeHTML }}
 			</div>
