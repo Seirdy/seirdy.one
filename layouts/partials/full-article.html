@@ -1,8 +1,8 @@
 <article class="h-entry hentry"><!--Once WAI-ARIA 1.3 gains traction, I'll add aria-details for webmentions.-->
 <header>
 	<h1 itemprop="name headline" class="p-name entry-title">{{ .Title }}</h1>
-	{{- if not .Params.disableMeta }}
-	{{ partial "post-meta.html" . }}
+	{{ if not .Params.disableMeta -}}
+	{{- partial "post-meta.html" . }}
 	{{- end }}
 	<hr />
 </header>

@@ -1,7 +1,5 @@
-<!-- re-using the favicon for the author photo -->
-{{- $favicon := resources.Get "/favicon.png" -}}
-{{- $favicon_base64 := $favicon.Content | base64Encode -}}
-<!--
+{{- $favicon := resources.Get "/favicon.png" -}}<!-- re-using the favicon for the author photo -->
+{{- $favicon_base64 := $favicon.Content | base64Encode -}}<!--
 	Reader mode implementations use .p-author, itemprop=author, and/or .author to add
 	a byline. Some also strip elements matching the "byline" class to avoid duplicating
 	the byline. Mozilla Readability uses both microformats1 and microformats2 while
@@ -22,8 +20,7 @@
 	schema.org and a mode to detect microformats2, and then stuck to those standards.
 
 	(btw this is all made of <span> cuz it is supposed to be inline)
--->
-<span itemprop="author copyrightHolder" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card p-author author vcard">
+--><span itemprop="author copyrightHolder" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card p-author author vcard">
 	<a itemprop="url" href="https://seirdy.one/" rel="author me home cc:attributionURL" class="u-url u-uid url" property="cc:attributionName">
 		{{ partial "indieweb-icon.html" -}}
 		<span itemprop="name" class="p-name fn n">

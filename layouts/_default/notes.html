@@ -18,7 +18,7 @@
 					</a>
 				</h2>
 				Noted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04:05" }}</time>
-				{{ if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
+				{{- if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
 					, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04:05" }}</time>
 				{{- end }}
 				<div class="e-content entry-content" itemprop="articleBody">{{ partial "processed-content.html" . }}</div>
