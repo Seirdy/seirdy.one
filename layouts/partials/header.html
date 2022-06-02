@@ -1,36 +1,36 @@
-<header>
-	<nav aria-label="Global">
-		<ul>
-			{{- $currentPage := . -}}
-			{{- $canonicalRelPermalink := $currentPage.RelPermalink | replaceRE "^/~seirdy/" "/" }}
-			{{- $isHome := false -}}
-			{{- if eq $canonicalRelPermalink "/" -}}
-				{{- $isHome = true -}}
-			{{- end }}
-			<li
-				itemprop="isPartOf"
-				itemscope="" itemtype="https://schema.org/Blog https://schema.org/WebSite"
-				itemid="{{ .Site.Params.CanonicalBaseURL }}/">
-				<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome }} aria-current="page"{{- end -}}>
-					{{- if $isHome -}}
-						<strong itemprop="name">{{ .Site.Title }}</strong>
-					{{- else -}}
-						<span itemprop="name">{{ .Site.Title }}</span>
-					{{- end -}}
-				</a>
-			</li>
-			{{ range .Site.Menus.main -}}
-			{{ $isCurrent := false }}
-			<li itemprop="hasPart" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
-				<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}}{{- $isCurrent = true }} aria-current="page"{{- end -}}>
-					{{- if or $isCurrent (eq $currentPage.Section .Title) -}}
-						<strong itemprop="name">{{- .Name -}}</strong>
-					{{- else -}}
-						<span itemprop="name">{{- .Name -}}</span>
-					{{- end -}}
-				</a>
-			</li>
-			{{- end }}
-		</ul>
-	</nav>
-</header>
+	<header>
+		<nav aria-label="Global">
+			<ul>
+				{{- $currentPage := . -}}
+				{{- $canonicalRelPermalink := $currentPage.RelPermalink | replaceRE "^/~seirdy/" "/" }}
+				{{- $isHome := false -}}
+				{{- if eq $canonicalRelPermalink "/" -}}
+					{{- $isHome = true -}}
+				{{- end }}
+				<li
+					itemprop="isPartOf"
+					itemscope="" itemtype="https://schema.org/Blog https://schema.org/WebSite"
+					itemid="{{ .Site.Params.CanonicalBaseURL }}/">
+					<a rel="home" itemprop="url" href="{{ .Site.BaseURL }}"{{- if $isHome }} aria-current="page"{{- end -}}>
+						{{- if $isHome -}}
+							<strong itemprop="name">{{ .Site.Title }}</strong>
+						{{- else -}}
+							<span itemprop="name">{{ .Site.Title }}</span>
+						{{- end -}}
+					</a>
+				</li>
+				{{ range .Site.Menus.main -}}
+				{{ $isCurrent := false }}
+				<li itemprop="hasPart" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+					<a href="{{ .URL }}" itemprop="url" {{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}}{{- $isCurrent = true }} aria-current="page"{{- end -}}>
+						{{- if or $isCurrent (eq $currentPage.Section .Title) -}}
+							<strong itemprop="name">{{- .Name -}}</strong>
+						{{- else -}}
+							<span itemprop="name">{{- .Name -}}</span>
+						{{- end -}}
+					</a>
+				</li>
+				{{- end }}
+			</ul>
+		</nav>
+	</header>

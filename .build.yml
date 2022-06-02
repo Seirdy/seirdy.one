@@ -1,9 +1,13 @@
 ---
+# we rsync binaries.tar.gz from the same server we deploy to.
+# it contains these static-pie binaries:
+# hugo, brotli, ect (like gzip/zopfli), sd, and xmlfmt.
 image: alpine/edge
 packages:
   - rsync
   - git  # for Hugo's gitInfo
   - bmake
+  - moreutils
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:

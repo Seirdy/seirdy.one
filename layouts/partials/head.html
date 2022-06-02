@@ -1,83 +1,80 @@
 <head>
-<meta charset="UTF-8" />
-{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-<meta name="disabled-adaptations" content="watch" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-{{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1" />
-{{ end -}}
-<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
-<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
-{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
-{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
-<!--Feeds for both notes and posts; posts come first unless we're in the notes section.-->
-{{- $isNotes := false -}}
-{{- if or (eq .Section "notes") (eq .Title "Notes") -}}
-{{- $isNotes = true -}}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
-{{- end }}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
-{{ if not $isNotes -}}
-<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}/notes/atom.xml" title="Notes" />
-{{- end }}
-<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
-{{ $description := .Site.Params.Description -}}
-{{- if .Params.description -}}
-	{{- $description = .Params.Description -}}
-{{- else if .Summary -}}
-	{{- $description = .Summary | replaceRE `\n` ` ` | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘` | safeHTML -}}
-{{- end -}}
-<meta name="description" content="{{ $description }}" />
-<meta name="author" content="{{ .Site.Author.name }}" />
-<meta property="article:author" content="{{ .Site.Author.name }}" />
-{{ if and (gt .Date 0) (not .Params.evergreen) -}}
-<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
-{{ end -}}
-{{ if lt .Date .Lastmod -}}
-<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
-{{- end -}}
-<!--the Tor Browser's safest setting disables SVGs but still downloads them to avoid fingerprinting-->
-{{ if not (in site.BaseURL ".onion") -}}
-{{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
-{{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
-{{- end }}
-{{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
-{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png" />` $icon_192.RelPermalink | safeHTML -}}
-{{ $favicon := resources.Get "/favicon.png" -}}
-{{ $favicon_base64 := $favicon.Content | base64Encode }}
-{{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png" />` $favicon_base64 | safeHTML }}
-<meta name="color-scheme" content="light dark" />
-<meta name="format-detection" content="telephone=no" /><!-- Why does apple do this -->
-<meta name="theme-color" content="#111" media="(prefers-color-scheme:dark)" />
-<meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)" />
-<!-- inline CSS; remember to allow it with a hash in the CSP -->
-{{- $resources := slice -}}
-{{- $resources = $resources | append (resources.Get "/css/main.css") -}}
-{{ $dark := .Site.Params.dark | default "auto" -}}
-{{- if not (eq $dark "off") -}}
-{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
-{{- end -}}
-{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
-{{- $css := $resources | resources.Concat "css/style.css" | minify -}}
-<style>{{ $css.Content | safeCSS }}</style>
-<meta property="og:title" content="{{ .Title }}" />
-<meta property="og:site_name" content="{{ $.Site.Title }}" />
-{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks/") (eq $canonicalRelPermalink "/posts/")) }}
-<meta property="og:type" content="article" />
-{{- end -}}
-<!-- ANOTHER meta image?! When will it end? -->
-{{- $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
-{{- $og_image_alt := "" -}}<!--Default open graph image is purely decorative and visual, so it should be hidden from assistive technologies.-->
-{{- with .Params.image -}}
-	{{- $og_image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
-{{- end -}}
-{{- with .Params.image_alt -}}
-	{{- $og_image_alt = . -}}
-{{- end }}
-{{ printf `<meta property="og:image" content="%s" />` $og_image.Permalink | safeHTML }}
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:height" content="{{ $og_image.Height }}" /><meta property="og:image:width" content="{{ $og_image.Width }}" />
-<meta property="og:image:alt" content="{{ $og_image_alt }}" />
-<meta property="og:url" content="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" />
-<meta property="og:description" content="{{ $description }}" />
-{{ hugo.Generator }}
+	<meta charset="UTF-8" />
+	{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
+	<meta name="disabled-adaptations" content="watch" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	{{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1" />
+	{{ end -}}
+	<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
+	<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
+	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
+	{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
+	<!--Feeds for both notes and posts; posts come first unless we're in the notes section.-->
+	{{- $isNotes := false -}}
+	{{- if or (eq .Section "notes") (eq .Title "Notes") -}}
+	{{- $isNotes = true -}}
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
+	{{- end }}
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
+	{{ if not $isNotes -}}
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}/notes/atom.xml" title="Notes" />
+	{{- end }}
+	<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>
+	{{ $description := .Site.Params.Description -}}
+	{{- if .Params.description -}}
+		{{- $description = .Params.Description -}}
+	{{- else if .Summary -}}
+		{{- $description = .Summary | replaceRE `\n` ` ` | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘` | safeHTML -}}
+	{{- end -}}
+	<meta name="description" content="{{ $description }}" />
+	<meta name="author" content="{{ .Site.Author.name }}" />
+	<meta property="article:author" content="{{ .Site.Author.name }}" />
+	{{ if and (gt .Date 0) (not .Params.evergreen) -}}
+	<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+	{{ end -}}
+	{{ if lt .Date .Lastmod -}}
+	<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+	{{- end -}}
+	<!--the Tor Browser's safest setting disables SVGs but still downloads them to avoid fingerprinting-->
+	{{ if not (in site.BaseURL ".onion") -}}
+	{{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
+	{{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
+	{{- end }}
+	{{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+	{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png" />` $icon_192.RelPermalink | safeHTML -}}
+	<meta name="color-scheme" content="light dark" />
+	<meta name="format-detection" content="telephone=no" /><!-- Why does apple do this -->
+	<meta name="theme-color" content="#111" media="(prefers-color-scheme:dark)" />
+	<meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)" />
+	<!-- inline CSS; remember to allow it with a hash in the CSP -->
+	{{- $resources := slice -}}
+	{{- $resources = $resources | append (resources.Get "/css/main.css") -}}
+	{{ $dark := .Site.Params.dark | default "auto" -}}
+	{{- if not (eq $dark "off") -}}
+	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+	{{- end -}}
+	{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
+	{{- $css := $resources | resources.Concat "css/style.css" | minify -}}
+	<style>{{ $css.Content | safeCSS }}</style>
+	<meta property="og:title" content="{{ .Title }}" />
+	<meta property="og:site_name" content="{{ $.Site.Title }}" />
+	{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks/") (eq $canonicalRelPermalink "/posts/")) }}
+	<meta property="og:type" content="article" />
+	{{- end -}}
+	<!-- ANOTHER meta image?! When will it end? -->
+	{{- $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
+	{{- $og_image_alt := "" -}}<!--Default open graph image is purely decorative and visual, so it should be hidden from assistive technologies.-->
+	{{- with .Params.image -}}
+		{{- $og_image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
+	{{- end -}}
+	{{- with .Params.image_alt -}}
+		{{- $og_image_alt = . -}}
+	{{- end }}
+	{{ printf `<meta property="og:image" content="%s" />` $og_image.Permalink | safeHTML }}
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:height" content="{{ $og_image.Height }}" /><meta property="og:image:width" content="{{ $og_image.Width }}" />
+	<meta property="og:image:alt" content="{{ $og_image_alt }}" />
+	<meta property="og:url" content="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" />
+	<meta property="og:description" content="{{ $description }}" />
+	{{ hugo.Generator }}
 </head>
