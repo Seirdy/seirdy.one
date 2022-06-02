@@ -7,7 +7,7 @@ packages:
   - rsync
   - git  # for Hugo's gitInfo
   - bmake
-  - moreutils
+  - libxml2-utils # for xmllint
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:

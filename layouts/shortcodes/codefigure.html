@@ -8,5 +8,5 @@
 	just use the beginning for the label and the full thing for the aria description.
 -->
 <figure aria-labelledby="{{ $id }}" itemprop="hasPart" itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
-{{ .Inner | markdownify -}}
+{{ .Inner | .Page.RenderString -}}
 </figure>

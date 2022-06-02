@@ -50,4 +50,9 @@
 {{- $endNotesNotFocusable := `<li id="fn:([0-9]*)">` -}}
 {{- $endNotesFocusable := `<li id="fn:${1}" tabindex="-1">` -}}
 
+
+<!--Since language-figure doesn't seem to work for some reason just use regex to replace it-->
+{{- $extraLanguageFigure := `<code class="language-figure">` -}}
+{{- $replacedLanguageFigure := `<code translate="no" itemprop="text">` -}}
+
 {{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | replaceRE $endNotesNotFocusable $endNotesFocusable | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘`| safeHTML -}}

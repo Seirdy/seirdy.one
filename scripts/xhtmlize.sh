@@ -1,11 +1,19 @@
 #!/bin/sh
 # takes an arg for the output dir.
-# copies every .html file to an equivalent .xhtml file, but replaces
-# the meta charset with an XML declaration for compatibility with some
-# XML tooling.
-# this means that every index.html file has an equivalent index.xhtml file.
-# content negotiation allows an agent to pick html or xhtml.
+# Runs xhtmlize-single-file.sh on every single html file in the output dir.
 
-find "$1" -type f -name '*.html' \
-	-exec sh -c 'echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" >"${0%*.html}.xhtml" && xmlfmt -i "	" -f "$0" | busybox sed -e :a -e "/./,\$!d;/^\n*\$/{\$d;N;};/\n\$/ba" | sd -f m "\n(?:\t*)?</" "</" | sd -f m "<pre>\n\t*<code" "<pre><code" | sd -f m "\(\n\t*<abbr" "(<abbr" | pee "sed 5d >>\"${0%*.html}.xhtml\"" "sponge \"$0\""' {} \;
+set -e -u
+
+output_dir="$1"
+script_dir="$(dirname "$0")"
+
+printf '\t\t<style>%s</style>\n' "$(htmlq -t style <"$output_dir/index.html")" >tmp.css
+cleanup() {
+	rm -f "tmp.css"
+}
+trap cleanup EXIT
+
+export XMLLINT_INDENT='	'
+find "$output_dir" -type f -name '*.html' \
+	-exec sh "$script_dir/xhtmlize-single-file.sh" {} \;
 # done

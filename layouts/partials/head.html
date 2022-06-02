@@ -1,7 +1,18 @@
 <head>
 	<meta charset="UTF-8" />
 	{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-	<meta name="disabled-adaptations" content="watch" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="disabled-adaptations" content="watch" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- inline CSS; remember to allow it with a hash in the CSP -->
+	{{- $resources := slice -}}
+	{{- $resources = $resources | append (resources.Get "/css/main.css") -}}
+	{{ $dark := .Site.Params.dark | default "auto" -}}
+	{{- if not (eq $dark "off") -}}
+	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+	{{- end -}}
+	{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
+	{{- $css := $resources | resources.Concat "css/style.css" | minify -}}
+	<style>{{ $css.Content | safeCSS }}</style>
 	{{ if or (eq site.BaseURL site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
 	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1" />
 	{{ end -}}
@@ -46,16 +57,6 @@
 	<meta name="format-detection" content="telephone=no" /><!-- Why does apple do this -->
 	<meta name="theme-color" content="#191919" media="(prefers-color-scheme:dark)" />
 	<meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)" />
-	<!-- inline CSS; remember to allow it with a hash in the CSP -->
-	{{- $resources := slice -}}
-	{{- $resources = $resources | append (resources.Get "/css/main.css") -}}
-	{{ $dark := .Site.Params.dark | default "auto" -}}
-	{{- if not (eq $dark "off") -}}
-	{{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
-	{{- end -}}
-	{{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
-	{{- $css := $resources | resources.Concat "css/style.css" | minify -}}
-	<style>{{ $css.Content | safeCSS }}</style>
 	<meta property="og:title" content="{{ .Title }}" />
 	<meta property="og:site_name" content="{{ $.Site.Title }}" />
 	{{- if not (or (ne "page" .Kind) (eq $canonicalRelPermalink "/bookmarks/") (eq $canonicalRelPermalink "/posts/")) }}
