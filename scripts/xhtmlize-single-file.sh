@@ -26,7 +26,7 @@ trap cleanup EXIT
 trap cleanup EXIT
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
 head -n7 "$tmp_file" >> "$xhtml_file"
-cat /tmp/css.css >>"$xhtml_file"
+cat tmp.css >>"$xhtml_file"
 tail -n +8 "$tmp_file" \
 	| sd '<pre>\n\t*<code ' '<pre><code ' \
 	| sd '(?:\n)</code>\n\t*</pre>' '</code></pre>' >>"$xhtml_file"
