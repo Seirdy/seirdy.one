@@ -3,9 +3,9 @@
 {{- $thousands := string (div .WordCount 1000) -}}
 {{- $displayCount = printf "%s thousand" $thousands -}}
 About
-{{- end }}
+{{- end -}}
 <data itemprop="wordCount" value="{{ .WordCount }}">
-	{{ $displayCount }}
+	{{- $displayCount -}}
 </data> words
 {{- with .ReadingTime -}}
 	{{- $displayTime := string . -}}
@@ -14,6 +14,6 @@ About
 		{{- $minutes := mod . 60 -}}
 		{{- $displayTime = (printf "%d&#160;hour and %d" $hours $minutes) | safeHTML -}}
 	{{- end -}}
-	; a{{ if lt . 10 }} short{{ else if and (gt . 20) (lt . 30) }} somewhat long{{ else if and (gt . 29) (lt . 60) }} long{{ else if gt . 59 }} very long{{ end }}
+	; a{{ if lt . 10 }} short{{ else if and (gt . 20) (lt . 30) }} somewhat long{{ else if and (gt . 29) (lt . 60) }} long{{ else if gt . 59 }} very long {{ end -}}
 	<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ $displayTime }}&#160;minute</time> read
-{{- end }}
+{{- end -}}
