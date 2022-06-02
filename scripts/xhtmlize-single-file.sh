@@ -28,8 +28,8 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
 head -n7 "$tmp_file" >> "$xhtml_file"
 cat tmp.css >>"$xhtml_file"
 tail -n +8 "$tmp_file" \
-	| sd '<pre>\n\t*<code ' '<pre><code ' \
-	| sd '(?:\n)</code>\n\t*</pre>' '</code></pre>' >>"$xhtml_file"
+	| sd '<pre(?: tabindex="0")?>\n\t*<code ' '<pre tabindex="0"><code ' \
+	| sd '(?:\n)?</code>\n(?:[\t\s]*)?</pre>' '</code></pre>' >>"$xhtml_file"
 tail -n +2 "$xhtml_file" > "$html_file"
 sed -i 5d "$xhtml_file" # busybox sed supports "-i"
 
