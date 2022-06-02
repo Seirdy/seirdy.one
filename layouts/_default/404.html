@@ -15,7 +15,7 @@
 {{ $favicon_base64 := $favicon.Content | base64Encode }}
 {{ printf `<link rel="icon" sizes="32x32" href="data:image/png;base64,%s" type="image/png" />` $favicon_base64 | safeHTML }}
 <meta name="color-scheme" content="light dark" />
-<meta name="theme-color" content="#111" media="(prefers-color-scheme:dark)" />
+<meta name="theme-color" content="#191919" media="(prefers-color-scheme:dark)" />
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme:light)" />
 <!-- inline CSS; remember to allow it with a hash in the CSP -->
 {{- $resources := slice -}}
