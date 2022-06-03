@@ -119,9 +119,9 @@ deploy-onion:
 # we only deploy html to the staging site
 .PHONY: deploy-staging
 deploy-staging:
-	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
-	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
-	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
+	@$(MAKE) DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
+	@$(MAKE) DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
+	@$(MAKE) DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
 
 .PHONY: lint-and-deploy-staging
 lint-and-deploy-staging:
