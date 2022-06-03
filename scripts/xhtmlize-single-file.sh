@@ -31,7 +31,8 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
 	tail -n +8 "$tmp_file" \
 		| sd '<pre(?: tabindex="0")?>\n\t*<code ' '<pre tabindex="0"><code ' \
 		| sd '(?:\n)?</code>\n(?:[\t\s]*)?</pre>' '</code></pre>' \
-		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"'
+		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"' \
+		| sd '([a-z])<(data|time)' '$1 <$2'
 } >>"$xhtml_file"
 
  # replace the html file with the formatted xhtml5 file, excluding the xml declaration
