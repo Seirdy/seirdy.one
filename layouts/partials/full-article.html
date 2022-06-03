@@ -9,6 +9,9 @@
 <div class="e-content entry-content" itemprop="articleBody">
 	<meta itemprop="author" content="Rohan Kumar" />
 	<!--That was needed bc some reading modes get confused by other authors referenced in the text-->
+	{{- if .Params.replyURI -}}
+		{{- partial "reply-context" .Params -}}
+	{{- end -}}
 	{{- partial "processed-content" . -}}
 </div>
 </article>

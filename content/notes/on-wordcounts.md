@@ -1,12 +1,13 @@
 ---
 title: "On displaying word counts"
 date: 2022-05-29T12:00:04-07:00
+lastMod: 2022-05-29T12:00:04-07:00
+replyURI: "https://social.treehouse.systems/@ayushnix/108364036611051719"
+replyTitle: "What's your opinion on writing the number of words in a blog post and the estimated time it'll take to read it?"
+replyType: "SocialMediaPosting"
+replyAuthor: "Ayush Agarwal"
+replyAuthorURI: "https://microblog.ayushnix.com/"
 ---
-<aside role="note">
-Reply to {{< mention-work itemprop="about" itemtype="SocialMediaPosting" reply=true >}}{{<cited-work name="What's your opinion on writing the number of words in a blog post and the estimated time it'll take to read it?" url="https://social.treehouse.systems/@ayushnix/108364036611051719">}} by {{<indieweb-person first-name="Ayush" last-name="Agarwal" url="https://microblog.ayushnix.com/" itemprop="author">}}
-{{</mention-work>}}
-</aside>
-
 Some of my posts are long. My longest post is almost 20k words as of right now (60-80 pages printed out), and will get longer as I update it.
 
 Length is an imperfect yet useful measure of the amount of detail one can expect. There are many "lists of practices" on the Web about web design. By communicating that mine would take an hour and a half to read, I communicate that my list has some more thought put into it.

@@ -1,12 +1,13 @@
 ---
 title: "Answer engines"
 date: 2022-05-25T19:59:08+00:00
+lastMod: 2022-05-25T19:59:08+00:00
+replyURI: "https://kevq.uk/is-duckduckgo-duckduckdone/"
+replyTitle: "Is DuckDuckGo, DuckDuckDone?"
+replyType: "BlogPosting"
+replyAuthor: "Kev Quirk"
+replyAuthorURI: "https://kevq.uk/about/"
 ---
-<aside role="note">
-
-Reply to {{< mention-work itemprop="about" itemtype="BlogPosting" reply=true >}}{{<cited-work name="Is DuckDuckGo, DuckDuckDone?" extraName="headline" url="https://kevq.uk/is-duckduckgo-duckduckdone/">}} by {{<indieweb-person first-name="Kev" last-name="Quirk" url="https://kevq.uk/about/" itemprop="author">}}{{</mention-work>}}
-
-</aside>
 
 I read your article and share similar concerns. Using Microsoft Bing and Google Search's commercial APIs generally requires accepting some harsh terms, including a ban on mixing <abbr title="Search Engine Result Pages">SERPs</abbr> from multiple sources (this is why Ixquick shut down and the company pivoted to the Google-exclusive Startpage search service). But the requirement to allow trackers in a companion web browser was new to me.
 
