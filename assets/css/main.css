@@ -128,9 +128,21 @@ html {
 		padding: .875em .25em;
 	}
 
-	/* Make superscripts a bit easier to tap. */
+	/* Make superscripts and backlinks a bit easier to tap. */
 	sup > a {
 		padding-bottom: .25em;
+		margin-left: .25em;
+	}
+
+	a[role="doc-backlink"] {
+		/* This doesn't take us all the way to WCAG AAA 44px targets, but it's close.*/
+		padding: 0 1.75em 1.625em .25em;
+	}
+
+	/* Make room for those big backlink buttons so they don't overlap
+	 * with links on the following endnote */
+	section[role="doc-endnotes"] li {
+		margin-bottom: 2em;
 	}
 
 	nav li ol {
