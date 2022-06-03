@@ -1,4 +1,5 @@
-/* CSS that adds the bare minimum for a simple layout.
+/* CSS that adds the bare minimum for a simple, accessible,
+ * touch-friendly layout.
  * Nothing here exists purely for aesthetics; everything addresses a
  * specific a11y, compatibility, or critical
  * usability need.
@@ -13,7 +14,7 @@
  * don't actually use those for styling.
  *
  * To keep myself from caring about minute details, I limited myself to
- * only defining spacing in increments of .125em. Pixels are 1px or
+ * only defining spacing in increments of .25em. Pixels are 1px or
  * multiples of 3px. This also improves compression. No more "finding
  * the perfect value".
  *
@@ -81,18 +82,6 @@ html {
 		max-width: 35em;
 	}
 
-	/* Compensate for misalignment and wasted space caused by padding
-	 * and margin adjustments in nav children made to meet SC 2.5.5 */
-	footer > nav,
-	header > nav,
-	dt > a,
-	h2 + a {
-		margin-left: -.25em;
-	}
-	header > nav {
-		margin-bottom: -.75em;
-	}
-
 	summary {
 		/* The tappable region of a <summary> extends across the page.
 		 * we need to tell users that the full space is interactive.
@@ -111,47 +100,79 @@ html {
 		margin: .5em 0;
 	}
 
+	/* Make superscripts a bit easier to tap. */
+	sup > a {
+		margin-left: .25em;
+		padding-bottom: .25em;
+	}
+
 	/* SC 2.5.5, Google a11y: Increase tap target size a bit
 	 * - Summary is a tappable button
 	 * - standalone links in lists are usually parts of collections of
 	 *   links that should be easy to fat-finger
 	 * - links that directly follow h2 without being contained in a
 	 *   paragraph are section permalinks. */
-	dt,
+
+	input,
 	dt > a,
 	summary,
 	h2 + a,
+	li > a {
+		padding: .75em .25em;
+	}
+	/* Compensate for misalignment and wasted space caused by padding
+	 * and margin adjustments in nav children made to meet SC 2.5.5 
+	 * Also prevent overlapping outlines on focus */
+
+	/* We've increased the padding for dt > a, but dt without a link
+	 * should take up as much space. */
+	dt {
+		margin: .75em 0;
+	}
+
+	dt > a {
+		margin: -.75em 0 -.75em -.25em;
+		display: inline-block;
+	}
+
+	header > nav {
+		margin-bottom: -1em;
+	}
+
+	h2 + a {
+		margin: -.75em -.25em;
+	}
+
+	footer > nav,
+	header > nav,
+	/* List items with direct hyperlink children should only have one hyperlink. */
 	li > a,
+	h2 + a,
+	nav ol a {
+		margin-left: -.25em;
+		display: inline-block;
+	}
+
 	nav li,
-	li details li,
-	input {
-		padding: .875em .25em;
+	ol li > a {
+		margin: .25em;
 	}
 
-	/* Make superscripts and backlinks a bit easier to tap. */
-	sup > a {
-		padding-bottom: .25em;
-		margin-left: .25em;
+	div[itemprop="comment"] dd > a {
+		display: inline-block;
+		margin-left: -.25em;
+		padding: .75em .25em;
 	}
 
+	/* Increase backlink tap target size */
 	a[role="doc-backlink"] {
-		/* This doesn't take us all the way to WCAG AAA 44px targets, but it's close.*/
-		padding: 0 1.75em 1.625em .25em;
+		padding: 0 1.75em 1.5em .25em;
 	}
 
 	/* Make room for those big backlink buttons so they don't overlap
 	 * with links on the following endnote */
 	section[role="doc-endnotes"] li {
-		margin-bottom: 2em;
-	}
-
-	nav li ol {
-		/* Don't duplicate bottom space: the last list item in the nested
-		 * list and the list item that is the entire nested list will both
-		 * have bottom padding */
-		margin-bottom: -1em;
-		/* Prevent nested lists from overlapping */
-		padding-top: 1em;
+		margin-bottom: 1.75em;
 	}
 }
 
@@ -163,7 +184,7 @@ dd,
 ol,
 ul {
 	margin: 0;
-	padding-left: 1.625em;
+	padding-left: 1.5em;
 }
 
 ol ol,
@@ -188,7 +209,7 @@ nav ul {
  * pixels between tap targets. */
 nav ul li {
 	display: inline-block;
-	margin-right: .375em;
+	margin-right: .5em;
 }
 
 /* narrow screens: reduce margin for blockquotes a lot, using
@@ -232,8 +253,8 @@ kbd {
 
 /* <ins> should not be mistaken for hyperlinks. */
 ins {
-	text-decoration: none;
 	font-style: italic;
+	text-decoration: none;
 }
 
 /* narrow screens: remove unused figure margins
@@ -304,7 +325,7 @@ pre {
 	border: 1px solid #999;
 
 	/* borders shouldn't touch text */
-	padding: 0 0.125em;
+	padding: 0 .25em;
 }
 
 /* center standalone images; same justification as

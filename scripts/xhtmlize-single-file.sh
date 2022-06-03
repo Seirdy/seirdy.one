@@ -32,6 +32,7 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
 		| sd '<pre(?: tabindex="0")?>\n\t*<code ' '<pre tabindex="0"><code ' \
 		| sd '(?:\n)?</code>\n(?:[\t\s]*)?</pre>' '</code></pre>' \
 		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"' \
+		| sd '(<img itemprop="image" class="u-photo photo"[^>]*/>)<span' '$1 <span' \
 		| sd '([a-z])<(data|time)' '$1 <$2'
 } >>"$xhtml_file"
 
