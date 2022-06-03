@@ -1,0 +1,58 @@
+#!/usr/bin/env dash
+
+set -e -u
+
+# the name of this program
+progname="$(basename "${0}")"
+
+help_text="Usage: ${progname} [OPTION...] FILENAME
+
+Compose a new note
+
+Options:
+  -h            Print this help and exit
+  -r            Whether this note should be a reply
+"
+
+usage() {
+	printf '%s' "${help_text}"
+}
+
+# when the user passess bad args, send a msg to stderr and exit
+# usage: bad_option <option> <reason>
+bad_option() {
+	echo "${progname}: option ${1}: ${2}" >&2
+	usage >&2
+	exit 1
+}
+
+reply='0'
+
+while getopts "hr" flags; do
+	case ${flags} in
+		h)
+			usage
+			exit 0
+			;;
+		r)
+			reply='1'
+			shift
+			;;
+		*)
+			bad_option "${flags}" 'invalid option'
+			exit 1
+			;;
+	esac
+done
+
+filename="notes/$1.md"
+
+if [ "$reply" = '1' ]; then
+	hugo new --kind reply "$filename"
+else
+	hugo new "$filename"
+fi
+
+"${EDITOR-nvim}" "content/$filename"
+
+# vi:ft=sh
