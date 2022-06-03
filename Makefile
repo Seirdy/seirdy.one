@@ -40,8 +40,8 @@ lint-css: $(CSS_DIR)/*.css
 	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/*.css
 	@#csslint --quiet $(CSS_DIR)
 
-.PHONY: validate-markup
-validate-markup:
+.PHONY: lint-html
+lint-html:
 	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | sh scripts/filter-vnu.sh
 
 .PHONY: hint
@@ -50,7 +50,7 @@ hint: hugo .hintrc-local
 	rm .hintrc-local
 
 .PHONY: lint-local
-lint-local: lint-css validate-markup
+lint-local: lint-css lint-html
 
 # dev server, includes future and draft posts
 .PHONY: serve
@@ -105,11 +105,11 @@ deploy: deploy-html deploy-gemini
 	@$(MAKE) clean
 	@$(MAKE) hugo
 	@$(MAKE) xhtmlize
-	@$(MAKE) compress
 
 # deploy steps need to happen one at a time
 .PHONY: deploy-prod
 deploy-prod: .prepare-deploy
+	@$(MAKE) compress
 	@$(MAKE) deploy
 
 .PHONY: deploy-onion
@@ -119,23 +119,18 @@ deploy-onion:
 # we only deploy html to the staging site
 .PHONY: deploy-staging
 deploy-staging:
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
-
-# we can lint and compress in parallel if cores are available
-.PHONY: .lint-and-prepare-deploy
-.lint-and-prepare-deploy:
-	@$(MAKE) clean
-	@$(MAKE) hugo
-	@$(MAKE) xhtmlize
-	@$(MAKE) lint-local compress
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
 
 .PHONY: lint-and-deploy-staging
 lint-and-deploy-staging:
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .lint-and-prepare-deploy
-	@$(MAKE) HUGO_FLAGS='--gc' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress lint-local
+	@$(MAKE) HUGO_FLAGS='' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
 
 .PHONY: deploy-envs
 deploy-envs:
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .lint-and-prepare-deploy
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='--gc' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
