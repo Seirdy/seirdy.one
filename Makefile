@@ -40,9 +40,9 @@ lint-css: $(CSS_DIR)/*.css
 	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/*.css
 	@#csslint --quiet $(CSS_DIR)
 
-.PHONY: lint-html
-lint-html:
-	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | jq --from-file linter-configs/vnu_filter.jq
+.PHONY: validate-markup
+validate-markup:
+	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | sh scripts/filter-vnu.sh
 
 .PHONY: hint
 hint: hugo .hintrc-local
@@ -50,7 +50,7 @@ hint: hugo .hintrc-local
 	rm .hintrc-local
 
 .PHONY: lint-local
-lint-local: lint-css lint-html
+lint-local: lint-css validate-markup
 
 # dev server, includes future and draft posts
 .PHONY: serve

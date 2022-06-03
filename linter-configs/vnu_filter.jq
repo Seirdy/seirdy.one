@@ -15,4 +15,4 @@
 			)
 		) | not
 	)
-)
+) | del(..|select(. == [])) | del(..|select(. == {})) | select(. != null)

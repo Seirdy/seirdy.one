@@ -15,7 +15,7 @@
 set -e -u
 
 export html_file="$1"
-export tmp_file="${html_file}.tmp"
+export tmp_file="$html_file.tmp"
 export xhtml_file=${html_file%*.html}.xhtml
 
 cleanup() {
@@ -25,13 +25,17 @@ trap cleanup EXIT
 
 trap cleanup EXIT
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
-head -n7 "$tmp_file" >> "$xhtml_file"
-cat tmp.css >>"$xhtml_file"
-tail -n +8 "$tmp_file" \
-	| sd '<pre(?: tabindex="0")?>\n\t*<code ' '<pre tabindex="0"><code ' \
-	| sd '(?:\n)?</code>\n(?:[\t\s]*)?</pre>' '</code></pre>' >>"$xhtml_file"
-tail -n +2 "$xhtml_file" > "$html_file"
-sed -i 5d "$xhtml_file" # busybox sed supports "-i"
+{
+	head -n7 "$tmp_file"
+	cat tmp.css
+	tail -n +8 "$tmp_file" \
+		| sd '<pre(?: tabindex="0")?>\n\t*<code ' '<pre tabindex="0"><code ' \
+		| sd '(?:\n)?</code>\n(?:[\t\s]*)?</pre>' '</code></pre>'
+} >>"$xhtml_file"
 
-# the "sed 5d" deletes the now-redundant meta charset; it's the first
-# thing in the <head>.
+ # replace the html file with the formatted xhtml5 file, excluding the xml declaration
+tail -n +2 "$xhtml_file" > "$html_file"
+
+# remove the redundant charset declaration from the xhtml file. It's the
+# first thing in the <head>
+sed -i 5d "$xhtml_file" # busybox sed supports "-i"
