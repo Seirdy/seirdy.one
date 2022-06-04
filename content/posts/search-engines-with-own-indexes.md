@@ -108,9 +108,9 @@ These engines pass most of the tests listed in the "methodology" section. All of
 
 - [Alexandria](https://www.alexandria.org/): A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
 
-- [Fairsearch](https://fairsearch.com/): an ambitious engine from Ahrefs, an SEO/backlink-finder company, that "shares ad profit with creators and protects your privacy". Most engines show results that include keywords from or related to the query; Fairsearch also shows results linked by pages containing the query. In other words, not all results contain relevant keywords. This makes it excellent for less precise searches and discovery of "related sites", especially with its index of _hundreds of billions of pages._ It's far worse at finding very specific information or recent events for now, but it will probably improve: while this version is live, it's not officially launched yet. When it officially launches, **it will be under a different name**. I expect Fairsearch to graduate from this section as result relevancy improves.
+- [Yep](https://yep.com/): an ambitious engine from Ahrefs, an SEO/backlink-finder company, that "shares ad profit with creators and protects your privacy". Most engines show results that include keywords from or related to the query; Yep also shows results linked by pages containing the query. In other words, not all results contain relevant keywords. This makes it excellent for less precise searches and discovery of "related sites", especially with its index of _hundreds of billions of pages._ It's far worse at finding very specific information or recent events for now, but it will probably improve.
 
-FairSearch supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data.
+Yep supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data.
 
 ### Smaller indexes, hit-and-<wbr />miss {#smaller-indexes-hit-and-miss}
 
