@@ -11,6 +11,7 @@
 # xmllint ruins inline CSS so delete the inline CSS and re-insert it.
 # xmllint also adds extra whitespace around <pre><code> which we remove
 # with "sd". I chose sd since it handles newlines well.
+# It also decreases indents by one level
 
 set -e -u
 
@@ -24,7 +25,7 @@ cleanup() {
 trap cleanup EXIT
 
 trap cleanup EXIT
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - -o "$tmp_file"
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t' '' >"$tmp_file"
 {
 	head -n7 "$tmp_file"
 	cat tmp.css
