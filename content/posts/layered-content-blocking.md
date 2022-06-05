@@ -7,8 +7,6 @@ outputs:
     - gemtext
 footnote_heading: Notes
 ---
-<p role="note">This post is an incomplete rough draft. Please don't share it yet.</p>
-
 The Chromium team is planning on phasing out Manifest V2, its current set of extension APIs, in favor of Manifest V3. [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/) involves giving extensions less access to page contents. Instead, extensions use new APIs that involve giving the browser simple instructions for page modification. The browser performs those instructions using its own logic; extensions themselves can't access page contents.
 
 This represents a tremendous trade-off: extensions need to be trusted less, but are also less capable. The implications for content blockers (ad-blockers) caused significant backlash.[^1] Mozilla plans on adopting Manifest V3 in Firefox with additional APIs to re-introduce the lost functionality. Discourse on the topic has been polarized, full of oversimplification, and devoid of nuance.
