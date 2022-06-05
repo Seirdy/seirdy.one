@@ -13,6 +13,7 @@
 	 * Outside an article it's used in my webring list where it has some
 	 * use, see below. */
 	article summary,
+	section[aria-labelledby="webmentions"],
 	/* Currently only used for in-page heading anchors,
 	 * useless in printouts. */
 	h2 + a,
