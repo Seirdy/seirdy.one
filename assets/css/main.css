@@ -344,17 +344,6 @@ picture > img {
 	image-rendering: pixelated;
 }
 
-/* WCAG Technique C25: use borders to separate sections.
- * Also use "content-visibility: auto" to improve performance by
- * reducing the number of DOM nodes rendered at once. */
-aside nav,
-footer,
-section[role="doc-endnotes"],
-section[aria-labelledby="webmentions"] {
-	border-top: 1px solid;
-	content-visibility: auto;
-}
-
 /* Make search box and submit button as wide as possible while keeping
  * them next to each other. */
 
@@ -362,6 +351,7 @@ section[aria-labelledby="webmentions"] {
  * single-row flexbox that supports more browsers. Kanged this CSS from
  * ww.gov.uk. Give the entire width of the row to the search box, but
  * allow the minimum width for the submit button. */
+legend, /* Makes the <legend> wrap text in some browsers. */
 form > div {
 	display: table;
 	width: 100%
