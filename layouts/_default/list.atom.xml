@@ -1,11 +1,12 @@
 {{- $pages := (where site.RegularPages "Section" .Section) -}}
-{{- if .IsHome }}
-  {{- $pages = .Site.RegularPages -}}
-{{ end -}}
-{{- $type := "article" -}}
 {{- $period := "daily" -}}
+{{- $title := .Section | humanize -}}
+{{- if .IsHome }}
+	{{- $title = "All content" -}}
+  {{- $pages = .Site.RegularPages -}}
+	{{- $period = "hourly" -}}
+{{ end -}}
 {{- if eq .Section "notes" -}}
-	{{- $type = "note" -}}
 	{{- $period = "hourly" -}}
 {{- end -}}
 {{- $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
@@ -20,7 +21,7 @@
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:thr="http://purl.org/syndication/thread/1.0"
 	xml:lang="{{ .Site.LanguageCode }}">
-	<title>{{ .Section | humanize}} on {{ .Site.Title }}</title>
+	<title>{{ $title }} on {{ .Site.Title }}</title>
 	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
 	<logo>{{ $icon_png.Permalink }}</logo>
   <icon>{{ .Site.Params.icon | absURL }}</icon>
@@ -62,6 +63,10 @@
 					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | safeHTML }}
 			</div>
 		</content>
+		{{- $type := "article" -}}
+		{{- if eq .Section "notes" -}}
+			{{- $type = "note" -}}
+		{{- end -}}
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
   </entry>

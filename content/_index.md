@@ -2,6 +2,7 @@
 outputs:
     - html
     - gemtext
+    - atom
 title: Seirdy's Home
 description: "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy. I write about and develop software to promote user autonomy."
 sitemap:
