@@ -20,7 +20,7 @@
 {{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
 {{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
 {{- end }}
-{{ $icon_192 := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+{{ $icon_192 := resources.Get "/favicon192.png" | resources.Fingerprint "md5" }}
 {{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png" />` $icon_192.RelPermalink | safeHTML -}}
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#191919" media="(prefers-color-scheme:dark)" />

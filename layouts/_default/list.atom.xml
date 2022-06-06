@@ -1,6 +1,6 @@
 {{- $pages := (where site.RegularPages "Section" .Section) -}}
 {{- if .IsHome }}
-  {{- $pages = where .Site.RegularPages "Section" "" -}}
+  {{- $pages = .Site.RegularPages -}}
 {{ end -}}
 {{- $type := "article" -}}
 {{- $period := "daily" -}}
@@ -9,7 +9,7 @@
 	{{- $period = "hourly" -}}
 {{- end -}}
 {{- $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
-{{- $icon_png := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" -}}
+{{- $icon_png := resources.Get "/favicon192.png" | resources.Fingerprint "md5" -}}
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
 	xmlns="http://www.w3.org/2005/Atom"

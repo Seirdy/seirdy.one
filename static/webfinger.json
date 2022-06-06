@@ -1,0 +1,19 @@
+{
+  "subject": "acct:seirdy@seirdy.one",
+  "aliases": [
+    "mailto:seirdy@seirdy.one",
+    "https://seirdy.one/"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "href": "https://seirdy.one/favicon192.png",
+      "type": "image/png"
+    },
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "href": "https://seirdy.one/",
+      "type": "text/html"
+    }
+  ]
+}

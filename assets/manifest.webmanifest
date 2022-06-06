@@ -1,4 +1,4 @@
-{{- $192png := resources.Get "/apple-touch-icon.png" | resources.Fingerprint "md5" }}
+{{- $192png := resources.Get "/favicon192.png" | resources.Fingerprint "md5" }}
 {{- $512png := resources.Get "/favicon512.png" | resources.Fingerprint "md5" }}
 {{- $1024svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
 {{- $maskablesvg := resources.Get "/maskable_android.svg" | resources.Fingerprint "md5" -}}
