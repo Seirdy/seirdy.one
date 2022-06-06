@@ -14,7 +14,7 @@ sitemap:
 Seirdy’s Home
 =============
 
-I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a>, a.k.a. <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (online handle).
+I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (He/Him). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (It/Its). Mixing them up is fine.
 
 Other versions of this website
 ------------------------------
@@ -24,9 +24,9 @@ In addition to its [canonical url](https://seirdy.one), a "rough draft" of this 
 About me
 --------
 
-The Director's Cut of my bio is at my [About page](/about.html).
+The Director's Cut of my bio is at my [About page](/about.html "itemprop='subjectOf'").
 
-<div class="p-note">
+<div class="p-note" itemprop="description">
 
 I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
 
@@ -41,7 +41,7 @@ Contact
 
 Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
 
-Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](https://matrix.to/#/@seirdy:seirdy.one "{class='u-url' rel='me'}") on Matrix. My secondary Matrix account for Synapse-only rooms is `@seirdy:fairydust.space`.
+Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}") on Matrix.
 
 </div>
 

@@ -13,6 +13,11 @@
 			"type": "image/png"
 		},
 		{
+			"rel": "canonical_uri",
+			"href": "https://seirdy.one/",
+			"type": "text/html"
+		},
+		{
 			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://seirdy.one/",
 			"type": "text/html"
@@ -21,6 +26,10 @@
 			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://pleroma.envs.net/seirdy",
 			"type": "text/html"
+		},
+		{
+			"rel": "webmention",
+			"href": "https://seirdy.one/webmentions/receive"
 		},
 		{
 			"rel": "pgpkey",
