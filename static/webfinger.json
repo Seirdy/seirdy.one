@@ -2,7 +2,9 @@
   "subject": "acct:seirdy@seirdy.one",
   "aliases": [
     "mailto:seirdy@seirdy.one",
-    "https://seirdy.one/"
+    "https://seirdy.one/",
+		"matrix:u/seirdy:seirdy.one",
+		"https://pleroma.envs.net/seirdy"
   ],
   "links": [
     {
@@ -14,6 +16,20 @@
       "rel": "http://webfinger.net/rel/profile-page",
       "href": "https://seirdy.one/",
       "type": "text/html"
-    }
+    },
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "href": "https://pleroma.envs.net/seirdy",
+      "type": "text/html"
+    },
+		{
+			"rel": "pgpkey",
+      "type": "application/pgp-keys",
+      "href": "https://seirdy.one/publickey.asc",
+      "properties": {
+        "fingerprint": "AC6AF1F838DF3DCC2E47A6CF1E892DB2A5F84479",
+        "algorithm": "rsa4096"
+      }
+		}
   ]
 }
