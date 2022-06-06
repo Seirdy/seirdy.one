@@ -86,7 +86,7 @@ I'll update this section as I collect feedback. Watch this space.
 <q>If we trust our extension developers, is any of this really necessary?</q>
 : With adblockers, you don't just trust extension developers; you also trust filter-list contributors. Many filter lists have thousands of entries aggregated from other filter lists, so trust-by-proxy ends up covering a lot of ground. This also applies to userstyle extensions: you have to trust the authors of each theme.
 
-  CSS injection is a powerful tool that can be used well or maliciously. Remember that it's contributors and extension developers could be well-meaning but still allow a vulnerability to slip through, especially when you account for extensions that alter a site's CSP.
+  CSS injection is a powerful tool that can be used well or maliciously. Remember that its contributors and extension developers could be well-meaning but still allow a vulnerability to slip through, especially when you account for extensions that alter a site's CSP.
 
   I still use these privileged extensions, but I try to limit their scope to sites where they're necessary.
 
