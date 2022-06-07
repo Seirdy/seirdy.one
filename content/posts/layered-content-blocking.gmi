@@ -6,7 +6,7 @@ My views on the situation are a bit complicated.
 
 ## The existing content filtering landscape
 
-uBlock Origin (not to be confused with the unrelated uBlock) has advanced content filters, with the ability to inject near-arbitrary content into pages.
+uBlock Origin (not to be confused with the unrelated uBlock) has advanced content filters, with the ability to inject near-arbitrary stylesheets and a number of scripts into pages.
 
 => https://github.com/gorhill/uBlock uBlock Origin on GitHub
 
