@@ -4,6 +4,8 @@ Rohan Kumar : He/Him : Age 21
 
 Online Handle: Seirdy
 
+I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
+
 ## Other versions of this website
 
 This page's canonical location is on seirdy.one:
@@ -25,27 +27,30 @@ My Web and Gemini content may be slightly different: I often phrase things diffe
 I have a Tor hidden Web service which mirrors this site's contents, except for the fact that it replaces some SVGs with PNGs.
 => http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/
 
-## Location (Rohan, meatspace)
+## Location (Rohan, He/Him, meatspace)
 
-Currently living at home in Cupertino, CA
+Currently living at home in California, USA
 
 Would normally be in Portland, OR during the school year, but COVID-19 happened.
 
-## Location (Seirdy, online)
-
-My handle is "Seirdy" on all the platforms I use:
-
-=> https://envs.net/%7Eseirdy/ my tildeverse Web page
-=> gemini://envs.net/%7Eseirdy/ my tildeverse Gemini page
 => https://sr.ht/%7Eseirdy Sourcehut forge
 => https://github.com/Seirdy GitHub forge
 => https://gitlab.com/Seirdy GitLab forge
+=> https://codeberg.org/Seirdy Codeberg forge
+
+## Location (Seirdy, It/Its, online)
+
+My handle is "Seirdy" on all the platforms I use:
+
+=> https://a.gh0.pw/user/Seirdy apioforum
+=> https://envs.net/%7Eseirdy/ my tildeverse Web page
+=> gemini://envs.net/%7Eseirdy/ my tildeverse Gemini page
 => https://pleroma.envs.net/seirdy Fediverse (Pleroma)
 => https://matrix.to/#/@seirdy:seirdy.one Matrix: @seirdy:seirdy.one
 => mailto:seirdy@seirdy.one email
 => ../publickey.asc PGP: 1E892DB2A5F84479
 
-My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places. For IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks.
+My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places. For IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, apionet, and a few smaller networks.
 
 My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. My Matrix account used to be @seirdy:envs.net but I've since migrated to my own Conduit server.
 

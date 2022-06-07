@@ -28,6 +28,11 @@
 			"type": "text/html"
 		},
 		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://a.gh0.pw/user/Seirdy",
+			"type": "text/html"
+		},
+		{
 			"rel": "webmention",
 			"href": "https://seirdy.one/webmentions/receive"
 		},

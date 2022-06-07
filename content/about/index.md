@@ -57,12 +57,13 @@ Social (Fediverse)
 : [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me'}") (primary)
 : [@Seirdy<wbr />@lemmy<wbr />.ml](https://lemmy.ml/u/Seirdy "{rel='me'}") (Lemmy)
 
-Social (centralized) (not necessarily endorsed)
-: [Lobsters](https://lobste.rs/u/Seirdy "{rel='me'}")
+Social (centralized)
+:	[apioforum](https://a.gh0.pw/user/Seirdy "{rel='me'}")
 : [Tildes.net](https://tildes.net/user/Seirdy "{rel='me'}")
+: "Seirdy" on Linux Weekly News
+: [Lobsters](https://lobste.rs/u/Seirdy "{rel='me'}")
 : [Reddit](https://www.reddit.com/user/Seirdy/ "{rel='me'}")
 : ["Hacker" News](https://news.ycombinator.com/user?id=Seirdy "{rel='me'}")
-: "Seirdy" on Linux Weekly News
 
 Email
 : [seirdy<wbr />@seirdy.one](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}")
@@ -71,9 +72,10 @@ PGP public key
 : [`1E892DB2A5F84479`](../publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}") (also availabel via Web Key Directory)
 
 Chat
-: IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, some others)
+: IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)
 : Matrix: [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "class='u-impp u-url' rel='me'")
 
+At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them.
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
 I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
