@@ -4,6 +4,7 @@
 # hugo, brotli, ect (like gzip/zopfli), sd, and xmlfmt.
 image: alpine/edge
 packages:
+  - curl # for webring update script
   - rsync
   - git  # for Hugo's gitInfo
   - bmake

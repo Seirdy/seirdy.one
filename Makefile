@@ -19,8 +19,11 @@ ECT_LEVEL=9
 
 VNU ?= vnu
 
+csv/webrings.csv:
+	sh scripts/populate-webrings.sh
+
 .PHONY: hugo
-hugo: $(SRCFILES)
+hugo: csv/webrings.csv $(SRCFILES)
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
 
 # .hintrc-local for linting local files

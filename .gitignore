@@ -10,3 +10,4 @@ old/
 public/
 public_*/
 .hugo_build.lock
+csv/webrings.csv
