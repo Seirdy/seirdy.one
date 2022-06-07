@@ -1,14 +1,13 @@
 ---
 # we rsync binaries.tar.gz from the same server we deploy to.
 # it contains these static-pie binaries:
-# hugo, brotli, ect (like gzip/zopfli), sd, and xmlfmt.
+# hugo, brotli, ect (like gzip/zopfli), sd, htmlq (like jq for html), and xmllint.
 image: alpine/edge
 packages:
   - curl # for webring update script
   - rsync
   - git  # for Hugo's gitInfo
   - bmake
-  - libxml2-utils # for xmllint
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
