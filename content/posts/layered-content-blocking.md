@@ -25,7 +25,7 @@ Hostname or IP-based based network filtering is the least capable but most relia
 Context: extension permissions systems
 --------------------------------------
 
-Firefox allows extensions to declare their own permissions. Extensions decide which sites they can run on and when, and which permissions are optional.
+Firefox allows extensions to declare their own permissions. Extensions decide which sites they can run on and when, with required and optional permissions.
 
 Chromium has a similar system with additional functionality: users can choose to enable an extension only when clicked, only for a certain site, or for all sites globally. Safari takes this a step further and also offers the choice to enable an extension for a limited time period (one day).
 
