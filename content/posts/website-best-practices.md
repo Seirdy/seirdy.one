@@ -1408,7 +1408,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 [Chrom&shy;ium's CSS Overview](https://developer.chrome.com/docs/devtools/css-overview/)
 : can show some basic accessibility violations, including contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
 
-[testssl.sh (cli)](https://testssl.sh/) or [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/)
+[testssl.sh (cli)](https://testssl.sh/) OR [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/)
 : basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
 
 [Webbkoll](https://webbkoll.dataskydd.net/)

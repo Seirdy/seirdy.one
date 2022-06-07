@@ -25,6 +25,13 @@
 </section>` -}}
 
 <!--
+	Sometimes I want multiple described terms for a set of descriptions
+	in a description list
+-->
+{{- $combinedTerm := `<dt>(.*) OR (.*)</dt>` -}}
+{{- $splitTerm := `<dt>$1</dt><dt>$2</dt>` -}}
+
+<!--
 	Descriptive footnote link names, remove unused class, put
 	backlink id in <a> since <a> is focusable, remove unused class.
 -->
@@ -56,4 +63,4 @@
 {{- $extraLanguageFigure := `<pre><code class="language-figure">` -}}
 {{- $replacedLanguageFigure := `<pre tabindex="0"><code translate="no" itemprop="text">` -}}
 
-{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | replaceRE $endNotesNotFocusable $endNotesFocusable | replaceRE $extraLanguageFigure $replacedLanguageFigure | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `&#173;` | replaceRE `&lsquo;` `‘`| safeHTML -}}
+{{- .Content | replaceRE $referencesWithoutHeading $referencesWithHeading | replaceRE $badNoteRef $goodNoteRef | replaceRE $endnotesClosingDiv $endnotesClosingSection | replaceRE $combinedTerm $splitTerm | replaceRE $tocHeadingOutside $tocHeadingInside | replaceRE $footnoteBacklinksBad $footnoteBacklinksGood | replaceRE $repeatedFootnoteBacklinksBad $repeatedFootnoteBacklinksGood | replaceRE $endNotesNotFocusable $endNotesFocusable | replaceRE $extraLanguageFigure $replacedLanguageFigure | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `&#173;` | replaceRE `&lsquo;` `‘`| safeHTML -}}
