@@ -1,6 +1,8 @@
 {{ define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 <main itemprop="mainEntity" itemscope="" itemtype="https://schema.org/SearchResultsPage" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+	<h1>Search</h1>
+	<p role="note">This page is an unfinished work-in-progress.</p>
 	{{ partial "search.html" . }}
 	<hr />
 	{{ readFile "/dynamic/search-results.html" | safeHTML }}
