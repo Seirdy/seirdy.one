@@ -1,9 +1,12 @@
 <form
 	itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction"
-	action="https://searchmysite.net/search/" method="get">
-	<label for="search">Search this site (powered by <a rel="nofollow" href="https://searchmysite.net/">Search My Site</a>):</label>
+	action="https://searchmysite.net/search/" method="get" role="search">
+	<label for="search">
+		Search this site (powered by <a rel="nofollow" href="https://searchmysite.net/">Search My Site</a>):
+	</label>
 	<div><!--We need the extra divs to serve as pseudo-table-cells.-->
-		<input id="search" itemprop="query" type="search" value="domain:seirdy.one " name="q" />
+		<input id="search" type="search" itemprop="query"
+			value="domain:seirdy.one " name="q" spellcheck="true" />
 		<div><input type="submit" value="search" /></div>
 	</div>
 </form>
