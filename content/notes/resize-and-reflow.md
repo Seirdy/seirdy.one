@@ -2,7 +2,7 @@
 title: "Resize and reflow"
 date: 2022-06-07T23:38:39-07:00
 replyURI: "https://yatil.net/blog/resize-text-reflow"
-replyTitle: "WCAG SC 1.4.4 Resize Text & 1.4.10 Reflow"
+replyTitle: "WCAG SC 1.4.4 Resize Text and 1.4.10 Reflow"
 replyType: "BlogPosting"
 replyAuthor: "Eric Eggert"
 replyAuthorURI: "https://yatil.net"
