@@ -12,3 +12,5 @@ The only engines I know of that run JavaScript are Google, Bing, and maybe Petal
 It's common practice for sites to give a JavaScript-lite version to search engines, though if the content differs heavily you run the risk of hitting a manual action. I'd imagine that search-crawler-exclusive editions would become the norm if crawlers stopped handling JavaScript.
 
 Marginalia actually seems to penalize its use.
+
+<p><ins>Update: Yep (formerly FairSearch) also seems to evaluate JavaScript</ins><p>

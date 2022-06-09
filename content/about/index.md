@@ -70,7 +70,7 @@ Email
 : [seirdy<wbr />@seirdy.one](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}")
 
 PGP public key
-: [`1E892DB2A5F84479`](../publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}") (also availabel via Web Key Directory)
+: [`1E892DB2A5F84479`](../publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}") (also available via Web Key Directory)
 
 Chat
 : IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)
