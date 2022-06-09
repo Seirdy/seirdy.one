@@ -14,15 +14,17 @@
 			</a>
 		</h2>
 		<p>{{ printf "%.200s" .Desc }}</p>
-		<p><q cite="{{ .URL }}">
-		{{ $isMatch := false }}
-		{{ range .Frag }}
-		{{ if $isMatch }}<strong>{{ end -}}
-		{{ printf . }}
-		{{- if $isMatch }}</strong>{{ end }}
-		{{ $isMatch = (not $isMatch) }}
-		{{ end }}
-		</q></p>
+		<p>
+			<q cite="{{ .URL }}">
+				{{- $isMatch := false -}}
+				{{- range .Frag -}}
+				{{- if $isMatch }}<strong>{{ end -}}
+				{{- printf . -}}
+				{{- if $isMatch }}</strong>{{ end -}}
+				{{- $isMatch = (not $isMatch) -}}
+				{{- end -}}
+			</q>
+		</p>
 	</li>
 {{- end }}
 </ol>
