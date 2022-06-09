@@ -1,0 +1,28 @@
+<p>
+{{ .TotalResults }} results
+</p>
+<ol>
+{{- range .Results }}
+	<li>
+		<a href="{{ .URL }}">
+			<h2>
+				{{ if .Title -}}
+					{{- .Title }}
+				{{ else -}}
+					{{- .URL }}
+				{{- end }}
+			</h2>
+		</a>
+		<p>{{ printf "%.200s" .Desc }}</p>
+		<p>
+		{{ $isMatch := false }}
+		{{ range .Frag }}
+		{{ if $isMatch }}<strong>{{ end -}}
+		{{ printf . }}
+		{{- if $isMatch }}</strong>{{ end }}
+		{{ $isMatch = (not $isMatch) }}
+		{{ end }}
+		</p>
+	</li>
+{{- end }}
+</ol>
