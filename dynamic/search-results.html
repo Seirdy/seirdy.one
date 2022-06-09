@@ -4,17 +4,17 @@
 <ol>
 {{- range .Results }}
 	<li>
-		<a href="{{ .URL }}">
-			<h2>
+		<h2>
+			<a href="{{ .URL }}">
 				{{ if .Title -}}
 					{{- .Title }}
 				{{ else -}}
 					{{- .URL }}
 				{{- end }}
-			</h2>
-		</a>
+			</a>
+		</h2>
 		<p>{{ printf "%.200s" .Desc }}</p>
-		<p>
+		<p><q cite="{{ .URL }}">
 		{{ $isMatch := false }}
 		{{ range .Frag }}
 		{{ if $isMatch }}<strong>{{ end -}}
@@ -22,7 +22,7 @@
 		{{- if $isMatch }}</strong>{{ end }}
 		{{ $isMatch = (not $isMatch) }}
 		{{ end }}
-		</p>
+		</q></p>
 	</li>
 {{- end }}
 </ol>

@@ -7,6 +7,7 @@ outputs:
     - gemtext
 description: "Get to know Rohan Kumar, also known as Seirdy. Contact info, my projects, interests, online accounts, etc."
 ---
+<div itemscope="" itemprop="about" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 
 I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
 
@@ -58,7 +59,7 @@ Social (Fediverse)
 : [@Seirdy<wbr />@lemmy<wbr />.ml](https://lemmy.ml/u/Seirdy "{rel='me'}") (Lemmy)
 
 Social (centralized)
-:	[apioforum](https://a.gh0.pw/user/Seirdy "{rel='me'}")
+: [apioforum](https://a.gh0.pw/user/Seirdy "{rel='me'}")
 : [Tildes.net](https://tildes.net/user/Seirdy "{rel='me'}")
 : "Seirdy" on Linux Weekly News
 : [Lobsters](https://lobste.rs/u/Seirdy "{rel='me'}")
@@ -75,8 +76,7 @@ Chat
 : IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)
 : Matrix: [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "class='u-impp u-url' rel='me'")
 
-At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them.
-If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
+At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
 I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
 
@@ -154,6 +154,4 @@ This page also exists on the [tildeverse](https://tildeverse.org/), a bunch of \
 Content on this site also appears on <a rel="alternate" href="gemini://seirdy.one/" class="u-syndication">my Gemini capsule</a>. My Web and Gemini content may be slightly different: I often phrase things differently to accommodate the strengths and weaknesses of each medium.
 
 I have a [Tor hidden Web service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ "{rel='alternate' class='u-syndication'}") which mirrors this site's contents, except for the fact that it replaces some SVGs with PNGs.
-
-<div itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 

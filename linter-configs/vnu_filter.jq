@@ -20,6 +20,8 @@
 					(.message == "Text not allowed in element “ol” in this context.")
 					or
 					(.message == "Bad value “{{ .URL }}” for attribute “href” on element “a”: Illegal character in path segment: “{” is not allowed.")
+					or
+					(.message == "Bad value “{{ .URL }}” for attribute “cite” on element “q”: Illegal character in path segment: “{” is not allowed.")
 				)
 				and (
 					(.extract | test("{{"))
