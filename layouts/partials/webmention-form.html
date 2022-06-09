@@ -8,7 +8,7 @@
 		<input type="hidden" name="target" value="{{ .Site.Params.canonicalBaseURL }}{{ $canonicalRelPermalink }}" />
 		<label for="menchie">URL of page linking here</label>
 		<div><!--We need the extra divs to serve as pseudo-table-cells.-->
-			<input id="menchie" type="url" name="source" />
+			<input id="menchie" type="url" required="" name="source" />
 			<div><input type="submit" value="submit" /></div>
 		</div>
 	</form>

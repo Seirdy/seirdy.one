@@ -74,7 +74,7 @@ PGP public key
 
 Chat
 : IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)
-: Matrix: [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "class='u-impp u-url' rel='me'")
+: Matrix: [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}")
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
