@@ -57,7 +57,7 @@ These services currently run on, but do not necessarily endorse, virtual private
 
 ### Retention
 
-Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="03:35:12+00:00">00:00 UTC</time>
+Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="03:35:12">00:00 UTC</time>
 
 Before purging, I may preserve the "User-Agent" request headers of agents that clearly identify as bots.
 
