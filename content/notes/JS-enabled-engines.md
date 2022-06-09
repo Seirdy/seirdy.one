@@ -13,4 +13,4 @@ It's common practice for sites to give a JavaScript-lite version to search engin
 
 Marginalia actually seems to penalize its use.
 
-<p><ins>Update: Yep (formerly FairSearch) also seems to evaluate JavaScript</ins><p>
+<p><ins>Update: Yep (formerly FairSearch) also seems to evaluate JavaScript</ins></p>
