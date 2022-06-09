@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{- default "" .Site.LanguageCode }}" xml:lang="{{- default "" .Site.LanguageCode }}" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# cc: http://creativecommons.org/ns#">
 {{ partial "head.html" . -}}
-<body itemscope="" itemtype="https://schema.org/WebPage">
+{{- $stype := "WebPage" -}}
+{{- with .Params.stype -}}
+	{{- $stype = . -}}
+{{- end -}}
+<body itemscope="" itemtype="https://schema.org/{{ $stype }}">
 {{ partial "header.html" . -}}
 {{- block "main" . }}{{- end -}}
-{{ partialCached "footer.html" . }}
+{{ partial "footer.html" . }}
 </body>
 </html>

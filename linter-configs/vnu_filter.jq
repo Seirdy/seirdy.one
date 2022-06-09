@@ -13,6 +13,20 @@
 				.message == "Attribute “media” not allowed on element “meta” at this point."
 				and (.extract | test(" name=\"theme-color\""))
 			)
+			or
+			( # Allow raw templates
+				(.url | test ("/search/index."))
+				and (
+					(.message == "Text not allowed in element “ol” in this context.")
+					or
+					(.message == "Bad value “{{ .URL }}” for attribute “href” on element “a”: Illegal character in path segment: “{” is not allowed.")
+				)
+				and (
+					(.extract | test("{{"))
+					or
+					(.extract | test("}}"))
+				)
+			)
 		) | not
 	)
 ) | del(..|select(. == [])) | del(..|select(. == {})) | select(. != null)

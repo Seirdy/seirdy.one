@@ -3,7 +3,9 @@
 	<p>
 	Copyright <time itemprop="copyrightYear" datetime="{{now.Year}}">{{now.Year}}</time> {{ partial "indieweb-author.html" -}}
 	</p>
-	{{ partial "search.html" }}
+	{{ if ne .Title "Search" -}}
+	{{- partial "search.html" -}}
+	{{- end -}}
 	<nav aria-label="site info">
 		<ul>
 			<li itemprop="license" itemscope="" itemtype="https://schema.org/CreativeWork">

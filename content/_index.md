@@ -8,7 +8,9 @@ description: "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. S
 sitemap:
     - ChangeFreq: weekly
     - Priority: 0.9
+stype: "WebSite"
 ---
+<meta itemprop="url" content="https://seirdy.one" />
 <div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
 Seirdy’s Home
