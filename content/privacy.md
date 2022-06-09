@@ -38,7 +38,7 @@ For each request you make that reaches my Web servers, my server logs:
 
 This is the information that [Nginx](https://nginx.org/) logs according to the default configurations in many operating systems.
 
-None of the Web content I serve contains cookies or scripts, or collects any information not described by this Privacy Policy
+None of the Web content I serve contains cookies or scripts, or collects any information not described by this Privacy Policy.
 
 ### Gemini server logs
 
@@ -51,11 +51,15 @@ My Gemini server logs:
 
 This is the information [Agate](gemini://qwertqwefsday.eu/agate.gmi) logs according to its default configuration.
 
+### Hosting provider
+
 These services currently run on, but do not necessarily endorse, virtual private servers owned by Digital Ocean. You can read Digital Ocean's [data processing agreement](https://www.digitalocean.com/legal/data-processing-agreement) to learn about how Digital Ocean processes data on these servers.
 
 ### Retention
 
-These logs are purged _every two days._
+Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="03:35:12+00:00">00:00 UTC</time>
+
+Before purging, I may preserve the "User-Agent" request headers of agents that clearly identify as bots.
 
 ### How I use your information
 
@@ -64,7 +68,9 @@ I use server logs to detect <abbr title="Denial of Service">DoS</abbr> attacks, 
 Information I share
 -------------------
 
-No information is automatically shared with any third-parties, to my knowledge.
+Searches performed on search boxes in the site footer and on the search page are powered by the [Search My Site](https://searchmysite.net/) API. When you search, your query---and only your query---is sent to Search My Site. No other information (e.g., your IP address or request headers) is sent. Information about how Search My Site may handle these anonymized queries is available in [its privacy policy](https://searchmysite.net/pages/privacy/).
+
+No other information is automatically shared with any third-parties, to my knowledge.
 
 I may share excerpts of of server logs with third parties if I am trying to resolve a technical issue. For example, I may submit an excerpt of an error log when filing a bug report. Any time I have to share such an excerpt, I remove or alter all identifying information. This includes, but is not limited to: IP addresses, timestamps, and any uniquely-identifying user-agent strings.
 
@@ -79,7 +85,7 @@ Information I avoid
 
 The following describes information I _avoid receiving_ when serving Web content, as well as information I prevent users from _accidentally transmitting_ to third parties.
 
-No Web content governed by these policies makes any connections to parties that are not governed by this Privacy Policy.
+No Web content governed by these policies makes any connections to parties that are not governed by this Privacy Policy, when rendered in a standards-compliant browser.
 
 By default, web browsers may share pages a user visits with third parties by loading third-party content (e.g. hotlinked images, third-party frames, etc). I have disabled this behavior with a `Content-Security-Policy` HTTP header that forbids all third-party content.
 
