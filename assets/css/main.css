@@ -338,7 +338,7 @@ pre {
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
-picture > img {
+div[itemprop="articleBody"] img {
 	display: block;
 	height: auto;
 	margin: auto;
