@@ -18,15 +18,17 @@ Seirdy’s Home
 
 I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (He/Him). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (It/Its). Mixing them up is fine.
 
-Other versions of this website
-------------------------------
+About this site
+---------------
 
 In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/ "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
+
+This is a basic [IndieWeb site](https://indieweb.org/) that contains articles, notes, and bookmarks. You can subscribe to a combined feed of my articles and notes using [the site's Atom feed](./atom.xml), or you can subscribe to sections independently.
 
 About me
 --------
 
-The Director's Cut of my bio is at my [About page](/about.html "itemprop='subjectOf'").
+The Director's Cut of my bio is at my [About page](/about.html "{itemprop='subjectOf'}").
 
 <div class="p-note" itemprop="description">
 
