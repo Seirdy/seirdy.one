@@ -1,13 +1,13 @@
-{{- $actionBase := "https:/seirdy.one/" -}}
-{{- if (in site.BaseURL ".onion") -}}
-	{{- $actionBase = site.BaseURL -}}
+{{- $action := "https:/seirdy.one/search/" -}}
+{{- if or (in site.BaseURL ".onion")  -}}
+	{{- $action = "http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/search/" -}}
 {{- end -}}
 <form
 	itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction"
-	action="{{ $actionBase }}search/" method="get" role="search">
+	action="{{ $action }}" method="get" role="search">
 	<label for="search" itemscope="" itemprop="target" itemtype="https://schema.org/EntryPoint">
 		Search this site (powered by the <a rel="nofollow" href="https://searchmysite.net/">Search My Site</a> API):
-		<meta itemprop="urlTemplate" content="http://seirdy.one/search?q={q}" />
+		<meta itemprop="urlTemplate" content="{{ $action }}?q={q}" />
 	</label>
 	<div><!--We need the extra divs to serve as pseudo-table-cells.-->
 		<input itemprop="query-input" id="search" type="search" required="" name="q" />
