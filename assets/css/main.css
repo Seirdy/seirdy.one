@@ -83,10 +83,6 @@ html {
 	}
 
 	summary {
-		/* The tappable region of a <summary> extends across the page.
-		 * we need to tell users that the full space is interactive.
-		 * Use a border for that. */
-		border: 1px solid #999;
 		/* It's not obvious that a <summary> has button semantics.
 		 * "cursor: pointer" is used on MDN, web.dev, GitHub, gov.uk, and
 		 * others so it's not "novel" and won't surprise users. */
@@ -317,10 +313,13 @@ pre {
 /* Distinguish images from the background in case their color is
  * too similar to the page background color. Also put a border around
  * <pre> and <code> to distinguish them in ways besides font-family.
+ * The tappable region of a <summary> extends across the page: we
+ * need to tell users that the full space is interactive.
  * This is Technique C25 of SC 1.4.8 */
 input,
 img,
-pre {
+pre,
+summary {
 	border: 1px solid;
 }
 
