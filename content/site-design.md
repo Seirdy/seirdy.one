@@ -45,7 +45,7 @@ I also go further than WCAG in many aspects:
 
 - I ensure at least one such 56-by-56&nbsp;px non-interactive region exists on the page, for users with hand tremors or or anyone who wants to tap the screen without clicking something.
 
-- I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors pass APCA contrast ratios, all being close to the ideal lightness contrast of 90. They are also autism- and overstimulation-friendly colors: yellow links are significantly de-saturated to reduce harshness.
+- With the exception of in-text borders, I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors pass APCA contrast ratios, all being close to the ideal lightness contrast of 90. They are also autism- and overstimulation-friendly colors: yellow links are significantly de-saturated to reduce harshness.
 
 - I ensure that the page works on extremely narrow viewports without triggering two-dimensional scaling. It should work at widths well below 200 CSS pixels.
 
@@ -55,7 +55,15 @@ I test each WCAG success criterion myself using the mainstream browser engines (
 
 I also accept user feedback. Users are free to contact me through any means linked on my [About page](../about/).
 
-Finally, I supplement manual testing with automated tools. I run [axe-core](https://github.com/dequelabs/axe-core), the [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated), [AInspector](https://github.com/ainspector/ainspector-for-firefox), the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/), and [ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/). WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
+Finally, I supplement manual testing with the following automated tools:
+
+- [axe-core](https://github.com/dequelabs/axe-core)
+- [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated)
+- [AInspector](https://github.com/ainspector/ainspector-for-firefox)
+- [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+- [ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/)
+
+WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
 
 Browser engine compatibility
 ----------------------------
@@ -89,7 +97,7 @@ The aforementioned metadata (microdata, microformats) has improved reading-mode 
 
 This site should fully support the Readability algorithm. The Readability algorithm is used by Firefox and Vivaldi. It's the basis of one of multiple distillers used by Brave; Brave typically uses its Readability-based logic on seirdy.one. Readability is the only article distillation algorithm I try to actively support.
 
-This site happens to fully supports Apple's Reader Mode and Azure Immersive Reader (AIR), the latter of which powers Microsoft Edge's reading mode. Unfortunately, AIR applies a stylesheet atop the extracted article that makes figures difficult to read: it centers text in figures, included pre-formatted blocks. I filed an issue on AIR's feedback forum, but that forum was subsequently deleted.
+This site happens to fully support Apple's Reader Mode and Azure Immersive Reader (AIR), the latter of which powers Microsoft Edge's reading mode. Unfortunately, AIR applies a stylesheet atop the extracted article that makes figures difficult to read: it centers text in figures, included pre-formatted blocks. I filed an issue on AIR's feedback forum, but that forum was subsequently deleted.
 
 This site works well in the Diffbot article extractor. Diffbot powers a variety of services, including Instapaper.
 
