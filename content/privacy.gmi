@@ -91,7 +91,7 @@ By default, web browsers may share pages a user visits with third parties by loa
 
 By default, web browsers may share arbitrary information with a server through HTTP headers; these headers could include fingerprintable information unintentionally (client-hints, do-not-track) or intentionally (Chromium's upcoming advertising identifiers). I do not log any HTTP headers not explicitly mentioned in the "Web server logs" section, but I cannot prevent user agents from sending a header ahead of time.
 
-By default, web browsers can share near-arbitrary identifying data with a server by executing near-arbitrary JavaScript, or store this information for future transmission. I have disabled this behavior with a "Content-Security-Policy" HTTP header that forbids script loading ("script-src: none"), script execution ("sandbox"), and making connections for any purpose other than downloading a page a user navigated to ("connect-src").
+By default, web browsers can share near-arbitrary identifying data with a server by executing near-arbitrary JavaScript, or store this information for future transmission. I have disabled this behavior with a "Content-Security-Policy" HTTP header. It contains explicit and implicit directives that forbid script loading ("script-src: none"), script execution ("sandbox"), and making connections for any purpose other than downloading a page a user navigated to ("connect-src").
 
 By default, user agents using HTTPS may contact a certificate authority to check the revocation status of an TLS certificate. I have disabled and replaced this behavior by including an "OCSP Must-Staple" directive in the TLS certificates used by my Web servers.
 
