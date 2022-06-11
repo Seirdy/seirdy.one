@@ -163,9 +163,15 @@ References and further reading
 ------------------------------
 
 <ol>
-<li><p>{{<mention-work itemprop="citation" role="doc-credit" itemtype="ScholarlyArticle">}}Harini Sampath, Alice Merrick, and Andrew Macvean. 2021. _{{<cited-work url="https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445544" name="Accessibility of Command Line Interfaces" extraName="headline">}}. In CHI Conference on Human Factors in Computing Systems (CHI '21), May 8–13, 2021, Yokohama, Japan._ ACM, New York, NY, USA 10 Pages. <https://doi.org/10.1145/3411764.3445544>{{</mention-work>}}</p></li>
-<li><p>{{<mention-work itemprop="citation" role="doc-credit" itemtype="TechArticle">}}{{<cited-work url="https://www.w3.org/WAI/WCAG22/Techniques/#text" name="Techniques for WCAG 2.2" extraName="headline">}}. Alastair Campbell, Michael Cooper, Andrew Kirkpatrick. W3C. <time datetime="2022-05-30">2022-05-30</time>.{{</mention-work>}}</p></li>
-<li><p>{{<mention-work itemprop="citation" role="doc-credit" itemtype="Book">}}{{<cited-work url="https://clig.dev/" name="Command Line Interface Guidelines">}}. Aanand Prasad, Ben Firshman, Carl Tashian, Eva Parish. Commit `89d755c`, <time datetime="2022-04-19">2022-04-19</time>.{{</mention-work>}}</p></li>
+<li>
+{{<mention-work itemprop="citation" role="doc-credit" itemtype="ScholarlyArticle" p="true">}}Harini Sampath, Alice Merrick, and Andrew Macvean. 2021. _{{<cited-work url="https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445544" name="Accessibility of Command Line Interfaces" extraName="headline">}}. In CHI Conference on Human Factors in Computing Systems (CHI '21), May 8–13, 2021, Yokohama, Japan._ ACM, New York, NY, USA 10 Pages. <a href="https://doi.org/10.1145/3411764.3445544">DOI 10.1145/3411764.3445544</a>{{</mention-work>}}
+</li>
+<li>
+{{<mention-work itemprop="citation" role="doc-credit" itemtype="TechArticle" p="true">}}{{<cited-work url="https://www.w3.org/WAI/WCAG22/Techniques/#text" name="Techniques for WCAG 2.2" extraName="headline">}}. Alastair Campbell, Michael Cooper, Andrew Kirkpatrick. W3C. <time datetime="2022-05-30">2022-05-30</time>.{{</mention-work>}}
+</li>
+<li>
+{{<mention-work itemprop="citation" role="doc-credit" itemtype="Book" p="true">}}{{<cited-work url="https://clig.dev/" name="Command Line Interface Guidelines">}}. Aanand Prasad, Ben Firshman, Carl Tashian, Eva Parish. Commit `89d755c`, <time datetime="2022-04-19">2022-04-19</time>.{{</mention-work>}}
+</li>
 </ol>
 
 </section>
