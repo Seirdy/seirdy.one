@@ -2,15 +2,7 @@
 {{- with .Get "itemprop" -}}
 	{{ $itemprop = . }}
 {{- end -}}
-{{- if .Get "p" -}}
-<p
-{{- else }}
 <span
-{{- end }}
 	class="h-cite{{ with .Get "reply" }} in-reply-to{{ end }}" itemprop="{{ $itemprop }}"{{ with .Get "role" }} role="{{ . }}"{{ end }} itemscope="" itemtype="https://schema.org/{{ .Get "itemtype" }}">
 	{{- .Inner | markdownify | safeHTML -}}
-{{- if .Get "p" -}}
-</p>
-{{- else -}}
 </span>
-{{- end -}}
