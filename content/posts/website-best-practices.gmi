@@ -1127,10 +1127,11 @@ The WAI's Cognitive and Learning Disabilities Accessibility Task Force recommend
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
-Reading modes leverage article extractors such as Readability.js (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users.
+Reading modes leverage article extractors such as Readability.js (integrated into Firefox, Epiphany, Brave, Vivaldi, and others), DOM Distiller (integrated into Chromium), Brave SpeedReader, and Trafilatura (powers a variety of tools and services). A host of other proprietary options exist: Diffbot powers services like Instapaper, Mozilla's Pocket has its own secret parsers, and countless "send to e-reader" services have amassed loyal users.
 
 => https://github.com/mozilla/readability Readability.js
 => https://chromium.googlesource.com/chromium/dom-distiller/ DOM Distiller
+=> https://github.com/brave/brave-core/tree/master/components/speedreader/rust/lib Brave SpeedReader
 => https://trafilatura.readthedocs.io/en/latest/ Trafilatura
 
 Safari's proprietary fork of Readability has grown quite complex compared to upstream; Edge's Immersive Reader is a mystery to me, with a problematic stylesheet:
