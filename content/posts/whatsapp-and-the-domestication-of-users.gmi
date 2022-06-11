@@ -192,24 +192,22 @@ Since 2900 words wasn't quite enough, I wrote a follow-up; check it out if you f
 Translations are always welcome
 
 Evgeny Kuznetsov wrote a Russian translation of this article:
-
 => https://evgenykuznetsov.org/posts/2021/domestication/ WhatsApp и одомашнивание пользователей
 
 The Framalang translators at Framasoft translated this article to French:
-
 => https://framablog.org/2021/02/04/utilisateurs-libres-ou-domestiques-whatsapp-et-les-autres/ WhatsApp et la domestication des utilisateurs.
 
 Licaon_Kter translated this article to Romanian:
-
 => https://web.archive.org/web/20210924154306/convorb.im/post/2021/02/14/whatsapp-si-domesticirea-utilizatorilor.html WhatsApp și domesticirea utilizatorilor
 
 David Jimenez translated this article to Spanish:
-
 => gemini://dvejmz.srht.site/whatsapp-y-la-domesticacion-de-usuarios.gmi WhatsApp y la domesticación de usuarios
 
 Andrea of Le Alternative translated this article to Italian:
-
 => https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/ WhatsApp e l’addomesticamento degli utenti
+
+puer robustus translated this article to German:
+=> https://www.puer-robustus.eu/2022/06/10/domestizierung-von-nutzern.html WhatsApp und die Domestizierung von Nutzern
 
 ## References and Endnotes
 
