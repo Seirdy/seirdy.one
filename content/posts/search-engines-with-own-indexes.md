@@ -230,6 +230,8 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [Naver](https://search.naver.com): Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
 
+- [Daum](https://www.daum.net/): Korean. Also unsure about this one's independence.
+
 - [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
 
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
@@ -237,6 +239,8 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 - [go.mail.ru](https://go.mail.ru/): Russian
 
 ### Smaller indexes
+
+- [ALibw.com](https://www.alibw.com/): Chinese, found in my access logs.
 
 - [Vuhuv](https://www.vuhuv.com.tr/): Turkish. [alt domain](https://tr.vuhuv.com/)
 

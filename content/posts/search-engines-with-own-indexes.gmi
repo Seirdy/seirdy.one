@@ -238,10 +238,12 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 * Sogou: Chinese
 * Yisou: Chinese
 * Naver: Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
+* Daum: Korean. Also unsure about its independence.
 * Seznam: Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
 * Cốc Cốc: Vietnamese
 * go.mail.ru: Russian
 
+=> https://www.daum.net/ Daum (Korean)
 => https://search.naver.com  Naver
 => https://www.seznam.cz/  Seznam
 => https://coccoc.com/search  Cốc Cốc
@@ -249,11 +251,13 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 ### Smaller indexes
 
+* ALibw.com: Chinese, found in my access logs.
 * Vuhuv: Turkish
 * Parsijoo: Persian
 * search.ch: Regional search engine for Switzerland; users can restrict searches to their local regions.
 * fastbot: German
 
+=> https://www.alibw.com/ ALibw.com (Chinese)
 => https://www.vuhuv.com.tr/ Vuhuv
 => https://tr.vuhuv.com/ Yuhuv (alternate domain)
 => https://www.parsijoo.ir/  Parsijoo
@@ -267,6 +271,10 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 => https://www.moose.at  Moose.at
 => https:solofield.net SOLOFIELD
 => https://kaz.kz/ kaz.kz
+
+### Unknown
+
+I'm unable to determine if these engines are independent; help would be appreciated!
 
 ## Misc
 
