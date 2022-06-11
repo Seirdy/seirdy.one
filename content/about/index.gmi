@@ -6,7 +6,7 @@ Online Handle: Seirdy
 
 I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
 
-## Other versions of this website
+## About this capsule
 
 This page's canonical location is on seirdy.one:
 
@@ -26,6 +26,9 @@ My Web and Gemini content may be slightly different: I often phrase things diffe
 
 I have a Tor hidden Web service which mirrors this site's contents, except for the fact that it replaces some SVGs with PNGs.
 => http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/
+
+Featured in:
+=> gemini://nightfall.city/writers-lane/ Writer's Lane, Nightfall City
 
 ## Location (Rohan, He/Him, meatspace)
 
