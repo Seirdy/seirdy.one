@@ -38,7 +38,9 @@ Options:
 
 1.  Borders in TUIs should always be drawn with characters specifically intended for textual interfaces (e.g., boxdraw characters). While I do think the GIF followed this advice, I think it’s worth explicitly saying it. Accessible terminal emulators can figure out what these mean and factor them into what they report through an accessibility API. But breaking these borders up with descriptive text makes detection of readable text error-prone.
 
-2.  Decorative content in CLI output should be limited, since the output of CLI utilities can be piped through other programs. At the very least, these tools should be able to detect whether their standard output is being re-directed or piped and sanitize output accordingly.
+2. Borders should be used sparingly, as they end up causing issues when the window is re-sized.[1] Re-sizing terminal windows is quite common: think about the combined user-base of tiling window managers, tiling terminal session managers (Tmux, Screen, etc.), multiplexing terminal emulators, and plain old split-windows.
+
+3.  Decorative content in CLI output should be limited, since the output of CLI utilities can be piped through other programs. At the very least, these tools should be able to detect whether their standard output is being re-directed or piped and sanitize output accordingly.
 
 The “Colours, Emojis, and Layouting” (sic) section has similar issues:
 
@@ -62,7 +64,7 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 Avoiding reliance on color and using whitespace and/or indentation for pseudo-headings are two sample recommendations from the WCAG.
 
-4.  Write man pages! Man pages have a standardized,[1] predictable, searchable format. Many screen-reader users actually have special scripts to make it easy to read man pages. A man page is also trivial to convert to HTML for people who prefer web-based documentation.[2] If your utility has a config file with special syntax or vocabulary, write a dedicated man page for it in section 5 and mention it in a “SEE ALSO” section.[3]
+4.  Write man pages! Man pages have a standardized,[2] predictable, searchable format. Many screen-reader users actually have special scripts to make it easy to read man pages. A man page is also trivial to convert to HTML for people who prefer web-based documentation.[3] If your utility has a config file with special syntax or vocabulary, write a dedicated man page for it in section 5 and mention it in a “SEE ALSO” section.[4]
 
 5.  Try adding shell completions for your program, so users can tab-complete options. This is particularly helpful in shells like Zsh that support help-text in tab completions, especially when combined with plugins like fzf-tab that enable fuzzy-searching help-text (see "code snippet 2")
 
@@ -70,13 +72,13 @@ Avoiding reliance on color and using whitespace and/or indentation for pseudo-he
 
 6.  Related to no. 5: use a well-understood format for "-h" and "--help" output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
 
-7.  Follow convention: use POSIX-like options. Consider supplementing them with GNU-style long options if your tool has a significant number of them.[4]
+7.  Follow convention: use POSIX-like options. Consider supplementing them with GNU-style long options if your tool has a significant number of them.[5]
 
 8.  Either delegate output wrapping to the terminal, or detect the number of columns and format output to fit. Prefer the former when given a choice, especially when the output is not a TTY.
 
-9.  Make sure your web-based documentation and forge frontends are accessible, or are mirrored somewhere with good accessibility. I love what the Gitea folks are doing, but sadly their web frontend has a number of critical issues.[5] For now, if your forge has accessibility issues, mirroring to GitHub and/or Sourcehut seems like a good option.
+9.  Make sure your web-based documentation and forge frontends are accessible, or are mirrored somewhere with good accessibility. I love what the Gitea folks are doing, but sadly their web frontend has a number of critical issues.[6] For now, if your forge has accessibility issues, mirroring to GitHub and/or Sourcehut seems like a good option.
 
-10. Avoid breaking changes to you program’s CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[6] Semantic versioning is your friend.
+10. Avoid breaking changes to you program’s CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[7] Semantic versioning is your friend.
 
 11. Be predictable. Users expect "git log" to print a commit log. Users do not expect "git log" to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
 
@@ -102,7 +104,7 @@ $ moac -
 
 These considerations are far more subjective, debatable, and deserving of skepticism than the previous recommendations. There’s a reason I call this section “considerations”, not “recommendations”. Exceptions abound; I’m not here to think on your behalf.
 
-1.  Remember that users aren’t always at their best when they read "--help" output; they could be trying to solve a frustrating problem, feeling a great deal of anxiety. Keep the output clean, predictable, boring, and *fast.* A 2-second delay and spinning fans will probably be extremely unpleasant for already-stressed users, especially if they need to use it often.[7]
+1.  Remember that users aren’t always at their best when they read "--help" output; they could be trying to solve a frustrating problem, feeling a great deal of anxiety. Keep the output clean, predictable, boring, and *fast.* A 2-second delay and spinning fans will probably be extremely unpleasant for already-stressed users, especially if they need to use it often.[8]
 
 2.  Include example usage in your man pages and accompanying documentation. Consider submitting the example usage to the tldr-pages project if your tool gets popular:
 => https://tldr.sh/ tldr-pages
@@ -123,12 +125,12 @@ These considerations are far more subjective, debatable, and deserving of skepti
 
 8.  Don’t conflate CLIs and TUIs. A CLI should be non-interactive; a TUI should be interactive. Exceptions exist for really simple interfaces (e.g. Magic-Wormhole and others like it) that accept user input; however, as the interface grows more complex, consider splitting the program into two sibling programs, one of which can have a “pure” non-interactive CLI.
 
-9.  Go above and beyond by writing separate integrations for environments like Emacspeak.[8]
+9.  Go above and beyond by writing separate integrations for environments like Emacspeak.[9]
 => http://emacspeak.sourceforge.net/ Emacspeak homepage
 
 ## Name conflicts
 
-This section might be the most important part of this post. If a CLI executable has a binary name conflict, packagers may have to re-name it. Otherwise, users will have to juggle $PATH overrides.[9]
+This section might be the most important part of this post. If a CLI executable has a binary name conflict, packagers may have to re-name it. Otherwise, users will have to juggle $PATH overrides.[10]
 
 Before publishing your software, test for binary name conflicts. Many package managers have built-in functionality to search for package files. I recommend doing so with large repositories to test for conflicts.
 
@@ -164,22 +166,24 @@ Thanks to Emily for reminding me of this on Fedi.
 
 ## Footnotes
 
-1.  Well, they’re *somewhat* standardized compared to plain stdout.
+1. Yes, it's possible to support re-sizing by using a TUI library like ncurses. Unfortunately, TUIs are out of scope for this article; I'm focusing mainly on CLIs.
 
-2.  My other article on accessible textual websites is probably relevant when it comes to Web-based documentation:
+2.  Well, they’re *somewhat* standardized compared to plain stdout.
+
+3.  My other article on accessible textual websites is probably relevant when it comes to Web-based documentation:
 => gemini://seirdy.one/posts/2020/11/23/website-best-practices/ Best practices for inclusive textual websites
 
-3.  For more on man page sections, see the "man" man page.
+4.  For more on man page sections, see the "man" man page.
 
-4.  I need to take my own advice for programs like MOAC. Ugh.
+5.  I need to take my own advice for programs like MOAC. Ugh.
 
-5.  See this Fediverse thread about forge accessibility:
+6.  See this Fediverse thread about forge accessibility:
 => https://mastodon.technology/@codeberg/108403449317373462 
 
-6.  For a good example, see Git’s distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
+7.  For a good example, see Git’s distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
 
-7.  The slow responses to basic flags like "--help" is one of many reasons I dislike Java command-line utilities (signal-cli, Nu HTML Checker). I believe I’m not alone when I say this.
+8.  The slow responses to basic flags like "--help" is one of many reasons I dislike Java command-line utilities (signal-cli, Nu HTML Checker). I believe I’m not alone when I say this.
 
-8.  I used to not-very-seriously claim that Neovim, my preferred $EDITOR, is better than Emacs. Then I tried Emacspeak. I still make the same claim, but more softly and with an exception for Emacspeak.
+9.  I used to not-very-seriously claim that Neovim, my preferred $EDITOR, is better than Emacs. Then I tried Emacspeak. I still make the same claim, but more softly and with an exception for Emacspeak.
 
-9.  A notable exception is executables that are supposed to conflict with others. Distributions like Fedora, Debian, and derivatives have an “alternatives” system to manage these overrides using symlinks. Examples include toolchains (`cc` and `ld` could point to their GCC or Clang implementations) and mail transfer agents (`sendmail` and `mta` have been re-implemented many times over).
+10.  A notable exception is executables that are supposed to conflict with others. Distributions like Fedora, Debian, and derivatives have an “alternatives” system to manage these overrides using symlinks. Examples include toolchains (`cc` and `ld` could point to their GCC or Clang implementations) and mail transfer agents (`sendmail` and `mta` have been re-implemented many times over).
