@@ -157,3 +157,22 @@ Content on this site also appears on <a rel="alternate" href="gemini://seirdy.on
 
 I have a [Tor hidden Web service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ "{rel='alternate' class='u-syndication'}") which mirrors this site's contents, except for the fact that it replaces some SVGs with PNGs.
 
+Meta: featured in directories
+-----------------------------
+
+This site is featured in some cool directories.
+
+### Website minimalism
+
+- [10 KB Club](https://10kbclub.com/)
+- [no-JS Club](https://no-js.club/)
+- [XHTML Club](https://xhtml.club/)
+- [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
+
+### Other directories
+
+- [Indieweb Webring Directory](https://xn--sr8hvo.ws/directory)
+- [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
+- [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
+- [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
+
