@@ -12,11 +12,11 @@ This site may look simple on the surface, but I put a _lot_ of thought into it. 
 Accessibility statement
 -----------------------
 
-I've made every effort to make seirdy.one as accessible as possible.
+I've made every effort to make seirdy.one as accessible as possible. More information about the accessibility-related work for seirdy.one is in my post {{<mention-work>}}{{<cited-work url="https://seirdy.one/posts/2020/11/23/website-best-practices/" name="Best practices for inclusive textual websites" extraName="headline">}}{{</mention-work>}}.
 
 ### Conformance status
 
-The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. I've made sure seirdy.one is fully conformant with WCAG 2.2 level AA.
+The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. I've made sure seirdy.one is **fully conformant with WCAG 2.2 level AA.**
 
 <dfn>Fully conformant</dfn> means that the content fully conforms to the accessibility standard without any exceptions.
 
@@ -107,3 +107,4 @@ Privacy
 -------
 
 This site is **privacy-respecting.** Its CSP blocks all scripts, third-party content, and other problematic features. I describe how I go out of my way to reduce the information you can transmit on this site in [my privacy policy](../privacy/).
+
