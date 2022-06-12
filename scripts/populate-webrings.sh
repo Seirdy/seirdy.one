@@ -56,27 +56,40 @@ while getopts "hd" flags; do
 	esac
 done
 
-# values for the GEORGE webring
-george() {
-	echo GEORGE
-	curl -s 'https://george.gh0.pw/embed.cgi?seirdy' | htmlq -a href 'main p a'
+trim_trailing_comma() {
+	sd ',$' ''
 }
 
 values_to_csv() {
-	tr '\n' ',' && echo
+	tr '\n' ',' | trim_trailing_comma && echo
+}
+
+# values for the GEORGE webring
+george() {
+	printf 'GEORGE,'
+	curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
+		| htmlq -a href 'main p a' \
+		| values_to_csv
+}
+
+endless_orbit() {
+	printf 'Endless Orbit,'
+	curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
+		| grep -C 1 https://seirdy.one/ \
+		| sd https://seirdy.one/ https://linkyblog.neocities.org/webring.html \
+		| sd "\n|'" '' | trim_trailing_comma
+		echo
 }
 
 print_csv_values() {
-	printf %s "$(george)" | values_to_csv
+	george
+	endless_orbit
 }
-
-if [ -f "$webrings_dest" ]; then
-	echo "webrings file already generated"
-	exit 0
-fi
 
 if [ "$dry_run" = '1' ]; then
 	print_csv_values
+elif [ -f "$webrings_dest" ]; then
+		echo "webrings file already generated"
 else
 	print_csv_values | cat "$webrings_src" - >"$webrings_dest"
 fi
