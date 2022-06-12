@@ -80,6 +80,8 @@ At least two platforms listed in the "Social (centralized)" category are not end
 
 I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
 
+If you want to follow me on the Fediverse, [read my Fediverse greeting first](../fediverse-greeting/)
+
 <small>Poggies</small>
 
 </div>

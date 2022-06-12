@@ -57,6 +57,9 @@ My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly
 
 My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. My Matrix account used to be @seirdy:envs.net but I've since migrated to my own Conduit server.
 
+If you want to follow me on Fedi, read this first:
+=> ../fediverse-greeting/ Fediverse greeting
+
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
