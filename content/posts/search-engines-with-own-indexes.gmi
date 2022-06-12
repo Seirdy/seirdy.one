@@ -287,11 +287,13 @@ I'm unable to determine if these engines are independent; help would be apprecia
 => https://infinitysearch.co  Infinity Search
 => https://infinitydecentralized.com/  Infinity Decentralized
 
-## Upcoming engines
+## Search engines without a web interface
 
-These engines aren’t ready yet; their indexes are either in a proof-of-concept phase with a handful of sites or aren’t available yet.
+Some search engines are integrated into other appliances, but don’t have a web portal.
 
-* Apple: given the activity of the AppleBot crawler lately, their index will almost certainly grow to a size large enough to power a general search engine soon. Check your server’s access logs; there’s a good chance it’s crawled your site if you have a few backlinks.
+* Apple’s search engine is usable in the form of “Siri Suggested Websites”. Its index is built from the Applebot web crawler. If Apple already has working search engine, it’s not much of a stretch to say that they’ll make a web interface for it someday.
+
+* Amazon bought Alexa Internet (a web traffic analysis company, at the time unrelated to the Amazon Alexa virtual assistant) and discontinued its website ranking product. Amazon still runs the relevant crawlers, and also have a bot called “Amazonbot”. While Applebot powers the Siri personal assistant, Amazonbot powers the Alexa personal assistant “to answer even more questions for customers”. Crawling the web to answer questions is the basis of a search engine.
 
 ## Gemini search engines
 
