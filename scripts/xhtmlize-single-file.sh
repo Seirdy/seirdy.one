@@ -15,19 +15,20 @@
 
 set -e -u
 
-export html_file="$1"
-export tmp_file="$html_file.tmp"
-export xhtml_file=${html_file%*.html}.xhtml
+html_file="$1"
+tmp_file="$html_file.tmp"
+xhtml_file=${html_file%*.html}.xhtml
 
 cleanup() {
 	rm -f "$tmp_file"
 }
 trap cleanup EXIT
 
-trap cleanup EXIT
+# delete the stylesheet from the html file; we'll re-insert it later.
+# Also remove one indentation level
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t' '' >"$tmp_file"
 {
-	head -n7 "$tmp_file"
+	head -n7 "$tmp_file" | sd -s '/>' ' />'
 	cat tmp.css
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	tail -n +8 "$tmp_file" \
@@ -35,12 +36,14 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t' '' >"
 		| sd '(?:\n)?</(code|samp)>\n(?:[\t\s]*)?</pre>' '</$1></pre>' \
 		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"' \
 		| sd '(</picture>|src="[^"]*" ?/>)<span itemprop="name" class="p-name fn n">' '$1 <span itemprop="name" class="p-name fn n">' \
-		| sd '([a-z])<(data|time)' '$1 <$2'
+		| sd '([a-z])<(data|time)' '$1 <$2' \
+		| sd -s '/>' ' />'
 } >>"$xhtml_file"
 
- # replace the html file with the formatted xhtml5 file, excluding the xml declaration
+# replace the html file with the formatted xhtml5 file, excluding the
+# XML declaration.
 tail -n +2 "$xhtml_file" > "$html_file"
 
 # remove the redundant charset declaration from the xhtml file. It's the
-# first thing in the <head>
+# first thing in the <head>.
 sed -i 5d "$xhtml_file" # busybox sed supports "-i"
