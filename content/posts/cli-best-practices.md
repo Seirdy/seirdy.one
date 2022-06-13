@@ -19,6 +19,8 @@ This is a "living article" that I plan on adding to indefinitely. If you like it
 
 <p role="doc-tip">Note: this article specifically concerns CLIs, not full-blown textual user interfaces (<abbr title="Textual User Interfaces">TUIs</abbr>). It also focuses on utilities for UNIX-like shells; other command-line environments may have different conventions.</p>
 
+{{<toc>}}
+
 Problematic patterns
 --------------------
 
@@ -64,36 +66,40 @@ The "Colours, Emojis, and Layouting" (sic) section has similar issues:
 
 1. Nearly all animated spinners are extremely problematic for screenreaders. A simple progress meter and/or numeric percentage combined with flags to enable/disable them is preferable.
 
-2. Excessive animation and color can be harmful to users with attention and/or vestibular disorders, and some on the autism spectrum. Many tools offer a `--color[=WHEN]` flag where `WHEN` is `always`, `never`, or `auto`. Expecting users to learn all the color configurations for all their tools is unrealistic; tools should [respect the `NO_COLOR` environment variable.](https://no-color.org/)
+2. Excessive animation and color can harm users with attention and/or vestibular disorders, and some on the autism spectrum. Many tools offer a `--color[=WHEN]` flag where `WHEN` is `always`, `never`, or `auto`. Expecting users to learn all the color configurations for all their tools is unrealistic; tools should [respect the `NO_COLOR` environment variable.](https://no-color.org/)
 
 Recommen&shy;dations {#recommendations}
 --------------------
 
 This is a non-exhaustive list of simple, baseline recommendations for designing CLI utilities.
 
+### Accessibility
+
 1. Send your tool's output through a program like `espeak-ng` and listen to it. Can you make sense of the output?
 
-2. How "unique" is your tool's output? Output should look as similar to other common utilities as possible, to reduce the learning curve. Keep it boring.
+2. Refer to the latest <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> publication (currently WCAG 2.2) and take a look at the applicable criteria. Many have [accompanying techniques for plain-text interfaces.](https://w3c.github.io/wcag/techniques/#text). Avoiding reliance on color and using whitespace and/or indentation for pseudo-headings are two sample recommendations from the WCAG.
 
-3. Refer to the latest <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> publication (currently WCAG 2.2) and take a look at the applicable criteria. Many have [accompanying techniques for plain-text interfaces.](https://w3c.github.io/wcag/techniques/#text). Avoiding reliance on color and using whitespace and/or indentation for pseudo-headings are two sample recommendations from the WCAG.
+3. Make sure your web-based documentation and forge frontends are accessible, or are mirrored somewhere with good accessibility. I love what the Gitea folks are doing, but sadly their web frontend has a number of critical issues.[^2] For now, if your forge has accessibility issues, mirroring to GitHub and/or Sourcehut seems like a good option.
 
-4. Write man pages! Man pages have a standardized,[^2] predictable, searchable format. Many screen-reader users actually have special scripts to make it easy to read man pages. A man page is also trivial to convert to HTML for people who prefer web-based documentation.[^3] If your utility has a config file with special syntax or vocabulary, write a dedicated man page for it in section 5 and mention it in a "SEE ALSO" section.[^4]
+4. Avoid ASCII-art, and use presentational text sparingly. Include a way to configure output to be friendly to screen-readers and log files alike (if it isn't already). For example, a simplified output mode can occasionally log a percentage-complete instead of a progress bar.
 
-5. Try adding shell completions for your program, so users can tab-complete options. This is particularly helpful in shells like Zsh that support help-text in tab completions, especially when combined with plugins like [fzf-tab](https://github.com/Aloxaf/fzf-tab) that enable fuzzy-searching help-text (see [code snippet 2](#code-2)).
+### Familiarity
 
-6. Related to no. 5: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
+1. How "unique" is your tool's output? Output should look as similar to other common utilities as possible, to reduce the learning curve. Keep it boring.
 
-7. Follow convention: use POSIX-like options. Consider supplementing them with GNU-style long options if your tool has a significant number of them.[^5]
+2. Follow convention: use POSIX-like options. Consider supplementing them with GNU-style long options if your tool has a significant number of them.[^3]
 
-8. Either delegate output wrapping to the terminal, or detect the number of columns and format output to fit. Prefer the former when given a choice, especially when the output is not a TTY.
+3. Avoid breaking changes to you program's CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[^4] Semantic versioning is your friend.
 
-9. Make sure your web-based documentation and forge frontends are accessible, or are mirrored somewhere with good accessibility. I love what the Gitea folks are doing, but sadly their web frontend has a number of critical issues.[^6] For now, if your forge has accessibility issues, mirroring to GitHub and/or Sourcehut seems like a good option.
+4. Be predictable. Users expect `git log` to print a commit log. Users do not expect `git log` to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
 
-10. Avoid breaking changes to you program's CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[^7] Semantic versioning is your friend.
+### Documen&shy;tation {#documentation}
 
-11. Be predictable. Users expect `git log` to print a commit log. Users do not expect `git log` to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
+1. Write man pages! Man pages have a standardized,[^5] predictable, searchable format. Many screen-reader users actually have special scripts to make it easy to read man pages. A man page is also trivial to convert to HTML for people who prefer web-based documentation.[^6] If your utility has a config file with special syntax or vocabulary, write a dedicated man page for it in section 5 and mention it in a "SEE ALSO" section.[^7]
 
-12. Be safe. If a tool makes irreversible changes to the outside environment, add a `--dry-run` or equivalent option.
+2. Try adding shell completions for your program, so users can tab-complete options. This is particularly helpful in shells like Zsh that support help-text in tab completions, especially when combined with plugins like [fzf-tab](https://github.com/Aloxaf/fzf-tab) that enable fuzzy-searching help-text (see [code snippet 2](#code-2)).
+
+3. Related to no. 5: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
 
 {{<codefigure samp="true">}} {{< codecaption lang="console" >}} This is what tab-completion for [MOAC](https://sr.ht/~seirdy/moac) looks like with fzf-tab. {{< /codecaption >}}
 
@@ -113,9 +119,16 @@ $ moac -
 
 {{</codefigure>}}
 
-### More opinionated considerations
+### Mis&shy;cellan&shy;eous {#miscellaneous}
 
-These considerations are far more subjective, debatable, and deserving of skepticism than the previous recommendations. There's a reason I call this section "considerations", not "recommendations". Exceptions abound; I'm not here to think on your behalf.
+1. Either delegate output wrapping to the terminal, or detect the number of columns and format output to fit. Prefer the former when given a choice, especially when the output is not a TTY.
+
+2. Be safe. If a tool makes irreversible changes to the outside environment, add a `--dry-run` or equivalent option.
+
+More opinion&shy;ated consider&shy;ations {#more-opinionated-considerations}
+-----------------------------------------
+
+These considerations are far more subjective, debatable, and deserving of skepticism than the previous recommendations. There's a reason I call this section "considerations", not "recommendations". Exceptions abound; I'm here to present information, not to think on your behalf.
 
 1. Remember that users aren't always at their best when they read `--help` output; they could be trying to solve a frustrating problem, feeling a great deal of anxiety. Keep the output clean, predictable, boring, and _fast._ A 2-second delay and spinning fans will probably be extremely unpleasant for already-stressed users, especially if they need to use it often.[^8]
 
@@ -127,7 +140,7 @@ These considerations are far more subjective, debatable, and deserving of skepti
 
 5. Conform to tools that share a similar niche. If you're using Rust to make a fast alternative to popular coreutils: model its behavior, help-text, and man pages after `ripgrep` and `fd`. If you're making a linter for Go: copy `go vet`.
 
-6. If you want to keep your tool simple, make the output readable to both humans and machines; it should work well when streamed to another program's standard input and when parsed by a person. This is especially useful when people redirect output streams to log files.
+6. If you want to keep your tool simple, make the output readable to both humans and machines; it should work well when streamed to another program's standard input and when parsed by a person. This is especially useful when people redirect output streams to log files, and to screen readers.
 
 7. Consider splitting related functionality between many executables (the UNIX way) and/or sub-commands (like Git). I split [MOAC's](https://sr.ht/~seirdy/moac) functionality across both `moac` and `moac-pwgen`, and gave `moac` three subcommands. The ["Consistent commands trees"](https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html#consistent-commands-trees) section of Lucas' article has good advice.
 
@@ -185,17 +198,17 @@ References and further reading
 
 [^1]: Yes, it's possible to support re-sizing by using a TUI library like ncurses. Unfortunately, TUIs are out of scope for this article; I'm focusing mainly on CLIs.
 
-[^2]: Well, they're _somewhat_ standardized compared to plain stdout.
+[^2]: See [this Fediverse thread](https://mastodon.technology/@codeberg/108403449317373462) about forge accessibility.
 
-[^3]: [My other article on accessible textual websites](https://seirdy.one/posts/2020/11/23/website-best-practices/) is probably relevant when it comes to Web-based documentation
+[^3]: I need to take my own advice for programs like [moac](https://sr.ht/~seirdy/moac). Ugh.
 
-[^4]: For more on man page sections, see the [`man(1)`](https://man.openbsd.org/man) man page.
+[^4]: For a good example, see Git's distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
 
-[^5]: I need to take my own advice for programs like [moac](https://sr.ht/~seirdy/moac). Ugh.
+[^5]: Well, they're _somewhat_ standardized compared to plain stdout.
 
-[^6]: See [this Fediverse thread](https://mastodon.technology/@codeberg/108403449317373462) about forge accessibility.
+[^6]: [My other article on accessible textual websites](https://seirdy.one/posts/2020/11/23/website-best-practices/) is probably relevant when it comes to Web-based documentation
 
-[^7]: For a good example, see Git's distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
+[^7]: For more on man page sections, see the [`man(1)`](https://man.openbsd.org/man) man page.
 
 [^8]: The slow responses to basic flags like `--help` is one of many reasons I dislike Java command-line utilities (signal-cli, Nu HTML Checker). I believe I'm not alone when I say this.
 
