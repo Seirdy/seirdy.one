@@ -10,7 +10,7 @@ set -e -u
 output_dir="$1"
 format="$2"
 
-alias find_compressible='find "$output_dir" -type f \( -name "*.html" -o -name "*.xhtml" -o -name "*.xml" -o -name "*.webmanifest" -o -name "*.*.svg" \)'
+alias find_compressible='find "$output_dir" -type f \( -name "*.html" -o -name "*.txt" -o -name "*.xhtml" -o -name "*.xml" -o -name "*.webmanifest" -o -name "*.*.svg" \)'
 
 if [ "$format" = "gzip" ]; then
 	compress_level="$3"
