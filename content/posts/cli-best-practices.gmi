@@ -2,6 +2,8 @@ This began as a reply to another article by Lucas F. Costa; it lists practices t
 
 => https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html Lucas' article
 
+This is a "living article" that I plan on adding to indefinitely. If you like it, come back in a month or two and check the "changelog" link in the article header.
+
 Note: this article specifically concerns CLIs, not full-blown textual user interfaces (TUIs). It also focuses on utilities for UNIX-like shells; other command-line environments may have different conventions.
 
 ## Problematic patterns
@@ -81,6 +83,8 @@ Avoiding reliance on color and using whitespace and/or indentation for pseudo-he
 10. Avoid breaking changes to you program’s CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[7] Semantic versioning is your friend.
 
 11. Be predictable. Users expect "git log" to print a commit log. Users do not expect "git log" to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
+
+12. Be safe. If a tool makes irreversible changes to the outside environment, add a "--dry-run" or equivalent option.
 
 Code snippet 2 (console): This is what tab-completion for MOAC looks like with fzf-tab.
 

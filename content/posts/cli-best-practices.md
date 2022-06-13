@@ -15,6 +15,8 @@ outputs:
 ---
 This began as a reply to another article by Lucas F. Costa; it lists practices to improve user-experience (<abbr title="User Experience">UX</abbr>) of command-line interfaces (<abbr title="Command-Line Interface">CLIs</abbr>). It comes from a good place, and has some good advice: I particularly like its advice on input-validation and understandable errors. Unfortunately, a number of its suggestions are problematic, particularly from an accessibility perspective.
 
+This is a "living article" that I plan on adding to indefinitely. If you like it, come back in a month or two and check the "changelog" link in the article header.
+
 <p role="doc-tip">Note: this article specifically concerns CLIs, not full-blown textual user interfaces (<abbr title="Textual User Interfaces">TUIs</abbr>). It also focuses on utilities for UNIX-like shells; other command-line environments may have different conventions.</p>
 
 Problematic patterns
@@ -90,6 +92,8 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 10. Avoid breaking changes to you program's CLI. Remember that its argument parsing is an API, unless documentation explicitly states otherwise.[^7] Semantic versioning is your friend.
 
 11. Be predictable. Users expect `git log` to print a commit log. Users do not expect `git log` to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
+
+12. Be safe. If a tool makes irreversible changes to the outside environment, add a `--dry-run` or equivalent option.
 
 {{<codefigure samp="true">}} {{< codecaption lang="console" >}} This is what tab-completion for [MOAC](https://sr.ht/~seirdy/moac) looks like with fzf-tab. {{< /codecaption >}}
 
