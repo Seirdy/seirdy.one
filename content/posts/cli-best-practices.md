@@ -99,7 +99,9 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 2. Try adding shell completions for your program, so users can tab-complete options. This is particularly helpful in shells like Zsh that support help-text in tab completions, especially when combined with plugins like [fzf-tab](https://github.com/Aloxaf/fzf-tab) that enable fuzzy-searching help-text (see [code snippet 2](#code-2)).
 
-3. Related to no. 5: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
+3. Related to no. 2: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
+
+4. Ensure that the `whatis` and `apropos` commands work as intended after installing your man pages. These commands parse the beginnings of man pages to give one-line summaries of programs, and often power advanced tab-completion setups.
 
 {{<codefigure samp="true">}} {{< codecaption lang="console" >}} This is what tab-completion for [MOAC](https://sr.ht/~seirdy/moac) looks like with fzf-tab. {{< /codecaption >}}
 
@@ -136,7 +138,13 @@ These considerations are far more subjective, debatable, and deserving of skepti
 
 3. Include an extended list of example command invocations and expected output. Make that document double as a test suite. My [`moac` testdata](https://git.sr.ht/~seirdy/moac/tree/master/item/cmd/moac/testdata/scripts) and [`moac-pwgen` testdata](https://git.sr.ht/~seirdy/moac/tree/master/item/cmd/moac-pwgen/testdata/scripts) scripts are good examples. This can serve as a check for API stability, and even as a source of documentation.
 
-4. Make your man pages as similar to other man pages on the target OS as possible. Many programs parse man pages, and expect them to follow a predictable structure. Try testing your man pages in multiple programs, just as people test Web pages in multiple browser engines. [`w3mman`](https://manpages.debian.org/unstable/w3m/w3mman.1.en.html) (included in [w3m](https://github.com/tats/w3m)) is a good example to make sure auto-hyperlinking works. [Pandoc](https://pandoc.org/) is another tool worth trying.
+4. Make your man pages as similar to other man pages on the target OS as possible. Many programs parse man pages, and expect them to follow a predictable structure. Try testing your man pages in multiple programs, just as people test Web pages in multiple browser engines. Some examples:
+
+   - [`w3mman`](https://manpages.debian.org/unstable/w3m/w3mman.1.en.html) (included in [w3m](https://github.com/tats/w3m)) is a good example to make sure auto-hyperlinking works.
+
+   - Editors like Vim support looking up man pages for the currently-selected word. Try pressing <kbd>Shift</kbd>+<kbd>k</kbd> while your caret is on a command name.
+
+   - [Pandoc](https://pandoc.org/) is another tool worth testing; it can convert man pages to a variety of different formats.
 
 5. Conform to tools that share a similar niche. If you're using Rust to make a fast alternative to popular coreutils: model its behavior, help-text, and man pages after `ripgrep` and `fd`. If you're making a linter for Go: copy `go vet`.
 
