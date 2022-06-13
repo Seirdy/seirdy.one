@@ -3,14 +3,27 @@ Disallow: /noindex/
 Disallow: /misc/
 Disallow: /webmentions/
 
+# "This robot collects content from the Internet for the sole purpose of # helping educational institutions prevent plagiarism. [...] we compare # student papers against the content we find on the Internet to see if we # can find similarities." (http://www.turnitin.com/robot/crawlerinfo.html)
+#  --> fuck off.
 User-Agent: TurnitinBot
 Disallow: /
 
+# "NameProtect engages in crawling activity in search of a wide range of
+# brand and other intellectual property violations that may be of interest
+# to our clients." (http://www.nameprotect.com/botinfo.html)
+#  --> fuck off.
 User-Agent: NPBot
 Disallow: /
 
+# "iThenticate is a new service we have developed to combat the piracy of intellectual property and ensure the originality of written work for# publishers, non-profit agencies, corporations, and newspapers." (http://www.slysearch.com/)
+#  --> fuck off.
 User-Agent: SlySearch
 Disallow: /
+
+# "BLEXBot assists internet marketers to get information on the link structure of sites and their interlinking on the web, to avoid any technical and possible legal issues and improve overall online experience." (http://webmeup-crawler.com/)
+# --> fuck off.
+User-Agent: BLEXBot
+Dissalow: /
 
 User-Agent: Adsbot
 Disallow: /
