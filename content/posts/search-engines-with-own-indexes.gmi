@@ -64,7 +64,7 @@ These are large engines that pass all my standard tests and more.
 
 4. Mojeek: Seems privacy-oriented with a large index containing billions of pages. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch. At this moment, I think that Mojeek is the best alternative to GBY for general web search.
 
-5. Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
+5. Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns: its privacy policy describes advanced fingerprinting metrics, and it doesn't work without JavaScript. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
 
 => https://petalsearch.com/  petalsearch.com
 
