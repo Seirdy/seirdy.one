@@ -175,4 +175,5 @@ This site is featured in some cool directories.
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
+- [Gossip's Web](https://gossipsweb.net/personal-websites)
 
