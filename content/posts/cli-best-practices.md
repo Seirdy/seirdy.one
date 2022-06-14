@@ -99,7 +99,7 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 2. Try adding shell completions for your program, so users can tab-complete options. This is particularly helpful in shells like Zsh that support help-text in tab completions, especially when combined with plugins like [fzf-tab](https://github.com/Aloxaf/fzf-tab) that enable fuzzy-searching help-text (see [code snippet 2](#code-2)).
 
-3. Related to no. 2: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. Alternatively, delegate the generation of both to a library that follows this advice.
+3. Related to no. 2: use a well-understood format for `-h` and `--help` output. This makes auto-generating shell completions much easier. A great example is the [Busybox coreutils'](https://www.busybox.net/) help output: it is much more concise than man pages, but descriptive enough to serve as a quick reference. Alternatively, delegate the generation of both to a library that follows this advice.
 
 4. Ensure that the `whatis` and `apropos` commands work as intended after installing your man pages. These commands parse the beginnings of man pages to give one-line summaries of programs, and often power advanced tab-completion setups.
 
