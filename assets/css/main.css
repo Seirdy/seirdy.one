@@ -118,7 +118,7 @@ html {
 	}
 
 	/* Compensate for misalignment and wasted space caused by padding
-	 * and margin adjustments in nav children made to meet SC 2.5.5 
+	 * and margin adjustments in nav children made to meet SC 2.5.5
 	 * Also prevent overlapping outlines on focus */
 
 	/* We've increased the padding for dt > a, but dt without a link
@@ -291,6 +291,12 @@ samp {
 span[hidden],
 input[type="hidden"] {
 	display: none;
+}
+
+/* Remove list style from data feeds. */
+main[itemtype="https://schema.org/DataFeed"] > ol {
+	padding: 0;
+	list-style-type: none;
 }
 
 /* Narrow screens: long words can cause content to flow out of the

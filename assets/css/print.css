@@ -19,6 +19,9 @@
 	h2 + a,
   /* You can't navigate in a printout. */
 	footer,
+	/* splitting up sections with <hr> is unnecesary if those
+	 * sections are removed */
+	body > hr,
 	nav a:not([rel="home"]) span {
 		display: none;
 	}

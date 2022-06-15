@@ -3,10 +3,9 @@
 	{{- $isStandalone = true -}}
 {{- end -}}
 {{- if $isStandalone -}}
-<main itemprop="mainEntity" class="h-feed hfeed" itemscope="" itemtype="https://schema.org/CompleteDataFeed">
+<main itemprop="mainEntity" class="h-feed hfeed" itemscope="" itemtype="https://schema.org/DataFeed">
 	<h1 class="p-name" itemprop="name headline" id="posts">Posts</h1>
-	<p>These are all of my posts, sorted by date (newest first).</p>
-	<p>An <a href="./atom.xml">Atom</a> feed is available, containing the full text of all my posts. A legacy <a href="./index.xml">RSS</a> feed also exists.</p>
+	<p>These are all of my long-form posts. <a href="./atom.xml">An Atom feed</a> contains the full text of all my posts.</p>
 {{- else -}}
 <section class="h-feed hfeed" itemprop="hasPart" itemscope="" itemtype="https://schema.org/DataFeed">
 	<h2 class="p-name" itemprop="name" id="posts">Posts</h2>
@@ -14,7 +13,7 @@
 {{- end }}
 	<p>I edit some of these posts quite often; some are updated indefinitely. Check the “updated” timestamps.</p>
 	<p role="doc-tip">
-		Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite>
+		Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite>. Sorted newest to oldest.
 	</p>
 	<ol>
 		{{- $posts := (where site.RegularPages "Section" "posts") -}}
