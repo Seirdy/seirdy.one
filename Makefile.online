@@ -19,12 +19,16 @@ hint-online:
 	hint --config linter-configs/hintrc -f codeframe $(URL)
 lighthouse:
 	mkdir -p $(CHROME_PROFILE)
-	CHROME_PATH=$(CHROME_PATH) CHROME_PROFILE=$(CHROME_PROFILE) JS_FLAGS='' lighthouse $(URL) $(LIGHTHOUSE_ARGS)
+	CHROME_PATH=$(CHROME_PATH) CHROME_PROFILE=$(CHROME_PROFILE) JS_FLAGS='' lighthouse $(URLS) $(LIGHTHOUSE_ARGS)
 	rm -rf $(CHROME_PROFILE)
 redbot:
 	redbot_cli -a $(URL)
 axe:
 	axe $(URLS) --chrome-options $(CHROME_FLAGS_COMMA) --chromedriver-path=$(CHROMEDRIVER_PATH) --show-errors
+equal-access:
+	@echo $(URLS) | tr ' ' '\n' >urls.txt
+	achecker --reportLevels violation,recommendation,potentialrecommendation urls.txt
+	rm urls.txt
 
 all: lighthouse hint-online
 

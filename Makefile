@@ -43,8 +43,13 @@ lint-css: $(CSS_DIR)/*.css
 	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/*.css
 	@#csslint --quiet $(CSS_DIR)
 
-.PHONY: lint-html
-lint-html:
+.PHONY: validate-json
+validate-json:
+	jq -reM '""' $(OUTPUT_DIR)/manifest.min.*.webmanifest 1>/dev/null
+	jq -reM '""' $(OUTPUT_DIR)/webfinger.json 1>/dev/null
+
+.PHONY: validate-html
+validate-html:
 	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | sh scripts/filter-vnu.sh
 
 .PHONY: hint
@@ -53,7 +58,7 @@ hint: hugo .hintrc-local
 	rm .hintrc-local
 
 .PHONY: lint-local
-lint-local: lint-css lint-html
+lint-local: validate-html validate-json lint-css
 
 # dev server, includes future and draft posts
 .PHONY: serve

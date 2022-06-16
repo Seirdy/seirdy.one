@@ -1,0 +1,65 @@
+#!/usr/bin/env dash
+
+set -e -u
+
+# the name of this program
+progname="$(basename "${0}")"
+
+help_text="Usage:
+
+Validate the site's markup, CSS, and accessibility.
+
+Uses xmllint to to check well-formedness and the Nu HTML Checker to
+check (X)HTML5 and CSS validity on every markup file (inc. HTML, XHTML,
+SVG). (xmllint is only relevant if you're using XML syntax).
+
+Lints source CSS files with stylelint.
+
+Uses both axe-core and the IBM Equal Access Checker to test
+accessibility on every page in the sitemap.
+
+Options:
+  -h            Print this help and exit
+  -b            Base URL of site
+"
+
+# TODO: add the following:
+# - check broken internal links
+# - check broken webring links
+# - validate JSON (web app manifest, webfinger)
+
+usage() {
+	printf '%s' "${help_text}"
+}
+
+# when the user passess bad args, send a msg to stderr and exit
+# usage: bad_option <option> <reason>
+bad_option() {
+	echo "${progname}: option ${1}: ${2}" >&2
+	usage >&2
+	exit 1
+}
+
+base_url='http://localhost:8089/'
+
+while getopts "hb" flags; do
+	case ${flags} in
+		h)
+			usage
+			exit 0
+			;;
+		b)
+			base_url="$1"
+			shift
+			;;
+		*)
+			bad_option "${flags}" 'invalid option'
+			exit 1
+			;;
+	esac
+done
+
+make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize lint-html
+make -j2 -f Makefile.online lint-css axe equal-access URLS="$(curl "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
+
+# vi:ft=sh
