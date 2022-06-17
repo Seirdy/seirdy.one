@@ -1,5 +1,6 @@
 # The following test the online instance, post-deploy. I just kept them here for convenience
 
+include Makefile
 DOMAIN = seirdy.one
 PAGE_PATH = /
 SCHEME=https://
