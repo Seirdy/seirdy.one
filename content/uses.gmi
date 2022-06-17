@@ -1,0 +1,62 @@
+Here's the software I use. I've recently started to reduce my use of TUIs in favor of CLIs, for a variety of reasons. When possible, I try to use lightweight programs that can run on any machine, from a single-board computer to a giant desktop. I don't ever want to feel like I need to upgrade my hardware to do the same tasks as before: hardware upgrades should only be justified by my use-cases significantly changing, existing hardware being broken beyond repair, or upstream abandonment of security patches.
+
+## Environment
+
+* OS: Fedora 36
+* Wayland compositor: Sway
+* Shell: zsh
+* Terminal Emulator: Foot. Sometimes gnome-terminal when I'm using a screen reader.
+
+## Basic utilities:
+
+* `$EDITOR`: Neovim
+* Browser: Firefox for most pages, Chromium for apps, NetSurf when I'm low on battery.
+* Coreutils alternatives: ripgrep, sd (better multiline regexes than sed)
+* Music player: mpd, along with my mpd scripts
+* Video player: three builds of mpv, two with a PGO run on different types of video (anime and live-action-with-filmgrain). Often paired with yt-dlp and mpv_sponsorblock
+* Image viewer: mpv (one less program to keep track of), swayimg. Both support AVIF and JPEG-XL now.
+* Session manager: tmux (I don't use it for tiling, Sway handles that)
+* IRC client: WeeChat. Might use senpai eventually, if I can get it to play well with espeak-ng.
+* News: Newsboat. I'm thinking of switching to an feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports WebSub.
+* Screen reader: Orca
+
+=> https://sr.ht/~seirdy/mpd-scripts/ mpd-scripts page
+=> https://github.com/po5/mpv_sponsorblock mpv_sponsorblock
+=> https://sr.ht/~taiite/senpai/ senpai
+
+## Mail:
+
+* Mail fetcher: mbsync
+* SMTP client: msmtp
+* routine tasks, viewing/filtering latest messages: mblaze
+* MUA: mostly neomutt
+* Viewing HTML mail: w3m-sandbox or edbrowse.
+
+=> https://github.com/leahneukirchen/mblaze mblaze
+=> https://git.sr.ht/~seirdy/bwrap-scripts/tree/trunk/item/w3m-sandbox w3m-sandbox
+
+## Other tools:
+
+* jq (I love writing jq programs)
+* fzf
+* z.lua
+* msync
+* wormhole-william
+* rdrview
+* Efficient Compression Tool (better than ZopfliPNG)
+* RustScan (don't use it on max settings without permission)
+* scc
+* Pandoc
+
+=> https://github.com/psanford/wormhole-william wormhole-william
+=> https://github.com/eafer/rdrview rdrview
+=> https://github.com/fhanau/Efficient-Compression-Tool Efficient Compression Tool
+=> https://github.com/boyter/scc scc
+
+## What I don't use
+
+These are tools that I don't use, or avoid using.
+
+* system monitoring TUIs: I just run the command to view the resource I need to know about
+* File managers: I prefer using the shell with fzf-based tab-completion that also features preview windows
+

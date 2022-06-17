@@ -113,9 +113,9 @@ There are exceptions, of course: I use a Linux distro with Systemd (Fedora), aft
 
 Some software I use: Fedora, Alpine Linux, SwayWM, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, Foot, and zsh.
 
-More information is available in my dotfiles repo; check its README.
+More information is available in my "uses" page.
 
-=> https://sr.ht/%7Eseirdy/dotfiles My dotfiles
+=> ../uses/ Software I use
 
 ### Anime
 

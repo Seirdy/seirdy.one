@@ -122,9 +122,7 @@ I lean towards simplicity; I usually prefer line-mode command-line interfaces th
 
 There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all. When I use a graphical program, it's typically for things for which graphics are an inherent requirement or for accessibility reasons (most textual user interfaces don't play well with screen readers).
 
-Some other software I use: Sway, mpv, mpd, Minetest, Neovim, tmux, newsboat, WeeChat, Foot, and zsh.
-
-More information is available in my [dotfiles repo](https://sr.ht/~seirdy/dotfiles); check its README.
+More information is available in [my "uses" page](../uses/).
 
 ### Anime
 
