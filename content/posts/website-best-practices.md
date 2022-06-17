@@ -1128,7 +1128,7 @@ On lists with many links, I had to find other ways to ensure adequate tap-target
 
 - The [webmention list](#webmentions) after this article separates links with timestamps and some paragraph spacing.
 
-- Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer, 
+- Some list items have links with extra padding. These include description terms (`<dt>`) and navigation elements, such as the table of contents or the site header and footer,
 
 - The [posts list](../../../../) and the list of related articles at the beginning of [one of my posts](../../../../2022/02/02/floss-security/) separates links with non-interactive text descriptions
 
@@ -1152,7 +1152,7 @@ Line spacing (leading) is at least space-and-a-half within paragraphs, and parag
 {{</quotation>}}
 
 Non-<wbr />brow&shy;sers: reading mode {#non-browsers-reading-mode}
-------------------------------------
+--------------------------------------
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
@@ -1442,21 +1442,23 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 10. Test in an online website translator tool.
 
-11. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+11. Test your feeds (RSS, Atom, JSON, etc.) in multiple readers to ensure they render your markup correctly. Microsoft Outlook uses Word's Internet-Explorer-based HTML engine to display these contents; Newsboat uses its own custom HTML renderer. Most don't support CSS.
 
-12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
+12. Read the (prettified and indented) HTML source itself and parse it with your brain. See if anything seems illogical or un&shy;necessary. Imagine giving someone a printout of your page's `<body>` along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
 
-13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
+13. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
 
-14. Try printing out your page in black-and-white from an unorthodox graphical browser.
+14. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
 
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.[^25]
+15. Try printing out your page in black-and-white from an unorthodox graphical browser.
 
-16. Combine conversion tools. Combine an HTML-<wbr />to-<wbr />EPUB converter and an EPUB-<wbr />to-<wbr />PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^25]
 
-17. Build a time machine. Travel decades---or perhaps centuries---into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+17. Combine conversion tools. Combine an HTML-<wbr />to-<wbr />EPUB converter and an EPUB-<wbr />to-<wbr />PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 
-I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
+18. Build a time machine. Travel decades---or perhaps centuries---into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to [meet Benjamin Franklin](https://xkcd.com/567/).
+
+I'm still on step 17, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
 {{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking browser with bitmap fonts showing this article's \"Code snippet 4\"." class="pix" sf=2 >}}
 
@@ -1664,7 +1666,5 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 [^25]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
-
-    Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
 

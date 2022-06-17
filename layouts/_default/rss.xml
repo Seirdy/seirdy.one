@@ -1,31 +1,28 @@
-{{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-{{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
-{{- $pages = $pctx.RegularPages -}}
-{{- else -}}
-{{- $pages = $pctx.Pages -}}
-{{- end -}}
+{{- $pages := (where site.RegularPages "Section" .Section) -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
 {{- end -}}
-{{- $currentSection := .Section -}}
-{{- $type := "article" -}}
 {{- $period := "daily" -}}
 {{- $mins := "1440" -}}
+{{- $title := .Section | humanize -}}
 {{- if eq .Section "notes" -}}
-	{{- $type = "note" -}}
 	{{- $period = "hourly" -}}
 	{{- $mins = "60" -}}
 {{- end -}}
+{{- if .IsHome }}
+	{{- $period := "hourly" -}}
+	{{- $title = "All content" -}}
+  {{- $pages = .Site.RegularPages -}}
+	{{- $mins = "60" -}}
+{{ end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xml:lang="{{ .Site.LanguageCode }}">
   <channel>
-    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+		<title>{{ $title }} on {{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<ttl>{{ $mins }}</ttl>
@@ -40,8 +37,7 @@
     {{ with .OutputFormats.Get "RSS" }}
 		{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ range where .Site.Pages "Kind" "page" }}
-    {{ if (eq .Section $currentSection ) }}
+    {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -50,7 +46,6 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{- .Content | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | html -}}</description>
     </item>
-    {{ end }}
     {{ end }}
   </channel>
 </rss>

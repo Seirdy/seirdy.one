@@ -3,6 +3,7 @@ outputs:
     - html
     - gemtext
     - atom
+    - RSS
 title: Seirdy's Home
 description: "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy. I write about and develop software to promote user autonomy."
 sitemap:
@@ -23,7 +24,7 @@ About this site
 
 In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/ "{itemprop='sameAs' class='u-url' rel='me'}"). This site's content also appears on my [Gemini capsule](gemini://seirdy.one "{itemprop='sameAs' class='u-syndication' rel='me'}").
 
-This is a basic [IndieWeb site](https://indieweb.org/) that contains articles, notes, and bookmarks. You can subscribe to a combined feed of my articles and notes using [the site's Atom feed](./atom.xml), or you can subscribe to sections independently.
+This is a basic [IndieWeb site](https://indieweb.org/) that contains articles, notes, and bookmarks. You can subscribe to a combined feed of my articles and notes using [the site's Atom feed](./atom.xml), or you can subscribe to sections independently. If your feed reader has problems displaying entry contents (I know Outlook does), I also have a legacy [RSS feed for the whole site](./index.xml) and for each section.
 
 About me
 --------

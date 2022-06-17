@@ -1418,17 +1418,18 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 8. Test keyboard navigability with the tab key and caret navigation. Even without specifying tab indexes, tab selection should follow a logical order if you keep the layout simple.
 9. Test in textual browsers: lynx, links, w3m, ELinks, edbrowse, EWW, Netrik, etc.
 10. Test in an online website translator tool.
-11. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
-12. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
-13. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
-14. Try printing out your page in black-and-white from an unorthodox graphical browser.
-15. Download your webpage and test how multiple word processors render and generate PDFs from it.¹⁴
-16. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
-17. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
+11. Test your feeds (RSS, Atom, JSON, etc.) in multiple readers to ensure they render your markup correctly. Microsoft Outlook uses Word's Internet-Explorer-based HTML engine to display these contents; Newsboat uses its own custom HTML renderer. Most don't support CSS.
+12. Read the (prettified/indented) HTML source itself and parse it with your brain. See if anything seems illogical or unnecessary. Imagine giving someone a printout of your page's <body> along with a whiteboard. If they have a basic knowledge of HTML tags, would they be able to draw something resembling your website?
+13. Test with unorthodox graphical browser engines, like NetSurf, Dillo, Servo, or the Serenity OS browser.
+14. Test how your page renders in ancient browsers, like Netscape Navigator or Tkhtml. Use a TLS terminator or serve over HTTP from localhost.
+15. Try printing out your page in black-and-white from an unorthodox graphical browser.
+16. Download your webpage and test how multiple word processors render and generate PDFs from it.¹⁴
+17. Combine conversion tools. Combine an HTML-to-EPUB converter and an EPUB-to-PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
+18. Build a time machine. Travel decades--or perhaps centuries--into the future. Keep going forward until the WWW is breathing its last breath. Test your site on future browsers. Figuring out how to transfer your files onto their computers might take some time, but you have a time machine so that shouldn't be too hard. When you finish, go back in time to meet Benjamin Franklin:
 
 => https://xkcd.com/567/ xkcd: Urgent Mission
 
-I'm still on step 16, trying to find new ways to break this page. If you come up with a new test, please share it:
+I'm still on step 17, trying to find new ways to break this page. If you come up with a new test, please share it:
 
 => mailto:~seirdy/seirdy.one-comments@lists.sr.ht Mailing list for this website
 
@@ -1596,6 +1597,5 @@ I find Practical Typography quite useful for printed works, and incorporated a m
 ¹³ Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, toggle javascript.options.ion, javascript.options.baselinejit, javascript.options.native_regexp, javascript.options.asmjs, and javascript.options.wasm in about:config; in Chromium, run chromium with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
 ¹⁴ LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
-Fun fact: Microsoft Outlook renders HTML email with Microsoft Word's proprietary HTML engine.
 
 ¹⁵ Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
