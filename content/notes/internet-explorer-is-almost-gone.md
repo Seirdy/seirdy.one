@@ -17,3 +17,5 @@ I'm not really concerned with IE support, but I test with IE-mode in Edge someti
 
 In other words, I test in IE to make sure my site is robust and uses progressive enhancement, not because I actually want it to work perfectly in IE. The only IE problem in my site is SVG rendering (a perfectly compliant SVG shrunk to a smaller size in HTML retains its original size in IE, but cropped with hidden overflow) and a lack of support for `<details>`. Turns out, basically every independent, non-mainstream, currently-active browser engine lacks `<details>` support except for Servo, so I might have to start looking into fallback approaches.
 
+<ins>Update: apparently Microsoft Outlook renders HTML emails and the entries of RSS/Atom feeds using Microsoft Word's HTML renderer. That renderer is based on Internet Explorer's MSHTML (Trident). So I guess IE lives on, in a way.</ins>
+
