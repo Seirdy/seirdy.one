@@ -24,6 +24,8 @@ lighthouse:
 	rm -rf $(CHROME_PROFILE)
 redbot:
 	redbot_cli -a $(URL)
+.PHONY: hint-online lighthouse redbot
+
 axe:
 	axe $(URLS) --chrome-options $(CHROME_FLAGS_COMMA) --chromedriver-path=$(CHROMEDRIVER_PATH) --show-errors
 axe-ff:
@@ -32,7 +34,17 @@ equal-access:
 	@echo $(URLS) | tr ' ' '\n' >urls.txt
 	achecker --reportLevels violation,recommendation,potentialrecommendation urls.txt
 	rm urls.txt
+.PHONY: axe axe-ff equal-access
 
-all: lighthouse hint-online
+.validate-feed-main:
+	scripts/bin/validate-feed $(HUGO_BASEURL)atom.xml
+.validate-feed-posts:
+	scripts/bin/validate-feed $(HUGO_BASEURL)posts/atom.xml
+.validate-feed-notes:
+	scripts/bin/validate-feed $(HUGO_BASEURL)notes/atom.xml
+validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
+.PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
 
-.PHONY: hint-online lighthouse redbot all
+.PHONY: all-extra
+all-extra: axe htmltest validate-json equal-access htmlproofer lint-css validate-feeds
+

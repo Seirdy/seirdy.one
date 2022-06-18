@@ -5,7 +5,7 @@ set -e -u
 # the name of this program
 progname="$(basename "${0}")"
 
-help_text="Usage:
+help_text="Usage: $progname [BASEURL]
 
 Validate the site's markup, CSS, and accessibility.
 
@@ -20,13 +20,10 @@ accessibility on every page in the sitemap.
 
 Options:
   -h            Print this help and exit
-  -b            Base URL of site
 "
 
 # TODO: add the following:
-# - check broken internal links
-# - check broken webring links
-# - validate JSON (web app manifest, webfinger)
+# - validate JSON schema (web app manifest, webfinger)
 
 usage() {
 	printf '%s' "${help_text}"
@@ -40,17 +37,11 @@ bad_option() {
 	exit 1
 }
 
-base_url='http://localhost:8089/'
-
 while getopts "hb" flags; do
 	case ${flags} in
 		h)
 			usage
 			exit 0
-			;;
-		b)
-			base_url="$1"
-			shift
 			;;
 		*)
 			bad_option "${flags}" 'invalid option'
@@ -59,8 +50,10 @@ while getopts "hb" flags; do
 	esac
 done
 
+base_url="${1-http://localhost:8089}"
+
 # HTML validation is already parallelized, so run that single-threaded.
 make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize validate-html
-make -j2 -f Makefile.online htmltest validate-json axe equal-access lint-css htmlproofer URLS="$(curl "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
+make -j2 -f Makefile.online HUGO_BASEURL="$base_url" all-extra URLS="$(curl -sSL "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
 
 # vi:ft=sh

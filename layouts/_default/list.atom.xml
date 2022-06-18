@@ -60,7 +60,7 @@
 					{{- if .Params.replyURI -}}
 						{{- partial "reply-context" .Params | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | safeHTML }}
 					{{- end -}}
-					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | safeHTML }}
+					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | replaceRE `<meta content="true" ?/>` "" | safeHTML }}
 			</div>
 		</content>
 		{{- $type := "article" -}}

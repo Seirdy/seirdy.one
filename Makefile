@@ -56,9 +56,13 @@ validate-html:
 htmlproofer:
 	htmlproofer $(OUTPUT_DIR) --disable-external --report-invalid-tags --report-missing-names --report-missing-doctype --report-eof-tags --report-mismatched-tags --check-html --check-opengraph --check-favicon --empty-alt-ignore --file-ignore $(OUTPUT_DIR)/search/index.html --url-ignore '../music.txt'
 
+# basic checks for generated HTML and broken links. Persist the broken
+# link cache remotely so we can run this in CI.
 .PHONY: htmltest
 htmltest:
+	rsync $(RSYNCFLAGS) deploy@seirdy.one:/home/deploy/refcache.json linter-configs/htmltest/refcache.json 
 	htmltest -c linter-configs/htmltest.yml $(OUTPUT_DIR)
+	rsync $(RSYNCFLAGS) linter-configs/htmltest/refcache.json deploy@seirdy.one:/home/deploy/refcache.json
 
 .PHONY: hint
 hint: hugo .hintrc-local

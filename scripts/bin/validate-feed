@@ -1,0 +1,76 @@
+#!/usr/bin/env dash
+
+set -u
+
+# the name of this program
+progname="$(basename "${0}")"
+
+help_text="Usage: ${progname} [options...] URL
+
+Validate the given feed URL, excluding false-positives
+
+Options:
+  -h            Print this help and exit
+"
+
+usage() {
+	printf '%s' "${help_text}"
+}
+
+# when the user passess bad args, send a msg to stderr and exit
+# usage: bad_option <option> <reason>
+bad_option() {
+	echo "${progname}: option ${1}: ${2}" >&2
+	usage >&2
+	exit 1
+}
+
+while getopts "ho" flags; do
+	case ${flags} in
+		h)
+			usage
+			exit 0
+			;;
+		*)
+			bad_option "${flags}" 'invalid option'
+			exit 1
+			;;
+	esac
+done
+
+url="$1"
+
+
+find_rel_mention_count() {
+	curl -s "$url" | grep -cF 'rel="mentioned"'
+}
+
+rel_mention_count="$(find_rel_mention_count)"
+
+run_validator() {
+	"$GHQ_ROOT/github.com/w3c/feedvalidator/src/demo.py" "$url"
+}
+
+validate_feed() {
+	rel_mention_string="Unregistered link relationship \($rel_mention_count occurrence"
+	if [ "$rel_mention_count" = '1' ]; then
+		rel_mention_string="Unregistered link relationship"
+	fi
+
+	full_regex="Use of unknown namespace|Self reference doesn't match|should not contain (role|aria-labelledby|aria-label|aria-describedby) attribute|$rel_mention_string|entries with the same value|Validating $url"
+
+	run_validator \
+		| grep -Ev "$full_regex"
+}
+
+validator_output="$(validate_feed)"
+if [ "$validator_output" = '' ]; then
+	echo "Feed is valid"
+	exit 0
+else
+	echo "Feed errors found!" 1>&2
+	echo "$validator_output"
+	exit 1
+fi
+
+# vi:ft=sh
