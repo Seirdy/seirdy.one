@@ -3,7 +3,7 @@
 {{- $title := .Section | humanize -}}
 {{- if .IsHome }}
 	{{- $title = "All content" -}}
-  {{- $pages = .Site.RegularPages -}}
+	{{- $pages = where .Site.RegularPages "Date" "!=" (time "0001-01-01") -}}
 	{{- $period = "hourly" -}}
 {{ end -}}
 {{- if eq .Section "notes" -}}

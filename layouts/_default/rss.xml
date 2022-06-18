@@ -13,7 +13,7 @@
 {{- if .IsHome }}
 	{{- $period := "hourly" -}}
 	{{- $title = "All content" -}}
-  {{- $pages = .Site.RegularPages -}}
+	{{- $pages = where .Site.RegularPages "Date" "!=" (time "0001-01-01") -}}
 	{{- $mins = "60" -}}
 {{ end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
