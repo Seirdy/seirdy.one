@@ -1110,7 +1110,9 @@ Readers with hand tremors depend on this space to scroll without accidentally se
 {{<image-figure>}} {{<picture name="touch_targets" alt="List of rectangles with a 56 pixel wide square to its left, filling negative space.">}}
 
 <figcaption itemprop="caption">
-I made sure to leave enough non-interactive space in <a href="../../../../#webrings">my homepage&rsquo;s webring list</a> to accommodate a 48&nbsp;px tap target, with extra space in between.
+
+I made sure to leave enough non-interactive space in [my homepage's webring list]({{<relref "/_index.md#webrings" >}}) to accommodate a 48&nbsp;px tap target, with extra space in between.
+
 </figcaption>
 {{</image-figure>}}
 
@@ -1500,7 +1502,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 
 * Avoiding `_blank` targets in URLs unless absolutely necessary.
 
-* Ways to improve compre&shy;hension by readers who struggle to understand non-literal language (certain cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <abbr title="Web Accessibility Initiative">WAI</abbr> <cite>[Personali&shy;zation Help and Support 1.0](https://w3c.github.io/personalization-semantics/help/index.html)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
+* Ways to improve compre&shy;hension by readers who struggle to understand non-literal language (certain cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <cite>[WAI-Adapt: Help and Support Module](https://www.w3.org/TR/adapt-help/)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
 
 * Other accessible writing tips, maybe after I get a copy of <span class="h-cite" itemprop="mentions" itemscope="" itemtype="https://schema.org/Book">{{<cited-work name="Writing Is Designing" url="https://rosenfeldmedia.com/books/writing-is-designing/">}} by {{<indieweb-person first-name="Michael" last-name="Metts" url="https://mjmetts.com/" itemprop="author">}} and {{<indieweb-person first-name="Andy" last-name="Welfe" url="https://www.andy.wtf/" itemprop="author">}}</span>. A relevant excerpt on writing accessibly is [on A List Apart](https://alistapart.com/article/standards-for-writing-accessibly/).<!--Hugo does something weird when I use my mention-work shortcode here.-->
 
@@ -1601,7 +1603,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^2]: Some addons will have reduced functionality; for instance, [Tridactyl](https://github.com/tridactyl/tridactyl) can't create an `<iframe>` for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
 
-[^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://whalecoiner.com/articles/progressive-enhancement).
+[^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://web.archive.org/web/20220316060312/https://whalecoiner.com/articles/progressive-enhancement).
 
 [^4]: Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet the WCAG [Success Criterion 2.4.8: Location](https://w3c.github.io/wcag/understanding/location.html). I opted to meet the criterion a different way. Since all my pages are linked by my site's global navigation or my "posts" page (also in the global navigation), I just used `aria-current` and made the currently-relevant entry in my global navigation a `<strong>` element.
 

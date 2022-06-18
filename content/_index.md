@@ -29,7 +29,7 @@ This is a basic [IndieWeb site](https://indieweb.org/) that contains articles, n
 About me
 --------
 
-The Director's Cut of my bio is at my [About page](/about.html "{itemprop='subjectOf'}").
+The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectOf'}").
 
 <div class="p-note" itemprop="description">
 

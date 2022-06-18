@@ -59,7 +59,8 @@ while getopts "hb" flags; do
 	esac
 done
 
+# HTML validation is already parallelized, so run that single-threaded.
 make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize validate-html
-make -j2 -f Makefile.online lint-css axe equal-access URLS="$(curl "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
+make -j2 -f Makefile.online htmltest validate-json axe equal-access lint-css htmlproofer URLS="$(curl "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
 
 # vi:ft=sh

@@ -1,3 +1,4 @@
+{{- $wbmLinks := (slice "https://si3t.ch/log/2021-04-18-entetes-floc.html" "https://xmpp.org/2021/02/newsletter-02-feburary/") -}}
 <hr />
 <section aria-labelledby="webmentions">
 		<h2 id="webmentions" tabindex="-1">Webmen&#173;tions</h2>
@@ -14,6 +15,10 @@
 				{{ $webmentions :=  (getJSON $url1) | append (getJSON $url2) -}}
 				{{ range sort $webmentions "created_at" -}}
 				{{ $webmention := . -}}
+					{{- $src := $webmention.source -}}
+					{{- if in $wbmLinks $src -}}
+						{{- $src = printf "https://web.archive.org/web/0/%s" $src -}}
+					{{- end -}}
 					{{ if (eq $webmention.type "like") -}}
 					<div itemprop="potentialAction" itemscope="" itemtype="https://schema.org/LikeAction" class="u-like h-cite">
 					{{- else -}}
@@ -35,11 +40,11 @@
 								{{ else if $webmention.title -}}
 									<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
 								{{ else -}}
-									{{ $webmention.source -}}
+									{{ $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
 								{{ end -}}
-									<a class="u-url" itemprop="url" href="{{ $webmention.source }}" rel="nofollow ugc">liked</a> this
+									<a class="u-url" itemprop="url" href="{{ $src }}" rel="nofollow ugc">liked</a> this
 							{{ else -}}
-								<a class="u-url" itemprop="url" href="{{ $webmention.source }}" rel="nofollow ugc">
+								<a class="u-url" itemprop="url" href="{{ $src }}" rel="nofollow ugc">
 									<span itemprop="name" class="p-content p-name">
 										{{ if $webmention.title -}}
 											{{ $webmention.title | truncate 200 -}}

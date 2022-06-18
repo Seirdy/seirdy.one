@@ -52,6 +52,14 @@ validate-json:
 validate-html:
 	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | sh scripts/filter-vnu.sh
 
+.PHONY: htmlproofer
+htmlproofer:
+	htmlproofer $(OUTPUT_DIR) --disable-external --report-invalid-tags --report-missing-names --report-missing-doctype --report-eof-tags --report-mismatched-tags --check-html --check-opengraph --check-favicon --empty-alt-ignore --file-ignore $(OUTPUT_DIR)/search/index.html --url-ignore '../music.txt'
+
+.PHONY: htmltest
+htmltest:
+	htmltest -c linter-configs/htmltest.yml $(OUTPUT_DIR)
+
 .PHONY: hint
 hint: hugo .hintrc-local
 	hint --config .hintrc-local -f codeframe $(OUTPUT_DIR)

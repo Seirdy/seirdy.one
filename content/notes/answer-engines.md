@@ -13,7 +13,7 @@ I read your article and share similar concerns. Using Microsoft Bing and Google 
 
 Most of these agreements are confidential, so users don't really get transparency. On rare occasions, certain engines have successfully negotiated exceptions to result-mixing, but we don't know what other terms are involved in these agreements.
 
-I've catalogued some other engines in my post {{<mention-work itemprop="citation" itemtype="BlogPosting">}}{{<cited-work name="A look at search engines with their own indexes" url="../../../../../posts/2021/03/10/search-engines-with-own-indexes/" extraName="headline">}}{{</mention-work>}}, and there are many alternatives that don't have this conflict of interest.
+I've catalogued some other engines in my post {{<mention-work itemprop="citation" itemtype="BlogPosting">}}{{<cited-work name="A look at search engines with their own indexes" url="https://seirdy.one/posts/2021/03/10/search-engines-with-own-indexes/" extraName="headline">}}{{</mention-work>}}, and there are many alternatives that don't have this conflict of interest.
 
 Most of these are not as good as Google/Bing when it comes to finding specific pieces of information, but many are far better when it comes to website discovery under a particular topic. Mainstream engines always seem to serve up webpages carefully designed to answer a specific question when I'm really just trying to learn about a larger topic. When using an engine like Marginalia or Alexandria, I can find "webpages about a topic" rather than "webpages designed to show up for a particular query".
 

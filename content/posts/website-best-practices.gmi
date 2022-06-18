@@ -1450,8 +1450,8 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Ways to support non-mainstream and older browsers by supporting subsets of specifications and using progressive enhancement.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
-* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI draft specification matures and its vocabularies gain adoption before going in depth:
-=> https://w3c.github.io/personalization-semantics/help/index.html Personalization Help and Support 1.0
+* Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI- draft specification matures and its vocabularies gain adoption before going in depth:
+=> https://www.w3.org/TR/adapt-help/ WAI-Adapt: Help and Support Module
 
 ## Conclusion
 
@@ -1563,7 +1563,7 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 
 ³ Here's an overview of PE and my favorite write-up on the subject.
 => https://en.wikipedia.org/wiki/Progressive_enhancement Progressive Enhancement (Wikipedia)
-=> https://whalecoiner.com/articles/progressive-enhancement Yes, progressive enhancement is a fucking moral argument
+=> https://web.archive.org/web/20220316060312/https://whalecoiner.com/articles/progressive-enhancement Yes, progressive enhancement is a fucking moral argument
 
 ⁴ Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet a AAA WCAG criterion:
 

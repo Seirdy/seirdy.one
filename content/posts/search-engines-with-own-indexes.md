@@ -271,7 +271,7 @@ Some search engines are integrated into other appliances, but don't have a web p
 
 - Apple's search engine is usable in the form of "Siri Suggested Websites". Its index is built from the Applebot web crawler. If Apple already has working search engine, it's not much of a stretch to say that they'll make a web interface for it someday.
 
-- Amazon bought Alexa Internet (a web traffic analysis company, at the time unrelated to the Amazon Alexa virtual assistant) and discontinued its website ranking product. Amazon still runs the relevant crawlers, and also have [a bot called "Amazonbot"](developer.amazon.com/support/amazonbot). While Applebot powers the Siri personal assistant, Amazonbot powers the Alexa personal assistant <q cite="https://developer.amazon.com/support/amazonbot">to answer even more questions for customers</q>. Crawling the web to answer questions is the basis of a search engine.
+- Amazon bought Alexa Internet (a web traffic analysis company, at the time unrelated to the Amazon Alexa virtual assistant) and discontinued its website ranking product. Amazon still runs the relevant crawlers, and also have [a bot called "Amazonbot"](https://developer.amazon.com/support/amazonbot). While Applebot powers the Siri personal assistant, Amazonbot powers the Alexa personal assistant <q cite="https://developer.amazon.com/support/amazonbot">to answer even more questions for customers</q>. Crawling the web to answer questions is the basis of a search engine.
 
 Graveyard
 ---------
