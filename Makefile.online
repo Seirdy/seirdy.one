@@ -26,6 +26,8 @@ redbot:
 	redbot_cli -a $(URL)
 axe:
 	axe $(URLS) --chrome-options $(CHROME_FLAGS_COMMA) --chromedriver-path=$(CHROMEDRIVER_PATH) --show-errors
+axe-ff:
+	PATH=scripts/bin:$(PATH) axe $(URLS) -b firefox --show-errors
 equal-access:
 	@echo $(URLS) | tr ' ' '\n' >urls.txt
 	achecker --reportLevels violation,recommendation,potentialrecommendation urls.txt

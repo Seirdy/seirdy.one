@@ -15,5 +15,5 @@ cleanup() {
 trap cleanup EXIT
 
 export XMLLINT_INDENT='	'
-time -p find "$output_dir" -type f -name '*.html' | xargs -n1 sh "$script_dir/xhtmlize-single-file.sh"
+find "$output_dir" -type f -name '*.html' | xargs -n1 sh "$script_dir/xhtmlize-single-file.sh"
 # done
