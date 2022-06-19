@@ -26,7 +26,7 @@ However, I still have a ways to go. Here's what I plan on adding:
 - Permalinks for bookmarks
 - Atom feed for bookmarks
 - Automatic POSSE of bookmarks to Fedi
-- Time-period based pagination/navigation on notes/posts page.
+- Time-period based pagination and navigation on notes/posts page.
 
 Once I finish the above, I'll be ready for a "meta" post. Some more tasks after that:
 

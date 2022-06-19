@@ -112,7 +112,7 @@ For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/
 
 #### Dynamic analysis example: Zoom
 
-In 2020, Zoom Video Comm&shy;unications came under scrutiny for marketing its "Zoom" software as a secure, end-to-end encrypted solution for video conferencing. Zoom's documentation claimed that it used "AES-256" encryption. Without source code, did we have to take the docs at their word?
+In 2020, Zoom Video Communications came under scrutiny for marketing its "Zoom" software as a secure, end-to-end encrypted solution for video conferencing. Zoom's documentation claimed that it used "AES-256" encryption. Without source code, did we have to take the docs at their word?
 
 [The Citizen Lab](https://citizenlab.ca/) didn't. In April 2020, it published [a report](https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/) revealing critical flaws in Zoom's encryption. It utilized Wireshark and [mitmproxy](https://mitmproxy.org/) to analyze networking activity, and inspected core dumps to learn about its encryption implementation. The Citizen Lab's researchers found that Zoom actually used an incredibly flawed implementation of a weak version of AES-128 (ECB mode), and easily bypassed it.
 
@@ -210,7 +210,7 @@ I readily concede to several points in favor of source availability from a secur
 
 - It is certainly possible to notice a vulnerability in source code. Excluding low-hanging fruit typically caught by static code analysis and peer review, it's not the main way most vulnerabilities are found nowadays (thanks to {{<indieweb-person itemprop="mentions" nickname="X_CLI" url="https://www.broken-by-design.fr/">}} for [reminding me about what source analysis does accomplish](https://lemmy.ml/post/167321/comment/117774)).
 
-- Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Further&shy;more, it's difficult to verify which software a server is running.[^14] For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
+- Software as a Service can be incredibly difficult to analyze, as we typically have little more than the ability to query a server. Servers don't send core dumps, server-side binaries, or trace logs for analysis. Furthermore, it's difficult to verify which software a server is running.[^14] For services that require trusting a server, access to the server-side software is important from both a security and a user-freedom perspective
 
 Most of this post is written with the assumption that binaries are inspectable and traceable. Binary obfuscation and some forms of content protection/<abbr title="Digital Rights Management">DRM</abbr> violate this assumption and actually do make analysis more difficult.
 
@@ -225,7 +225,7 @@ Whether or not the source code is available for software does not change how ins
 
 Both Patience and {{<indieweb-person itemprop="mentions" first-name="Drew" last-name="Devault" url="https://drewdevault.com/">}} argue that given the above points, a project whose goal is maximum security would release code. Strictly speaking, I agree. Good intentions don't imply good results, but they can _supplement_ good results to provide some trust in a project's future.
 
-Con&shy;clusion {#conclusion}
+Conclusion {#conclusion}
 ---------------
 
 I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation/discovery process.

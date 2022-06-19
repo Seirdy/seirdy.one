@@ -1015,6 +1015,10 @@ Users employing machine translation will not benefit from your soft hyphens, so 
 
 Where long inline "<code>" elements can trigger horizontal scrolling, consider a scrollable "<pre>" element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
+Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter. At least, it will be until NVDA gains the ability to recognize hyphens:
+
+=> https://github.com/nvaccess/nvda/issues/9343 NVDA issue 9343: NVDA isn't ignoring soft hyphens properly
+
 ### Keeping text together
 
 Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10 cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the "&nbsp;" HTML entity:

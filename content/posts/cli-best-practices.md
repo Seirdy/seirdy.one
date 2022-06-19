@@ -93,7 +93,7 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 4. Be predictable. Users expect `git log` to print a commit log. Users do not expect `git log` to make network connections, write something to their filesystem, etc. Try to only perform the minimum functionality suggested by the command. Naturally, this disqualifies opt-out telemetry.
 
-### Documen&shy;tation {#documentation}
+### Documentation {#documentation}
 
 1. Write man pages! Man pages have a standardized,[^5] predictable, searchable format. Many screen-reader users actually have special scripts to make it easy to read man pages. A man page is also trivial to convert to HTML for people who prefer web-based documentation.[^6] If your utility has a config file with special syntax or vocabulary, write a dedicated man page for it in section 5 and mention it in a "SEE ALSO" section.[^7]
 
@@ -121,13 +121,13 @@ $ moac -
 
 {{</codefigure>}}
 
-### Mis&shy;cellan&shy;eous {#miscellaneous}
+### Miscellaneous {#miscellaneous}
 
 1. Either delegate output wrapping to the terminal, or detect the number of columns and format output to fit. Prefer the former when given a choice, especially when the output is not a TTY.
 
 2. Be safe. If a tool makes irreversible changes to the outside environment, add a `--dry-run` or equivalent option.
 
-More opinion&shy;ated consider&shy;ations {#more-opinionated-considerations}
+More opinionated considerations {#more-opinionated-considerations}
 -----------------------------------------
 
 These considerations are far more subjective, debatable, and deserving of skepticism than the previous recommendations. There's a reason I call this section "considerations", not "recommendations". Exceptions abound; I'm here to present information, not to think on your behalf.
@@ -191,7 +191,7 @@ References and further reading
 
 <ol>
 <li>
-{{<mention-work itemprop="citation" role="doc-credit" itemtype="ScholarlyArticle" p="true">}}Harini Sampath, Alice Merrick, and Andrew Macvean. 2021. _{{<cited-work url="https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445544" name="Accessibility of Command Line Interfaces" extraName="headline">}}. In CHI Conference on Human Factors in Computing Systems (CHI '21), May 8–13, 2021, Yokohama, Japan._ ACM, New York, NY, USA 10 Pages. <a href="https://doi.org/10.1145/3411764.3445544">DOI 10.1145/3411764.3445544</a>{{</mention-work>}}
+{{<mention-work itemprop="citation" role="doc-credit" itemtype="ScholarlyArticle" p="true">}}Harini Sampath, Alice Merrick, and Andrew Macvean. 2021. _{{<cited-work url="https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445544" name="Accessibility of Command Line Interfaces" extraName="headline">}}. In CHI Conference on Human Factors in Computing Systems (CHI '21), May 8–13, 2021, Yokohama, Japan._ ACM, New York, NY, USA 10 Pages. <a href="https://doi.org/10.1145/3411764.3445544">DOI 10.1145/<wbr />3411764.3445544</a>{{</mention-work>}}
 </li>
 <li>
 {{<mention-work itemprop="citation" role="doc-credit" itemtype="TechArticle" p="true">}}{{<cited-work url="https://www.w3.org/WAI/WCAG22/Techniques/#text" name="Techniques for WCAG 2.2" extraName="headline">}}. Alastair Campbell, Michael Cooper, Andrew Kirkpatrick. W3C. <time datetime="2022-05-30">2022-05-30</time>.{{</mention-work>}}

@@ -56,9 +56,9 @@ These are large engines that pass all my standard tests and more.
 
   - [GMX Search](https://search.gmx.com/web), run by a popular German email provider.
 
-  - (discon&shy;tinued) Runnaroo
+  - (discontinued) Runnaroo
 
-  - [SAPO](https://www.sapo.pt/) (Portu&shy;guese interface, can work with English results)
+  - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
 
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
 
@@ -89,7 +89,7 @@ These are large engines that pass all my standard tests and more.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
   - Epic Search (went paid-only as of June 2021)
-  - Occasion&shy;ally powers DuckDuck&shy;Go's link results instead of Bing.
+  - Occasionally powers DuckDuck&shy;Go's link results instead of Bing.
 
 - [Mojeek](https://www.mojeek.com/): Seems privacy-oriented with a large index containing billions of pages. Quality isn't at GBY's level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I'd live. Partially powers [eTools.ch](https://www.etools.ch/). At this moment, _I think that Mojeek is the best alternative to GBY_ for general search.
 
@@ -117,7 +117,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 - [seekport](http://www.seekport.com/): The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
 
-- [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppen&shy;heimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
+- [Exalead](https://www.exalead.com/search/): slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 
 - [ExactSeek](https://www.exactseek.com/): small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr />search.com](https://www.blog-search.com).
 
@@ -161,7 +161,7 @@ Results from these search engines don't seem at all useful.
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.
 
-- [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discon&shy;tinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^7] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries.
+- [Brave Search](https://search.brave.com/): Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^7] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries.
 
 - [Plumb](https://plumb.one/): Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
@@ -373,7 +373,7 @@ When building webpages, authors need to consider the barriers to entry for a new
 
 Try a "bad" engine from lower in the list. It might show you utter crap. But every garbage heap has an undiscovered treasure. I'm sure that some hidden gems you'll find will be worth your while. Let's add some serendipity to the SEO-filled Web.
 
-Ac&shy;know&shy;ledge&shy;ments {#acknowledgements}
+Acknow&shy;ledgements {#acknowledgements}
 -------------------------------
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.

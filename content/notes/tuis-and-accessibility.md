@@ -2,7 +2,7 @@
 title: "TUIs and accessibility"
 date: 2022-06-11T13:13:15-07:00
 replyURI: "https://floss.social/@alcinnz/108460252689906224"
-replyTitle: 'My understanding so far has been limited to "use Gettext…avoid NCurses"'
+replyTitle: 'My understanding so far has been limited to <q>use Gettext…avoid NCurses</q>'
 replyType: "SocialMediaPosting"
 replyAuthor: "Adrian Cochrane"
 replyAuthorURI: "https://adrian.geek.nz/"

@@ -70,8 +70,8 @@ One example I find particularly interesting: a friend of mine has been working o
 
 Several more examples are available in [uBlock Origin's resource library](https://github.com/gorhill/uBlock/wiki/Resources-Library). Much of this functionality would be unavailable to Manifest V3 extensions in Chromium.
 
-Fre&shy;quently-asked questions {#frequently-asked-questions}
--------------------------------
+Frequently-asked questions {#frequently-asked-questions}
+--------------------------
 
 I'll update this section as I collect feedback. Watch this space.
 
