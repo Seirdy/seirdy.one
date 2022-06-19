@@ -57,6 +57,10 @@ validate_feed() {
 		rel_mention_string="Unregistered link relationship"
 	fi
 
+	# silence "self reference doesn't match" because i'm testing a localhost copy.
+	# 'should not contian" has a false positive triggered by ARIA
+	# entries with the same timestamp isn't a big deal
+	# unregistered link relationship is a false positive caused by an unknown namespace.
 	full_regex="Use of unknown namespace|Self reference doesn't match|should not contain (role|aria-labelledby|aria-label|aria-describedby) attribute|$rel_mention_string|entries with the same value|Validating $url"
 
 	run_validator \
