@@ -1,11 +1,12 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "48h"
+CacheExpires: "72h" # three days
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
+ExternalTimeout: 30
 IgnoreHTTPS:
   - "http://192.168.1"
   - "http://localhost:"
@@ -25,22 +26,23 @@ IgnoreHTTPS:
 CheckExternal: true
 IgnoreURLs:
   - "../music.txt"
-  - "^gemini://.*"
-  - "mailto:.*"
-  - "git@git.*"
-  - "http://[^/]*.onion.*"
-  - "https://archive.is.*"
-  - "https://ogp.me/ns.*"
-  - "https://seirdy.one/webmentions/.*"
-  - "http://creativecommons.org/ns.*"
-  - "https://seirdy.one/search/.*"
-  - "https://jacky.wtf/.*" # site is down i think
+  - "^gemini://"
+  - "mailto:"
+  - "git@git"
+  - "http://[^/]*.onion"
+  - "https://archive.is"
+  - "https://ogp.me/ns"
+  - "https://seirdy.one/webmentions/"
+  - "http://creativecommons.org/ns"
+  - "https://seirdy.one/search/"
+  - "https://jacky.wtf/" # site is down i think
   - "https://fediring.net/(previous|next)" # redir
-  - "https://forum.palemoon.org/.*" # manual check: blocks crawlers
-  - "https://queue.acm.org/detail.*" # manual check: blocks crawlers
+  - "https://forum.palemoon.org/" # manual check: blocks crawlers
+  - "https://queue.acm.org/detail" # manual check: blocks crawlers
   - "https://www.geocities.ws/jaup/jaup.htm" # manual check: blocks crawlers
   - "https://plausible.io/blog/google-floc#" # manual check: I block this domain
   - "https://twitter.com/" # manual check: 404 for some reason, using curl works fine.
   - "https://bugs.debian.org/cgi-bin/bugreport.cgi" # manual check: 400 for some reason, using curl works fine.
   - "https://forum.kuketz-blog.de/" # manual check: blocks crawlers
+  - "https://web.archive.org/web/0/http" # the wayback machine.
 OutputDir: "linter-configs/htmltest"
