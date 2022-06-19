@@ -1,7 +1,40 @@
 {{ define "main" -}}
-{{- if eq .Page.Section "notes" -}}
-{{- partial "notes.html" . -}}
-{{- else -}}
-{{- partial "posts.html" . -}}
-{{- end -}}
+<main itemprop="mainEntity" class="h-feed hfeed" itemscope="" itemtype="https://schema.org/DataFeed">
+	{{ partial "processed-content.html" . }}
+	<p role="doc-tip">
+		Timestamp format: <code>YYYY-MM-DD HH:MM</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite>. Sorted newest to oldest.
+	</p>
+	<ol>
+		{{- $pages := (where site.RegularPages "Section" .Section) -}}
+		{{- range $pages -}}
+		{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+		<li itemprop="dataFeedElement" itemscope="" itemtype="https://schema.org/DataFeedItem">
+			<article class="h-entry hentry" itemprop="item" itemscope="" itemtype="https://schema.org/SocialMediaPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+				<h2 itemprop="name headline" class="p-name entry-title">
+					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
+						{{ .Title }}
+					</a>
+				</h2>
+				<p>
+					Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
+					{{- if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
+						, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04" }}</time>
+				{{- end }}
+				</p>
+				{{- if eq .Section "notes" }}
+				<div class="e-content entry-content" itemprop="articleBody">
+					{{- if .Params.replyURI -}}
+						{{- partial "reply-context" .Params -}}
+					{{- end -}}
+					{{ partial "processed-content.html" . }}
+				</div>
+				{{- else }}
+				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
+				<p>{{- partial "wordcount.html" . -}}</p>
+				{{- end }}
+			</article>
+		</li>
+		{{- end }}
+	</ol>
+</main>
 {{ end }}
