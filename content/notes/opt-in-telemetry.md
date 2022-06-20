@@ -1,7 +1,7 @@
 ---
 title: "Opt in telemetry"
 date: 2022-06-03T02:27:05-07:00
-replyURI: "https://news.ycombinator.com/item?id=31604932"
+replyURI: "https://news.ycombinator.com/item?id=31605884"
 replyTitle: "As far as I am concerned, telemetry is a good thing"
 replyType: "SocialMediaPosting"
 replyAuthor: "eterevsky"
