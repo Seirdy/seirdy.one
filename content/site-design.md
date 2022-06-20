@@ -7,7 +7,7 @@ date: "2022-06-10T00:00:00+00:00"
 ---
 This site may look simple on the surface, but I put a _lot_ of thought into it. I hold myself to a long list of requirements concerning accessibility, compatibility, privacy, security, and machine-friendliness.
 
-<p role="doc-tip">Note: all references to "pixels" (px) in this section refer to CSS pixels.</p>
+<p role="doc-tip">Note: all references to "pixels" (<abbr title="pixels">px</abbr>) in this section refer to CSS pixels.</p>
 
 Accessibility statement
 -----------------------
@@ -22,7 +22,7 @@ The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standar
 
 ### Additional accessibility considerations
 
-Additionally, I strive to conform to WCAG 2.2 level AAA wherever applicable. There are some AAA criteria that I do not currently meet:
+Additionally, I strive to conform to WCAG 2.2 level AAA wherever applicable. I comply with all AAA criteria except for the following:
 
 
 SC 1.4.8 Visual Presentation
@@ -65,12 +65,16 @@ Finally, I supplement manual testing with the following automated tools:
 
 WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
 
-Browser engine compatibility
-----------------------------
+I regularly run axe-core and the IBM Equal Access Accessibility Checker on every page in my sitemap, and receive no errors.
 
-This site sticks to Web standards: I regularly run [the Nu HTML Checker](https://github.com/validator/validator) and `xmllint` on every page and see no errors (I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) and report them upstream when I can).
+Compatibility statement
+-----------------------
 
-I also do cross-browser testing for both HTML and XHTML versions of my pages:
+The website is built on well structured, semantic HTML (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) where appropriate), enhanced with CSS for styling. The website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this should improve support in older browsers such as Internet Explorer 11. No extra plugins or libraries should be required to view the website.
+
+This site sticks to Web standards. I regularly run a local build of [the Nu HTML Checker](https://github.com/validator/validator), `xmllint`, and [html proofer](https://github.com/gjtorikian/html-proofer) on every page in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) and report them upstream when I can.
+
+I also perform cross-browser testing for both HTML and XHTML versions of my pages:
 
 - I maintain excellent compatibility with **mainstream engines:** Blink (Chromium and Edge), WebKit (Safari, Epiphany), and Gecko (Firefox). The hidden service also works well with the Tor Browser.
 
