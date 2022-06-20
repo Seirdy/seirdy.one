@@ -20,18 +20,18 @@
 	<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
 	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 	{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
-	<!--Feeds for both notes and posts; posts come first unless we're in the notes section.-->
+	<!--Feeds for both notes and articles; articles come first unless we're in the notes section.-->
 	{{- if or (eq .Section "notes") (eq .Title "Notes") -}}
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}atom.xml" title="All content" />
-	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
-	{{- else if or (eq .Section "posts") (eq .Title "Posts") -}}
-	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Articles" />
+	{{- else if or (eq .Section "posts") (eq .Title "Articles") -}}
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Articles" />
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}atom.xml" title="All content" />
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
 	{{- else -}}
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}atom.xml" title="All content" />
-	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Posts" />
+	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}posts/atom.xml" title="Articles" />
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
 	{{- end }}
 	<title>{{ .Title }}{{ if and (lt (len .Title) 54) (ne $canonicalRelPermalink "/") }} - Seirdy{{ end }}</title>

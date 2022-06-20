@@ -1,43 +1,23 @@
-{{- $isStandalone := false -}}
-{{- if and (ne .Permalink .Site.BaseURL) (ne .RelPermalink "/") -}}
-	{{- $isStandalone = true -}}
-{{- end -}}
-{{- if $isStandalone -}}
-<main itemprop="mainEntity" class="h-feed hfeed" itemscope="" itemtype="https://schema.org/DataFeed">
-	<h1 class="p-name" itemprop="name headline" id="posts">Posts</h1>
-	<p>These are all of my long-form posts. <a href="./atom.xml">An Atom feed</a> contains the full text of all my posts. If that has any problems, I also have <a href="./index.xml">a legacy RSS feed</a>.</p>
-{{- else -}}
 <section class="h-feed hfeed" itemprop="hasPart" itemscope="" itemtype="https://schema.org/DataFeed">
-	<h2 class="p-name" itemprop="name" id="posts">Posts</h2>
-	<p>Here’s a selection of my best posts, in featured order. To see the rest, visit <a href="posts/">my Posts page</a>.</p>
-{{- end }}
-	<p>I edit some of these posts quite often; some are updated indefinitely. Check the “updated” timestamps.</p>
+	<h2 class="p-name" itemprop="name" id="articles">Articles</h2>
+	<p>Here’s a selection of my best articles, in featured order. To see the rest, visit <a href="posts/">my Articles page</a>.</p>
+	<p>I edit some of these articles quite often; some are updated indefinitely. Check the “updated” timestamps.</p>
 	<p role="doc-tip">
 		Timestamp format: <code>YYYY-MM-DD</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite> and <cite><a href="https://xkcd.com/1179/">ISO 8601</a></cite>. Sorted newest to oldest.
 	</p>
 	<ol>
-		{{- $posts := (where site.RegularPages "Section" "posts") -}}
-		{{- if not $isStandalone -}}
-			{{- $posts = sort (where $posts "Params.featured" ">" 0) "Params.featured" -}}
-		{{- end -}}
+		{{- $posts := site.RegularPages -}}
+		{{- $posts = sort (where $posts "Params.featured" ">" 0) "Params.featured" -}}
 		{{- range $posts -}}
 		{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
 		<li itemprop="dataFeedElement" itemscope="" itemtype="https://schema.org/DataFeedItem">
 			<article class="h-entry hentry" itemprop="item" itemscope="" itemtype="https://schema.org/BlogPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
-				{{ if $isStandalone -}}
-				<h2
-				{{- else -}}
 				<h3
-				{{- end }}
 					itemprop="name headline" class="p-name entry-title">
 					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
 						{{ .Title }}
 					</a>
-				{{ if $isStandalone -}}
-				</h2>
-				{{- else -}}
 				</h3>
-				{{- end }}
 				<p>
 					Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 					{{- if lt .Date .Lastmod -}}
@@ -51,8 +31,4 @@
 		</li>
 		{{- end }}
 	</ol>
-{{ if $isStandalone -}}
-</main>
-{{ else -}}
 </section>
-{{ end }}
