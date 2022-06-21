@@ -212,6 +212,8 @@ These engines try to find a website, typically at the domain-name level. They do
 
 - [Bonzamate](https://bonzamate.com.au/): a search engine specifically for Australian websites. Boyter wrote [an interesting blog post about Bonzamate](https://boyter.org/posts/abusing-aws-to-make-a-search-engine/).
 
+- [searchcode](https://searchcode.com/): A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
+
 Other languages
 ---------------
 
@@ -376,7 +378,7 @@ When building webpages, authors need to consider the barriers to entry for a new
 Try a "bad" engine from lower in the list. It might show you utter crap. But every garbage heap has an undiscovered treasure. I'm sure that some hidden gems you'll find will be worth your while. Let's add some serendipity to the SEO-filled Web.
 
 Acknow&shy;ledgements {#acknowledgements}
--------------------------------
+---------------------
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
