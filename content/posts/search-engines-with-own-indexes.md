@@ -210,6 +210,8 @@ These engines try to find a website, typically at the domain-name level. They do
 
 - [Semantic Scholar](https://www.semanticscholar.org/): a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 
+- [Bonzamate](https://bonzamate.com.au/): a search engine specifically for Australian websites. Boyter wrote [an interesting blog post about Bonzamate](https://boyter.org/posts/abusing-aws-to-make-a-search-engine/).
+
 Other languages
 ---------------
 

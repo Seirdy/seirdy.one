@@ -221,10 +221,13 @@ These engines try to find a website, typically at the domain-name level. They do
 * Quor: seems to mainly index large news sites. Site is down as of June 2021. Originally available at www dot quor dot com.
 * Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 * Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
+* Bonzamate: a search engine specifically for Australian websites.
 
 => https://www.keybot.com/ Keybot Translation Search Machine.
 => https://ninfex.com Ninfex
 => https://www.semanticscholar.org/ Semantic Scholar
+=> https://bonzamate.com.au/ Bonzamate
+=> https://boyter.org/posts/abusing-aws-to-make-a-search-engine/ Blog post about Bonzamate: "Abuzing AWS to make a search engine".
 
 ## Other languages
 
