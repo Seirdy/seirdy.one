@@ -1,7 +1,7 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "72h" # three days
+CacheExpires: "96h" # four days
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
