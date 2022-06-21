@@ -1,14 +1,10 @@
 {{ $favicon := resources.Get "/favicon.png" -}}
 {{- $favicon_base64 := $favicon.Content | base64Encode -}}
-{{- $favicon_bigpng := resources.Get "/favicon192.png" | resources.Fingerprint "md5" -}}
 {{- $favicon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
 {{- if in site.BaseURL ".onion" -}}
 <img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
 	src="data:image/png;base64,{{ $favicon_base64 }}" />
 {{- else -}}
-<picture itemprop="image">
-	<source srcset="{{ $favicon_svg.RelPermalink }}" type="image/svg+xml" />
-	<img class="u-photo photo" width="16" height="16" alt=""
-		src="{{ $favicon_bigpng.RelPermalink }}" />
-</picture>
+<img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
+	src="{{ $favicon_svg.RelPermalink }}" />
 {{- end }}
