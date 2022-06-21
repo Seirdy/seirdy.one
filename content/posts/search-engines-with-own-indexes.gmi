@@ -60,7 +60,8 @@ These are large engines that pass all my standard tests and more.
 3. Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
 * Epic Search (went paid-only by June 2021)
-* Occasionally powers DuckDuckGo’s link results instead of Bing.
+* Occasionally powers DuckDuckGo’s link results instead of Bing. (update: DuckDuckGo has "paused" its partnership with Yandex)
+* Petal for Russian users only.
 
 4. Mojeek: Seems privacy-oriented with a large index containing billions of pages. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch. At this moment, I think that Mojeek is the best alternative to GBY for general web search.
 
@@ -437,7 +438,7 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 
 ² Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
-³ DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing). Update 2022: DuckDuckGo has the ability to downrank results on its own; it was previously working with Bing to get Bing to remove misinformation and spam:
+³ DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and you'll see it's sourcing organic results from one of them (probably Bing). Update 2022: DuckDuckGo has the ability to downrank results on its own; it was previously working with Bing to get Bing to remove misinformation and spam:
 
 => https://web.archive.org/web/20220310222014/https://nitter.pussthecat.org/yegg/status/1501716484761997318 Gabriel Weinberg on Twitter
 => https://www.nytimes.com/2022/02/23/technology/duckduckgo-conspiracy-theories.html DuckDuckGo's prior approach to moderation

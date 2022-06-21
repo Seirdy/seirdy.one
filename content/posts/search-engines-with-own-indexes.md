@@ -89,7 +89,8 @@ These are large engines that pass all my standard tests and more.
 - Yandex: originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
 
   - Epic Search (went paid-only as of June 2021)
-  - Occasionally powers DuckDuck&shy;Go's link results instead of Bing.
+  - Occasionally powers DuckDuck&shy;Go's link results instead of Bing <ins cite="https://energycommerce.house.gov/committee-activity/hearings/hearing-on-holding-big-tech-accountable-legislation-to-protect-online">(update: DuckDuckGo has "paused" its partnership with Yandex, confirmed in {{<mention-work itemtype="Event" itemprop="citation" role="doc-credit">}}{{<cited-work name="Hearing on “Holding Big Tech Accountable: Legislation to Protect Online Users”" url="https://energycommerce.house.gov/committee-activity/hearings/hearing-on-holding-big-tech-accountable-legislation-to-protect-online" >}}{{</mention-work>}})</ins>
+  - Petal, for Russian users only.
 
 - [Mojeek](https://www.mojeek.com/): Seems privacy-oriented with a large index containing billions of pages. Quality isn't at GBY's level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I'd live. Partially powers [eTools.ch](https://www.etools.ch/). At this moment, _I think that Mojeek is the best alternative to GBY_ for general search.
 
