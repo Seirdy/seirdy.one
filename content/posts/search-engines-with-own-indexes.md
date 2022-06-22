@@ -329,9 +329,18 @@ I find new engines by:
 
 ### Criteria for inclusion
 
-Engines in this list should have their own indexes built primarily by web spiders. They should not be limited to a set of domains hand-picked by the engine creators.
+Engines in this list should have their own indexes powered by by web crawlers. Original results should not be limited to a set of websites hand-picked by the engine creators; indexes should be built from sites from across the Web. An engine should discover new interesting places around the Web.
 
-I'm willing to make one exception: engines in the "non-generalist" section may use indexes primarily made of user-submitted sites, rather than focusing primarily on sites discovered organically through crawling. I'm not willing to budge on the "no hand-picked domains" rule.
+Here's an oversimplified example to illustrate what I'm looking for: imagine somone self-hosts their own personal or interest-specific website and happens to get some recognition. Could they get _automatically_ discovered by your crawler, indexed, and included in the first page of results for a certain query?
+
+I'm willing to make two exceptions:
+
+1. Engines in the "semi-independent" section may mix results that do meet the aforementioned criteria with results that do not.
+2. Engines in the "non-generalist" section may use indexes primarily made of user-submitted sites, rather than focusing primarily on sites discovered organically through crawling.
+
+The reason the second exception exists is that while user submissions don't represent automatic crawling, they do at least inform the engine of new interesting websites that it had not previously discovered; these websites can then be shown to other users. That's fundamentally what an alternative web index needs to achieve.
+
+I'm not willing to budge on my "no hand-picked websites" rule. Hand-picked sites will be ignored, whether your engine fetches content through their APIs or crawls and scrapes their content. It's fine to use hand-picked websites as starting points for your crawler (Wikipedia is a popular option).
 
 I only consider search engines that focus on link results for webpages. Image search engines are out of scope, though I _might_ consider some other engines for non-generalist search (e.g., Semantic Scholar finds PDFs rather than webpages).
 
