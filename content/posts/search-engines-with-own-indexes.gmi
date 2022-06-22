@@ -53,7 +53,7 @@ These are large engines that pass all my standard tests and more.
 * Givero
 * Swisscows
 * Fireball
-* You.com
+* You.com¹¹
 * Partially powers MetaGer by default; this can be turned off
 * At this point, I mostly stopped adding Bing-based search engines. There are just too many.
 
@@ -461,3 +461,5 @@ He also gave me some useful details about Seznam, Naver, Baidu, and Goo:
 => https://news.ycombinator.com/item?id=27593801 HN comment thread for "Introducing Brave Search Beta"
 => https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html Tech @ Cliqz: Building a search engine from scratch
 => https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html Tech @ Cliqz: Search quality at Cliqz
+
+¹¹ I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. As of right now, it seems very much like DuckDuckGo to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites; I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case.
