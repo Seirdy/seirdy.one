@@ -112,7 +112,7 @@ html {
 	input,
 	dt > a,
 	summary,
-	h2 + a,
+	aside > a, /* Used for section permalinks */
 	li > a {
 		padding: .75em .25em;
 	}
@@ -136,7 +136,7 @@ html {
 		margin-bottom: -1em;
 	}
 
-	h2 + a {
+	aside > a {
 		margin: -.75em -.25em;
 	}
 
@@ -144,7 +144,7 @@ html {
 	header > nav,
 	/* List items with direct hyperlink children should only have one hyperlink. */
 	li > a,
-	h2 + a,
+	aside > a,
 	nav ol a {
 		margin-left: -.25em;
 		display: inline-block;

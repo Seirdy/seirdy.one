@@ -1,8 +1,22 @@
+<!-- 
+	Intended properties of this render-hook:
+
+	1. Headings are focusable, but not from the keyboard. This allows VoiceOver to navigate to a heading from the TOC.
+	2. <h2> elements are followed by a section permalink, which is useful for sharing a subset of an article.
+	3. The page looks as similar as possible to graphical-browsers, textual browsers (e.g. Lynx), and assistive technologies.
+	4. Reading-mode implementations preserve headings without getting confused by the section permalinks.
+	5. Machine-translation works as intended with or without assistive technologies.
+	6. All of this applies with or without CSS.
+
+	To achieve all these properties, I had to break the first rule of ARIA and misuse <aside>.
+	I'm a markup criminal now.
+-->
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" tabindex="-1">{{ .Text | safeHTML -}}</h{{ .Level }}>
-{{- if and (eq .Level 2) (eq .Page.Section "posts") }}
-<a
+{{- if and (eq .Level 2) (eq .Page.Section "posts") -}}
+<!--crimes-->
+<aside role="none"><a
 	id="{{ .Anchor | safeURL }}-anchor" href="#{{ .Anchor | safeURL }}"
 	aria-labelledby="{{ .Anchor | safeURL }}-prefix {{ .Anchor | safeURL }}">
 	<span id="{{ .Anchor | safeURL }}-prefix">Permalink to section</span>
-</a>
+</a></aside>
 {{- end }}
