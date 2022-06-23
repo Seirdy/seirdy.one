@@ -1,12 +1,13 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "96h" # four days
+CacheExpires: "168h" # seven days
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
-ExternalTimeout: 30
+ExternalTimeout: 180
+HTTPConcurrencyLimit: 96
 IgnoreHTTPS:
   - "http://192.168.1"
   - "http://localhost:"
