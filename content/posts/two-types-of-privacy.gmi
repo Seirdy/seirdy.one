@@ -58,7 +58,7 @@ Safe yet limited approaches to content filtering should lay a foundation, topped
 
 ## Tracking evasion (TE)
 
-TE prevents an adversary from collecting meaningful information tied to one’s identity. Unlike “opting-out” and blocking known well-known third-party trackers, tracking evasion distrusts all parties by default. This approach assumes that tracking is equally likely to happen through both first-party and third-party trackers.
+TE prevents an adversary from collecting meaningful information tied to one’s identity. Unlike “opting-out” and blocking well-known third-party trackers, tracking evasion distrusts all parties by default. This approach assumes that tracking is equally likely to happen through both first-party and third-party trackers.
 
 Therefore, a list of known third-party trackers is irrelevant to tracking evasion. Users following this approach in its purest form *treat every party capable of tracking as a hostile tracker*.
 

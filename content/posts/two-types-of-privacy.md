@@ -77,7 +77,7 @@ I covered this topic a bit more in {{<mention-work itemtype="BlogPosting">}}{{<c
 Tracking evasion (TE)
 ---------------------
 
-<abbr title="Tracking Evasion">TE</abbr> prevents an adversary from collecting meaningful information tied to one's identity. Unlike "opting-out" and blocking known well-known third-party trackers, tracking evasion _distrusts all parties by default._ This approach assumes that tracking is equally likely to happen through both first-party and third-party trackers.
+<abbr title="Tracking Evasion">TE</abbr> prevents an adversary from collecting meaningful information tied to one's identity. Unlike "opting-out" and blocking well-known third-party trackers, tracking evasion _distrusts all parties by default._ This approach assumes that tracking is equally likely to happen through both first-party and third-party trackers.
 
 Therefore, a list of known third-party trackers is irrelevant to tracking evasion. Users following this approach in its purest form _treat every party capable of tracking as a hostile tracker._
 
