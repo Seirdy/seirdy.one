@@ -80,9 +80,16 @@ I also perform cross-browser testing for both HTML and XHTML versions of my page
 
 - The site works well with **textual browsers.** Lynx and Links2 are first-class citizens for which all features work as intended. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup.
 
-- I also regularly test compatibility with **current alternative engines:** the SerenityOS browser, Servo, NetSurf, Dillo, and Goanna (Pale Moon's Gecko fork). I have excellent compatibility with Goanna and Servo. The site is usable in NetSurf, Dillo, and the SerenityOS browser; the always-expanded `<details>` elements might look odd. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. It also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
+- I also regularly test compatibility with **current alternative engines:** the SerenityOS browser, Servo, NetSurf, Dillo, Kristall, and Goanna (Pale Moon's Gecko fork). I have excellent compatibility with Goanna and Servo. The site is usable in NetSurf, Dillo, and the SerenityOS browser; the always-expanded `<details>` elements might look odd. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. It also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
 
 - I occasionally test **abandoned engines,** sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Internet Explorer (with and without compatibility mode), Netscape Navigator, and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine.
+
+Some engines I have not yet tested, but hope to try in the future:
+
+- [Netzhaut](https://netzhaut.dev/)
+- [Kozmonaut](https://github.com/twilco/kosmonaut)
+- [Moon](https://github.com/ZeroX-DG/moon)
+- [hastur](https://github.com/robinlinden/hastur)
 
 Machine-friendliness
 --------------------
