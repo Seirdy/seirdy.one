@@ -72,7 +72,7 @@ In other words, TR falls closer to "wants" on the (somewhat contrived) "wants ve
 
 I mentioned content-blocking, which typically happens through browser extensions and/or third-party filter lists. These can add attack surface; be mindful of the trade-off. Even [trusted extensions like uBlock Origin are no exception;](https://portswigger.net/research/ublock-i-exfiltrate-exploiting-ad-blockers-with-css) exercise restraint when adding third-party filter lists.
 
-I covered this topic a bit more in {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="A layered approach to content blocking" url="../../layered-content-blocking/">}}{{</mention-work>}}. Safe yet limited approaches to content filtering should lay a foundation, topped off by risky yet powerful approaches that users selectively enable.
+I covered this topic a bit more in {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="A layered approach to content blocking" url="../../04/layered-content-blocking/">}}{{</mention-work>}}. Safe yet limited approaches to content filtering should lay a foundation, topped off by risky yet powerful approaches that users selectively enable.
 
 Tracking evasion (TE)
 ---------------------
