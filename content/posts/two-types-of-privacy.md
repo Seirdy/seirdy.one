@@ -1,7 +1,6 @@
 ---
 title: "Two types of privacy"
 date: 2022-06-25T15:25:14-07:00
-draft: true
 techarticle: true
 outputs:
     - html
