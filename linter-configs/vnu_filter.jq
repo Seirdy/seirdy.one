@@ -14,7 +14,7 @@
 				and (.extract | test(" name=\"theme-color\""))
 			)
 			or
-			( # Allow raw templates
+			( # the search page has raw templates, let those slide. I validate the final dynamic search page manually.
 				(.url | test ("/search/index."))
 				and (
 					(.message == "Text not allowed in element “ol” in this context.")

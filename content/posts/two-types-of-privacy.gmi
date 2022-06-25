@@ -1,0 +1,199 @@
+## Preface
+
+Threat modelling provides important context to security and privacy advice. Measures necessary to protect against an advanced threat are different from those effective against unsophisticated threats. Moreover, threats don’t always fall along a simple one-dimensional axis from “simple” to “advanced”. I appreciate seeing communities acknowledge this complexity.
+
+When qualifying privacy recommendations with context, I think we should go further than describing threat models: we should acknowledge different types of privacy. “Privacy” means different things to different people. Even a single person may use the word “privacy” differently depending on their situation. Understanding a user’s unique situation(s), *including their threat models*, can inform us when we select the best of approach. How do we choose between reducing a footprint’s *spread* and *size*?
+
+## Introduction
+
+I highlight two main approaches to privacy: “tracking reduction” and “tracking evasion”.
+
+
+Tracking reduction (TR):
+TR aims to reduce the amount of data collected about an exposed user. It reduces a footprint’s *spread* primarily by blocking trackers. Sometimes this can increase the size of a footprint.
+
+Tracking evasion (TE):
+TE reduces the amount of data exposed by a user. Rather than eliminating data collection itself, TE prevents useful data from being made available in the first place. In other words, it reduces a footprint’s *size*.[1]
+
+There is gray area between these two extremes, and not every privacy measure falls neatly into one of these two categories. I’ll address that later in this article.
+
+Note: this article focuses primarily on Web browsers; however, its concepts can apply to any software capable of tracking users.
+
+Let’s get started:
+
+## Tracking reduction (TR)
+
+TR is suitable for casual threat models. These techniques typically aim to remove trackers or to block malicious traffic.
+
+If someone just wants to browse the web with less tracking, they’re probably not expecting a “nuclear option” that removes all their personalization. That user is more likely to concerned with manipulation by personalized ads, or something vague such as being “followed around” as they browse websites while signed out.
+
+These users are likely okay with being identified by a site; several of their accounts are probably linked to the same identity. However, when they log into “example.com”, they’d rather not ping trackers from “facebook.com” or “amazon-adsystem.com”.
+
+Of course, data-sharing could happen on the backend. Users may accept that there’s little they can do about this beyond reading a privacy policy and filing suit upon violations.
+
+In other words, TR falls closer to “wants” on the (somewhat contrived) “wants versus needs” spectrum. It addresses the gray area between personal preferences and real present threats. Our goal is to reduce tracking where we can, without significantly degrading the user experience.
+
+### Sample TR techniques
+
+* Badness enumeration: content-blocking and firewalls.
+* Sending headers such as Global Privacy Control or Do Not Track.
+* Opting out of tracking when given the choice.
+* Exercising legal rights (e.g., rights granted under the GDPR or CCPA) to remove information.
+* Having a preference for services whose privacy policies indicate less data collection and/or sharing.
+* Turning off telemetry.
+
+=> https://globalprivacycontrol.org/ Global Privacy Control
+
+### Attack surface
+
+I mentioned content-blocking, which typically happens through browser extensions and/or third-party filter lists. These can add attack surface; be mindful of the trade-off. Even trusted extensions like uBlock Origin are no exception:
+=> https://portswigger.net/research/ublock-i-exfiltrate-exploiting-ad-blockers-with-css uBlock, I exfiltrate: exploiting ad blockers with CSS
+
+Exercise restraint when adding third-party filter lists.
+
+I covered this topic a bit more in a previous post:
+=> /posts/2022/06/layered-content-blocking/ A layered approach to content blocking
+
+Safe yet limited approaches to content filtering should lay a foundation, topped off by risky yet powerful approaches that users selectively enable.
+
+## Tracking evasion (TE)
+
+TE prevents an adversary from collecting meaningful information tied to one’s identity. Unlike “opting-out” and blocking known well-known third-party trackers, tracking evasion distrusts all parties by default. This approach assumes that tracking is equally likely to happen through both first-party and third-party trackers.
+
+Therefore, a list of known third-party trackers is irrelevant to tracking evasion. Users following this approach in its purest form *treat every party capable of tracking as a hostile tracker*.
+
+TE techniques typically revolve around minimizing the size of one’s fingerprint, either through fingerprint normalization or randomization.[2]
+
+### Sample TE techniques
+
+* Using the Tor Browser.
+* Avoiding identifiable browser extensions.
+* Randomizing typing behavior (A good example is kloak, a keystroke anonymizer used by Whonix).
+* Using a coarse scroll interval.
+
+=> https://github.com/Whonix/kloak Kloak on GitHub
+=> https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40704 Tor Browser issue 40704: Minimize fingerprintability of scroll interval/rate
+
+### Half-measures are ineffective
+
+If an adversary employs multiple fingerprinting vectors, then normalizing or randomizing a small subset of those vectors might make a user stand out even more.
+
+=> gemini://seirdy.one/misc/xkcd_1105.png xkcd 1105: A difficult-to-read licence plate number will stand out, putting the owner at risk. Similarly, TE half-measures could make users more easily identifiable.
+=> https://explainxkcd.com/1105/#Transcript Transcript of xkcd 1105
+
+TE carries the risk of “springing a leak”. While TR presents an incremental solution, TE is much harder: it’s only a slight exaggeration to describe TE as a binary “all-or-nothing” approach.
+
+Other relevant discussions worth reading:
+
+=> https://github.com/arkenfox/user.js/issues/1274 Arkenfox user.js issue 1274: Effort towards a common browser fingerprint
+=> https://github.com/privacyguides/privacyguides.org/discussions/374 PrivacyGuides discussion 374: Great browser re-write-reboot
+
+## Conflicts between TR and TE
+
+Good approaches to TR often weaken TE. Conflating the two can have harmful consequences.
+
+### Badness enumeration: content blocking
+
+While content blocking through badness enumeration is useful for TR, it’s generally antithetical to TE. A website can use a first-party script and/or inspect server logs to determine information such as:
+
+* Which network requests succeed or fail.
+* Whether certain elements (e.g. certain images) load successfully.
+* Whether injected content (e.g. from an ad-blocker) is present.[3]
+* Whether content-blocking changes which elements are in or near the viewport.[4]
+
+These pieces of information (and others I haven’t included) can tell a website if a browser has a content-blocker, and which filters a user has enabled. The latter piece of information can uniquely identify a user; this compromises TE. Nonetheless, these techniques aren’t in widespread use. I think that sharing first-party fingerprinting data between different organizations is the exception rather than norm. As long as this is the case, content-blocking remains a viable technique for TR.
+
+Badness enumeration shouldn’t be applied in a TE context. The Tor Browser’s design philosophy explicitly includes a “no filters” directive and recommends against their use, to reduce fingerprinting.
+=> https://2019.www.torproject.org/projects/torbrowser/design/#philosophy Tor Browser design documentation
+
+As of mid-2022, the version of the Tor Browser included in Tails includes a content-filtering extension anyway. The entire point of using the Tor Browser Bundle is to maximize TE; Tails compromises this goal.
+
+Brave has a similar problem. Its content-blocker allows users to create custom filters or activate additional filter lists. Brave also tries to enable TE through fingerprint-randomization. Combining the two likely makes users even more unique. Brave could mitigate this flaw by having its “advanced” level of fingerprinting protection also normalize the content-blocking filters applied.[5]
+
+### Do Not Track (DNT)
+
+DNT was an HTTP request header indicating that a user does not wish to be tracked. Unfortunately, unlike [Global Privacy Control](https://globalprivacycontrol.org/), there was no legal obligation to obey DNT. The DNT header ended up being used as a fingerprinting vector to track users instead of a way for them to avoid tracking.
+
+WebKit removed DNT support because it was antithetical to TE, and its utility for TR was too low to justify these harms.
+=> https://webkit.org/tracking-prevention/#anti-fingerprinting Tracking Prevention in WebKit
+
+## Exceptions and overlap
+
+There is grey area between TE and TR. Some techniques don’t neatly fit into one of the two categories. Here’s an incomplete list of those techniques, for illustrative purposes:
+
+### Disabling browser features
+The fingerprintability of disabling JavaScript, the Reporting API, and hyperlink auditing is typically dwarfed by the the fingerprinting made possible by enabling them. I struggle to categorize this technique. On one hand, feature-toggles represent uncommon browser configuration that may prevent some trackers from running (TR); on the other, it treats all external parties equally and can reduce fingerprinting vectors (TE). I’m inclined to say that feature-disabling is closer to TE than TR only if enough people share the same configuration.[6]
+
+### Goodness enumeration
+Assuming that all actors are actively hostile might be overkill. A user may follow a TE approach and/or disable browser features, while also maintaining a list of trusted exceptions. Trusted sites may use disabled features or have access to a larger fingerprint. This represents a “middle ground” of sorts between the convenience of TR and the effectiveness of TE.
+
+### Amnesia
+The most common amnesiac technique is clearing cookies. A more thorough technique is using a disposable VM that’s erased and re-created between sessions. Rather than reduce or evade tracking, these measures reduce the persistence of trackers (and/or malware) that slip through other defenses.
+
+=> https://www.whonix.org/wiki/Qubes/Disposables Qubes Disposables
+
+The list goes on. “TR versus TE” is an important perspective to have, but it isn’t the only lens through which we should view privacy-enhancing techniques. Let’s be mindful the TR/TE framework’s limitations.
+
+## How to make privacy recommendations
+
+Privacy-enhancement recommendations need to account for whether a preference for TR over TE exists. Whenever applicable, please do the following:
+
+* Clarify if a privacy-enhancing technique has a focus on TR or TE.
+* When discussing TR techniques, mention any compromises made from a TE perspective.
+
+Most importantly: recognize that different people need to make different trade-offs. Someone with special needs might require some fingerprintable personalizations. If non-negotiable personalizations make tracking-evasion too difficult, you might need to steer the person towards tracking-reduction and explain the trade-offs involved.[7]
+
+A single solution isn’t enough for everyone. In fact, it’s not usually enough for an individual. An individual may switch between multiple tasks, each with a different list of acceptable trade-offs.
+
+For example, you can encourage people to use multiple browsers and browser-profiles for different needs. Users could use a “TR browser” to sign into their school or work accounts, but use a “TE browser” to browse anonymously.
+
+Personally: my “main” browser is a heavily personalized Firefox that trades away some security and privacy; where possible, it employs TR. I browse anonymously in the Tor Browser with “Safest” mode enabled to achieve TE, or using the “Safer” mode in Whonix. Finally, I use certain web apps in Chromium without any privileged extensions: this trades both convenience and privacy for some forms of security.
+
+### Threat modelling
+
+Threat modelling is critical when deciding whether TR or TE is relevant, and how far one must go to achieve TE. It’s slightly less relevant when it comes to deciding which TR techniques are effective. This is because TR involves less advanced threat models and addresses needs that blur the lines between security, privacy, and convenience.
+
+Rather than framing discussions explicitly in terms of threats, it makes more sense to frame a TR technique in terms of what the technique improves and worsens regarding privacy, security, and convenience. Take what you can get until things get annoying; save extreme measures for a different browser or browser-profile.
+
+Threat modelling does make sense whenever security trade-offs come into play. It’s relevant when evaluating security trade-offs of TR techniques involving privileged extensions.
+
+## Conclusion
+
+Communities are starting to understand that recommendations should be made in the context of threat models, and that security- and privacy-related goals are different despite having significant overlap.
+
+People are complex creatures. When recommending techniques to improve privacy, we should remember that different people have different goals. Moreover, an individual’s goals may vary depending on the situation.
+
+Our recommendations need to take into account the fact that “privacy” means different things to different people. Techniques that aid in tracking-reduction might weaken tracking-evasion. The latter is much more powerful, but it’s also not necessarily what everyone is looking for.
+
+## Acknowledgements
+
+My article could be considered a “derivative work” of "Recommending Tools" by the EFF. That article laid the foundations for my thought process.
+=> https://sec.eff.org/articles/recommending-tools Recommending Tools
+
+This article is an expansion of the ideas I presented in an earlier microblog entry:
+=> /notes/2022/06/06/on-tracker-blocking/ On tracker blocking
+
+That microblog entry was a response to another article from which this article borrow some elements:
+=> https://madaidans-insecurities.github.io/browser-tracking.html "Browser Tracking" by Madaidan
+
+## Footnotes
+
+1. I’d have liked to call this “Tracking prevention”. Unfortunately, that name is taken by a Firefox feature aiming to achieve tracking reduction. Naming things is difficult.
+
+2. I haven’t seen much research comparing these two approaches, but I’m not convinced they’re in conflict. Normalizing all vectors that can be normalized but randomizing the rest sounds like a decent strategy. At least, as long as users don’t significantly adjust *which* vectors are normalized or randomized.
+
+3. Sites can detect injected content even without scripts by using Content-Security-Policy reporting APIs. For this reason, uBlock Origin includes a preference to disable all CSP reports. That being said, sites can still use first-party scripts to do the same.
+
+4. This is possible without any JavaScript, using lazy-loading directives. Browsers like Firefox disable lazy-loading if JavaScript is also disabled via "about:config", to mitigate this. If JavaScript is enabled, assume this is always a possibility.
+
+5. This does present a new issue: filter lists need to get updated at a different cadence than the browser. Not everyone updates at the same time. Imagine that a given browser version at a given time has V versions of a filter list in use across a user-base. Users have N different filters enabled. That’s V×N possible combinations. I’m over-simplifying; the point is that filter lists enabled could add significant entropy to a user’s fingerprint, and that’s before you involve custom filters.
+
+   We could reduce the number of combinations by combining all the filter lists into a single list that gets updated all at once. When N=1, we’re at just V possible combinations. Updates could be spread out over a longer cadence, decreasing the value of V.
+
+6. Torbutton aims to allow many Tor Browser users to share the same configuration.
+=> https://tb-manual.torproject.org/security-settings/ Tor security settings
+=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js The preferences impacted by those security settings
+
+7. Users of metered connections may need to block large elements. Users with accessibility needs may need to alter inaccessible pages. Users who don’t speak a page’s language may need to use machine translation.[8] Telling users to just “stop doing this” would be arrogant, yet all three of these examples are fingerprintable.
+
+8. Copying page text and pasting it into a separate translation tool could help, but it’s not always a replacement for full-page translation. Machine translation uses semantic HTML, and plain-text translation often provides worse results. (ooh, is this my first footnote within a footnote?)
