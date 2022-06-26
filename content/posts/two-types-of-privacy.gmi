@@ -25,7 +25,7 @@ Let’s get started:
 
 TR is suitable for casual threat models. These techniques typically aim to remove trackers or to block malicious traffic.
 
-If someone just wants to browse the web with less tracking, they’re probably not expecting a “nuclear option” that removes all their personalization. That user is more likely to concerned with manipulation by personalized ads, or something vague such as being “followed around” as they browse websites while signed out.
+If someone just wants to browse the web with less tracking, they’re probably not expecting a “nuclear option” that removes all their personalization. That user is more likely to be concerned with manipulation by personalized ads, or something vague such as being “followed around” as they browse websites while signed out.
 
 These users are likely okay with being identified by a site; several of their accounts are probably linked to the same identity. However, when they log into “example.com”, they’d rather not ping trackers from “facebook.com” or “amazon-adsystem.com”.
 
