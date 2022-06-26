@@ -201,7 +201,7 @@ Goodness enumeration
 Amnesia
 : The most common amnesiac technique is clearing cookies. A more thorough technique is [using a disposable VM](https://www.whonix.org/wiki/Qubes/Disposables) that's erased and re-created between sessions. Rather than reduce or evade tracking, these measures reduce the persistence of trackers (and/or malware) that slip through other defenses.
 
-The list goes on. "TR versus TE" is an important perspective to have, but it isn't the only lens through which we should view privacy-enhancing techniques. Let's be mindful the TR/TE framework's limitations.
+The list goes on. "TR versus TE" is an important perspective to have, but it isn't the only lens through which we should view privacy-enhancing techniques. Let's be mindful of the TR/TE framework's limitations.
 
 How to make privacy recommen&shy;dations {#how-to-make-privacy-recommendataions}
 ----------------------------------------
