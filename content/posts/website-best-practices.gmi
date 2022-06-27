@@ -1019,6 +1019,8 @@ Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers
 
 => https://github.com/nvaccess/nvda/issues/9343 NVDA issue 9343: NVDA isn't ignoring soft hyphens properly
 
+The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
+
 ### Keeping text together
 
 Soft hyphens are great for splitting up text, but some text should stay together. The phrase "10 cm", for instance, would flow poorly if "10" and "cm" appeared on separate lines. Splitting text becomes especially painful on narrow viewports. A non-breaking space keeps the surrounding text from being re-flowed. Use the "&nbsp;" HTML entity:

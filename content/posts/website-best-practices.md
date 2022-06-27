@@ -817,7 +817,7 @@ Screenshot of the <a href="https://github.com/nihui/waifu2x-ncnn-vulkan/issues">
 Someone using the GitHub issues interface for the first time will struggle to identify interactive regions and discern whether they trigger navigations or different actions.
 
 Image optimization {#image-optimization}
-----------------------------
+------------------
 
 Some image optimization tools I use:
 
@@ -1042,7 +1042,7 @@ Users employing machine translation will not benefit from your soft hyphens, so 
 
 Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
-Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter. At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
+Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter.[^20] The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
 
 ### Keeping text together
 
@@ -1156,7 +1156,7 @@ Line spacing (leading) is at least space-and-a-half within paragraphs, and parag
 {{</quotation>}}
 
 Non-<wbr />browsers: reading mode {#non-browsers-reading-mode}
---------------------------------------
+---------------------------------
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
@@ -1177,7 +1177,7 @@ Again: avoid catering to non-standard implementations' quirks, especially undocu
 Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
 
 Machine translation {#machine-translation}
-------------------------
+-------------------
 
 Believe it or not, the entire world doesn't speak your website's languages. Browsers like Chromium, Microsoft Edge, and Safari have integrated machine translation to translate entire pages. Users can also leverage online website translators such as Google Translate or Bing. These "webpage translators" are far more complex than their plain-text predecessors.
 
@@ -1216,7 +1216,7 @@ Machine translators often skip `aria-label` and `aria-description`. For this rea
 Microsoft Edge is the only browser I know of to adjust text-direction during translation, but it breaks when faced with inline `<code>` and `<span>` elements.
 
 In&shy;accessible default stylesheets {#inaccessible-default-stylesheets}
------------------------------------------------
+-------------------------------------
 
 Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
 
@@ -1278,7 +1278,7 @@ On one hand, users who need enhanced focus visibility may override the default f
 
 The WCAG [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced) recommends making focus indicators 2&nbsp;px thick. While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
-You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^20]
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^21]
 
 {{<codefigure>}}
 
@@ -1356,7 +1356,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^21]
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^22]
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1385,7 +1385,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests---especially accessibility tests---are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^22]
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^23]
 
 
 [Nu HTML checker](https://validator.nu/)
@@ -1398,7 +1398,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 : An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
 [Webhint](https://webhint.io/)
-: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^23]
+: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^24]
 
 [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated/)
 : Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
@@ -1428,7 +1428,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
 
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^24]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^25]
 
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 
@@ -1456,7 +1456,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 15. Try printing out your page in black-and-white from an unorthodox graphical browser.
 
-16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^25]
+16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^26]
 
 17. Combine conversion tools. Combine an HTML-<wbr />to-<wbr />EPUB converter and an EPUB-<wbr />to-<wbr />PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 
@@ -1511,7 +1511,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Rules for descriptive link text, for screen reader navigation and for user-agents that display links as footnotes (e.g. some textual browsers with the `dump` flag).
 
 Conclusion {#conclusion}
----------------
+----------
 
 There are so many ways to read a page; authors typically cater only to the mainstream ones. Some ways to read a page I covered include:
 
@@ -1645,15 +1645,17 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     Mobile users wishing to temporarily switch modes have to stop, change their navigation mode, perform a navigation gesture, and switch back. Mobile users trying to skim an article don't always find this worth the effort and sometimes stick to heading-based navigation even when a different mode would be optimal.
 
-[^20]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
+[^20]: At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
 
-[^21]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^21]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
 
-[^22]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^22]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^23]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^23]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^24]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
+[^24]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+
+[^25]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
 
     <figure itemprop="hasPart" itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1669,6 +1671,6 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^25]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^26]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
 
