@@ -70,7 +70,7 @@ I regularly run axe-core and the IBM Equal Access Accessibility Checker on every
 Compatibility statement
 -----------------------
 
-The website is built on well structured, semantic HTML (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) where appropriate), enhanced with CSS for styling. The website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this should improve support in older browsers such as Internet Explorer 11. No extra plugins or libraries should be required to view the website.
+The website is built on well structured, semantic, [polygot XHTML5](https://www.w3.org/TR/html-polyglot/) (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) extensions where appropriate), enhanced with CSS for styling. The website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this should improve support in older browsers such as Internet Explorer 11. No extra plugins or libraries should be required to view the website.
 
 This site sticks to Web standards. I regularly run a local build of [the Nu HTML Checker](https://github.com/validator/validator), `xmllint`, and [html proofer](https://github.com/gjtorikian/html-proofer) on every page in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) and report them upstream when I can.
 
