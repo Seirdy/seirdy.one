@@ -175,4 +175,5 @@ This site is featured in some cool directories.
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
+- [Nerd Listings](https://nerdlistings.info/category/personalsites/)
 
