@@ -60,6 +60,10 @@ These are large engines that pass all my standard tests and more.
 
   - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
 
+  - [DSearch](https://www.dsearch.com/)
+
+	- A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
+
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
 
   - Yahoo (and its sibling engine, One&shy;Search)
@@ -141,6 +145,8 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 ### Unusable engines, irrelevant results
 
 Results from these search engines don't seem at all useful.
+
+- [Yessle](https://www.yessle.com/): seems new; allows page submission by pasting a page into the search box. Index is really small but it crawls new sites quickly. Claims to be private.
 
 - [Bloopish](https://search.aibull.io/): extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 
@@ -259,6 +265,13 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 - [SOLOFIELD](https://solofield.net): Japanese
 
 - [kaz.kz](http://kaz.kz): Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
+
+Almost qualified
+----------------
+
+These engines come close enough to massing my inclusion criteria that I felt I had to mention them. Unfortunately, they don't quite pass.
+
+- [Mwmbl](https://mwmbl.org/): like YaCy, it's an open-source engine whose crawling is community-driven. Users can install a Firefox addon to crawl pages in its backlog. Unfortunately, it doesn't qualify because it only crawls pages linked by hand-picked sites (e.g. Wikipedia, GitHub, domains that rank well on Hacker News). The crawl-depth is "1", so it doesn't crawl the whole Web (yet).
 
 Misc
 ----

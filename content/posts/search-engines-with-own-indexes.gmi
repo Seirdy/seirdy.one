@@ -30,6 +30,9 @@ These are large engines that pass all my standard tests and more.
 * GMX search
 * (discontinued) Runnaroo
 * SAPO (Portuguese interface, can work with English results)
+* DSearch
+* A host of other engines using Programmable Search Engine's client-side scripts.
+=> https://developers.google.com/custom-search/ Programmable Search Engine
 
 2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using the IndexNow API. Its index powers many other engines:
 
@@ -137,12 +140,14 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 Results from these search engines don’t seem at all useful.
 
+* Yessle: seems new; allows page submission by pasting a page into the search box. Index is really small but it crawls new sites quickly. Claims to be private.
 * Bloopish: extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 * YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 * Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
 * Artado Search: Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
 * Active Search Results: very poor quality
 
+=> https://www.yessle.com/ Yessle
 => https://search.aibull.io/ Bloopish
 => https://metager.org  MetaGer
 => https://www.artadosearch.com/ Artado Search
@@ -189,7 +194,7 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 
 ### Small/non-commercial Web
 
-* Wiby: I love this one. It focuses on smaller independent sites that capture the spirit of the “early” web. It’s more focused on “discovering” new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn’t very “commercial”, consider submitting it to the index.
+* Wiby: I love this one. It focuses on smaller independent sites that capture the spirit of the “early” web. It’s more focused on “discovering” new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally featured a hit from Wiby (Runnaroo has since shut down). If you have a small site or blog that isn’t very “commercial”, consider submitting it to the index.
 * Marginalia Search: A recent addition similar to Wiby, and *my favorite entry on this page*. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. Update 2022-05-27: Marginalia.nu is now open source
 * Search My Site: Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
 * Teclis: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as microformats, microdata, and RDFa. It claims to also use some results from Marginalia.
@@ -278,9 +283,13 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 => https:solofield.net SOLOFIELD
 => https://kaz.kz/ kaz.kz
 
-### Unknown
+## Almost qualified
 
-I'm unable to determine if these engines are independent; help would be appreciated!
+These engines come close enough to massing my inclusion criteria that I felt I had to mention them. Unfortunately, they don't quite pass.
+
+* Mwmbl: like YaCy, it's an open-source engine whose crawling is community-driven. Users can install a Firefox addon to crawl pages in its backlog. Unfortunately, it doesn't qualify because it only crawls pages linked by hand-picked sites (e.g. Wikipedia, GitHub, domains that rank well on Hacker News). The crawl-depth is "1", so it doesn't crawl the whole Web (yet).
+
+=> https://mwmbl.org/ Mwmbl
 
 ## Misc
 
