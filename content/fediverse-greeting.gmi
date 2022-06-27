@@ -4,10 +4,12 @@ Hey, I’m @Seirdy@pleroma.envs.net. Please read the “Follow requests” secti
 
 If you want me to consider accepting your follow request, you need to have made multiple posts. Your profile should also contain at least three of the following:
 
-* A profile picture
+* A profile picture (blind users exempt)
 * A bio
 * Your pronouns
 * A personal website
+
+Alternatively: DM me to introduce yourself and say why you want to follow me.
 
 If you send a follow request and you haven’t done the above, I’ll wait a day or two before checking again. If you still haven’t done the above, I’ll reject it.
 
