@@ -62,7 +62,7 @@ These are large engines that pass all my standard tests and more.
 
   - [DSearch](https://www.dsearch.com/)
 
-	- A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
+  - A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
 
 - Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
 
@@ -86,7 +86,7 @@ These are large engines that pass all my standard tests and more.
   - Givero
   - Swisscows
   - Fireball
-    - You.com[^6]
+  - You.com[^6]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
@@ -185,11 +185,7 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 
 ### Small or non-commercial Web
 
-- Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index.
-
-- [Marginalia Search](https://search.marginalia.nu/): A recent addition similar to Wiby, and _my favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. <ins cite="https://memex.marginalia.nu/log/58-marginalia-open-source.gmi" datetime="2022-05-28T14:09:00-07:00">Update 2022-05-28: [Marginalia.nu is now open source.](https://memex.marginalia.nu/log/58-marginalia-open-source.gmi)</ins>
-
-- [Search My Site](https://searchmysite.net): Similar to Wiby, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth.
+- [Marginalia Search](https://search.marginalia.nu/): _My favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. <ins cite="https://memex.marginalia.nu/log/58-marginalia-open-source.gmi" datetime="2022-05-28T14:09:00-07:00">Update 2022-05-28: [Marginalia.nu is now open source.](https://memex.marginalia.nu/log/58-marginalia-open-source.gmi)</ins>
 
 - [Teclis](http://teclis.com/): A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia.
 
@@ -269,9 +265,13 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 Almost qualified
 ----------------
 
-These engines come close enough to massing my inclusion criteria that I felt I had to mention them. Unfortunately, they don't quite pass.
+These engines come close enough to passing my inclusion criteria that I felt I had to mention them. They all display original organic results that you can't find on other engines, and maintain their own indexes. Unfortunately, they don't quite pass.
+
+- Wiby: [wiby.me](https://wiby.me) and [wiby.org](https://wiby.org): I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index. Does not qualify because it seems to be powered only by user-submitted sites; it doesn't try to "crawl the Web".
 
 - [Mwmbl](https://mwmbl.org/): like YaCy, it's an open-source engine whose crawling is community-driven. Users can install a Firefox addon to crawl pages in its backlog. Unfortunately, it doesn't qualify because it only crawls pages linked by hand-picked sites (e.g. Wikipedia, GitHub, domains that rank well on Hacker News). The crawl-depth is "1", so it doesn't crawl the whole Web (yet).
+
+- [Search My Site](https://searchmysite.net): Similar to Marginalia and Teclis, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth. Its API powers this site's search results; try it out using the search bar at the bottom of this page. Does not qualify because it's limited to user-submitted and/or hand-picked sites.
 
 Misc
 ----
@@ -349,11 +349,11 @@ Here's an oversimplified example to illustrate what I'm looking for: imagine som
 I'm willing to make two exceptions:
 
 1. Engines in the "semi-independent" section may mix results that do meet the aforementioned criteria with results that do not.
-2. Engines in the "non-generalist" section may use indexes primarily made of user-submitted sites, rather than focusing primarily on sites discovered organically through crawling.
+2. Engines in the "almost qualified" section may use indexes primarily made of user-submitted or hand-picked sites, rather than focusing primarily on sites discovered organically through crawling.
 
 The reason the second exception exists is that while user submissions don't represent automatic crawling, they do at least inform the engine of new interesting websites that it had not previously discovered; these websites can then be shown to other users. That's fundamentally what an alternative web index needs to achieve.
 
-I'm not willing to budge on my "no hand-picked websites" rule. Hand-picked sites will be ignored, whether your engine fetches content through their APIs or crawls and scrapes their content. It's fine to use hand-picked websites as starting points for your crawler (Wikipedia is a popular option).
+I'm not usually willing to budge on my "no hand-picked websites" rule. Hand-picked sites will be ignored, whether your engine fetches content through their APIs or crawls and scrapes their content. It's fine to use hand-picked websites as starting points for your crawler (Wikipedia is a popular option).
 
 I only consider search engines that focus on link results for webpages. Image search engines are out of scope, though I _might_ consider some other engines for non-generalist search (e.g., Semantic Scholar finds PDFs rather than webpages).
 
