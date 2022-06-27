@@ -27,6 +27,11 @@
 					<li>
 						<a href="{{- index $r 3 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Next {{ $webringName }} site</a>
 					</li>
+					{{- if ne (index $r 4) "null" }}
+					<li>
+						<a href="{{- index $r 4 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Random {{ $webringName }} site</a>
+					</li>
+					{{- end }}
 				</ol>
 			</details>
 		</li>

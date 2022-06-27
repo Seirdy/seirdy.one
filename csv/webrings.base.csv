@@ -1,12 +1,12 @@
-name,prev,home,next
-Indieweb,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/previous,https://xn--sr8hvo.ws/,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/next
-Miniclub,https://miniclub.amongtech.cc/prev/seirdy.one,https://miniclub.amongtech.cc/,https://miniclub.amongtech.cc/next/seirdy.one
-geekring,https://geekring.net/site/167/previous,https://geekring.net/,https://geekring.net/site/167/next
-no js webring,https://nojs.sugarfi.dev/prev.php?url=https://seirdy.one,https://nojs.sugarfi.dev/,https://nojs.sugarfi.dev/next.php?url=https://seirdy.one
-Fediring,https://fediring.net/previous?host=seirdy.one,https://fediring.net/,https://fediring.net/next?host=seirdy.one
-Loop (JS),https://graycot.com/webring/loop-redirect.html?action=prev,https://graycot.com/webring/,https://graycot.com/webring/loop-redirect.html?action=next
-YesterWeb,https://webring.yesterweb.org/noJS/index.php?d=prev&url=https://seirdy.one/,https://yesterweb.org/webring/,https://webring.yesterweb.org/noJS/index.php?d=next&url=https://seirdy.one/
-Retronaut,https://webring.dinhe.net/prev/https://seirdy.one,https://webring.dinhe.net/,https://webring.dinhe.net/next/https://seirdy.one
-Hotline,https://hotlinewebring.club/seirdy/previous,https://hotlinewebring.club,https://hotlinewebring.club/seirdy/next
-Bucket (JS),https://webring.bucketfish.me/redirect.html?to=prev&name=seirdy,https://webring.bucketfish.me/,https://webring.bucketfish.me/redirect.html?to=next&name=seirdy
-Devring,https://devring.club/sites/5/prev,https://devring.club,https://devring.club/sites/5/next
+name,prev,home,next,random
+Indieweb,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/previous,https://xn--sr8hvo.ws/,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/next,null
+Miniclub,https://miniclub.amongtech.cc/prev/seirdy.one,https://miniclub.amongtech.cc/,https://miniclub.amongtech.cc/next/seirdy.one,https://miniclub.amongtech.cc/random
+geekring,https://geekring.net/site/167/previous,https://geekring.net/,https://geekring.net/site/167/next,https://geekring.net/site/167/random
+no js webring,https://nojs.sugarfi.dev/prev.php?url=https://seirdy.one,https://nojs.sugarfi.dev/,https://nojs.sugarfi.dev/next.php?url=https://seirdy.one,https://nojs.sugarfi.dev/rand.php
+Fediring,https://fediring.net/previous?host=seirdy.one,https://fediring.net/,https://fediring.net/next?host=seirdy.one,https://fediring.net/random
+Loop (JS),https://graycot.com/webring/loop-redirect.html?action=prev,https://graycot.com/webring/,https://graycot.com/webring/loop-redirect.html?action=next,https://graycot.com/webring/loop-redirect.html?action=rand
+YesterWeb,https://webring.yesterweb.org/noJS/index.php?d=prev&url=https://seirdy.one/,https://yesterweb.org/webring/,https://webring.yesterweb.org/noJS/index.php?d=next&url=https://seirdy.one/,https://webring.yesterweb.org/noJS/index.php?d=rand&url=https://seirdy.one/
+Retronaut,https://webring.dinhe.net/prev/https://seirdy.one,https://webring.dinhe.net/,https://webring.dinhe.net/next/https://seirdy.one,null
+Hotline,https://hotlinewebring.club/seirdy/previous,https://hotlinewebring.club,https://hotlinewebring.club/seirdy/next,null
+Bucket (JS),https://webring.bucketfish.me/redirect.html?to=prev&name=seirdy,https://webring.bucketfish.me/,https://webring.bucketfish.me/redirect.html?to=next&name=seirdy,null
+Devring,https://devring.club/sites/5/prev,https://devring.club,https://devring.club/sites/5/next,https://devring.club/random

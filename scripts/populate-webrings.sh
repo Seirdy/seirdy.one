@@ -67,16 +67,20 @@ values_to_csv() {
 # values for the GEORGE webring
 george() {
 	printf 'GEORGE,'
-	curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
-		| htmlq -a href 'main p a' \
-		| values_to_csv
+	{
+		curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
+		| htmlq -a href 'main p a' 
+		echo "null"
+	} | values_to_csv
 }
 
 endless_orbit() {
 	printf 'Endless Orbit,'
-	curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
-		| grep -C 1 https://seirdy.one/ \
-		| sd https://seirdy.one/ https://linkyblog.neocities.org/webring.html \
+	{
+		curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
+		| grep -C 1 https://seirdy.one/
+		echo "'null',"
+	} | sd https://seirdy.one/ https://linkyblog.neocities.org/webring.html \
 		| sd "\n|'" '' | trim_trailing_comma
 		echo
 }
