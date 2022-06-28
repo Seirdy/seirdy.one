@@ -12,6 +12,7 @@ tags:
     - accessibility
 outputs:
     - html
+    - gemtext
 ---
 This began as a reply to another article by Lucas F. Costa; it lists practices to improve user-experience (<abbr title="User Experience">UX</abbr>) of command-line interfaces (<abbr title="Command-Line Interface">CLIs</abbr>). It comes from a good place, and has some good advice: I particularly like its advice on input-validation and understandable errors. Unfortunately, a number of its suggestions are problematic, particularly from an accessibility perspective.
 
