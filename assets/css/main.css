@@ -324,6 +324,7 @@ pre {
  * This is Technique C25 of SC 1.4.8 */
 input,
 img,
+mark, /* borders provide a distinguishing factor besides color */
 pre,
 summary {
 	border: 1px solid;

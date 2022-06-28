@@ -18,6 +18,11 @@
 		color: #e6e6e6;
 	}
 
+	mark {
+		color: #000;
+		background-color: #eee7b2;
+	}
+
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
 		color: #eee7b2;
