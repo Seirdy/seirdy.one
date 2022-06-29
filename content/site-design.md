@@ -94,7 +94,7 @@ Some engines I have not yet tested, but hope to try in the future:
 Machine-friendliness
 --------------------
 
-I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult. It's a big part of what I've decided to call ["agent optimization"](http://seirdy.one/notes/2022/06/23/agent-optimization/).
+I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult. It's a big part of what I've decided to call ["agent optimization"]({{<relref "notes/agent-optimization.md">}}).
 
 This site is **parser-friendly.** It uses polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
 

@@ -1,7 +1,8 @@
 ---
 title: "DDG and Bing"
 date: 2022-06-02T20:59:38-07:00
-replyURI: "https://www.librepunk.club/@penryn/108411423190214816"
+lastMod: 2022-06-19T16:23:17-07:00
+replyURI: "https://web.archive.org/web/20220620162417/https://www.librepunk.club/@penryn/108411423190214816"
 replyTitle: "how would html.duckduckgo.com fit into this?"
 replyType: "SocialMediaPosting"
 replyAuthor: "@penryn@www.librepunk.club"

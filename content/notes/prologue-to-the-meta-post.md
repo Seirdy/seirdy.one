@@ -17,7 +17,7 @@ I've been planning on writing a big "meta" post explaining how this site is buil
 
 However, I still have a ways to go. Here's what I plan on adding:
 
-- Add some semantic markup to list online "friends", probably using [FOAF ontology](http://xmlns.com/foaf/spec/)
+- Add some semantic markup to list online "friends", probably using [FOAF ontology](https://web.archive.org/web/20220627164317/http://xmlns.com/foaf/spec/)
 - Preview Webmention entry contents
 - Related to previous point: create a blogroll
 - Automatic POSSE of notes to Fedi (it's mostly manual right now)
