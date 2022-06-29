@@ -94,9 +94,9 @@ Some engines I have not yet tested, but hope to try in the future:
 Machine-friendliness
 --------------------
 
-I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult.
+I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult. It's a big part of what I've decided to call ["agent optimization"](http://seirdy.one/notes/2022/06/23/agent-optimization/).
 
-This site is **parser-friendly.** It uses polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations). I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
+This site is **parser-friendly.** It uses polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
 
 I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with Ostatus and ActivityStreams XML namespaces.
 
@@ -113,6 +113,43 @@ This site happens to fully support Apple's Reader Mode and Azure Immersive Reade
 This site works well in the Diffbot article extractor. Diffbot powers a variety of services, including Instapaper.
 
 This site does not work well in Chromium's DOM Distiller. DOM Distiller removes all level-2 headings in article bodies. This is likely because they appear alongside section permalinks, which combines poorly with a DOM-Distiller heuristic that strips out sections with a high link-density. DOM Distiller also does not show footnotes, and sometimes cuts off final sections (acknowledgements, conclusions).
+
+Static IndieWeb
+---------------
+
+One of my goals for this site was to see just how far I could take IndieWeb concepts on a fully static site with ancillary services to handle dynamism. Apart from the search-results page, this site is static on the back-end (all pages are statically-generated). All pages, including the search-results page, are fully static on the front-end (no JS).
+
+[The IndieMark page](https://indieweb.org/IndieMark) lists all the ways you can "IndieWeb-ify" your site.
+
+### Features I have already implemented
+
+- IndieAuth compatibility
+- Microformats: representative `h-card`, in-text `h-card` and `h-cite` when referencing works, `h-feed`.
+- Sending and receiving Webmentions
+- Displaying Webmentions in the form of link-backs and likes (inspired by Tumblr).
+- Backfeeding content from silos: I'm only interested in backfilled content containing discussion, not "reactions" or "likes". Powered by Brid.gy
+
+### Features I am not interested in
+
+- Authoring tools, either through a protocol (e.g. MicroPub) or a dynamic webpage: I prefer writing posts in my `$EDITOR` and deploying with `git push`, letting a CI job build and deploy the site with `make deploy-prod`. This allows me to participate with the social Web using the same workflow I use for writing code.
+
+- Full silo independence: I want to treat my site as a "filtered" view of me that I want to keep searchable and public. On other silos I might shitpost or make low-effort posts. These aren't private, but I want them to remain less prominent. I POSSE content to other places, but I don't exclusively use POSSE.
+
+- Sharing my likes, favorites, reposts: I find these a bit too shallow for seirdy.one. I prefer "bookmarks" where I can give an editorialized description of the content I wish to share along with any relevant tags. I'll keep simple likes and reposts to silos.
+
+- Rich reply-contexts: I'd rather have users click a link to visit the reply and use quoted text to respond to specific snippets, similar to interleaved-style email quoting.
+
+### Features I am interested in
+
+- WebSub. Had some issues with Superfeedr; I think I'll resort to running my own single-user hub.
+- Automatic POSSE to the Fediverse (would be difficult with reply-contexts).
+- Tags and topics.
+- Displaying (truncated) Webmention entry contents instead of just titles and timestamps.
+
+### Low-priority features I have some interest in
+
+- RSVPs: I don't attend many events, let alone events for which I would broadcast my attendance. A page for this would be pretty empty.
+- Event posts: same reason as above.
 
 Privacy
 -------
