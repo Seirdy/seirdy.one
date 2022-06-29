@@ -4,7 +4,7 @@ date: 2022-06-28T17:33:14-07:00
 ---
 The core elements of a people-focused (as opposed to a community-focused) social network are subscribing to people for content and interacting with their content. Atom (and RSS) feeds already provide "subscription" functionality; what if we went further?
 
-Atom feeds can serve as the foundation for distributed social media. The [OStatus protocol suite] describes how Salmon, ActivityStreams, and threading extensions can turn an Atom feed into a "social media feed" that people can interact with. Throw in [WebSub](https://www.w3.org/TR/websub/) for real-time push-based updates. This OStatus + WebSub system was the precursor to the current ActivityPub-based [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
+Atom feeds can serve as the foundation for distributed social media. The [OStatus protocol suite](https://en.wikipedia.org/wiki/OStatus) describes how Salmon, ActivityStreams, and threading extensions can turn an Atom feed into a "social media feed" that people can interact with. Throw in [WebSub](https://www.w3.org/TR/websub/) for real-time push-based updates. This OStatus + WebSub system was the precursor to the current ActivityPub-based [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
 
 [The IndieWeb](https://indieweb.org/) has similar concepts. The IndieWeb community uses [microformats](https://microformats.org/wiki/microformats2) for metadata, including the `h-feed` feed format. It also uses [Webmentions](https://webmention.net/) for interaction between sites.
 
