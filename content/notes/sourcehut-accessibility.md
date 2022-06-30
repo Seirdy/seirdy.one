@@ -11,3 +11,4 @@ I won't pretend that the Sourcehut accessibility situation ideal, but it's usabl
 
 Core functionality all works, but ancillary functionality and quality-of-life could use some significant improvements. I'll file some tickets later today; they're generally easy to fix. Some that come to mind are using additional `<nav>` elements with different labels, and naming in-page heading anchors.
 
+Edit: just saw [your thread on Sourcehut accessiblity](https://social.tchncs.de/@jookia/108567672375976987), I'll take a look.
