@@ -37,6 +37,7 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t' '' >"
 		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"' \
 		| sd '(</picture>|src="[^"]*" ?/>)<span itemprop="name" class="p-name fn n">' '$1 <span itemprop="name" class="p-name fn n">' \
 		| sd '([a-z])<(data|time)' '$1 <$2' \
+		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1' \
 		| sd -s '/>' ' />'
 } >>"$xhtml_file"
 

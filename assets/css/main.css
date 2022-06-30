@@ -132,6 +132,12 @@ html {
 		display: inline-block;
 	}
 
+	/* <dt> should not be closer to the previous <dd> than the following <dd>.
+	 * That can happen in webmentions. */
+	dd {
+		padding-bottom: .25em;
+	}
+
 	header > nav {
 		margin-bottom: -1em;
 	}
@@ -254,8 +260,11 @@ kbd {
 	font-weight: bold;
 }
 
-/* <ins> should not be mistaken for hyperlinks. */
-ins {
+/* <ins> should not be mistaken for hyperlinks.
+ * "note" roles should look distinct. */
+ins,
+[role="note"],
+[role="doc-tip"] {
 	font-style: italic;
 	text-decoration: none;
 }
