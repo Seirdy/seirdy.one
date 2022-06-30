@@ -22,5 +22,5 @@ Some things I think you should consider adding:
 
 - Notes on CI solutions. While SourceHut and GitLab provide excellent CI, Gitea does not. Codeberg offers CI in the form of Woodpecker CI. I don't know how good Woodpecker is from an accessibility perspective, but Sourcehut's "builds" service is excellent.
 
-- Notes on measures taken by forges to escape vendor lock-in through the network effect (I like to call this ["user domestication"]({{<relref "posts/whatsapp-and-the-domestication-of-users.md">}})). Sourcehut uses mailing lists and does not require making an account.
+- Notes on measures taken by forges to escape vendor lock-in through the network effect (I like to call this ["user domestication"]({{<relref "posts/whatsapp-and-the-domestication-of-users.md">}})). Sourcehut uses mailing lists and does not require making an account; Gitea is working on ActivityPub-based federation.
 
