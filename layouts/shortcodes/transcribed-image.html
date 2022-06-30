@@ -1,7 +1,14 @@
 {{- $type := "image" -}}
+{{- $itemtype := "CreativeWork" -}}
 {{- with .Get "type" -}}
 {{- $type = . -}}
 {{- end -}}
-<section aria-label="{{ $type }}, caption, and transcript" itemprop="mentions" itemscope="" itemtype="https://schema.org/ImageObject" id="{{ .Get "id" }}" tabindex="-1">
+{{- with .Get "itemtype" -}}
+{{- $itemtype = . -}}
+{{- end -}}
+<section
+	aria-label="{{ $type }}, caption, and transcript"
+	itemprop="mentions" itemscope="" itemtype="https://schema.org/{{ $itemtype }} https://schema.org/ImageObject"
+	id="{{ .Get "id" }}" tabindex="-1">
 {{ .Inner | markdownify | safeHTML }}
 </section>

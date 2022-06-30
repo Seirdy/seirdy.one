@@ -22,7 +22,7 @@
 				{{ range .Site.Menus.main -}}
 				{{ $isCurrent := false }}
 				<li itemprop="hasPart" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
-					<a href="{{ .URL }}" itemprop="url"
+					<a href="{{ .URL | absURL}}" itemprop="url"
 						{{- if or (eq .Identifier "notes" ) (eq .Identifier "articles") (eq .Identifier "bookmarks") }} rel="feed"{{- end }}
 						{{- if or (eq $currentPage.RelPermalink .URL) ($currentPage.HasMenuCurrent "main" .) -}}{{- $isCurrent = true }} aria-current="page"{{- end -}}>
 						{{- if or $isCurrent (eq $currentPage.Section .Title)  (and (eq $currentPage.Section "posts") (eq .Identifier "articles")) -}}

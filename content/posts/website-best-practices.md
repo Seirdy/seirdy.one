@@ -363,7 +363,7 @@ A hybrid between the two is paginated content in which users click a "load next 
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with <kbd>Ctrl</kbd> + <kbd>s</kbd>)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
 
-{{< transcribed-image type="comic" id="xkcd-1309" >}}
+{{< transcribed-image type="comic" itemtype="VisualArtwork" id="xkcd-1309" >}}
 
 #### <span itemprop="name">xkcd comic: infinite scrolling</span> {#infinite-scrolling}
 

@@ -97,7 +97,7 @@ TE techniques typically revolve around minimizing the size of one's fingerprint,
 
 If an adversary employs multiple fingerprinting vectors, then normalizing or randomizing a small subset of those vectors might make a user stand out even more.
 
-{{< transcribed-image type="comic" id="xkcd-1105" >}}
+{{< transcribed-image type="comic" itemtype="VisualArtwork" id="xkcd-1105" >}}
 
 #### <span itemprop="name">xkcd comic: license plate</span> {#infinite-scrolling}
 

@@ -1,11 +1,14 @@
 <details>
-<summary>Toggle transcript</summary>
-{{ with .Parent -}}
-<section id="transcript-{{ .Get "id" }}">
-<h5>{{ .Get "type" | humanize}} transcript.</h5>
-{{- end -}}
-<div itemprop="embeddedTextCaption">
-{{ .Inner | markdownify | safeHTML }}
+	{{ with .Parent -}}
+		{{- $type := "image" -}}
+		{{- with .Get "type" -}}
+			{{- $type = . -}}
+		{{- end -}}
+	<summary><span id="btn-{{ .Get "id" }}">{{ $type | humanize }} <span itemprop="accessibilityFeature">transcript</span></span></summary>
+	<div id="transcript-{{ .Get "id" }}" aria-labelledby="btn-{{ .Get "id" }}">
+		{{- end -}}
+		<div itemprop="embeddedTextCaption">
+			{{ .Inner | markdownify | safeHTML }}
 </div>
-</section>
+</div>
 </details>
