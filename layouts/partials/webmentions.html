@@ -19,8 +19,9 @@
 					{{- $hasContent := and (isset $webmention "content") (gt (countrunes $webmention.content) 50) -}}
 					{{- $title := $webmention.title -}}
 					{{- /* Remove extraneous crap from Fediverse webmentions */ -}}
-					{{- if findRE "@Seirdy@pleroma.envs.net" $webmention.title -}}
-						{{- $title = $title | replaceRE `@Seirdy@pleroma.envs.net(\n| )?` "" -}}
+					{{- if findRE "@Seirdy" $webmention.title -}}
+						{{- $title = $title | replaceRE `^@Seirdy@pleroma.envs.net(\n| )?` "" -}}
+						{{- /* Mastodon webmentions may include the author in the title followed by a colon; this is redundant. */ -}}
 						{{- if and (isset $webmention "author_name") (findRE `@` $webmention.source) (not (findRE "^https://bridg.gy" $webmention.source)) -}}
 							{{ $title = $title | replaceRE `^[^:]{0,20}: ?` "" }}
 						{{- end -}}

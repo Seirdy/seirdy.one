@@ -2,12 +2,20 @@
 {{- with .replyType -}}
 	{{- $schemaType = . -}}
 {{- end -}}
+{{- $replyAuthorType := "Person" -}}
+{{- with .replyAuthorType -}}
+	{{- $replyAuthorType = . -}}
+{{- end -}}
+{{- $replyAuthorRel := "author" -}}
+{{- if eq $replyAuthorType "Organization" -}}
+	{{- $replyAuthorRel = "publisher" -}}
+{{- end -}}
 <aside role="note">
 	Reply to <span class="h-cite in-reply-to" itemprop="about" itemscope="" itemtype="https://schema.org/{{ $schemaType }}">
 		<cite itemprop="name" class="p-name">
 			<a class="u-url" itemprop="url" href="{{ .replyURI }}">{{ .replyTitle | safeHTML}}</a>
 		</cite> by
-		<span itemprop="author" itemscope="" itemtype="https://schema.org/Person" class="h-card vcard p-author">
+		<span itemprop="{{ $replyAuthorRel }}" itemscope="" itemtype="https://schema.org/{{ $replyAuthorType }}" class="h-card vcard p-author">
 			<a itemprop="url" href="{{ .replyAuthorURI }}" class="u-url url">
 				<span itemprop="name" class="p-name fn n">{{ .replyAuthor }}</span></a>
 		</span>
