@@ -1,14 +1,25 @@
-{{ with .Parent -}}
+{{- $captionType := "embeddedTextCaption" -}}
 {{- $type := "image" -}}
 {{- with .Get "type" -}}
 	{{- $type = . -}}
 {{- end -}}
+{{ with .Parent -}}
+	{{- with .Get "type" -}}
+		{{- $type = . -}}
+	{{- end -}}
+	{{- if eq .Name "transcribed-audio" -}}
+		{{- $captionType = "transcript" -}}
+	{{- end -}}
 <details>
 <summary>Toggle {{ $type }} <span itemprop="accessibilityFeature">transcript</span></summary>
 <section id="transcript-{{ .Get "id" }}">
+{{ if eq (.Get "hlevel") "3" -}}
+<h4>{{ $type | humanize }} transcript</h4>
+{{- else -}}
 <h5>{{ $type | humanize }} transcript</h5>
+{{- end -}}
 {{- end }}
-	<div itemprop="embeddedTextCaption">
+	<div itemprop="{{ $captionType }}">
 		{{ .Inner | markdownify | safeHTML }}
 </div>
 </section>

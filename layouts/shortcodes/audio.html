@@ -1,0 +1,39 @@
+{{ $name := (.Get "name") -}}
+{{- $opus := resources.GetMatch (printf "/a/%s.opus" $name) -}}
+{{- $mp3 := resources.GetMatch (printf "/a/%s.mp3" $name) -}}
+{{- $isTranscribed := false -}}
+{{- /* preloading an in-page audio asset under 32 KiB is fine. */ -}}
+{{- $shouldPreload := lt (len $opus.Content) 32768 -}}
+<audio
+	controls=""
+	{{ with .Parent -}}
+		{{ if eq .Name "transcribed-image" -}}
+			{{- $isTranscribed = true -}}
+			{{ with .Get "id" -}}
+				aria-describedby="transcript-{{ . }}"
+			{{- end -}}
+		{{- end -}}
+	{{- end }}
+	{{ if $shouldPreload -}}
+		preload="auto"
+	{{- end -}}
+	>
+	{{ with $opus -}}
+	{{ $opus_src := . | resources.Fingerprint "md5" -}}
+	<source
+		src="{{ $opus_src.RelPermalink }}"
+		type='audio/ogg; codecs="opus"' />
+	{{ end -}}
+	{{ with $mp3 -}}
+	{{ $mp3_src := . | resources.Fingerprint "md5" -}}
+	<source
+		src="{{ $mp3_src.RelPermalink }}"
+		type="audio/mpeg" />
+	<p role="note">Your browser does not support HTML5 audio. Here’s a <a
+		href="{{ $mp3_src.RelPermalink }}"
+		{{ if $isTranscribed -}}
+			itemprop="audio contentUrl"
+		{{- end -}}
+		>link to download the audio file <samp translate="no">{{ $name }}.mp3</samp></a> instead.</p>
+	{{ end -}}
+</audio>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}

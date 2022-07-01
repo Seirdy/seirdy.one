@@ -1,14 +1,24 @@
 {{- $type := "image" -}}
 {{- $itemtype := "CreativeWork" -}}
+{{- $itemtype2 := "ImageObject" -}}
+{{- $itemprop := "mentions" -}}
 {{- with .Get "type" -}}
-{{- $type = . -}}
+	{{- $type = . -}}
 {{- end -}}
 {{- with .Get "itemtype" -}}
-{{- $itemtype = . -}}
+	{{- $itemtype = . -}}
 {{- end -}}
+{{- with .Get "itemtype2" -}}
+	{{- $itemtype2 = . -}}
+{{- end -}}
+{{- with .Get "itemprop" -}}
+	{{- $itemprop = . -}}
+{{- end -}}
+<hr />
 <section
 	aria-label="{{ $type }}, caption, and transcript"
-	itemprop="mentions" itemscope="" itemtype="https://schema.org/{{ $itemtype }} https://schema.org/ImageObject"
+	itemprop="{{ $itemprop }}" itemscope="" itemtype="https://schema.org/{{ $itemtype }} https://schema.org/{{ $itemtype2 }}"
 	id="{{ .Get "id" }}" tabindex="-1">
 {{ .Inner | markdownify | safeHTML }}
 </section>
+<hr />

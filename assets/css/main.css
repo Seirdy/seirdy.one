@@ -360,6 +360,10 @@ div[itemprop="articleBody"] img {
 	max-width: 100%;
 }
 
+audio {
+	width: 100%;
+}
+
 /* Some images look blurry when scaled; this makes them easier to
  * read. */
 .pix {
