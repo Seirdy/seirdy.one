@@ -15,7 +15,7 @@ I am not a lawyer. This post is satirical commentary on:
 - The absurdity of Microsoft and OpenAI's legal justification for GitHub Copilot.
 - The oversimplifications people use to argue against GitHub Copilot (I don't like it when people agree with me for the wrong reasons).
 - The relationship between capital and legal outcomes.
-- How civil cases seem like sporting events where people "win" or "lose", rather than opportunities improve our understanding of law.
+- How civil cases seem like sporting events where people "win" or "lose", rather than opportunities to improve our understanding of law.
 
 In the process, I intentionally misrepresent how the judicial system works: I portray the system the way people like to imagine it works. Please don't make any important legal decisions based on anything I say.
 
@@ -93,7 +93,7 @@ If this succeeds, we have new legal justification that GitHub Copilot is illegal
 
 ### Part One: set a precedent
 
-1. Train a modern text-to-spec (TTS) engine using the voice a proprietary one made by a company with a small legal budget. Keep the model's internals hidden.
+1. Train a modern text-to-speech (TTS) engine using the voice a proprietary one made by a company with a small legal budget. Keep the model's internals hidden.
 2. Then release the final TTS under a permissive license. Remember, we're still keeping the machine-learning model hidden!
 3. Wait for that company to file suit.[^3]
 4. Win or lose the case.
@@ -115,6 +115,15 @@ If we _win_ both cases: Microsoft has the legal high ground. Making a derivative
 If we _lose_ both cases: Microsoft does not have the legal high ground. We have good judicial precedent against Microsoft to use when filing suit for Copilot's behavior.
 
 Either way, it's an absolute win for free software. Taking down Copilot protects copyleft from enabling proprietary derivatives (and by extension, protects software freedom). But if we accidentally win these two low-stakes "test" cases, we still gain something else: we can liberate huge swaths of proprietary software, starting with speech synthesizers.
+
+<section role="doc-errata">
+
+Corrections
+-----------
+
+It's come to my attention that Eloquence may or may not still belong to Nuance. Further research is needed.
+
+</section>
 
 
 [^1]: See {{<mention-work role="doc-credit" itemtype="DigitalDocument" itemprop="citation">}}{{<cited-work name="Comment Regarding Request for Comments on Intellectual Property Protection for Artificial Intelligence Innovation" url="https://www.uspto.gov/sites/default/files/documents/OpenAI_RFC-84-FR-58141.pdf">}} (<span itemprop="encodingFormat">application/pdf</span>) submitted by <span itemscope="" itemprop="publisher" itemtype="https://schema.org/Organization"><span itemprop="name">OpenAI</span></span> to the <abbr title="United States Patent and Trademark Office">USPTO</abbr>{{</mention-work>}}
