@@ -8,7 +8,7 @@ outputs:
 tags:
     - git
     - foss
-techarticle: true
+articleType: "TechArticle"
 title: "Resilient Git, Part 1: Hydra Hosting"
 ---
 <div role="note">

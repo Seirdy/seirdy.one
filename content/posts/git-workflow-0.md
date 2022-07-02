@@ -8,10 +8,9 @@ outputs:
 tags:
     - git
     - foss
-techarticle: true
+articleType: "TechArticle"
 title: "Resilient Git, Part 0: Introduction"
 ---
-
 <div itemprop="backstory">
 
 Recently, GitHub re-instated the [youtube-dl git repository](https://github.com/ytdl-org/youtube-dl) after following a takedown request by the RIAA under the DMCA. Shortly after the takedown, many members of the community showed great interest in "decentralizing git" and setting up a more resilient forge. What many of these people fail to understand is that the Git-based project setup is designed to support decentralization by being fully distributed.

@@ -1,7 +1,8 @@
 ---
 title: "Two types of privacy"
 date: 2022-06-25T15:25:14-07:00
-techarticle: true
+lastMod: 2022-06-26T01:00:43-07:00
+articleType: "TechArticle"
 outputs:
     - html
     - gemtext

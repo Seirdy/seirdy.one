@@ -17,7 +17,7 @@ sitemap:
 featured: 2
 image: "serenity-4x.png"
 image_alt: "Retro-looking browser with bitmap fonts showing this article's \"code snippet 4\"."
-techarticle: true
+articleType: "TechArticle"
 evergreen: true
 title: "Best practices for inclusive textual websites"
 ---
