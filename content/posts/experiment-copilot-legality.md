@@ -53,7 +53,7 @@ GitHub performed its own research into the matter.[^2] You can read about it on 
 
 I recently had a chat with Matt on IRC about screen readers and different types of speech synthesizers. I mentioned that while I do like some variety, I always find myself returning to the underrated robotic voice of [eSpeak NG](https://github.com/espeak-ng/espeak-ng/). He shared some of my fondness, and also shared his preference for a similar speech synthesizer called Eloquence.
 
-Downloads of Eloquence are easy to find (it's even included with the JAWS screen reader), but I struggle to find any "official" pages about the original Eloquence. Nuance acquired Eloquent Technologies, the developer of Eloquence. Microsoft later acquired Nuance.
+Downloads of Eloquence are easy to find (it's even included with the JAWS screen reader), but I struggle to find any "official" pages about the original Eloquence. Nuance acquired Eloquent Technology, the developer of Eloquence. Microsoft later acquired Nuance.
 
 {{<transcribed-image id="eloquence" type="audio" itemtype2="AudioObject" itemprop="hasPart">}}
 
@@ -102,7 +102,7 @@ If this succeeds, we have new legal justification that GitHub Copilot is illegal
 
 Our goal here is to get the same legal outcome as the low-stakes "trial run" of Part One.
 
-Microsoft owns Nuance. Nuance previously bought Eloquent Technologies, the developers of the Eloquence speech synthesizer.
+Microsoft owns Nuance. Nuance previously bought Eloquent Technology, the developers of the Eloquence speech synthesizer.
 
 1. Repeat Part One against Nuance speech synthesizers, including Eloquence. Go to court.
 2. Have the ruling from Part One cited as legal precedent.
@@ -122,6 +122,7 @@ Corrections
 -----------
 
 It's come to my attention that Eloquence may or may not still belong to Nuance. Further research is needed.
+Eloquent Technology was acquired by SpeechWorks in 2000.
 
 </section>
 
