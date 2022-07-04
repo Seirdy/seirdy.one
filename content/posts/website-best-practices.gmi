@@ -692,7 +692,14 @@ Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the
 
 => https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
 
-Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes people on the autism spectrum.
+Even if the APCA is much better than the WCAG's current naive contrast algorithms, it still doesn't account for all aspects of the relationship between perceptual contrast and color. This discussion on the SAPC-APCA repository covers some shortcomings; for instance, the current APCA doesn't account for the Helmholtz–Kohlrausch effect:
+
+=> https://github.com/Myndex/SAPC-APCA/discussions/74 Dark Mode Color Palettes and APCA
+=> https://en.wikipedia.org/wiki/Helmholtz%E2%80%93Kohlrausch_effect Wikipedia: Helmholtz–Kohlrausch effect
+
+The Helmholtz–Kohlrausch effect describes how highly-saturated colors appear "brighter" than de-saturated colors with the same brightness. Excessive perceptual brightness against dark backgrounds can trigger halation, eye-strain, and overstimulation.
+
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes many on the autism spectrum.
 
 => https://www.tpgi.com/beyond-wcag-losing-spoons-online/ Beyond WCAG: Losing Spoons Online
 => https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/ The Ultimate Guide to Autism Friendly Colours
