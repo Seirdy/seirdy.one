@@ -101,6 +101,16 @@ If we _lose_ both cases: Microsoft does not have the legal high ground. We have 
 
 Either way, it’s an absolute win for free software. Taking down Copilot protects copyleft from enabling proprietary derivatives (and by extension, protects software freedom). But if we accidentally win these two low-stakes “test” cases, we still gain something else: we can liberate huge swaths of proprietary software, starting with speech synthesizers.
 
+## Update: on satire
+
+This post isn't "satire through-and-through" like something from The Onion. Rather, my intent was to make some clear points, but extrapolate them to absurdity to highlight other problems. I don't think I was clear enough when doing this. I'm sorry.
+
+Copilot has been found to suggest significant amounts of code that is dangerously similar to existing works. It does this without disclosing obligations that come with those works' licenses. Training a model on copyrighted works may not be wrong in and of itself; however, using that model to generate new works that are not sufficiently distinct from original works is where things get problematic. Copilot's users could apply proprietary licenses to the generated works, defeating the point of copyleft.
+
+When a tool almost exclusively encourages problematic behavior, the makers of that tool should have put thought into its implications. GitHub and OpenAI have not demonstrated a sufficiently careful approach.
+
+I don't think that "going after" a smaller player just to manipulate our legal system is a good thing to do. The fact that this idea seems plausible to some of my readers shows how warped our perception of the judicial system is. Even if it's accurate (I doubt it's accurate, but I'm not certain), it's sad. Judicial systems incentivise too much predatory behavior.
+
 ## Corrections
 
 It's come to my attention that Eloquence may or may not still belong to Nuance. Further research is needed.
