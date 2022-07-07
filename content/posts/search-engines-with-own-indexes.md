@@ -86,6 +86,7 @@ These are large engines that pass all my standard tests and more.
   - Givero
   - Swisscows
   - Fireball
+  - Netzzappen
   - You.com[^6]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
@@ -135,8 +136,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 - [Siik](https://siik.co/): Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
 - [websearchengine.org](https://websearchengine.org) and [tuxdex.com](https://tuxdex.com): Both are run by the same people, powered by their [inetdex.com](https://inetdex.com) index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies.
-
-- [Meorca](https://meorca.com/): A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 
 - [ChatNoir](https://www.chatnoir.eu/): An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
 
@@ -298,7 +297,9 @@ These engines were originally included in the article, but have since been disco
 
 - [wbsrch](https://wbsrch.com/): In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.
 
-- [Gowiki](https://gowiki.com): Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
+- [Gowiki](https://web.archive.org/web/20211226043304/https://www.gowiki.com/): Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
+
+- [Meorca](https://web.archive.org/web/20220429143153/https://www.meorca.com/search/): A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 
 Exclusions
 ----------
