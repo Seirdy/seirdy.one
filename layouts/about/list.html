@@ -1,6 +1,6 @@
 {{ define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-<main>
+<main id="main" tabindex="-1">
 	{{- $articleTag := printf `<article class="h-entry hentry" itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Article" itemid="%s%s">` .Site.Params.CanonicalBaseURL $canonicalRelPermalink -}}
 	{{ partial "full-article.html" . | replaceRE `<article class="h-entry hentry">` $articleTag | safeHTML }}
 <hr />

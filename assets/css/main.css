@@ -145,15 +145,21 @@ html {
 		margin: -.75em -.25em;
 	}
 
+	header a[href="#main"],
 	div[itemprop="comment"] dd > a ,
 	footer > nav,
-	header > nav,
 	/* List items with direct hyperlink children should only have one hyperlink. */
 	li > a,
 	aside > a,
 	nav ol a {
 		margin-left: -.25em;
 		display: inline-block;
+	}
+
+	/* The nav has to be distant-enough from the top to make room for a skip-link. */
+	header > nav {
+		margin: .75em 0 0 -.25em;
+		display: block;
 	}
 
 	/* Multiple consecutive <dt> that share a <dd> shouldn't have tap targets overlap */
@@ -175,6 +181,16 @@ html {
 	 * with links on the following endnote */
 	section[role="doc-endnotes"] li {
 		margin-bottom: 1.75em;
+	}
+
+	header a[href="#main"] {
+		position: absolute;
+		top: -2em;
+		padding: 0 .25em;
+	}
+
+	header a[href="#main"]:focus {
+		top: 0;
 	}
 }
 

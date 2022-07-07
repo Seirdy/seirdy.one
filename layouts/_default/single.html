@@ -1,6 +1,7 @@
 {{ define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-<main itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Article" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+<main id="main" tabindex="-1"
+	itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Article" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 	{{ partial "full-article.html" . }}
 </main>
 {{ end }}
