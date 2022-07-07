@@ -2,7 +2,7 @@
 {{- if and (not .IsHome) (not .Parent.IsHome) -}}
 <hr />
 <nav aria-labelledby="bc-label"
-	itemscope="" itemprop="breadcrumb" itemtype="https://schema.org/BreadcrumbList" itemref="body">
+	itemscope="" itemprop="breadcrumb" itemtype="https://schema.org/BreadcrumbList">
 	<span id="bc-label">You are here:</span>
 	<ol>
 		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
