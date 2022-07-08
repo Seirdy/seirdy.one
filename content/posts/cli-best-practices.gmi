@@ -104,7 +104,7 @@ $ moac -
 	-m  -- mass at attacker's disposal (kg)
 	-q  -- account for quantum computers using Grover's algorithm
 ```
-=> https://sr.ht/~seirdy/moac MOAC
+=> https://sr.ht/~seirdy/MOAC MOAC
 
 ### Misc
 

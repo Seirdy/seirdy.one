@@ -104,7 +104,7 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 4. Ensure that the `whatis` and `apropos` commands work as intended after installing your man pages. These commands parse the beginnings of man pages to give one-line summaries of programs, and often power advanced tab-completion setups.
 
-{{<codefigure samp="true">}} {{< codecaption lang="console" >}} This is what tab-completion for [MOAC](https://sr.ht/~seirdy/moac) looks like with fzf-tab. {{< /codecaption >}}
+{{<codefigure samp="true">}} {{< codecaption lang="console" >}} This is what tab-completion for [MOAC](https://sr.ht/~seirdy/MOAC) looks like with fzf-tab. {{< /codecaption >}}
 
 ```figure {samp=true}
 $ moac -
@@ -151,7 +151,7 @@ These considerations are far more subjective, debatable, and deserving of skepti
 
 6. If you want to keep your tool simple, make the output readable to both humans and machines; it should work well when streamed to another program's standard input and when parsed by a person. This is especially useful when people redirect output streams to log files, and to screen readers.
 
-7. Consider splitting related functionality between many executables (the UNIX way) and/or sub-commands (like Git). I split [MOAC's](https://sr.ht/~seirdy/moac) functionality across both `moac` and `moac-pwgen`, and gave `moac` three subcommands. The ["Consistent commands trees"](https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html#consistent-commands-trees) section of Lucas' article has good advice.
+7. Consider splitting related functionality between many executables (the UNIX way) and/or sub-commands (like Git). I split [MOAC's](https://sr.ht/~seirdy/MOAC) functionality across both `moac` and `moac-pwgen`, and gave `moac` three subcommands. The ["Consistent commands trees"](https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html#consistent-commands-trees) section of Lucas' article has good advice.
 
 8. Don't conflate CLIs and TUIs. A CLI should be non-interactive; a TUI should be interactive. Exceptions exist for really simple interfaces (e.g. Magic-Wormhole and others like it) that accept user input; however, as the interface grows more complex, consider splitting the program into two sibling programs, one of which can have a "pure" non-interactive CLI.
 
@@ -209,7 +209,7 @@ References and further reading
 
 [^2]: See [this Fediverse thread](https://mastodon.technology/@codeberg/108403449317373462) about forge accessibility.
 
-[^3]: I need to take my own advice for programs like [moac](https://sr.ht/~seirdy/moac). Ugh.
+[^3]: I need to take my own advice for programs like [MOAC](https://sr.ht/~seirdy/MOAC). Ugh.
 
 [^4]: For a good example, see Git's distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
 

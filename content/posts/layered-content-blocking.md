@@ -79,7 +79,7 @@ I'll update this section as I collect feedback. Watch this space.
 <q>Malicious extensions can still request permission to read the contents of the page. What have you done differently besides adding new APIs?</q>
 : The difference is that these malicious extensions will require the extra permission to access your data for all websites, while extensions using declarative APIs will not. Security-conscious users can keep that fact in mind. However, we shouldn't speak for other users with different priorities.
 
-  I imagine that [an opinionated security-focused browser](https://hexavalent.org/) could make it possible for users to enable privileged extensions only on a site-by-site basis, for those interested. Personally, I think that it's probably best to limit scriptlet injection to signed scripts.[^7]
+	I imagine that [an opinionated security-focused browser](https://web.archive.org/web/20220607001654/https://hexavalent.org/) could make it possible for users to enable privileged extensions only on a site-by-site basis, for those interested <ins>(Update: Hexavalent has been discontinued)</ins>. Personally, I think that it's probably best to limit scriptlet injection to signed scripts.[^7]
 
   Another difference is that while declarative filtering does have reduced functionality, it's also more effective in some ways. Declarative filters generally have a lower footprint and are less likely to experience the delayed execution that lets some unwanted content slip through.
 
