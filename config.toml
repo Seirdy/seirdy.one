@@ -22,6 +22,7 @@ disableKinds = ["taxonomy", "term"]
 	dark = "auto"
 	highlight = false
 	icon = "/favicon.svg"
+	indieAuth = "https://indielogin.com/auth"
 
 [frontmatter]
 	lastmod = ['lastmod', ':git', 'date', 'publishDate']
