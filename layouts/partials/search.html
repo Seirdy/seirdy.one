@@ -10,7 +10,7 @@
 		<meta itemprop="urlTemplate" content="{{ $action }}?q={q}" />
 	</label>
 	<div><!--We need the extra divs to serve as pseudo-table-cells.-->
-		<input itemprop="query-input" id="search" type="search" required="" name="q" />
+		<input itemprop="query-input" id="search" type="search" required="" aria-required="true" autocomplete="on" name="q" />
 		<div><input type="submit" value="search" /></div>
 	</div>
 </form>
