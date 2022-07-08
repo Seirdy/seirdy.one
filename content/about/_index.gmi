@@ -58,7 +58,7 @@ My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly
 My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. My Matrix account used to be @seirdy:envs.net but I've since migrated to my own Conduit server.
 
 If you want to follow me on Fedi, read this first:
-=> ../fediverse-greeting/ Fediverse greeting
+=> ./fediverse-greeting/ Fediverse greeting
 
 
 If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
@@ -79,7 +79,7 @@ Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection
 
 Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry:
 
-=> ../posts//2021/01/12/password-strength/ Becoming physically immune to brute-force attacks
+=> ../posts/2021/01/12/password-strength/ Becoming physically immune to brute-force attacks
 
 Written in Go.
 
@@ -115,7 +115,7 @@ Some software I use: Fedora, Alpine Linux, SwayWM, mpv, mpd, Minetest, Neovim, t
 
 More information is available in my "uses" page.
 
-=> ../uses/ Software I use
+=> ./uses/ Software I use
 
 ### Anime
 

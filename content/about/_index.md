@@ -1,6 +1,5 @@
 ---
 date: 2020-10-30
-layout: post
 title: About Seirdy (Rohan Kumar)
 outputs:
     - html
@@ -80,7 +79,7 @@ At least two platforms listed in the "Social (centralized)" category are not end
 
 I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
 
-If you want to follow me on the Fediverse, [read my Fediverse greeting first](../fediverse-greeting/)
+If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{<relref "fediverse-greeting.md">}})
 
 <small>Poggies</small>
 
@@ -122,7 +121,7 @@ I lean towards simplicity; I usually prefer line-mode command-line interfaces th
 
 There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all. When I use a graphical program, it's typically for things for which graphics are an inherent requirement or for accessibility reasons (most textual user interfaces don't play well with screen readers).
 
-More information is available in [my "uses" page](../uses/).
+More information is available in [my "uses" page]({{<relref "uses">}}).
 
 ### Anime
 

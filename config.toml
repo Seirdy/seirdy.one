@@ -112,6 +112,7 @@ disableKinds = ["taxonomy", "term"]
 	section = ["HTML", "atom", "RSS"]
 	posts = ["HTML", "atom", "RSS"]
 	notes = ["HTML", "atom", "RSS"]
+	about = ["HTML", "atom", "RSS"]
 
 # https://github.com/nekr0z/static-webmentions
 [webmentions]

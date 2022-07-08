@@ -110,8 +110,11 @@ html {
 	 *   paragraph are section permalinks. */
 
 	input,
+	div[itemprop="comment"] dd > a,
 	dt > a,
 	summary,
+	nav[itemprop="breadcrumb"] a,
+	nav[itemprop="breadcrumb"] > span,
 	aside > a, /* Used for section permalinks */
 	li > a {
 		padding: .75em .25em;
@@ -138,14 +141,11 @@ html {
 		padding-bottom: .25em;
 	}
 
-	header > nav {
-		margin-bottom: -1em;
-	}
-
 	aside > a {
 		margin: -.75em -.25em;
 	}
 
+	div[itemprop="comment"] dd > a ,
 	footer > nav,
 	header > nav,
 	/* List items with direct hyperlink children should only have one hyperlink. */
@@ -161,15 +161,9 @@ html {
 		padding-top: 0;
 	}
 
-	nav li,
+	nav:not([itemprop="breadcrumb"]) li,
 	ol li > a {
 		margin: .25em;
-	}
-
-	div[itemprop="comment"] dd > a {
-		display: inline-block;
-		margin-left: -.25em;
-		padding: .75em .25em;
 	}
 
 	/* Increase backlink tap target size */
@@ -195,10 +189,12 @@ ul {
 	padding-left: 1.5em;
 }
 
+blockquote,
 ol ol,
 ul ul {
 	-webkit-hyphens: auto;
 	hyphens: auto;
+	margin: 0;
 	padding-left: 1em;
 }
 
@@ -211,6 +207,22 @@ nav ul {
 	padding: 0;
 }
 
+/* Make breadcrumbs inline, so they look familiar. */
+nav[itemprop="breadcrumb"] ol,
+nav[itemprop="breadcrumb"] li,
+nav[itemprop="breadcrumb"] > span {
+	display: inline-block;
+}
+
+nav[itemprop="breadcrumb"] ol {
+	margin: -.25em 0;
+	padding: 0;
+}
+
+nav[itemprop="breadcrumb"] li:not(:last-of-type)::after {
+	content: "→";
+}
+
 /* step 2: remove bullets and make elements inline.
  * Also: bump up the line-height and margins to increase space
  * between tap-targets (SC 2.5.5). Google a11y guidelines require 8 CSS
@@ -219,15 +231,10 @@ nav ul li {
 	display: inline-block;
 	margin-right: .5em;
 }
-
-/* narrow screens: reduce margin for blockquotes a lot, using
- * a border instead. Put it on the left and right to make it
- * LTR/RTL-neutral, for machine translators that change text
- * direction (e.g. the one in Edge). */
+/* narrow screens: we reduce margin for blockquotes a lot, using
+ * a border instead. */
 blockquote {
 	border-left: 3px solid;
-	margin: 0;
-	padding: 0 1em;
 }
 
 /* Narrow screens: allow hyphenating titles

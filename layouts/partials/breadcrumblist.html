@@ -1,0 +1,29 @@
+{{/* All pages are one or two clicks from the navbar. If two clicks, add a breadcrumb list. */}}
+{{- if and (not .IsHome) (not .Parent.IsHome) -}}
+<hr />
+<nav aria-labelledby="bc-label"
+	itemscope="" itemprop="breadcrumb" itemtype="https://schema.org/BreadcrumbList" itemref="body">
+	<span id="bc-label">You are here:</span>
+	<ol>
+		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+	</ol>
+</nav>
+{{- end -}}
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ end }}
+{{- if not .p1.IsHome -}}
+			{{- $isCurrent := eq .p1 .p2 -}}
+			{{- /* The position is either "1" or "2" since the list is 2 elements long. */ -}}
+			{{- $position := "1" -}}
+			{{- if $isCurrent -}}
+				{{- $position = "2" -}}
+			{{- end -}}
+			<li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+				<a{{ if $isCurrent }} aria-current="page"{{ end }} itemprop="item" href="{{ .p1.Permalink }}">
+					<span itemprop="name">{{ .p1.Title }}</span></a>
+					<meta itemprop="position" content="{{ $position }}" />
+			</li>
+{{- end -}}
+{{ end }}
