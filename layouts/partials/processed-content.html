@@ -45,14 +45,14 @@
 
 <!--Give footnote backlinks accessible names-->
 {{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
-{{- $footnoteBacklinksGood :=  `<a href="#fnref:${1}" aria-labelledby="bl-${1}"${2}>${3} <span id="bl-${1}" hidden="">back to reference ${1}</span>` -}}
+{{- $footnoteBacklinksGood :=  `<br /><a href="#fnref:${1}" aria-labelledby="bl1-${1} bl2-${1}"${2}><span id="bl1-${1}">Back</span><span id="bl2-${1}" hidden=""> to reference ${1}</span>` -}}
 
 <!--
 	If two backlinks exist, give them different names.
 	I currently don't have any triple backlinks; if I ever do, I'll implement this properly with a loop.
 -->
 {{- $repeatedFootnoteBacklinksBad  :=  `<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
-{{- $repeatedFootnoteBacklinksGood :=  `<a href="#fnref${1}:${2}" aria-labelledby="bl-${2}-2"${3}>${4} <span id="bl-${2}-2" hidden="">back to reference ${2}, instance 2</span>` -}}
+{{- $repeatedFootnoteBacklinksGood :=  `<br /><a href="#fnref${1}:${2}" aria-labelledby="bl1-${2}-2 bl2-${2}-2"${3}><span id="bl1-${2}-2">Back</span><span id="bl2-${2}-2" hidden=""> to reference ${2}, instance 2</span>` -}}
 
 <!--Make endnotes focusable by ATs. Necessary for VoiceOver compatibility.-->
 {{- $endNotesNotFocusable := `<li id="fn:([0-9]*)">` -}}
