@@ -8,7 +8,7 @@
 		<input type="hidden" name="target" value="{{ .Site.Params.canonicalBaseURL }}{{ $canonicalRelPermalink }}" />
 		<label for="menchie">URL of page linking here</label>
 		<div><!--We need the extra divs to serve as pseudo-table-cells.-->
-			<input id="menchie" type="url" autocomplete="off" required="" aria-required="true" name="source" /><!--disable autocomplete bc it's a unique URL.-->
+			<input id="menchie" type="url" autocomplete="on" required="" aria-required="true" name="source" /><!--enable autocomplete if the same URL mentions multiple pages.-->
 			<div><input type="submit" value="submit" /></div>
 		</div>
 	</form>
