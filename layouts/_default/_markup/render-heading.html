@@ -12,7 +12,7 @@
 	I'm a markup criminal now.
 -->
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" tabindex="-1">{{ .Text | safeHTML -}}</h{{ .Level }}>
-{{- if and (eq .Level 2) (eq .Page.Section "posts") -}}
+{{- if and (eq .Level 2) (.Page.Section) (ne .Page.Section "notes") -}}
 <!--crimes-->
 <aside role="none"><a
 	id="{{ .Anchor | safeURL }}-anchor" href="#{{ .Anchor | safeURL }}"
