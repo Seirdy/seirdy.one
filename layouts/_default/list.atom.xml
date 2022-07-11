@@ -37,7 +37,8 @@
   </author>
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
   <id>{{ .Permalink }}</id>
-  {{ range $pages }}
+  {{ range $pages -}}
+	{{- if not .Params.Private }}
   <entry>
 		<title>{{ .Title }}</title>
     <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
@@ -70,5 +71,6 @@
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
   </entry>
-  {{ end }}
+  {{- end }}
+	{{ end }}
 </feed>
