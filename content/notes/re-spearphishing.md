@@ -1,7 +1,7 @@
 ---
-title: "Re spearphishing"
+title: "Re: spearphishing"
 date: 2022-07-10T17:34:19-07:00
-replyURL: "https://xeiaso.net/blog/spearphishing"
+replyURI: "https://xeiaso.net/blog/spearphishing"
 replyTitle: "Spearphishing: it can happen to you too"
 replyType: "BlogPosting"
 replyAuthor: "Xe Iaso"
