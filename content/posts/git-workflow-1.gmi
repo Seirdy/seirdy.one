@@ -58,4 +58,4 @@ A: Stay tuned for Parts 2 and 3, coming soon to a weblog/gemlog near you™.
 
 Q: Why did you call this "hydra hosting"?
 
-A: It's a reference to the Hydra of Lerna from Greek Mythology, famous for keeping its brain in a nested RAID array to protect against disk failures and beheading. It could also be a reference to a fictional organization of the same name from Marvel Comics named after the Greek monster for similar reasons.
+A: It's a reference to the Hydra of Lerna from Greek Mythology, famous for keeping its brain in a nested RAID array to protect against disk failures and beheading (/joke). It could also be a reference to a fictional organization of the same name from Marvel Comics named after the Greek monster for similar reasons.

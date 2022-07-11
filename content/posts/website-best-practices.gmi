@@ -6,7 +6,7 @@ This is a "living document" that I add to as I receive feedback.
 
 This is also a somewhat long read; for a summary, skip everything between the table of contents and the conclusion.
 
-I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, a month at the longest). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have at least some useful information for any web content author or front-end web developer.
+I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, at least a month /s). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have at least some useful information for any web content author or front-end web developer.
 
 My primary focus is inclusive design:
 
