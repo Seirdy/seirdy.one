@@ -2,7 +2,7 @@
  * touch-friendly layout.
  * Nothing here exists purely for aesthetics; everything addresses a
  * specific a11y, compatibility, or critical
- * usability need.
+ * usability need. The only exception is the h1's top margin.
  *
  * One exception: I re-set the input styles so Safari wouldn't make them
  * pill-shaped.
@@ -145,7 +145,7 @@ html {
 		margin: -.75em -.25em;
 	}
 
-	header a[href="#main"],
+	header a[href="#main"], /* skip link */
 	div[itemprop="comment"] dd > a ,
 	footer > nav,
 	/* List items with direct hyperlink children should only have one hyperlink. */
@@ -183,6 +183,7 @@ html {
 		margin-bottom: 1.75em;
 	}
 
+	/* skip link: make it invisible until focused, and put it on the top. */
 	header a[href="#main"] {
 		position: absolute;
 		top: -2em;
@@ -253,11 +254,14 @@ blockquote {
 	border-left: 3px solid;
 }
 
-/* Narrow screens: allow hyphenating titles
- * I can't add soft hyphens to these. */
+/* Narrow screens: allow hyphenating titles I can't add soft hyphens to
+ * these. Also decrease the top margin a bit; the navbar and breadcrumb
+ * list take up plenty of space on top. The latter is a purely
+ * aesthetic choice, since it was annoying me a lot. */
 h1 {
 	-webkit-hyphens: auto;
 	hyphens: auto;
+	margin-top: .25em;
 }
 
 /* Very narrow screens: full hyphenation.
