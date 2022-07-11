@@ -61,7 +61,7 @@ validate_feed() {
 	# 'should not contian" has a false positive triggered by ARIA
 	# entries with the same timestamp isn't a big deal
 	# unregistered link relationship is a false positive caused by an unknown namespace.
-	full_regex="Use of unknown namespace|Self reference doesn't match|should not contain (role|aria-labelledby|aria-label|aria-describedby|aria-hidden|controls) attribute|$rel_mention_string|entries with the same value|Validating $url"
+	full_regex="Use of unknown namespace|Self reference doesn't match|should not contain (role|aria-labelledby|aria-label|aria-describedby|aria-hidden|controls|data-literal) attribute|$rel_mention_string|entries with the same value|Validating $url"
 
 	run_validator \
 		| grep -Ev "$full_regex"
