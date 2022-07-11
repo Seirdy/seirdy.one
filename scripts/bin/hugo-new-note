@@ -27,6 +27,7 @@ bad_option() {
 }
 
 reply='0'
+url=''
 
 while getopts "hr" flags; do
 	case ${flags} in
@@ -36,6 +37,8 @@ while getopts "hr" flags; do
 			;;
 		r)
 			reply='1'
+			shift
+			url="$1"
 			shift
 			;;
 		*)
@@ -51,6 +54,10 @@ if [ "$reply" = '1' ]; then
 	hugo new --kind reply "$filename"
 else
 	hugo new "$filename"
+fi
+
+if [ "$url" != '' ]; then
+	sd -s 'replyURI: ""' "replyURI: \"$url\"" "content/$filename"
 fi
 
 "${EDITOR-nvim}" "content/$filename"
