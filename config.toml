@@ -64,11 +64,18 @@ disableKinds = ["taxonomy", "term"]
 		weight = 30
 
 	[[menu.main]]
+		identifier = "meta"
+		name = "Meta"
+		title = "meta"
+		url = "/meta/"
+		weight = 40
+
+	[[menu.main]]
 		identifier = "resume"
 		name = "Resume"
 		title = "resume"
 		url = "/resume/"
-		weight = 40
+		weight = 50
 
 [permalinks]
 	posts = "/posts/:year/:month/:day/:filename"
@@ -114,6 +121,7 @@ disableKinds = ["taxonomy", "term"]
 	posts = ["HTML", "atom", "RSS"]
 	notes = ["HTML", "atom", "RSS"]
 	about = ["HTML", "atom", "RSS"]
+	meta = ["HTML", "atom", "RSS"]
 
 # https://github.com/nekr0z/static-webmentions
 [webmentions]

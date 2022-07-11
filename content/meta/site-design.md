@@ -53,7 +53,7 @@ I also go further than WCAG in many aspects:
 
 I test each WCAG success criterion myself using the mainstream browser engines (Blink, Gecko, WebKit). I test using multiple screen readers: Orca (primary, with Firefox and Epiphany), NVDA (with Firefox and Chromium), Windows Narrator (with Microsoft Edge), Apple VoiceOver (with desktop and mobile Safari), and Android TalkBack (with Chromium).
 
-I also accept user feedback. Users are free to contact me through any means linked on my [About page](../about/).
+I also accept user feedback. Users are free to contact me through any means linked on my [About page](../../about/).
 
 Finally, I supplement manual testing with the following automated tools:
 
