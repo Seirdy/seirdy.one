@@ -212,7 +212,7 @@ These engines try to find a website, typically at the domain-name level. They do
 
 => https://kozmonavt.ml/ Kozmonavt
 => http://www.search.tl  search.tl
-=> https://search.thunderstone.com/texis/websearch21/ Thunderstone
+=> https://search.thunderstone.com/ Thunderstone
 => https://www.sengine.info/ sengine.info
 => https://www.gnomit.com/ Gnomit
 
@@ -220,13 +220,11 @@ These engines try to find a website, typically at the domain-name level. They do
 
 * Keybot: A must-have for anyone who does translation work. It crawls the web looking for multilingual websites. Translators who are unsure about how to translate a given word or phrase can see its usage in two given languages, to learn from other human translators. My parents are fluent English speakers but sometimes struggle to express a given Hindi idiom in English; something like this could be useful to them, since machine translation isn't nuanced enough for every situation. Part of the TTN Translation Network. Discovered in my access logs.
 * Quor: seems to mainly index large news sites. Site is down as of June 2021. Originally available at www dot quor dot com.
-* Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 * Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 * Bonzamate: a search engine specifically for Australian websites.
 * searchcode: A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
 
 => https://www.keybot.com/ Keybot Translation Search Machine.
-=> https://ninfex.com Ninfex
 => https://www.semanticscholar.org/ Semantic Scholar
 => https://bonzamate.com.au/ Bonzamate
 => https://boyter.org/posts/abusing-aws-to-make-a-search-engine/ Blog post about Bonzamate: "Abuzing AWS to make a search engine".
@@ -329,11 +327,13 @@ These engines were originally included in the article, but have since been disco
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
 * Gowiki: Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
+* Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
 => https://gowiki.com  Gowiki
 => https://web.archive.org/web/20220429143153/https://www.meorca.com/search/ Meorca Search Engine (Wayback Machine snapshot)
+=> https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
 
 ## Exclusions
 
