@@ -36,7 +36,17 @@ This site is featured in some cool directories.
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
+
+<details>
+<summary>Pending directories</summary>
+
 - [Nerd Listings](https://nerdlistings.info/category/personalsites/) (pending)
 - [Ye Olde Blogroll](https://blogroll.org/) (pending)
 - [LinkLane](https://www.linklane.net/) (pending)
+- [Blog Surf](https://blogsurf.io/) (pending)
+- [Smooth Sailing](https://smoothsailing.asclaria.org/) (pending)
+- [Moonshot](https://www.moonshot.forbiddenl0ve.net/) (pending)
+- [Yesterlinks](https://links.yesterweb.org/) (pending)
+
+</details>
 
