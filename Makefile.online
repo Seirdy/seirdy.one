@@ -46,5 +46,5 @@ validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
 .PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
 
 .PHONY: all-extra
-all-extra: axe htmltest validate-json equal-access htmlproofer lint-css validate-feeds
+all-extra: axe-ff htmltest validate-json equal-access htmlproofer lint-css validate-feeds
 
