@@ -9,7 +9,7 @@
  *
  * I also don't use any classes except for image presentation. (e.g. to
  * specify that an image should have pixelated rendering or be inverted
- * in dark mode).
+ * in dark mode). One exception: a class for narrow width body text.
  * My HTML contains microformats2 classnames for IndieWeb parsers, but I
  * don't actually use those for styling.
  *
@@ -59,7 +59,7 @@ html {
 		 * viewport. This isn't for large blocks of text yet, so we don't have
 		 * to go by SC 1.4.8.
 		 * 45em = lowest acceptable width for titles, nav, footers, etc */
-		max-width: 45em;
+		max-width: 42em;
 
 		/* Phone cases can cover the edges. Swipe-from-edge navigations
 		 * should not conflict with the page elements. Focus outlines for
@@ -77,7 +77,9 @@ html {
 
 	/* 45em is too wide for long body text.
 	 * Typically meets SC 1.4.8, plus or minus a few characters. */
-	div[itemprop="articleBody"] {
+	div[itemprop="articleBody"],
+	li[itemprop="dataFeedElement"],
+	.narrow {
 		margin: auto;
 		max-width: 35em;
 	}
