@@ -24,10 +24,6 @@ The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standar
 
 Additionally, I strive to conform to WCAG 2.2 level AAA wherever applicable. I comply with all AAA criteria except for the following:
 
-
-SC 1.4.8 Visual Presentation
-: I am in partial compliance with this criterion. Long article body text for articles should conform; with default browser fonts, they have an average character count per line below 80 characters. However, some lines may occasionally exceed this limit. Text outside of long article bodies has a longer line width, though.
-
 SC 2.4.9 Link Purpose (Link Only)
 : I'm actually trying to follow this criterion, but it's a work in progress. Let me know if any link names can be improved! Link purpose _in context_ always makes sense.
 
@@ -37,7 +33,7 @@ SC 3.1.5 Reading Level
 SC 3.1.6 Pronunciation
 : I do not yet provide any pronunciation information.
 
-I have only tested WCAG compliance in mainstream browser engines (Blink, Gecko, WebKit).
+I have only tested WCAG compliance in mainstream browser engines (Blink, Gecko, WebKit). Full details on how I meet every WCAG success criterion are on a separate page: [Details on WCAG 2.2 conformance](../wcag-conformance/)
 
 I also go further than WCAG in many aspects:
 
