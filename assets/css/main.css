@@ -33,6 +33,11 @@ html {
 	/* Nearly every page on my site is taller than the viewport.
 	 * Paint the scrollbar ASAP to prevent layout shifts. */
 	overflow-y: scroll;
+
+	/* Site is already mobile optimized.
+	 * Don't screw up landscape mode. */
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 /* This should not take effect on printouts, to save paper. */
