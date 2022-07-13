@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <main id="main" tabindex="-1">
 <h1 id="seirdys-home">Seirdy’s Home</h1>
-<aside><p>It me.</p></aside>
+<p itemprop="description">{{ .Site.Params.Description }}</p>
 <hr />
 <div class="narrow">
 {{ partial "processed-content.html" . }}

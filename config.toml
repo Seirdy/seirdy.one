@@ -13,7 +13,7 @@ pygmentsUseClasses = false
 disableKinds = ["taxonomy", "term"]
 
 [params]
-	description = "Seirdy's Home: personal website and blog for Rohan Kumar, A.K.A. Seirdy"
+	description = "My personal IndieWeb site. I write about and develop software to promote user autonomy. Topics include accessibility, security, privacy, and software freedom."
 	src = "https://sr.ht/~seirdy/seirdy.one/"
 	canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
 	webmentionEndpoint = "https://seirdy.one/webmentions/receive"
