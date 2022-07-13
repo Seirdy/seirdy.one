@@ -1,7 +1,7 @@
 {{ define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-<main id="main" tabindex="-1">
-	<h1>Search</h1>
+<main>
+	<h1 id="h1" tabindex="-1">Search</h1>
 	<p role="note">This page is an unfinished work-in-progress.</p>
 	{{ partial "search.html" . }}
 	<hr />

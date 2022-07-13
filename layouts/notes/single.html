@@ -1,6 +1,6 @@
 {{- define "main" -}}
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-<main id="main" tabindex="-1"
+<main
  itemprop="hasPart" itemscope="" itemtype="https://schema.org/SocialMediaPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 	<link itemprop="isPartOf" href="{{ .Site.Params.CanonicalBaseURL }}/" />
 	{{ partial "full-article.html" . }}

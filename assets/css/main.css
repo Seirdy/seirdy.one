@@ -152,7 +152,7 @@ html {
 		margin: -.75em -.25em;
 	}
 
-	header a[href="#main"], /* skip link */
+	a[href="#h1"], /* skip link */
 	div[itemprop="comment"] dd > a ,
 	footer > nav,
 	/* List items with direct hyperlink children should only have one hyperlink. */
@@ -187,13 +187,13 @@ html {
 	}
 
 	/* skip link: make it invisible until focused, and put it on the top. */
-	header a[href="#main"] {
+	a[href="#h1"] {
 		position: absolute;
 		top: -2em;
 		padding: 0 .25em;
 	}
 
-	header a[href="#main"]:focus {
+	a[href="#h1"]:focus {
 		top: 0;
 	}
 }

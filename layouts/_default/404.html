@@ -14,7 +14,7 @@
 {{ $resources = $resources | append (resources.Get "css/print.css" | resources.ExecuteAsTemplate "print.css" .) -}}
 {{- $css := $resources | resources.Concat "css/style.css" | minify -}}
 <style>{{ $css.Content | safeCSS }}</style>
-<meta name="robots" content="noindex,nofollow" />
+<meta name="robots" content="noindex,nofollow,nosnippet" />
 <title>{{ .Title }}</title>
 {{ if not (in site.BaseURL ".onion") -}}
 {{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
@@ -28,6 +28,7 @@
 </head>
 <body>
 <header>
+	<a href="#h1">Skip to content</a>
 	<nav aria-label="Global">
 		<ul>
 			<li>
@@ -45,11 +46,14 @@
 			<li>
 				<a href="/about/">About</a>
 			</li>
+			<li>
+				<a href="/meta/">Meta</a>
+			</li>
 		</ul>
 	</nav>
 </header>
 <main>
-	<h1>{{ .Title }}</h1>
+	<h1 id="h1" tabindex="-1">{{ .Title }}</h1>
 	{{ partial "processed-content.html" . -}}
 </main>
 <footer>
@@ -62,7 +66,7 @@
 				<a rel="source" href="{{ .Site.Params.src }}">Source code</a>
 			</li>
 			<li>
-				<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor mirror</a>
+				<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/">Tor mirror</a>
 			</li>
 			<li>
 				<a href="{{ site.BaseURL }}privacy/">Privacy</a>
