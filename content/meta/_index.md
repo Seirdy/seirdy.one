@@ -45,7 +45,6 @@ This site is featured in some cool directories.
 - [Ye Olde Blogroll](https://blogroll.org/) (pending)
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Blog Surf](https://blogsurf.io/) (pending)
-- [Moonshot](https://www.moonshot.forbiddenl0ve.net/) (pending)
 - [Yesterlinks](https://links.yesterweb.org/) (pending)
 
 </details>
