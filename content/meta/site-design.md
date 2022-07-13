@@ -24,6 +24,7 @@ The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standar
 
 Additionally, I strive to conform to WCAG 2.2 level AAA wherever applicable. I comply with all AAA criteria except for the following:
 
+
 SC 2.4.9 Link Purpose (Link Only)
 : I'm actually trying to follow this criterion, but it's a work in progress. Let me know if any link names can be improved! Link purpose _in context_ always makes sense.
 
@@ -108,7 +109,7 @@ This site happens to fully support Apple's Reader Mode and Azure Immersive Reade
 
 This site works well in the Diffbot article extractor. Diffbot powers a variety of services, including Instapaper.
 
-This site does not work well in Chromium's DOM Distiller. DOM Distiller removes all level-2 headings in article bodies. This is likely because they appear alongside section permalinks, which combines poorly with a DOM-Distiller heuristic that strips out sections with a high link-density. DOM Distiller also does not show footnotes, and sometimes cuts off final sections (acknowledgements, conclusions).
+This site does not work well in Chromium's DOM Distiller's flawed distillation techniques. Regions with high link-densities, such as citations, get filtered out. DOM Distiller also does not show footnotes, and sometimes cuts off final [DPUB-ARIA](https://w3c.github.io/dpub-aria/) sections (acknowledgements, conclusions).
 
 Static IndieWeb
 ---------------
@@ -119,33 +120,43 @@ One of my goals for this site was to see just how far I could take IndieWeb conc
 
 ### Features I have already implemented
 
-- IndieAuth compatibility
+- IndieAuth compatibility, using the external [IndieLogin.com service](https://indielogin.com/).
+
 - Microformats: representative `h-card`, in-text `h-card` and `h-cite` when referencing works, `h-feed`.
-- Sending and receiving Webmentions
-- Displaying Webmentions in the form of link-backs and likes (inspired by Tumblr).
-- Backfeeding content from silos: I'm only interested in backfilled content containing discussion, not "reactions" or "likes". Powered by Brid.gy
+
+- Sending and receiving Webmentions. I receive Webmentions with [webmentiond](https://github.com/zerok/webmentiond), and send them from my own computer using [Pushl](https://github.com/PlaidWeb/Pushl).
+
+- Displaying Webmentions: linkbacks, IndieWeb "likes" (not silo likes), and comments. I based their appearance on Tumblr's display of interactions.
+
+- Backfeeding content from silos: I'm only interested in backfilled content containing discussion, not "reactions" or "likes". Powered by [Bridgy](https://brid.gy/).
 
 ### Features I am not interested in
 
-- Authoring tools, either through a protocol (e.g. MicroPub) or a dynamic webpage: I prefer writing posts in my `$EDITOR` and deploying with `git push`, letting a CI job build and deploy the site with `make deploy-prod`. This allows me to participate with the social Web using the same workflow I use for writing code.
+- Authoring tools, either through a protocol (e.g. MicroPub) or a dynamic webpage: I prefer writing posts in my `$EDITOR` and deploying with `git push`, letting a CI job build and deploy the site with `make deploy-prod`. This allows me to participate with the social Web using the same workflow I use for writing code, avoiding the need to adopt and learn new tools.
 
-- Full silo independence: I want to treat my site as a "filtered" view of me that I want to keep searchable and public. On other silos I might shitpost or make low-effort posts. These aren't private, but I want them to remain less prominent. I POSSE content to other places, but I don't exclusively use POSSE.
+- Full silo independence: I want to treat my site as a "filtered" view of me to keep searchable and public. On other silos I might shitpost or post short-lived, disposable content. These aren't private, but I want them to remain less prominent. I POSSE content to other places, but I don't exclusively use POSSE.
 
 - Sharing my likes, favorites, reposts: I find these a bit too shallow for seirdy.one. I prefer "bookmarks" where I can give an editorialized description of the content I wish to share along with any relevant tags. I'll keep simple likes and reposts to silos.
 
-- Rich reply-contexts: I'd rather have users click a link to visit the reply and use quoted text to respond to specific snippets, similar to interleaved-style email quoting.
+- Rich reply-contexts: I'd rather have users click a link to visit the reply and use quoted text to respond to specific snippets, similar to interleaved-style email quoting. Most of my replies are to Fediverse posts; on the Fediverse, people are often (understandably!) averse to scraping and archiving content. For that reason: I only show a tiny excerpt of content, and I ask for permission to POSSE replies to unlisted posts by `#nobot` accounts.
 
 ### Features I am interested in
 
-- WebSub. Had some issues with Superfeedr; I think I'll resort to running my own single-user hub.
-- Automatic POSSE to the Fediverse (would be difficult with reply-contexts).
-- Tags and topics.
-- Displaying (truncated) Webmention entry contents instead of just titles and timestamps.
+- WebSub. I had some issues with Superfeedr; I think I'll resort to running my own single-user hub.
+
+- Automatic POSSE to the Fediverse (would be difficult with reply-contexts, and Bridgy doesn't support non-Mastodon features like Markdown).
+
+- Taxonomies (tags).
 
 ### Low-priority features I have some interest in
 
 - RSVPs: I don't attend many events, let alone events for which I would broadcast my attendance. A page for this would be pretty empty.
+
 - Event posts: same reason as above.
+
+- Running my own IndieAuth authorization endpoint to replace the external IndieLogin service.
+
+- Some sort of daemon to replace Bridgy. It sounds like a large undertaking because I'd have to implement it from scratch: Bridgy is written in Python, but I want every service on my server to be a statically-linked native executable.
 
 Privacy
 -------
