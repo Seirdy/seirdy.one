@@ -34,6 +34,7 @@ This site is featured in some cool directories.
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
+- [Yesterlinks](https://links.yesterweb.org/)
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
@@ -45,7 +46,6 @@ This site is featured in some cool directories.
 - [Ye Olde Blogroll](https://blogroll.org/) (pending)
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Blog Surf](https://blogsurf.io/) (pending)
-- [Yesterlinks](https://links.yesterweb.org/) (pending)
 
 </details>
 
