@@ -19,7 +19,7 @@
 {{- if and (eq .Level 2) (.Page.Section) (ne .Page.Section "notes") -}}
 <!--crimes-->
 <aside role="none"><a
-	id="{{ .Anchor | safeURL }}-anchor" href="#{{ .Anchor | safeURL }}"
+	href="#{{ .Anchor | safeURL }}"
 	aria-labelledby="{{ .Anchor | safeURL }}-prefix {{ .Anchor | safeURL }}">
 	<span id="{{ .Anchor | safeURL }}-prefix">Permalink to section</span>
 </a></aside>
