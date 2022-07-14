@@ -71,7 +71,7 @@ The website is built on well structured, semantic, [polygot XHTML5](https://www.
 
 This site sticks to Web standards. I regularly run a local build of [the Nu HTML Checker](https://github.com/validator/validator), `xmllint`, and [html proofer](https://github.com/gjtorikian/html-proofer) on every page in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) and report them upstream when I can.
 
-I also perform cross-browser testing for both HTML and XHTML versions of my pages:
+I also perform cross-browser testing for both HTML and XHTML versions of my pages. I test with, but do not necessarily endorse, a large variety of browsers:
 
 - I maintain excellent compatibility with **mainstream engines:** Blink (Chromium and Edge), WebKit (Safari, Epiphany), and Gecko (Firefox). The hidden service also works well with the Tor Browser.
 
@@ -79,7 +79,7 @@ I also perform cross-browser testing for both HTML and XHTML versions of my page
 
 - I also regularly test compatibility with **current alternative engines:** the SerenityOS browser, Servo, NetSurf, Dillo, Kristall, and Goanna (Pale Moon's Gecko fork). I have excellent compatibility with Goanna and Servo. The site is usable in NetSurf, Dillo, and the SerenityOS browser; the always-expanded `<details>` elements might look odd. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. It also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
 
-- I occasionally test **abandoned engines,** sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Internet Explorer (with and without compatibility mode), Netscape Navigator, and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine.
+- I occasionally test **abandoned engines,** sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Internet Explorer (with and without compatibility mode), Netscape Navigator, Opera Presto,[^1] and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine.
 
 Some engines I have not yet tested, but hope to try in the future:
 
@@ -87,6 +87,7 @@ Some engines I have not yet tested, but hope to try in the future:
 - [Kozmonaut](https://github.com/twilco/kosmonaut)
 - [Moon](https://github.com/ZeroX-DG/moon)
 - [hastur](https://github.com/robinlinden/hastur)
+- [Flow Browser](https://www.ekioh.com/flow-browser/)
 
 Machine-friendliness
 --------------------
@@ -162,4 +163,8 @@ Privacy
 -------
 
 This site is **privacy-respecting.** Its CSP blocks all scripts, third-party content, and other problematic features. I describe how I go out of my way to reduce the information you can transmit on this site in [my privacy policy](../privacy/).
+
+
+[^1]: Opera Presto isn't really abandoned. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That being said, I do test with the outdated desktop Presto engine in a sandboxed environment.
+
 
