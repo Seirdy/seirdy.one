@@ -49,3 +49,16 @@ This site is featured in some cool directories.
 
 </details>
 
+## Awards
+
+{{<image-figure id="iso-8601">}}
+
+{{< picture name="8601" alt="Viatrix's ISO 8601 Award! Seirdy's Home, awarded 23/17/22" class="pix" sf=2 >}}
+
+<figcaption itemprop="caption">
+
+{{<indieweb-person itemprop="mentions" name="Viatrix" url="https://viatrix.is-hella.gay">}} sent me an ["ISO-8601 Award"](https://mincerafter42.github.io/fun/8601award.html) for using the Correct Date Format. In her words: <q cite="https://mincerafter42.github.io/fun/8601award.html">It shows my like of ISO 8601, and trolls anyone trying to read the Awarded date.</q>
+
+</figcaption>
+
+{{</image-figure>}}
