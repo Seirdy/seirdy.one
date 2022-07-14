@@ -2,16 +2,17 @@
  * touch-friendly layout.
  * Nothing here exists purely for aesthetics; everything addresses a
  * specific a11y, compatibility, or critical
- * usability need. The only exception is the h1's top margin.
+ * usability need.
  *
- * One exception: I re-set the input styles so Safari wouldn't make them
- * pill-shaped.
+ * Two exceptions: I re-set the input styles so Safari wouldn't make
+ * them pill-shaped, and I tweaked some margins to make some things
+ * evenly aligned.
  *
- * I also don't use any classes except for image presentation. (e.g. to
- * specify that an image should have pixelated rendering or be inverted
- * in dark mode). One exception: a class for narrow width body text.
- * My HTML contains microformats2 classnames for IndieWeb parsers, but I
- * don't actually use those for styling.
+ * I also don't use any classes except to optimize embedded content.
+ * (e.g. to specify that an image should have pixelated rendering or be
+ * inverted in dark mode). One exception: a class for narrow width body
+ * text. My HTML contains microformats2 classnames for IndieWeb parsers,
+ * but I don't actually use those for styling.
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .25em. Pixels are 1px or
@@ -77,7 +78,7 @@ html {
 		 * containing lists of interactives, with 8px in between.
 		 * Don't use relative units here; this margin shouldn't scale with
 		 * zoom, or else text will get narrower with zoom. */
-		padding: 0 24px;
+		padding: 0 16px;
 	}
 
 	/* 45em is too wide for long body text.
@@ -87,6 +88,18 @@ html {
 	.narrow {
 		margin: auto;
 		max-width: 35em;
+	}
+
+	/* Enable containment, especially useful for achive pages with
+	 * long lists of content. */
+	body > :not(main),
+	main > :not(article),
+	article > * {
+		contain: content;
+		/* Add padding on both sides so that focus outlines don't escape their
+		 * containers. This will let us enable CSS containment without
+		 * clipping overflowing elements. */
+		padding: 0 .5em;
 	}
 
 	summary {
@@ -137,17 +150,13 @@ html {
 		margin: .75em 0;
 	}
 
-	dt > a {
-		margin: -.75em 0 -.75em -.25em;
-		display: inline-block;
-	}
-
 	/* <dt> should not be closer to the previous <dd> than the following <dd>.
 	 * That can happen in webmentions. */
 	dd {
 		padding-bottom: .25em;
 	}
 
+	dt > a,
 	aside > a {
 		margin: -.75em -.25em;
 	}
@@ -155,7 +164,8 @@ html {
 	a[href="#h1"], /* skip link */
 	div[itemprop="comment"] dd > a ,
 	footer > nav,
-	/* List items with direct hyperlink children should only have one hyperlink. */
+	/* List items with direct hyperlink children should only have one
+	 * hyperlink. */
 	li > a,
 	aside > a,
 	nav ol a {
@@ -163,7 +173,8 @@ html {
 		display: inline-block;
 	}
 
-	/* The nav has to be distant-enough from the top to make room for a skip-link. */
+	/* The nav has to be distant-enough from the top to make room for a
+	 * skip-link. */
 	header > nav {
 		margin: .75em 0 0 -.25em;
 		display: block;
@@ -327,15 +338,15 @@ samp {
 /* Some browsers don't support the hidden attr.
  * I use hidden spans in backlinks to provide ARIA labels.
  * Some ancient browsers don't support input[type="hidden"] */
-span[hidden],
+[hidden],
 input[type="hidden"] {
 	display: none;
 }
 
 /* Remove list style from data feeds. */
-main[itemtype="https://schema.org/DataFeed"] > ol {
-	padding: 0;
+[itemtype="https://schema.org/DataFeed"] > ol {
 	list-style-type: none;
+	padding: 0;
 }
 
 /* Narrow screens: long words can cause content to flow out of the
@@ -351,6 +362,7 @@ span[itemtype="https://schema.org/Person"] {
 
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
+	contain: content;
 	overflow: auto;
 	padding: .5em;
 }
@@ -390,6 +402,7 @@ div[itemprop="articleBody"] img {
 	max-width: 100%;
 }
 
+/* Stretch out audio elements so the progress meter is easier to use. */
 audio {
 	width: 100%;
 }
@@ -415,8 +428,8 @@ form > div {
 
 input {
 	/* Browsers like Safari make the submit button pill-shaped which
-	 * clashes with the input box. The only purely-cosmetic change on this
-	 * site. */
+	 * clashes with the input box. One of the only purely-cosmetic changes
+	 * on this site. */
 	appearance: none;
 
 	/* Don't shrink the size of the text in forms or make it system-ui. */
@@ -466,11 +479,6 @@ form :focus {
 }
 
 /* Todo:
- * - Some browsers don't scale SVGs properly; the img container
- *   dimensions crop the image rather than scale it. Investigate
- *   if this only applies to Internet Explorer or if it applies to
- *   other uncommon browsers too. If any non-IE browsers do this and/or
- *   if the spec allows this behavior, try to correct it here.
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
  *   then consider trimming the dark stylesheet I provide.
  * */
