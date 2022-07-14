@@ -15,19 +15,7 @@
 			)
 			or
 			( # the search page has raw templates, let those slide. I validate the final dynamic search page manually.
-				(.url | test ("/search/index."))
-				and (
-					(.message == "Text not allowed in element “ol” in this context.")
-					or
-					(.message == "Bad value “{{ .URL }}” for attribute “href” on element “a”: Illegal character in path segment: “{” is not allowed.")
-					or
-					(.message == "Bad value “{{ .URL }}” for attribute “cite” on element “q”: Illegal character in path segment: “{” is not allowed.")
-				)
-				and (
-					(.extract | test("{{"))
-					or
-					(.extract | test("}}"))
-				)
+				.url | test ("/search/index.")
 			)
 		) | not
 	)
