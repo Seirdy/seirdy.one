@@ -471,15 +471,15 @@ form :focus {
 	outline: 3px solid;
 }
 
-/* /1* Remove :focus styling for browsers that do support :focus-visible. */
-/*  * Leave it on for form stuff. *1/ */
-/* @supports selector(:focus-visible) { */
-/* 	a:focus:not(:focus-visible), */
-/* 	summary:focus:not(:focus-visible), */
-/* 	pre[tabindex]:focus:not(:focus-visible) { */
-/* 		outline: none; */
-/* 	} */
-/* } */
+/* Remove :focus styling for browsers that do support :focus-visible.
+ * Leave it on for form stuff. */
+@supports selector(:focus-visible) {
+	a:focus:not(:focus-visible),
+	summary:focus:not(:focus-visible),
+	pre[tabindex]:focus:not(:focus-visible) {
+		outline: none;
+	}
+}
 
 /* Todo:
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
