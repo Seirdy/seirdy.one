@@ -14,8 +14,8 @@ I am open to feedback, especially from anybody with a more thorough background i
 
 <section role="doc-introduction">
 
-Introduction
-------------
+Intro&shy;duction {#introduction}
+-----------------
 
 Following a recent landmark <abbr title="Supreme Court of the United States">SCOTUS</abbr> ruling, many have been trying to publish resources to help people find reproductive healthcare. They often wish to publish anonymously, to avoid being harassed or doxxed by overzealous religious fundamentalists. Some people asked me for help.
 
@@ -148,6 +148,15 @@ I have my share of fingerprintable stylistic and formatting quirks. A non-exhaus
 
 - Using soft-hyphens so text can wrap to narrow widths.
 
+Writing is a skill
+------------------
+
+Developing a high-quality writing style is hard. Developing and switching between multiple different styles is even harder. It takes time to master multiple style guides, cultivate a different "voice" free of your usual idiosyncrasies, and keep your different voices from influencing one another. "Getting into character" won't happen overnight if you don't have experience.
+
+Translation tools are <span data-literal="temporary learning aids">training-wheels</span> to help you learn to identify idiosyncrasies. As you get better, you might be able to filter out problematic language without their help.
+
+Don't feel pressured to start soon! If you want to publish under a truly anonymous pseudonym, you should first hone your craft. Alternatively, find a good editor.[^2]
+
 <section role="doc-conclusion">
 
 Conclusion
@@ -171,5 +180,7 @@ Stay safe, everyone.
 
 
 [^1]: I didn't pick Esperanto for any particular reason.
+
+[^2]: I am not the best person for this job, sorry.
 
 

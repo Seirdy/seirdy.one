@@ -132,6 +132,14 @@ I have my share of fingerprintable stylistic and formatting quirks. A non-exhaus
 * Introducing some articles with HTML description lists before elaborating on each entry in that list.
 * Using soft-hyphens so text can wrap to narrow widths.
 
+## Anonymous writing is a skill
+
+Developing a high-quality writing style is hard. Developing and switching between multiple different styles is even harder. It takes time to master multiple style guides, cultivate a different "voice" free of your usual idiosyncrasies, and keep your different voices from influencing one another. "Getting into character" won't happen overnight if you don't have experience.
+
+Translation tools are training-wheels to help you learn to identify idiosyncrasies. As you get better, you might be able to filter out problematic language without their help.
+
+Don't feel pressured to start soon! If you want to publish under a truly anonymous pseudonym, you should first hone your craft. Alternatively, find a good editor (I am not the best person for this job, sorry).
+
 ## Conclusion
 
 If you wish to write anonymously, I recommend the following:
