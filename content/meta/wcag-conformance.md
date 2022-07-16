@@ -77,7 +77,7 @@ Principle 1: Perceivable
 : I use `autocomplete` attributes wherever appropriate ([ST H98](https://w3c.github.io/wcag/techniques/html/H98)), and use `type` attributes to specify acceptable values.
 
 [SC 1.3.6: Identify Purpose](https://w3c.github.io/wcag/understanding/identify-purpose.html)
-: This site uses no icons; all interactive elements are represented textually. I use WAI-ARIA ([ST ARIA11](https://w3c.github.io/wcag/techniques/aria/ARIA11)) and DPUB-ARIA to identify sections of a page, and I use microdata with schema.org vocabulary (I'm not sure if any assistive technologies actually use microdata, but it's a part of WCAG for some reason). Required inputs receive a `required` and `aria-required` attribute; SC 1.3.6 lists this as an advisory technique.
+: This site uses no icons; all interactive elements are represented textually. I use WAI-ARIA ([ST ARIA11](https://w3c.github.io/wcag/techniques/aria/ARIA11)) and DPUB-ARIA to identify sections of a page, and I use microdata with schema.org vocabulary (I'm not sure if any assistive technologies actually use microdata, but it's a part of WCAG for some reason). Required inputs receive a `required` attribute; SC 1.3.6 describes use of the older `aria-required` attribute as an advisory technique.
 
 ### Guideline 1.4: Distinguishable
 
