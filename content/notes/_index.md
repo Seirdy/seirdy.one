@@ -9,4 +9,4 @@ sitemap:
 Notes
 =====
 
-This is my microblog, containing short informal entries. [See my blog](../posts/) for longer entries. An [An Atom feed](./atom.xml) contains the full text of all my notes. If that has any problems, I also have [a legacy RSS feed](./index.xml).
+This is my microblog, containing short informal entries. [See my blog](../posts/) for longer entries. [An Atom feed](./atom.xml) contains the full text of all my notes. If that has any problems, I also have [a legacy RSS feed](./index.xml).
