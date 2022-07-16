@@ -119,7 +119,7 @@ html {
 	/* Make superscripts a bit easier to tap. */
 	sup > a {
 		margin-left: .25em;
-		padding-bottom: .25em;
+		padding-bottom: .5em;
 	}
 
 	/* SC 2.5.5, Google a11y: Increase tap target size a bit
@@ -161,6 +161,7 @@ html {
 		margin: -.75em -.25em;
 	}
 
+	header > nav,
 	a[href="#h1"], /* skip link */
 	div[itemprop="comment"] dd > a ,
 	footer > nav,
@@ -174,10 +175,10 @@ html {
 	}
 
 	/* The nav has to be distant-enough from the top to make room for a
-	 * skip-link. */
+	 * skip-link. The breadcrumbs also can't have their focus-outlines
+	 * overflow while CSS containment is enabled. */
 	header > nav {
-		margin: .75em 0 0 -.25em;
-		display: block;
+		padding: .75em 0 .25em;
 	}
 
 	/* Multiple consecutive <dt> that share a <dd> shouldn't have tap targets overlap */
