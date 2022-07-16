@@ -49,11 +49,12 @@ This site is featured in some cool directories.
 
 </details>
 
-## Awards
+Awards
+------
 
 {{<image-figure id="iso-8601">}}
 
-{{< picture name="8601" alt="Viatrix's ISO 8601 Award! Seirdy's Home, awarded 23/17/22" class="pix" sf=2 >}}
+{{< picture name="8601" alt="Bitmap font reading: “Viatrix's ISO 8601 Award! Seirdy's Home, awarded 23/17/22”" class="pix" sf=2 >}}
 
 <figcaption itemprop="caption">
 
@@ -62,3 +63,4 @@ This site is featured in some cool directories.
 </figcaption>
 
 {{</image-figure>}}
+
