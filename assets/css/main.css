@@ -1,12 +1,12 @@
 /* CSS that adds the bare minimum for a simple, accessible,
  * touch-friendly layout.
- * Nothing here exists purely for aesthetics; everything addresses a
+ * Nothing here exists purely for cosmetics; everything addresses a
  * specific a11y, compatibility, or critical
  * usability need.
  *
  * Two exceptions: I re-set the input styles so Safari wouldn't make
- * them pill-shaped, and I tweaked some margins to make some things
- * evenly aligned.
+ * them pill-shaped, and I tweaked some margins/paddings to make some
+ * things evenly aligned.
  *
  * I also don't use any classes except to optimize embedded content.
  * (e.g. to specify that an image should have pixelated rendering or be
@@ -94,7 +94,10 @@ html {
 	 * long lists of content. */
 	body > :not(main),
 	main > :not(article),
-	article > * {
+	li article, /* Archive pages */
+	/* We increase the target size of h2/h3 links in a way that would cause
+	 * issues with content containment */
+	article > :not(h2):not(h3) {
 		contain: content;
 		/* Add padding on both sides so that focus outlines don't escape their
 		 * containers. This will let us enable CSS containment without
@@ -170,8 +173,15 @@ html {
 	li > a,
 	aside > a,
 	nav ol a {
-		margin-left: -.25em;
 		display: inline-block;
+		margin-left: -.25em;
+	}
+
+	/* Increase tap-target size of title links. */
+	h2 > a,
+	h3 > a {
+		display: inline-block;
+		padding: .5em .25em;
 	}
 
 	/* The nav has to be distant-enough from the top to make room for a
@@ -200,9 +210,9 @@ html {
 
 	/* skip link: make it invisible until focused, and put it on the top. */
 	a[href="#h1"] {
+		padding: 0 .25em;
 		position: absolute;
 		top: -2em;
-		padding: 0 .25em;
 	}
 
 	a[href="#h1"]:focus {
@@ -239,10 +249,11 @@ nav ul {
 	padding: 0;
 }
 
-/* Make breadcrumbs inline, so they look familiar. */
+/* step 2: remove bullets and make elements inline. */
 nav[itemprop="breadcrumb"] ol,
 nav[itemprop="breadcrumb"] li,
-nav[itemprop="breadcrumb"] > span {
+nav[itemprop="breadcrumb"] > span,
+nav ul li {
 	display: inline-block;
 }
 
@@ -253,15 +264,6 @@ nav[itemprop="breadcrumb"] ol {
 
 nav[itemprop="breadcrumb"] li:not(:last-of-type)::after {
 	content: "→";
-}
-
-/* step 2: remove bullets and make elements inline.
- * Also: bump up the line-height and margins to increase space
- * between tap-targets (SC 2.5.5). Google a11y guidelines require 8 CSS
- * pixels between tap targets. */
-nav ul li {
-	display: inline-block;
-	margin-right: .5em;
 }
 /* narrow screens: we reduce margin for blockquotes a lot, using
  * a border instead. */
@@ -469,15 +471,15 @@ form :focus {
 	outline: 3px solid;
 }
 
-/* Remove :focus styling for browsers that do support :focus-visible.
- * Leave it on for form stuff. */
-@supports selector(:focus-visible) {
-	a:focus:not(:focus-visible),
-	summary:focus:not(:focus-visible),
-	pre[tabindex]:focus:not(:focus-visible) {
-		outline: none;
-	}
-}
+/* /1* Remove :focus styling for browsers that do support :focus-visible. */
+/*  * Leave it on for form stuff. *1/ */
+/* @supports selector(:focus-visible) { */
+/* 	a:focus:not(:focus-visible), */
+/* 	summary:focus:not(:focus-visible), */
+/* 	pre[tabindex]:focus:not(:focus-visible) { */
+/* 		outline: none; */
+/* 	} */
+/* } */
 
 /* Todo:
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
