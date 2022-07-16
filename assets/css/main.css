@@ -8,11 +8,14 @@
  * them pill-shaped, and I tweaked some margins/paddings to make some
  * things evenly aligned.
  *
- * I also don't use any classes except to optimize embedded content.
- * (e.g. to specify that an image should have pixelated rendering or be
- * inverted in dark mode). One exception: a class for narrow width body
- * text. My HTML contains microformats2 classnames for IndieWeb parsers,
- * but I don't actually use those for styling.
+ * I also don't use any classes except when styling depends on
+ * *content* of an element rather than structure/semantics. Examples
+ * include images that look better with pixelated upscaling, and
+ * posts on the list of entries in the "notes" section that are tall
+ * and need a larger contain-intrinsic-size.
+ * One exception: a class for narrow width body text. My HTML contains
+ * microformats2 classnames for IndieWeb parsers, but I don't actually
+ * use those for styling.
  *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .25em. Pixels are 1px or
@@ -103,6 +106,22 @@ html {
 		 * containers. This will let us enable CSS containment without
 		 * clipping overflowing elements. */
 		padding: 0 .5em;
+	}
+
+	/* Archive pages can get long. Allow them to get long without slowing
+	 * down the browser by using content-visibility. */
+	li article {
+		content-visibility: auto;
+		contain-intrinsic-size: 16em;
+	}
+
+	/* Notes can get a bit long. */
+	li article[itemtype="https://schema.org/SocialMediaPosting"] {
+		contain-intrinsic-size: 36em;
+	}
+
+	.tall {
+		contain-intrinsic-size: 50em;
 	}
 
 	summary {
@@ -472,10 +491,9 @@ form :focus {
 }
 
 /* Remove :focus styling for browsers that do support :focus-visible.
- * Leave it on for form stuff. */
+ * Leave it on for elements that are supposed to show focus on click. */
 @supports selector(:focus-visible) {
 	a:focus:not(:focus-visible),
-	summary:focus:not(:focus-visible),
 	pre[tabindex]:focus:not(:focus-visible) {
 		outline: none;
 	}

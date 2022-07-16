@@ -9,8 +9,15 @@
 		{{- $pages := (where site.RegularPages "Section" .Section) -}}
 		{{- range $pages -}}
 		{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+		{{- $isTall := and (eq .Section "notes") (gt .WordCount 200) -}}
+		{{- $itemtype := "SocialMediaPosting" -}}
+		{{- if eq .Section "posts" -}}
+			{{- $itemtype = "BlogPosting" -}}
+		{{- end -}}
 		<li itemprop="dataFeedElement" itemscope="" itemtype="https://schema.org/DataFeedItem">
-			<article class="h-entry hentry" itemprop="item" itemscope="" itemtype="https://schema.org/SocialMediaPosting" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+			<article
+				class="h-entry hentry{{ with $isTall }} tall{{ end }}"
+				itemprop="item" itemscope="" itemtype="https://schema.org/{{ $itemtype }}" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 				<h2 itemprop="name headline" class="p-name entry-title">
 					<a href="{{ .Permalink }}" itemprop="url" class="u-url url" rel="bookmark">
 						{{ .Title }}
