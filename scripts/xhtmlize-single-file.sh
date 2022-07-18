@@ -25,8 +25,8 @@ cleanup() {
 trap cleanup EXIT
 
 # delete the stylesheet from the html file; we'll re-insert it later.
-# Also remove one indentation level
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t' '' >"$tmp_file"
+# Also remove two indentation levels
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t(?:\t)?' '' >"$tmp_file"
 {
 	head -n7 "$tmp_file" | sd -s '/>' ' />'
 	cat tmp.css
