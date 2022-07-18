@@ -2,7 +2,7 @@
 title: "Minimal website responsiveness"
 date: 2022-06-11T13:00:26-07:00
 replyURI: "https://social.treehouse.systems/@ayushnix/108460135741971671"
-replyTitle: "Can anyone explain why someone would want to scale font size using multiple media query breakpoints using different device widths or by using fluid typography?"
+replyTitle: "I’m unable to understand why [scaling font size] would be required"
 replyType: "SocialMediaPosting"
 replyAuthor: "Ayush Agarwal"
 replyAuthorURI: "https://microblog.ayushnix.com/"
