@@ -1,14 +1,12 @@
 {
   "devDependencies": {
-    "@hint/formatter-codeframe": "^3.1.22",
-    "@hint/hint-doctype": "^3.3.10",
-    "@hint/hint-https-only": "^2.4.10",
-    "@hint/hint-performance-budget": "^2.4.10",
-    "hint": "^6.1.4",
+    "@hint/hint-doctype": "^3.3.20",
+    "hint": "^7.1.0",
     "stylelint": "^14.8.1",
     "stylelint-config-standard": "^25.0.0"
   },
   "dependencies": {
-    "stylelint-config-recommended": "^7.0.0"
+    "stylelint-config-recommended": "^7.0.0",
+    "typescript": ">=2.8.0"
   }
 }

@@ -43,6 +43,15 @@ lint-css: $(CSS_DIR)/*.css
 	pnpm -s dlx stylelint --config linter-configs/stylelintrc.json --di --rd --rdd $(CSS_DIR)/*.css
 	@#csslint --quiet $(CSS_DIR)
 
+# IBM Equal Access Accessibility Checker can't handle content-visibility,
+# so run it on a special version of the site without content-visibility.
+.PHONY: equal-access
+equal-access:
+	cp -r $(OUTPUT_DIR) $(OUTPUT_DIR).eac
+	find $(OUTPUT_DIR).eac -type f -name "*.html" | xargs -n1 sd 'content-visibility:auto;' ''
+	achecker $(OUTPUT_DIR).eac/
+	rm -rf $(OUTPUT_DIR).eac
+
 .PHONY: validate-json
 validate-json:
 	jq -reM '""' $(OUTPUT_DIR)/manifest.min.*.webmanifest 1>/dev/null

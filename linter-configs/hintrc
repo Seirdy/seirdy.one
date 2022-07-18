@@ -19,7 +19,12 @@
 			"error",
 			{
 				"ignore": [
-					"filter"
+					"filter",
+					"contain",
+					"image-rendering: pixelated",
+					"contain-intrinsic-size",
+					"content-visibility",
+					"text-size-adjust"
 				]
 			}
 		],
@@ -30,27 +35,51 @@
 					"time",
 					"picture",
 					"meta[name=color-scheme]",
-					"img[decoding]"
+					"meta[name=theme-color]",
+					"img[decoding]",
+					"a[referrerpolicy]",
+					"code[translate]",
+					"a[translate]",
+					"span[translate]",
+					"samp[translate]"
 				]
 			}
 		],
 		"doctype": "error",
-		"highest-available-document-mode": "off",
 		"http-cache": [
 			"error",
 			{
-				"maxAgeTarget": 300
+				"maxAgeTarget": 600
 			}
 		],
 		"http-compression": "off",
 		"https-only": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
+		"meta-viewport": "error",
+		"no-bom": "error",
+		"no-p3p": "error",
+		"html-checker": "off",
+		"content-type": ["error", {
+			".*\\.svg": "image/svg+xml"
+		}],
+		"no-html-only-headers": [ "warning",
+			{
+				"ignore": ["content-security-policy"]
+			}],
 		"performance-budget": [
 			"error",
 			{
 				"connectionType": "3GSlow",
-				"loadTime": 5
+				"loadTime": 10
+			}
+		],
+		"stylesheet-limits": [
+			"error",
+			{
+				"maxRules": 100,
+				"maxSheets": 2,
+				"maxImports": 0
 			}
 		],
 		"ssllabs": "off"

@@ -17,7 +17,7 @@ CPU_SLOWDOWN=2.8
 LIGHTHOUSE_ARGS += --view --budget-path linter-configs/budget.json --output html --output json --output-file lighthouse-results --throttling.cpuSlowdownMultiplier=$(CPU_SLOWDOWN) --chrome-flags="$(CHROME_FLAGS)"
 
 hint-online:
-	hint --config linter-configs/hintrc -f codeframe $(URL)
+	hint --config linter-configs/hintrc $(URLS)
 lighthouse:
 	mkdir -p $(CHROME_PROFILE)
 	CHROME_PATH=$(CHROME_PATH) CHROME_PROFILE=$(CHROME_PROFILE) JS_FLAGS='' lighthouse $(URLS) $(LIGHTHOUSE_ARGS)
@@ -30,11 +30,7 @@ axe:
 	axe $(URLS) --chrome-options $(CHROME_FLAGS_COMMA) --chromedriver-path=$(CHROMEDRIVER_PATH) --show-errors
 axe-ff:
 	PATH=scripts/bin:$(PATH) axe $(URLS) -b firefox --show-errors
-equal-access:
-	@echo $(URLS) | tr ' ' '\n' >urls.txt
-	achecker --reportLevels violation,recommendation,potentialrecommendation urls.txt
-	rm urls.txt
-.PHONY: axe axe-ff equal-access
+.PHONY: axe axe-ff
 
 .validate-feed-main:
 	scripts/bin/validate-feed $(HUGO_BASEURL)atom.xml

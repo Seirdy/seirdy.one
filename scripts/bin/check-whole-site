@@ -62,5 +62,8 @@ base_url="${1-http://localhost:8089}"
 # HTML validation is already parallelized, so run that single-threaded.
 make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize validate-html
 make -j "$jobs" -f Makefile.online HUGO_BASEURL="$base_url" all-extra URLS="$(curl -sSL "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')"
+make deploy-staging
+make -f Makefile.online hint-online URLS="$(curl -sSL --compressed https://staging.seirdy.one/sitemap.xml | htmlq loc -t | rg -v '/search/$' | sort | tr '\n' ' ')"
+# TODO: run lighthouse on every page in the sitemap.
 
 # vi:ft=sh

@@ -59,10 +59,13 @@ Finally, I supplement manual testing with the following automated tools:
 - [AInspector](https://github.com/ainspector/ainspector-for-firefox)
 - [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 - [ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/)
+- [webhint](https://webhint.io/)
 
 WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
 
-I regularly run axe-core and the IBM Equal Access Accessibility Checker on every page in my sitemap, and receive no errors.
+I regularly run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors.
+
+Due to [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line.
 
 Compatibility statement
 -----------------------
