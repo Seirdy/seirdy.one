@@ -4,15 +4,19 @@
 		<h2 id="webmentions" tabindex="-1">Web&#173;mentions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
 		{{ partial "webmention-form.html" . }}
-		<p>Webmentions received for this post will appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. Check the <a href="https://web.archive.org/">Wayback Machine</a> if any links are broken.</p>
+		{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
+		{{ $url1 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
+		{{ $webmentions := (getJSON $url1) -}}
+		{{- if lt .Date.Unix 1653616670 -}}{{- /* commit c84c8d4 changed my URL schemes, so fetch menchies for the legacy scheme on old posts. */ -}}
+			{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
+			{{- $url2 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $oldTarget -}}
+			{{- $webmentions = $webmentions | append (getJSON $url2) -}}
+		{{- end -}}
+		{{- if gt (len $webmentions) 0 -}}
+		<p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. I replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
 		<details>
 			<summary>Toggle Webmentions</summary>
 			<dl>
-				{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-				{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
-				{{ $url1 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
-				{{ $url2 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $oldTarget -}}
-				{{ $webmentions :=  (getJSON $url1) | append (getJSON $url2) -}}
 				{{ range sort $webmentions "created_at" -}}
 				{{ $webmention := . -}}
 					{{- /* Boolean: should we should handle this webmention like a comment or a linkback? */ -}}
@@ -74,16 +78,16 @@
 									{{- if findRE `^https://brid.gy/[^/]*/mastodon` $webmention.source -}}
 									<p role="doc-tip" itemprop="accessibilitySummary">This comment may have major formatting errors that could impact screen reader comprehension.</p>
 									{{- end -}}
-									<p itemprop="articleBody" class="p-content">{{ $webmention.content | replaceRE `^@Seirdy(@pleroma.envs.net)? ?` ""}}</p>
+									<p><q itemprop="articleBody" class="p-content">{{ $webmention.content | replaceRE `^@Seirdy(@pleroma.envs.net)? ?` ""}}</q></p>
 								{{- end -}}
 							{{- end }}
 						</dd>
 				</div>
-				{{ else -}}
-				<dt>Nothing here</dt>
-				<dd>This post does not have any approved Webmentions yet.</dd>
-				{{- end }}
+				{{- end -}}
 			</dl>
 		</details>
+		{{ else -}}
+		<p>This post does not have any approved Webmentions yet.</p>
+		{{- end }}
 		<p>Feel free to contact me directly with feedback; <a href="{{ .Site.BaseURL }}about/#location-seirdy-online">here’s my contact info</a></p>
 	</section>
