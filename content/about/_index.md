@@ -20,7 +20,7 @@ Age
 : 22
 
 Location
-: <span class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name">USA</abbr>
+: <span class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr>
 
 Gender
 : <span class="p-gender-identity" itemprop="gender">Male</span>
