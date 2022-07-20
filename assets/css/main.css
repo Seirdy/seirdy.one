@@ -108,6 +108,11 @@ html {
 		padding: 0 .5em;
 	}
 
+	/* Align titular h1 with top nav and body text. */
+	main > h1 {
+		padding-left: .25em
+	}
+
 	/* Archive pages can get long. Allow them to get long without slowing
 	 * down the browser by using content-visibility. */
 	li article {
