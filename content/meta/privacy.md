@@ -5,7 +5,14 @@ title: Privacy policy
 description: "Privacy policy for seirdy.one"
 date: "2022-04-06T00:00:00+00:00"
 ---
-This privacy policy is effective as of <time datetime="2022-04-06T00:00:00+00:00">2022-04-06</time>. In short: I only collect standard server logs, I purge them regularly, and I only share sanitized excerpts (e.g. when filing bug reports).
+Summary
+-------
+
+- I only collect default server logs.
+- I purge server logs regularly, except for some robot traffic.
+- Searches are powered by the Search My Site API.
+- I proxy those searches through my server so Search My Site only sees anonymized queries.
+- My server is a VPS that I rent from Digital Ocean.
 
 Scope
 -----
@@ -29,13 +36,13 @@ My servers temporarily store server logs.
 
 For each request you make that reaches my Web servers, my server logs:
 
-- Your public IP address
+- Your IP address
 - The contents of your `user-agent` and `referer` (sic) headers
 - The page you requested
 - The time of the request
 - The HTTP response code of the request
 
-This is the information that [Nginx](https://nginx.org/) logs according to the default configurations in many operating systems.
+This is the information that [Nginx](https://nginx.org/) logs according to the default configurations in many operating systems. Your IP address is not logged when you use my Tor hidden service because my server does not receive it.
 
 None of the Web content I serve contains cookies or scripts, or collects any information not described by this Privacy Policy.
 
@@ -56,7 +63,7 @@ These services currently run on, but do not necessarily endorse, virtual private
 
 ### Retention
 
-Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="03:35:12">00:00 UTC</time>
+Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="00:00:00">00:00 UTC</time>
 
 Before purging, I may preserve the "User-Agent" request headers of agents that clearly identify as bots.
 
@@ -94,9 +101,9 @@ By default, web browsers can share near-arbitrary identifying data with a server
 
 By default, user agents using HTTPS may contact a certificate authority to check the revocation status of an TLS certificate. I have disabled and replaced this behavior by including an "OCSP Must-Staple" directive in the TLS certificates used by my Web servers.
 
-By default, user agents using HTTP or HTTPS may share a "referring" location with the destination website when following a link. I have disabled this by sending a `Referrer-Policy: no-referrer` header.
+By default, user agents using HTTP or HTTPS may share a "referring" location with the destination website when following a link. I have disabled this by sending a `Referrer-Policy: no-referrer` header. One exception is links on the home page's "Webrings" section; some of these require a referring domain to function.
 
-By default, Web browsers may share characteristics about the user's hardware, connection type, and personalizations using Client Hints and media queries. Browsers may request Web content according conditionally, in response to a `media` attribute in HTML or XHTML documents. Browsers may leverage stylesheets that use media queries to select varying `background-image` files. No Web content on seirdy.one will send network traffic in response to media queries except <code>prefers-color-<wbr />scheme</code>, assuming the use of a standards-compliant browser. Media queries and client hints will have no impact on HTTP responses except for dark image variants. This is a single binary piece of information that isn't enough to let me realistically identify anyone.
+By default, Web browsers may share characteristics about the user's hardware, connection type, and personalizations using Client Hints and media queries. Browsers may request Web content conditionally, in response to a `media` attribute in (X)HTML documents. Browsers may leverage stylesheets that use media queries to select varying `background-image` files. No Web content on seirdy.one will send network traffic in response to media queries except <code>prefers-color-<wbr />scheme</code>, assuming the use of a standards-compliant browser. Media queries and client hints will have no impact on HTTP responses except for dark image variants. This is a single binary piece of information that isn't enough to let me realistically identify anyone.
 
 By default, many networks and Internet service providers often alter requests by redirecting them or injecting content. I have prevented this behavior by using a secure TLS cipher suite.
 
