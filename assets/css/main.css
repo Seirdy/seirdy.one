@@ -117,16 +117,16 @@ html {
 	 * down the browser by using content-visibility. */
 	li article {
 		content-visibility: auto;
-		contain-intrinsic-size: 16em;
+		contain-intrinsic-size: auto 16em;
 	}
 
 	/* Notes can get a bit long. */
 	li article[itemtype="https://schema.org/SocialMediaPosting"] {
-		contain-intrinsic-size: 36em;
+		contain-intrinsic-size: auto 36em;
 	}
 
 	.tall {
-		contain-intrinsic-size: 50em;
+		contain-intrinsic-size: auto 50em;
 	}
 
 	summary {
@@ -195,6 +195,7 @@ html {
 	/* List items with direct hyperlink children should only have one
 	 * hyperlink. */
 	li > a,
+	h3 > a,
 	aside > a,
 	nav ol a {
 		display: inline-block;
@@ -207,6 +208,12 @@ html {
 		display: inline-block;
 		padding: .5em .25em;
 	}
+
+	/* align h-feeds in sections; they typically follow articles. */
+	section article p {
+		margin-left: -.5em;
+	}
+
 
 	/* The nav has to be distant-enough from the top to make room for a
 	 * skip-link. The breadcrumbs also can't have their focus-outlines
