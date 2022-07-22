@@ -471,6 +471,12 @@ Remember that guidelines and "good practices" always have exceptions.
 
 Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.
 
+Browser support for displaying alt-text in place of broken images seems good. More information about support for alt-text exposure can be found on Adrian Roselli's blog:
+=> https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html Alternative Text for CSS Generated Content
+
+That post seems to indicate that Firefox 81 on macOS 10.15 didn't display alt-text, but users report correct alt-text display in more recent Firefox versions:
+=> https://cybre.space/@nleigh/108688070682694730 Fediverse thread soliciting screenshots of alt-text display in Firefox on macOS.
+
 On Gemini, much of this section applies to varying degrees. I typically employ this approach when linking to e.g. images. Sometimes, I even do this when linking to gemtext or HTML documents.
 
 ### Putting images in context
