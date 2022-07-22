@@ -17,10 +17,10 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 
 <dl>
 <dt>Age</dt>
-<dd>22</dd>
+<dd><time datetime="P8035D">22</time></dd>
 
 <dt>Location</dt>
-<dd><span class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
+<dd><span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/State" class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
 
 <dt>Gender</dt>
 <dd>
@@ -135,13 +135,15 @@ I have some skin in the game: I rely on forced colors and use often use screen r
 
 ### Software freedom
 
-While I care very much about "free software" (the name is confusing, it refers to freedom rather than price), I don't share the same perspective as most "fossbros" and organizations like the FSF. Software freedom is important because it gives people agency instead of delegating control to an authority; it's not valuable in and of itself, and promoting a "FOSS" alternative that has vulnerabilities and accessibility issues is sometimes counterproductive.
+While I care very much about "<span class="p-category category">free software</span>" (the name is confusing, it refers to freedom rather than price), I don't share the same perspective as most "fossbros" and organizations like the FSF. Software freedom is important because it gives people agency instead of delegating control to an authority; it's not valuable in and of itself, and promoting a "FOSS" alternative that has vulnerabilities and accessibility issues is sometimes counterproductive.
 
 I think that simply meeting GNU's definition of free software isn't enough: it's one of multiple requirements for software to avoid the possibility of [user domestication](../posts/2021/01/27/whatsapp-and-the-domestication-of-users/).
 
 ### Other tech stuff
 
-I lean towards simplicity; I usually prefer line-mode command-line interfaces that follow the UNIX philosophy. If a piece of software is complex enough to require a funding round, I would rather avoid it. My reasons for preferring simplicity also relate to user autonomy: extremely complex software can't be forked easily, creating dependence on the vendor. It's also because I'm a bit paranoid and want to know everything that happens on my system.
+Other technology-related interests include <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and <span class="p-category category">open platforms</span>.
+
+I lean towards simplicity; I usually prefer line-mode <span class="p-category category">command-line interfaces</span> that follow the <span class="p-category category">UNIX</span> philosophy. If a piece of software is complex enough to require a funding round, I would rather avoid it. My reasons for preferring simplicity also relate to user autonomy: extremely complex software can't be forked easily, creating dependence on the vendor. It's also because I'm a bit paranoid and want to know everything that happens on my system.
 
 There are exceptions, of course: I use a Linux distro with Systemd (Fedora), after all. When I use a graphical program, it's typically for things for which graphics are an inherent requirement or for accessibility reasons (most textual user interfaces don't play well with screen readers).
 
@@ -149,7 +151,7 @@ More information is available in [my "uses" page]({{<relref "uses">}}).
 
 ### Anime
 
-I watch anime. Some of my favorites, in no particular order:
+I watch <span class="p-category category">anime</span>. Some of my favorites, in no particular order:
 
 - Code Geass
 - Mawaru Penguindrum
