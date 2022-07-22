@@ -16,13 +16,13 @@ About me
 <meta itemprop="url" content="https://seirdy.one" />
 <div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
-I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (He/Him). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (It/Its). Mixing them up is fine.
+I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url"> {{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (<span class="p-pronouns"><a href="https://pronoun.is/he" class="p-pronoun h-pronoun">he</a>/<a href="https://pronoun.is/he/him" class="p-pronoun h-pronoun">him</a></span>). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (<span class="p-pronouns"><a href="https://pronoun.is/they" class="p-pronoun h-pronoun">they</a>/<a href="https://pronoun.is/they/them" class="p-pronoun h-pronoun">them</a></span>). Mixing them up is fine.
 
 The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectOf'}").
 
 <div class="p-note" itemprop="description">
 
-I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a <abbr title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
+I care a lot about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span>; I often use screen readers and forced colors to deal with overstimulation. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his <span class="p-category category">Linux</span> setup. Current interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">IndieWeb</span>.
 
 My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
 

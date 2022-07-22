@@ -15,25 +15,33 @@ Rohan: meat&shy;space persona {#Rohan}
 
 I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc).
 
+<dl>
+<dt>Age</dt>
+<dd>22</dd>
 
-Age
-: 22
+<dt>Location</dt>
+<dd><span class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
 
-Location
-: <span class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr>
+<dt>Gender</dt>
+<dd>
+	<span class="p-gender-identity" itemprop="gender">Male</span>
+</dd>
 
-Gender
-: <span class="p-gender-identity" itemprop="gender">Male</span>
+<dt>Pronouns</dt>
+<dd class="p-pronouns"><a href="https://pronoun.is/he" class="p-pronoun h-pronoun">he</a>/<a href="https://pronoun.is/he/him" class="p-pronoun h-pronoun">him</a></dd>
 
-Pronouns
-: He
-: Him
-
-Software forges
-: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}") (preferred)
-: [GitHub](https://github.com/Seirdy "{rel='me'}")
-: [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
-: [Codeberg](https://codeberg.org/Seirdy "{rel='me'}")
+<dt>Software forges</dt>
+<dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
+<dd>
+	<a href="https://github.com/Seirdy" rel="me">GitHub</a>
+</dd>
+<dd>
+	<a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
+</dd>
+<dd>
+	<a href="https://codeberg.org/Seirdy" rel="me">Codeberg</a>
+</dd>
+</dl>
 
 My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub, GitLab, and Codeberg too. I accept contributions from any of these platforms; use whichever you prefer.
 
@@ -42,38 +50,54 @@ Seirdy: online persona {#Seirdy}
 
 I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan.
 
+<dl>
 
-Location
-: Cyberspace
+<dt>Location</dt>
+<dd>Cyberspace</dd>
 
-Gender
-: <span class="p-gender-identity" itemprop="gender">Agender</span>
+<dt>Gender</dt>
+<dd>
+	<span class="p-gender-identity" itemprop="gender">Agender</span>
+</dd>
 
-Pronouns
-: It
-: Its
+<dt>Pronouns</dt>
+<dd class="p-pronouns"><a href="https://pronoun.is/they" class="p-pronoun h-pronoun">they</a>/<a href="https://pronoun.is/they/them" class="p-pronoun h-pronoun">them</a></dd>
 
-Social (Fediverse)
-: [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me'}") (primary)
-: [@Seirdy<wbr />@lemmy<wbr />.ml](https://lemmy.ml/u/Seirdy "{rel='me'}") (Lemmy)
+<dt>Social (Fediverse)</dt>
+<dd><a href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
+<dd><a href="https://lemmy.ml/u/Seirdy" rel="me">@Seirdy<wbr />@lemmy<wbr />.ml</a> (Lemmy)</dd>
 
-Social (centralized)
-: [apioforum](https://a.gh0.pw/user/Seirdy "{rel='me'}")
-: [Tildes.net](https://tildes.net/user/Seirdy "{rel='me'}")
-: "Seirdy" on Linux Weekly News
-: [Lobsters](https://lobste.rs/u/Seirdy "{rel='me'}")
-: [Reddit](https://www.reddit.com/user/Seirdy/ "{rel='me'}")
-: ["Hacker" News](https://news.ycombinator.com/user?id=Seirdy "{rel='me'}")
+<dt>Social (centralized)</dt>
+<dd>
+	<a href="https://a.gh0.pw/user/Seirdy" rel="me">apioforum</a>
+</dd>
+<dd>
+	<a href="https://tildes.net/user/Seirdy" rel="me">Tildes.net</a>
+</dd>
+<dd>“Seirdy” on Linux Weekly News</dd>
+<dd>
+	<a href="https://lobste.rs/u/Seirdy" rel="me">Lobsters</a>
+</dd>
+<dd>
+	<a href="https://www.reddit.com/user/Seirdy/" rel="me">Reddit</a>
+</dd>
+<dd>
+	<a href="https://news.ycombinator.com/user?id=Seirdy" rel="me">“Hacker” News</a>
+</dd>
 
-Email
-: [seirdy<wbr />@seirdy.one](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}")
+<dt>Email</dt>
+<dd>
+	<a href="mailto:seirdy@seirdy.one" class="u-email" itemprop="email" rel="me">seirdy<wbr />@seirdy.one</a>
+</dd>
 
-PGP public key
-: [`1E892DB2A5F84479`](../publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}") (also available via Web Key Directory)
+<dt>PGP public key</dt>
+<dd><a href="../publickey.asc" class="u-key" rel="pgpkey authn" type="application/pgp-keys"><code>1E892DB2A5F84479</code></a> (also available via Web Key Directory)</dd>
 
-Chat
-: IRC: "Seirdy" on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)
-: Matrix: [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}")
+<dt>Chat</dt>
+<dd>IRC: “Seirdy” on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)</dd>
+<dd>Matrix: <a href="matrix:u/seirdy:seirdy.one" class="u-impp u-url" rel="me">@seirdy<wbr />:seirdy.one</a></dd>
+
+</dl>
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
@@ -101,9 +125,9 @@ Interests, preferences, et cetera
 
 I ought to come up with more interests than these, but that sounds hard.
 
-### Inclusive design
+### <span class="p-category category">Inclusive design</span> {#inclusive-design}
 
-I care a lot about accessibility, resource usage, and compatibility. My Web site may seem simple, but I put [almost 20 thousand words of thought into its design](../posts/2020/11/23/website-best-practices/) in an effort to maximize its inclusivity. This site should work well whether you're using Lynx, NetSurf, the Tor Browser with a screen reader, or a printout.
+I care a lot about <span class="p-category category">accessibility</span>, resource usage, and compatibility. My Web site may seem simple, but I put [almost 20 thousand words of thought into its design](../posts/2020/11/23/website-best-practices/) in an effort to maximize its inclusivity. This site should work well whether you're using Lynx, NetSurf, the Tor Browser with a screen reader, or a printout.
 
 Many people frame accessibility and compatibility in terms of "percentage of users impacted" to justify ignoring certain demographics. I find that this mindset somewhat discriminatory. I prefer framing concerns in terms of "populations excluded".
 
