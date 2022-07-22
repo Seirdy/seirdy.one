@@ -185,7 +185,7 @@ Assume one of your readers has caching enabled, but their current cache is empty
 
 Data is a scarce resource on metered connections; don't waste it on unnecessary information. At least half the data transferred across the flow should be semantically-meaningful compressed markup. Try testing a "lite" version of a page with non-semantic markup removed: strip any <div> or <span> elements, or attributes that don't have semantic value. Compare this "lite" page's compressed markup size with the total download size of an actual page. Do this for every page across a flow.
 
-I personally found this to be too much work. I skipped the creation of "lite" pages by removing non-semantic markup from my HTML: with the exception of a single utility CSS class for "image-rendering", my markup is made of semantically-relevant POSH, ARIA, Microdata, and microformats classes.
+I personally found this to be too much work. I skipped the creation of "lite" pages by removing non-semantic markup from my HTML: with the exception of utility classes that describe content rather than structure, my markup is made of semantically-relevant POSH, ARIA, Microdata, and microformats classes.
 
 ### Core Web Vitals aren't enough
 
@@ -367,7 +367,7 @@ CSS containment allows authors to isolate sub-trees of the DOM. Combined with a 
 > "content-visibility: auto" is a more complex value than "content-visibility: hidden"; rather than being similar to display: none, it adaptively hides/displays an element’s contents as they become relevant to the user. It also doesn’t hide its skipped contents from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
 => https://drafts.csswg.org/css-contain/#using-cv-auto CSS Containment Module
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for my site footers and endnotes.
+Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for long lists of posts in my archives, allowing browsers to skip rendering off-screen posts.
 
 Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the "contain-intrinsic-size" property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
 
@@ -430,7 +430,7 @@ That being said, many users *do* actually override stylesheets. We shouldn't *re
 
 Some people raised fingerprinting concerns when I suggested using the default "sans-serif" font. Websites could see which font this maps to in order to identify users.
 
-I don't know much about fingerprinting, except that you can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
+You can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
 Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see all the available fonts on a user's system,⁸ the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by Firefox's protections against fingerprinting, but these protections understandably override user font preferences:
 
