@@ -105,7 +105,7 @@ Let's run it through Argos Open Translate's English-Esperanto filter,[^1] and th
 
 > But it is evident that modern left-wing philosophers are not simply <mark>dehydrated logicians</mark> systematically analyzing the foundations of knowledge.
 
-"Dehydrated logicians" obviously isn't the right term to use here. The fact that the translation algorithm mistook "cool-headed" for "dehydrated" indicates that "cool-headed" was an unusual choice of words to use in this context, and therefore a fingerprinting vector. A more common phrase like "detached" would be safer.
+"Dehydrated logicians" obviously isn't the correct term to use. The fact that the translation algorithm mistook "cool-headed" for "dehydrated" indicates that "cool-headed" was an unusual choice of words to use in this context, and therefore a fingerprinting vector. A more common phrase like "detached" would be safer.
 
 ### Extreme example: Mario
 
@@ -172,7 +172,7 @@ If you wish to write anonymously, I recommend the following:
 
 4. Conform to an opinionated style-guide that you don't normally use in your other writing.
 
-5. If, after doing the above, your anonymous work still has a reading level too similar to your non-anonymous writing: reduce the reading level by choosing simpler words.
+5. If, after doing the prior steps, your anonymous work still has a reading level too similar to your non-anonymous writing: reduce the reading level by choosing simpler words.
 
 Stay safe, everyone.
 
