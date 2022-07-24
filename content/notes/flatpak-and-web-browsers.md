@@ -5,7 +5,7 @@ replyURI: "https://floss.social/@alcinnz/108466919900074368"
 replyTitle: "The outer layer will be via FlatPak"
 replyType: "SocialMediaPosting"
 replyAuthor: "Adrian Cochrane"
-replyAuthorURI: "https://rhapsode.adrian.geek.nz/"
+replyAuthorURI: "https://adrian.geek.nz/"
 ---
 You might want to provision namespace-based isolation for your browsers. But that could throw a wrench into Flatpak-based distribution.
 

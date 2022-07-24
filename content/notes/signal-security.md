@@ -2,7 +2,7 @@
 title: "Signal security"
 date: 2022-05-26T12:18:24-07:00
 lastMod: 2022-05-26T12:18:24-07:00
-replyURI: "https://disqordia.space/notice/AJqmgRLFlyVENIXcDA"
+replyURI: "https://web.archive.org/web/20220620162305/https://disqordia.space/notice/AJqmgRLFlyVENIXcDA"
 replyTitle: "europe wants to ban signal"
 replyType: "SocialMediaPosting"
 replyAuthor: "chjara"

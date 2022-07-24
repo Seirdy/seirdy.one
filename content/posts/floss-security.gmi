@@ -123,7 +123,7 @@ It enumerates plenty of information about Zoom without access to its source code
 
 To try this out yourself, use a sandbox designed for dynamic analysis. Cuckoo is a common and easy-to-use solution, while DRAKVUF is more advanced.
 
-=> https://cuckoosandbox.org/ Cuckoo Sandbox: automated malware analysis
+=> https://github.com/cuckoosandbox Cuckoo Sandbox: automated malware analysis
 => https://drakvuf.com/ DRAKVUF® Black-box Binary Analysis System
 
 ### Extreme example: the truth about Intel ME and AMT
