@@ -36,7 +36,6 @@ IgnoreURLs:
   - "https://seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
-  - "https://jacky.wtf/" # site is down i think
   - "https://fediring.net/(previous|next)" # redir
   - "https://forum.palemoon.org/" # manual check: blocks crawlers
   - "https://queue.acm.org/detail" # manual check: blocks crawlers
