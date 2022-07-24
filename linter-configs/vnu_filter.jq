@@ -18,6 +18,10 @@
 				.message == "CSS: “contain-intrinsic-size”: Property “contain-intrinsic-size” doesn't exist."
 			)
 			or
+			( # see https://github.com/w3c/css-validator/issues/370
+				.message == "CSS: “contain”: “inline-size” is not a “contain” value."
+			)
+			or
 			( # the search page has raw templates, let those slide. I validate the final dynamic search page manually.
 				.url | test ("/search/index.")
 			)

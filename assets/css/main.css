@@ -101,7 +101,7 @@ html {
 	/* We increase the target size of h2/h3 links in a way that would cause
 	 * issues with content containment */
 	article > :not(h2):not(h3) {
-		contain: content;
+		contain: inline-size layout paint style;
 		/* Add padding on both sides so that focus outlines don't escape their
 		 * containers. This will let us enable CSS containment without
 		 * clipping overflowing elements. */
@@ -115,8 +115,18 @@ html {
 
 	/* Archive pages can get long. Allow them to get long without slowing
 	 * down the browser by using content-visibility. */
+	aside > a,
+	footer,
+	dt,
+	a[role="doc-backlink"],
+	section[role="doc-endnotes"],
 	li article {
 		content-visibility: auto;
+		contain-intrinsic-size: auto 3em;
+	}
+
+	footer,
+	li article {
 		contain-intrinsic-size: auto 16em;
 	}
 
@@ -125,7 +135,8 @@ html {
 		contain-intrinsic-size: auto 36em;
 	}
 
-	.tall {
+	.tall,
+	section[role="doc-endnotes"] {
 		contain-intrinsic-size: auto 50em;
 	}
 
@@ -136,17 +147,27 @@ html {
 		cursor: pointer;
 	}
 
+	/* Full-width elements (e.g. display: block) have known widths, so
+	 * contain their widths. */
+	article,
+	h1,
+	pre,
+	dt,
+	summary {
+		contain: inline-size layout paint style;
+	}
+
+	p,
+	h2,
+	h3 {
+		contain: inline-size layout style;
+	}
+
 	/* If we have a list of disclosure widgets, we need some
 	 * non-interactive space on the screen that's safe to tap. */
 	form,
 	li details {
 		margin: .5em 0;
-	}
-
-	/* Make superscripts a bit easier to tap. */
-	sup > a {
-		margin-left: .25em;
-		padding-bottom: .5em;
 	}
 
 	/* SC 2.5.5, Google a11y: Increase tap target size a bit
@@ -172,9 +193,12 @@ html {
 	 * Also prevent overlapping outlines on focus */
 
 	/* We've increased the padding for dt > a, but dt without a link
-	 * should take up as much space. */
+	 * should take up as much space. Also: since it got
+	 * content-visibility: auto previously, give it an intrinsic size. */
 	dt {
-		margin: .75em 0;
+		padding: 1em .5em;
+		margin: -.25em 0 -.25em -.5em;
+		contain-intrinsic-size: auto 1.5em;
 	}
 
 	/* <dt> should not be closer to the previous <dd> than the following <dd>.
@@ -203,8 +227,10 @@ html {
 	}
 
 	/* Increase tap-target size of title links. */
+
 	h2 > a,
 	h3 > a {
+		contain: content;
 		display: inline-block;
 		padding: .5em .25em;
 	}
@@ -223,6 +249,9 @@ html {
 	}
 
 	/* Multiple consecutive <dt> that share a <dd> shouldn't have tap targets overlap */
+	dt + dt {
+		padding-top: .25em;
+	}
 	dt + dt > a {
 		padding-top: 0;
 	}
@@ -234,6 +263,7 @@ html {
 
 	/* Increase backlink tap target size to at least 48x48 */
 	a[role="doc-backlink"] {
+		contain: content;
 		display: inline-block;
 		margin-left: -.5em;
 		padding: .75em .5em;
@@ -250,6 +280,22 @@ html {
 		top: 0;
 	}
 }
+
+/* Make superscripts a bit easier to tap, and prevent consecutive
+ * superscripts from touching. */
+sup > a {
+	margin-left: .25em;
+	padding-bottom: .5em;
+}
+
+/* Make superscript font size a bit larger so they cross some APCA color
+ * contrast thresholds on the dark theme. Also prevent them from messing
+ * with line-height. */
+sup {
+	font-size: 0.9em;
+	line-height: 0;
+}
+
 
 /* narrow screens: reduce list indentation, hyphenate nested lists
  * touch screens: lists of links should be easy to tap so give them
@@ -284,12 +330,13 @@ nav ul {
 nav[itemprop="breadcrumb"] ol,
 nav[itemprop="breadcrumb"] li,
 nav[itemprop="breadcrumb"] > span,
-nav ul li {
+nav ul li,
+dt > a {
 	display: inline-block;
 }
 
 nav[itemprop="breadcrumb"] ol {
-	margin: -.25em 0;
+	margin: -.25em;
 	padding: 0;
 }
 
@@ -320,6 +367,16 @@ h1 {
 		-webkit-hyphens: auto;
 		hyphens: auto;
 		padding: 0 8px;
+	}
+
+	li > a,
+	nav[itemprop="breadcrumb"] a,
+	nav[itemprop="breadcrumb"] > span {
+		padding: .25em;
+	}
+
+	hr {
+		margin: .25em 0;
 	}
 }
 
@@ -396,7 +453,6 @@ span[itemtype="https://schema.org/Person"] {
 
 /* Narrow screens: allow horizontal scroll in a pre block. */
 pre {
-	contain: content;
 	overflow: auto;
 	padding: .5em;
 }

@@ -8,19 +8,19 @@
 
 	/* Hide screen-only content */
 	a[href="#h1"], /* Skip link */
+	a[role="doc-backlink"], /* can't navigate back on print. */
 	aside:not([role="note"]),
 	/* An un-opened summary inside an article has no use in print.
 	 * Outside an article it's used in my webring list where it has some
 	 * use, see below. */
 	article summary,
 	section[aria-labelledby="webmentions"],
-  /* You can't navigate in a printout. */
+  /* You can't navigate across the site in a printout. */
 	footer,
 	/* splitting up sections with <hr> is unnecesary if those
 	 * sections are removed */
 	body > hr,
-	nav a:not([rel="home"]) span,
-	nav[itemprop="breadcrumb"] {
+	nav:not([itemprop="breadcrumb"]) a:not([rel="home"]) {
 		display: none;
 	}
 }
@@ -28,6 +28,7 @@
 /* Print: don't break up self-contained items. */
 figure,
 section[itemprop="mentions"],
+blockquote,
 li {
 	break-inside: avoid;
 }

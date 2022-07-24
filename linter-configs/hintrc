@@ -15,16 +15,26 @@
 	"hints": {
 		"apple-touch-icons": "off",
 		"axe/aria": "off",
+		"axe/color": "off",
+		"axe/forms": "off",
+		"axe/keyboard": "off",
+		"axe/language": "off",
+		"axe/name-role-value": "off",
+		"axe/semantics": "off",
+		"axe/sensory-and-visual-cues": "off",
+		"axe/structure": "off",
+		"axe/tables": "off",
+		"axe/text-alternatives": "off",
+		"axe/time-and-media": "off",
 		"compat-api/css": [
 			"error",
 			{
 				"ignore": [
-					"filter",
 					"contain",
-					"image-rendering: pixelated",
 					"contain-intrinsic-size",
-					"content-visibility",
-					"text-size-adjust"
+					"content-visibility: auto",
+					"image-rendering: pixelated",
+					"text-size-adjust: none"
 				]
 			}
 		],
@@ -54,16 +64,27 @@
 		],
 		"http-compression": "off",
 		"https-only": "error",
+		"sri": "error",
+		"manifest-exists": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
+		"manifest-app-name": "error",
+		"minified-js": "off",
 		"meta-viewport": "error",
 		"no-bom": "error",
 		"no-p3p": "error",
+		"no-protocol-relative-urls": "error",
+		"no-friendly-error-pages": "error",
+		"no-vulnerable-javascript-libraries": "off",
 		"html-checker": "off",
+		"image-optimization-cloudinary": "off",
+		"no-disallowed-headers": "error",
+		"meta-charset-utf-8": "error",
+		"disown-opener": "error",
 		"content-type": ["error", {
 			".*\\.svg": "image/svg+xml"
 		}],
-		"no-html-only-headers": [ "warning",
+		"no-html-only-headers": [ "error",
 			{
 				"ignore": ["content-security-policy"]
 			}],
@@ -74,6 +95,16 @@
 				"loadTime": 10
 			}
 		],
+		"css-prefix-order": "error",
+		"scoped-svg-styles": "error",
+		"button-type": "error",
+		"strict-transport-security": "error",
+		"x-content-type-options": "error",
+		"typescript-config/is-valid": "off",
+		"typescript-config/no-comment": "off",
+		"typescript-config/target": "off",
+		"typescript-config/strict": "off",
+		"typescript-config/import-helpers": "off",
 		"stylesheet-limits": [
 			"error",
 			{
