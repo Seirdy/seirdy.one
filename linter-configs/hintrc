@@ -59,7 +59,7 @@
 		"http-cache": [
 			"error",
 			{
-				"maxAgeTarget": 600
+				"maxAgeTarget": 1200
 			}
 		],
 		"http-compression": "off",
