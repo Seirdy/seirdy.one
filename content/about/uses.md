@@ -8,7 +8,8 @@ date: "2022-06-16T17:16:18-07:00"
 ---
 Here's the software I use. I've recently started to reduce my use of <abbr title="Textual User Interfaces">TUIs</abbr> in favor of <abbr title="Command Line Interfaces">CLIs</abbr> for a variety of reasons. When possible, I try to use lightweight programs that can run on any machine, from a single-board computer to a giant desktop. I don't ever want to feel like I need to upgrade my hardware to do the same tasks as before: hardware upgrades should only be justified by my use-cases significantly changing, existing hardware being broken beyond repair, or upstream abandonment of security patches.[^1]
 
-## Hardware
+Hardware
+--------
 
 My main computer is a 2013 HP Elitebook 840 G1. It has an Intel i5-4300U CPU, with simultaneous multithreading disabled.
 
@@ -201,18 +202,30 @@ I run these tools locally, on every applicable file. A full run takes under <tim
 [IBM Equal Access accessibility-checker](https://github.com/IBMa/equal-access/blob/master/accessibility-checker/README.md)
 : I use this just like axe-core: as a CLI utility to check every page on my sitemap for basic accessibility violations. I disable "potential-violations" checks because those have false-positives.
 
-jq:
-: I use jq to ensure that all my JSON is valid. This includes my Web App Manifest file and Webfinger JSON.
+jq
+: I use jq to ensure that all my JSON is valid. This includes my Web App Manifest file and Webfinger JSON. I also use jq to filter out false positives from the Nu HTML Checker.
+
+[Feed Validator](https://github.com/w3c/feedvalidator)
+: I validate my Atom feeds using this tool. Like always, I filter out false positives and report them upstream.
+
+[htmltest](https://github.com/wjdp/htmltest) OR [html-proofer](https://github.com/gjtorikian/html-proofer)
+: Two very similar tools. html-proofer is slow but supports more features; I run the faster htmltest more often. They check for broken links, markup errors, and valid icons.
+
+[webhint](https://webhint.io)
+: When all the aforementioned tests pass, my staging site deploys and webhint runs on every page in its sitemap. I skip its axe-based tests, since those are already covered by axe-core.
+
+  Webhint checks HTTP headers, validates the Web App Manifest, ensures caching and compression work, checks for compatibility issues, validates compliance with a performance budget, and looks for common HTML/CSS mistakes.
 
 Tools I have yet to add to this section:
 
-* Something to validate my Web App Manifest and Webfinger JSON against a schema
-* Validation for my Atom feeds
-* Broken internal link checkers
+* Something to validate my Webfinger JSON against a schema
+* A tool to validate microdata and RDFa. structured-data-linter or Schemarama could work.
+* A tool to validate microformats.
 
 ### Server-side stuff
 
 All my server daemons are statically-linked binaries, which makes sandboxing easier.
+
 
 Nginx
 : Specifically, [nginx-quic.](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, and musl libc; patched for dynamic TLS records, basic OCSP support, and HPACK compression.

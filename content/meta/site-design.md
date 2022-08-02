@@ -42,9 +42,10 @@ I also go further than WCAG in many aspects:
 
 - I ensure at least one such 56-by-56&nbsp;px non-interactive region exists on the page, for users with hand tremors or or anyone who wants to tap the screen without clicking something.
 
-- With the exception of in-text borders, I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors pass APCA contrast ratios, all being close to the ideal lightness contrast of 90. They are also autism- and overstimulation-friendly colors: yellow links are significantly de-saturated to reduce harshness.
+- With the exception of in-text borders, I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors pass APCA contrast ratios, all being close to the ideal lightness contrast of 90. They are also autism- and overstimulation-friendly colors: the yellow links are significantly de-saturated to reduce harshness.
 
 - I ensure that the page works on extremely narrow viewports without triggering two-dimensional scaling. It should work at widths well below 200 CSS pixels.
+
 
 ### Assessment and evaluation
 
@@ -60,6 +61,7 @@ Finally, I supplement manual testing with the following automated tools:
 - [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 - [ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/)
 - [webhint](https://webhint.io/)
+- [lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 
 WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
 
