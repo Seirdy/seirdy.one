@@ -28,14 +28,11 @@
 		color: #eee7b2;
 	}
 
-	a:active {
-		color: #b93;
-	}
-
 	a:visited {
 		color: #ffdaff;
 	}
 
+	/* For users who request less contrast, target ACPA Lc of -85 to -86 */
 	@media (prefers-contrast: less) {
 		html {
 			background-color: #333;
@@ -44,20 +41,33 @@
 
 	/* Small text needs higher contrast. */
 	@media not (prefers-contrast: less) {
-		sup a:link {
+		sup a:link:not(:active) {
 			color: #feb;
 		}
 
-		sup a:visited {
-			color: #ffe5ff;
+		sup a:visited:not(:active) {
+			color: #ffe6ff;
 		}
 	}
 
+	/* For users who request more contrast, target ACPA Lc near -96 */
 	@media (prefers-contrast: more) {
 		html {
 			background-color: #111;
 			color: #eee;
 		}
+
+		a:link {
+			color: #feb;
+		}
+		a:visited {
+			color: #ffe6ff;
+		}
 	}
 
+	/* Specified last so it overrides :visited. I chose this color because
+	 * it's dimmer, so it's noticeable even without color vision. */
+	a:active {
+		color: #f83;
+	}
 }

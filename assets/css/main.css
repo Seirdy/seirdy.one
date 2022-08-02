@@ -17,6 +17,24 @@
  * microformats2 classnames for IndieWeb parsers, but I don't actually
  * use those for styling.
  *
+ * Some pages (e.g. post archives) are really long despite having a
+ * small download size. Rather than resort to pagination, I decided to
+ * use CSS containment and content-visibility. I test performance on
+ * browsers with heavy throttling and no GPU acceleration to ensure that
+ * they're gentle on the CPU. For instance, Lighthouse benchmarks my
+ * machine's CPU power at 1200-1300 and recommends 2.8-3.0x throttling;
+ * I throttle at 12-15x.
+ *
+ * "content-visibility: auto" implies containment; however, some
+ * browsers don't support "content-visibility: auto" but do support the
+ * "contain" property. To be consistent across all these browsers, I
+ * therefore use both even if it's a bit redundant. Once the latest
+ * Safari has supported "content-visibility: auto" for a year or so and
+ * it's in the latest version of the Tor Browser (which typically uses
+ * whatever the latest Firefox-ESR was a month or two ago), I'll
+ * consider removing these redundancies. I'll probably have to wait two
+ * years.
+ *
  * To keep myself from caring about minute details, I limited myself to
  * only defining spacing in increments of .25em. Pixels are 1px or
  * multiples of 3px. This also improves compression. No more "finding
@@ -54,10 +72,10 @@ html {
 		 * with minimal adjustment, and makes tap-targets larger.
 		 * Only do this on screen, since printouts already improve legibility
 		 * and cost paper + ink.
-		 * 108.75% is the minimum required to get superscripts to reach 14.5
-		 * CSS pixels with most default stylesheets. At that size, my dark
-		 * color palette has sufficient contrast.*/
-		font-size: 109%;
+		 * 109.375% is the minimum required to get text to 17.5 CSS pixels and
+		 * superscripts past 14.75 px with most default stylesheets. At that
+		 * size, my dark color palette has sufficient contrast.*/
+		font-size: 109.375%;
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
@@ -86,8 +104,8 @@ html {
 
 	/* 45em is too wide for long body text.
 	 * Typically meets SC 1.4.8, plus or minus a few characters. */
-	div[itemprop="articleBody"],
-	li[itemprop="dataFeedElement"],
+	[itemprop="articleBody"],
+	[itemprop="dataFeedElement"],
 	.narrow {
 		margin: auto;
 		max-width: 34em;
@@ -105,9 +123,9 @@ html {
 		/* Add padding on both sides so that focus outlines don't escape their
 		 * containers. This will let us enable CSS containment without
 		 * clipping overflowing elements. */
-		padding: 0 .5em;
 		margin-top: .25em;
 		margin-bottom: .25em;
+		padding: 0 .5em;
 	}
 
 	/* Align titular h1 with top nav and body text. */
@@ -117,15 +135,15 @@ html {
 
 	/* Archive pages can get long. Allow them to get long without slowing
 	 * down the browser by using content-visibility. */
+	dt,
+	footer,
 	h2,
 	h3,
-	aside > a,
-	footer,
-	dt,
-	a[role="doc-backlink"],
-	section[role="doc-endnotes"],
 	li article,
-	summary {
+	summary,
+	aside > a,
+	[role="doc-backlink"],
+	[role="doc-endnotes"] {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 3em;
 	}
@@ -146,40 +164,42 @@ html {
 	}
 
 	.tall,
-	section[role="doc-endnotes"] {
+	[role="doc-endnotes"] {
 		contain-intrinsic-size: auto 50em;
 	}
 
 	/* Full-width elements (e.g. display: block) have known widths, so
 	 * contain their widths. */
-	html,
-	body,
-	main,
 	article,
+	body,
+	dt,
 	h1,
 	h2,
 	h3,
+	html,
+	main,
 	pre,
-	dt,
 	summary,
-	section[role="doc-endnotes"] {
+	[role="doc-endnotes"],
+	[role="doc-preface"] {
 		contain: inline-size layout paint;
 	}
 
-	p,
-	figure {
+	figure,
+	p {
 		contain: inline-size layout;
 	}
 
+	/* Containment changed spaicng a bit; correct that. */
 	article > h2 {
 		margin: .25em 0;
 		padding: .25em 0;
 	}
 
-	/* If we have a list of disclosure widgets, we need some
+	/* A11y: If we have a list of disclosure widgets, we need some
 	 * non-interactive space on the screen that's safe to tap. */
-	form,
-	details {
+	details,
+	form {
 		contain: inline-size layout;
 		margin: .5em 0;
 	}
@@ -192,13 +212,13 @@ html {
 	 *   paragraph are section permalinks. */
 
 	input,
-	div[itemprop="comment"] dd > a,
-	dt > a,
 	summary,
-	nav[itemprop="breadcrumb"] a,
-	nav[itemprop="breadcrumb"] > span,
 	aside > a, /* Used for section permalinks */
-	li > a {
+	dt > a,
+	li > a,
+	[itemprop="comment"] dd > a,
+	[itemprop="breadcrumb"] a,
+	[itemprop="breadcrumb"] > span {
 		padding: .75em .25em;
 	}
 
@@ -207,8 +227,7 @@ html {
 	 * Also prevent overlapping outlines on focus */
 
 	/* We've increased the padding for dt > a, but dt without a link
-	 * should take up as much space. Also: since it got
-	 * content-visibility: auto previously, give it an intrinsic size. */
+	 * should take up as much space. */
 	dt {
 		padding: 1em .5em;
 		margin: -.25em 0 -.25em -.5em;
@@ -220,15 +239,15 @@ html {
 		padding-bottom: .25em;
 	}
 
-	dt > a,
-	aside > a {
+	aside > a,
+	dt > a {
 		contain: content;
 		margin: -.75em -.25em;
 	}
 
 	header > nav,
 	a[href="#h1"], /* skip link */
-	div[itemprop="comment"] dd > a ,
+	[itemprop="comment"] dd > a ,
 	footer > nav,
 	/* List items with direct hyperlink children should only have one
 	 * hyperlink. */
@@ -260,14 +279,11 @@ html {
 		margin: 0 0 0 -.5em;
 	}
 
-
-
 	/* align h-feeds in sections; they typically follow articles. */
-	a[role="doc-backlink"],
+	[role="doc-backlink"],
 	section article p {
 		margin-left: -.5em;
 	}
-
 
 	/* The nav has to be distant-enough from the top to make room for a
 	 * skip-link. The breadcrumbs also can't have their focus-outlines
@@ -284,6 +300,7 @@ html {
 		padding-top: 0;
 	}
 
+	/* Lists of links should have some spacing so tap targets don't overlap. */
 	/* stylelint-disable selector-max-compound-selectors -- simplest way to describe link-lists */
 	:not(nav) > ul li > a,
 	nav:not([itemprop="breadcrumb"]) li,
@@ -293,7 +310,7 @@ html {
 	}
 
 	/* Increase backlink tap target size to at least 48x48 */
-	a[role="doc-backlink"] {
+	[role="doc-backlink"] {
 		contain: content;
 		display: inline-block;
 		padding: .75em .5em;
@@ -311,7 +328,7 @@ html {
 	a[href="#h1"]:focus {
 		top: 0;
 	}
-}
+} /* End of adjustments for screen media type */
 
 /* Make superscripts a bit easier to tap, and prevent consecutive
  * superscripts from touching. */
@@ -327,7 +344,6 @@ sup {
 	font-size: 0.85em;
 	line-height: 0;
 }
-
 
 /* narrow screens: reduce list indentation, hyphenate nested lists
  * touch screens: lists of links should be easy to tap so give them
@@ -359,20 +375,20 @@ nav ul {
 }
 
 /* step 2: remove bullets and make elements inline. */
-nav[itemprop="breadcrumb"] ol,
-nav[itemprop="breadcrumb"] li,
-nav[itemprop="breadcrumb"] > span,
+[itemprop="breadcrumb"] ol,
+[itemprop="breadcrumb"] li,
+[itemprop="breadcrumb"] > span,
 nav ul li,
 dt > a {
 	display: inline-block;
 }
 
-nav[itemprop="breadcrumb"] ol {
+[itemprop="breadcrumb"] ol {
 	margin: -.25em;
 	padding: 0;
 }
 
-nav[itemprop="breadcrumb"] li:not(:last-of-type)::after {
+[itemprop="breadcrumb"] li:not(:last-of-type)::after {
 	content: "→";
 }
 /* narrow screens: we reduce margin for blockquotes a lot, using
@@ -402,8 +418,8 @@ h1 {
 	}
 
 	li > a,
-	nav[itemprop="breadcrumb"] a,
-	nav[itemprop="breadcrumb"] > span {
+	[itemprop="breadcrumb"] a,
+	[itemprop="breadcrumb"] > span {
 		padding: .25em;
 	}
 
@@ -429,6 +445,7 @@ kbd {
 ins,
 [role="note"],
 [role="doc-tip"] {
+	contain: content;
 	font-style: italic;
 	text-decoration: none;
 }
@@ -439,8 +456,8 @@ ins,
  * This does not hold true for figures in somewhat distinct sections; the
  * section should instead get the spacing. A section that constitutes a
  * separate schema.org object would qualify. */
-section[itemprop="mentions"],
-figure {
+figure,
+section[itemprop="mentions"] {
 	margin: 1.5em 0;
 }
 
@@ -462,7 +479,7 @@ samp {
  * I use hidden spans in backlinks to provide ARIA labels.
  * Some ancient browsers don't support input[type="hidden"] */
 [hidden],
-input[type="hidden"] {
+[type="hidden"] {
 	display: none;
 }
 
@@ -476,7 +493,7 @@ input[type="hidden"] {
  * viewport, triggering horizontal scrolling. Allow breaking words in
  * content I don't control (comments, names). For content I do control,
  * I just add soft hyphens to the HTML. */
-div[itemprop="comment"],
+[itemprop="comment"],
 :not(pre) > code,
 :not(pre) > samp,
 span[itemtype="https://schema.org/Person"] {
@@ -517,7 +534,7 @@ summary {
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
-div[itemprop="articleBody"] img {
+[itemprop="articleBody"] img {
 	display: block;
 	height: auto;
 	margin: auto;
@@ -585,7 +602,7 @@ form > div > div {
 
 a:focus,
 summary:focus,
-pre[tabindex]:focus,
+[tabindex="0"]:focus,
 form :focus {
 	outline: 3px solid;
 }
@@ -594,7 +611,7 @@ form :focus {
  * Leave it on for elements that are supposed to show focus on click. */
 @supports selector(:focus-visible) {
 	a:focus:not(:focus-visible),
-	pre[tabindex]:focus:not(:focus-visible) {
+	[tabindex="0"]:focus:not(:focus-visible) {
 		outline: none;
 	}
 }
