@@ -23,12 +23,10 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 <dd><span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/State" class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
 
 <dt>Gender</dt>
-<dd>
-	<span class="p-gender-identity" itemprop="gender">Male</span>
-</dd>
+<dd class="p-gender-identity" itemprop="gender">Male</dd>
 
 <dt>Pronouns</dt>
-<dd class="p-pronouns"><a href="https://pronoun.is/he" class="p-pronoun h-pronoun">he</a>/<a href="https://pronoun.is/he/him" class="p-pronoun h-pronoun">him</a></dd>
+<dd class="p-pronouns"><a href="https://pronoun.is/he/him" class="u-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></a></dd>
 
 <dt>Software forges</dt>
 <dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
@@ -56,12 +54,10 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 <dd>Cyberspace</dd>
 
 <dt>Gender</dt>
-<dd>
-	<span class="p-gender-identity" itemprop="gender">Agender</span>
-</dd>
+<dd class="p-gender-identity" itemprop="gender">Agender</dd>
 
 <dt>Pronouns</dt>
-<dd class="p-pronouns"><a href="https://pronoun.is/they" class="p-pronoun h-pronoun">they</a>/<a href="https://pronoun.is/they/them" class="p-pronoun h-pronoun">them</a></dd>
+<dd class="p-pronouns"><a href="https://pronoun.is/they/them" class="u-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></a></dd>
 
 <dt>Social (Fediverse)</dt>
 <dd><a href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
@@ -112,13 +108,11 @@ If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{
 Selected projects
 -----------------
 
-### [Clogstats](https://sr.ht/~seirdy/clogstats/)
+[Clogstats](https://sr.ht/~seirdy/clogstats/)
+: Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection on IRC channel activity. Written in Python; uses Pandas.
 
-Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection on IRC channel activity. Written in Python; uses Pandas.
-
-### [MOAC](https://sr.ht/~seirdy/MOAC/)
-
-Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](../posts/2021/01/12/password-strength/). Written in Go.
+[MOAC](https://sr.ht/~seirdy/MOAC/)
+: Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](../posts/2021/01/12/password-strength/). Written in Go.
 
 Interests, preferences, et cetera
 ---------------------------------

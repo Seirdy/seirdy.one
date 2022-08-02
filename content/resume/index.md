@@ -46,10 +46,8 @@ Portfolio
 
 Git repositories mirrored across [Sourcehut](https://sr.ht/~seirdy), [GitHub](https://github.com/Seirdy), and [GitLab](https://gitlab.com/Seirdy). Selected projects:
 
-### Clogstats: [sr.ht<wbr />/~seirdy<wbr />/clogstats](https://sr.ht/~seirdy/clogstats)
+[Clogstats: sr.ht<wbr />/~seirdy<wbr />/clogstats](https://sr.ht/~seirdy/clogstats)
+: Gathers IRC channel activity statistics from WeeChat logs and performs time-series analysis and forecasting on them. It can quantify, rank, and chart chatting activity over time and display forecasts. It can also detect anomalous increases in activity. Written in Python with NumPy and Pandas.
 
-Gathers IRC channel activity statistics from WeeChat logs and performs time-series analysis and forecasting on them. It can quantify, rank, and chart chatting activity over time and display forecasts. It can also detect anomalous increases in activity. Written in Python with NumPy and Pandas.
-
-### MOAC: [sr.ht<wbr />/~seirdy<wbr />/MOAC](https://sr.ht/~seirdy/MOAC/)
-
-Analyze password strength given physical limits to computing, and generate secure passwords. Computes theoretical limits to a brute-force attack limited by given physical quantities (mass, energy, power, temperature, etc.) and generates passwords to withstand them. This provides a future-proof understanding of password strength. Extensively tested. Written in Go.
+[MOAC: sr.ht<wbr />/~seirdy<wbr />/MOAC](https://sr.ht/~seirdy/MOAC/)
+: Analyze password strength given physical limits to computing, and generate secure passwords. Computes theoretical limits to a brute-force attack limited by given physical quantities (mass, energy, power, temperature, etc.) and generates passwords to withstand them. This provides a future-proof understanding of password strength. Extensively tested. Written in Go.
