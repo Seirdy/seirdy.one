@@ -29,7 +29,7 @@ trap cleanup EXIT
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t(?:\t)?' '' >"$tmp_file"
 {
 	head -n7 "$tmp_file" | sd -s '/>' ' />'
-	cat tmp.css
+	cat "$OUTPUT_DIR/tmp.css"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	tail -n +8 "$tmp_file" \
 		| sd '<pre(?: tabindex="0")?>\n\t*<(code|samp)( |>)' '<pre tabindex="0"><$1$2' \
