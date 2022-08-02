@@ -76,7 +76,11 @@
 		{{- end -}}
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+		{{ with .Params.image -}}
+		{{- $image := resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
+		<media:thumbnail url="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+		{{- end }}
   </entry>
-  {{- end }}
-	{{ end }}
+  {{- end -}}
+	{{- end }}
 </feed>

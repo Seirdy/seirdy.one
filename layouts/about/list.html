@@ -26,8 +26,10 @@
 						, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04" }}</time>
 				{{- end }}
 				</p>
+				<div>
 				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
 				<p>{{- partial "wordcount.html" . -}}</p>
+				</div>
 			</article>
 		</li>
 		{{- end }}

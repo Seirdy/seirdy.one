@@ -37,8 +37,10 @@
 					{{ partial "processed-content.html" . }}
 				</div>
 				{{- else }}
+				<div><!--Keep this attr-free div to make this part structurally identical.-->
 				<p class="p-summary entry-summary" itemprop="description">{{ .Description }}</p>
 				<p>{{- partial "wordcount.html" . -}}</p>
+				</div>
 				{{- end }}
 			</article>
 		</li>
