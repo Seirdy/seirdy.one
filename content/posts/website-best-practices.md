@@ -51,7 +51,9 @@ Another focus is minimalism. [Progressive enhancement](https://en.wikipedia.org/
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and _address the trade-offs they make when they deviate._ I don't expect---or want---anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
-I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) <cite>[Techniques for WCAG&nbsp;2.2](https://www.w3.org/WAI/WCAG22/Techniques/)</cite> a number of times. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+I'll cite the Web Accessibility Initiative's (<abbr title="Web Accessibility Initiative">WAI</abbr>) {{<mention-work itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="Techniques for WCAG 2.2" url="https://www.w3.org/WAI/WCAG22/Techniques/">}}{{</mention-work>}} a number of times. Each "Success Criterion" (requirement) of the WCAG has possible techniques. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+
+I'll also cite {{<mention-work itemid="https://www.w3.org/TR/coga-usable/" itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="Making Content Usable for People with Cognitive and Learning Disabilities" url="https://www.w3.org/TR/coga-usable/">}}, by <span itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher">the WAI</span>{{</mention-work>}}. The document lists eight objectives. Each objective has associated personas, and can be met by several design patterns.
 
 Our goal: make a textual website maximally inclusive, using restricted enhancement.
 
@@ -80,14 +82,15 @@ JavaScript and WebAssembly are responsible for the bulk of modern web exploits. 
 
 ```figure {samp=true var1="HASH"}
 default-src 'none';
-img-src 'self' data:;
+img-src 'self';
+media-src 'self';
 style-src 'sha256-HASH';
 frame-ancestors 'none';
 base-uri 'none';
-form-action 'none';
+form-action FORM_DESTS;
 manifest-src 'self';
 upgrade-insecure-requests;
-sandbox allow-same-origin
+sandbox allow-same-origin allow-forms
 ```
 
 {{</codefigure>}}
@@ -165,7 +168,7 @@ Requesting a high number of cached resources can decrease performance of the cac
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your `cache-control` headers, and cache-bust modified assets by changing their URLs. You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
-{{<codefigure>}} {{< codecaption >}} The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames. {{< /codecaption >}}
+{{<codefigure>}} {{< codecaption >}} I mark my website's assets as "immutable" and cache-bust them by including checksums in their filenames. {{< /codecaption >}}
 
 ```figure {samp=true}
 cache-control: max-age=31557600, immutable
@@ -347,6 +350,7 @@ Moreover, determining the pages to prioritize for speculative pre-loading typica
 I have two responses:
 
 1. If an image isn't essential, don't include it in the page. If an image is essential, assume sighted users want to see it.
+
 2. Yes, users could disable images. That's _their_ choice. If your page uses lazy loading, you've effectively (and probably unintentionally) made that choice for a large number of users.
 
 Nonetheless, expect some readers to have images disabled. Refer to [the "Beyond alt-text" section](#beyond-alt-text) to see how to best support this case.
@@ -399,9 +403,9 @@ Deferring network requests is a bad idea, but there are other ways to improve la
 
 A similar image attribute that I _do_ recommend is the [`decoding` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding). I typically use `decoding="async"` so that image decoding can be deferred.
 
-Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
+Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS specification.[^10]
 
-<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. Combined with a property like `content-visibility`, it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the `hidden` parameter when `auto` is better:
+<dfn>CSS containment</dfn> allows authors to isolate sub-trees of the DOM. This lets browsers make more informed optimizations: they can delay painting off-screen content or reduce re-calculations when isolated nodes change. Combined with a property like `content-visibility`, it enables browsers to defer all rendering of less essential below-the-fold content.
 
 {{<quotation>}}
 
@@ -416,7 +420,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 {{< /quotecaption >}}
 {{</quotation>}}
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for long lists of posts in my archives, allowing browsers to skip rendering off-screen posts.
+Leveraging containment and `content-visibility` is a progressive enhancement, so there aren't any serious implications for older browsers. I use `content-visibility` to defer rendering off-screen entries in my archives. Doing so allows me to serve long archive pages instead of resorting to pagination, with page-length limited only by download size.
 
 Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing [layout shifts](#layout-shifts). Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating 'contain-intrinsic-size' for 'content-visibility'" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/about-us/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values.
 
@@ -429,7 +433,9 @@ Searchability is a good reason to prefer conveying information textually, when p
 
 Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; [Reddit's atrocious redesign](#reddit-redesign) is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "other ways to defer content" section](#other-ways-to-defer-content).
 
-{{<image-figure id="reddit-redesign">}} {{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
+{{<image-figure id="reddit-redesign">}}
+
+{{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
 
 <figcaption itemprop="caption">
 
@@ -446,7 +452,7 @@ Moreover, some search implementations (such as the one built into Firefox) suppo
 
 ### Problematic overrides {#problematic-overrides}
 
-Search is so essential to some users' ability to navigate that some desktop users enable "type-ahead" search, to automatically begin a search upon typing multiple characters.[^10] If you ignored my advice to avoid JavaScript, at least think twice before using it to define custom keyboard shortcuts which interfere with this type of functionality. I singled out type-ahead search, but there are countless other examples of uncommon keyboard behavior that JavaScript overrides interfere with.
+Search is so essential to some users' ability to navigate that some desktop users enable "type-ahead" search, to automatically begin a search upon typing multiple characters.[^11] If you ignored my advice to avoid JavaScript, at least think twice before using it to define custom keyboard shortcuts which interfere with this type of functionality. I singled out type-ahead search, but there are countless other examples of uncommon keyboard behavior that JavaScript overrides interfere with.
 
 Another problematic override is scroll-behavior. Enforcing smooth-scrolling (e.g., with the `scroll-behavior` CSS property) can interfere with the use of in-page search by slowing down jumps between matches. Rapidly darting around the page with smooth scrolling can cause motion sickness. Simply relying on users to override default behaviors violates the "inclusive by default" directive I encourage, since user preferences are fingerprintable and shift responsibility away from developers.
 
@@ -479,7 +485,7 @@ Some people raised fingerprinting concerns when I suggested using the default "s
 
 You can't do font enumeration or accurately calculate font metrics without JavaScript. Since text-based websites that follow these best-practices don't send requests after the page loads and have no scripts, they shouldn't be able to fingerprint via font identification.
 
-Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^11] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by [Firefox's protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
+Other websites can still fingerprint via font enumeration using JavaScript. They don't need to stop at seeing what sans-serif maps to: they can see available fonts on a user's system,[^12] the user's canvas fingerprint, window dimensions, etc. Some of these can be mitigated by [Firefox's protections against fingerprinting](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting), but these protections understandably override user font preferences.
 
 Ultimately, surveillance self-defense on the web is an arms race full of trade-offs. If you want both privacy and customizability, the web is not the place to look; try Gemini or Gopher instead.
 
@@ -487,7 +493,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for some decorations (e.g. borders),[^12] but they are uncommon.
+In your stylesheets, avoid using `px` where possible. Define sizes and dimensions using relative units (preferably `em`). Exceptions exist for rare items that that shouldn't scale with zoom (e.g. decoration, minimum margins).[^13]
 
 {{<codefigure>}} {{< codecaption lang="CSS" >}}
 
@@ -508,7 +514,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 
 * Blind readers.
 
-* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size.[^13]
+* Users with metered connections: sometimes they disable all images, and other times they only disable images surpassing a size.[^14]
 
 * People experiencing packet loss who fail to download some images.
 
@@ -518,13 +524,13 @@ Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
 
-* Images should usually have alt-text under 100 ch.[^14] Save longer descriptions for a caption or <code>aria-<wbr />describedby</code>. Exceptions exist.
+* Images should usually have alt-text under 100 ch.[^15] Save longer descriptions for a caption or <code>aria-<wbr />describedby</code>. Exceptions exist; this is just a weak norm.
 
 * Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 
 The <abbr title="Web Accessibility Initiative">WAI</abbr> provides some guidelines in <cite>[An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)</cite>. It's a little lacking in nuance, but makes for a good starting point. Remember that guidelines and "good practices" always have exceptions.
 
-Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.[^15]
+Alt text isn't just for blind readers; sighted readers who can't load an image will see alt-text in its place. This alt text might be confined to the image container, so small images should have shorter alt text.[^16]
 
 ### Putting images in context
 
@@ -594,7 +600,7 @@ A <dfn>`longdesc`</dfn> attribute used to be another way to reference an image t
 
 The recommended way to link to a transcript is by hyperlinking the image (i.e., wrapping it with `<a>`) or semantically grouping the image with its transcript. Put a short summary in the alt-text, and mention the availability of a transcript in a visible caption.
 
-A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically grouping images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use <code>aria-<wbr />describedby</code> to semantically link the figure and the transcript.[^16]
+A [StackOverflow thread about comic transcripts](https://stackoverflow.com/questions/65564539/what-is-the-semantically-correct-way-to-include-transcript-from-a-comic) outlines a good approach to semantically grouping images and transcripts, and my approach is similar. I group an image, alt-text, and caption in a `<figure>` element and follow it with a transcript in a `<details>` element. I use <code>aria-<wbr />describedby</code> to semantically link the figure and the transcript.[^17]
 
 An image, alt-text, figure caption, and transcript combine to form a complex relationship that should be grouped together in a single landmark. I put all three inside a `<section>` with a heading, and give the group an `aria-label` that indicates the presence of the three sub-elements. Using a `section` landmark ensures that the figure and caption remain together as a single unit. The [html code](#xkcd-html) for the [xkcd comic earlier in the page](#infinite-scrolling) is a representative example.
 
@@ -678,7 +684,7 @@ Even if you set custom colors, ensure that the page is compatible with color ove
 
 [This page's canonical location](https://seirdy.one/posts/2020/11/23/website-best-practices/) is an example application of Technique C25 (and the related [Technique G148](https://www.w3.org/WAI/WCAG22/Techniques/general/G148)). It only uses non-default colors when a user agent requests a dark color scheme (using the `prefers-color-scheme` CSS media query; see the next subsection) and for lightening borders. Any image with a solid background may match the page background; to ensure that their dimensions are clear, I surrounded them with borders. Most browsers will render these borders with the default foreground color, which should be visually distinct from the background. I included borders and/or horizontal rules to break up some sections, since heading-based delineation is either unavailable or insufficient for them. When overriding color schemes, the page layout remains clear.
 
-Color overrides go well beyond simple foreground and background color changes. Windows High Contrast Mode (<abbr title="Windows High Contrast Mode">WHCM</abbr>) is perhaps the best example. [WHCM makes advanced modifications to color palettes](#win-hcm): it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides.[^17]
+Color overrides go well beyond simple foreground and background color changes. Windows High Contrast Mode (<abbr title="Windows High Contrast Mode">WHCM</abbr>) is perhaps the best example. [WHCM makes advanced modifications to color palettes](#win-hcm): it colors elements with a user-specified palette, all according to semantic markup while ignoring ARIA overrides.[^18]
 
 <abbr title="Windows High Contrast Mode">WHCM</abbr> leads the standardization process for the `forced-colors` CSS media feature, but it isn't the only implementation of the underlying idea. If you navigate to <samp>about:preferences</samp> in Firefox and activate the <samp translate="yes">Colors</samp> button in the "Language and Appearance" section, you'll be presented with the option to override website palettes with [your own default colors](#default-colors).
 
@@ -762,7 +768,7 @@ Accounting for halation, overstimulation, and high-contrast needs is hard to do 
 
 Color palettes need to be effective for different types of vision deficiencies (e.g. color blindnesses) and screens. Color blindness is a far more nuanced topic than "the inability to see some colors". {{<mention-work itemprop="citation" itemtype="BlogPosting">}}{{<indieweb-person itemprop="author" first-name="Rob" last-name="Pike" url="http://herpolhode.com/rob/">}} describes his experience in {{<cited-work name="Color blindness" extraName="headline" url="https://commandcenter.blogspot.com/2020/09/color-blindness-is-inaccurate-term.html">}}{{</mention-work>}}. Color blindness manifests in complex ways. Testing in grayscale is a great start, but it doesn't account for all kinds of color vision deficiencies.
 
-Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.[^18]
+Different screens and display-calibrations render color differently; what may look like a light-gray on a cheap monitor could look nearly black on a high-end OLED screen. Try to test on both high- and low-end displays, especially when designing a dark color scheme.[^19]
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
@@ -782,9 +788,9 @@ Visible interactive semantics
 
 A basic WCAG Level A requirement is for information to not be conveyed solely through color. Bothe the presence and type of interactivity need to be visually communicated by other means. Links should not look like buttons, and vice-versa.
 
-### In defense of link underlines {#in-defense-of-link-underlines}
+### In defense of link underlines
 
-Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^19] and that hyperlinks are no exception. I disagree.
+Some typographers insist that [underlined on-screen text is obsolete](https://practicaltypography.com/underlining.html),[^20] and that hyperlinks are no exception. I disagree.
 
 Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
@@ -797,13 +803,55 @@ It's impossible to discern the number of links in a sequence without some sort o
 </figcaption>
 {{</image-figure>}}
 
+Moreover, several parts of {{<mention-work itemid="https://www.w3.org/TR/coga-usable/" itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="Making Content Usable for People with Cognitive and Learning Disabilities" url="https://www.w3.org/TR/coga-usable/">}}{{</mention-work>}} recommend underlining links.
+
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+Some users have trouble when controls have a different look, color, or shape than they have used before. For example, when links do not have underlines and blue or purple text some users will not know there is a link (even if this appears with focus).
+
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
+<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.3: 
+<a href="https://www.w3.org/TR/coga-usable/#how-it-helps-3">Clearly Identify Controls and Their Use: How it Helps</a>
+{{< /quotecaption >}}
+{{</quotation>}}
+
 ### Buttons versus links
 
 Buttons are another type of interactive element. Users are accustomed to recognizing buttons by their visually distinct interactive region. While hyperlinks are only signified by color and a text underline, buttons are signified by a background-color change and/or a visible border. Do not conflate the two!
 
-The purpose of a hyperlink is specifically to navigate to a different location. If a button exists to do the same thing, it shouldn't be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
+The purpose of a hyperlink is to navigate to a different location. If a button exists to do the same thing, it shouldn't be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
 
-In addition to [offering ample non-interactive space](#non-interactive-space), ensure that non-interactive and interactive space regions are visually distinct. The backgrounds of regions containing multiple visible elements should be non-interactive.
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+Use a clear and recognizable design for controls. Make it clear what elements are controls and how to use them.
+
+This includes:
+
+- Using a common style on controls (for example, links being underlined).
+- Using common design patterns on links and controls (for example, clicking on a link takes you to the page).
+- Making the borders of controls clear. Links in text do not need borders if identified properly (for example, a help icon has a border).
+- Making controls large enough so that users can click on it and not the item next to it.
+- Ensuring items that are not clickable do not look like links or controls.
+
+When this is not possible, provide instructions that explain how to use the control.
+
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
+<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.2: 
+<a href="https://www.w3.org/TR/coga-usable/#what-to-do-3">Clearly Identify Controls and Their Use: What to Do</a>
+{{< /quotecaption >}}
+{{</quotation>}}
+
+One key difference between buttons and links is the cursor appearance. Buttons should not turn the cursor into a "hand" or "pointer" icon. The article {{<mention-work itemtype="BlogPosting" itemprop="citation" role="doc-credit">}}{{<cited-work url="https://hidde.blog/some-pointers-on-default-cursors/" name="Some pointers on default cursors" extraName="headline">}} by {{<indieweb-person itemprop="author" name="Hidde de Vries" url="https://hidde.blog/about-me/">}}{{</mention-work>}} covers both sides of the issue. Personally, I think it's best to respect the convention of the browser and OS rather than break it.
+
+### Visible non-interactive semantics
+
+In addition to [offering ample non-interactive space](#non-interactive-space), ensure that non-interactive and interactive regions are visually distinct. Avoid making interactive elements with many children.
 
 GitHub's mobile website is a serious offender; see [this screenshot of the GitHub bug tracker](#gh-interactive) for an example. The background region of the visible issue is interactive, and so are its contents. However, the header of the issues list has a non-interactive background that looks the same. Visual appearance does not convey the difference between a button and a hyperlink. The "enhancement" link points to a unique location, yet it loses its interactivity on narrow viewports with no visual change; tapping it navigates to a different location depending on viewport width.
 
@@ -835,7 +883,7 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^20] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^21] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers. It also seems unsupported in Microsoft Edge.[^22]
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles Web&shy;Assembly-compiled encoders; I've heard good things about it.
 
@@ -844,12 +892,18 @@ You also might want to use the HTML `<picture>` element, using JPEG/PNG as a fal
 Most of my images will probably be screenshots that start as PNGs. My typical flow:
 
 1. Re-size and crop the PNG. Convert to grayscale if color isn't important.
+
 2. Lossy compression with `pngquant`
+
 3. Losslessly optimize the result with `oxipng` and its Zopfli backend (slow)
+
 4. Also create a lossless WebP from the lossy PNG and a lossy WebP from the source image, using `cwebp`. Pick the smaller of the two.
+
 5. Include the resulting WebP in the page, with a fallback to the PNG using a `<picture>` element.
+
 6. Create a lossy AVIF image from the cropped full-color PNG, and include it in the `<picture>` element if it's smaller than the WebP. If color isn't important, use the YUV400 color space.
-7. If the image is too light, repeat for a dark version of the image to display according to a `prefers-color-scheme: dark` media query.
+
+7. If the image is too light, repeat for a dark version of the image to display in response to a `prefers-color-scheme: dark` media query.
 
 In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed by lossy compression and cropping.
 
@@ -883,6 +937,7 @@ Most resources on image optimization recommend considering progressive rendering
 These resources also encourage authors to include different image variants for different viewport sizes, screen resolutions, and pixel densities. They often skip the caveats:
 
 * Using different image files for different viewport sizes can cause the page to request more images as users re-size their window.
+
 * Sending requests dependent on viewport and display characteristics is a fingerprinting vector, allowing servers to identify users by these properties.
 
 Rather than create separate lanes for different users, I prefer making the defaults as inclusive as possible. A single image should look good under a variety of downscaling algorithms. It should be as small as it can be without losing essential information.
@@ -946,7 +1001,7 @@ The first or second heading in the DOM, and the highest heading level, should be
 
 Remember that not all landmarks are announced by screen readers; for instance, many screen readers don't announce the ending of a `<header>` element in an article. An `<hr>` element is a good way to force the ending of a landmark to be visible: it introduces a thematic break between sections that is visible to assistive technologies and user-agents that don't support CSS.
 
-If this isn't possible, consider adding a "skip link" or two. Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners still benefit from a skip-link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
+Consider adding a "skip link" if some pages require many <kbd>Tab</kbd> keystrokes to reach the main content.[^23] Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners and motor-impaired users still benefit from a skip link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
 
 If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content; see [the "Layout shifts" section](#layout-shifts) for more details. If it appears over existing content, it needs to have a solid background; if you set the background color, set a foreground color too as described in [the "About custom colors" section](#about-custom-colors).
 
@@ -956,7 +1011,7 @@ Users of <abbr title="assistive technology">AT</abbr>s such as screen readers pr
 
 Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
-Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^21] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
+Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^24] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
 ### Single-column layout
 
@@ -977,6 +1032,7 @@ Exceptions exist: one or two very simple responsive changes won't hurt. The main
 Sidebars are probably unnecessary, and can be quite annoying to readers who re-size windows frequently. This is especially true for tiling window manager users like me: we frequently shrink windows to a fraction of their original size. When this happens to a website with a sidebar, one of two things happens:
 
 1. The site's responsive design kicks in: the sidebar vanishes and its elements move elsewhere. This can be quite CPU-heavy, as the browser has to both re-wrap the text and handle a complex layout change. Frequent window re-sizers will experience lag and battery loss, and might need a moment to figure out where everything went.
+
 2. The site doesn't use responsive design. The navbar and main content are now squeezed together. Readers will probably close the page.
 
 Neither situation looks great.
@@ -1042,7 +1098,7 @@ Users employing machine translation will not benefit from your soft hyphens, so 
 
 Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
-Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter.[^22] The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
+Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter.[^25] The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
 
 ### Keeping text together
 
@@ -1054,12 +1110,13 @@ One exception to the rules from <cite>Practical Typography</cite>: don't use a n
 
 You should only use pictures of text when the visual presentation of the text is part of the information you're trying to convey. Always be sure to test how such an image looks on a narrow screen.
 
-Images do not reflow their text. When the viewport is narrower than the image dimensions, two options arise:
+Images do not reflow their text. When the viewport is narrower than the image dimensions, you can instruct the browser to do one of three things:
 
 1. Allow the image to exceed the viewport width, triggering two-dimensional scrolling for the whole page.
 2. Shrink the image to fit the viewport, causing the text in the image to shrink with it.
+3. Allow the image to horizontally overflow.
 
-I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
+I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal. Overflow is almost never what we want.
 
 The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good example, see the "[In defense of link underlines](#in-defense-of-link-underlines)" section.
 
@@ -1093,6 +1150,29 @@ When filtering criteria on [the Quickref Reference page](https://www.w3.org/WAI/
 
 </figcaption>
 {{</image-figure>}}
+
+Keeping the most important content above the fold (the part of the page that's visible without scrolling) is hard on small screens. Nonetheless, it's an important element of cognitive accessibility. Users may struggle to identify a page or navigate a site if the title and navigation links are below the fold. [The <abbr title="Web Accessibility Initiative">WAI's</abbr> mobile accessibility guidelines](https://www.w3.org/TR/mobile-accessibility-mapping/#positioning-important-page-elements-before-the-page-scroll) share this recommendation.
+
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+Make important tasks and features on the site stand out and easy to find.
+
+This includes:
+
+- \[…\]
+- Placing the tasks/features towards the top of the page so the user does not have to scroll to see them.
+- Placing the tasks/features toward the top of the content so assistive technology finds them quickly.
+- \[…\]
+- Including key tasks at a top level of the main navigation.
+
+</blockquote>
+{{< quotecaption partOfType="TechArticle" >}}
+<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.3.1: 
+<a href="https://www.w3.org/TR/coga-usable/#what-to-do-6">Make it Easy to Find the Most Important Tasks and Features of the Site</a>
+{{< /quotecaption >}}
+{{</quotation>}}
 
 Spacing
 -------
@@ -1278,7 +1358,7 @@ On one hand, users who need enhanced focus visibility may override the default f
 
 The WCAG [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced) recommends making focus indicators 2&nbsp;px thick. While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
-You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^23]
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^26]
 
 {{<codefigure>}}
 
@@ -1356,7 +1436,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^24]
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^27]
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1385,7 +1465,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests---especially accessibility tests---are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^25]
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^28]
 
 
 [Nu HTML checker](https://validator.nu/)
@@ -1398,7 +1478,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 : An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
 [Webhint](https://webhint.io/)
-: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^26]
+: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^29]
 
 [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated/)
 : Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
@@ -1428,7 +1508,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
 
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^27]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^30]
 
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 
@@ -1456,7 +1536,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 15. Try printing out your page in black-and-white from an unorthodox graphical browser.
 
-16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^28]
+16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^31]
 
 17. Combine conversion tools. Combine an HTML-<wbr />to-<wbr />EPUB converter and an EPUB-<wbr />to-<wbr />PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 
@@ -1517,28 +1597,32 @@ There are so many ways to read a page; authors typically cater only to the mains
 
 * Screen readers
 * Switch access
-* Keyboard navigation, with the <kbd>Tab</kbd> key or caret navigation
+* Navigating with the <kbd>Tab</kbd> key
+* Caret navigation
 * Navigating with hand-tremors
-* Content extraction (e.g. "Reader Mode")
+* Content extractors or "Reader Mode"
 * Low-bandwidth connections
 * Unreliable, lossy connections
 * Metered connections
 * Hostile networks
 * Using in-page search
 * Downloading offline copies
-* Very narrow viewports (much narrower than a phablet)
+* Extra-narrow viewports
 * Mobile devices in landscape mode
-* Frequent window-resizers (e.g. users of tiled-window setups)
-* Printouts, especially when paper and ink are rationed (common in schools)
+* Frequent viewport-resizers
+* Printouts with rationed paper or ink
 * Textual browsers
-* Uncommon graphical browsers
-* the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
-* Disabling JavaScript (overlaps with the Tor Browser)
+* Disabling JavaScript
+* The Tor Browser's "Safest" mode
+* Non-mainstream browser engines
+* Browsing without CSS
+* Altering, injecting, or replacing CSS
 * Non-default color palettes
 * Forced color palettes
-* Aggressive content blocking (e.g. blocking all third-party content, frames, images, and cookies)
+* Adblockers, with a variety of filter-lists
+* Blocking third-parties
+* Disabling frames, images, and cookies
 * User-selected custom fonts
-* Stylesheet removal, alteration, or replacement
 * Machine translators
 
 Each of these may be dismissed as a "niche", especially given a profit motive (or worse, a growth imperative). Yet _many niches add up to a large population._ Every person who grows old becomes disabled; every long-distance traveller experiences poor connections.
@@ -1559,16 +1643,23 @@ Parts of this page can be thought of as an extension to David Copeland's princip
 {{<quotation itemprop="mentions">}}
 
 <blockquote itemprop="text">
-	<p>Raw content true to its construction:</p>
-	<ol>
-	<li>Content is readable on all reasonable screens and devices.</li>
-	<li>Only hyperlinks and buttons respond to clicks.</li>
-	<li>Hyperlinks are underlined and buttons look like buttons.</li>
-	<li>The back button works as expected.</li>
-	<li>View content by scrolling.</li>
-	<li>Decoration when needed and no unrelated content.</li>
-	<li>Perform&shy;ance is a feature.</li>
-	</ol>
+
+Raw content true to its construction:
+
+1. Content is readable on all reasonable screens and devices.
+
+2. Only hyperlinks and buttons respond to clicks.
+
+3. Hyperlinks are underlined and buttons look like buttons.
+
+4. The back button works as expected.
+
+5. View content by scrolling.
+
+6. Decoration when needed and no unrelated content.
+
+7. Perfor&shy;mance is a feature.
+
 </blockquote>
 {{< quotecaption partOfType="WebSite" >}}
 {{<indieweb-person first-name="David" last-name="Copeland" url="https://naildrivin5.com/" itemprop="author">}},
@@ -1605,6 +1696,8 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^2]: Some addons will have reduced functionality; for instance, [Tridactyl](https://github.com/tridactyl/tridactyl) can't create an `<iframe>` for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
 
+    Moreover, the `sandbox` directive exposes some bugs in WebKit (i.e. Safari and most GTK-based browsers). On content governed by a `sandbox` directive without the `allow-same origin` and `allow-scripts` directives, some WebKit browser features won't work. One example is media controls. One page on my site has an `audio` element; I added `allow-scripts` to that page so it will work in WebKit-based browsers. [WebKit bug 237281 documents the general issue](https://bugs.webkit.org/show_bug.cgi?id=237281); [WebKit bug 225865](https://bugs.webkit.org/show_bug.cgi?id=225865) and [WebKit bug 218086](https://bugs.webkit.org/show_bug.cgi?id=218086) document specific instances.
+
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://web.archive.org/web/20220316060312/https://whalecoiner.com/articles/progressive-enhancement).
 
 [^4]: Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet the WCAG [Success Criterion 2.4.8: Location](https://w3c.github.io/wcag/understanding/location.html). I opted to meet the criterion a different way. Since all my pages are linked by my site's global navigation or my "posts" page (also in the global navigation), I just used `aria-current` and made the currently-relevant entry in my global navigation a `<strong>` element.
@@ -1621,45 +1714,51 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^9]: Ironically, that page doesn't load the main text without JavaScript despite citing a JavaScript requirement as a downside. If you can't load the page, the same issues with infinte scroll are outlined in the "Accessibility concerns for infinite scroll" section of {{<mention-work itemprop="citation" itemtype="BlogPosting">}}{{<cited-work url="https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/" name="Infinite Scroll without Layout Shifts" extraName="headline">}} by {{<indieweb-person itemprop="author" first-name="Addy" last-name="Osmani" url="https://addyosmani.com/">}}{{</mention-work>}}.
 
-[^10]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:<wbr />config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
+[^10]: The benefits of containment are especially noticeable when injecting styles into a page. "Dark mode" and "userstyle" extensions perform noticeably better when enough elements receive layout and paint containment. Containment allows browsers to handle changes to an element independently of the rest of the DOM.
 
-[^11]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [Browser&shy;Leaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
+[^11]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:<wbr />config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
 
-[^12]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve access&shy;ibility.
+[^12]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [Browser&shy;Leaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
 
-[^13]: uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
+[^13]: Decoration is more than cosmetic. The [color overrides and accessibility](#color-overrides-and-accessibility) sub-section describes how some decorations, like borders, improve access&shy;ibility.
 
-[^14]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
+[^14]: uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
 
-[^15]: Browser support for displaying alt-text in place of broken images seems good. More information about support for alt-text exposure can be found on {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="Alternative Text for CSS Generated Content" extraName="headline" url="https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html">}}{{</mention-work>}}. That post seems to indicate that Firefox 81 on macOS 10.15 didn't display alt-text, but [users report correct alt-text display](https://cybre.space/@nleigh/108688070682694730) in more recent Firefox versions.
+[^15]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
 
-[^16]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr />describedby</code> for more complex descriptions. At the time of writing, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). {{<mention-work itemtype="TechArticle">}}{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}{{</mention-work>}} describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
+[^16]: Browser support for displaying alt-text in place of broken images seems good. More information about support for alt-text exposure can be found on {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="Alternative Text for CSS Generated Content" extraName="headline" url="https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html">}}{{</mention-work>}}. That post seems to indicate that Firefox 81 on macOS 10.15 didn't display alt-text, but [users report correct alt-text display](https://cybre.space/@nleigh/108688070682694730) in more recent Firefox versions.
 
-[^17]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors independently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
+[^17]: Once it gains basic support across all browsers and screen readers, I might recommend using `aria-details` instead of <code>aria-<wbr />describedby</code> for more complex descriptions. At the time of writing, [`aria-details` is only supported by JAWS](https://a11ysupport.io/tech/aria/aria-details_attribute). {{<mention-work itemtype="TechArticle">}}{{<cited-work name="WAI-ARIA 1.2" url="https://www.w3.org/TR/wai-aria-1.2/#aria-details">}}{{</mention-work>}} describes `aria-details` with an example similar to the one I gave in [code snippet 5](#xkcd-html).
 
-[^18]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good balance.
+[^18]: Since <abbr title="Windows High Contrast Mode">WHCM</abbr> sets colors independently of explicitly-defined ARIA roles, it's a good way to test adherence to [the First Rule of ARIA](#first-rule-of-aria).
 
-[^19]: {{<mention-work itemtype="Book">}}{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}{{</mention-work>}} only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
+[^19]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good balance.
+
+[^20]: {{<mention-work itemtype="Book">}}{{<cited-work name="Practical Typography" url="https://practicaltypography.com/">}}{{</mention-work>}} only renders invisible text without JavaScript. You can use a textual browser, screen reader, copy-paste the page contents elsewhere, use a reader-mode implementation, or "view source" to read it without enabling scripts. All of these options will ironically override the carefully-crafted typography of this website about typography.
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^20]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+[^21]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-[^21]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
+[^22]: I find it quite odd that Microsoft Edge doesn't support AVIF. Chromium has supported AVIF for a long time, and Edge is based on Chromium. AVIF is a royalty-free format; I don't know why Microsoft would remove support for it, especially since Microsoft allows adding AVIF support to Windows. I think Edge also removed Chromium's experimental, off-by-default support for JPEG-XL.
+
+[^23]: I say that a skip link is useful to reduce the amount of <kbd>Tab</kbd> keystrokes required, but I don't know a good "threshold number" to signify "too many keystrokes". If it takes ten keystrokes to reach the main content, it's probably time to add a skip-link.
+
+[^24]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
 
     Mobile users wishing to temporarily switch modes have to stop, change their navigation mode, perform a navigation gesture, and switch back. Mobile users trying to skim an article don't always find this worth the effort and sometimes stick to heading-based navigation even when a different mode would be optimal.
 
-[^22]: At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
+[^25]: At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
 
-[^23]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
+[^26]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
 
-[^24]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^27]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^25]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^28]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^26]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^29]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
-[^27]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
+[^30]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
 
     <figure itemprop="hasPart" itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1675,6 +1774,6 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^28]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^31]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
 

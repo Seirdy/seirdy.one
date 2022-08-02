@@ -23,10 +23,14 @@ Restricted enhancement limits all enhancements to those that solve specific acce
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and address the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
 I'll cite the Web Accessibility Initiative's (WAI) "Techniques for WCAG 2.2" a number of times:
-
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
-Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+Each "Success Criterion" (requirement) of the WCAG has possible techniques. Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
+
+I'll also cite the WAI's "Making Content Usable for People with Cognitive and Learning Disabilities" document:
+=> https://www.w3.org/TR/coga-usable/ "Making Content Usable for People with Cognitive and Learning Disabilities"
+
+The document lists eight objectives. Each objective has associated personas, and can be met by several design patterns.
 
 Our goal: make a textual website maximally inclusive, using restricted enhancement.
 
@@ -67,15 +71,15 @@ This is the CSP for my main website, with hashes removed for readability:
 
 ```
 default-src 'none';
-img-src 'self' data:;
+img-src 'self';
+media-src 'self';
 style-src 'sha256-HASH';
-style-src-attr 'none';
 frame-ancestors 'none';
 base-uri 'none';
-form-action 'none';
+form-action FORM_DESTS;
 manifest-src 'self';
 upgrade-insecure-requests;
-sandbox allow-same-origin
+sandbox allow-same-origin allow-forms
 ```
 
 "default-src: 'none'" implies "script-src: 'none'", causing a compliant browser to forbid the loading of scripts. Furthermore, the "sandbox" CSP directive forbids a wide variety) of potentially insecure actions.
@@ -156,7 +160,7 @@ The effect is especially pronounced on low-end phones and mechanical hard drives
 
 One way to help browsers decide which disk-cached resources to prioritize is to use immutable assets. Include the `immutable` directive in your cache-control headers, and cache-bust modified assets by changing their URLs. You can also keep your asset counts low by combining textual assets (e.g. CSS) and inlining small resources.
 
-The only external assets on my pages are images and a web app manifest (for icons); I mark these assets as "immutable" and cache-bust them by including checksums in their filenames:
+I mark my website's assets as "immutable" and cache-bust them by including checksums in their filenames:
 
 ```
 cache-control: max-age=31557600, immutable
@@ -360,18 +364,19 @@ A similar image attribute that I *do* recommend is the "decoding" attribute. I t
 
 => https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding <img> decoding on MDN
 
-Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS spec.
+Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS specification.
 
-CSS containment allows authors to isolate sub-trees of the DOM. Combined with a property like "content-visibility", it enables browsers to defer rendering of less essential below-the-fold content. Try to avoid the "hidden" parameter when "auto" is better:
+CSS containment allows authors to isolate sub-trees of the DOM. This lets browsers make more informed optimizations: they can delay painting off-screen content or reduce re-calculations when isolated nodes change. Combined with a property like "content-visibility", it enables browsers to defer all rendering of less essential below-the-fold content.
 
 > "content-visibility: auto" is a more complex value than "content-visibility: hidden"; rather than being similar to display: none, it adaptively hides/displays an element’s contents as they become relevant to the user. It also doesn’t hide its skipped contents from the user agent, so screen readers, find-in-page, and other tools can still interact with it.
 => https://drafts.csswg.org/css-contain/#using-cv-auto CSS Containment Module
 
-Leveraging containment is a progressive enhancement, so there aren't any serious implications for older browsers. I use it for long lists of posts in my archives, allowing browsers to skip rendering off-screen posts.
+Leveraging containment and "content-visibility" is a progressive enhancement, so there aren't any serious implications for older browsers. I use "content-visibility" to defer rendering off-screen entries in my archives. Doing so allows me to serve long archive pages instead of resorting to pagination, with page-length limited only by download size.
 
 Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing layout shifts. Eliminate the layout shifts by calculating a value for the "contain-intrinsic-size" property. This is a comprehensive hide to calculating intrinsic size values, by Thijs Terluin of Teluin Webdesign:
-
 => https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/ Calculating 'contain-intrinsic-size' for 'content-visibility'
+
+The benefits of containment are especially noticeable when injecting styles into a page. "Dark mode" extensions perform noticeably better when enough elements receive layout and paint containment.
 
 ## In-page search
 
@@ -442,7 +447,7 @@ Ultimately, surveillance self-defense on the web is an arms race full of trade-o
 
 Browsers allow users to zoom by adjusting size metrics. Additionally, most browsers allow users to specify a minimum font size. Minimum sizes don't always work; setting size values in `px` can override these settings.
 
-In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for some decorations (e.g. borders),⁵ but they are uncommon. Set font size and line-spacing with a percentage and a unitless value, respectively:
+In your stylesheets, avoid using "px" where possible. Define sizes and dimensions using relative units (preferably "em"). Exceptions exist for rare items that that shouldn't scale with zoom (e.g. decoration, minimum margins).⁵ Set font size and line-spacing with a percentage and a unitless value, respectively:
 
 ```
 font: 107.5%/1.5 sans-serif;
@@ -460,7 +465,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images should usually have alt-text under 100 characters, excluding punctuation. Save longer descriptions for a caption or "aria-describedby". Exceptions exist.
+* Images should usually have alt-text under 100 characters, excluding punctuation. Save longer descriptions for a caption or "aria-describedby". Exceptions exist; this is just a weak norm.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 
 The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing alt-text. It's a little lacking in nuance, but makes for a good starting point:
@@ -740,24 +745,44 @@ A basic WCAG Level A requirement is for information to not be conveyed solely th
 ### In defense of link underlines
 
 Some typographers insist that underlined on-screen text is obsolete and hyperlinks are no exception.
-
 => https://practicaltypography.com/underlining.html Underlining | Butterick’s Practical Typography¹¹
 
-I disagree. One reason is that underlines make it easy to separate multiple consecutive inline links:
+I disagree. Readers already expect underlined text to signify a hyperlink. Don’t break fundamental affordances for aesthetics. Underlines are also necessary to distinguish the beginnings and ends of multiple consecutive links, especially among color-blind users.
 
+It’s impossible to discern the number of links in a sequence without some sort of separator. Whitespace alone isn’t sufficient:
 => gemini://seirdy.one/misc/underlines.png A line of two consecutive hyperlinks with and without underlines
 
-Underlines also make it easy for color-blind readers to distinguish both the beginnings and ends of links.
+Moreover, several parts of "Making Content Usable for People with Cognitive and Learning Disabilities" recommend underlining links.
 
-Readers already expect underlined text to signify a hyperlink. Don't break fundamental affordances for aesthetics.
+> Some users have trouble when controls have a different look, color, or shape than they have used before. For example, when links do not have underlines and blue or purple text some users will not know there is a link (even if this appears with focus).
+=> https://www.w3.org/TR/coga-usable/#how-it-helps-3 "Making Content Usable for People with Cognitive and Learning Disabilities", section 4.2.5.3: Clearly Identify Controls and Their Use: How it Helps
 
 ### Buttons versus links
 
 Buttons are another type of interactive element. Users are accustomed to recognizing buttons by their visually distinct interactive region. While hyperlinks are only signified by color and a text underline, buttons are signified by a background-color change and/or a visible border. Do not conflate the two!
 
-The purpose of a hyperlink is specifically to navigate to a different location. If a button exists to do the same thing, it shouldn't be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
+The purpose of a hyperlink is to navigate to a different location. If a button exists to do the same thing, it shouldn’t be a button; it should have both hyperlink semantics and presentation instead. Otherwise, the consequences of element activation are unclear.
 
-In addition to offering ample non-interactive space (see the prior "non-interactive space" section), ensure that non-interactive and interactive space regions are visually distinct. The backgrounds of regions containing multiple visible elements should be non-interactive.
+> Use a clear and recognizable design for controls. Make it clear what elements are controls and how to use them.
+> This includes:
+> 
+> Using a common style on controls (for example, links being underlined).
+> Using common design patterns on links and controls (for example, clicking on a link takes you to the page).
+> Making the borders of controls clear. Links in text do not need borders if identified properly (for example, a help icon has a border).
+> Making controls large enough so that users can click on it and not the item next to it.
+> Ensuring items that are not clickable do not look like links or controls.
+> 
+> When this is not possible, provide instructions that explain how to use the control.
+=> https://www.w3.org/TR/coga-usable/#what-to-do-3 Making Content Usable for People with Cognitive and Learning Disabilities, section 4.2.5.2: Clearly Identify Controls and Their Use: What to Do
+
+One key difference between buttons and links is the cursor appearance. Buttons should not turn the cursor into a “hand” or “pointer” icon. This article covers both sides of the issue.
+=> https://hidde.blog/some-pointers-on-default-cursors/ Some pointers on default cursors, by Hidde de Vries
+
+Personally, I think it’s best to respect the convention of the browser and OS rather than break it.
+
+### Visible non-interactive semantics
+
+In addition to offering ample non-interactive space (see the prior "non-interactive space" section), ensure that non-interactive and interactive regions are visually distinct. Avoid making interactive elements with many children.
 
 GitHub's mobile website is a serious offender:
 
@@ -784,7 +809,7 @@ Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format
 The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 => https://github.com/AOMediaCodec/libavif avifenc (lossless or lossy), included in libavif
-The reference AVIF encoder, included in libavif.¹² AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers.
+The reference AVIF encoder, included in libavif.¹² AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers. It also seems unsupported in Microsoft Edge.
 
 I put together a quick script to losslessly optimize images using these programs in my dotfile repo:
 
@@ -912,7 +937,9 @@ The first or second heading in the DOM, and the highest heading level, should be
 
 Remember that not all landmarks are announced by screen readers; for instance, many screen readers don't announce the ending of a <header> element in an article. An <hr> element is a good way to force the ending of a landmark to be visible: it introduces a thematic break between sections that is visible to assistive technologies and user-agents that don't support CSS.
 
-If this isn't possible, consider adding a "skip link" or two. Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners still benefit from a skip-link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
+Consider adding a "skip link" if some pages require many "Tab" keystrokes to reach the main content. Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners and motor-impaired users still benefit from a skip link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
+
+Note: I say that a skip link is useful to reduce the amount of "Tab" keystrokes required, but I don't know a good "threshold number" to signify "too many keystrokes". If it takes ten keystrokes to reach the main content, you're probably overdue for a skip-link.
 
 If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content. If it appears over existing content, it needs to have a solid background; if you set the background color, set a foreground color too. See the "Layout shifts" and "About custom colors" sections for more details.
 
@@ -1056,8 +1083,9 @@ Images do not reflow their text. When the viewport is narrower than the image di
 
 1. Allow the image to exceed the viewport width, triggering two-dimensional scrolling for the whole page.
 2. Shrink the image to fit the viewport, causing the text in the image to shrink with it.
+3. Allow the image to horizontally overflow.
 
-I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal.
+I already covered the first option in the prior subsection. If you expect viewers to read the text in the image and you don't link an image transcript, the second option isn't ideal. Overflow is almost never what we want.
 
 The best compromise is to ensure that the image isn't too wide, and can support large text on a narrow viewport. Lines of text in images should contain as few characters as possible. For a good exmple, see the "In defense of link underlines" section.
 
@@ -1088,6 +1116,8 @@ Small phones typically support display rotation. When phones switch to landscape
 => gemini://seirdy.one/misc/wcag_quickref.png Website with a banner covering the top half of the screen.
 
 When filtering criteria on the Quickref Reference page, a dickbar lists active filters. I increased the zoom level; you may have to add more filters to fill the screen with a smaller font.
+
+Ensure that the most important content is visible above the fold. On an article like this, that content would include the article title, site title, and information about where in the site you can find the article (a breadcrumbs list).
 
 ## Spacing
 
@@ -1478,27 +1508,30 @@ There are tons of ways to read a page; authors typically cater only to the mains
 
 * Screen readers
 * Switch access
-* Keyboard navigation, with the "Tab" key or caret navigation
-* Navigating with hand-tremors
-* Content extraction (e.g. "Reader Mode")
+* Navigating with the "Tab" key
+* Caret navigation
+* Content extractors or "Reader Mode"
 * Low-bandwidth connections
 * Unreliable, lossy connections
 * Metered connections
 * Hostile networks
+* Using in-page search
 * Downloading offline copies
-* Very narrow viewports (much narrower than a phablet)
+* Extra-narrow viewports
 * Mobile devices in landscape mode
 * Frequent window-resizers (e.g. users of tiled-window setups)
-* Printouts, esp. when paper and ink are rationed (common in schools)
+* Printouts with rationed paper or ink (common in schools)
 * Textual browsers
-* Uncommon graphical browsers
-* the Tor Browser (separate from "uncommon browsers" because of how "safest" mode is often incompatible with progressive enhancement and graceful degradation)
-* Disabling JavaScript (overlaps with the Tor Browser)
+* Disabling JavaScript
+* The Tor Browser's "Safest" mode
+* Non-mainstream browser engines
+* Browsing without stylesheets
+* Stylesheet alteration, injection, or replacement
 * Non-default color palettes
 * Forced color palettes
-* Aggressive content blocking (e.g. blocking all third-party content, frames, images, and cookies)
+* Adblockers, with a variety of filter-lists
+* Blocking third-parties, frames, images, and cookies
 * User-selected custom fonts
-* Stylesheet removal, alteration, or replacement
 * Machine translators
 
 Each of these may be dismissed as a "niche", especially given a profit motive (or worse, a growth imperative). Yet *many niches add up to a large population.* Every person who grows old becomes disabled; every long-distance traveller experiences poor connections.
@@ -1579,6 +1612,11 @@ A special thanks goes out to GothAlice for the questions she answered in #webdev
 
 ² Some addons will have reduced functionality; for instance, Tridactyl can't create an <iframe> for its command window. I consider this to be worthwhile since the most important functionality is still available, and because authors shouldn't feel compelled to support security weakening. I say this as someone who uses Tridactyl often.
 => https://github.com/tridactyl/tridactyl Tridactyl
+
+Moreover, the "sandbox" directive exposes some bugs in WebKit (i.e. Safari and most GTK-based browsers). On content governed by a "sandbox" directive without the "allow-same origin" and "allow-scripts" directives, some WebKit browser features won't work. One example is media controls. One page on my site has an "audio" element; I added "allow-scripts" to that page so it will work in WebKit-based browsers.
+=> https://bugs.webkit.org/show_bug.cgi?id=237281 WebKit bug 237281 documents the general issue
+=> https://bugs.webkit.org/show_bug.cgi?id=225865 WebKit bug 225865 documents the broken media player
+=> https://bugs.webkit.org/show_bug.cgi?id=218086 WebKit bug 218086 documents broken event listeners
 
 ³ Here's an overview of PE and my favorite write-up on the subject.
 => https://en.wikipedia.org/wiki/Progressive_enhancement Progressive Enhancement (Wikipedia)
