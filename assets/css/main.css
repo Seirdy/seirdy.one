@@ -57,7 +57,7 @@ html {
 		 * 108.75% is the minimum required to get superscripts to reach 14.5
 		 * CSS pixels with most default stylesheets. At that size, my dark
 		 * color palette has sufficient contrast.*/
-		font-size: 108.75%;
+		font-size: 109%;
 
 		/* Aligning to the center with space on both sides prevents accidental
 		* link activation on tablets, and is a common practice that users are
@@ -67,8 +67,8 @@ html {
 		/* WCAG recommends a max line width. Not everyone can resize the
 		 * viewport. This isn't for large blocks of text yet, so we don't have
 		 * to go by SC 1.4.8.
-		 * 45em = lowest acceptable width for titles, nav, footers, etc */
-		max-width: 42em;
+		 * 40em = lowest acceptable width for titles, nav, footers, etc */
+		max-width: 40em;
 
 		/* Phone cases can cover the edges. Swipe-from-edge navigations
 		 * should not conflict with the page elements. Focus outlines for
@@ -90,7 +90,7 @@ html {
 	li[itemprop="dataFeedElement"],
 	.narrow {
 		margin: auto;
-		max-width: 35em;
+		max-width: 34em;
 	}
 
 	/* Enable containment, especially useful for achive pages with
@@ -101,11 +101,13 @@ html {
 	/* We increase the target size of h2/h3 links in a way that would cause
 	 * issues with content containment */
 	article > :not(h2):not(h3) {
-		contain: inline-size layout paint style;
+		contain: inline-size layout paint;
 		/* Add padding on both sides so that focus outlines don't escape their
 		 * containers. This will let us enable CSS containment without
 		 * clipping overflowing elements. */
 		padding: 0 .5em;
+		margin-top: .25em;
+		margin-bottom: .25em;
 	}
 
 	/* Align titular h1 with top nav and body text. */
@@ -115,14 +117,22 @@ html {
 
 	/* Archive pages can get long. Allow them to get long without slowing
 	 * down the browser by using content-visibility. */
+	h2,
+	h3,
 	aside > a,
 	footer,
 	dt,
 	a[role="doc-backlink"],
 	section[role="doc-endnotes"],
-	li article {
+	li article,
+	summary {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 3em;
+	}
+
+	dt,
+	h3 {
+		contain-intrinsic-size: 1.5em;
 	}
 
 	footer,
@@ -140,33 +150,37 @@ html {
 		contain-intrinsic-size: auto 50em;
 	}
 
-	summary {
-		/* It's not obvious that a <summary> has button semantics.
-		 * "cursor: pointer" is used on MDN, web.dev, GitHub, gov.uk, and
-		 * others so it's not "novel" and won't surprise users. */
-		cursor: pointer;
-	}
-
 	/* Full-width elements (e.g. display: block) have known widths, so
 	 * contain their widths. */
+	html,
+	body,
+	main,
 	article,
 	h1,
+	h2,
+	h3,
 	pre,
 	dt,
-	summary {
-		contain: inline-size layout paint style;
+	summary,
+	section[role="doc-endnotes"] {
+		contain: inline-size layout paint;
 	}
 
 	p,
-	h2,
-	h3 {
-		contain: inline-size layout style;
+	figure {
+		contain: inline-size layout;
+	}
+
+	article > h2 {
+		margin: .25em 0;
+		padding: .25em 0;
 	}
 
 	/* If we have a list of disclosure widgets, we need some
 	 * non-interactive space on the screen that's safe to tap. */
 	form,
-	li details {
+	details {
+		contain: inline-size layout;
 		margin: .5em 0;
 	}
 
@@ -198,7 +212,6 @@ html {
 	dt {
 		padding: 1em .5em;
 		margin: -.25em 0 -.25em -.5em;
-		contain-intrinsic-size: auto 1.5em;
 	}
 
 	/* <dt> should not be closer to the previous <dd> than the following <dd>.
@@ -209,6 +222,7 @@ html {
 
 	dt > a,
 	aside > a {
+		contain: content;
 		margin: -.75em -.25em;
 	}
 
@@ -219,7 +233,6 @@ html {
 	/* List items with direct hyperlink children should only have one
 	 * hyperlink. */
 	li > a,
-	h3 > a,
 	aside > a,
 	nav ol a {
 		display: inline-block;
@@ -228,14 +241,29 @@ html {
 
 	/* Increase tap-target size of title links. */
 
-	h2 > a,
+	h2 > a {
+		contain: content;
+		display: inline-block;
+		/* Mis-alignment, I have no clue why it's there. */
+		margin: 0 .125em;
+		padding: .25em;
+	}
+
 	h3 > a {
 		contain: content;
 		display: inline-block;
 		padding: .5em .25em;
 	}
 
+	article > h3 {
+		padding: .25em;
+		margin: 0 0 0 -.5em;
+	}
+
+
+
 	/* align h-feeds in sections; they typically follow articles. */
+	a[role="doc-backlink"],
 	section article p {
 		margin-left: -.5em;
 	}
@@ -256,8 +284,11 @@ html {
 		padding-top: 0;
 	}
 
+	/* stylelint-disable selector-max-compound-selectors -- simplest way to describe link-lists */
+	:not(nav) > ul li > a,
 	nav:not([itemprop="breadcrumb"]) li,
 	ol li > a {
+		/* stylelint-enable selector-max-compound-selectors */
 		margin: .25em;
 	}
 
@@ -265,12 +296,13 @@ html {
 	a[role="doc-backlink"] {
 		contain: content;
 		display: inline-block;
-		margin-left: -.5em;
 		padding: .75em .5em;
 	}
 
 	/* skip link: make it invisible until focused, and put it on the top. */
 	a[href="#h1"] {
+		contain: content;
+		content-visibility: auto;
 		padding: 0 .25em;
 		position: absolute;
 		top: -2em;
@@ -292,7 +324,7 @@ sup > a {
  * contrast thresholds on the dark theme. Also prevent them from messing
  * with line-height. */
 sup {
-	font-size: 0.9em;
+	font-size: 0.85em;
 	line-height: 0;
 }
 
@@ -361,7 +393,7 @@ h1 {
 
 /* Very narrow screens: full hyphenation.
  * This is the typical width of a smart feature phone. */
-@media (max-width: 15em) {
+@media (max-width: 250px) {
 	body {
 		font-size: 100%;
 		-webkit-hyphens: auto;
