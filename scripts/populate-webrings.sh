@@ -85,9 +85,21 @@ endless_orbit() {
 		echo
 }
 
+netizens() {
+	printf 'Netizens,'
+	{
+		curl -sSL --compressed https://netizensring.link/onionring-variables.js \
+		| grep -C 1 https://seirdy.one/ | sd -s '];' "'https://netizensring.link/,'"
+		echo "'null',"
+	} | sd 'https://seirdy.one/,?' 'https://netizensring.link/,' \
+		| sd "\n|'" '' | trim_trailing_comma 
+		echo
+}
+
 print_csv_values() {
 	george
 	endless_orbit
+	netizens
 }
 
 if [ "$dry_run" = '1' ]; then
