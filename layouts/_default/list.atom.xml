@@ -78,7 +78,7 @@
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
 		{{ with .Params.image -}}
 		{{- $image := resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
-		<media:thumbnail url="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
 		{{- end }}
   </entry>
   {{- end -}}
