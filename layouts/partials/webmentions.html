@@ -78,7 +78,7 @@
 									{{- if findRE `^https://brid.gy/[^/]*/mastodon` $webmention.source -}}
 									<p role="doc-tip" itemprop="accessibilitySummary">This comment may have major formatting errors that could impact screen reader comprehension.</p>
 									{{- end -}}
-									<p><q itemprop="articleBody" class="p-content">{{ $webmention.content | replaceRE `^@Seirdy(@pleroma.envs.net)? ?` ""}}</q></p>
+									<p><q itemprop="text" class="p-content">{{ $webmention.content | replaceRE `^@Seirdy(@pleroma.envs.net)? ?` ""}}</q></p>
 								{{- end -}}
 							{{- end }}
 						</dd>
