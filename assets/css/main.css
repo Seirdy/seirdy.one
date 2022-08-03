@@ -99,7 +99,7 @@ html {
 		 * containing lists of interactives, with 8px in between.
 		 * Don't use relative units here; this margin shouldn't scale with
 		 * zoom, or else text will get narrower with zoom. */
-		padding: 0 16px;
+		padding: 0 14px;
 	}
 
 	/* 45em is too wide for long body text.
