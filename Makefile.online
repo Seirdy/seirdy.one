@@ -11,9 +11,9 @@ CHROME_PATH = $(CHROME_DIR)/thorium
 CHROMEDRIVER_PATH = $(CHROME_DIR)/chromedriver
 CHROME_PROFILE ?= /tmp/chrome-lighthouse
 JS_FLAGS=''
-CHROME_FLAGS += --disable-extensions --no-default-browser-check --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-device-discovery-notifications --disable-domain-reliability --disable-background-timer-throttling --disable-breakpad --enable-blink-features=LayoutInstabilityAPI --no-first-run --disable-background-networking --user-data-dir=$(CHROME_PROFILE) --enable-quic --start-in-incognito --origin-to-force-quic-on=$(DOMAIN):443
+CHROME_FLAGS += --headless --disable-extensions --no-default-browser-check --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-device-discovery-notifications --disable-domain-reliability --disable-background-timer-throttling --disable-breakpad --enable-blink-features=LayoutInstabilityAPI --no-first-run --disable-background-networking --user-data-dir=$(CHROME_PROFILE) --enable-quic --start-in-incognito --origin-to-force-quic-on=$(DOMAIN):443
 CHROME_FLAGS_COMMA = 'disable-extensions,no-default-browser-check,disable-client-side-phishing-detection,disable-component-update,disable-default-apps,disable-device-discovery-notifications,disable-domain-reliability,disable-background-timer-throttling,disable-breakpad,no-first-run,disable-background-networking,js-flags=--jitless'
-CPU_SLOWDOWN=15.0
+CPU_SLOWDOWN=12.0
 LIGHTHOUSE_ARGS += --budget-path linter-configs/budget.json --output html --output json --output-file lighthouse-results --throttling-method=devtools --throttling.cpuSlowdownMultiplier=$(CPU_SLOWDOWN) --chrome-flags="$(CHROME_FLAGS)"
 
 hint-online:
