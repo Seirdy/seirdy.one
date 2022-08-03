@@ -123,14 +123,29 @@ html {
 		/* Add padding on both sides so that focus outlines don't escape their
 		 * containers. This will let us enable CSS containment without
 		 * clipping overflowing elements. */
-		margin-top: .25em;
-		margin-bottom: .25em;
 		padding: 0 .5em;
 	}
 
 	/* Align titular h1 with top nav and body text. */
 	main > h1 {
 		padding-left: .25em
+	}
+
+	/* Breadcrumbs get a lot of padding, making the hr margin redundant
+	 * Due to containment, the wide blurb at the top of non-article pages
+	 * has a huge padding on the bottom. This actually works for archive
+	 * pages but not for the main page. */
+	article > hr,
+	body > hr,
+	main > hr {
+		margin: 0 .5em;
+	}
+	header hr {
+		margin-bottom: 0;
+	}
+
+	h1 {
+		margin: 0 0 .25em;
 	}
 
 	/* Archive pages can get long. Allow them to get long without slowing
@@ -404,7 +419,6 @@ blockquote {
 h1 {
 	-webkit-hyphens: auto;
 	hyphens: auto;
-	margin-top: .25em;
 }
 
 /* Very narrow screens: full hyphenation.
