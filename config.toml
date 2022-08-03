@@ -157,7 +157,8 @@ disableKinds = ["taxonomy", "term"]
 	# than IncludeFields above, depending on what you want.
 	excludeFields = ".*"
 
-# don't minify html but minify other resources, esp the fulltext rss/atom feeds
+# don't minify html but minify other resources
+# Don't minify atom feeds because it messes up whitespace in entry contents.
 [minify]
 	minifyOutput = true
 	disableXML = true

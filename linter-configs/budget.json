@@ -31,18 +31,22 @@
 			},
 			{
 				"resourceType": "document",
-				"budget": 60
+				"budget": 75
 			},
 			{
 				"resourceType": "image",
-				"budget": 35
+				"budget": 50 
 			},
 			{
 				"resourceType": "stylesheet",
-				"budget": 1
+				"budget": 3
 			}
 		],
 		"resourceCounts": [
+			{
+				"resourceType": "stylesheet",
+				"budget": 1
+			},
 			{
 				"resourceType": "script",
 				"budget": 0
