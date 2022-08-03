@@ -14,11 +14,16 @@ outputs:
     - html
     - gemtext
 ---
+<section role="doc-preface">
+<h2 id="preface">Preface</h2>
+
 This began as a reply to another article by Lucas F. Costa; it lists practices to improve user-experience (<abbr title="User Experience">UX</abbr>) of command-line interfaces (<abbr title="Command-Line Interface">CLIs</abbr>). It comes from a good place, and has some good advice: I particularly like its advice on input-validation and understandable errors. Unfortunately, a number of its suggestions are problematic, particularly from an accessibility perspective.
 
 This is a "living article" that I plan on adding to indefinitely. If you like it, come back in a month or two and check the "changelog" link in the article header.
 
 <p role="doc-tip">Note: this article specifically concerns CLIs, not full-blown textual user interfaces (<abbr title="Textual User Interfaces">TUIs</abbr>). It also focuses on utilities for UNIX-like shells; other command-line environments may have different conventions.</p>
+
+</section>
 
 {{<toc>}}
 
@@ -128,8 +133,10 @@ $ moac -
 
 2. Be safe. If a tool makes irreversible changes to the outside environment, add a `--dry-run` or equivalent option.
 
+3. If your tool has color output: disable color when the output is not a [TTY](https://en.wikipedia.org/wiki/Tty_(Unix)), unless the user explicitly force-enables color via a command-line flag. Many tools support a `--color` flag that accepts the values "always", "never", and "auto".
+
 More opinionated considerations {#more-opinionated-considerations}
------------------------------------------
+-------------------------------
 
 These considerations are far more subjective, debatable, and deserving of skepticism than the previous recommendations. There's a reason I call this section "considerations", not "recommendations". Exceptions abound; I'm here to present information, not to think on your behalf.
 
