@@ -24,6 +24,11 @@
 	nav:not([itemprop="breadcrumb"]) a:not([rel="home"]) {
 		display: none;
 	}
+
+	[role="note"] p,
+	[role="doc-tip"] p {
+		margin: .25em 0;
+	}
 }
 
 /* Print: don't break up self-contained items. */

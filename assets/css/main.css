@@ -4,18 +4,18 @@
  * specific a11y, compatibility, or critical
  * usability need.
  *
- * Two exceptions: I re-set the input styles so Safari wouldn't make
- * them pill-shaped, and I tweaked some margins/paddings to make some
- * things evenly aligned.
+ * Three exceptions:
+ * - I re-set the input styles so Safari wouldn't make them pill-shaped
+ * - I tweaked some margins/paddings to make some things evenly aligned
+ * - I made my IndieWeb profile photo align without an underline
+ *   on the whitespace between the photo and my name.
  *
- * I also don't use any classes except when styling depends on
- * *content* of an element rather than structure/semantics. Examples
- * include images that look better with pixelated upscaling, and
- * posts on the list of entries in the "notes" section that are tall
+ * I also don't use any non-microformats classes except when styling
+ * depends on *content* of an element rather than structure/semantics.
+ * Examples include images that look better with pixelated upscaling,
+ * and posts on the list of entries in the "notes" section that are tall
  * and need a larger contain-intrinsic-size.
- * One exception: a class for narrow width body text. My HTML contains
- * microformats2 classnames for IndieWeb parsers, but I don't actually
- * use those for styling.
+ * One exception: a class for narrow width body text.
  *
  * Some pages (e.g. post archives) are really long despite having a
  * small download size. Rather than resort to pagination, I decided to
@@ -104,7 +104,7 @@ html {
 
 	/* 45em is too wide for long body text.
 	 * Typically meets SC 1.4.8, plus or minus a few characters. */
-	[itemprop="articleBody"],
+	.e-content,
 	[itemprop="dataFeedElement"],
 	.narrow {
 		margin: auto;
@@ -140,6 +140,10 @@ html {
 	main > hr {
 		margin: 0 .5em;
 	}
+
+	/* containment has increased spacing of the first paragraph of h-feed
+	 * entries; offset that. */
+	li .p-name + p,
 	header hr {
 		margin-bottom: 0;
 	}
@@ -231,7 +235,7 @@ html {
 	aside > a, /* Used for section permalinks */
 	dt > a,
 	li > a,
-	[itemprop="comment"] dd > a,
+	.u-comment dd > a,
 	[itemprop="breadcrumb"] a,
 	[itemprop="breadcrumb"] > span {
 		padding: .75em .25em;
@@ -262,7 +266,7 @@ html {
 
 	header > nav,
 	a[href="#h1"], /* skip link */
-	[itemprop="comment"] dd > a ,
+	.u-comment dd > a ,
 	footer > nav,
 	/* List items with direct hyperlink children should only have one
 	 * hyperlink. */
@@ -423,7 +427,7 @@ h1 {
 
 /* Very narrow screens: full hyphenation.
  * This is the typical width of a smart feature phone. */
-@media (max-width: 250px) {
+@media (max-width: 272px) {
 	body {
 		font-size: 100%;
 		-webkit-hyphens: auto;
@@ -498,7 +502,7 @@ samp {
 }
 
 /* Remove list style from data feeds. */
-[itemtype="https://schema.org/DataFeed"] > ol {
+.h-feed > ol {
 	list-style-type: none;
 	padding: 0;
 }
@@ -507,7 +511,7 @@ samp {
  * viewport, triggering horizontal scrolling. Allow breaking words in
  * content I don't control (comments, names). For content I do control,
  * I just add soft hyphens to the HTML. */
-[itemprop="comment"],
+.u-comment,
 :not(pre) > code,
 :not(pre) > samp,
 span[itemtype="https://schema.org/Person"] {
@@ -548,11 +552,25 @@ summary {
 /* center standalone images; same justification as
  * for centering the body contents. Also makes images easier to see
  * for people holding a device with one hand. */
-[itemprop="articleBody"] img {
+.e-content img {
 	display: block;
 	height: auto;
 	margin: auto;
 	max-width: 100%;
+}
+
+.h-card .u-photo {
+	height: 1em;
+	width: 1em;
+	vertical-align: -.1em;
+}
+
+.h-card a.u-uid {
+	text-decoration: none;
+}
+
+a .p-name {
+	text-decoration: underline;
 }
 
 /* Stretch out audio elements so the progress meter is easier to use. */
