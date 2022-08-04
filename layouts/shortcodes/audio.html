@@ -2,6 +2,7 @@
 {{- $opus := resources.GetMatch (printf "/a/%s.opus" $name) -}}
 {{- $mp3 := resources.GetMatch (printf "/a/%s.mp3" $name) -}}
 {{- $isTranscribed := false -}}
+{{- $download_url := "" -}}
 {{- /* preloading an in-page audio asset under 32 KiB is fine. */ -}}
 {{- $shouldPreload := lt (len $opus.Content) 32768 -}}
 <audio
@@ -19,21 +20,24 @@
 	{{- end -}}
 	>
 	{{ with $opus -}}
+	{{- $download_url = $opus.RelPermalink -}}
 	{{ $opus_src := . | resources.Fingerprint "md5" -}}
 	<source
 		src="{{ $opus_src.RelPermalink }}"
 		type='audio/ogg; codecs="opus"' />
 	{{ end -}}
 	{{ with $mp3 -}}
+	{{- $download_url = $mp3.RelPermalink -}}
 	{{ $mp3_src := . | resources.Fingerprint "md5" -}}
 	<source
 		src="{{ $mp3_src.RelPermalink }}"
 		type="audio/mpeg" />
-	<p role="note">Your browser does not support HTML5 audio. Here’s a <a
-		href="{{ $mp3_src.RelPermalink }}"
-		{{ if $isTranscribed -}}
-			itemprop="audio contentUrl"
-		{{- end -}}
-		>link to download the audio file <samp translate="no">{{ $name }}.mp3</samp></a> instead.</p>
+	<p role="note">Your browser does not support HTML5 audio.</p>
 	{{ end -}}
-</audio>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
+</audio>
+<a
+	href="{{ $download_url }}" download=""
+	{{ if $isTranscribed -}}
+		itemprop="audio contentUrl"
+	{{- end -}}>Download audio file <samp translate="no">{{ $name }}.mp3</samp></a>
+{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}

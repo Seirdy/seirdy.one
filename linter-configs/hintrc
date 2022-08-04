@@ -44,14 +44,15 @@
 				"ignore": [
 					"time",
 					"picture",
-					"meta[name=color-scheme]",
-					"meta[name=theme-color]",
-					"img[decoding]",
+					"a[download]",
 					"a[referrerpolicy]",
-					"code[translate]",
 					"a[translate]",
+					"code[translate]",
+					"samp[translate]",
 					"span[translate]",
-					"samp[translate]"
+					"img[decoding]",
+					"meta[name=color-scheme]",
+					"meta[name=theme-color]"
 				]
 			}
 		],

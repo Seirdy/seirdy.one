@@ -813,7 +813,7 @@ Some users have trouble when controls have a different look, color, or shape tha
 
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
-<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.3: 
+<cite itemprop="name headline" class="p-name">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.3: 
 <a href="https://www.w3.org/TR/coga-usable/#how-it-helps-3">Clearly Identify Controls and Their Use: How it Helps</a>
 {{< /quotecaption >}}
 {{</quotation>}}
@@ -842,7 +842,7 @@ When this is not possible, provide instructions that explain how to use the cont
 
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
-<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.2: 
+<cite itemprop="name headline" class="p-name">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.2.5.2: 
 <a href="https://www.w3.org/TR/coga-usable/#what-to-do-3">Clearly Identify Controls and Their Use: What to Do</a>
 {{< /quotecaption >}}
 {{</quotation>}}
@@ -1169,7 +1169,7 @@ This includes:
 
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
-<cite itemprop="name headline">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.3.1: 
+<cite itemprop="name headline" class="p-name">Making Content Usable for People with Cognitive and Learning Disabilities</cite>, section 4.3.1: 
 <a href="https://www.w3.org/TR/coga-usable/#what-to-do-6">Make it Easy to Find the Most Important Tasks and Features of the Site</a>
 {{< /quotecaption >}}
 {{</quotation>}}
