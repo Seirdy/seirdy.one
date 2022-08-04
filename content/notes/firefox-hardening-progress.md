@@ -8,7 +8,7 @@ Firefox's multi-process architecture was overhauled, starting with a [utility pr
 
 They've rolled out a separate GPU process on some platforms; the roll-out will likely finish this year.
 
-Regarding toolchain hardening: Chromium official builds use [Clang's CFI sanitizer](https://clang.llvm.org/docs/ControlFlowIntegrity.html); Firefox doesn't. However, a subset of Firefox's libraries support [RLBox sandboxing](https://docs.rlbox.dev/). This isn't a complete solution, but is still a welcome change. [The Tor Browser disables libgraphite on the "safer" security level](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js?id=c8f7cd3fec5d5845179fcf71ad46888f2d14c8b0) due to security concerns which RLBox may have addressed.
+Regarding toolchain hardening: Chromium official builds use [Clang's CFI sanitizer](https://clang.llvm.org/docs/ControlFlowIntegrity.html); Firefox doesn't. However, a subset of Firefox's libraries support [RLBox sandboxing](https://hacks.mozilla.org/2021/12/webassembly-and-back-again-fine-grained-sandboxing-in-firefox-95/). This isn't a complete solution, but is still a welcome change. [The Tor Browser disables libgraphite on the "safer" security level](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js?id=c8f7cd3fec5d5845179fcf71ad46888f2d14c8b0) due to security concerns which RLBox may have addressed.
 
 I'm looking forward to seeing [PID namespace isolation](https://bugzilla.mozilla.org/show_bug.cgi?id=1151624) at some point.
 
