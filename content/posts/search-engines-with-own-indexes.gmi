@@ -75,30 +75,30 @@ These are large engines that pass all my standard tests and more.
 
 Google, Bing, and Yandex support structured data such as microformats1, microdata, RDFa, Open Graph markup, and JSON-LD. Yandex's support for microformats1 is limited; for instance, it can parse h-card metadata for organizations but not people. Open Graph and Schema.org are the only supported vocabularies I'm aware of. Mojeek is evaluating structured data; it's interested in Open Graph and Schema.org vocabularies.
 
-### Smaller indexes, relevant results
+### Smaller indexes or less relevant results
 
-These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly.
+These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly. I wouldn't recommend using these engines to find specific answers; they're better for learning about a topic by finding interesting pages related to a set of keywords.
 
 * Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁸ For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones.
-
 => https://rightdao.com  Right Dao
 
 * Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-
 => https://gigablast.com/  Gigablast
 => https://private.sh  Private.sh
 
 * Alexandria: A pretty new "non-profit, ad free" engine, with freely-licensed code. Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
-
 => https://www.alexandria.org/ Alexandria
 => https://github.com/alexandria-org/alexandria Alexandria engine source code
 
-* Yep: an ambitious engine from Ahrefs, an SEO/backlink-finder company, that "shares ad profit with creators and protects your privacy". Most engines show results that include keywords from or related to the query; Yep also shows results linked by pages containing the query. In other words, not all results contain relevant keywords. This makes it excellent for less precise searches and discovery of "related sites", especially with its index of *hundreds of billions of pages.* It's far worse at finding very specific information or recent events for now, but it will probably improve.
-
+* Yep: an ambitious engine from Ahrefs, an SEO/backlink-finder company, that "shares ad profit with creators and protects your privacy". Most engines show results that include keywords from or related to the query; Yep also shows results linked by pages containing the query. In other words, not all results contain relevant keywords. This makes it excellent for less precise searches and discovery of "related sites", especially with its index of *hundreds of billions of pages.* It's far worse at finding very specific information or recent events for now, but it will probably improve. It was known as "FairSearch" before its official launch.
 => https://yep.com/ Yep
 
-Yep supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data
+* SeSe Engine: Although it's a Chinese engine, its index seems to have a large-enough proportion of English content to fit here. The engine is open-source. It has surprisingly good results for such a low-budget project. Each result is annotated with detailed ranking metadata such as keyword relevance and backlink weight. Discovered in my access logs.
+=> https://sese.yyj.moe/ SeSe Engine
+=> https://github.com/RimoChan/sese-engine SeSe back-end Python code
+=> https://github.com/YunYouJun/sese-engine-ui SeSe-UI Vue-based front-end
 
+Yep supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data. The surprising quality of results from SeSe and Right Dao seems influenced by the crawlers' high-quality starting locations (e.g. Wikipedia).
 
 ### Smaller indexes, hit-and-miss
 
