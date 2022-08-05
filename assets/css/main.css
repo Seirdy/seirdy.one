@@ -367,12 +367,13 @@ sup {
 /* narrow screens: reduce list indentation, hyphenate nested lists
  * touch screens: lists of links should be easy to tap so give them
  * some spacing (partial SC 2.5.5). There should be non-interactive
- * space to the left that's safe to tap. */
+ * space to the left that's safe to tap.
+ * 1.75em is the minimum required for ol numbers to fit. */
 dd,
 ol,
 ul {
 	margin: 0;
-	padding-left: 1.5em;
+	padding-left: 1.75em;
 }
 
 blockquote,
@@ -425,8 +426,12 @@ h1 {
 	hyphens: auto;
 }
 
-/* Very narrow screens: full hyphenation.
- * This is the typical width of a smart feature phone. */
+/* Very narrow screens: full hyphenation, compactness
+ * This is the typical width of a smart feature phone, or a browser
+ * sidebar. At this tiny width, users are either unlikely to be using a
+ * touchscreen (KaiOS-like feature phones, desktop browser sidebars) or
+ * they're just reading non-interactively. being compact probably takes
+ * precedence over being touch-friendly. */
 @media (max-width: 272px) {
 	body {
 		font-size: 100%;
@@ -439,6 +444,10 @@ h1 {
 	[itemprop="breadcrumb"] a,
 	[itemprop="breadcrumb"] > span {
 		padding: .25em;
+	}
+
+	dd {
+		padding-left: 1em;
 	}
 
 	hr {
@@ -565,11 +574,11 @@ summary {
 	vertical-align: -.1em;
 }
 
-.h-card a.u-uid {
+.p-author a.u-uid {
 	text-decoration: none;
 }
 
-a .p-name {
+a .u-photo + .p-name {
 	text-decoration: underline;
 }
 

@@ -35,7 +35,7 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t(?:\t)?
 		| sd '<pre(?: tabindex="0")?>\n\t*<(code|samp)( |>)' '<pre tabindex="0"><$1$2' \
 		| sd '(?:\n)?</(code|samp)>\n(?:[\t\s]*)?</pre>' '</$1></pre>' \
 		| sd '</span>.span itemprop="familyName"' '</span> <span itemprop="familyName"' \
-		| sd '(</picture>|src="[^"]*" ?/>)<span itemprop="name" class="p-name fn n">' '$1 <span itemprop="name" class="p-name fn n">' \
+		| sd -f m 'class="u-photo photo"[^<]*<' 'class="u-photo photo"/> <' \
 		| sd '([a-z])<(data|time)' '$1 <$2' \
 		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1' \
 		| sd -s '/>' ' />'

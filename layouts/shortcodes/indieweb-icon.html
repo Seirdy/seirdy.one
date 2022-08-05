@@ -2,9 +2,9 @@
 {{- $favicon_base64 := $favicon.Content | base64Encode -}}
 {{- $favicon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
 {{- if in site.BaseURL ".onion" -}}
-<img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
-	src="data:image/png;base64,{{ $favicon_base64 }}" />
+<img itemprop="image" width="16" height="16" alt=""
+	src="data:image/png;base64,{{ $favicon_base64 }}" class="u-photo photo" />
 {{- else -}}
-<img itemprop="image" class="u-photo photo" width="16" height="16" alt=""
-	src="{{ $favicon_svg.Permalink }}" />
+<img itemprop="image" width="16" height="16" alt=""
+	src="{{ $favicon_svg.Permalink }}" class="u-photo photo" />
 {{- end }}
