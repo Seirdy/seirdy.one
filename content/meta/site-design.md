@@ -46,7 +46,6 @@ I also go further than WCAG in many aspects:
 
 - I ensure that the page works on extremely narrow viewports without triggering two-dimensional scaling. It should work at widths well below 200 CSS pixels.
 
-
 ### Assessment and evaluation
 
 I test each WCAG success criterion myself using the mainstream browser engines (Blink, Gecko, WebKit). I test using multiple screen readers: Orca (primary, with Firefox and Epiphany), NVDA (with Firefox and Chromium), Windows Narrator (with Microsoft Edge), Apple VoiceOver (with desktop and mobile Safari), and Android TalkBack (with Chromium).
@@ -78,28 +77,47 @@ This site sticks to Web standards. I regularly run a local build of [the Nu HTML
 
 I also perform cross-browser testing for both HTML and XHTML versions of my pages. I test with, but do not necessarily endorse, a large variety of browsers:
 
-- I maintain excellent compatibility with **mainstream engines:** Blink (Chromium and Edge), WebKit (Safari, Epiphany), and Gecko (Firefox). The hidden service also works well with the Tor Browser.
 
-- The site works well with **textual browsers.** Lynx and Links2 are first-class citizens for which all features work as intended. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup.
+Mainstream engines
+: I maintain excellent compatibility with mainstream engines: Blink (Chromium, Edge, QtWebEngine), WebKit (Safari, Epiphany), and Gecko (Firefox).
 
-- I also regularly test compatibility with **current alternative engines:** the SerenityOS browser, Servo, NetSurf, Dillo, Kristall, and Goanna (Pale Moon's Gecko fork). I have excellent compatibility with Goanna and Servo. The site is usable in NetSurf, Dillo, and the SerenityOS browser; the always-expanded `<details>` elements might look odd. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. It also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
+Tor Browser
+: My Tor hidden service also works well with the Tor Browser, with the exception of [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element can't play in the Tor Browser due to a bug involving NoScript and Firefox's handling of the `sandbox` CSP directive. To work around the issue, I include link to download the audio.
 
-- I occasionally test **abandoned engines,** sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Internet Explorer (with and without compatibility mode), Netscape Navigator, Opera Presto,[^1] and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine.
+Mainstream engine forks
+: Pale Moon and recent versions of K-Meleon use Goanna, a single-threaded fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available, fork of WebKit focused on lightweight embedded webviews. My site should work in both engines without any noticeable issues.
+
+Alternative engines
+: I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Only Servo supports `<details>`. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. The SerenityOS browser also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
+
+Textual browsers
+: The site works well with textual browsers. Lynx and Links2 are first-class citizens for which all features work as intended. I also test in [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup. I also test with ; I occasionally try Edbrowse too. In all textual browsers, the aforementioned incomplete `<details>` handling applies.
+
+Abandoned engines
+: I occasionally test abandoned engines, sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Dillo,[^1] Internet Explorer[^2] (with and without compatibility mode), Netscape Navigator, old Presto-based Opera versions,[^3] and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine. Besides the `<details>` issues, the site works perfectly well in Internet Explorer 11 and Opera Presto. The site has layout issues but remains usable in Tkhtml, KHTML, and Netscape.
+
+I strive to maintain compatibility to the following degrees:
+
+- Works without major issues in mainstream engines, the Tor browser, Goanna, and Ultralight.
+- Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but no major functionality will be disabled.
+- Baseline functionality in abandoned engines, Dillo, the SerenityOS browser. Some ancillary features may not work (e.g. forms for Webmentions and search), but you'll still be able to browse and read.
 
 Some engines I have not yet tested, but hope to try in the future:
 
+- [Flow Browser](https://www.ekioh.com/flow-browser/)
+- [gngr](https://gngr.info/)
+- [WeasyPrint](https://weasyprint.org/)
 - [Netzhaut](https://netzhaut.dev/)
 - [Kozmonaut](https://github.com/twilco/kosmonaut)
 - [Moon](https://github.com/ZeroX-DG/moon)
 - [hastur](https://github.com/robinlinden/hastur)
-- [Flow Browser](https://www.ekioh.com/flow-browser/)
 
 Machine-friendliness
 --------------------
 
 I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult. It's a big part of what I've decided to call ["agent optimization"]({{<relref "notes/agent-optimization.md">}}).
 
-This site is **parser-friendly.** It uses polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
+This site is **parser-friendly.** It uses well-formed polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
 
 I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with Ostatus and ActivityStreams XML namespaces.
 
@@ -170,6 +188,10 @@ Privacy
 This site is **privacy-respecting.** Its CSP blocks all scripts, third-party content, and other problematic features. I describe how I go out of my way to reduce the information you can transmit on this site in [my privacy policy](../privacy/).
 
 
-[^1]: Opera Presto isn't really abandoned. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That being said, I do test with the outdated desktop Presto engine in a sandboxed environment.
+[^1]: Although there's no official announcement of Dillo's demise, the browser development has been inactive for a while. The official site, including its repository, is down; [I mirrored the Dillo repository.](../../notes/2022/06/14/dillo-repository-mirror/)
+
+[^2]: [Internet Explorer's engine isn't abandoned](../../notes/2022/06/15/internet-explorer-is-almost-gone/), but the consumer version I have access to is.
+
+[^3]: Opera Presto isn't really abandoned. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That being said, I do test with the outdated desktop Presto engine in a sandboxed environment.
 
 
