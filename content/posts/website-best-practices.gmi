@@ -356,13 +356,14 @@ A hybrid between the two is paginated content in which users click a "load next 
 
 I've discussed loading pages in the background, but what about saving a page offline (e.g. with Ctrl + s)? While lazy-loading won't interfere with the ability to save a complete page offline, some of these related issues can. Excessive pagination and inline scrolling make it impossible to download a complete page without manually scrolling or following pagination links to the end.
 
-### Other ways to defer content
+## Long-page performance
 
-Deferring network requests is a bad idea, but there are other ways to improve large-page performance.
+Deferring network requests is a bad idea, as established in the previous “Against lazy loading” section. There are other ways to improve large-page performance.
 
-A similar image attribute that I *do* recommend is the "decoding" attribute. I typically use `decoding="async"` so that image decoding can be deferred.
-
+An alternative to the loading attribute that I do recommend is the decoding attribute. I typically use decoding="async" so that image decoding can be deferred.
 => https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding <img> decoding on MDN
+
+### CSS containment
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS specification.
 
@@ -378,13 +379,29 @@ Using containment for content at the end of the page is relatively safe. Using i
 
 The benefits of containment are especially noticeable when injecting styles into a page. "Dark mode" extensions perform noticeably better when enough elements receive layout and paint containment.
 
+# Performance of assistive technologies
+
+Eric Bailey’s gave a presentation describes how computing the accessibility tree can be expensive if a page has too many DOM nodes and custom elements:
+=> https://noti.st/ericwbailey/Yfyaxa/slides The intersection of performance and accessibility
+
+Browsers use complex heuristics to determine which elements to report, to reduce the size of the accessibility tree. Now that all major browsers are moving to multi-process architectures, some browser components interface with assistive technology (AT) in a separate process. Data about the page’s semantics needs to cross process boundaries, incurring additional overhead.
+
+Re-calculating nodes in the accessibility tree can create small delays for user interaction. These delays add up, causing the accessibility tree to fall out-of-sync with the actual page state. In extreme cases, an out-of-control accessibility tree may crash the AT. Moreover, speech synthesizers may be slow to start speaking when the CPU is under load. Delayed speech synthesis is incredibly annoying because it tends to omit words while “warming up”.
+
+When pages grow long, keep performance in check by doing the following:
+
+* Prefer semantic HTML over custom elements. The browser’s accessibility-tree-generation and element-filtering is optimized for semantic HTML; it has to do more guesswork to decipher custom elements.
+* Avoid scripts that delay user-input or cause complex DOM mutations. These will introduce delays that can cause significant AT usability issues.
+* Remember that CSS can impact the accessibility tree. Avoid using scripts to alter properties such as "display" and "visibility".
+* Test with screen readers on underpowered hardware. Examples include old entry-level Android phones and netbooks with aggressive thermal throttling.
+
 ## In-page search
 
 In-page search (e.g., using "Ctrl + f") has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
 Searchability is a good reason to prefer conveying information textually, when possible: video (especially without accurate captions), pictures of text, etc. aren't so easily searchable.
 
-Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in the "other ways to defer content" section.
+Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; Reddit's atrocious redesign is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in the "Long-page performance" section.
 
 => gemini://seirdy.one/misc/find.png searching for the word "good" in the phrase "I wonder how much good a" when a "see more" link obscures the match, before and after revealing the hidden text. From the Reddit redesign.
 

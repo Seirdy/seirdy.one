@@ -397,11 +397,14 @@ Caption below the panel
 
 {{< /transcribed-image-transcript >}} {{< /transcribed-image >}}
 
-### Other ways to defer content
+Long-page performance
+---------------------
 
-Deferring network requests is a bad idea, but there are other ways to improve large-page performance.
+Deferring network requests is a bad idea, as established in the [previous "Against lazy loading" section](#against-lazy-loading). There are other ways to improve large-page performance.
 
-A similar image attribute that I _do_ recommend is the [`decoding` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding). I typically use `decoding="async"` so that image decoding can be deferred.
+An alternative to the `loading` attribute that I _do_ recommend is the [`decoding` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#attr-decoding). I typically use `decoding="async"` so that image decoding can be deferred.
+
+### CSS containment
 
 Long pages with many DOM nodes may benefit from CSS containment, a more recently-adopted part of the CSS specification.[^10]
 
@@ -424,6 +427,22 @@ Leveraging containment and `content-visibility` is a progressive enhancement, so
 
 Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing [layout shifts](#layout-shifts). Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating 'contain-intrinsic-size' for 'content-visibility'" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/about-us/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values.
 
+### Performance of assistive technologies
+
+{{<mention-work itemtype="CreativeWork" itemprop="mentions">}}{{<indieweb-person first-name="Eric" last-name="Bailey" url="https://ericwbailey.design/" itemprop="author" appendString="’s">}} presentation {{<cited-work name="The intersection of performance and accessibility" url="https://noti.st/ericwbailey/Yfyaxa/slides">}}{{</mention-work>}} describes how computing the accessibility tree can be expensive if a page has too many DOM nodes and custom elements. Browsers use complex heuristics to determine which elements to report, to reduce the size of the accessibility tree. Now that all major browsers are moving to multi-process architectures, some browser components interface with assistive technology (<abbr>AT</abbr>) in a separate process. Data about the page's semantics needs to cross process boundaries, incurring additional overhead.
+
+Re-calculating nodes in the accessibility tree can create small delays for user interaction. These delays add up, causing the accessibility tree to fall out-of-sync with the actual page state. In extreme cases, an out-of-control accessibility tree may crash the <abbr>AT</abbr>. Moreover, speech synthesizers may be slow to start speaking when the CPU is under load. Delayed speech synthesis is incredibly annoying because it tends to omit words while "warming up".
+
+When pages grow long, keep performance in check by doing the following:
+
+* Prefer semantic HTML over custom elements. The browser's accessibility-tree-generation and element-filtering is optimized for semantic HTML; it has to do more guesswork to decipher custom elements.
+
+* Avoid scripts that delay user-input or cause complex DOM mutations. These will introduce delays that can cause significant <abbr>AT</abbr> usability issues.
+
+* Remember that CSS can impact the accessibility tree. Avoid using scripts to alter properties such as `display` and `visibility`.
+
+* Test with screen readers on underpowered hardware. Examples include old entry-level Android phones and netbooks with aggressive thermal throttling.
+
 In-page search
 --------------
 
@@ -431,7 +450,7 @@ In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>f</kbd>) has been a basic fea
 
 Searchability is a good reason to prefer conveying information textually, when possible: video (especially without accurate captions), pictures of text, etc. aren't so easily searchable.
 
-Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; [Reddit's atrocious redesign](#reddit-redesign) is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "other ways to defer content" section](#other-ways-to-defer-content).
+Web pages that hide content behind "show content" widgets are difficult to search through: users need to toggle "show content" for each item they wish to search. Often, in-page search highlights are hidden; [Reddit's atrocious redesign](#reddit-redesign) is a serious offender. If you need to hide some content for performance reasons, I described a less hostile way to do so in [the "Long-page performance" section](#long-page-performance).
 
 {{<image-figure id="reddit-redesign">}}
 
