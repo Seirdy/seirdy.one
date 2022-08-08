@@ -887,6 +887,23 @@ Screenshot of the <a href="https://github.com/nihui/waifu2x-ncnn-vulkan/issues">
 
 Someone using the GitHub issues interface for the first time will struggle to identify interactive regions and discern whether they trigger navigations or different actions.
 
+### Against focusable containers
+
+Screen readers like iOS VoiceOver[^22] fail to follow in-page links whose targets are not focusable. Designers often work around this by annotating link targets with the `tabindex="-1"` HTML attribute. This is a good idea when a link target is a heading or piece of [phrasing content](https://html.spec.whatwg.org/dev/dom.html#phrasing-content). Unfortunately, making large containers focusable ruins keyboard-navigability.
+
+Normally, if you select some text in a page and press <kbd>Tab</kbd>, the tab-focusable element _after_ the selected text will receive focus. However, if the selectable text is inside a focusable container---even a container with a negative `tabindex`---pressing <kbd>Tab</kbd> will move focus to the _start_ of the container. If you're reading this on a desktop browser, you can experience this first-hand: select some text in this paragraph and press <kbd>Tab</kbd>. Then, do the same in [this snapshot of an excellent _Smashing Magazine_ article](https://web.archive.org/web/20220808163715/https://www.smashingmagazine.com/2022/06/voice-control-usability-considerations-partially-visually-hidden-link-names/).[^23]
+
+{{<image-figure id="focus-container">}} {{<picture name="focus-container" alt="Two screenshots of an article byline above a title. First, the title has selected text; then, the byline is focused.">}}
+
+<figcaption itemprop="caption">
+
+Two screenshots of [the aforementioned _Smashing Magazine_ article](https://web.archive.org/web/20220808163715/https://www.smashingmagazine.com/2022/06/voice-control-usability-considerations-partially-visually-hidden-link-names/) after I selected the title text, before and after pressing <kbd>Tab</kbd>. The focus moves _backwards_ to the start of the container because the container is focusable. The focus should have moved to an element after the selected text.
+
+</figcaption>
+{{</image-figure>}}
+
+This behavior is particularly frustrating on long pages. Imagine if pressing <kbd>Tab</kbd> took you to the start of this article!
+
 Image optimization {#image-optimization}
 ------------------
 
@@ -906,7 +923,7 @@ Some image optimization tools I use:
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
 
 `avifenc`
-: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^22] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers. It also seems unsupported in Microsoft Edge.[^23]
+: The reference AVIF encoder, included in [libavif](https://github.com/AOMediaCodec/libavif).[^24] AVIF lossless compression is typically useless, but its lossy compression is pretty unique in that it leans towards detail removal rather than introducing compression artifacts. Note that AVIF is not supported by Safari or most WebKit-based browsers. It also seems unsupported in Microsoft Edge.[^25]
 
 I put together [a quick script](https://git.sr.ht/~seirdy/dotfiles/tree/3b722a843f3945a1bdf98672e09786f0213ec6f6/Executables/shell-scripts/bin/optimize-image) to losslessly optimize images using these programs. For lossy compression, I typically use [GNU Parallel](https://www.gnu.org/software/parallel/) to mass-generate images using different options before selecting the smallest image at the minimum acceptable quality. Users who'd rather avoid the command line while performing lossy compression can instead check out [Squoosh](https://squoosh.app/), a JavaScript app that bundles Web&shy;Assembly-compiled encoders; I've heard good things about it.
 
@@ -1024,7 +1041,7 @@ The first or second heading in the DOM, and the highest heading level, should be
 
 Remember that not all landmarks are announced by screen readers; for instance, many screen readers don't announce the ending of a `<header>` element in an article. An `<hr>` element is a good way to force the ending of a landmark to be visible: it introduces a thematic break between sections that is visible to assistive technologies and user-agents that don't support CSS.
 
-Consider adding a "skip link" if some pages require many <kbd>Tab</kbd> keystrokes to reach the main content.[^24] Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners and motor-impaired users still benefit from a skip link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
+Consider adding a "skip link" if some pages require many <kbd>Tab</kbd> keystrokes to reach the main content.[^26] Visually-impaired users generally prefer navigating by headings or landmarks, but screen reader beginners and motor-impaired users still benefit from a skip link. Skip links are especially helpful when pure heading- and landmark-based navigation isn't optimal.
 
 If your skip link toggles visibility states when focused, ensure that it doesn't move any existing content; see [the "Layout shifts" section](#layout-shifts) for more details. If it appears over existing content, it needs to have a solid background; if you set the background color, set a foreground color too as described in [the "About custom colors" section](#about-custom-colors).
 
@@ -1034,7 +1051,7 @@ Users of <abbr title="assistive technology">AT</abbr>s such as screen readers pr
 
 Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
-Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^25] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
+Think twice before placing important content immediately after skippable content such as nested landmarks, long code snippets, figures, and large lists. AT users who wish to skip content may jump directly to the next heading, glossing over anything between the skippable content and subsequent heading; this is especially common on mobile devices.[^27] When it makes sense to do so, place skippable content in its own sections and/or at the end of its parent section.
 
 ### Single-column layout
 
@@ -1123,7 +1140,7 @@ Users employing machine translation will not benefit from your soft hyphens, so 
 
 Where long inline `<code>` elements can trigger horizontal scrolling, consider a scrollable `<pre>` element instead. Making a single element horizontally scrollable is far better than making the entire page scrollable in two dimensions. Hard-wrap code blocks so that they won't horizontally scroll in most widescreen desktop browsers.
 
-Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter.[^26] The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
+Be sure to test your hyphens with NVDA or Windows Narrator: these screen readers' pronunciation of words can be disrupted by poorly-placed hyphens. Balancing the need to adapt to narrow screens against the need to sound correctly to a screen reader is a complex matter.[^28] The best place to insert a hyphen is between compound words. For example, splitting "Firefighter" into "Fire-fighter" is quite safe. Beyond that, try listening to hyphenated words in NVDA to ensure they remain clear.
 
 ### Keeping text together
 
@@ -1383,7 +1400,7 @@ On one hand, users who need enhanced focus visibility may override the default f
 
 The WCAG [Success Criterion 2.4.12](https://w3c.github.io/wcag/guidelines/22/#focus-appearance-enhanced) recommends making focus indicators 2&nbsp;px thick. While this success criterion is only AAA-level, it's easy enough to meet and beneficial enough to others that we should all meet it.
 
-You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^27]
+You can use `:focus` and `:focus-visible` to highlight selected and keyboard-focused elements, respectively. Take care to only alter styling, not behavior: only keyboard-focusable elements should receive outlines. Modern browser stylesheets use `:focus-visible` instead of `:focus`; old browsers only support `:focus` and re-style a subset of focusable elements. Your stylesheets should do the same, to match browser behavior.[^29]
 
 {{<codefigure>}}
 
@@ -1461,7 +1478,7 @@ Screen readers on touch screen devices are also quite different from their deskt
 
 Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
 
-Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^28]
+Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^30]
 
 Default verbosity does, however, convey symbols and emoji. Use symbols and emoji judiciously, since they can get pretty noisy if you aren't careful. Use `aria-labelledby` on symbols when appropriate; I used labels to mark my footnote backlinks, which would otherwise be read as <samp>right arrow curving left</samp>. If you have to use a symbol or emoji, first test how assistive technologies announce it; the emoji name may not communicate what you expect.
 
@@ -1490,7 +1507,7 @@ No matter how simple a page is, I don't think simplicity eliminates the need for
 
 Automated tests---especially accessibility tests---are a supplement to manual tests, not a replacement for them. Think of them as time-savers that bring up issues for further research, containing both false positives and false negatives.
 
-These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^29]
+These are the tools I use regularly. I've deliberately excluded tools that would be redundant.[^31]
 
 
 [Nu HTML checker](https://validator.nu/)
@@ -1503,7 +1520,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 : An auditing tool by Google that uses the DevTools protocol in any Chromium-based browser. Skip the "Access&shy;ibility" category, since it just runs a subset of axe-core's audits. The most useful audit is the tap target size check in its "SEO" category. Note that your `sandbox` CSP directive will need to include `allow-scripts` for it to function.
 
 [Webhint](https://webhint.io/)
-: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^30]
+: Similar to Lighthouse. Again, you can ignore the accessibility audits if you already use axe-core. I personally disagree with some of its hints: the "unneeded HTTP headers" hint ignores the fact that the CSP can have an effect on non-hypertext assets, the "HTTP cache" hint has an unreasonable bias against caching HTML, and the "Correct `Content-Type` header" recommends charset attributes a bit too agg&shy;ressively.[^32]
 
 [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated/)
 : Has a scope similar to axe-core. Its "Sensory Characteristics" audit seems unique.
@@ -1533,7 +1550,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 1. Test in all three major browser engines: Blink, Gecko, and WebKit.
 
-2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^31]
+2. Evaluate the heaviness and complexity of your scripts (if any) by testing with your browser's <abbr title="just-in-time">JIT</abbr> compilation disabled.[^33]
 
 3. Test using the Tor Browser's safest security level enabled (disables JS and other features).
 
@@ -1561,7 +1578,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 15. Try printing out your page in black-and-white from an unorthodox graphical browser.
 
-16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^32]
+16. Download your webpage and test how multiple word processors render and generate PDFs from it.[^34]
 
 17. Combine conversion tools. Combine an HTML-<wbr />to-<wbr />EPUB converter and an EPUB-<wbr />to-<wbr />PDF converter, or stack multiple article-extraction utilities. Be creative and enjoy breaking your site. When something breaks, examine the breakage and see if it's caused by an issue in your markup, or a CSS feature with an equivalent alternative.
 
@@ -1612,8 +1629,6 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until the <cite>[WAI-Adapt: Help and Support Module](https://www.w3.org/TR/adapt-help/)</cite> draft specification matures and its vocabularies gain adoption before going in depth.
 
 * Spatial navigation
-
-* Why in-page links should generally point to phrasing content rather than sections (pointing to sections messes with tab order).
 
 * The [principle of redundant coding](https://w3c.github.io/Mobile-A11y-TF-Note/#provide-clear-indication-that-elements-are-actionable)
 
@@ -1771,27 +1786,31 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     I find <cite>Practical Typography</cite> quite useful for printed works, and incorporated a more moderate version of its advice on soft-hyphens into this page. With a few such exceptions, I generally find it to be poor advice for Web content.
 
-[^22]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
+[^22]: I can't confirm if this is also an issue on VoiceOver for macOS, because I haven't borrowed the hardware required to test it.
 
-[^23]: I find it quite odd that Microsoft Edge doesn't support AVIF. Chromium has supported AVIF for a long time, and Edge is based on Chromium. AVIF is a royalty-free format; I don't know why Microsoft would remove support for it, especially since Microsoft allows adding AVIF support to Windows. I think Edge also removed Chromium's experimental, off-by-default support for JPEG-XL.
+[^23]: I linked to a snapshot from the Wayback Machine in hopes that the live version of the Smashing Magazine site will get fixed.
 
-[^24]: I say that a skip link is useful to reduce the amount of <kbd>Tab</kbd> keystrokes required, but I don't know a good "threshold number" to signify "too many keystrokes". If it takes ten keystrokes to reach the main content, it's probably time to add a skip-link.
+[^24]: libavif links against libaom, librav1e, and/or libsvtav1 to perform AVIF encoding and decoding. libaom is best for this use-case, particularly since libaom can link against libjxl to use its Butteraugli distortion metric. This lets libaom optimize the perceptual quality of lossy encodes much more accurately.
 
-[^25]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
+[^25]: I find it quite odd that Microsoft Edge doesn't support AVIF. Chromium has supported AVIF for a long time, and Edge is based on Chromium. AVIF is a royalty-free format; I don't know why Microsoft would remove support for it, especially since Microsoft allows adding AVIF support to Windows. I think Edge also removed Chromium's experimental, off-by-default support for JPEG-XL.
+
+[^26]: I say that a skip link is useful to reduce the amount of <kbd>Tab</kbd> keystrokes required, but I don't know a good "threshold number" to signify "too many keystrokes". If it takes ten keystrokes to reach the main content, it's probably time to add a skip-link.
+
+[^27]: ATs typically let users navigate by headings, landmarks, paragraphs, and links. Most users prefer skipping article content with heading-based navigation. Keyboard users can bind different keys to different modes of navigation, but mobile users can only access one navigation mode at a time.
 
     Mobile users wishing to temporarily switch modes have to stop, change their navigation mode, perform a navigation gesture, and switch back. Mobile users trying to skim an article don't always find this worth the effort and sometimes stick to heading-based navigation even when a different mode would be optimal.
 
-[^26]: At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
+[^28]: At least, it will be until [NVDA bug 9343](https://github.com/nvaccess/nvda/issues/9343) gets resolved.
 
-[^27]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
+[^29]: If you'd like to learn more, {{<mention-work itemtype="BlogPosting">}}{{< cited-work name="A guide to designing accessible, WCAG-compliant focus indicators" url="https://www.sarasoueidan.com/blog/focus-indicators/" extraName="headline" >}} by {{< indieweb-person url="https://www.sarasoueidan.com/" first-name="Sara" last-name="Soueidan" url="https://www.sarasoueidan.com/" itemprop="author">}}{{</mention-work>}} has far more details on making accessible focus indicators.
 
-[^28]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
+[^30]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^29]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^31]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
 
-[^30]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
+[^32]: My site caches HTML documents for ten minutes and caches the RSS feed for several hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
-[^31]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
+[^33]: Consider disabling the JIT for your normal browsing too; doing so removes whole classes of vulnerabilities. In Firefox, navigate to <samp>about:<wbr />config</samp> and toggle some flags under <code>javascript<wbr />.options</code>.
 
     <figure itemprop="hasPart" itemscope="" itemtype="https://schema.org/SoftwareSourceCode">
     <figcaption>
@@ -1807,6 +1826,6 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
     In Chromium and derivatives, run the browser with `--js-flags='--jitless'`; in the Tor Browser, set the security level to "Safer".
 
-[^32]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
+[^34]: LibreOffice can also render HTML but has extremely limited support for CSS. OnlyOffice seems to work best, but doesn't load images. If your page is CSS-optional, it should look fine in both.
 
 

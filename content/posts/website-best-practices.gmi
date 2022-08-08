@@ -814,6 +814,22 @@ The background region of the visible issue is interactive, and so are its conten
 
 Someone using the GitHub issues interface for the first time will struggle to identify interactive regions and discern whether they trigger navigations or different actions.
 
+### Against focusable containers
+
+Screen readers like iOS VoiceOver fail to follow in-page links whose targets are not focusable. Designers often work around this by annotating link targets with the `tabindex="-1"` HTML attribute. This is a good idea when a link target is a heading or piece of phrasing content.
+
+=> https://html.spec.whatwg.org/dev/dom.html#phrasing-content Phrasing content defined by the HTML Living Standard
+
+Unfortunately, making large containers focusable ruins keyboard-navigability.
+
+Normally, if you select some text in a page and press Tab, the tab-focusable element after the selected text will receive focus. However, if the selectable text is inside a focusable container—even a container with a negative tabindex—pressing Tab will move focus to the start of the container. If you’re reading this on a desktop browser, you can experience this first-hand: select some text in this paragraph and press Tab. Then, do the same in this snapshot of an excellent Smashing Magazine article:
+=> https://web.archive.org/web/20220808163715/https://www.smashingmagazine.com/2022/06/voice-control-usability-considerations-partially-visually-hidden-link-names/ Smashing Magazine: Voice Control Usability Considerations For Partially Visually Hidden Link Names (Wayback Machine snapshot)
+
+=> gemini://seirdy.one/misc/focus-container.png Two screenshots of an article byline above a title. First, the title has selected text; then, the byline is focused.
+This image shows two screenshots of the aforementioned Smashing Magazine article after I selected the title text, before and after pressing Tab. The focus moves backwards to the start of the container because the container is focusable. The focus should have moved to an element after the selected text.
+
+This behavior is particularly frustrating on long pages. Imagine if pressing Tab took you to the start of this article!
+
 ## Image optimization
 
 Some image optimization tools I use:
@@ -1528,7 +1544,6 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Ways to support non-mainstream and older browsers by supporting subsets of specifications and using progressive enhancement.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
 * Spatial navigation
-* Why in-page links should generally point to phrasing content rather than sections (pointing to sections messes with tab order).
 * The principle of redundant coding
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI- draft specification matures and its vocabularies gain adoption before going in depth:
 => https://www.w3.org/TR/adapt-help/ WAI-Adapt: Help and Support Module
