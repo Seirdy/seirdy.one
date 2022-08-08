@@ -442,6 +442,8 @@ A personal example: I set my preferred browser font to "sans-serif", and map it 
 
 The "users don't know better and need us to make decisions for them" mindset isn't without merits; however, in my opinion, it's overused. Using system fonts doesn't make your website harder to use, but it does make it smaller and stick out less to the subset of users who care enough about fonts to change them. This argument isn't about making software easier for non-technical users; it's about branding by asserting a personal preference.
 
+Moreover, third-party fonts may not always work. The Tor Browser's "Safer" and "Safest" modes and iOS 16's "Lockdown Mode" disable them. Content-blockers like Firefox Focus and uBlock Origin prominently expose remote-font toggles. If you ship remote fonts, you'll need to test your site with remote *and* system fonts.
+
 ### Can't users globally override stylesheets instead?
 
 It's not a good idea to require users to automatically override website stylesheets to see their preferred fonts. Doing so would break websites that use fonts such as Font Awesome to display vector icons. We shouldn't have these users constantly battle with websites the same way that many adblocking/script-blocking users (myself included) already do when there's a better option.
@@ -698,7 +700,7 @@ If you can't bear the thought of parting with your solid-black background, worry
 => https://drafts.csswg.org/mediaqueries-5/#prefers-contrast Media Queries Level 5, section 11.3: prefers-contrast
 => https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast prefers-contrast on MDN
 
-I personally like a foreground and background of "#E9E9E9" and "#111", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#111" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#222".
+I personally like a foreground and background of "#E9E9E9" and "#191919", respectively. These shades seem to be as far apart as possible without causing accessibility issues: "#191919" is barely bright enough to create a soft "glow" capable of minimizing halos among slightly astigmatic users, but won't ruin contrast on cheap displays. I also support a "prefers-contrast: less" media query which lightens the background to "#333". An earlier version of this article recommended a background of "#111", but two helpful readers sensitive to overstimulation and halation found "#191919" preferable.
 
 If you use JavaScript: avoid setting colors, especially dark-mode colors, using JavaScript. Using JavaScript to set a styles risks introducing a "Flash of Unstyled Content" (FOUC). In the case of a dark theme, this FoUC manifests as a "White Flash of Death" (WFoD). A WFoD is incredibly irritating for dark-mode users; at worst, it could put photosensitive epileptic users at risk. CSS is a render-blocking resource for a reason.
 
@@ -796,6 +798,9 @@ One key difference between buttons and links is the cursor appearance. Buttons s
 => https://hidde.blog/some-pointers-on-default-cursors/ Some pointers on default cursors, by Hidde de Vries
 
 Personally, I think it’s best to respect the convention of the browser and OS rather than break it.
+
+Read more about the differences between buttons and links:
+=> https://yatil.net/blog/buttons-vs-links Buttons vs. Links by Eric Eggbert.
 
 ### Visible non-interactive semantics
 
@@ -917,10 +922,11 @@ I only recommend using SVG in images; not embeds, objects, or directly in the bo
 
 Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
-This advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers.
+This advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers. Moreover, tools like usvg can simplify complex SVGs to a tiny subset of the SVG spec.
+=> https://github.com/RazrFalcon/resvg/tree/master/usvg usvg
+=> https://github.com/RazrFalcon/resvg/blob/master/docs/usvg_spec.adoc usvg specification
 
 Two tools that can optimize the size of an SVG file are SVGO and the now-discontinued svgcleaner:
-
 => https://github.com/svg/svgo SVGO
 => https://github.com/RazrFalcon/svgcleaner svgcleaner
 
@@ -1002,6 +1008,11 @@ Sidebars are probably unnecessary, and can be quite annoying to readers who re-s
 2. The site doesn't use responsive design. The navbar and main content are now squeezed together. Readers will probably close the page.
 
 Neither situation looks great.
+
+Here's a work-in-progress document from the WAI, describing issues caused by significant responsive changes:
+=> https://w3c.github.io/low-vision-a11y-tf/requirements#maintain-point-of-regard Low Vision User Accessibility Requirements
+
+It encourages designers to “maintain point of regard” during responsive changes (the “point of regard” is the place a reader is looking at). Unfortunately, it’s not always possible to “guess” whether the point of regard is the main content or a sidebar.
 
 ### Sidebar alternatives
 
@@ -1516,6 +1527,9 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 * Keyboard-driven browsers and extensions. Qutebrowser, Luakit, visurf, Tridactyl, etc.
 * Ways to support non-mainstream and older browsers by supporting subsets of specifications and using progressive enhancement.
 * Avoiding "_blank" targets in URLs unless absolutely necessary.
+* Spatial navigation
+* Why in-page links should generally point to phrasing content rather than sections (pointing to sections messes with tab order).
+* The principle of redundant coding
 * Ways to improve comprehension by readers who struggle to understand non-literal language (certain manifestations of cognitive disabilities, non-native speakers unfamiliar with idioms, etc.). I might wait until this WAI- draft specification matures and its vocabularies gain adoption before going in depth:
 => https://www.w3.org/TR/adapt-help/ WAI-Adapt: Help and Support Module
 
@@ -1546,7 +1560,7 @@ There are tons of ways to read a page; authors typically cater only to the mains
 * Stylesheet alteration, injection, or replacement
 * Non-default color palettes
 * Forced color palettes
-* Adblockers, with a variety of filter-lists
+* Adblockers, with various filter-lists
 * Blocking third-parties, frames, images, and cookies
 * User-selected custom fonts
 * Machine translators
