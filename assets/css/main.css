@@ -205,7 +205,7 @@ html {
 	}
 
 	figure,
-	p {
+	:not(li) > p {
 		contain: inline-size layout;
 	}
 
@@ -333,6 +333,7 @@ html {
 		contain: content;
 		display: inline-block;
 		padding: .75em .5em;
+		margin-top: -1em;
 	}
 
 	/* skip link: make it invisible until focused, and put it on the top. */

@@ -6,7 +6,8 @@
 <!--
 	Add heading to footnotes, remove unused class.
 	Requires Goldmark v1.4.12 or higher, since that version switched
-	endnotes from a <section> to a <div>.
+	endnotes from a <section> to a <div>. This switches them back to a section,
+	since doc-endnotes inherits a <section> role.
 -->
 {{- $referencesWithoutHeading    := `(<div class="footnotes" role="doc-endnotes">
 <hr />)` -}}
@@ -43,16 +44,19 @@
 {{- $tocHeadingInside := `<nav id="TableOfContents" role="doc-toc" aria-labelledby="toc-hd" tabindex="-1">
 	<h2 id="toc-hd">Table of Contents</h2>` -}}
 
-<!--Give footnote backlinks accessible names-->
-{{- $footnoteBacklinksBad  :=  `<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
-{{- $footnoteBacklinksGood :=  `<br /><a href="#fnref:${1}" aria-labelledby="bl1-${1} bl2-${1}"${2}><span id="bl1-${1}">Back</span><span id="bl2-${1}" hidden=""> to reference ${1}</span>` -}}
+<!--
+	Give footnote backlinks accessible names.
+	The backlinks should be located *outside* the footnote paragraphs.
+-->
+{{- $footnoteBacklinksBad  :=  ` ?<a href="#fnref:([0-9]*)" class="footnote-backref"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)</a></p>` -}}
+{{- $footnoteBacklinksGood :=  `</p><a href="#fnref:${1}" aria-labelledby="bl1-${1} bl2-${1}"${2}><span id="bl1-${1}">Back</span><span id="bl2-${1}" hidden=""> to reference ${1}</span></a>` -}}
 
 <!--
 	If two backlinks exist, give them different names.
 	I currently don't have any triple backlinks; if I ever do, I'll implement this properly with a loop.
 -->
-{{- $repeatedFootnoteBacklinksBad  :=  `<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)` -}}
-{{- $repeatedFootnoteBacklinksGood :=  `<br /><a href="#fnref${1}:${2}" aria-labelledby="bl1-${2}-2 bl2-${2}-2"${3}><span id="bl1-${2}-2">Back</span><span id="bl2-${2}-2" hidden=""> to reference ${2}, instance 2</span>` -}}
+{{- $repeatedFootnoteBacklinksBad  :=  ` ?<a href="#fnref([0-9]):([0-9]*)"(.*role="doc-backlink"(?:[^>]*)?)>([^<]*)<a></p>` -}}
+		{{- $repeatedFootnoteBacklinksGood :=  `</p><a href="#fnref${1}:${2}" aria-labelledby="bl1-${2}-2 bl2-${2}-2"${3}><span id="bl1-${2}-2">Back</span><span id="bl2-${2}-2" hidden=""> to reference ${2}, instance 2</span></a>` -}}
 
 <!--Make endnotes focusable by ATs. Necessary for VoiceOver compatibility.-->
 {{- $endNotesNotFocusable := `<li id="fn:([0-9]*)">` -}}
