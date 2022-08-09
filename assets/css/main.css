@@ -160,7 +160,6 @@ html {
 	h3,
 	li article,
 	summary,
-	aside > a,
 	[role="doc-backlink"],
 	[role="doc-endnotes"] {
 		content-visibility: auto;
@@ -192,6 +191,7 @@ html {
 	article,
 	body,
 	dt,
+	dd,
 	h1,
 	h2,
 	h3,
@@ -199,6 +199,7 @@ html {
 	main,
 	pre,
 	summary,
+	dl > div,
 	:not(nav) > ol,
 	[role="doc-endnotes"],
 	[role="doc-preface"] {
@@ -254,15 +255,27 @@ html {
 	}
 
 	/* <dt> should not be closer to the previous <dd> than the following <dd>.
-	 * That can happen in webmentions. */
+	 * That can happen in webmentions.
+	 * Give <dd> some padding to the right as well, so webmentions
+	 * receiving paint containment don't get clipped. */
 	dd {
-		padding-bottom: .25em;
+		margin: 0;
+		padding: .25em .25em .5em 1.75em;
+		contain: inline-size layout paint;
 	}
 
 	aside > a,
 	dt > a {
 		contain: content;
 		margin: -.75em -.25em;
+	}
+
+	h2 + aside[role="none"] {
+		contain: strict;
+		content-visibility: auto;
+		height: 1.75em;
+		margin: -1em -.5em;
+		padding: 1em .5em;
 	}
 
 	header > nav,
@@ -312,9 +325,12 @@ html {
 		padding: .75em 0 .25em;
 	}
 
-	/* Multiple consecutive <dt> that share a <dd> shouldn't have tap targets overlap */
+	/* Multiple consecutive <dt> that share a <dd> shouldn't have tap targets overlap.
+	 * Due to containment: we need to ensure enough padding to avoid
+	 * overflow but then un-do the padding with a margin. */
 	dt + dt {
-		padding-top: .25em;
+		padding-top: .75em;
+		margin-top: -.75em;
 	}
 	dt + dt > a {
 		padding-top: 0;
@@ -335,7 +351,6 @@ html {
 		display: inline-block;
 		padding: .75em .5em;
 		margin-top: -1em;
-		min-width: 25%;
 	}
 
 	/* skip link: make it invisible until focused, and put it on the top. */
@@ -372,7 +387,6 @@ sup {
  * some spacing (partial SC 2.5.5). There should be non-interactive
  * space to the left that's safe to tap.
  * 1.75em is the minimum required for ol numbers to fit. */
-dd,
 ol,
 ul {
 	margin: 0;
@@ -455,6 +469,12 @@ h1 {
 
 	hr {
 		margin: .25em 0;
+	}
+
+	/* This will line-wrap and take more vertical space; strict containment
+	 * won't work. */
+	h2 + aside[role="none"] {
+		contain: inline-size layout paint;
 	}
 }
 
