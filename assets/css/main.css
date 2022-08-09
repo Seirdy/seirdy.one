@@ -199,6 +199,7 @@ html {
 	main,
 	pre,
 	summary,
+	:not(nav) > ol,
 	[role="doc-endnotes"],
 	[role="doc-preface"] {
 		contain: inline-size layout paint;
@@ -334,6 +335,7 @@ html {
 		display: inline-block;
 		padding: .75em .5em;
 		margin-top: -1em;
+		min-width: 25%;
 	}
 
 	/* skip link: make it invisible until focused, and put it on the top. */
