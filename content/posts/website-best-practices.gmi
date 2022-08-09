@@ -1396,6 +1396,8 @@ If you’d like to learn more, Sara Soueidan wrote a far more detailed post on m
 
 => https://www.sarasoueidan.com/blog/focus-indicators/ A guide to designing accessible, WCAG-compliant focus indicators
 
+UPDATE: Firefox 104 has adopted a much better 2-color focus indicator; supplying a custom indicator will be less important in 2023 once a Firefox ESR version above 104 becomes available.
+
 ## Screen reader improvements
 
 This section focuses on ways to improve screen reader support that have not already been covered. The most important measures (semantic HTML, good alt-text and image context, correct spelling, etc.) have already been covered in previous sections.

@@ -1430,6 +1430,8 @@ a:focus,
 
 {{</codefigure>}}
 
+<ins>Update: Firefox 104 has adopted a much better 2-color focus indicator; supplying a custom indicator will be less important in 2023 once a Firefox ESR version above 104 becomes available.</ins>
+
 Screen reader improve&shy;ments {#screen-reader-improvements}
 -------------------------------
 
