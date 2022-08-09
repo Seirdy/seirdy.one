@@ -26,6 +26,7 @@
 		"axe/tables": "off",
 		"axe/text-alternatives": "off",
 		"axe/time-and-media": "off",
+		"axe/parsing": "off",
 		"compat-api/css": [
 			"error",
 			{
@@ -93,7 +94,7 @@
 			"error",
 			{
 				"connectionType": "3GSlow",
-				"loadTime": 10
+				"loadTime": 10.5
 			}
 		],
 		"css-prefix-order": "error",
