@@ -112,6 +112,10 @@ compress: gzip brotli
 xhtmlize:
 	sh scripts/xhtmlize.sh $(OUTPUT_DIR)
 
+.PHONY: copy-to-xhtml
+copy-to-xhtml:
+	find $(OUTPUT_DIR) -type f -name "*.html" -exec sh scripts/copy-file-to-xhtml.sh {} \;
+
 # save webmentions to a file, don't send yet
 mentions.json: hugo
 	# gather old version of the site
@@ -142,12 +146,14 @@ deploy: deploy-html deploy-gemini
 .PHONY: deploy-prod
 deploy-prod: .prepare-deploy
 	@$(MAKE) compress
+	@$(MAKE) copy-to-xhtml
 	@$(MAKE) deploy
 
 .PHONY: deploy-onion
 deploy-onion:
 	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion .prepare-deploy
 	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion compress
+	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion copy-to-xhtml
 	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion deploy-html
 
 # we only deploy html to the staging site
@@ -155,16 +161,19 @@ deploy-onion:
 deploy-staging:
 	@$(MAKE) HUGO_FLAGS=-DF DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
 	@$(MAKE) HUGO_FLAGS=-DF DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress
+	@$(MAKE) HUGO_FLAGS=-DF DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging copy-to-xhtml
 	@$(MAKE) HUGO_FLAGS=-DF DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
 
 .PHONY: lint-and-deploy-staging
 lint-and-deploy-staging:
 	@$(MAKE) HUGO_FLAGS='-DF' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging .prepare-deploy
 	@$(MAKE) HUGO_FLAGS='-DF' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging compress lint-local
+	@$(MAKE) HUGO_FLAGS='-DF' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging copy-to-xhtml
 	@$(MAKE) HUGO_FLAGS='-DF' DOMAIN=staging.seirdy.one USER=deploy@seirdy.one OUTPUT_DIR=public_staging deploy-html
 
 .PHONY: deploy-envs
 deploy-envs:
 	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy
 	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local
+	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs copy-to-xhtml
 	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy

@@ -26,7 +26,7 @@ trap cleanup EXIT
 
 # delete the stylesheet from the html file; we'll re-insert it later.
 # Also remove two indentation levels
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t(?:\t)?' '' >"$tmp_file"
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | sd '^\t(?:\t)?' '' >"$tmp_file"
 {
 	head -n7 "$tmp_file" | sd -s '/>' ' />'
 	cat "$OUTPUT_DIR/tmp.css"
@@ -39,12 +39,4 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | sd '^\t(?:\t)?
 		| sd '([a-z])<(data|time)' '$1 <$2' \
 		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1' \
 		| sd -s '/>' ' />'
-} >>"$xhtml_file"
-
-# replace the html file with the formatted xhtml5 file, excluding the
-# XML declaration.
-tail -n +2 "$xhtml_file" > "$html_file"
-
-# remove the redundant charset declaration from the xhtml file. It's the
-# first thing in the <head>.
-sed -i 5d "$xhtml_file" # busybox sed supports "-i"
+} >"$html_file"

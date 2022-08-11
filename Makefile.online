@@ -36,7 +36,8 @@ axe:
 	@axe $(URLS) --chrome-options $(CHROME_FLAGS_COMMA) --chromedriver-path=$(CHROMEDRIVER_PATH) --show-errors
 axe-ff:
 	@echo "Running axe with Firefox"
-	PATH=scripts/bin:$(PATH) axe $(URLS) -b firefox --show-errors
+	@scripts/bin/axe-ff $(OUTPUT_DIR) $(URLS)
+
 .PHONY: axe axe-ff
 
 .validate-feed-main:

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Runs axe on every page of my sitemap
+# first arg is output directory, after that comes urls from a sitemap. We replace the urls with equivalent local file paths.
+PATH="scripts/bin:$PATH"
+output_dir="$1"
+shift
+urls="$(echo "$*" | tr ' ' '\n' | sd '^https?://[^/]*' "file://$PWD/$output_dir" | sd '/$' '/index.html' | tr '\n' ' ')"
+axe $urls -b firefox --show-errors
