@@ -155,11 +155,13 @@ Results from these search engines don’t seem at all useful.
 * Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 * Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 * Yioop!: A FLOSS search engine that boasts a very impressive feature-set: it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
+* Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 
 => https://crawlson.com Crawlson
 => https://www.anoox.com/  Anoox
 => https://archive.is/oVAre Plumb CPO
 => https://www.yioop.com Yioop!
+=> https://marlo.sandymaguire.me/ Marlo
 
 ### Semi-independent indexes
 

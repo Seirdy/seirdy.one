@@ -195,6 +195,9 @@ Scopia
 [Yioop!](https://www.yioop.com)
 : A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
+[Marlo](https://marlo.sandymaguire.me/)
+: Another FLOSS engine: [Marlo is written in Haskell]. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
+
 ### Semi-independent indexes
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.
@@ -261,7 +264,7 @@ Quor
 [Semantic Scholar](https://www.semanticscholar.org/)
 : A search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 
-[Bonzamate](<https://bonzamate.com.au/>)
+[Bonzamate](https://bonzamate.com.au/)
 : A search engine specifically for Australian websites. Boyter wrote [an interesting blog post about Bonzamate](https://boyter.org/posts/abusing-aws-to-make-a-search-engine/).
 
 [searchcode](https://searchcode.com/)
