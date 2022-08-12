@@ -36,13 +36,19 @@ IgnoreURLs:
   - "https://seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
+  - "https://www.reddit.com/user/Seirdy" # reddit doesn't like htmltest
+  # - "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/"
+  - "https://i.reddit.com"
   - "https://fediring.net/(previous|next)" # redir
-  - "https://forum.palemoon.org/" # manual check: blocks crawlers
+  # - "https://forum.palemoon.org/viewtopic.php?f=1&t=25473" # manual check: blocks crawlers
+  - "https://forum.palemoon.org/viewtopic.php"
   - "https://queue.acm.org/detail" # manual check: blocks crawlers
   - "https://www.geocities.ws/jaup/jaup.htm" # manual check: blocks crawlers
   - "https://plausible.io/blog/google-floc#" # manual check: I block this domain
   - "https://twitter.com/" # manual check: 404 for some reason, using curl works fine.
-  - "https://bugs.debian.org/cgi-bin/bugreport.cgi" # manual check: 400 for some reason, using curl works fine.
-  - "https://forum.kuketz-blog.de/" # manual check: blocks crawlers
-  - "https://web.archive.org/web/0/http" # the wayback machine.
+  # - "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173" # manual check: 400 for some reason, using curl works fine.
+  - "https://bugs.debian.org/cgi-bin/bugreport.cgi"
+  # - "https://forum.kuketz-blog.de/viewtopic.php?p=78202" # manual check: blocks crawlers
+  - "https://forum.kuketz-blog.de/viewtopic.php"
+  - "https://web.archive.org/web/0/http" # the wayback machine itself.
 OutputDir: "linter-configs/htmltest"
