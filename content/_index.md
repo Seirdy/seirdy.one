@@ -45,24 +45,4 @@ This is a basic [IndieWeb site](https://indieweb.org/).
 
 In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/). This site's content also appears on my [Gemini capsule](gemini://seirdy.one).
 
-For more information about the site, [see the "meta" section](./meta/).
-
-<details>
-<summary>Feeds</summary>
-
-I offer some feeds in Atom format:
-
-- [Combined feed](./atom.xml)
-- [Articles feed](./posts/atom.xml)
-- [Notes feed](./notes/atom.xml)
-
-If you experience issues with Atom feeds, try an RSS feed:
-
-- [Legacy combined RSS feed](./index.xml)
-- [Legacy articles feed](./posts/index.xml)
-- [Legacy notes feed](./notes/index.xml)
-
-I recommend using the Atom feeds.
-
-</details>
-
+For more information about the site, its design, and available feeds: [see the "meta" section](./meta/).
