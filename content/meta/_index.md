@@ -38,12 +38,12 @@ This site is featured in some cool directories.
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
+- [Ye Olde Blogroll](https://blogroll.org/)
 
 <details>
 <summary>Pending directories</summary>
 
 - [Nerd Listings](https://nerdlistings.info/category/personalsites/) (pending)
-- [Ye Olde Blogroll](https://blogroll.org/) (pending)
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Blog Surf](https://blogsurf.io/) (pending)
 
