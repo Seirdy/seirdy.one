@@ -25,17 +25,18 @@
 
 	/* Only color <a> if it's a link; if href is empty, let it be. */
 	a:link {
-		color: #eee7b2;
+		color: #eee8a7;
 	}
 
 	a:visited {
 		color: #ffdaff;
 	}
 
-	/* For users who request less contrast, target ACPA Lc of -85 to -86 */
+	/* For users who request less contrast, target ACPA Lc near -80 */
 	@media (prefers-contrast: less) {
-		html {
-			background-color: #333;
+		html,
+		input {
+			background-color: #444;
 		}
 	}
 
@@ -50,10 +51,16 @@
 		}
 	}
 
-	/* For users who request more contrast, target ACPA Lc near -96 */
+	/* For users who request more contrast, target ACPA Lc near -96.
+	 * I have a monitor with terrible contrast so I use
+	 * "prefers-contrast: more" and this amount works for me.
+	 * People complained that the lobste.rs dark theme has too much
+	 * contrast, so I made that my baseline and exceeded it ever so
+	 * slightly. */
 	@media (prefers-contrast: more) {
-		html {
-			background-color: #111;
+		html,
+		input {
+			background-color: #0d0d0d;
 			color: #eee;
 		}
 
