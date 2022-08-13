@@ -18,8 +18,6 @@ RSYNCFLAGS_EXTRA ?=
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
 
-VNU ?= vnu
-
 csv/webrings.csv:
 	sh scripts/populate-webrings.sh
 
@@ -60,7 +58,7 @@ validate-json:
 
 .PHONY: validate-html
 validate-html:
-	$(VNU) --stdout --format json --skip-non-html --also-check-svg $(OUTPUT_DIR) | sh scripts/filter-vnu.sh
+	sh scripts/vnu.sh $(OUTPUT_DIR)
 
 .PHONY: htmlproofer
 htmlproofer:
