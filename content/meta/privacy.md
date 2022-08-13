@@ -101,6 +101,8 @@ By default, web browsers can share near-arbitrary identifying data with a server
 
 By default, user agents using HTTPS may contact a certificate authority to check the revocation status of an TLS certificate. I have disabled and replaced this behavior by including an "OCSP Must-Staple" directive in the TLS certificates used by my Web servers.
 
+By default, web browsers can speculatively make DNS queries for domains linked on a page, potentially leaking information about the current page to a DNS server. I send an `X-DNS-Prefetch-Control: off` header to disable this when possible; it's respected by Chromium, Firefox, and derivatives.
+
 By default, user agents using HTTP or HTTPS may share a "referring" location with the destination website when following a link. I have disabled this by sending a `Referrer-Policy: no-referrer` header. One exception is links on the home page's "Webrings" section; some of these require a referring domain to function.
 
 By default, Web browsers may share characteristics about the user's hardware, connection type, and personalizations using Client Hints and media queries. Browsers may request Web content conditionally, in response to a `media` attribute in (X)HTML documents. Browsers may leverage stylesheets that use media queries to select varying `background-image` files. No Web content on seirdy.one will send network traffic in response to media queries except <code>prefers-color-<wbr />scheme</code>, assuming the use of a standards-compliant browser. Media queries and client hints will have no impact on HTTP responses except for dark image variants. This is a single binary piece of information that isn't enough to let me realistically identify anyone.
