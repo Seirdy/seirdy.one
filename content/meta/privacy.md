@@ -8,6 +8,8 @@ date: "2022-04-06T00:00:00+00:00"
 Summary
 -------
 
+Basically, I don't track you.
+
 - I only collect default server logs.
 - I purge server logs regularly, except for some robot traffic.
 - Searches are powered by the Search My Site API.
@@ -65,11 +67,11 @@ These services currently run on, but do not necessarily endorse, virtual private
 
 Log entries will persist for between two and three days. Purges of server logs occur every day at <time datetime="00:00:00">00:00 UTC</time>
 
-Before purging, I may preserve the "User-Agent" request headers of agents that clearly identify as bots.
+Before purging, I may preserve the "User-Agent" request headers of agents that clearly identify as robots.
 
 ### How I use your information
 
-I use server logs to detect <abbr title="Denial of Service">DoS</abbr> attacks, misbehaving bots, and search engines to add to [my public collection](../../posts/2021/03/10/search-engines-with-own-indexes/).
+I use server logs to detect <abbr title="Denial of Service">DoS</abbr> attacks, misbehaving bots, and search engines to add to [my public collection]({{<relref "/posts/search-engines-with-own-indexes.md">}}).
 
 Information I share
 -------------------
@@ -109,3 +111,4 @@ By default, Web browsers may share characteristics about the user's hardware, co
 
 By default, many networks and Internet service providers often alter requests by redirecting them or injecting content. I have prevented this behavior by using a secure TLS cipher suite.
 
+By default, most web browsers connect to a website over insecure HTTP when users don't specify don't specify a URL scheme; this is frequently exploited by hostile networks to inject content or re-direct traffic. I mitigate this to the extent I can by using a `Strict-Transport-Security` header, participating in HSTS-Preload lists, and adding an HTTPS DNS record for HTTP/2 and HTTP/3 DNS-based APLN.
