@@ -61,7 +61,7 @@
 		"http-cache": [
 			"error",
 			{
-				"maxAgeTarget": 1200
+				"maxAgeTarget": 10800
 			}
 		],
 		"http-compression": "off",
@@ -94,7 +94,7 @@
 			"error",
 			{
 				"connectionType": "3GSlow",
-				"loadTime": 10.5
+				"loadTime": 11
 			}
 		],
 		"css-prefix-order": "error",

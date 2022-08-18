@@ -19,6 +19,7 @@ triggers:
 tasks:
   - deps: |
       echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+      # mirrored at https://seirdy.one/misc/binaries.tar.gz
       rsync -Wv deploy@seirdy.one:/home/deploy/binaries.tar.gz .
       mkdir -p ~/bin
       tar xzf binaries.tar.gz -oC ~/bin
