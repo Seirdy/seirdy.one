@@ -3,5 +3,6 @@
 <main
 	itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Article" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
 	{{ partial "full-article.html" . }}
+	{{ partial "webmentions.html" . }}
 </main>
 {{ end }}
