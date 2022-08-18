@@ -70,7 +70,7 @@ All of the simplicity in the world won't protect a page from unsafe content inje
 
 If your OpenSSL (or equivalent) version is outdated or you don't want to download and run a shell script, SSL Labs' [SSL Server Test](https://www.ssllabs.com/ssltest/) should be equivalent to testssl.sh. Mozilla's [HTTP Observatory](https://observatory.mozilla.org/) offers a subset of Webbkoll's features and is a bit out of date (and requires JavaScript), but it also gives a beginner-friendly score. Most sites should strive for at least a 50, but a score of 100 or even 120 shouldn't be too hard to reach.
 
-A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1. Vintage computers can run TLS 1.2 implementations such as BearSSL surprisingly efficiently, leverage a TLS terminator, or they can use a plain unencrypted connection. A broken cipher suite is security theater.
+A false sense of security is far worse than transparent insecurity. Don't offer broken TLS ciphers, including TLS 1.0 and 1.1. Vintage computers can run TLS 1.2 implementations such as BearSSL surprisingly efficiently, leverage a TLS terminator, or they can use a plain unencrypted connection. [Ancienne 2.0 brings TLS 1.3 to 90s-era machines](https://oldvcr.blogspot.com/2022/07/crypto-ancienne-20-now-brings-tls-13-to.html). A broken cipher suite is security theater.
 
 ### Scripts and the Content Security Policy
 
@@ -425,7 +425,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 
 Leveraging containment and `content-visibility` is a progressive enhancement, so there aren't any serious implications for older browsers. I use `content-visibility` to defer rendering off-screen entries in my archives. Doing so allows me to serve long archive pages instead of resorting to pagination, with page-length limited only by download size. In my tests using Lighthouse with Chromium Devtools' simulated CPU throttling,[^11] this article rendered faster _with_ containment-enabled CSS than without any custom stylesheets at all.
 
-Using containment for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing [layout shifts](#layout-shifts). Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating 'contain-intrinsic-size' for 'content-visibility'" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/author/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values.
+Using `content-visibility` for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing minor [layout shifts](#layout-shifts) and scrollbar-jumping. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating 'contain-intrinsic-size' for 'content-visibility'" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/author/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values. The scrollbar is less likely to jump around noticeably on extra-long pages, so sufficient page-length could let you get away with setting `contain-intrinsic-size` to a rough estimate.
 
 ### Performance of assistive technologies
 
@@ -588,7 +588,7 @@ Mathematical notation
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
 
-I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in [reading-mode implementations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior; [Pandoc's](https://pandoc.org/) HTML-to-LaTeX conversion and [PrintFriendly](https://www.printfriendly.com/) are examples of software that move figure elements around to improve pagination.
+I personally try to maintain the flow of an article even if its figures and captions are completely removed or moved to an appendix. A figure is a "self-contained" block: user agents may re-position figure captions relative to the main figure content, or move the entire figure elsewhere; this is especially common in [reading-mode implementations](#non-browsers-reading-mode). The HTML specification explicitly notes this behavior; [Pandoc's](https://pandoc.org/) HTML-to-LaTeX conversion and [PrintFriendly](https://www.printfriendly.com/) are examples of software that moves figure elements around to improve pagination.
 
 {{<quotation>}}
 
@@ -876,7 +876,12 @@ Read more about the differences between buttons and links in {{<mention-work ite
 
 In addition to [offering ample non-interactive space](#non-interactive-space), ensure that non-interactive and interactive regions are visually distinct. Avoid making interactive elements with many children.
 
-GitHub's mobile website is a serious offender; see [this screenshot of the GitHub bug tracker](#gh-interactive) for an example. The background region of the visible issue is interactive, and so are its contents. However, the header of the issues list has a non-interactive background that looks the same. Visual appearance does not convey the difference between a button and a hyperlink. The "enhancement" link points to a unique location, yet it loses its interactivity on narrow viewports with no visual change; tapping it navigates to a different location depending on viewport width.
+GitHub's mobile website is a serious offender; see [this screenshot of the GitHub bug tracker](#gh-interactive) for an example.
+
+* The background region of the visible issue is interactive, and so are its contents.
+* The header of the issues list has a non-interactive background that looks the same as the aforementioned interactive background.
+* Visual appearance does not convey the difference between a button and a hyperlink: The "enhancement" link looks like a button
+* The "enhancement" link points to a unique location, yet it loses its interactivity on narrow viewports with no visual change; tapping it navigates to a different location depending on viewport width.
 
 {{<image-figure id="gh-interactive">}} {{<picture name="gh_interactive" alt="Screenshot of GitHub issues on mobile with non-underlined links and links that look like buttons.">}}
 
@@ -917,7 +922,7 @@ Some image optimization tools I use:
 : Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
 
 [`jpegoptim`](https://github.com/tjko/jpegoptim)
-: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrinks the size of existing JPEG files by removing unnecessary metadata.
+: Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrink the size of existing JPEG files by removing unnecessary metadata.
 
 [`cwebp`](https://developers.google.com/speed/webp/docs/cwebp)
 : The reference WebP encoder; has dedicated lossless and lossy modes. Lossy WebP compression isn't always better than JPEG, but lossless WebP consistently beats PNG.
@@ -972,7 +977,7 @@ convert ORIGINAL_FILE \
 
 Some conventional wisdom for image compression doesn't hold up when compressing this aggressively; for instance, I've found that extremely aggressive dithering and PNG compression of small black-and-white images consistently surpasses JPEG compression.
 
-Most resources on image optimization recommend considering progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead for resources of less than 20&nbsp;kb.
+Most resources on image optimization recommend progressive rendering. I don't recommend progressive rendering for below-the-fold images; if you optimize an image to just a few kilobytes, it should fully load in time. It's not worth the overhead for resources of less than 20&nbsp;kb.
 
 These resources also encourage authors to include different image variants for different viewport sizes, screen resolutions, and pixel densities. They often skip the caveats:
 
@@ -1498,6 +1503,35 @@ Beware of `display` and `visibility` CSS properties; they can interfere with con
 {{< /quotecaption >}}
 {{</quotation>}}
 
+Future users
+------------
+
+The number of people using your site in the future is hopefully greater than the number of people using your site in the present. Accordingly, your pages need to work correctly in the future.
+
+Much of this section borrows from the article {{<mention-work type="Article">}}{{<cited-work name="This Page is Designed to Last" extraName="headline" url="https://jeffhuang.com/designed_to_last/">}}{{</mention-work>}}; I highly recommend giving it a read.
+
+### Third parties
+
+I've already made a privacy and performance case against third-party resources in an earlier ["Third-party content" subsection](#third-party-content). Another reason to avoid third-party resources is longevity. Third-party scripts, styles, frames, and images all depend on someone else's host keeping the resource available at the same URL; over time, these tend to disappear. Sticking to first-party content reduces these points of failure.
+
+Third-party content is especially problematic when it's hosted on modest hardware. If your site "goes viral", your traffic could take down the third-party site or prompt them to disable hotlinking. _Serve assets yourself._
+
+### Dead links
+
+On the same note: your internal and external [links to other pages need to change with time](https://en.wikipedia.org/wiki/Link_rot). Use a broken-link checker regularly to ensure that your content stays alive. I recommend checkers like [lychee](https://github.com/lycheeverse/lychee) and [htmltest](https://github.com/wjdp/htmltest) because they can cache results. My site has a bit under two thousand links at the time of writing; checking all of them at once would be exhausting, but using a week-long cache allows me to split this over seven days.
+
+Whenever you link to a page, try to archive a snapshot of it. [The Wayback Machine](https://web.archive.org/), [archive.today](https://archive.today/), and [Ghostarchive](https://ghostarchive.org/) are popular options. Archival is one of the few times I recommend using a third-party service; a service like the Wayback Machine will likely outlive your website. That being said, [self-hosted solutions like ArchiveBox](https://archivebox.io/) do exist.
+
+If you link often enough, archival might be something worth automating. The Wayback Machine offers an API, and allows registered users to mass-archive archive all outlinks in a page.
+
+### Reproducibility
+
+Imagine your typical "modern" website's deployment pipeline. It requires thousands of dependencies to build. It uses bespoke tools to deploy to a service provider with a custom non-standard stack (e.g. Fly.io, Heroku, Cloudflare Workers, AWS Lambda).
+
+Ten years from now, how much of this will still work?
+
+Try to ensure that your website can be archived, and/or easily re-built and served on an ordinary server. This way, your work can still be made accessible after you're gone. For example: all my site requires to build is a tarball of statically-linked binaries, a POSIX shell, and a decent Make implementation (bmake and GNU make work) to build; see [my build manifest](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/.build.yml). To serve, it just needs a static web server.
+
 Testing
 -------
 
@@ -1748,7 +1782,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^3]: Here's an [overview of PE](https://en.wikipedia.org/wiki/Progressive_enhancement) and [my favorite write-up on the subject](https://web.archive.org/web/20220316060312/https://whalecoiner.com/articles/progressive-enhancement).
 
-[^4]: Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet the WCAG [Success Criterion 2.4.8: Location](https://w3c.github.io/wcag/understanding/location.html). I opted to meet the criterion a different way. Since all my pages are linked by my site's global navigation or my "posts" page (also in the global navigation), I just used `aria-current` and made the currently-relevant entry in my global navigation a `<strong>` element.
+[^4]: Each of these flows can be visually displayed using a breadcrumbs list; doing so can meet the WCAG [Success Criterion 2.4.8: Location](https://w3c.github.io/wcag/understanding/location.html). I opted to meet the criterion a different way. Since all my pages are linked by my site's global navigation or my "posts" page (also in the global navigation), I just used `aria-current` and made the currently-relevant entry in my global navigation a `<strong>` element. However, I later introduced breadcrumbs anyway because I don't think a simple `<strong>` element conveys this information clearly enough.
 
 [^5]: One example is a utility class for the `image-rendering` property. I use it on images that look better with `pixelated` rendering. This is a property of the image contents, not the image semantics or placement; a class makes sense.
 
@@ -1766,7 +1800,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^11]: [See the "Lighthouse" entry in the "Automated tests" section](#lighthouse). Lighthouse benchmarks my machine with a score of around 1320; with that score, it recommends [throttling my machine by just under 3.1x](https://github.com/patrickhulce/lighthouse-cpu-throttling-calculator/blob/a9c67dc1c58c972a0673bef05756290105334af1/pages/index.js#L11) to simulate a target mobile device. The Chromium team came up with the throttling formula under idealized conditions (the phone isn't overheating, battery-saver mode is off, etc); I go further and throttle between 12x and 13x, still shooting for a perfect performance score. This article is the largest page on my site; it often gets a perfect performance score (100) with my stylesheet enabled, but never reaches 100 when I disable CSS containment or remove my stylesheet.
 
-[^12]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:<wbr />config</samp>. Chromium (and derivatives) users can [install an extension](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
+[^12]: Firefox users [can enable "find as you type"](https://website-archive.mozilla.org/www.mozilla.org/access/access/type-ahead/) by toggling a preference in <samp>about:<wbr />config</samp>. Chromium (and derivatives) users can [install an extension like Type-ahead-find](https://github.com/Foxy/chrome-type-ahead); note that it requires full-page access and performs script injection to work.
 
 [^13]: Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. [Browser&shy;Leaks has a demo](https://browserleaks.com/fonts) of this approach. Warning: the page might hog your CPU for a while.
 
