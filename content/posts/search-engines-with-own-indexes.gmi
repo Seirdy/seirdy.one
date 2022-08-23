@@ -183,7 +183,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 => https://www.qwant.com Qwant
 
-* Kagi Search: The most interesting entry in this category, IMO. Like Neeva, it requires an account; it will eventually require payment. It's powered by its own Teclis index (Teclis can be used independently; see the non-commercial section below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the Kagi.ai intelligent answer service and the TinyGem social bookmarking service, both of which play a role in Kagi.com in the present or future.
+* Kagi Search: The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the non-commercial section below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the Kagi.ai intelligent answer service and the TinyGem social bookmarking service, both of which play a role in Kagi.com in the present or future.
 
 => https://kagi.com/ Kagi Search
 => https://kagi.ai/ Kagi.ai

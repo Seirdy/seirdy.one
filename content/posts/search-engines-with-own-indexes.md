@@ -196,7 +196,7 @@ Scopia
 : A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
 [Marlo](https://marlo.sandymaguire.me/)
-: Another FLOSS engine: [Marlo is written in Haskell]. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
+: Another FLOSS engine: [Marlo is written in Haskell](https://github.com/isovector/marlo). Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 
 ### Semi-independent indexes
 
@@ -216,7 +216,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 : Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
 
 [Kagi Search](https://kagi.com/)
-: The most interesting entry in this category, IMO. Like Neeva, it requires an account; it will eventually require payment. It's powered by its own Teclis index (Teclis can be used independently; see the [non-commercial section](#small-or-non-commercial-web) below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the [Kagi.ai](https://kagi.ai/) intelligent answer service and the [TinyGem](https://tinygem.org/) social bookmarking service, both of which play a role in Kagi.com in the present or future.
+: The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the [non-commercial section](#small-or-non-commercial-web) below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the [Kagi.ai](https://kagi.ai/) intelligent answer service and the [TinyGem](https://tinygem.org/) social bookmarking service, both of which play a role in Kagi.com in the present or future.
 
 Non-generalist search
 ---------------------
@@ -322,7 +322,7 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 
 
 [wiby.me](https://wiby.me) OR [wiby.org](https://wiby.org)
-: I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally features a hit from Wiby. If you have a small site or blog that isn't very "commercial", consider submitting it to the index. Does not qualify because it seems to be powered only by user-submitted sites; it doesn't try to "crawl the Web".
+: I love this one. It focuses on smaller independent sites that capture the spirit of the "early" web. It's more focused on "discovering" new interesting pages that match a set of keywords than finding a specific resources. I like to think of Wiby as an engine for surfing, not searching. Runnaroo occasionally featured a hit from Wiby (Runnaroo has since shut down). If you have a small site or blog that isn't very "commercial", consider submitting it to the index. Does not qualify because it seems to be powered only by user-submitted sites; it doesn't try to "crawl the Web".
 
 [Mwmbl](https://mwmbl.org/)
 : Like YaCy, it's an open-source engine whose crawling is community-driven. Users can install a Firefox addon to crawl pages in its backlog. Unfortunately, it doesn't qualify because it only crawls pages linked by hand-picked sites (e.g. Wikipedia, GitHub, domains that rank well on Hacker News). The crawl-depth is "1", so it doesn't crawl the whole Web (yet).
