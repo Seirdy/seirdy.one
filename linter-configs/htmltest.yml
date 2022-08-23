@@ -36,6 +36,7 @@ IgnoreURLs:
   - "https://seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
+  - "https://nerdlistings.info/category/personalsites/" # I reached out about the expired cert and mentioned the issue on the page.
   - "https://www.reddit.com/user/Seirdy" # reddit doesn't like htmltest
   # - "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/"
   - "https://i.reddit.com"

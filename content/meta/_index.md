@@ -43,7 +43,7 @@ This site is featured in some cool directories.
 <details>
 <summary>Pending directories</summary>
 
-- [Nerd Listings](https://nerdlistings.info/category/personalsites/) (pending)
+- [Nerd Listings](https://nerdlistings.info/category/personalsites/) (pending; expired TLS certificate)
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Blog Surf](https://blogsurf.io/) (pending)
 
