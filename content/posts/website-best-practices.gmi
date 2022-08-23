@@ -249,7 +249,7 @@ Avoid layout shifts by including dimensions in HTML attributes. The simplest way
 
 In-depth server configuration is a bit out of scope, so I'll keep each improvement brief.
 
-Compression--especially static compression--dramatically reduces download sizes. My full-text RSS feed is about a quarter of a megabyte, but the Brotli-compressed version is about 70 kilobytes. Caddy supports this with a "precompressed" directive; Nginx requires the ngx_brotli module for Brotli compression:
+Compression---especially static compression---dramatically reduces download sizes. My full-text Atom feed is almost a megabyte, but the Brotli-compressed version is under one-quarter of that size. Caddy supports this with a "precompressed" directive; Nginx requires the ngx_brotli module for Brotli compression:
 
 => https://github.com/google/ngx_brotli The ngx_brotli module
 
@@ -262,42 +262,6 @@ Using OCSP stapling eliminates the need to connect to a certificate authority, s
 Consider the trade-offs involved in enabling 0-RTT for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in appendix E.5 of the spec:
 
 => https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5 RFC-8446, Appendix E.5.
-
-## The Tor Browser
-
-Many people use Tor out of necessity. On Tor, additional constraints apply.
-
-## Constrainsts of the Tor Browser
-
-Tor users are encouraged to set the Tor Browser's (TBB) security settings to "safest".
-
-=> https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
-
-This disables scripts, MathML, some fonts, SVG images, and other unsafe Firefox features:
-
-=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
-
-If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
-
-Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
-
-If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
-
-Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible by default, as per the "inclusive by default" directive outlined in the introduction. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
-
-### Hidden services
-
-To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
-
-Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. Sometimes, the Tor Browser pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
-
-For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children of varying formats and a fallback <img> element using a legacy image format.
-
-The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
-
-I address the issue by not using any SVG images on my hidden service:
-
-=> http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ My Tor hidden service (HTTP+HTML)
 
 ## Against lazy loading
 
@@ -401,6 +365,83 @@ When pages grow long, keep performance in check by doing the following:
 * Avoid scripts that delay user-input or cause complex DOM mutations. These will introduce delays that can cause significant AT usability issues.
 * Remember that CSS can impact the accessibility tree. Avoid using scripts to alter properties such as "display" and "visibility".
 * Test with screen readers on underpowered hardware. Examples include old entry-level Android phones and netbooks with aggressive thermal throttling.
+
+## Old browsers
+
+People do not use your site exclusively with the latest stable versions of Chrome, Firefox, or Safari. If you use metrics, they will be biased against users who avoid your site due to incompatibilities.
+
+### Old browsers in use
+
+Plenty of reasons exist for using older versions of each of the mainstream browsers:
+
+* Firefox: In addition to Firefox's "Stable", "Beta", and "Nightly" channels, Firefox includes an "Extended Support Release" (ESR). Firefox ESR receives only bugfixes and major security patches for over one year. It's the default browser in Debian and the basis for the Tor Browser. In other words: if you want people to be able to browse your site anonymously (i.e. with the Tor Browser), you need to support Firefox ESR versions for at least 13 months after their release. If that wasn't enough: the latest version of KaiOS uses Firefox 84, while older versions (still being sold in 2022!) use Firefox 49.
+
+* Safari and WebKit: On Linux, WebKitGTK powers various browsers, RSS readers, and in-app browsers. WebKitGTK versions are limited by a distribution's release model; LTS distributions will not have the shiniest new WebKit features. Safari versions are similarly limited by iOS and macOS versions. For instance, the iPhone 7 will not be able to run iOS 16 or Safari 16, just four years after it was discontinued; it'll only receive occasional security patches for Safari 15.x. The only way for iPhone-7-and-earlier users to use Safari 16+ features is to buy a new phone. Expecting users to buy a new device every few years just to display a webpage needlessly contributes to the rampant consumerism and throw-away culture in the consumer electronics industry.
+
+* Chromium: Google Chrome's "Extended stable" channel releases half as often as its "Stable" channel. Moreover, Chromium is the basis for QtWebEngine, the Web engine of the Qt UI toolkit. QtWebEngine powers a host of Web browsers: Qutebrowser, Falkon, Nyxt, Angelfish, Otter Browser, and others. Like WebKit2GTK, QtWebEngine powers various RSS readers and in-app browsers. The latest version of Qt typically includes a QtWebEngine several versions behind upstream Chromium, and most distributions don't ship the latest version of Qt. Finally, Android's Chromium-based WebView implementations are still sometimes locked to a vendor's abandoned version of Android and woefully out of date; in-app browsers are often even worse, sometimes shipping a version of Chromium that's *years* old.
+
+* Opera: Opera switched away from its in-house Presto browser engine a few years ago, in favor of becoming a Chromium fork. However, Opera Presto is still being kept alive by Opera Mini. Opera Mini's "extreme" mode uses a proxy server to render pages; that server runs Opera's Presto rendering engine.
+
+### How to support old browsers
+
+I recommend testing with a pre-2013 version of WebKit, as those WebKit versions are ancestors to both Chromium and Safari. Old versions of Opera and Firefox are still available for download. Obviously, I wouldn't recommend using these browsers outside of a heavily sandboxed environment (e.g. a confined VM) unless you disable unnecessary features and limit their use to testing.
+
+Always use progressive enhancement: everything besides your semantic markup and the occasional legacy image format should be an optional enhancement. Test with CSS, scripts, new image formats, etc. disabled.
+
+Restrict markup to the subset of the WHATWG's HTML Living Standard that also appears in the W3C's HTML 5.1 standard. This should provide a slower-moving base than the raw Living Standard that's also friendlier to older browsers. I don't recommend referencing the W3C's HTML 5.1 standard directly, since the Living Standard has since made several important clarifications, corrections, and removals. The most recent such removal was the Document Outline algorithm. For years after it was standardized, the Document Outline was ignored by every browser engine. Finally, the WHATWG replaced the Document Outline algorithm with a revised version that involved multiple heading levels. The revised version matches what user-agents and good authors have been doing for decades.
+
+=> https://www.tpgi.com/html5-document-outline/ TPGi: "The HTML5 Document Outline is a dangerous fiction"
+=> https://github.com/whatwg/html/pull/7829 GitHub pull-request that replaced the Document Outline
+
+CSS offers multiple equivalent ways to do the same thing; prefer older versions when possible. A non-exhaustive list of ways to make stylesheets work in older browsers:
+
+* Use `em` units rather than the more convenient `rem`
+* Avoid CSS variables and custom properties; keep track of values by using increments, or use a post-processor to replace references to variables.
+* Use the `@supports` at-rule to progressively replace an older feature with a newer one.
+* Explicitly define the `display` property for the `hidden` attribute, for browsers that don't support `hidden`.
+
+When in doubt: "Can I Use" and MDN are excellent resources to track feature support across all the mainstream browser engines.
+=> https://caniuse.com/ Can I Use
+=> https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Page_structures/Compatibility_tables MDN's browser compatibility data
+
+Feel free to go wild when adding strictly-optional features.
+
+## The Tor Browser
+
+Many people use Tor out of necessity. On Tor, additional constraints apply.
+
+### Constrainsts of the Tor Browser
+
+Tor users are encouraged to set the Tor Browser's (TBB) security settings to "safest".
+
+=> https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
+
+This disables scripts, MathML, some fonts, SVG images, and other unsafe Firefox features:
+
+=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
+
+If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+
+Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
+
+If you use a CDN or some overcomplicated website security stack, make sure it doesn't block Tor users or require them to enable JavaScript to complete a CAPTCHA. Tor Browser users are supposed to avoid fingerprinting vectors like JS and browser extensions, so requiring a JavaScript-based CAPTCHA will effectively block many Tor users.
+
+Tor users are unable to leverage media queries or client-hints to signal special needs. Pages need to be as accessible as possible by default, as per the "inclusive by default" directive outlined in the introduction. This should be a given, but it's doubly important when serving fingerprinting-averse readers.
+
+### Hidden services
+
+To go above and beyond, try mirroring your site to a Tor hidden service to reduce the need for exit nodes. Mirroring allows you to keep a separate version of your site optimized for the Tor browser.
+
+Normally, optimizing specifically for a given user agent's quirks (especially in a separate version of a website) is a bad practice; however, the Tor Browser is a special case because there's no alternative available: Tor users should all use the same browser to avoid standing out. Sometimes, the Tor Browser pretends to have Firefox's capabilities: progressive enhancement and graceful degradation won't work when a browser lies about its functionality.
+
+For example, my website's clearnet version uses some SVG images. Some browsers can't handle a given image format. The typical solution is to use a <picture> element containing <source> children of varying formats and a fallback <img> element using a legacy image format.
+
+The Tor browser will download whichever format Firefox would, rather than whichever formats it actually supports. A <picture> element containing an SVG and a raster fallback won't help: the Tor browser will avoid fingerprinting by selecting the SVG format, not a fallback format. The image will not be rendered, so users will have downloaded the image only to see a white box.
+
+I address the issue by not using any SVG images on my hidden service:
+
+=> http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/ My Tor hidden service (HTTP+HTML)
+
 
 ## In-page search
 
@@ -539,7 +580,7 @@ Consider using a <figure> element when employing the previous section's two-part
 Figures aren't just for images; they're for any self-contained referenced content that's closer to the surrounding body than an <aside>. Where appropriate, use figures for:
 
 * Blockquotes, captioned with citations
-* Code snippets, captioned with their purpose or links to a the larger files from which the snippets were borrowed.
+* Code snippets, captioned with their purpose or links to the larger files from which the snippets were borrowed.
 * Some mathematical notation, captioned with brief explanations of their behavior, purpose, or significance (equations should also have alt-text!)
 
 Figures and captions have loose guidelines, and nearly everything I said on the matter is full of exceptions. A figure need not have a caption, but the majority benefit from one. It need not contain a single main element, but most probably should.
@@ -766,7 +807,7 @@ Color schemes should also look good to users who apply gamma adjustments. Most o
 > Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
 => https://www.w3.org/TR/WCAG22/#distinguishable WCAG 2.2, section 1.4.1
 
-A basic WCAG Level A requirement is for information to not be conveyed solely through color. Bothe the presence and type of interactivity need to be visually communicated by other means. Links should not look like buttons, and vice-versa.
+A basic WCAG Level A requirement is for information to not be conveyed solely through color. Both the presence and type of interactivity need to be visually communicated by other means. Links should not look like buttons, and vice-versa.
 
 ### In defense of link underlines
 
@@ -883,7 +924,7 @@ Most of my images will probably be screenshots that start as PNGs. My typical fl
 
 In general, avoid loading images just for decoration. Only use an image if it has a clear purpose that significantly adds to the content in a way that text can't replace, and provide alt-text as a fallback. Any level of detail that isn't necessary for getting the point across should be removed by lossy compression and cropping.
 
-If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an [h-card](https://microformats.org/wiki/h-card)), I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
+If you want to include a profile photo (e.g., if your website is part of the IndieWeb and uses an h-card microformat, I recommend re-using one of your favicons. Doing so should be harmless since most browsers will fetch and cache favicons anyway.
 
 If you really want to take PNG optimization to the next level, try Efficient Compression Tool:
 
@@ -913,6 +954,16 @@ These resources also encourage authors to include different image variants for d
 Rather than create separate lanes for different users, I prefer making the defaults as inclusive as possible. A single image should look good under a variety of downscaling algorithms. It should be as small as it can be without losing essential information.
 
 It might seem odd to create a lossless WebP from a lossy PNG, but I've found that it's often the best way to get the smallest possible image at the minimum acceptable quality for screenshots containing solid backgrounds.
+
+### Enforce image compression
+
+The "Document Policy" HTTP header has experimental directives `lossless-images-max-bpp` and `lossy-images-max-bpp`.
+=> https://github.com/wicg/document-policy/blob/main/document-policy-explainer.md Document Policy explainer doc
+
+In this context, "bpp" refers to "bytes per pixel"; a 256-by-256 pixel image that's 6.6 kilobytes large would have a "bpp" of 0.1. If it's a lossy image, then sending `lossy-images-max-bpp=0.1` would forbid the image from loading if it's over 6.6 kilobytes in size.
+
+Currently, these directives are disabled-by-default in Chromium; you can enable them by navigating to `chrome://flags` and toggling "Experimental Web platform features". I don't think these directives are perfect, but they are quite useful.
+=> https://seirdy.one/notes/2022/08/12/document-policy-and-image-compression/ Document policy and image compression
 
 ### Dark image variants
 
@@ -1195,7 +1246,7 @@ Readers who double-tap to jump or zoom can't do so if there's no screen region t
 
 => gemini://seirdy.one/misc/touch_targets.png Phone screen with three "touch target" rectangles atop each other, separated by blank sections labeled "space". Image from Axess Lab.
 
-Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information. Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a [tap target](#tap-target).
+Having clearly distinguished links also helps users decide safe places to tap the screen. See the "In defense of link underlines" section for more information. Always make sure one non-interactive region exists on the screen at a time, 48 CSS pixels in either dimension; that's the size of a tap target.
 
 ### Tap targets
 
@@ -1458,6 +1509,41 @@ Beware of "display" and "visibility" CSS properties; they can interfere with con
 > If what is represented in the accessibility tree does not represent the developer’s intended UI, it’s either (wittingly/unwittingly) the fault of the developer or the browser. But what we can be sure of, in these cases, is that it is not the fault of the screen reader.
 => https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/ Short note on what CSS display properties do to table semantics
 
+## Future users
+
+The number of people using your site in the future is hopefully greater than the number of people using your site in the present. Accordingly, your pages need to work correctly in the future.
+
+Much of this section borrows from an article by Jeff Huang:
+=> https://jeffhuang.com/designed_to_last/ This Page is Designed to Last
+
+### Third parties
+
+I've already made a privacy and performance case against third-party resources in an earlier "Third-party content" subsection). Another reason to avoid third-party resources is longevity. Third-party scripts, styles, frames, and images all depend on someone else's host keeping the resource available at the same URL; over time, these tend to disappear. Sticking to first-party content reduces these points of failure.
+
+Third-party content is especially problematic when it's hosted on modest hardware. If your site "goes viral", your traffic could take down the third-party site or prompt them to disable hotlinking. _Serve assets yourself._
+
+### Dead links
+
+On the same note: your internal and external links to other pages need to change with time
+=> https://en.wikipedia.org/wiki/Link_rot Wikipedia: Link rot
+
+Use a broken-link checker regularly to ensure that your content stays alive. I recommend checkers that can cache results. My site has a bit under two thousand links at the time of writing; checking all of them at once would be exhausting, but using a week-long cache allows me to split this over seven days. Examples of such broken-link checkers include:
+=> https://github.com/lycheeverse/lychee lychee
+=> https://github.com/wjdp/htmltest htmltest
+
+Whenever you link to a page, try to archive a snapshot of it. The Wayback Machine, archive.today, and Ghostarchive are popular options. Archival is one of the few times I recommend using a third-party service; a service like the Wayback Machine will likely outlive your website. That being said, self-hosted solutions like ArchiveBox do exist.
+
+If you link often enough, archival might be something worth automating. The Wayback Machine offers an API, and allows registered users to mass-archive archive all outlinks in a page.
+
+### Reproducibility
+
+Imagine your typical "modern" website's deployment pipeline. It requires thousands of dependencies to build. It uses bespoke tools to deploy to a service provider with a custom non-standard stack (e.g. Fly.io, Heroku, Cloudflare Workers, AWS Lambda).
+
+Ten years from now, how much of this will still work?
+
+Try to ensure that your website can be archived, and/or easily re-built and served on an ordinary server. This way, your work can still be made accessible after you're gone. For example: all my site requires to build is a tarball of statically-linked binaries, a POSIX shell, and a decent Make implementation (bmake and GNU make work) to build. To serve, it just needs a static web server.
+=> https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/.build.yml See my build manifest to see how my site is built
+
 ## Testing
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand POSH.
@@ -1490,7 +1576,7 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 6. AInspector: a Firefox addon that displays audits in the sidebar. In my experience, it does have many false-positives (especially regarding DPUB-ARIA); however, it has caught a few issues missed by all other tools.
 => https://ainspector.disability.illinois.edu/ AInspector website
 
-7. Firefox's Accessibility Inspector: supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. Horizontally-scrollable elements may only become interactive on narrow viewports, so I recommend running the keyboard audits after reducing the viewport width.
+7. Firefox's Accessibility Inspector: supports some very basic audits for contrast, keyboard access, and text labels. The accessibility tree is also a useful way to ensure that elements have accessible names. The keyboard audits have false-positives on non-interactive elements with scrollable overflow, which need to be focusable.
 => https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues Firefox Accessibility Inspector documentation
 
 8. Chromium's CSS Overview: can show contrast violations. I recommend enabling the APCA-based contrast algorithm in the DevTools experimental settings first. Note that this uses an earlier version of APCA and does not account for contrast that is too high.
@@ -1500,8 +1586,15 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 => https://testssl.sh/ testssl.sh
 => https://www.ssllabs.com/ssltest/ Qualys SSL Labs' SSL Server Test
 
+10. CryptCheck: Unlike TLS 1.3, not all TLS 1.2 ciphers are secure. CryptCheck goes a bit further than testssl.sh and SSL Labs when it comes to evaluating TLS 1.2 cipher suites' security properties
+=> https://tls.imirhil.fr/ CryptCheck
+
 10. Webbkoll: basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Observatory.
 => https://webbkoll.dataskydd.net/ Webbkoll
+
+11. Check Your Website: slower, more in-depth website checks with an emphasis on security. It covers name server configurations, DNSSEC, DANE, email DNS records, MTA-STS, well-known paths, redirects, certificate transparency, subresource integrity, caching, and well-known ports. If you find its reports too overwhelmingly detailed, Hardenize is an easier-to-understand option.
+=> https://check-your-website.server-daten.de/ Check Your Website
+=> https://www.hardenize.com/ Hardenize
 
 I excluded Security Headers, since it tends to cargo-cult headers regardless of whether or not they are necessary. For instance, it penalizes forgoing the "Permissions-Policy" header even if the CSP blocks script loading and execution. I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse.
 
