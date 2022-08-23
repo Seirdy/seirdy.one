@@ -17,7 +17,7 @@ Here's the software I use. I've recently started to reduce my use of TUIs in fav
 * Image viewer: mpv (one less program to keep track of), swayimg. Both support AVIF and JPEG-XL now.
 * Session manager: tmux (I don't use it for tiling, Sway handles that)
 * IRC client: WeeChat. Might use senpai eventually, if I can get it to play well with espeak-ng.
-* News: Newsboat. I'm thinking of switching to an feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports WebSub.
+* News: Newsboat. I'm thinking of switching to a feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports WebSub.
 * Screen reader: Orca
 
 => https://sr.ht/~seirdy/mpd-scripts/ mpd-scripts page

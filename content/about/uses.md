@@ -18,10 +18,10 @@ Environment
 
 
 Fedora 36
-: Primary OS. Uses Linux, Systemd, GNU libc, GNU coreutils, and SELinux.
+: Primary OS. Uses Linux, Systemd, GNU libc, GNU coreutils, dnf, firewalld, and SELinux.
 
 Sway
-: Dynamic Wayland compositor that focus on tiling window management.
+: Dynamic Wayland compositor that focuses on tiling window management but also supports tabbed and stacking layouts.
 
 Zsh
 : Login shell. POSIX-compatible and mostly Bash-compatible. Custom static build to skip checking system files and improve startup performance.
@@ -59,7 +59,7 @@ WeeChat
 : IRC client. I might use [senpai](https://sr.ht/~taiite/senpai/) eventually, if I can get it to play well with espeak-ng.
 
 Newsboat
-: Feed reader for RSS and Atom feeds. I'm thinking of switching to an feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports [WebSub.](https://websub.net/draft)
+: Feed reader for RSS and Atom feeds. I'm thinking of switching to a feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports [WebSub.](https://websub.net/draft)
 
 Orca
 : Screen reader. Great for when I'm dealing with overstimulation and need to "turn everything off" for a while. I don't actually rely on this to use my machine.

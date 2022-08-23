@@ -83,7 +83,7 @@ This is a non-exhaustive list of simple, baseline recommendations for designing 
 
 1. Send your tool's output through a program like `espeak-ng` and listen to it. Can you make sense of the output?
 
-2. Refer to the latest <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> publication (currently WCAG 2.2) and take a look at the applicable criteria. Many have [accompanying techniques for plain-text interfaces.](https://w3c.github.io/wcag/techniques/#text). Avoiding reliance on color and using whitespace and/or indentation for pseudo-headings are two sample recommendations from the WCAG.
+2. Refer to the latest <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> publication (currently WCAG 2.2) and take a look at the applicable criteria. Many have [accompanying techniques for plain-text interfaces.](https://w3c.github.io/wcag/techniques/#text). Avoiding reliance on color in favor of whitespace and/or indentation for pseudo-headings are two sample recommendations from the WCAG.
 
 3. Make sure your web-based documentation and forge frontends are accessible, or are mirrored somewhere with good accessibility. I love what the Gitea folks are doing, but sadly their web frontend has a number of critical issues.[^2] For now, if your forge has accessibility issues, mirroring to GitHub and/or Sourcehut seems like a good option.
 

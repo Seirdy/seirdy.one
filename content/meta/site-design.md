@@ -91,7 +91,7 @@ Alternative engines
 : I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Only Servo supports `<details>`. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. The SerenityOS browser also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
 
 Textual browsers
-: The site works well with textual browsers. Lynx and Links2 are first-class citizens for which all features work as intended. I also test in [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup. I also test with ; I occasionally try Edbrowse too. In all textual browsers, the aforementioned incomplete `<details>` handling applies.
+: The site works well with textual browsers. Lynx and Links2 are first-class citizens for which all features work as intended. I also test in [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup. I occasionally try Edbrowse too. In all textual browsers, the aforementioned incomplete `<details>` handling applies.
 
 Abandoned engines
 : I occasionally test abandoned engines, sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Dillo,[^1] Internet Explorer[^2] (with and without compatibility mode), Netscape Navigator, old Presto-based Opera versions,[^3] and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine. Besides the `<details>` issues, the site works perfectly well in Internet Explorer 11 and Opera Presto. The site has layout issues but remains usable in Tkhtml, KHTML, and Netscape.
@@ -121,7 +121,7 @@ This site is **parser-friendly.** It uses well-formed polygot (X)HTML5 markup co
 
 I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with Ostatus and ActivityStreams XML namespaces.
 
-All HTML pages have an XHTML5 counterpart, which is currently the same except for the presence of an XML declaration. To see this counterpart, add "index.xhtml" to the end of a URL or request a page with an `Accept` header containing `application/xhtml+xml` but not `text/html`. All pages parse correctly using all the XHTML browser parsers I could try.
+All HTML pages have an XHTML5 counterpart, which is currently the same except for the `content-type` HTTP header. To see this counterpart, add "index.xhtml" to the end of a URL or request a page with an `Accept` header containing `application/xhtml+xml` but not `text/html`. All pages parse correctly using all the XHTML browser parsers I could try.
 
 ### Reading mode compatibility
 

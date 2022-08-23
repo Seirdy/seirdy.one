@@ -114,7 +114,7 @@ Principle 1: Perceivable
 : I supply a focus indicator with excellent contrast ([ST G195](https://w3c.github.io/wcag/techniques/general/G195)) and give all graphics a border, should their background colors blend into the page background. Borders follow guidelines for non-text contrast. Any graphic containing text that must be read also has a transcript available.
 
 [SC 1.4.12: Text Spacing](https://w3c.github.io/wcag/understanding/text-spacing.html)
-: My entire stylesheet is optional, and overrides of anything related to the forms of spacing or sizing covered by the SC should not cause any issues. Furthermore, I line spacing to 1.5 using CSS ([ST C21](https://w3c.github.io/wcag/techniques/css/C21)). I do not set word, letter, and paragraph spacing; these are all set by the user-agent.
+: My entire stylesheet is optional, and overrides of anything related to the forms of spacing or sizing covered by the SC should not cause any issues. Furthermore, I set line spacing to 1.5 using CSS ([ST C21](https://w3c.github.io/wcag/techniques/css/C21)). I do not set word, letter, and paragraph spacing; these are all set by the user-agent.
 
 [SC 1.4.13: Content on Hover or Focus](https://w3c.github.io/wcag/understanding/content-on-hover-or-focus.html)
 : The only content available on hover is content exposed by a `title` attribute. I ensure that this content is not made exclusively available through the `title` attribute; it must also be visible in the surrounding text, or previously in the document. Moreover: content exposed by the `title` attribute is actually an exception listed by this SC, so I pass.
@@ -128,7 +128,7 @@ I fully pass all guidelines under Principle 2 at the A and AA levels. SC 2.4.9 L
 
 
 [SC 2.1.1: Keyboard](https://w3c.github.io/wcag/understanding/keyboard.html) OR [SC 2.1.3: Keyboard (No exception)](https://w3c.github.io/wcag/understanding/keyboard-no-exception.html)
-: I don't use any scripts, only vanilla HTML elements and their built-in functionlaity ([ST H91](https://w3c.github.io/wcag/techniques/html/H91)). Additionally, I ensure that non-interactive but horizontally-scrollable elements are focusable, such as `<pre>` elements.
+: I don't use any scripts, only vanilla HTML elements and their built-in functionality ([ST H91](https://w3c.github.io/wcag/techniques/html/H91)). Additionally, I ensure that non-interactive but horizontally-scrollable elements are focusable, such as `<pre>` elements.
 
 [SC 2.1.2: No Keyboard Trap](https://w3c.github.io/wcag/understanding/no-keyboard-trap.html)
 : Nothing on this site can trigger a keyboard trap in a compliant browser, as I only use vanilla (X)HTML elements.
@@ -159,7 +159,7 @@ There is absolutely no animation or flashing content on any of my pages, save fo
 : I use navigation landmarks and headings to bypass blocks. This includes [ST ARIA11](https://w3c.github.io/wcag/techniques/aria/ARIA11) and [ST H69](https://w3c.github.io/wcag/techniques/html/H69). I also follow advisory techniques [C6: Positioning content based on structural markup](https://w3c.github.io/wcag/techniques/css/C6) and [H97: Grouping related links using the nav element](https://w3c.github.io/wcag/techniques/html/H97). Later, I also adopted [ST G1](https://w3c.github.io/wcag/techniques/general/G1) by adding a skip-link to jump to the main content
 
 [SC 2.4.2: Page Titled](https://w3c.github.io/wcag/understanding/page-titled.html)
-: All pages use the `title` element ([ST H25](https://w3c.github.io/wcag/techniques/html/H25). I regularly crawl my entire site with HTML-Proofer, which should automatically flag any exceptions.
+: All pages use the `title` element ([ST H25](https://w3c.github.io/wcag/techniques/html/H25)). I regularly crawl my entire site with HTML-Proofer, which should automatically flag any exceptions.
 
 [SC 2.4.3: Focus Order](https://w3c.github.io/wcag/understanding/focus-order.html)
 : I adopt [ST C27](https://w3c.github.io/wcag/techniques/css/C27): my source, visual, and DOM order are identical (assuming you read top-to-bottom, left-to-right)
@@ -207,7 +207,7 @@ There is absolutely no animation or flashing content on any of my pages, save fo
 : My site has no motion-actuation events. Any motion actuation changes (e.g. changing device orientation) are provided and configured by the operating system.
 
 [SC 2.5.5: Target Size (Enhanced)](https://w3c.github.io/wcag/understanding/target-size-enhanced.html) OR [SC 2.5.8: Target Size (Minimum)](https://w3c.github.io/wcag/understanding/target-size-minimum.html)
-: I exceed both of these criteria by instead following Google's more aggressive tap-target recommendations: all tap targets that are not part of body text should be at least 48-by-48&nbsp;px, and not overlap any other tap targets within a 56-by-56&nbsp;px region. Section permalinks, navigation links, links in description-list described term, footnote backlinks, etc. all meet these requirements. Lighthouse's "SEO" audits can automatically flag a small subset of violations.
+: I exceed both of these criteria by instead following Google's more aggressive tap-target recommendations: all tap targets that are not part of body text should be at least 48-by-48&nbsp;px, and not overlap any other tap targets within a 56-by-56&nbsp;px region. Section permalinks, navigation links, links in description-list described terms, footnote backlinks, etc. all meet these requirements. Lighthouse's "SEO" audits can automatically flag a small subset of violations.
 
 [SC 2.5.6: Concurrent Input Mechanisms](https://w3c.github.io/wcag/understanding/concurrent-input-mechanisms.html)
 : I do not restrict any input modalities, as I use only native elements and do not use any scripts.
