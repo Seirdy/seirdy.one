@@ -51,6 +51,6 @@ IgnoreURLs:
   - "https://bugs.debian.org/cgi-bin/bugreport.cgi"
   # - "https://forum.kuketz-blog.de/viewtopic.php?p=78202" # manual check: blocks crawlers
   - "https://forum.kuketz-blog.de/viewtopic.php"
-  - "https://web.archive.org/web/0/http" # the wayback machine itself.
+  - "https://web.archive.org/" # the wayback machine itself.
   - "https://webring.yesterweb.org/noJS/index.php" # Seems to block htmltest; check manually
 OutputDir: "linter-configs/htmltest"
