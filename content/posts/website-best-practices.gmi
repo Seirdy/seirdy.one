@@ -4,9 +4,13 @@ This is a "living document" that I add to as I receive feedback.
 
 => https://git.sr.ht/~seirdy/seirdy.one/log/master/item/content/posts/website-best-practices.gmi See the changelog
 
-This is also a somewhat long read; for a summary, skip everything between the table of contents and the conclusion.
+This is also a somewhat long read; for a summary, just read the introduction and conclusion.
+
+## Introduction
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (that'll take, like, at least a month /s). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have at least some useful information for any web content author or front-end web developer.
+
+### Inclusive design
 
 My primary focus is inclusive design:
 
@@ -14,7 +18,11 @@ My primary focus is inclusive design:
 
 Specifically, I focus on supporting *under-represented ways to read a page*. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, "reading mode" implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (POSH), you've done half of the work already.
 
-One of the core ideas behind the flavor of inclusive design I present is "inclusivity by default". Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Of course, some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+One of the core ideas behind the flavor of inclusive design I present is inclusivity by default. Web pages shouldn't use accessible overlays, reduced-data modes, or other personalizations if these features can be available all the time. Personalization isn't always possible: Tor users, students using school computers, and people with restrictive corporate policies can't "make websites work for them"; that's a webmaster's responsibility.
+
+At the same time, many users do apply personalizations; sites should respect those personalizations whenever possible. Balancing these two needs is difficult. Some features conflict; you can't display a light and dark color scheme simultaneously. Personalization is a fallback strategy to resolve conflicting needs. Disproportionately under-represented needs deserve disproportionately greater attention, so they come before personal preferences instead of being relegated to a separate lane.
+
+### Restricted enhancement
 
 Another focus is minimalism. Progressive enhancement is a simple, safe idea that tries to incorporate some responsibility into the design process without rocking the boat too much. I don't find it radical enough. I call my alternative approach "restricted enhancement".
 
@@ -22,7 +30,13 @@ Restricted enhancement limits all enhancements to those that solve specific acce
 
 I'd like to re-iterate yet another time that this only applies to websites that primarily focus on text. If graphics, interactivity, etc. are an important part of your website, less of the article applies. My hope is for readers to consider a subset of this page the next time they build a website, and address the trade-offs they make when they deviate. I don't expect--or want--anybody to follow all of my advice, because doing so would make the Web quite a boring place!
 
-I'll cite the Web Accessibility Initiative's (WAI) "Techniques for WCAG 2.2" a number of times:
+Our goal: make a textual website maximally inclusive, using restricted enhancement.
+
+### Prior art
+
+You can regard this article as an elaboration on existing work by the Web Accessibility Initiative (WAI).
+
+I'll cite the WAI's "Techniques for WCAG 2.2" a number of times:
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
 Each "Success Criterion" (requirement) of the WCAG has possible techniques. Unlike the Web Content Accessibility Guidelines (WCAG), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about *how* to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
@@ -32,7 +46,11 @@ I'll also cite the WAI's "Making Content Usable for People with Cognitive and Le
 
 The document lists eight objectives. Each objective has associated personas, and can be met by several design patterns.
 
-Our goal: make a textual website maximally inclusive, using restricted enhancement.
+### Why this article exists
+
+Performance and accessibility guidelines are scattered across multiple WAI documents and blog posts. Moreover, guidelines tend to be overly general and avoid giving specific advice. Guidelines from different places tend to contradict each other, especially when they have different goals (e.g., security and accessibility). They also tend to be focused on large corporate sites rather than the simple text-oriented content the Web was made for.
+
+I wanted to create a single reference with non-contradictory guidelines, containing advice more specific and opinionated than existing material. I also wanted to approach the very different aspects of site design from the same perspective and in the same place, allowing readers to draw connections between them.
 
 ## Security and privacy
 
@@ -43,6 +61,9 @@ One of the defining differences between textual websites and advanced Web 2.0 si
 The simplicity of basic textual websites should guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
 ### TLS
+
+Hostile networks are the norm, and your site is an attack vector:
+=> https://seirdy.one/notes/2022/08/03/on-enforcing-https/ On enforcing HTTPS
 
 All of the simplicity in the world won't protect a page from unsafe content injection by an intermediary. Proper use of TLS protects against page alteration in transit and ensures a limited degree of privacy. Test your TLS setup with these tools:
 
@@ -413,14 +434,14 @@ Many people use Tor out of necessity. On Tor, additional constraints apply.
 ### Constrainsts of the Tor Browser
 
 Tor users are encouraged to set the Tor Browser's (TBB) security settings to "safest".
-
 => https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
 
 This disables scripts, MathML, some fonts, SVG images, and other unsafe Firefox features:
-
 => https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
 
 If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+
+If you must use scripts, ensure that they perform well with just-in-time (JIT) compilation disabled. The Tor Browser's "safer" mode, iOS Lockdown mode, and Microsoft Edge's "enhanced" security mode all disable JIT compilation by default.
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 
