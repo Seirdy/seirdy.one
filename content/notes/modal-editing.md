@@ -7,7 +7,7 @@ replyType: "SocialMediaPosting"
 replyAuthor: "Seirdy"
 replyAuthorURI: "https://seirdy.one/"
 ---
-Since these are being boosted again, I wanted to say that my views have changes. I do not recommend most people learn Vim (well, sysadmins should know basic insert, write, quit, and undo).
+Since these are being boosted again, I wanted to say that my views have changed. I do not recommend most people learn Vim (well, sysadmins should know basic insert, write, quit, and undo).
 
 I think that modal editing is a niche. It's fine for people like me: I can barely keep a train of thought going and I constantly forget what I was thinking (It's a huge problem I have and I didn't realize this until recently; it's why I constantly need to write things down). For people like me, time is not fungible and spending a long time learning something non-intuitive just to save a few milliseconds later makes sense, since failure to get an idea down ASAP could kill the idea.
 
