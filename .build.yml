@@ -18,7 +18,7 @@ triggers:
     to: seirdy@seirdy.one
 tasks:
   - deps: |
-      echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+      printf "VerifyHostKeyDNS=yes\nKexAlgorithms=sntrup761x25519-sha512@openssh.com\n" >> ~/.ssh/config
       # mirrored at https://seirdy.one/misc/binaries.tar.gz
       rsync -Wv deploy@seirdy.one:/home/deploy/binaries.tar.gz .
       mkdir -p ~/bin
