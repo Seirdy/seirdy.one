@@ -15,6 +15,7 @@ alias find_compressible='find "$output_dir" -type f \( -name "*.html" -o -name "
 if [ "$format" = "gzip" ]; then
 	compress_level="$3"
 	find_compressible -exec ect -quiet -"$compress_level" -gzip {} \;
+	find_compressible -exec touch -r {} {}.gz \;
 elif [ "$2" = "brotli" ]; then
 	find_compressible -exec brotli -Z -- {} \;
 fi
