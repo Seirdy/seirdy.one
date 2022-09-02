@@ -13,7 +13,8 @@ WWW_RSYNC_DEST = $(USER):$(WWW_ROOT)
 GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
-RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3 -e "ssh -o KexAlgorithms=sntrup761x25519-sha512@openssh.com" --chmod=D755,F644
+SSHFLAGS = -o KexAlgorithms=sntrup761x25519-sha512@openssh.com
+RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3 -e "ssh $(SSHFLAGS)" --chmod=D755,F644
 RSYNCFLAGS_EXTRA ?=
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
@@ -172,7 +173,7 @@ lint-and-deploy-staging:
 
 .PHONY: deploy-envs
 deploy-envs:
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs copy-to-xhtml
-	@$(MAKE) NO_STATIC=1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs lint-local
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs copy-to-xhtml
+	@$(MAKE) SSHFLAGS='-o KexAlgorithms=curve25519-sha256@libssh.org' HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
