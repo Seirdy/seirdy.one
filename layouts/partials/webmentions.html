@@ -1,4 +1,5 @@
-{{- $wbmLinks := (slice "https://si3t.ch/log/2021-04-18-entetes-floc.html" "https://xmpp.org/2021/02/newsletter-02-feburary/" "https://gurlic.com/technology/post/393626430212145157" "https://gurlic.com/technology/post/343249858599059461" "https://www.librepunk.club/@penryn/108411423190214816" "https://benign.town/@josias/108457015755310198" "http://www.tuxmachines.org/node/148146" "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/" "https://bbbhltz.space/posts/thoughts-on-tech-feb2021/" "https://jorts.horse/@alice/108477866954580532") -}}
+{{- $wbmLinks := (slice "https://si3t.ch/log/2021-04-18-entetes-floc.html" "https://xmpp.org/2021/02/newsletter-02-feburary/" "https://gurlic.com/technology/post/393626430212145157" "https://gurlic.com/technology/post/343249858599059461" "https://www.librepunk.club/@penryn/108411423190214816" "https://benign.town/@josias/108457015755310198" "http://www.tuxmachines.org/node/148146" "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/" "https://bbbhltz.space/posts/thoughts-on-tech-feb2021/" "https://jorts.horse/@alice/108477866954580532" "https://brid.gy/comment/mastodon/@Seirdy@pleroma.envs.net/AK7FeQ4h2tUCKNwlXc/AK7GtGkE7JOVgm1Cgi") -}}
+{{- $archivetodayLinks := (slice "https://example.com") -}}
 <hr />
 <section aria-labelledby="webmentions">
 		<h2 id="webmentions" tabindex="-1">Web&#173;mentions</h2>
@@ -36,6 +37,8 @@
 					{{- $src := $webmention.source -}}
 					{{- if in $wbmLinks $src -}}
 						{{- $src = printf "https://web.archive.org/web/0/%s" $src -}}
+					{{- else if in $archivetodayLinks $src -}}
+						{{- $src = printf "https://archive.today/oldest/%s" $src -}}
 					{{- end -}}
 					{{ if (eq $webmention.type "like") -}}
 					<div itemprop="potentialAction" itemscope="" itemtype="https://schema.org/LikeAction" class="u-like h-cite">
