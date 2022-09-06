@@ -166,10 +166,10 @@ Optimal loading is a complex topic. Broadly, it covers three overlapping categor
 
 HTML is a blocking resource: images and stylesheets will not load until the user agent loads and parses the HTML that calls them. To start loading above-the-fold images before the HTML parsing finishes, send a `link` HTTP header.
 
-{{<codefigure>}} {{< codecaption >}} my website includes a `link` header to load an SVG that serves as my IndieWeb photo and favicon. Hash removed from filename for readability. {{< /codecaption >}}
+{{<codefigure>}} {{< codecaption >}} my website includes a `link` header to load the image that serves as my IndieWeb photo and favicon. The header includes a [priority hint](https://wicg.github.io/priority-hints/) so the browser starts downloading the resource right away. {{< /codecaption >}}
 
 ```figure {var1="HASH" samp=true}
-link: </favicon.HASH.svg>; rel=preload; as=image
+link: </favicon.HASH.svg>; rel=preload; as=image; fetchpriority=high
 ```
 
 {{</codefigure>}}
