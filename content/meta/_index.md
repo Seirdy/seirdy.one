@@ -5,6 +5,19 @@ outputs:
     - html
 description: "About this site. How it's built, why it's built that way, privacy, accessibility, mirrors, etc."
 ---
+How I run this site
+-------------------
+
+With the exception of search-result pages, this site's public-facing content is statically-generated using [the Hugo static-site generator](https://gohugo.io/). I list all the server-side software on [my "uses" page]({{<relref "/about/uses.md#server-side-stuff">}}). All programs on my server that did not come pre-installed with Fedora Cloud Edition are statically-linked binaries built by me, running in heavily sandboxed environments. Most services run with their own root directories (i.e. they run in chroots).
+
+Hugo pulls Webmentions from my Webmention endpoint during builds, so I can have statically-generated comments. Although I did use a pre-made theme a long time ago, I've since gradually re-written the site; my theme is now original. See [my site design standards]({{<relref "/meta/site-design.md">}}) for my design goals.
+
+### Services this site relies on
+
+This site is hosted on a virtual private server I rent from Digital Ocean, with 1&nbsp;virtual CPU and 1&nbsp;GB of memory. I don't necessarily endorse Digital Ocean; for now, I'm only using it for the free credits. I use name servers from [deSEC](https://desec.io/), and do recommend it to others who want managed DNSSEC.
+
+This site encrypts HTTPS traffic with an OCSP-stapled TLS certificate signed by Let's Encrypt. It regularly pulls package updates from Fedora's official repository mirrors.
+
 Other versions of this site
 ---------------------------
 

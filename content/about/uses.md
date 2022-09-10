@@ -228,7 +228,7 @@ All my server daemons are statically-linked binaries, which makes sandboxing eas
 
 
 Nginx
-: Specifically, [nginx-quic.](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, and musl libc; patched for dynamic TLS records, basic OCSP support, and HPACK compression.
+: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, and musl libc; patched for dynamic TLS records, basic OCSP support, and static HPACK compression.
 
 [certbot-ocsp-fetcher](https://github.com/tomwassenberg/certbot-ocsp-fetcher)
 : Shell script to manage the OCSP cache for Nginx, since Nginx's own implementation is lacking (and completely non-existent if you build with BoringSSL)
