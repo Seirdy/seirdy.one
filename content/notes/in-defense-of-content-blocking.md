@@ -20,4 +20,4 @@ Distracting content (most ads), color schemes with bad contrast, bright images o
 
 The default behavior on the Web is one in which [user-agents set their terms]({{<relref "/notes/user-agents-set-the-terms.md">}}), and websites must agree to them.
 
-Nobody is forcing a person to publish content on the Web. If the "comply with the user's wishes" model of the Web is problematic to a content creator, they don't need to participate in the Web.
+The libertarian perspective is a two-way street. Nobody is forcing a person to publish content on the Web. If the "comply with the user's wishes" model of the Web is problematic to a content creator, they don't need to participate in the Web.
