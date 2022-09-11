@@ -16,6 +16,8 @@ Businesses are not entitled to the success of their business models. If a busine
 
 Distracting content (most ads), color schemes with bad contrast, bright images on dark pages, etc. are accessibility hazards (particularly cognitive accessibility hazards). Restricting the use of page-alteration software (e.g. color and font alteration, disabling images, and blocking frames) is therefore a discriminatory practice.
 
+[In a sibling subthread](https://news.ycombinator.com/item?id=32766236):
+
 > The part of your analogy where you say people who want burgers don't have any other choice seems not to fit: you can eat other foods which don't have this requirement, just like there are lots of places on the internet where you can exchange money for ad-free content.
 
 The default behavior on the Web is one in which [user-agents set their terms]({{<relref "/notes/user-agents-set-the-terms.md">}}), and websites must agree to them.
