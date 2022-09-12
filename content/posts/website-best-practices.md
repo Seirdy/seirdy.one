@@ -61,7 +61,7 @@ Our goal: make a textual website maximally inclusive, using restricted enhanceme
 
 ### Prior art
 
-You can regard this article as an elaboration on existing work by the Web Accessibility Initiative (<abbr>WAI</abbr>).
+You can regard this article as an elaboration on existing work by the Web Accessibility Initiative (<abbr title="Web Accessibility Initiative’s">WAI</abbr>).
 
 I'll cite the <abbr>WAI's</abbr> {{<mention-work itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="Techniques for WCAG 2.2" url="https://www.w3.org/WAI/WCAG22/Techniques/">}}{{</mention-work>}} a number of times. Each "Success Criterion" (requirement) of the WCAG has possible techniques. Unlike the <cite>Web Content Accessibility Guidelines</cite> (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>), the Techniques document does not list requirements; rather, it serves to non-exhaustively educate authors about _how_ to use specific technologies to comply with the WCAG. I don't find much utility in the technology-agnostic goals enumerated by the WCAG without the accompanying technology-specific techniques to meet those goals.
 
@@ -418,7 +418,7 @@ Using `content-visibility` for content at the end of the page is relatively safe
 
 ### Performance of assistive technologies
 
-{{<mention-work itemtype="CreativeWork" itemprop="mentions">}}{{<indieweb-person first-name="Eric" last-name="Bailey" url="https://ericwbailey.design/" itemprop="author" appendString="’s">}} presentation {{<cited-work name="The intersection of performance and accessibility" url="https://noti.st/ericwbailey/Yfyaxa/slides">}}{{</mention-work>}} describes how computing the accessibility tree can be expensive if a page has too many DOM nodes and custom elements. Browsers use complex heuristics to determine which elements to report, to reduce the size of the accessibility tree. Now that all major browsers are moving to multi-process architectures, some browser components interface with assistive technology (<abbr>AT</abbr>) in a separate process. Data about the page's semantics needs to cross process boundaries, incurring additional overhead.
+{{<mention-work itemtype="CreativeWork" itemprop="mentions">}}{{<indieweb-person first-name="Eric" last-name="Bailey" url="https://ericwbailey.design/" itemprop="author" appendString="’s">}} presentation {{<cited-work name="The intersection of performance and accessibility" url="https://noti.st/ericwbailey/Yfyaxa/slides">}}{{</mention-work>}} describes how computing the accessibility tree can be expensive if a page has too many DOM nodes and custom elements. Browsers use complex heuristics to determine which elements to report, to reduce the size of the accessibility tree. Now that all major browsers are moving to multi-process architectures, some browser components interface with assistive technology (<abbr title="Assistive Technology">AT</abbr>) in a separate process. Data about the page's semantics needs to cross process boundaries, incurring additional overhead.
 
 Re-calculating nodes in the accessibility tree can create small delays for user interaction. These delays add up, causing the accessibility tree to fall out-of-sync with the actual page state. In extreme cases, an out-of-control accessibility tree may crash the <abbr>AT</abbr>. Moreover, speech synthesizers may be slow to start speaking when the CPU is under load. Delayed speech synthesis is incredibly annoying because it tends to omit words while "warming up".
 
@@ -443,7 +443,7 @@ Plenty of reasons exist for using older versions of each of the mainstream brows
 
 
 Firefox
-: In addition to Firefox's "Stable", "Beta", and "Nightly" channels, Firefox includes an "Extended Support Release" (<abbr>ESR</abbr>). Firefox <abbr>ESR</abbr> receives only bugfixes and major security patches for over one year. It's the default browser in Debian and the basis for the Tor Browser. In other words: if you want people to be able to browse your site anonymously (i.e. with the Tor Browser), you need to support Firefox <abbr>ESR</abbr> versions for at least 13 months after their release. If that wasn't enough: the latest version of KaiOS uses Firefox 84, while older versions (still being sold in 2022!) use Firefox 49.[^12]
+: In addition to Firefox's "Stable", "Beta", and "Nightly" channels, Firefox includes an "Extended Support Release" (<abbr title="Extended Support Release">ESR</abbr>). Firefox <abbr>ESR</abbr> receives only bugfixes and major security patches for over one year. It's the default browser in Debian and the basis for the Tor Browser. In other words: if you want people to be able to browse your site anonymously (i.e. with the Tor Browser), you need to support Firefox <abbr>ESR</abbr> versions for at least 13 months after their release. If that wasn't enough: the latest version of KaiOS uses Firefox 84, while older versions (still being sold in 2022!) use Firefox 49.[^12]
 
 Safari and WebKit
 : On Linux, WebKitGTK powers various browsers, RSS readers, and in-app browsers. WebKitGTK versions are limited by a distribution's release model; LTS distributions will not have the shiniest new WebKit features. Safari versions are similarly limited by iOS and macOS versions. For instance, the iPhone 7 will not be able to run iOS 16 or Safari 16, just four years after it was discontinued; it'll only receive occasional security patches for Safari 15.x. The only way for iPhone-7-and-earlier users to use Safari 16+ features is to buy a new phone. Expecting users to buy a new device every few years just to display a webpage needlessly contributes to the rampant consumerism and throw-away culture in the consumer electronics industry.
@@ -483,7 +483,7 @@ Many people use Tor out of necessity. On Tor, additional constraints apply.
 
 Tor users are encouraged to set the [Tor Browser's security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, remote fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
-If you must use scripts, ensure that they perform well with just-in-time (<abbr>JIT</abbr>) compilation disabled. The Tor Browser's "safer" mode, iOS Lockdown mode, and Microsoft Edge's "enhanced" security mode all disable JIT compilation by default.[^15]
+If you must use scripts, ensure that they perform well with just-in-time (<abbr title="Just-In-Time">JIT</abbr>) compilation disabled. The Tor Browser's "safer" mode, iOS Lockdown mode, and Microsoft Edge's "enhanced" security mode all disable JIT compilation by default.[^15]
 
 Additionally, hopping between nodes in Tor circuits incurs latency, worsening the impacts of requiring multiple requests and round-trips. Try to minimise the number of requests to view a page.
 

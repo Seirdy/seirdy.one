@@ -5,7 +5,7 @@ date: 2022-08-10T17:00:00-07:00
 
 Web development **fuzzes browsers and developer tools** with the side-effect of occasionally producing decent Web content. My site has broken enough things to give me plenty of bugs to file, or cause others to file on my behalf. Despite all the fuss I make about maintaining compatibility, I do make exceptions for simple fixable bugs and broken developer tools.
 
-My strict Content Security Policy (<abbr>CSP</abbr>) has broken various developer tools (Axe, Lighthouse), Brave's Reader Mode (allowing styles with a CSP hash blocks reader-mode CSS), WebKit media controls (I relax the <abbr>CSP</abbr> on the affected page), Chromium DevTools' console, and various parts of Epiphany. Recent directives like `navigate-to` and `webrtc` were unsupported by Google's CSP evaluator (and by proxy, Lighthouse) until I pushed a trivial fix.
+My strict Content Security Policy (<abbr title="Content Security Policy">CSP</abbr>) has broken various developer tools (Axe, Lighthouse), Brave's Reader Mode (allowing styles with a CSP hash blocks reader-mode CSS), WebKit media controls (I relax the <abbr>CSP</abbr> on the affected page), Chromium DevTools' console, and various parts of Epiphany. Recent directives like `navigate-to` and `webrtc` were unsupported by Google's CSP evaluator (and by proxy, Lighthouse) until I pushed a trivial fix.
 
 Recent features like CSS containment, `media` attributes in `<meta name="theme-color">` elements, the `@supports selector()` CSS at-rule, and `prefers-contrast: less` expose several false positives in the W3C's CSS and Nu HTML validators; I fixed a couple of the simpler issues.
 
