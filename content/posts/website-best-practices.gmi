@@ -244,9 +244,9 @@ A supplementary metric to use alongside download size is round trips. Estimate t
 
 Understanding round-trips requires understanding your server's approach to congestion control.
 
-Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 1460 bytes. The following round-trip could deliver under three kilobytes.⁷
+Historically, TCP congestion control approaches typically set an initial window size to ten TCP packets and grew this value with each round-trip. Under most setups, this meant that the first round-trip could include 14.6 kilobytes. The following round-trip could deliver under thirty kilobytes.⁷ Try to ensure that all non-markup blocking resources and your document's "<head>" fit within this 14.6 kilobyte budget.
 
-Nowadays, servers typically employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
+Nowadays, servers employ BBR-based congestion control. It allows for regular "spikes" in window size, but the initial window size is still small.
 
 => https://labs.apnic.net/presentations/store/2019-09-05-bbr.pdf "TCP and BBR" slides from APNiC (PDF)
 
@@ -254,7 +254,9 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-Assume that your first impression must fit in the first kilobyte. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁹ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
+One of the benefits of HTTP/2 and HTTP/3 is multiplexing: multiple resources can download over a single connection. Try to initiate downloads for blocking resources as soon as possible. 
+
+A TCP packet is 1460 bytes. Your first TCP packet will be partly taken up by a stapled TLS certificate, leaving you with under one kilobyte to work with. Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.⁹ Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took my earlier advice to avoid third-party content.
 
 Apply these strategies in moderation. Including extra preload directives in your document markup might not help as much as you think, since their impact on page size could negate minor improvements. Micro-optimizations have diminishing returns; past a certain point, your effort is better spent elsewhere.
 
