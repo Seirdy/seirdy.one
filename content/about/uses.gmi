@@ -35,6 +35,14 @@ Here's the software I use. I've recently started to reduce my use of TUIs in fav
 => https://github.com/leahneukirchen/mblaze mblaze
 => https://git.sr.ht/~seirdy/bwrap-scripts/tree/trunk/item/w3m-sandbox w3m-sandbox
 
+## Networking and pentesting:
+
+* RustScan (don't use it on max settings without permission)
+* q, a DNS client that supports DoH, DoH3, DoQ, and ODoH.
+* rnp, a ping tool that supports TCP and QUIC "pings" to estimate handshake latency.
+* both curl and xh for HTTP testing.
+* kinvolk's wrk2 fork and bombardier for HTTP load-testing
+
 ## Other tools:
 
 * jq (I love writing jq programs)
@@ -43,8 +51,7 @@ Here's the software I use. I've recently started to reduce my use of TUIs in fav
 * msync
 * wormhole-william
 * rdrview
-* Efficient Compression Tool (better than ZopfliPNG)
-* RustScan (don't use it on max settings without permission)
+* Efficient Compression Tool (better than Zopfli/ZopfliPNG)
 * scc
 * Pandoc
 

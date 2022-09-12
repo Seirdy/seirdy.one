@@ -103,8 +103,31 @@ Neomutt
 [w3m-sandbox](https://git.sr.ht/~seirdy/bwrap-scripts/tree/trunk/item/w3m-sandbox)
 : Displays HTML mail in a sandboxed environment. Networking and most filesystem access are disabled; using its full unrestricted functionality will involve syscalls I forbid with seccomp and crash the program.
 
+Networking and penetration testing
+----------------------------------
+
+Every administrator needs some tools to test their servers.
+
+
+[RustScan](https://rustscan.github.io/RustScan/)
+: A port-scanner that can scan all 65&nbsp;thousand ports in _seconds_. It optionally integrates with nmap. Don't use it on someone else's server without permission; this thing is brutal.
+
+[q (DNS client)](https://github.com/natesales/q)
+: A DNS client that supports DNS-over-TLS, DNS-over-HTTPS, DNS-over-HTTP/3, DNS-over-QUIC, and Oblivious DNS-over-HTTPS. It sports a wide variety of options that aren't present in other `dig` replacements.
+
+[rnp](https://github.com/r12f/rnp)
+: A "layer-4 ping tool" that can measure the round-trip time of a plain TCP or QUIC connection, rather than using ICMP.
+
+[cURL](https://curl.se/) OR [xh](https://github.com/ducaale/xh)
+: cURL supports a wide variety of features, protocols, TLS libraries, etc. `xh` is more focused on HTTP. I like to use both; when I don't need the features of cURL, I use xh for its simple color output and HTTPie-like syntax. Plus, it's nice to be able to test a server with two different HTTP+TLS implementations.
+
+[wrk2 (fork)](https://github.com/kinvolk/wrk2) OR [bombardier](https://github.com/codesenberg/bombardier)
+: Two great HTTP load-testers. wrk2 is mostly abandoned, but this fork has since added some features. When I need to test something like HTTP/2, I reach for bombardier. I haven't yet evaluated different HTTP/3 load-testers; I might have to hive h2load+nghttp3 a look.
+
 Other tools
 -----------
+
+Everyday utilities I can't live without:
 
 
 jq
@@ -127,11 +150,8 @@ z.lua
 [rdrview](https://github.com/eafer/rdrview)
 : The Readability algorithm on the command-line. Pairs nicely with Pandoc and/or w3m to extract and manipulate article content.
 
-[Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool)
-: The last word in optimizing gzip or PNG size. Runs circles around ZopfliPNG, oxipng, etc.
-
-[RustScan](https://github.com/RustScan/RustScan)
-: A port-scanner that can scan all 65&nbsp;thousand ports in seconds. Don't use it on someone else's server without permission; this thing is brutal.
+[Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool) (`ect`)
+: The last word in optimizing gzip or PNG size. Runs circles around Zopfli, ZopfliPNG, oxipng, etc. I use it in combination with `brotli` to compress all static text and PNGs on this site.
 
 [scc](https://github.com/boyter/scc)
 : Super fast SLOC alternative that shows statistics on code complexity by language.
@@ -145,7 +165,7 @@ bmake
 This website
 ------------
 
-I use multiple aforementioned tools (Neovim, bmake, sd) for routine tasks when building seirdy.one.
+I use multiple aforementioned tools (Neovim, bmake, sd, etc.) for routine tasks when building seirdy.one.
 
 ### Make content
 
@@ -165,6 +185,9 @@ pngquant, Efficient Compression Tool
 `avifenc`
 : Comes with libavif. I use it with libaom to encode AVIF images with lossy compression. I also link libaom against libjxl so that I can get Butteraugli-based quality tuning.
 
+`cjxl`
+: The reference JPEG-XL encoder. JPEG-XL won't be enabled-by-default in browsers for a while, but I still offer it via some `<picture>` elements.
+
 ### Deploy the website
 
 
@@ -178,16 +201,16 @@ Efficient Compression Tool, Brotli
 : These perform static compression at max settings[^4] for all static content. Reduces payload size and saves server CPU resources.
 
 rsync
-: Transfers files to the server
+: Transfers modified files to the server with transparent zstd compression.
 
 [builds.sr.ht](https://builds.sr.ht/)
-: <abbr title="Continuous Integration/Continuous Delivery">CI/CD</abbr> service that has nice features. Production site builds occur in an Alpine VM on builds.sr.ht. Features I like include letting me ssh into failed builds, having an accessible Web UI, and not requiring any JavaScript.
+: <abbr title="Continuous Integration/Continuous Delivery">CI/CD</abbr> service. Production site builds occur in an Alpine VM on builds.sr.ht. Features I like include letting me ssh into failed builds, having an accessible Web UI, and not requiring any JavaScript. I bring most of my own binaries and use portable Makefiles and shell-scripts, so I could easily migrate to another offering if necessary.
 
 ### Test the website
 
 I don't run these utilities every push; they're too heavy for that. I do run them often, though.
 
-I run these tools locally, on every applicable file. A full run takes under <time datetime="PT2M">2 minutes</time>.
+I run these tools locally, on every applicable file. A full run takes under <time datetime="PT6M">6 minutes</time> on my modest dual-core notebook.
 
 
 [Nu HTML Checker](https://validator.github.io/validator/)
@@ -209,17 +232,15 @@ jq
 : I validate my Atom feeds using this tool. Like always, I filter out false positives and report them upstream.
 
 [htmltest](https://github.com/wjdp/htmltest) OR [html-proofer](https://github.com/gjtorikian/html-proofer)
-: Two very similar tools. html-proofer is slow but supports more features; I run the faster htmltest more often. They check for broken links, markup errors, and valid icons.
+: Two very similar tools. html-proofer is slow but supports more features; I run the faster htmltest more often. They check for broken links, markup errors, and valid icons. htmltest's ability to cache links is really useful: instead of testing nearly two thousand links every run, I can spread the load over the course of a week. It's also much easier to build a static binary of htmltest than other link-checkers, like Lychee.
 
 [webhint](https://webhint.io)
-: When all the aforementioned tests pass, my staging site deploys and webhint runs on every page in its sitemap. I skip its axe-based tests, since those are already covered by axe-core.
-
-  Webhint checks HTTP headers, validates the Web App Manifest, ensures caching and compression work, checks for compatibility issues, validates compliance with a performance budget, and looks for common HTML/CSS mistakes.
+: When all the aforementioned tests pass, my staging site deploys and webhint runs on every page in its sitemap. Webhint checks HTTP headers, validates the Web App Manifest, ensures caching and compression work, checks for compatibility issues, validates compliance with a performance budget, and looks for common HTML/CSS mistakes. I skip its axe-based tests, since those are already covered by axe-core.
 
 Tools I have yet to add to this section:
 
 * Something to validate my Webfinger JSON against a schema
-* A tool to validate microdata and RDFa. structured-data-linter or Schemarama could work.
+* A tool to validate microdata and RDFa. The W3C structured-data-linter or Google's Schemarama could work.
 * A tool to validate microformats.
 
 ### Server-side stuff
