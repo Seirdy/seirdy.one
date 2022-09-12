@@ -11,7 +11,7 @@ Here's the software I use. I've recently started to reduce my use of <abbr title
 Hardware
 --------
 
-My main computer is a 2013 HP Elitebook 840 G1. It has an Intel i5-4300U CPU, with simultaneous multithreading disabled.
+My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300U CPU (Haswell), with simultaneous multithreading disabled.
 
 Environment
 -----------
@@ -46,7 +46,7 @@ mpd
 : My music player daemon, paired with [my mpd scripts](https://sr.ht/~seirdy/mpd-scripts/) and [mpd-mpris](https://github.com/natsukagami/mpd-mpris).
 
 mpv
-: My video player. I have three builds of mpv: one normal build, and two with decoder libraries that have profile-guided optimization for different types of video (anime, and live-action that includes heavy filmgrain). Often paired with [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [mpv_sponsorblock](https://github.com/po5/mpv_sponsorblock).
+: My video player. I have three builds of mpv: one normal build, and two with decoder libraries that have profile-guided optimization for different types of video (anime, and live-action that includes heavy filmgrain). Often paired with [yt-dlp](#yt-dlp) and [mpv_sponsorblock](https://github.com/po5/mpv_sponsorblock).
 : Also my main image viewer, since FFmpeg recently got support for JPEG-XL and AVIF.
 
 [swayimg](https://github.com/artemsen/swayimg)
@@ -122,7 +122,10 @@ Every administrator needs some tools to test their servers.
 : cURL supports a wide variety of features, protocols, TLS libraries, etc. `xh` is more focused on HTTP. I like to use both; when I don't need the features of cURL, I use xh for its simple color output and HTTPie-like syntax. Plus, it's nice to be able to test a server with two different HTTP+TLS implementations.
 
 [wrk2 (fork)](https://github.com/kinvolk/wrk2) OR [bombardier](https://github.com/codesenberg/bombardier)
-: Two great HTTP load-testers. wrk2 is mostly abandoned, but this fork has since added some features. When I need to test something like HTTP/2, I reach for bombardier. I haven't yet evaluated different HTTP/3 load-testers; I might have to hive h2load+nghttp3 a look.
+: Two great HTTP load-testers. wrk2 is mostly abandoned, but this fork has since added some features. When I need to test something like HTTP/2, I reach for bombardier. I haven't yet evaluated different HTTP/3 load-testers; I might have to give h2load+nghttp3 a look.
+
+[ssh-audit](https://github.com/jtesta/ssh-audit)
+: I check my SSH config against [this SSH policy](../ssh-policy.txt). It's based on the GrapheneOS infrastructure's SSH configs.
 
 Other tools
 -----------
@@ -131,7 +134,7 @@ Everyday utilities I can't live without:
 
 
 jq
-: Interpreter for the jq domain-specific programming language. Indespensible for creating, manipulaitng, and filtering data.
+: Interpreter for the jq domain-specific programming language. Indispensable for creating, manipulating, and filtering data.
 
 fzf
 : A fuzzy-finder that blends the CLI and TUI. Used for my program launcher, tab-completion, shell history search, Neovim menus (with telescope.nvim), and command-line path-completion.
@@ -150,7 +153,7 @@ z.lua
 [rdrview](https://github.com/eafer/rdrview)
 : The Readability algorithm on the command-line. Pairs nicely with Pandoc and/or w3m to extract and manipulate article content.
 
-[Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool) (`ect`)
+[Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool)
 : The last word in optimizing gzip or PNG size. Runs circles around Zopfli, ZopfliPNG, oxipng, etc. I use it in combination with `brotli` to compress all static text and PNGs on this site.
 
 [scc](https://github.com/boyter/scc)
@@ -161,6 +164,12 @@ Pandoc
 
 bmake
 : Much simpler than GNU Make, and good for ensuring that Makefiles are portable.
+
+[ghq](https://github.com/x-motemen/ghq)
+: A tool to manage version-control clones (Git, Mercurial, et al) in the style of `$GOPATH`. I have hundreds of repositories cloned from several different remotes, and this takes care of organizing them in my filesystem.
+
+<a href="https://github.com/yt-dlp" id="yt-dlp">yt-dlp</a>
+: Download videos from hundreds of different sites, including YouTube. Integrates with external downloaders like aria2 and downloads DASH chunks in parallel to max out your connection speed. yt-dlp also integrates with Sponsorblock to add skippable chapters for the segments I'd otherwise have to manually skip (sponsored content, subscription-begging, an ending segment featuring other videos, and other useless bullshit). I've forgotten what it's like to watch a video ad.
 
 This website
 ------------

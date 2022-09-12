@@ -1,5 +1,9 @@
 Here's the software I use. I've recently started to reduce my use of TUIs in favor of CLIs, for a variety of reasons. When possible, I try to use lightweight programs that can run on any machine, from a single-board computer to a giant desktop. I don't ever want to feel like I need to upgrade my hardware to do the same tasks as before: hardware upgrades should only be justified by my use-cases significantly changing, existing hardware being broken beyond repair, or upstream abandonment of security patches.
 
+## Hardware
+
+My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300U CPU (Haswell), with simultaneous multithreading disabled.
+
 ## Environment
 
 * OS: Fedora 36
@@ -42,6 +46,7 @@ Here's the software I use. I've recently started to reduce my use of TUIs in fav
 * rnp, a ping tool that supports TCP and QUIC "pings" to estimate handshake latency.
 * both curl and xh for HTTP testing.
 * kinvolk's wrk2 fork and bombardier for HTTP load-testing
+* ssh-auditor
 
 ## Other tools:
 
@@ -54,6 +59,7 @@ Here's the software I use. I've recently started to reduce my use of TUIs in fav
 * Efficient Compression Tool (better than Zopfli/ZopfliPNG)
 * scc
 * Pandoc
+* ghq, a VCS repository manager in the style of $GOPATH
 
 => https://github.com/psanford/wormhole-william wormhole-william
 => https://github.com/eafer/rdrview rdrview

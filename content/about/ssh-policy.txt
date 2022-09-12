@@ -1,0 +1,30 @@
+#
+# Custom policy based on seirdy.one (created on 2022/09/11)
+#
+
+# The name of this policy (displayed in the output during scans).  Must be in quotes.
+name = "Custom Policy (based on seirdy.one on 2022/09/11)"
+
+# The version of this policy (displayed in the output during scans).  Not parsed, and may be any value, including strings.
+version = 1
+
+# The banner that must match exactly.  Commented out to ignore banners, since minor variability in the banner is sometimes normal.
+# banner = "SSH-2.0-OpenSSH_8.8"
+
+# The compression options that must match exactly (order matters).
+# I've never needed it.
+compressions = none
+
+# The host key types that must match exactly (order matters).
+# Why do other key types still exist lmao
+host keys = ssh-ed25519
+
+# The key exchange algorithms that must match exactly (order matters).
+key exchanges = sntrup761x25519-sha512@openssh.com
+
+# The ciphers that must match exactly (order matters).
+ciphers = chacha20-poly1305@openssh.com
+
+# The MACs that must match exactly (order matters).
+# MACs are redundant with the chacha20-poly1305 cipher; don't use any.
+macs = 
