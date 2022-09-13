@@ -1,6 +1,6 @@
 ---
 title: "WAI-Adapt fallbacks to equivalent microformats"
-date: 2022-09-13T11:30:15-07:00
+date: 2022-09-13T11:28:15-07:00
 replyURI: "https://github.com/w3c/adapt/wiki/Comparison-of-ways-to-use-vocabulary-in-content"
 replyTitle: "Comparison of ways to use vocabulary in content"
 replyAuthor: "WAI-Adapt Task Force"
@@ -16,4 +16,4 @@ There's a 1-1 mapping between many microformats and values in [the WAI-Adapt Con
 
 I propose the addition of microformats2 to the comparison wiki page, and would support either merging the content module with microformats or specifying a mapping for fallback.
 
-Syndicated to <a href="https://github.com/w3c/adapt/issues/221" class="u-syndication" rel="syndication">the GitHub w3c/adapt bug tracker</a>.
+Syndicated to <a href="https://github.com/w3c/adapt/issues/221" class="u-syndication" rel="syndication">the GitHub w3c/adapt bug tracker</a> and <a href="https://indieweb.xyz/en/accessibility" class="u-syndication" rel="syndication">indieweb.xyz/en/accessibility</a>.
