@@ -130,20 +130,19 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 
 ### Smaller indexes, hit-and-<wbr />miss {#smaller-indexes-hit-and-miss}
 
-These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
+These engines fail badly at a few important tests. Otherwise, they seem to work well enough for users who'd like some more serendipity in less-specific searches.
 
+[Infotiger](https://alpha.infotiger.com/)
+: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotier has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
 
 [seekport](http://www.seekport.com/)
-: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It's really good considering its small index; it hasn't heard of less common terms (e.g. "Seirdy"), but it's able to find relevant results in other tests.
+: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms. but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 
 [Exalead](https://www.exalead.com/search/)
 : Slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 
 [ExactSeek](https://www.exactseek.com/)
 : Small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid <abbr title="search-engine optimization">SEO</abbr> options. It also powers SitesOnDisplay and [Blog-<wbr />search.com](https://www.blog-search.com).
-
-[Infotiger](https://alpha.infotiger.com/)
-: A small index that seems to find relevant results. It allows site submission for English and German pages. It also features a "similarity" search to query pages similar to a given link, with mixed results.
 
 [Burf.co](https://burf.co/)
 : Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
