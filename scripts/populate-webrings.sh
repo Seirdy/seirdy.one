@@ -89,11 +89,10 @@ netizens() {
 	printf 'Netizens,'
 	{
 		curl -sSL --compressed https://netizensring.link/onionring-variables.js \
-		| grep -C 1 https://seirdy.one/ | sd -s '];' "'https://netizensring.link/,'"
-		echo "'null',"
-	} | sd 'https://seirdy.one/,?' 'https://netizensring.link/,' \
-		| sd "\n|'" '' | trim_trailing_comma 
-		echo
+		| grep -C 1 https://seirdy.one/
+	} | sd 'https://seirdy.one/,?' 'https://netizensring.link/' \
+		| sd "\n|'|\r" '' | trim_trailing_comma 
+		echo ',null'
 }
 
 print_csv_values() {
