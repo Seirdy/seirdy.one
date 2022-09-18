@@ -59,7 +59,8 @@
 								{{ if $webmention.author_name -}}
 									<span itemprop="agent" itemscope="" itemtype="https://schema.org/Person" class="h-card p-author vcard"><span itemprop="name" class="p-name fn n">{{ $webmention.author_name }}</span></span>
 								{{ else if $webmention.title -}}
-									<span itemprop="name" class="p-name">{{ $webmention.title -}}</span>
+									<span itemprop="name" class="p-name">{{ $webmention.title | replaceRE ` \n` `
+` -}}</span>
 								{{ else -}}
 									{{ $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
 								{{ end -}}
@@ -68,7 +69,8 @@
 								<a class="u-url" itemprop="url" href="{{ $src }}" rel="nofollow ugc">
 									<span itemprop="name" class="p-name">
 										{{ if $webmention.title -}}
-											{{ $title | truncate 200 -}}
+											{{ $title | truncate 200 | replaceRE ` \n` `
+` -}}
 										{{ else -}}
 											{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
 										{{ end -}}
