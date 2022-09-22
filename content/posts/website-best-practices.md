@@ -275,7 +275,7 @@ HTTP/3 uses QUIC instead of TCP, which makes things a bit different; the importa
 
 ### The golden kilobyte
 
-One of the benefits of HTTP/2 and HTTP/3 is multiplexing: multiple resources can download over a single connection. Try to initiate downloads for blocking resources as soon as possible. 
+One of the benefits of HTTP/2 and HTTP/3 is multiplexing: multiple resources can download over a single connection. Try to initiate downloads for blocking resources as soon as possible.
 
 A TCP packet is 1460 bytes. Your first TCP packet will be partly taken up by a stapled TLS certificate, leaving you with under one kilobyte to work with.[^7] Make good use of this golden kilobyte; most or all of it will likely be taken up by HTTP headers.[^8] Ideally, the first kilobyte transferred should inform the client of all blocking resources required, possibly using preload directives; all of these resources can then begin downloading over the same multiplexed HTTP/2 connection before the current round-trip finishes! Note that this works best if you took [my advice to avoid third-party content](#third-party-content).
 
@@ -1860,7 +1860,9 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^5]: One example is a utility class for the `image-rendering` property. I use it on images that look better with `pixelated` rendering. This is a property of the image contents, not the image semantics or placement; a class makes sense.
 
-[^6]: {{<mention-work itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="High-Performance Browser Networking" url="https://hpbn.co/building-blocks-of-tcp/" extraName="headline">}} by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/" itemprop="author">}}{{</mention-work>}} gives a great introduction to how TCP works, if you'd like more details.
+[^6]: Technically, this is only true in idealized circumstances and if you have 0-RTT enabled. If your requests are not idempotent, you probably should stick with 1-RTT. A TCP handshake actually involves one additional round-trip, so you could probably start off with a 30-kilobyte window on HTTP/2 with 0-RTT. HTTP/3 servers with 0-RTT do use a true "zero-round-trip" connection, but they use QUIC instead of TCP. QUIC uses similar sizing logic but I'm not sure about the exact values.
+
+    {{<mention-work itemprop="citation" itemtype="TechArticle">}}{{<cited-work name="High-Performance Browser Networking" url="https://hpbn.co/building-blocks-of-tcp/" extraName="headline">}} by {{<indieweb-person first-name="Ilya" last-name="Grigorik" url="https://www.igvita.com/" itemprop="author">}}{{</mention-work>}} gives a great introduction to how TCP works, if you'd like more details.
 
 [^7]: This one-kilobyte limit is a semi-arbitrary rule-of-thumb I came up with. It's a simple number easier to work with than the number of bytes remaining in the earliest contentful round-trip, yet it typically falls within that quota.
 

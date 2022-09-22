@@ -1806,7 +1806,8 @@ I opted to meet the criterion a different way. Since all my pages are linked by 
 
 ⁶ uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
 
-⁷ If you'd like more details about TCP, here's a great introduction:
+⁷ Technically, this is only true in idealized circumstances and if you have 0-RTT enabled. If your requests are not idempotent, you probably should stick with 1-RTT. A TCP handshake actually involves one additional round-trip, so you could probably start off with a 30-kilobyte window on HTTP/2 with 0-RTT. HTTP/3 servers with 0-RTT do use a true "zero-round-trip" connection, but they use QUIC instead of TCP. QUIC uses similar sizing logic but I'm not sure about the exact values.
+If you'd like more details about TCP, here's a great introduction:
 => https://hpbn.co/building-blocks-of-tcp/ High-Performance Browser Networking, by Ilya Grigorik
 
 ⁸ Iterating through a list of font names to see if each one is available on a user's system is a slow but effective way to determine installed fonts without being granted permission to use the Font Access API. BrowserLeaks has a demo of this approach.
