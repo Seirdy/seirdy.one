@@ -70,7 +70,7 @@
 									<span itemprop="name" class="p-name">
 										{{ if $webmention.title -}}
 											{{ $title | truncate 200 | replaceRE ` \n` `
-` -}}
+` | safeHTML -}}
 										{{ else -}}
 											{{- $webmention.source | strings.TrimPrefix "https://" | strings.TrimPrefix "www." | strings.TrimRight "/" | truncate 35 -}}
 										{{ end -}}
