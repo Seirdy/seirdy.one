@@ -65,6 +65,17 @@ This site is featured in some cool directories.
 Awards
 ------
 
+{{<image-figure id="internetnl-web">}}
+
+{{<picture name="internetnl-web" alt="Badge with text: 100% score in website test, internet.nl">}}
+<figcaption itemprop="caption">
+
+[Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/1716116/).
+
+</figcaption>
+
+{{</image-figure>}}
+
 {{<image-figure id="iso-8601">}}
 
 {{< picture name="8601" alt="Bitmap font reading: “Viatrix's ISO 8601 Award! Seirdy's Home, awarded 23/17/22”" class="pix" sf=2 >}}

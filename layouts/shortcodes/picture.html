@@ -16,12 +16,14 @@
 	{{- $img_height = (mul $img_height . | math.Round ) -}}
 {{- end -}}
 <picture>
+	{{- if not (in site.BaseURL ".onion") -}}
 	{{ with $dark_svg -}}
 	{{ $dark_svg_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $dark_svg_src.RelPermalink }}"
 		type="image/svg+xml"
 		media="screen and (prefers-color-scheme: dark)" />
+	{{ end -}}
 	{{ end -}}
 	{{ with $dark_jxl -}}
 	{{ $dark_jxl_src := . | resources.Fingerprint "md5" -}}
@@ -51,11 +53,13 @@
 		type="image/png"
 		media="screen and (prefers-color-scheme: dark)" />
 	{{ end -}}
+	{{- if not (in site.BaseURL ".onion") -}}
 	{{ with $light_svg -}}
 	{{ $light_svg_src := . | resources.Fingerprint "md5" -}}
 	<source
 		srcset="{{ $light_svg_src.RelPermalink }}"
 		type="image/svg+xml" />
+	{{ end -}}
 	{{ end -}}
 	{{ with $light_jxl -}}
 	{{ $light_jxl_src := . | resources.Fingerprint "md5" -}}
