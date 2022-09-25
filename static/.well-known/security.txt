@@ -1,0 +1,24 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: https://seirdy.one/about/
+Expires: 2023-09-25T07:00:00.000Z
+Encryption: https://seirdy.one/publickey.asc
+Preferred-Languages: en
+Canonical: https://seirdy.one/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEErGrx+DjfPcwuR6bPHoktsqX4RHkFAmMwvJwACgkQHoktsqX4
+RHmRMg/9Gf3CuEBytq9F7lDweb0KYTewJ+2wauovxUcoC49wp+4fGbxT5lghZtpN
+6+sSNIrK7dgVmULqS7gD6I/2Zh/R3qwJHsvfiKaaKarV12k36FQm4yg/Pib8NI0k
+jb53eRKGPw2KC0RUnV+vz57sbvzMQpw6FN03QAISOes0QFhpao466+rE7kroVPJo
+uXleLlbfPZsLM7GYsR16X4gLqJr/i6aeDCIyEX8nuy/8EeMWJrfMoAmNC5UM8aPY
+h/N6/s5pdsdi/VH+ezN4hp5DZOyx0oREPueFveU11CHpuNBsx5Sp1lweVOlhNjUW
+LZV490ZX5P1+WArUuORGJWTSbCH3LKPdQd4Mf+LpDPDSarpozdjG1SkmPSAisu2Y
+iEBg3AT3D6DB0CgYrTA/NnyrvfKwbI4Yo4s73Rvdi3CqDqjQiJYDns+WyS3sxHau
+wJlt6TpqUsGPBlr8c4diX0YryQP9h1dirfLe2Dg/Ju+pL9JtpFStYQSnu9TYJkgd
+UMk3lJx0i+iXuO1rpf8RgMPAiRdHhKvwTQLER6M5UXYn+mOTvUK+7RwS6UaW8dmF
+/ja8lezJaikV3Bo7ChVx+G7oTOuGApQqWV2CGgq7Hzn6sgZp+jkQyFyDuHIb+Wdr
+Wqt2KmMUk1W2Oj/zAyD4o+NECCEaKdj35iyfdWUylsoteod7vsM=
+=zTHI
+-----END PGP SIGNATURE-----
