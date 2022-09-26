@@ -261,7 +261,7 @@ This article is an expansion of the ideas I presented in the microblog entry {{<
 
     We could reduce the number of combinations by combining all the filter lists into a single list that gets updated all at once. When <var>N</var>=1, we're at just <var>V</var> possible combinations. Updates could be spread out over a longer cadence, decreasing the value of <var>V</var>.
 
-[^6]: Torbutton aims to allow many Tor Browser users to share the same configuration. See its [security settings](https://tb-manual.torproject.org/security-settings/) and [the preferences they change](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js).
+[^6]: Torbutton aims to allow many Tor Browser users to share the same configuration. See its [security settings](https://tb-manual.torproject.org/security-settings/) and [the preferences they change](https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm?id=ffdf16f3e8a44b306abd988be874a184b7de1cc6#n273).
 
 [^7]: Users of metered connections may need to block large elements. Users with accessibility needs may need to alter inaccessible pages. Users who don't speak a page's language may need to use machine translation.[^8] Telling users to just "stop doing this" would be arrogant, yet all three of these examples are fingerprintable.
 

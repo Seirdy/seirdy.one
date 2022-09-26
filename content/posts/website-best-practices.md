@@ -483,7 +483,7 @@ Many people use Tor out of necessity. On Tor, additional constraints apply.
 
 ### Constraints of the Tor Browser
 
-Tor users are encouraged to set the [Tor Browser's security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, remote fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
+Tor users are encouraged to set the [Tor Browser's security settings](https://tb-manual.torproject.org/en-US/security-settings/) to "safest". This disables scripts, MathML, remote fonts, SVG images, and [other unsafe Firefox features](https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm?id=ffdf16f3e8a44b306abd988be874a184b7de1cc6#n273). If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
 If you must use scripts, ensure that they perform well with just-in-time (<abbr title="Just-In-Time">JIT</abbr>) compilation disabled. The Tor Browser's "safer" mode, iOS Lockdown mode, and Microsoft Edge's "enhanced" security mode all disable JIT compilation by default.[^15]
 

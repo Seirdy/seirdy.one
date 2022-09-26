@@ -439,7 +439,7 @@ Tor users are encouraged to set the Tor Browser's (TBB) security settings to "sa
 => https://tb-manual.torproject.org/en-US/security-settings/ TBB Security Settings
 
 This disables scripts, MathML, some fonts, SVG images, and other unsafe Firefox features:
-=> https://gitweb.torproject.org/torbutton.git/tree/modules/security-prefs.js Torbutton security-prefs source code
+=> https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm?id=ffdf16f3e8a44b306abd988be874a184b7de1cc6#n273 Tor Browser's source code for its security preferences
 
 If your site has any SVG images, the Tor browser will download these just like Firefox would (to avoid fingerprinting) but will not render them.
 
