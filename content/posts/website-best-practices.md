@@ -901,6 +901,8 @@ Some users have trouble when controls have a different look, color, or shape tha
 {{< /quotecaption >}}
 {{</quotation>}}
 
+This stance is not absolute. Users are familiar with very common design patterns, such as navigation bars and search results. Underlines are still preferable, but I find their absence less concerning in these cases.
+
 ### Buttons versus links
 
 Buttons are another type of interactive element. Users are accustomed to recognizing buttons by their visually distinct interactive region. While hyperlinks are only signified by color and a text underline, buttons are signified by a background-color change and/or a visible border. Do not conflate the two!
@@ -1641,14 +1643,14 @@ These are the tools I use regularly. I've deliberately excluded tools that would
 [testssl.sh (cli)](https://testssl.sh/) OR [SSL Labs' SSL Server Test (web, proprietary)](https://www.ssllabs.com/ssltest/)
 : Basically equivalent tools for auditing your TLS setup. I prefer testssl.sh.
 
-[CryptCheck](https://tls.imirhil.fr/)
-: Unlike TLS 1.3, not all TLS 1.2 ciphers are secure. CryptCheck goes a bit further than testssl.sh and SSL Labs when it comes to evaluating TLS 1.2 cipher suites' security properties
-
 [Webbkoll](https://webbkoll.dataskydd.net/)
 : Basic security checks, focusing on HTTP headers. I consider it a spiritual successor to Mozilla's HTTP Observatory.
 
 [Check Your Website](https://check-your-website.server-daten.de/)
-: Slower, more in-depth website checks with an emphasis on security. It covers name server configurations, DNSSEC, DANE, email DNS records, MTA-STS, well-known paths, redirects, certificate transparency, subresource integrity, caching, and well-known ports. If you find its reports too overwhelmingly detailed, [Hardenize](https://www.hardenize.com/) is an easier-to-understand option.
+: Slower, more in-depth website checks with an emphasis on security. It covers name server configurations, DNSSEC, DANE, email DNS records, MTA-STS, well-known paths, redirects, certificate transparency, subresource integrity, caching, and well-known ports.
+
+[Internet.nl](https://internet.nl/)
+: Possibly the harshest website security and modernity check on this list, and my personal favorite. Checks for IPv6 reachability, modern cipher suites and key-exchange params, DNSSEC, and <abbr>[RPKI](https://en.wikipedia.org/wiki/Resource_Public_Key_Infrastructure)</abbr>. It also has handy tools to check an email server, and your own personal connection.
 
 ### Unorthodox tests
 
@@ -1928,7 +1930,9 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^35]: Screen readers aren't alone here. Several programs strip inline formatting: certain feed readers, search result snippets, and textual browsers invoked with the `-dump` flag are some examples I use every day.
 
-[^36]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021).
+[^36]: I excluded PageSpeed Insights and GTMetrix since those are mostly covered by Lighthouse. I excluded [Hardenize](https://hardenize.com/) and [CryptCheck](https://cryptcheck.fr/), since their scope is covered by Internet.nl.
+
+    I excluded Security Headers, since its approach seems to be recommending headers regardless of whether or not they are necessary. It penalizes forgoing the <code>Permissions-<wbr />Policy</code> header even if the CSP blocks script loading and execution; see [Security Headers issue #103](https://github.com/securityheaders/securityheaders-bugs/issues/103). I personally find the <code>Permissions-<wbr />Policy</code> header quite problematic, as I noted in August 2021 on [webappsec-permissions-policy issue #189](https://github.com/w3c/webappsec-permissions-policy/issues/189#issuecomment-904783021). Finally, Security Headers doesn't have in-depth checks of the _values_ of headers; Internet.nl does a much better job of that. Security should be a thoughtful process, not a checklist.
 
 [^37]: My site caches HTML and RSS feed for a few hours. I disagree with webhint's recommendations against this: cache durations should be based on request rates and how often a resource is updated. I also disagree with some of its `content-type` recommendations: you don't need to declare UTF-8 charsets for SVG content-type headers if the SVG is ASCII-only and called from a UTF-8 HTML document. You gain nothing but header bloat by doing so.
 
