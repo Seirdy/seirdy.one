@@ -65,14 +65,17 @@ values_to_csv() {
 }
 
 # values for the GEORGE webring
-george() {
-	printf 'GEORGE,'
-	{
-		curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
-		| htmlq -a href 'main p a' 
-		echo "null"
-	} | values_to_csv
-}
+# Left bc I quit trying to make a good first-party iframe alternative
+# that conformed to my site design standards while also imparting the
+# message of GEORGE as intended.
+# george() {
+# 	printf 'GEORGE,'
+# 	{
+# 		curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
+# 		| htmlq -a href 'main p a' 
+# 		echo "null"
+# 	} | values_to_csv
+# }
 
 endless_orbit() {
 	printf 'Endless Orbit,'
@@ -96,7 +99,7 @@ netizens() {
 }
 
 print_csv_values() {
-	george
+	# george
 	endless_orbit
 	netizens
 }
