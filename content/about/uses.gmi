@@ -8,14 +8,14 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 
 * OS: Fedora 36
 * Wayland compositor: Sway
-* Shell: zsh
+* Shell: zsh (interactive), dash (non-interactive/shell-scripts)
 * Terminal Emulator: Foot. Sometimes gnome-terminal when I'm using a screen reader.
 
 ## Basic utilities:
 
 * `$EDITOR`: Neovim
 * Browser: Firefox for most pages, Chromium for apps, NetSurf when I'm low on battery.
-* Coreutils alternatives: ripgrep, sd (better multiline regexes than sed)
+* Coreutils alternatives: ripgrep, sd (better multiline regexes than sed), fd
 * Music player: mpd, along with my mpd scripts
 * Video player: three builds of mpv, two with a PGO run on different types of video (anime and live-action-with-filmgrain). Often paired with yt-dlp and mpv_sponsorblock
 * Image viewer: mpv (one less program to keep track of), swayimg. Both support AVIF and JPEG-XL now.
@@ -57,6 +57,7 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 * wormhole-william
 * rdrview
 * Efficient Compression Tool (better than Zopfli/ZopfliPNG)
+* zpaqfranz
 * scc
 * Pandoc
 * ghq, a VCS repository manager in the style of $GOPATH
@@ -66,10 +67,17 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 => https://github.com/fhanau/Efficient-Compression-Tool Efficient Compression Tool
 => https://github.com/boyter/scc scc
 
+## Services
+
+* Migadu: email provider
+* deSEC: managed DNS name servers
+* Namecheap: domain registrar (not endorsed)
+* Digital Ocean: VPS (not endorsed)
+
 ## What I don't use
 
 These are tools that I don't use, or avoid using.
 
-* system monitoring TUIs: I just run the command to view the resource I need to know about
+* system monitoring TUIs: I usually just run the command to view the resource I need to know about
 * File managers: I prefer using the shell with fzf-based tab-completion that also features preview windows
 

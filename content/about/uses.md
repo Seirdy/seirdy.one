@@ -26,6 +26,9 @@ Sway
 Zsh
 : Login shell. POSIX-compatible and mostly Bash-compatible. Custom static build to skip checking system files and improve startup performance.
 
+DASH
+: Minimal POSIX-compatible shell that I use for non-interactive purposes (e.g. shell scripts). When statically-linked, its startup time is negligible even on the most underpowered hardware. This is really important to me, since many of my most-used commands are shell-script wrappers that I expect to run in a few milliseconds.
+
 Foot
 : Primary terminal emulator. Sometimes I use gnome-terminal when I'm using a screen reader.
 
@@ -37,10 +40,13 @@ Neovim
 : My `$EDITOR` of choice. Supports tree-sitter, uses lua configuration, and has a client for the Language Server Protocol (I only use the gopls, rust-analyzer, and ccls language servers)
 
 ripgrep
-: grep alternative that supports multiline regexes, PCRE2, and searching compressed files. Much faster as well.
+: grep alternative that supports multiline regexes, PCRE2, and searching compressed files. Often faster, too.
 
 [sd](https://github.com/chmln/sd)
 : For better and faster multi-line regex manipulation than `sed`.
+
+[fd](https://github.com/sharkdp/fd)
+: Better parallel execution than `find -exec`. I still use `find` in many situations, though.
 
 mpd
 : My music player daemon, paired with [my mpd scripts](https://sr.ht/~seirdy/mpd-scripts/) and [mpd-mpris](https://github.com/natsukagami/mpd-mpris).
@@ -156,6 +162,9 @@ z.lua
 [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool)
 : The last word in optimizing gzip or PNG size. Runs circles around Zopfli, ZopfliPNG, oxipng, etc. I use it in combination with `brotli` to compress all static text and PNGs on this site.
 
+[zpaqfranz](https://github.com/fcorbelli/zpaqfranz)
+: I use this for my long-term backups. `zpaq` is a journaling archiver, which allows me to compress backup deltas without having to use a journaling filesystem. `zpaqfranz` adds several features related to integrity-checking. The compression ratios are ridiculously good, even without the journaling; it beats every other realistic option, especially when combined with pre-processing offered by [lrzip-next](https://github.com/pete4abw/lrzip-next).
+
 [scc](https://github.com/boyter/scc)
 : Super fast SLOC alternative that shows statistics on code complexity by language.
 
@@ -258,10 +267,10 @@ All my server daemons are statically-linked binaries, which makes sandboxing eas
 
 
 Nginx
-: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, and musl libc; patched for dynamic TLS records, basic OCSP support, and static HPACK compression.
+: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, PCRE2 (non-JIT), and musl libc; patched for dynamic TLS records, basic OCSP support, larger buffers for dynamic zlib compression (necessary for zlib-ng), and static HPACK compression. I recommend most people use Caddy instead of Nginx. The only benefits of Nginx are certain modules providing application-server capabilities, the ability to re-load all configs with zero downtime, and better performance on limited hardware (although most sites won't need to handle more than a few hundred requests per second, which Caddy can handle perfectly well).
 
 [certbot-ocsp-fetcher](https://github.com/tomwassenberg/certbot-ocsp-fetcher)
-: Shell script to manage the OCSP cache for Nginx, since Nginx's own implementation is lacking (and completely non-existent if you build with BoringSSL)
+: Shell script to manage the OCSP cache for Nginx, since Nginx's own implementation shouldn't be used without running a trusted resolver (and is completely non-existent if you build with BoringSSL).
 
 [nginx-rotate-session-ticket-keys](https://github.com/GrapheneOS/nginx-rotate-session-ticket-keys)
 : Shell script to manage TLS session tickets, since Nginx's own implementation is really flawed. This replaces its default stateful session cache and also allows 0-RTT (also known as "early data") for idempotent requests. I patched it to use my statically-linked build of BoringSSL (I already had it sitting around after building it for Nginx).
@@ -278,12 +287,29 @@ Agate
 [Conduit](https://conduit.rs/)
 : Faster and more lightweight Matrix server in a single binary.
 
+Services
+--------
+
+I generally try to limit my dependence on services, preferring to run software myself. I do make a few compromises.
+
+[Migadu](https://www.migadu.com)
+: Managed email hosting for seirdy.one. Running my own mail server and keeping my IP approved by all the entrenched players isn't worth the effort, especially if I ever choose to run something like a Tor exit node in the future. Migadu also offers an API, which I use to generate and list email aliases on the fly. My only gripes are that they still support TLS 1.1 and 1.0 for some reason, and that they don't yet support any open IMAP extensions that allow 2FA.
+
+[deSEC](https://desec.io/)
+: Managed DNS name servers. I could run something like PowerDNS or TrustDNS myself, but I'd need to use separate IPs (and ideally a separate server or two) for redundancy. I wanna keep seirdy.one cheap to host, and deSEC was free. It offered DNSSEC along with nice record types like SSHFP, HTTPS/SVCB, and OPENPGPKEY. OPENPGPKEY and SSHFP are especially useful, since keys distribution should have multiple distribution mechanisms with different sources of trust when manual verification isn't ideal.
+
+[Namecheap](https://www.namecheap.com/)
+: Domain registrar. I do not endorse Namecheap. I initially picked it since it ticked the right boxes: Whois privacy, domain locking, DNSSEC, custom name servers, decent support, and good prices. Porkbun and Gandi are other options that tick these boxes.
+
+[Digital Ocean](https://www.digitalocean.com)
+: My VPS provider. I do not endorse Digital Ocean for most peoples' needs. It's far pricier than equivalent options, and is only worth that price if you need top-tier support and a very good SLA. That being said, it does offer a lot of free credits ($100 if you sign up with someone's referral code; another $100 if you're a student); I started using Digital Ocean for the free credits. Scaleway and BuyVM are much better options if you want to go cheap. If I ever manage to get my hands on a home internet connection with excellent uptime, I might switch to self-hosting.
+
 What I don't use
 ----------------
 
 These are tools that I don't use, or avoid using.
 
-* System monitoring TUIs: I just run the appropriate command to view the resource I need to know about.
+* System monitoring TUIs: I usually just run the appropriate command to view the resource I need to know about.
 * File managers: I prefer using the shell with fzf-based tab-completion that also features preview windows.
 * Docker. I use Podman for disposable pet development environments, but I never use containers to run things on the server (except as a temporary learning exercise).
 
