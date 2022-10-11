@@ -80,7 +80,10 @@
 		"no-vulnerable-javascript-libraries": "off",
 		"html-checker": "off",
 		"image-optimization-cloudinary": "off",
-		"no-disallowed-headers": "error",
+		"no-disallowed-headers": [ "error",
+			{
+				"ignore": ["x-frame-options"]
+			}],
 		"meta-charset-utf-8": "error",
 		"disown-opener": "error",
 		"content-type": ["error", {
