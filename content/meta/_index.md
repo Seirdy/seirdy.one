@@ -52,11 +52,11 @@ This site is featured in some cool directories.
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
 - [Ye Olde Blogroll](https://blogroll.org/)
+- [Nerd Listings](http://nerdlistings.info/category/personalsites/)
 
 <details>
 <summary>Pending directories</summary>
 
-- [Nerd Listings](https://nerdlistings.info/category/personalsites/) (pending; expired TLS certificate)
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Blog Surf](https://blogsurf.io/) (pending)
 
