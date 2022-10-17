@@ -32,7 +32,7 @@ Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://git
 
 ### Contact
 
-Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}").
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
 
 Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}") on Matrix.
 
@@ -46,3 +46,4 @@ This is a basic [IndieWeb site](https://indieweb.org/).
 In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/). This site's content also appears on my [Gemini capsule](gemini://seirdy.one).
 
 For more information about the site, its design, and available feeds: [see the "meta" section](./meta/).
+

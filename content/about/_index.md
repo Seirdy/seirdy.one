@@ -95,6 +95,8 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 
 </dl>
 
+If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
+
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
 I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
@@ -107,6 +109,7 @@ If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{
 
 Selected projects
 -----------------
+
 
 [Clogstats](https://sr.ht/~seirdy/clogstats/)
 : Analyze WeeChat logs to quantify, graph, forecast, and perform anomaly-detection on IRC channel activity. Written in Python; uses Pandas.

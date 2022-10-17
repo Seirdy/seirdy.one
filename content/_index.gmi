@@ -44,6 +44,8 @@ Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFT
 
 My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space.
 
+If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
+
 ## Links
 
 Orbits (Gemini equivalent of webrings):
