@@ -480,12 +480,7 @@ h1 {
 
 /* <kbd> should be distinguished from <code> and surrounding text
  * in a way beyond font-face; at least two visual distinctions needed
- * Also, Small text is easier to read when slightly bolder.
- * This is important in the dark theme where I set my own colors and
- * try to maintain good perceptual contrast even for small text, but
- * I don't want toggling the theme to impact anything besides color so
  * I set the weight here. */
-dt,
 kbd {
 	font-weight: bold;
 }
