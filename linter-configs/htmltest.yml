@@ -55,4 +55,5 @@ IgnoreURLs:
   - "https://webring.yesterweb.org/noJS/index.php" # Seems to block htmltest; check manually
   - "https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm.id=ffdf" # Seems to block htmltest; check manually
   - "https://lnk.dk" # blocks htmltest
+  - "https://www.fastcompany.com/90759792/with-google-dominating-search-the-internet-needs-crawl-neutrality" # blocks htmltest
 OutputDir: "linter-configs/htmltest"
