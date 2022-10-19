@@ -24,6 +24,7 @@ IgnoreHTTPS:
   - "http://www.nathanmyhrvold.com/"
   - "http://www.tuxmachines.org/"
   - "http://xmlns.com/"
+  - "http://nerdlistings.info/category/personalsites/"
 CheckExternal: true
 IgnoreURLs:
   - "../music.txt"
