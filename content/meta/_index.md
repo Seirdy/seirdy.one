@@ -70,7 +70,7 @@ Awards
 {{<picture name="internetnl-web" alt="Badge with text: 100% score in website test, internet.nl">}}
 <figcaption itemprop="caption">
 
-[Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/1716116/).
+[Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/1745918/).
 
 </figcaption>
 
