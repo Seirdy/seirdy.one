@@ -85,7 +85,7 @@ Tor Browser
 : My Tor hidden service also works well with the Tor Browser, with the exception of [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element can't play in the Tor Browser due to a bug involving NoScript and Firefox's handling of the `sandbox` CSP directive. To work around the issue, I include link to download the audio.
 
 Mainstream engine forks
-: Pale Moon and recent versions of K-Meleon use Goanna, a single-threaded fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available, fork of WebKit focused on lightweight embedded webviews. My site should work in both engines without any noticeable issues.
+: Pale Moon and recent versions of K-Meleon use Goanna, a single-process fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available, fork of WebKit focused on lightweight embedded webviews. My site should work in both engines without any noticeable issues.
 
 Alternative engines
 : I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Only Servo supports `<details>`. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. The SerenityOS browser also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
@@ -119,7 +119,7 @@ I think making a site machine-friendly is a great alternative perspective to tra
 
 This site is **parser-friendly.** It uses well-formed polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
 
-I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with Ostatus and ActivityStreams XML namespaces.
+I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with OStatus and Activity Streams XML namespaces.
 
 All HTML pages have an XHTML5 counterpart, which is currently the same except for the `content-type` HTTP header. To see this counterpart, add "index.xhtml" to the end of a URL or request a page with an `Accept` header containing `application/xhtml+xml` but not `text/html`. All pages parse correctly using all the XHTML browser parsers I could try.
 
