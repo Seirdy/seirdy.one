@@ -165,6 +165,9 @@ z.lua
 [zpaqfranz](https://github.com/fcorbelli/zpaqfranz)
 : I use this for my long-term backups. `zpaq` is a journaling archiver, which allows me to compress backup deltas without having to use a journaling filesystem. `zpaqfranz` adds several features related to integrity-checking. The compression ratios are ridiculously good, even without the journaling; it beats every other realistic option, especially when combined with pre-processing offered by [lrzip-next](https://github.com/pete4abw/lrzip-next).
 
+[p7zip](https://p7zip.sourceforge.net/)
+: POSIX port of 7-zip. Using it with `m0=PPMd` often yields much better compression ratios than LZMA/LZMA2 on plain-text content while being much faster than zpaqfranz.
+
 [scc](https://github.com/boyter/scc)
 : Super fast SLOC alternative that shows statistics on code complexity by language.
 
@@ -291,6 +294,7 @@ Services
 --------
 
 I generally try to limit my dependence on services, preferring to run software myself. I do make a few compromises.
+
 
 [Migadu](https://www.migadu.com)
 : Managed email hosting for seirdy.one. Running my own mail server and keeping my IP approved by all the entrenched players isn't worth the effort, especially if I ever choose to run something like a Tor exit node in the future. Migadu also offers an API, which I use to generate and list email aliases on the fly. My only gripes are that they still support TLS 1.1 and 1.0 for some reason, and that they don't yet support any open IMAP extensions that allow 2FA.
