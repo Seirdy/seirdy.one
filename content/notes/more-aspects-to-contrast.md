@@ -3,7 +3,7 @@ title: "More aspects to contrast"
 date: 2022-07-03T22:16:09-07:00
 replyURI: "https://github.com/Myndex/SAPC-APCA/discussions/74"
 replyTitle: "Dark Mode Color Palettes and APCA"
-replyType: "https://schema.org/DiscussionForumPosting"
+replyType: "DiscussionForumPosting"
 replyAuthor: "Ayush Agarwal"
 replyAuthorURI: "https://microblog.ayushnix.com/"
 ---

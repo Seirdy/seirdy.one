@@ -3,7 +3,7 @@ title: "OpenSSL replacements"
 date: 2022-07-06T09:31:42-07:00
 replyURI: "https://social.treehouse.systems/@ariadne/108601160601729437"
 replyTitle: "I am going to…write an OpenSSL wrapper for BearSSL and just make OpenSSL die in Alpine entirely"
-replyType: "https://schema.org/SocialMediaPosting"
+replyType: "SocialMediaPosting"
 replyAuthor: "Ariadne Conill"
 replyAuthorURI: "https://ariadne.space"
 ---

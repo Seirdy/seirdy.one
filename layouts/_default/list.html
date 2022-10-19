@@ -23,12 +23,7 @@
 						{{ .Title }}
 					</a>
 				</h2>
-				<p>
-					Posted <time itemprop="datePublished" class="dt-published published" datetime="{{ .Date.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
-					{{- if gt (sub .Lastmod.Unix .Date.Unix) 3600 -}}
-						, updated <time{{ if not (.Params.evergreen) }} itemprop="dateModified" class="dt-updated updated"{{ end }} datetime="{{ .Lastmod.Format "2006-01-02 15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02 15:04" }}</time>
-				{{- end }}
-				</p>
+				{{- partial "post-meta.html" .}}
 				{{- if eq .Section "notes" }}
 				<div class="e-content entry-content" itemprop="articleBody">
 					{{- if .Params.replyURI -}}
