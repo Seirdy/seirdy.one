@@ -232,14 +232,19 @@ html {
 	 * - links that directly follow h2 without being contained in a
 	 *   paragraph are section permalinks. */
 
+	/* stylelint-disable selector-max-compound-selectors -- simplest way to describe link-lists */
 	input,
 	summary,
 	aside > a, /* Used for section permalinks */
 	dt > a,
-	li > a,
+	:not(h1) + ul > li > a,
+	ol > li > a,
+	nav li > a,
 	.u-comment dd > a,
 	[itemprop="breadcrumb"] a,
 	[itemprop="breadcrumb"] > span {
+
+		/* stylelint-enable selector-max-compound-selectors */
 		padding: .75em .25em;
 	}
 
@@ -338,7 +343,7 @@ html {
 
 	/* Lists of links should have some spacing so tap targets don't overlap. */
 	/* stylelint-disable selector-max-compound-selectors -- simplest way to describe link-lists */
-	:not(nav) > ul li > a,
+	:not(nav) > :not(h1) + ul li > a,
 	nav:not([itemprop="breadcrumb"]) li,
 	ol li > a {
 		/* stylelint-enable selector-max-compound-selectors */
@@ -388,8 +393,8 @@ sup {
  * space to the left that's safe to tap.
  * 1.75em is the minimum required for ol numbers to fit. */
 ol,
-ul {
-	margin: 0;
+ul,
+li h2 + ul {
 	padding-left: 1.75em;
 }
 
@@ -408,6 +413,7 @@ ul ul {
 
 /* Step 1 to making the single-line nav: remove the bullet padding. */
 nav ul {
+	margin: 0;
 	padding: 0;
 }
 
@@ -531,6 +537,7 @@ samp {
 /* Remove list style from data feeds. */
 .h-feed > ol {
 	list-style-type: none;
+	margin: 0;
 	padding: 0;
 }
 

@@ -23,7 +23,7 @@
 						{{ .Title }}
 					</a>
 				</h2>
-				{{- .Scratch.Set "noCanonical" true -}}
+				{{- .Scratch.Set "shortMeta" true -}}
 				{{- partial "post-meta.html" . }}
 				{{- if eq .Section "notes" }}
 				<div class="e-content entry-content" itemprop="articleBody">
