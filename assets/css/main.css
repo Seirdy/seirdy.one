@@ -296,6 +296,10 @@ html {
 		margin-left: -.25em;
 	}
 
+	h1 + ul > li > a {
+		margin-left: 0;
+	}
+
 	/* Increase tap-target size of title links. */
 
 	h2 > a {
