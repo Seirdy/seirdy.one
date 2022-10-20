@@ -52,7 +52,7 @@ This site is featured in some cool directories.
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
 - [Ye Olde Blogroll](https://blogroll.org/)
-- [Nerd Listings](http://nerdlistings.info/category/personalsites/)
+- [Nerd Listings](http://nerdlistings.info/)
 
 <details>
 <summary>Pending directories</summary>
