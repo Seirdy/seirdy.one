@@ -10,7 +10,7 @@ replyAuthorURI: "https://www.privacyguides.org/"
 ---
 Key management guides should also cover key distribution.
 
-Secure distribution happens over at least two bands with two different sources of trust. Having my own domain name lets me combining DANE (trust the DNS trust anchors) and Web Key Directory (trust the WebPKI and CA system). Clients can fetch keys both ways and ensure they match. Prospective senders may also request public keys over modern encrypted messengers.
+Secure distribution happens over at least two bands with two different sources of trust. Having my own domain name lets me combine DANE (trust the DNS trust anchors) and Web Key Directory (trust the WebPKI and CA system). Clients can fetch keys both ways and ensure they match. Prospective senders may also request public keys over modern encrypted messengers.
 
 This guide covers the client side. Users need providers and name servers to adopt email security standards (DKIM, SPF, DMARC, ARC, DANE, MTA-STS).
 
