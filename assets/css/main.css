@@ -296,9 +296,11 @@ html {
 		margin-left: -.25em;
 	}
 
+	/* stylelint-disable selector-max-compound-selectors -- simplest way to target post-meta */
 	h1 + ul > li > a {
 		margin-left: 0;
 	}
+	/* stylelint-enable selector-max-compound-selectors */
 
 	/* Increase tap-target size of title links. */
 

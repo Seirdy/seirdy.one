@@ -14,3 +14,7 @@ csv/webrings.csv
 results/
 linter-configs/htmltest/
 public.eac
+# vale linter; not checked in bc i only use it as a light suggestion
+# when i feel like it
+styles/
+.vale.ini
