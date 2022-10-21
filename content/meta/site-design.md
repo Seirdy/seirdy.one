@@ -5,54 +5,62 @@ title: Site design standards
 description: "The accessibility statement and design standards I hold myself to when creating seirdy.one"
 date: "2022-06-10T00:00:00+00:00"
 ---
-This site may look simple on the surface, but I put a _lot_ of thought into it. I hold myself to a long list of requirements concerning accessibility, compatibility, privacy, security, and machine-friendliness.
+This site may look bare-bones on the surface, but I put much thought into it. I hold myself to a long list of requirements. I make mistakes; if part of my site violates these standards, please contact me!
 
-<p role="doc-tip">Note: all references to "pixels" (<abbr title="pixels">px</abbr>) in this section refer to CSS pixels.</p>
+<p role="doc-tip">Note: all references to "pixels" (<abbr title="pixels">px</abbr>) refer to CSS pixels.</p>
+
+{{<toc>}}
 
 Accessibility statement
 -----------------------
 
-I've made every effort to make seirdy.one as accessible as possible. More information about the accessibility-related work for seirdy.one is in my post {{<mention-work>}}{{<cited-work url="https://seirdy.one/posts/2020/11/23/website-best-practices/" name="Best practices for inclusive textual websites" extraName="headline">}}{{</mention-work>}}.
+I hold seirdy.one to the highest accessibility standards possible. For more information about seirdy.one's accessibility-related work, read {{<mention-work itemtype="BlogPosting">}}{{<cited-work url="https://seirdy.one/posts/2020/11/23/website-best-practices/" name="Best practices for inclusive textual websites" extraName="headline">}}{{</mention-work>}}.
 
 ### Conformance status
 
-The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. I've made sure seirdy.one is **fully conformant with WCAG 2.2 level AA.**
+The [Web Content Accessibility Guidelines (<abbr>WCAG</abbr>)](https://www.w3.org/WAI/standards-guidelines/wcag/) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. I make seirdy.one **fully conformant with <abbr>WCAG</abbr> 2.2 level AA.**
 
-<dfn>Fully conformant</dfn> means that the content fully conforms to the accessibility standard without any exceptions.
+<dfn>Fully conformant</dfn> means that the content conforms to the accessibility standard without any exceptions.
 
-### Additional accessibility considerations
+### More accessibility considerations
 
-Additionally, I strive to conform to WCAG 2.2 level AAA wherever applicable. I comply with all AAA criteria except for the following:
+I conform to all <abbr>WCAG</abbr> AAA success criteria (<abbr>SC</abbr>) _except_ the following:
 
 
-SC 2.4.9 Link Purpose (Link Only)
-: I'm actually trying to follow this criterion, but it's a work in progress. Let me know if any link names can be improved! Link purpose _in context_ always makes sense.
+<abbr>SC</abbr> 2.4.9 Link Purpose (Link Only)
+: <abbr>SC</abbr> 2.4.9 conformance is a work in progress. Let me know if any link names need improvement! Link purpose _in context_ always makes sense.
 
-SC 3.1.5 Reading Level
-: The required reading ability often exceeds the lower secondary education level, especially on more technical articles.
+<abbr>SC</abbr> 3.1.5 Reading Level
+: Required reading ability often exceeds the lower secondary education level.
 
-SC 3.1.6 Pronunciation
-: I do not yet provide any pronunciation information.
+<abbr>SC</abbr> 3.1.6 Pronunciation
+: I do not currently offer any pronunciation information.
 
-I have only tested WCAG compliance in mainstream browser engines (Blink, Gecko, WebKit). Full details on how I meet every WCAG success criterion are on a separate page: [Details on WCAG 2.2 conformance](../wcag-conformance/)
+I have only tested <abbr>WCAG</abbr> compliance in mainstream browser engines (Blink, Gecko, WebKit). For full details on how I meet every <abbr>WCAG</abbr> success criterion, read <cite>[Details on <abbr>WCAG</abbr> 2.2 conformance]({{<relref "wcag-conformance.md">}})</cite>.
 
-I also go further than WCAG in many aspects:
+The <abbr>WCAG</abbr> presents a starting point, not a stopping point. Here are some non-<abbr>WCAG</abbr> accessibility criteria I consider:
 
-- Rather than follow SC 2.5.5's requirement to achieve a minimum tap target size of 44 by 44 pixels, I follow Google's more strict guidelines. These guidelines mandate that targets are at least 48-by-48 pixels, with no overlap against any other targets in a 56-by-56 pixel range. I try to follow this guideline for any interactive element that isn't a hyperlink surrounded by body text.
+- Rather than follow <abbr>SC</abbr> 2.5.5's advice to achieve a minimum tap target size of 44 by 44 pixels, I follow Google's more strict guidelines. These guidelines mandate target sizes of at least 48-by-48 pixels, with no overlap against any other targets in a 56-by-56 pixel range. I follow this guideline for any interactive element _except_ inline hyperlinks surrounded by non-interactive text.
 
-- I ensure at least one such 56-by-56&nbsp;px non-interactive region exists on the page, for users with hand tremors or or anyone who wants to tap the screen without clicking something.
+- I ensure at least one such 56-by-56&nbsp;px non-interactive region exists on the page, for users with hand tremors or anyone who wants to tap the screen without clicking something.
 
-- With the exception of in-text borders, I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors pass APCA contrast ratios, all being close to the ideal lightness contrast of 90. They are also autism- and overstimulation-friendly colors: the yellow links are significantly de-saturated to reduce harshness.
+- Except for text borders, I only set custom colors in response to the `prefers-color-scheme: dark` media query. These custom colors have an Advanced Perceptual Contrast Algorithm (<abbr>APCA</abbr>) lightness contrast close to the ideal value of 90. I use autism- and overstimulation-friendly colors: the yellow links have low saturation to reduce harshness.
 
-- I ensure that the page works on extremely narrow viewports without triggering two-dimensional scaling. It should work at widths well below 200 CSS pixels.
+- I ensure narrow viewports don't cause two-dimensional scrolling. I test this at widths narrower than 200 CSS pixels; this is much stricter than the <abbr>WCAG</abbr> threshold values.
 
 ### Assessment and evaluation
 
-I test each WCAG success criterion myself using the mainstream browser engines (Blink, Gecko, WebKit). I test using multiple screen readers: Orca (primary, with Firefox and Epiphany), NVDA (with Firefox and Chromium), Windows Narrator (with Microsoft Edge), Apple VoiceOver (with desktop and mobile Safari), and Android TalkBack (with Chromium).
+I test each <abbr>WCAG</abbr> success criterion with the mainstream browser engines: Blink, Gecko, and WebKit. I test using multiple screen readers:
 
-I also accept user feedback. Users are free to contact me through any means linked on my [About page](../../about/).
+- Orca (primary, with Firefox and Epiphany)
+- NVDA (with Firefox and Chromium)
+- Windows Narrator (with Microsoft Edge)
+- Apple VoiceOver (with desktop and mobile Safari)
+- Android TalkBack (with Chromium)
 
-Finally, I supplement manual testing with the following automated tools:
+I also accept user feedback. Feel free to contact me through any means linked on my [About page]({{<relref "/about/_index.md">}}).
+
+The following automated tools supplement manual testing:
 
 - [axe-core](https://github.com/dequelabs/axe-core)
 - [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated)
@@ -62,45 +70,47 @@ Finally, I supplement manual testing with the following automated tools:
 - [webhint](https://webhint.io/)
 - [lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 
-WAVE reports no errors; AXE is unable to determine certain contrast errors, but it otherwise reports no errors; IBM Equal Access reports no errors but some items that need review.
+WAVE reports no errors. AXE sometimes fails to measure contrast, but otherwise reports no errors. IBM Equal Access reports no errors, and finds some items which need manual review.
 
-I regularly run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors.
+I run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors. I repeat this run with every change to my Hugo templates and stylesheets.
 
-Due to [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line.
+To work around [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line.
 
 Compatibility statement
 -----------------------
 
-The website is built on well structured, semantic, [polygot XHTML5](https://www.w3.org/TR/html-polyglot/) (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) extensions where appropriate), enhanced with CSS for styling. The website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this should improve support in older browsers such as Internet Explorer 11. No extra plugins or libraries should be required to view the website.
+This website uses well structured, semantic, [polygot XHTML5](https://www.w3.org/TR/html-polyglot/) (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) extensions where appropriate), enhanced with CSS for styling.
 
-This site sticks to Web standards. I regularly run a local build of [the Nu HTML Checker](https://github.com/validator/validator), `xmllint`, and [html proofer](https://github.com/gjtorikian/html-proofer) on every page in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) and report them upstream when I can.
+This website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this improves support in older browsers such as Internet Explorer 11. Users can access this site without extra plug-ins or polyfills. The site does use strictly-optional modern features (e.g. CSS containment) that don't create significant visual differences.
 
-I also perform cross-browser testing for both HTML and XHTML versions of my pages. I test with, but do not necessarily endorse, a large variety of browsers:
+This website conforms to Web standards. Each build runs `xmllint` to catch syntax errors. Every few commits, I run a local build of [the Nu HTML Checker](https://github.com/validator/validator) and [html proofer](https://github.com/gjtorikian/html-proofer), and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq), and I [report and fix false-positives](https://github.com/w3c/css-validator/issues?q=author%3ASeirdy) when possible.
+
+I also perform cross-browser testing for HTML [and XHTML versions](#markup) of my pages. I test with, but [do not necessarily endorse]({{<relref "/notes/pale-moon.md">}}), a large variety of browsers:
 
 
 Mainstream engines
-: I maintain excellent compatibility with mainstream engines: Blink (Chromium, Edge, QtWebEngine), WebKit (Safari, Epiphany), and Gecko (Firefox).
+: I keep excellent compatibility with mainstream engines: Blink (Chromium, Edge, QtWebEngine), WebKit (Safari, Epiphany), and Gecko (Firefox).
 
 Tor Browser
-: My Tor hidden service also works well with the Tor Browser, with the exception of [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element can't play in the Tor Browser due to a bug involving NoScript and Firefox's handling of the `sandbox` CSP directive. To work around the issue, I include link to download the audio.
+: My Tor hidden service also works well with the Tor Browser, except for [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element appears non-interactive in the Tor Browser due to a bug involving NoScript and Firefox's handling of [the `sandbox` Content Security Policy <abbr>CSP</abbr>directive](https://www.w3.org/TR/CSP3/#directive-sandbox). To work around the issue, I include link to download the audio.
 
 Mainstream engine forks
-: Pale Moon and recent versions of K-Meleon use Goanna, a single-process fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available, fork of WebKit focused on lightweight embedded webviews. My site should work in both engines without any noticeable issues.
+: Pale Moon and recent versions of K-Meleon use Goanna, a single-process fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available fork of WebKit focused on lightweight embedded webviews. My site works in these engines without any noticeable issues.
 
 Alternative engines
-: I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Only Servo supports `<details>`. [The SerenityOS browser doesn't support ECDSA certificates](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. The SerenityOS browser also has some issues displaying my SVG avatar; it does not attempt to use the PNG fallback.
+: I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Servo is the only engine in this category with support for `<details>`. [The SerenityOS browser lacks ECDSA certificate support](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine. The SerenityOS browser also has issues displaying my inline SVG avatar.
 
 Textual browsers
-: The site works well with textual browsers. Lynx and Links2 are first-class citizens for which all features work as intended. I also test in [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I maintain compatibility with these engines by making CSS a strictly-optional progressive enhancement and using semantic markup. I occasionally try Edbrowse too. In all textual browsers, the aforementioned incomplete `<details>` handling applies.
+: The site works well with textual browsers. All features except `<details>` work in Lynx and Links2. I include [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m in my tests. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I support these engines by making CSS a strictly-optional progressive enhancement and by using semantic markup. I test with Edbrowse less often. No textual browser supports `<details>`.
 
 Abandoned engines
-: I occasionally test abandoned engines, sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Dillo,[^1] Internet Explorer[^2] (with and without compatibility mode), Netscape Navigator, old Presto-based Opera versions,[^3] and outdated versions of current browsers. The aforementioned issue with `<details>` applies to all of these choices. I use Linux, but testing in browsers like Internet Explorer depends on my access to a Windows machine. Besides the `<details>` issues, the site works perfectly well in Internet Explorer 11 and Opera Presto. The site has layout issues but remains usable in Tkhtml, KHTML, and Netscape.
+: I occasionally test abandoned engines, sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Dillo,[^1] Internet Explorer[^2] (with and without compatibility mode), Netscape Navigator, old Presto-based Opera versions,[^3] and outdated versions of current browsers. No abandoned engine supports `<details>`. I use Linux, but testing in Internet Explorer depends on my access to a Windows machine. Besides the `<details>` issues, the site works well in Internet Explorer 11 and Opera Presto. The site has layout issues but remains usable in Tkhtml, KHTML, and Netscape.
 
-I strive to maintain compatibility to the following degrees:
+I support compatibility to the following degrees:
 
 - Works without major issues in mainstream engines, the Tor browser, Goanna, and Ultralight.
-- Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but no major functionality will be disabled.
-- Baseline functionality in abandoned engines, Dillo, the SerenityOS browser. Some ancillary features may not work (e.g. forms for Webmentions and search), but you'll still be able to browse and read.
+- Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but all major functions work.
+- Basic features in abandoned engines, Dillo, the SerenityOS browser. Some ancillary features may not work (e.g. forms for Webmentions and search), but users can browse and read.
 
 Some engines I have not yet tested, but hope to try in the future:
 
@@ -115,34 +125,55 @@ Some engines I have not yet tested, but hope to try in the future:
 Machine-friendliness
 --------------------
 
-I think making a site machine-friendly is a great alternative perspective to traditional SEO, the latter of which I think tends to incentivise low-quality content and makes searching difficult. It's a big part of what I've decided to call ["agent optimization"]({{<relref "notes/agent-optimization.md">}}).
+I use machine-friendliness as an alternative perspective to traditional search-engine-optimization, the latter of which incentivizes low-quality content. It's a major part of what I've dubbed ["agent optimization"]({{<relref "notes/agent-optimization.md">}}).
 
-This site is **parser-friendly.** It uses well-formed polygot (X)HTML5 markup containing schema.org microdata, microformats2, and legacy microformats. Microformats are useful for IndieWeb compatibility; schema.org microdata is useful for various forms of content-extraction (such as "reading mode" implementations) and search engines. I've also sprinkled in some Creative Commons vocabulary using RDFa syntax.
+### Markup
+
+This site is **parser-friendly.** It uses well-formed, semantic, polygot (X)HTML5 markup validated by [the Nu HTML checker and `xmllint`](#compatibility-statement).
+
+All HTML pages have an XHTML5 counterpart; the `content-type` HTTP header is their sole difference. All pages parse correctly with all the XHTML parsers I tried. To see this counterpart, do one of the following:
+
+- Add `index.xhtml` to the end of a URL
+- Request a page with an `Accept` header containing `application/xhtml+xml`, but not `text/html`.
+
+My markup includes structured data in four syntaxes, for four different vocabularies:
+
+1. HTML classes convey **Microformats vocabulary** to provide IndieWeb compatibility. This improves Webmentions and enables VCard-generation.
+2. Microdata syntax conveys **Schema.org vocabulary.** This enables many forms of content-extraction, performed by "reading mode" implementations and search engines.
+3. RDFa syntax conveys **Creative Commons vocabulary.**
+4. `<meta>` properties convey **Open Graph metadata.** Instant-messengers and social media use that metadata to generate link previews.
 
 I make Atom feeds available for articles and notes, and have a combined Atom feed for both. These feeds are enhanced with OStatus and Activity Streams XML namespaces.
 
-All HTML pages have an XHTML5 counterpart, which is currently the same except for the `content-type` HTTP header. To see this counterpart, add "index.xhtml" to the end of a URL or request a page with an `Accept` header containing `application/xhtml+xml` but not `text/html`. All pages parse correctly using all the XHTML browser parsers I could try.
-
 ### Reading mode compatibility
 
-The aforementioned metadata (microdata, microformats) has improved reading-mode compatibility.
+The aforementioned structured data improves reading-mode compatibility.
 
-This site should fully support the Readability algorithm. The Readability algorithm is used by Firefox and Vivaldi. It's the basis of one of multiple distillers used by Brave; Brave typically uses its Readability-based logic on seirdy.one. Readability is the only article distillation algorithm I try to actively support.
+The only article distillation algorithm I actively support is Readability; it powers Firefox and Vivaldi's reading-modes. Although Brave's reading-mode has multiple article-distillers, it's the sole distiller Brave uses on seirdy.one.
 
-This site happens to fully support Apple's Reader Mode and Azure Immersive Reader (AIR), the latter of which powers Microsoft Edge's reading mode. Unfortunately, AIR applies a stylesheet atop the extracted article that makes figures difficult to read: it centers text in figures, included pre-formatted blocks. I filed an issue on AIR's feedback forum, but that forum was subsequently deleted.
+This site happens to distill well under Safari's Reader Mode and Microsoft's Azure Immersive Reader (<abbr>AIR</abbr>); the latter powers Microsoft Edge's reading-mode. <abbr>AIR's</abbr> stylesheet makes code figures difficult to read: it centers text in figures, included pre-formatted blocks. I filed an issue on the <abbr>AIR</abbr> feedback forum, but Microsoft later deleted that forum.
 
 This site works well in the Diffbot article extractor. Diffbot powers a variety of services, including Instapaper.
 
-This site does not work well in Chromium's DOM Distiller's flawed distillation techniques. Regions with high link-densities, such as citations, get filtered out. DOM Distiller also does not show footnotes, and sometimes cuts off final [DPUB-ARIA](https://w3c.github.io/dpub-aria/) sections (acknowledgements, conclusions).
+This site has poor compatibility with the Chromium DOM Distiller's flawed techniques. Regions with high link-densities, such as citations, get filtered out. DOM Distiller also removes footnotes, and sometimes [DPUB-ARIA](https://w3c.github.io/dpub-aria/) sections near the end of an article (acknowledgements, conclusions).
 
 Static IndieWeb
 ---------------
 
-One of my goals for this site was to see just how far I could take IndieWeb concepts on a fully static site with ancillary services to handle dynamism. Apart from the search-results page, this site is static on the back-end (all pages are statically-generated). All pages, including the search-results page, are fully static on the front-end (no JS).
+I want to show how far I can take IndieWeb concepts on a fully static site, leaving dynamism to ancillary services.
 
 [The IndieMark page](https://indieweb.org/IndieMark) lists all the ways you can "IndieWeb-ify" your site.
 
-### Features I have already implemented
+### Static site
+
+In multiple senses of the word, my public pages are static.
+
+- I generate and serve all pages statically, except for the search-results pages.
+- My <abbr title="Content Security Policy">CSP</abbr> blocks scripts, eliminating all client-side dynamism besides `<details>` and forms.
+
+### IndieWeb features implemented
+
+I've implemented several features from IndieMark:
 
 - IndieAuth compatibility, using the external [IndieLogin.com service](https://indielogin.com/).
 
@@ -150,48 +181,54 @@ One of my goals for this site was to see just how far I could take IndieWeb conc
 
 - Sending and receiving Webmentions. I receive Webmentions with [webmentiond](https://github.com/zerok/webmentiond), and send them from my own computer using [Pushl](https://github.com/PlaidWeb/Pushl).
 
-- Displaying Webmentions: linkbacks, IndieWeb "likes" (not silo likes), and comments. I based their appearance on Tumblr's display of interactions.
+- Displaying Webmentions: I render backlinks, IndieWeb "likes" (not silo likes), and comments below posts. I model their appearance after Tumblr's display of interactions.
 
 - Backfeeding content from silos: I'm only interested in backfilled content containing discussion, not "reactions" or "likes". Powered by [Bridgy](https://brid.gy/).
 
-### Features I am not interested in
+### IndieWeb features skipped
 
-- Authoring tools, either through a protocol (e.g. MicroPub) or a dynamic webpage: I prefer writing posts in my `$EDITOR` and deploying with `git push`, letting a CI job build and deploy the site with `make deploy-prod`. This allows me to participate with the social Web using the same workflow I use for writing code, avoiding the need to adopt and learn new tools.
+IndieWeb sites need not implement _every_ IndieWeb standard. Progressive enhancement and graceful degradation let me implement interesting features, and skip less interesting ones. Skipped features include:
 
-- Full silo independence: I want to treat my site as a "filtered" view of me to keep searchable and public. On other silos I might shitpost or post short-lived, disposable content. These aren't private, but I want them to remain less prominent. I POSSE content to other places, but I don't exclusively use POSSE.
+- Authoring tools, in the form of protocols (MicroPub) or dynamic pages. I prefer writing posts in my `$EDITOR` and deploying with `git push`, letting a <abbr>CI</abbr> job build and deploy the site. I can participate in the IndieWeb and write code with the same tools; [I juggle enough already]({{<relref "/about/uses.md">}}).
 
-- Sharing my likes, favorites, reposts: I find these a bit too shallow for seirdy.one. I prefer "bookmarks" where I can give an editorialized description of the content I wish to share along with any relevant tags. I'll keep simple likes and reposts to silos.
+- Full silo independence. My site provides a public, searchable, and _filtered_ view of myself. On other silos I might shitpost or post short-lived, disposable content. These public, but I want them to remain less prominent. I [<abbr>POSSE</abbr>](https://indieweb.org/POSSE) content to other places, but I don't exclusively use <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>.
 
-- Rich reply-contexts: I'd rather have users click a link to visit the reply and use quoted text to respond to specific snippets, similar to interleaved-style email quoting. Most of my replies are to Fediverse posts; on the Fediverse, people are often (understandably!) averse to scraping and archiving content. For that reason: I only show a tiny excerpt of content, and I ask for permission to POSSE replies to unlisted posts by `#nobot` accounts.
+- Sharing my "likes", "favorites", and "re-posts". I find these a bit too shallow for seirdy.one. I prefer "bookmarks" where I give editorialized descriptions of shared content. I'll confine likes and reposts to silos.
 
-### Features I am interested in
+- Rich reply-contexts. I use quoted text to respond to specific snippets, and prefer that users follow links to see full reply contexts. Most of my replies respond to Fediverse posts; many people on the Fediverse feel aversion to content-scraping and archiving. For that reason: I limit reply-contexts to tiny excerpts, and ask for permission to <abbr>POSSE</abbr> replies to unlisted posts by `#nobot` accounts.
+
+### Future IndieWeb features
+
+I'm not done IndieWeb-ifying my site. I plan to implement these features:
 
 - WebSub. I had some issues with Superfeedr; I think I'll resort to running my own single-user hub.
 
-- Automatic POSSE to the Fediverse (would be difficult with reply-contexts, and Bridgy doesn't support non-Mastodon features like Markdown).
+- Automatic <abbr>POSSE</abbr> to the Fediverse (difficult with reply-contexts, and Bridgy lacks non-Mastodon features such as HTML).
 
 - Taxonomies (tags).
 
 ### Low-priority features I have some interest in
 
-- RSVPs: I don't attend many events, let alone events for which I would broadcast my attendance. A page for this would be pretty empty.
+I'm not opposed to these features, but I probably won't implement support for them.
 
-- Event posts: same reason as above.
+- [<abbr>RSVPs</abbr>](https://indieweb.org/rsvp): I don't attend many events, let alone events worth an "RSVP" entry.
+
+- Event posts: same reason.
 
 - Running my own IndieAuth authorization endpoint to replace the external IndieLogin service.
 
-- Some sort of daemon to replace Bridgy. It sounds like a large undertaking because I'd have to implement it from scratch: Bridgy is written in Python, but I want every service on my server to be a statically-linked native executable.
+- Some sort of daemon to replace the Bridgy service. I don't plan to run my own Bridgy instance: Bridgy requires Python, but I prefer installing statically-linked native executables.
 
 Privacy
 -------
 
-This site is **privacy-respecting.** Its CSP blocks all scripts, third-party content, and other problematic features. I describe how I go out of my way to reduce the information you can transmit on this site in [my privacy policy](../privacy/).
+This site is **privacy-respecting.** Its <abbr title="Content Security Policy">CSP</abbr> blocks all scripts, third-parties, and other problematic features. For details on this site's privacy, [read the privacy policy](../privacy/).
 
 
-[^1]: Although there's no official announcement of Dillo's demise, the browser development has been inactive for a while. The official site, including its repository, is down; [I mirrored the Dillo repository.](../../notes/2022/06/14/dillo-repository-mirror/)
+[^1]: Although no official announcement of Dillo's demise exists, the browser's development halted years ago. The Dillo website's domain name expired, so [I mirrored the Dillo repository]({{<relref "/notes/dillo-repository-mirror.md">}}).
 
-[^2]: [Internet Explorer's engine isn't abandoned](../../notes/2022/06/15/internet-explorer-is-almost-gone/), but the consumer version I have access to is.
+[^2]: [Internet Explorer's engine isn't abandoned]({{<relref "internet-explorer-is-almost-gone.md">}}). Microsoft discontinued the consumer version, but supports the browser for enterprise users. I used to have access to the latter; I now test with "Internet Explorer Mode" in Edge when I can access a Windows machine.
 
-[^3]: Opera Presto isn't really abandoned. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That being said, I do test with the outdated desktop Presto engine in a sandboxed environment.
+[^3]: Strictly speaking, Opera still supports Presto to a limited degree. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That said, I do test with the outdated desktop Presto engine in a sandboxed environment.
 
 
