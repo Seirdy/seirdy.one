@@ -1578,7 +1578,7 @@ Future users
 
 The number of people using your site in the future is hopefully greater than the number of people using your site in the present. Accordingly, your pages need to work correctly in the future.
 
-Much of this section borrows from the article {{<mention-work type="Article">}}{{<cited-work name="This Page is Designed to Last" extraName="headline" url="https://jeffhuang.com/designed_to_last/">}}{{</mention-work>}}; I highly recommend giving it a read.
+Much of this section borrows from the article {{<mention-work itemtype="Article">}}{{<cited-work name="This Page is Designed to Last" extraName="headline" url="https://jeffhuang.com/designed_to_last/">}}{{</mention-work>}}; I highly recommend giving it a read.
 
 ### Third parties
 
