@@ -1,7 +1,9 @@
 <span {{ if (.Get "itemprop") -}}itemprop="{{- .Get "itemprop" -}}"{{- end }}
 	itemscope="" itemtype="https://schema.org/Person"
 	class="h-card vcard{{if eq (.Get "itemprop") "author"}} p-author{{end}}">
+	{{- if .Get "url" -}}
 	<a itemprop="url" href="{{- .Get "url" -}}" class="u-url url">
+	{{- end -}}
 		{{- if (.Get "avatar") -}}
 		{{- $avatar_img := (resources.GetRemote (.Get "avatar")).Resize "32x32" -}}
 		<img itemprop="image" class="u-photo photo" src="{{ $avatar_img.RelPermalink }}" alt="" width="16" height="16">
@@ -12,7 +14,7 @@
 			{{- if (.Get "nickname") -}}<span class="p-nickname nickname">{{- .Get "nickname" -}}</span>{{- end -}}
 			{{- if (.Get "name") -}}{{- .Get "name" -}}{{- end -}}
 		</span>{{- if (.Get "appendString") -}}{{- .Get "appendString" -}}{{- end -}}{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
-	</a>{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
+	{{- if .Get "url" -}}</a>{{- end -}}{{- /* Strip trailing newline: https://github.com/gohugoio/hugo/issues/1753 */ -}}
 	{{- if (.Get "org") }}
 	from <span class="p-org org" itemprop="affiliation" itemscope="" itemtype="https://schema.org/Organization">
 		<a itemprop="url" class="organization-name" href="{{- .Get "org-url" -}}">
