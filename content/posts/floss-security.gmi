@@ -20,7 +20,7 @@ I'd like to expand on these issues, focusing primarily on compiled binaries. Bea
 
 I'll update this post occasionally as I learn more on the subject. If you like it, check back in a month or two to see if it has something new.
 
-(PS: this stance is not absolute; I concede to several good counter-arguments at the bottom!)
+(PS: this stance is not absolute; I concede to several good counter-arguments in a dedicated section near the bottom!)
 
 ## How security fixes work
 
@@ -45,7 +45,7 @@ Source code² is essential to describe a program's high-level, human-comprehensi
 * The operating system itself may be poorly understood by the developers, and run a program in a way that contradicts a developer's expectations.
 * Toolchains, interpreters, and operating systems can have bugs that impact program execution.
 * Different compilers and compiler flags can offer different security guarantees and mitigations.
-* Source code can be deceptive by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs (plausible deniability; look up "hypocrite commits" and the Underhanded C Contest for examples) have all been well-documented.
+* Source code can be deceptive by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs have all been well-documented: look up "hypocrite commits" and the Underhanded C Contest for examples.
 * All of the above points apply to each dependency and the underlying operating system, which can impact a program's behavior.
 
 Furthermore, all programmers are flawed mortals who don't always fully understand source code. Everyone who's done a non-trivial amount of programming is familiar with the feeling of encountering a bug during run-time for which the cause is impossible to find...until they notice it staring them in the face on Line 12. Think of all the bugs that *aren't* so easily noticed.
@@ -108,7 +108,7 @@ The goal doesn't have to be a complete understanding of a program's design (incr
 
 Decompilers are seldom used alone in this context. Instead, they're typically a component of reverse engineering frameworks that also sport memory analysis, debugging tools, scripting, and sometimes even IDEs. Here are two popular frameworks:
 
-=> https://www.radare.org/n/ The radare project (I use this)
+=> https://rizin.re/ The Rizin framework (I use this)
 => https://ghidra-sre.org/ The Ghidra software reverse engineering suite
 
 Their documentation should help you get started if you're interested.
@@ -134,7 +134,7 @@ The fact that Intel ME has such deep access to the host system and the fact that
 
 I picked Intel ME+AMT to serve as an extreme example: it shows both the power and limitations of the analysis approaches covered. ME isn't made of simple executables you can just run in an OS because it sits far below the OS, in what's sometimes called "Ring -3".¹⁰ Analysis is limited to external monitoring (e.g. by monitoring network activity) and reverse-engineering unpacked partially-obfuscated firmware updates, with help from official documentation. This is slower and harder than analyzing a typical executable or library.
 
-Answers are a bit complex and...more boring than what sensationalized headlines would say. Reverse engineers such as Igor Skochinsky and Nicola Corna (the developers of me-tools and me_cleaner, respectively) have analyzed ME, while researchers such as Vassilios Ververis have thoroughly analyzed AMT in 2010. Interestingly, the former pair argues that auditing binary code is preferable to potentially misleading source code: binary analysis allows auditors to "cut the crap" and inspect what software is truly made of. However, this was balanced by a form of binary obfuscation that the pair encountered; I'll describe it in a moment.
+Answers are a bit complex and...more boring than what sensationalized headlines would say. Reverse engineers such as Igor Skochinsky and Nicola Corna (the developers of me-tools and me_cleaner, respectively) have analyzed ME, while Vassilios Ververis thoroughly analyzed AMT in 2010. Interestingly, the former pair argues that auditing binary code is preferable to potentially misleading source code: binary analysis allows auditors to "cut the crap" and inspect what software is truly made of. However, this was balanced by a form of binary obfuscation that the pair encountered; I'll describe it in a moment.
 
 => https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf Intel ME: Myths and Reality (PDF)
 => https://recon.cx/2014/slides/Recon%202014%20Skochinsky.pdf Intel ME secrets
@@ -142,7 +142,7 @@ Answers are a bit complex and...more boring than what sensationalized headlines 
 
 Simply monitoring network activity and systematically testing all claims made by the documentation allowed Ververis to uncover a host of security issues in Intel AMT. However, no undocumented features have (to my knowledge) been uncovered. The problematic findings revolved around flawed/insecure implementations of documented functionality. In other words: there's been no evidence of AMT being "a backdoor", but its security flaws could have had a similar impact. Fortunately, AMT can be disabled. What about ME?
 
-This is where some binary analysis comes in. Neither of Skochinsky's linked presentations seem to enumerate any contradictions with official documentation. Unfortunately, some components are poorly understood due to being obfuscated using Huffman compression with unknown dictionaries:
+This is where some binary analysis comes in. Neither of Skochinsky's linked presentations seem to enumerate any contradictions with official Intel documentation. Unfortunately, some components are poorly understood due to being obfuscated using Huffman compression with unknown dictionaries:
 
 => http://io.netgarage.org/me/ Intel ME Huffman algorithm
 
@@ -166,13 +166,13 @@ Manual invocation of a program paired with a tracer like `strace` won't always e
 
 Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like American Fuzzy Loop (AFL) normally use special builds:
 
-=> https://lcamtuf.coredump.cx/afl/
+=> https://lcamtuf.coredump.cx/afl/ AFL
 
 Other fuzzing setups can work with just about any binaries. 
 
-=> https://aflplus.plus/docs/binaryonly_fuzzing/
+=> https://aflplus.plus/docs/binaryonly_fuzzing/ AFL: Binary-only fuzzing
 
-In fact, some types of fuzz tests (e.g. fuzzing an API for a web service) hardly need any implementation details.
+In fact, some types of fuzz tests (e.g. fuzzing a web API) hardly need any implementation details.
 
 => https://github.com/KissPeter/APIFuzzer/ APIFuzzer
 
