@@ -246,7 +246,7 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 * Yisou: Chinese
 * Naver: Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
 * Daum: Korean. Also unsure about its independence.
-* Seznam: Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
+* Seznam: Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools and using IndexNow.
 * Cốc Cốc: Vietnamese
 * go.mail.ru: Russian
 

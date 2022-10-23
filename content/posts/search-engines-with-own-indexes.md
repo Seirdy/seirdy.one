@@ -66,7 +66,7 @@ Google
   - A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
 
 Bing
-: The runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/). Its index powers many other engines:
+: The runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/), sharing IndexNow page submissions with Yandex and Seznam. Its index powers many other engines:
   - Yahoo (and its sibling engine, One&shy;Search)
   - DuckDuck&shy;Go[^2]
   - AOL
@@ -93,7 +93,7 @@ Bing
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
 Yandex
-: Originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. Like Bing, it allows submitting pages and sitemaps for crawling using the IndexNow API. Powers:
+: Originally a Russian search engine, it now has an English version. Some Russian results bleed into its English site. It allows submitting pages and sitemaps for crawling using the IndexNow API, sharing IndexNow page submissions with Bing and Seznam. Powers:
   - Epic Search (went paid-only as of June 2021)
   - Occasionally powers DuckDuck&shy;Go's link results instead of Bing <ins cite="https://energycommerce.house.gov/committee-activity/hearings/hearing-on-holding-big-tech-accountable-legislation-to-protect-online">(update: DuckDuckGo has "paused" its partnership with Yandex, confirmed in <cite>[Hearing on “Holding Big Tech Accountable: Legislation to Protect Online Users”](https://energycommerce.house.gov/committee-activity/hearings/hearing-on-holding-big-tech-accountable-legislation-to-protect-online)</cite></ins>
   - Petal, for Russian users only.
@@ -290,7 +290,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [Daum](https://www.daum.net/): Korean. Also unsure about this one's independence.
 
-- [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools.
+- [Seznam](https://www.seznam.cz/): Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools. [Seznam supports IndexNow](https://blog.seznam.cz/2022/03/mate-novy-obsah-dejte-o-nem-hned-vsem-vedet-pomoci-indexnow/); it shares IndexNow-submitted pages with Bing and Yandex.
 
 - [Cốc Cốc](https://coccoc.com/search): Vietnamese
 
