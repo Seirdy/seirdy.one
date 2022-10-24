@@ -1,7 +1,7 @@
 {{- $wbmLinks := (slice "https://si3t.ch/log/2021-04-18-entetes-floc.html" "https://xmpp.org/2021/02/newsletter-02-feburary/" "https://gurlic.com/technology/post/393626430212145157" "https://gurlic.com/technology/post/343249858599059461" "https://www.librepunk.club/@penryn/108411423190214816" "https://benign.town/@josias/108457015755310198" "http://www.tuxmachines.org/node/148146" "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/" "https://bbbhltz.space/posts/thoughts-on-tech-feb2021/" "https://jorts.horse/@alice/108477866954580532" "https://brid.gy/comment/mastodon/@Seirdy@pleroma.envs.net/AK7FeQ4h2tUCKNwlXc/AK7GtGkE7JOVgm1Cgi" "https://fosstodon.org/@werwolf/108529382741681838" "https://mastodon.social/@WahbAllat/108986614624476982" "https://linuxrocks.online/@friend/109029028283860044" "https://fosstodon.org/@fullstackthaumaturge/108765040526523487" "https://inhji.de/notes/an-opinionated-list-of-best-practices-for-textual-websites") -}}
 {{- $archivetodayLinks := (slice "https://example.com") -}}
 <hr />
-<section aria-labelledby="webmentions">
+<section aria-labelledby="webmentions" data-nosnippet=""><!--data-nosnippet means this content shouldn't be used for url summaries in search engines.-->
 		<h2 id="webmentions" tabindex="-1">Web&#173;mentions</h2>
 		<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
 		{{ partial "webmention-form.html" . }}
@@ -14,7 +14,7 @@
 			{{- $webmentions = $webmentions | append (getJSON $url2) -}}
 		{{- end -}}
 		{{- if gt (len $webmentions) 0 -}}
-		<p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don't support them. I replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
+		<p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don’t support them. I auto-replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
 		<details>
 			<summary>Toggle Webmentions</summary>
 			<dl>

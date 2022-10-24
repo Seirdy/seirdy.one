@@ -16,7 +16,7 @@ sitemap:
     Priority: 0.7
 featured: 2
 image: "serenity-4x.png"
-image_alt: "Retro-looking browser with bitmap fonts showing this article's \"code snippet 4\"."
+image_alt: "Retro-looking browser with bitmap fonts showing this article’s “code snippet 4”."
 articleType: "TechArticle"
 evergreen: true
 title: "Best practices for inclusive textual websites"
@@ -124,7 +124,7 @@ If you're able to control your HTTP headers, then use headers instead of a `<met
 	the <a href="https://html.spec.whatwg.org/multipage/images.html#list-of-available-images">list of available images</a> prior to dynamically inserting a <code>meta</code>
 	element with an <code>http-equiv</code> attribute in the Content security policy state.
 	Resources that have already been fetched are not guaranteed to be blocked by a Content
-	Security Policy that's enforced late.
+	Security Policy that’s enforced late.
 	</p>
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
@@ -307,7 +307,7 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 {{<quotation>}}
 
 <blockquote itemprop="text">
-	<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing images in a page's markup such that a server can track how many images are requested and when.</p>
+	<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user’s approximate scroll position throughout a session, by strategically placing images in a page’s markup such that a server can track how many images are requested and when.</p>
 </blockquote>
 {{< quotecaption partOfType="TechArticle">}}
 {{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" extraName="headline">}}
@@ -416,7 +416,7 @@ Long pages with many DOM nodes may benefit from CSS containment, a more recently
 
 Leveraging containment and `content-visibility` is a progressive enhancement, so there aren't any serious implications for older browsers. I use `content-visibility` to defer rendering off-screen entries in my archives. Doing so allows me to serve long archive pages instead of resorting to pagination, with page-length limited only by download size. In my tests using Lighthouse with Chromium Devtools' simulated CPU throttling,[^11] this article rendered faster _with_ containment-enabled CSS than without any custom stylesheets at all.
 
-Using `content-visibility` for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing minor [layout shifts](#layout-shifts) and scrollbar-jumping. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating 'contain-intrinsic-size' for 'content-visibility'" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/author/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values. The scrollbar is less likely to jump around noticeably on extra-long pages, so sufficient page-length could let you get away with setting `contain-intrinsic-size` to a rough estimate.
+Using `content-visibility` for content at the end of the page is relatively safe. Using it for content earlier in the page risks introducing minor [layout shifts](#layout-shifts) and scrollbar-jumping. Eliminate the layout shifts by calculating a value for the `contain-intrinsic-size` property. {{<mention-work itemtype="TechArticle">}}{{<cited-work url="https://www.terluinwebdesign.nl/en/css/calculating-contain-intrinsic-size-for-content-visibility/" name="Calculating ‘contain-intrinsic-size’ for ‘content-visibility’" extraName="headline">}}, by {{<indieweb-person first-name="Thijs" last-name="Terluin" url="https://www.terluinwebdesign.nl/en/author/thijs-terluin/" org="Teluin Webdesign" org-url="https://www.terluinwebdesign.nl/en/" itemprop="author">}}{{</mention-work>}}, is a comprehensive guide to calculating intrinsic size values. The scrollbar is less likely to jump around noticeably on extra-long pages, so sufficient page-length could let you get away with setting `contain-intrinsic-size` to a rough estimate.
 
 ### Performance of assistive technologies
 
@@ -516,7 +516,7 @@ Web pages that hide content behind "show content" widgets are difficult to searc
 
 {{<image-figure id="reddit-redesign">}}
 
-{{<picture name="find" alt="screenshots before/after clicking a \"see more\" link obscuring a search match.">}}
+{{<picture name="find" alt="screenshots before/after clicking a “see more” link obscuring a search match.">}}
 
 <figcaption itemprop="caption">
 
@@ -660,10 +660,10 @@ I personally try to maintain the flow of an article even if its figures and capt
 	that primary content, e.g., to the side of the page, to dedicated pages, or to an appendix,
 	without affecting the flow of the document.</p>
 	<p>If a <code>figure</code> element is referenced by its relative position, e.g.,
-	"in the photograph above" or "as the next figure shows", then moving the figure would disrupt the
-	page's meaning. Authors are encouraged to consider using labels to refer to figures, rather than
+	“in the photograph above” or “as the next figure shows” then moving the figure would disrupt the
+	page’s meaning. Authors are encouraged to consider using labels to refer to figures, rather than
 	using such relative references, so that the page can easily be restyled without affecting the
-	page's meaning.</p>
+	page’s meaning.</p>
 </blockquote>
 {{< quotecaption partOfType="TechArticle" >}}
 <cite itemprop="name headline" class="p-name">HTML Living Standard</cite>, section 4.4.12:
@@ -802,7 +802,7 @@ If you include a `theme-color` directive in your document `<head>`, then recent 
 
 {{<image-figure>}} {{<picture name="wk_link" alt="dark blue link on dark gray background.">}}
 
-<figcaption itemprop="caption">WebKit's default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
+<figcaption itemprop="caption">WebKit’s default dark stylesheet uses dark-colored links that are difficult to read.</figcaption>
 {{</image-figure>}}
 
 CSS filters such as `invert` are expensive to run, so use them sparingly. Simply inverting your page's colors to provide a dark theme could slow it down or cause a user's fans to spin.
@@ -816,7 +816,7 @@ Darker backgrounds draw less power on devices with OLED screens; however, backgr
 This image is an approximation of what halation looks like, cropped from <a href="https://www.essentialaccessibility.com/blog/accessibility-for-people-with-astigmatism">Essential Accessibility</a>.
 
 </figcaption>
-{{< picture name="halation" alt="Fuzzy white text on black background reading \"But it is not\"." >}}
+{{< picture name="halation" alt="Fuzzy white text on black background reading “But it is not”." >}}
 {{</image-figure>}}
 
 "Just disable dark mode" is a poor response to users complaining about halation: it ignores the utility of dark themes described at the beginning of this section.
@@ -1553,7 +1553,7 @@ Designers already test their websites with multiple browser engines to ensure cr
 
 Screen readers on touch screen devices are also quite different from their desktop counterparts, and typically feature fewer capabilities. Be sure to test on both desktop and mobile.
 
-Screen reader implementations often skip punctuation marks like the exclamation point ("!"). Ensure that meaning doesn't rely too heavily on such punctuation.
+Screen reader implementations often skip punctuation marks like the exclamation point (<samp>!</samp>). Ensure that meaning doesn't rely too heavily on such punctuation.
 
 Screen readers have varying levels of verbosity. The default verbosity level doesn't always convey inline emphasis, such as `<em>`, `<code>`, or `<strong>`. Ensure that your meaning carries through without these semantics.[^35]
 
@@ -1698,7 +1698,7 @@ These tests begin reasonably, but gradually grow absurd. Once again, use your ju
 
 I'm still on step 17, trying to find new ways to break this page. If you come up with a new test, please [share it](mailto:~seirdy/seirdy.one-comments@lists.sr.ht).
 
-{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking browser with bitmap fonts showing this article's \"Code snippet 4\"." class="pix" sf=2 >}}
+{{<image-figure representative="True">}} {{< picture name="serenity" alt="Retro-looking browser with bitmap fonts showing this article’s “code snippet 4”." class="pix" sf=2 >}}
 
 <figcaption itemprop="caption">
 
