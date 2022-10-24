@@ -42,7 +42,7 @@
 	{{- else if .IsHome -}}
 		{{- $description = .Site.Params.Description -}}
 	{{- else if .Summary -}}
-		{{- $description = .Summary | replaceRE `\n` ` ` | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘` | safeHTML -}}
+		{{- $description = .Summary | replaceRE `\n` ` ` | replaceRE `\&rsquo;` `’` | replaceRE `\&nbsp;` `\&#160;` | replaceRE `\&ldquo;` `“` | replaceRE `\&rdquo;` `”` | replaceRE `\&hellip;` `—` | replaceRE `\&mdash;` `—` | replaceRE `\&shy;` `\&#173;` | replaceRE `&lsquo;` `‘` | truncate 160 | replaceRE ` ([^ ]*)?$` `` | safeHTML -}}
 	{{- end -}}
 	<meta name="description" content="{{ $description }}" />
 	<meta name="author" content="{{ .Site.Author.name }}" />

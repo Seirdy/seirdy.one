@@ -111,7 +111,7 @@ disableKinds = ["taxonomy", "term"]
 		baseName="atom"
 		isPlainText = true
 		mediaType = "application/xml"
-	
+
 	[outputformats.html]
 		mediaType = "application/xhtml+xml"
 
