@@ -132,6 +132,7 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough for users who'd like some more serendipity in less-specific searches.
 
+
 [Infotiger](https://alpha.infotiger.com/)
 : My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotier has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
 
@@ -162,9 +163,9 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Secret Search Engine Labs](http://www.secretsearchenginelabs.com/)
 : Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its [CashRank algorithm](http://www.secretsearchenginelabs.com/tech/cashrank.php). Allows site submission.
 
-### Unusable engines, irrelevant results
+### Fledgling engines
 
-Results from these search engines don't seem at all useful.
+Results from these search engines don't seem particularly relevant; indexes in this category tend to be small.
 
 
 [Yessle](https://www.yessle.com/)
@@ -196,6 +197,9 @@ Scopia
 
 [Marlo](https://marlo.sandymaguire.me/)
 : Another FLOSS engine: [Marlo is written in Haskell](https://github.com/isovector/marlo). Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
+
+[Spyda](https://spyda.dev/)
+: {{<mention-work itemtype="BlogPosting">}}A small engine made by {{<indieweb-person itemprop="author" first-name="James" last-name="Mills" url="https://www.prologic.blog/">}}, described in {{<cited-work url="https://www.prologic.blog/2021/02/14/so-im-a.html" name="So I'm a Knucklehead eh?" extraName="headline">}}{{</mention-work>}}. It's written in Go; check out its [MIT-licensed Spyda source code](https://git.mills.io/prologic/spyda).
 
 ### Semi-independent indexes
 

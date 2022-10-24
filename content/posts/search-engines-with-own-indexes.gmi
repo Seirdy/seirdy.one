@@ -164,6 +164,13 @@ Results from these search engines don’t seem at all useful.
 => https://www.yioop.com Yioop!
 => https://marlo.sandymaguire.me/ Marlo
 
+* Spyda: A small open-source engine made by James Mills, written in Go.
+
+=> https://spyda.dev/ Spyda search engine
+=> https://www.prologic.blog/2021/02/14/so-im-a.html Blog post introducing Spyda
+=> https://git.mills.io/prologic/spyda Spyda source code
+
+
 ### Semi-independent indexes
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.
