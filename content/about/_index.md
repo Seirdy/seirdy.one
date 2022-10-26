@@ -75,7 +75,7 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 	<a href="https://lobste.rs/u/Seirdy" rel="me">Lobsters</a>
 </dd>
 <dd>
-	<a href="https://www.reddit.com/user/Seirdy/" rel="me">Reddit</a>
+	<a href="https://www.reddit.com/user/Seirdy/" rel="me">Reddit (inactive)</a>
 </dd>
 <dd>
 	<a href="https://news.ycombinator.com/user?id=Seirdy" rel="me">“Hacker” News</a>
@@ -86,7 +86,7 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 	<a href="mailto:seirdy@seirdy.one" class="u-email" itemprop="email" rel="me">seirdy<wbr />@seirdy.one</a>
 </dd>
 
-<dt>PGP public key</dt>
+<dt>OpenPGP public key</dt>
 <dd><a href="../publickey.asc" class="u-key" rel="pgpkey authn" type="application/pgp-keys"><code>1E892DB2A5F84479</code></a> (also available via Web Key Directory)</dd>
 
 <dt>Chat</dt>
@@ -96,6 +96,8 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 </dl>
 
 If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
+
+I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript).
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
