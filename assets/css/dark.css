@@ -20,7 +20,7 @@
 
 	mark {
 		color: #000;
-		background-color: #eee7b2;
+		background-color: #eee8a7;
 	}
 
 	/* Only color <a> if it's a link; if href is empty, let it be. */
@@ -29,7 +29,21 @@
 	}
 
 	a:visited {
-		color: #ffdaff;
+		color: #ffd8ff;
+	}
+
+	/* Small text needs higher contrast.
+	 * Do not apply to "prefers-contrast: less"
+	 * Do not apply to "prefers-contrast: more" since
+	 * we override colors there. */
+	@media not (prefers-contrast) {
+		sup a:link:not(:active) {
+			color: #feb;
+		}
+
+		sup a:visited:not(:active) {
+			color: #ffe6ff;
+		}
 	}
 
 	/* For users who request less contrast, target ACPA Lc near -80 */
@@ -40,35 +54,30 @@
 		}
 	}
 
-	/* Small text needs higher contrast. */
-	@media not (prefers-contrast: less) {
-		sup a:link:not(:active) {
-			color: #feb;
-		}
-
-		sup a:visited:not(:active) {
-			color: #ffe6ff;
-		}
-	}
-
-	/* For users who request more contrast, target ACPA Lc near -96.
+	/* For users who request more contrast, target ACPA Lc near -99.
 	 * I have a monitor with terrible contrast so I use
-	 * "prefers-contrast: more" and this amount works for me.
-	 * People complained that the lobste.rs dark theme has too much
-	 * contrast, so I made that my baseline and exceeded it ever so
-	 * slightly. */
+	 * "prefers-contrast: more" and this amount works for me. People
+	 * complained that the lobste.rs dark theme has too much contrast, so
+	 * I made that my baseline and exceeded it ever so slightly.
+	 *
+	 * Also, this mode ensures that visited/un-visited links look very
+	 * different under red-green and blue-yellow color blindness.
+	 * Normally, they look very similar under blue-yellow color blindness.
+	 *
+	 * I sometimes use this mode when I need to set my brightness all the
+	 * way down. */
 	@media (prefers-contrast: more) {
 		html,
 		input {
 			background-color: #0d0d0d;
-			color: #eee;
+			color: #f3f3f3;
 		}
 
 		a:link {
-			color: #feb;
+			color: #fff970;
 		}
 		a:visited {
-			color: #ffe6ff;
+			color: #ccfdff;
 		}
 	}
 
