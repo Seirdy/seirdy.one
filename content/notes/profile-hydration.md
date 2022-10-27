@@ -11,16 +11,16 @@ replyAuthorURI: "https://mastodon.social/@humanetech"
 Many open standards can support profile hydration:
 
 Ariadne
-: map an email identifier to supported verified accounts.
+: Map an email identifier to supported verified accounts.
 
 The IndieWeb
-: map a webpage with `h-card` to any account, with less-robust reciprocal-link verification.
+: Map a webpage with `h-card` to any account. This can pair with other forms of authentication, such as [RelMeAuth](https://microformats.org/wiki/RelMeAuth).
 
 WebFinger
-: map an email-like identifier (an `acct:` URI) to a list of links.
+: Map an email-like identifier (an `acct:` URI) to a list of links.
 
 vCard
-: upload a vCard containing profile information, possibly with "share contact".
+: Mpload a vCard containing profile information, possibly with "share contact".
 
 I think `h-card`-based hydration is the best place to start. We can later add support for more options:
 
