@@ -1,6 +1,5 @@
 ---
 date: "2021-02-23T11:54:00-08:00"
-lastmod: "2021-03-02T23:04:04-08:00"
 description: "How open platforms become closed, and how standards-driven development can prevent it from happening."
 footnote_heading: "Notes"
 outputs:
@@ -146,14 +145,14 @@ The standards- and consensus-driven approach to platform development and the ine
 
 The reason societies with democratic governments are better places to live in than their alternatives isn’t because of some goodness intrinsic to democracy, but because its hopeless inefficiency helps blunt the basic potential for evil. The constraint of maintaining constant popularity is simply too large a burden to bear. So, happily, very little gets done that is extremely bad–or extremely good.
 
-Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
-
 </blockquote>
 {{<quotecaption partOfType="OpinionNewsArticle">}}
 {{<indieweb-person first-name="Nathan" last-name="Myhrvold" url="http://www.nathanmyhrvold.com/" itemprop="author">}},
 {{<cited-work name="The Virtue of Inefficient Government" url="https://slate.com/news-and-politics/1996/10/the-virtue-of-inefficient-government.html" extraName="headline">}}
 {{</quotecaption>}}
 {{</quotation>}}
+
+Perhaps the biggest benefit to abandoning the "move fast and break things" mindset is that in addition to making it hard to rapidly improve a service, abandoning the mindset also makes it hard to rapidly worsen a service.
 
 Ac&shy;knowledge&shy;ments {#acknowledgements}
 --------------------------
