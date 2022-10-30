@@ -5,6 +5,7 @@ outputs:
     - html
     - gemtext
 description: "Get to know Rohan Kumar, also known as Seirdy. Contact info, my projects, interests, online accounts, etc."
+stype: "https://schema.org/AboutPage https://schema.org/ProfilePage"
 ---
 <div itemscope="" itemprop="about" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 

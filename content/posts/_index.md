@@ -5,6 +5,7 @@ title: "Articles"
 sitemap:
     ChangeFreq: weekly
     Priority: 0.7
+stype: "https://schema.org/CollectionPage"
 ---
 Articles
 ========

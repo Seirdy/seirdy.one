@@ -5,6 +5,7 @@ title: "Notes"
 sitemap:
     ChangeFreq: daily
     Priority: 0.8
+stype: "https://schema.org/CollectionPage"
 ---
 Notes
 =====

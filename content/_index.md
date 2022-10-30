@@ -8,7 +8,7 @@ title: Seirdy's Home
 sitemap:
     - ChangeFreq: weekly
     - Priority: 0.9
-stype: "WebSite"
+stype: "https://schema.org/WebSite"
 ---
 About me
 --------

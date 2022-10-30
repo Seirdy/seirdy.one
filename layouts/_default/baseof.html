@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{- default "" .Site.LanguageCode }}" xml:lang="{{- default "" .Site.LanguageCode }}" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# cc: http://creativecommons.org/ns#">
 {{ partial "head.html" . -}}
-{{- $stype := "WebPage" -}}
+{{- $stype := "https://schema.org/WebPage" -}}
 {{- with .Params.stype -}}
 	{{- $stype = . -}}
 {{- end -}}
-<body itemscope="" itemtype="https://schema.org/{{ $stype }}">
+<body itemscope="" itemtype="{{ $stype }}">
 {{ partial "header.html" . -}}
 {{- block "main" . }}{{- end -}}
 {{ partial "footer.html" . }}
