@@ -7,5 +7,3 @@ Earlier this month, Google re-branded its WebP2 repository to clarify that [<q>W
 I doubt we'll be seeing new image formats on the Web for the next few years: there's [very incomplete JPEG-XL support in Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=jpeg-xl) and Safari only just got AVIF support
 
 JPEG-XL and WebP2 would have been great for lossless compression. The best lossless compression we currently have is WebP-lossless, which doesn't support e.g. higher color depths. For that, we're stuck with PNG.
-
-[POSSE](https://indieweb.org/POSSE) note from <https://seirdy.one/notes/2022/10/31/google-drops-jpeg-xl-and-webp2/>
