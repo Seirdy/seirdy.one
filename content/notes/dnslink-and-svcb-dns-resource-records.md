@@ -9,4 +9,4 @@ To give <abbr>IPNS</abbr>-accessible services familiar names, I think SVCB is a 
 
 A related issue for the InterPlanetary Name System is [Issue 144 for the <abbr>IPFS</abbr> web browsers integration group](https://github.com/ipfs/in-web-browsers/issues/144); it discusses the viability of using `Alt-Svc` for this.
 
-<aside><p>Syndicated to <a href="https://github.com/dnslink-std/community/discussions/2" class="u-syndication" rel="syndication">the DNSLink discussion forum</a> and <a href="https://pleroma.envs.net/notice/AOwGcaXk9ME4tYyUPQ" class="u-syndication" rel="syndication">the Fediverse</a>.</p></aside>
+<p>Syndicated to <a href="https://github.com/dnslink-std/community/discussions/2" class="u-syndication" rel="syndication">the DNSLink discussion forum</a> and <a href="https://pleroma.envs.net/notice/AOwGcaXk9ME4tYyUPQ" class="u-syndication" rel="syndication">the Fediverse</a>.</p>
