@@ -1,7 +1,7 @@
 ---
 title: "Demise of DTDs"
 date: 2022-06-08T00:13:46-07:00
-replyURI: "https://hackers.town/@theruran/108440475936938471"
+replyURI: "https://web.archive.org/web/20220725170506/https://hackers.town/@theruran/108440475936938471"
 replyTitle: "ever looked into writing your own DTD?"
 replyType: "SocialMediaPosting"
 replyAuthor: "theruran"
