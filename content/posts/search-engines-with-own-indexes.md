@@ -63,6 +63,8 @@ Google
 
   - [DSearch](https://www.dsearch.com/)
 
+  - [13TABS](https://www.13tabs.com/)
+
   - A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
 
 Bing
