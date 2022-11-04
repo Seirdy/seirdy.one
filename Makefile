@@ -25,6 +25,7 @@ csv/webrings.csv:
 .PHONY: hugo
 hugo: csv/webrings.csv $(SRCFILES)
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
+	mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi
 
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
