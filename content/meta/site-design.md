@@ -92,7 +92,7 @@ Mainstream engines
 : I keep excellent compatibility with mainstream engines: Blink (Chromium, Edge, QtWebEngine), WebKit (Safari, Epiphany), and Gecko (Firefox).
 
 Tor Browser
-: My Tor hidden service also works well with the Tor Browser, except for [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element appears non-interactive in the Tor Browser due to a bug involving NoScript and Firefox's handling of [the `sandbox` Content Security Policy <abbr>CSP</abbr>directive](https://www.w3.org/TR/CSP3/#directive-sandbox). To work around the issue, I include link to download the audio.
+: My Tor hidden service also works well with the Tor Browser, except for [a page containing an `<audio>` element](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/posts/2022/07/01/experiment-copilot-legality/). The `<audio>` element appears non-interactive in the Tor Browser due to a bug involving NoScript and Firefox's handling of [the `sandbox` Content Security Policy <abbr>CSP</abbr> directive](https://www.w3.org/TR/CSP3/#directive-sandbox). To work around the issue, I include link to download the audio.
 
 Mainstream engine forks
 : Pale Moon and recent versions of K-Meleon use Goanna, a single-process fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available fork of WebKit focused on lightweight embedded webviews. My site works in these engines without any noticeable issues.

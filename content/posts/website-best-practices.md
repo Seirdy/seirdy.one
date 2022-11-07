@@ -1122,7 +1122,7 @@ If your skip link toggles visibility states when focused, ensure that it doesn't
 
 ### Friendly navigation
 
-Users of <abbr title="assistive technology">AT</abbr>s such as screen readers primarily navigate through landmarks, headings, and paragraphs. Sometimes they also navigate between links. Headings and link names need to be unique and descriptive enough to serve as navigational aids; paragraphs shouldn't be too long.
+Users of <abbr title="assistive technologies">ATs</abbr> such as screen readers primarily navigate through landmarks, headings, and paragraphs. Sometimes they also navigate between links. Headings and link names need to be unique and descriptive enough to serve as navigational aids; paragraphs shouldn't be too long.
 
 Try using a tool to view a list of all your link names. Just about every screen reader and some browser extensions should offer this functionality. Minimize links with ambiguous names, and ensure that identical link names have identical destinations.
 
