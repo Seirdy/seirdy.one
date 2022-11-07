@@ -1,7 +1,7 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "168h" # seven days
+CacheExpires: "84h" # 3.5 days
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
@@ -33,6 +33,8 @@ IgnoreURLs:
   - "git@git"
   - "http://[^/]*.onion"
   - "https://archive.is"
+  - "https://archive.ph"
+  - "https://archive.today"
   - "https://ogp.me/ns"
   - "https://seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
@@ -56,4 +58,7 @@ IgnoreURLs:
   - "https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm.id=ffdf" # Seems to block htmltest; check manually
   - "https://lnk.dk" # blocks htmltest
   - "https://www.fastcompany.com/90759792/with-google-dominating-search-the-internet-needs-crawl-neutrality" # blocks htmltest
+  - "https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" # my DNS filters block this domain, cbf to work around it just for htmltest
+  - "https://doi.org/10.1515/popets-2017-0023" # redirects to a different domain which tends to block requests. DOI is generally good about keeping links alive; it's kinda the point of the service.
+  - "https://docs.graycot.dev/s/MFowZsw_F" # DNSSEC issue
 OutputDir: "linter-configs/htmltest"
