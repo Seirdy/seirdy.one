@@ -1097,7 +1097,7 @@ Achieving this type of layout entails using the WCAG 2.2 techniques C27 as well 
 
 Nontrivial use of width-selectors, in CSS queries or imagesets, is actually a powerful vector for JS-free fingerprinting:
 
-=> https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
+=> https://web.archive.org/web/20221022104555/https://matt.traudt.xyz/posts/2016-09-04-how-css-alone-can-help-track-you/ How CSS alone can help track you
 
 
 Exceptions exist: one or two very simple responsive changes won't hurt. The main anti-patterns are adjusting the relative order of elements, layout shifts dramatic enough to cause confusion, and making requests based on media queries that reveal fingerprintable information.
