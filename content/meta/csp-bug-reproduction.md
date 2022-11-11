@@ -15,7 +15,7 @@ What this page demonstrates
 This is a test page that demonstrates the following Content-Security-Policy (<abbr>CSP</abbr>):
 
 ```
-default-src 'none' 'report-sample';img-src 'self';style-src 'sha256-7cS8Hu9ov7dRhfioeeb9J8mtB9/iLLpVIZsMM+BJUcs=' 'report-sample';frame-ancestors 'none';base-uri 'none';form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;manifest-src 'self';sandbox allow-same-origin allow-scripts allow-forms;report-uri https://collector.seirdy.one;connect-src https://collector.seirdy.one
+default-src 'none' 'report-sample';img-src 'self';style-src 'sha256-7cS8Hu9ov7dRhfioeeb9J8mtB9/iLLpVIZsMM+BJUcs=' 'report-sample';frame-ancestors 'none';base-uri 'none';form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;manifest-src 'self';media-src 'self';sandbox allow-same-origin allow-scripts allow-forms;report-uri https://collector.seirdy.one;connect-src https://collector.seirdy.one
 ```
 
 Here's a multi-line version, to reduce horizontal scrolling:
@@ -28,6 +28,7 @@ frame-ancestors 'none';
 base-uri 'none';
 form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;
 manifest-src 'self';
+media-src 'self';
 sandbox allow-same-origin allow-scripts allow-forms;
 report-uri https://collector.seirdy.one;
 connect-src https://collector.seirdy.one
@@ -50,10 +51,11 @@ upgrade-insecure-requests;
 sandbox allow-same-origin allow-forms
 ```
 
-This page has a <abbr>CSP</abbr> that differs in three ways:
+This page has a <abbr>CSP</abbr> that differs in four ways:
 
 - It includes a reporting endpoint
 - It specifies an `allow-scripts` parameter on its `sandbox` directive
+- It allows loading media (necessary for the `<audio>` demonstration near the end)
 - It removes `upgrade-insecure-requests`.[^1]
 
 Additionally, I have a 404 page that includes a blank `sandbox` directive (i.e., it has no parameters such as `allow-same-origin`).
@@ -62,18 +64,18 @@ Some browser software breaks upon encountering strict <abbr>CSPs</abbr>. It's di
 
 Try reproducing the bug on the following pages:
 
-1. [This page's canonical location](https://seirdy.one/meta/csp-bug-reproduction/)
-2. [This page again, but with a `sandbox` query parameter](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=0)
+1. [This page, but without a `sandbox` CSP directive](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=off)
+2. [This page's canonical location](https://seirdy.one/meta/csp-bug-reproduction/).
 3. [My homepage](https://seirdy.one/)
-4. <a href="https://seirdy.one/sample-404/" rel="nofollow">My 404 page</a>
+4. [This page, but with an empty `sandbox` directive](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=strict)
 
 Note the following:
 
-- If you can reproduce the bug on all four pages: the offending directive is probably a fetch directive.
+- If you can reproduce the bug on all four pages: the offending directives include a fetch directive.
 
-- If you can reproduce the bug on all pages _except_ the second (this page with the query parameter): the offending directive is probably a `sandbox` directive, even if it contains `allow-same-origin` and `allow-scripts`.
+- If you can reproduce the bug on all pages _except_ the third or fourth: the offending directive is probably a `sandbox` directive's `allow-scripts` or `allow-same-origin` parameter, respectively.
 
-- If you can _not_ reproduce the bug on this page, but _can_ reproduce the bug on my homepage and my 404 page: the offending directive is a `sandbox` directive that blocks scripts (no `allow-scripts` present).
+- If you can reproduce the bug on the second page but cannot reproduce the bug on the first page, [a different missing `sandbox` parameter](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) is probably the culprit.
 
 - If you can only reproduce the bug on my 404 page: the offending directive is `sandbox` without `allow-same-origin`.
 
@@ -105,6 +107,42 @@ Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; base-uri 'n
 ```
 
 You'll get a plain page with the specified CSP on port 8000. Edit as you see fit.
+
+An audio element
+----------------
+
+I'm adding an `<audio>` element to demonstrate how a `sandbox` directive breaks WebKit's media controls. See [WebKit bug 237281](https://bugs.webkit.org/show_bug.cgi?id=237281) for more information.
+
+{{<transcribed-image id="eloquence" type="audio" itemtype2="AudioObject" itemprop="hasPart">}}
+
+#### <span itemprop="name">Eloquence sample audio</span> {#eloquence-sample}
+
+<figure>
+{{<audio name="eloquence">}}
+<figcaption itemprop="description">
+
+Audio sample
+
+</figcaption>
+</figure>
+
+{{<transcribed-image-transcript type="audio">}}
+
+<q>My primary focus is inclusive design. Specifically, I focus on supporting underrepresented ways to read a page. Not all users load a page in a common web-browser and navigate effortlessly with their eyes and hands. Authors often neglect people who read through accessibility tools, tiny viewports, machine translators, “reading mode” implementations, the Tor network, printouts, hostile networks, and uncommon browsers, to name a few. I list more niches in the conclusion. Compatibility with so many niches sounds far more daunting than it really is: if you only selectively override browser defaults and use plain-old, semantic HTML (POSH), you've done half of the work already.</q>
+
+{{</transcribed-image-transcript>}}
+
+{{</transcribed-image>}}
+
+Bugs filed
+----------
+
+Let me know if this page helped you discover any new bugs! Here are some bugs that my site has already uncovered:
+
+- [Epiphany: Reader Mode crash](https://gitlab.gnome.org/GNOME/epiphany/-/issues/1698)
+- [Various WebKit browser features](https://bugs.webkit.org/show_bug.cgi?id=237281)
+- [Brave Speed Reader](https://github.com/brave/brave-browser/issues/24577)
+- [Brave element picker](https://github.com/brave/brave-browser/issues/26686)
 
 
 [^1]: I removed `upgrade-insecure-requests` so that my Tor onion service could have the same <abbr>CSP</abbr> as this page. The onion service does not support TLS: TLS on onion services is redundant, and no certificate authority offers free <samp>.onion</samp> certificates.
