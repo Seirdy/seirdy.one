@@ -121,7 +121,7 @@ I'm adding an `<audio>` element to demonstrate how a `sandbox` directive breaks 
 {{<audio name="eloquence">}}
 <figcaption itemprop="description">
 
-Audio sample
+Just a random audio sample I had lying around. It's a recording of the "Eloquence" speech synthesizer reading text from another page on this site. It has a <span translate="no">Cross-Origin Resource Policy</span> of `same-origin`.
 
 </figcaption>
 </figure>
@@ -143,6 +143,11 @@ Let me know if this page helped you discover any new bugs! Here are some bugs th
 - [Various WebKit browser features](https://bugs.webkit.org/show_bug.cgi?id=237281)
 - [Brave Speed Reader](https://github.com/brave/brave-browser/issues/24577)
 - [Brave element picker](https://github.com/brave/brave-browser/issues/26686)
+
+Bugs I have yet to file:
+
+- Several mobile browsers failing to initialize Reader Mode
+- Firefox for iOS failing to perform find-in-page.
 
 
 [^1]: I removed `upgrade-insecure-requests` so that my Tor onion service could have the same <abbr>CSP</abbr> as this page. The onion service does not support TLS: TLS on onion services is redundant, and no certificate authority offers free <samp>.onion</samp> certificates.
