@@ -63,12 +63,15 @@ Some browser software breaks upon encountering strict <abbr>CSPs</abbr>. It's di
 Try reproducing the bug on the following pages:
 
 1. [This page's canonical location](https://seirdy.one/meta/csp-bug-reproduction/)
-2. [My homepage](https://seirdy.one/)
-3. <a href="https://seirdy.one/sample-404/" rel="nofollow">My 404 page</a>
+2. [This page again, but with a `sandbox` query parameter](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=0)
+3. [My homepage](https://seirdy.one/)
+4. <a href="https://seirdy.one/sample-404/" rel="nofollow">My 404 page</a>
 
 Note the following:
 
-- If you can reproduce the bug on all three pages: the offending directive is probably a fetch directive.
+- If you can reproduce the bug on all four pages: the offending directive is probably a fetch directive.
+
+- If you can reproduce the bug on all pages _except_ the second (this page with the query parameter): the offending directive is probably a `sandbox` directive, even if it contains `allow-same-origin` and `allow-scripts`.
 
 - If you can _not_ reproduce the bug on this page, but _can_ reproduce the bug on my homepage and my 404 page: the offending directive is a `sandbox` directive that blocks scripts (no `allow-scripts` present).
 
