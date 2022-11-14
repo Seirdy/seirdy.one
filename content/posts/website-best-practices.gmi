@@ -775,7 +775,7 @@ I personally like a foreground and background of "#E9E9E9" and "#191919", respec
 
 If you use JavaScript: avoid setting colors, especially dark-mode colors, using JavaScript. Using JavaScript to set a styles risks introducing a "Flash of Unstyled Content" (FOUC). In the case of a dark theme, this FoUC manifests as a "White Flash of Death" (WFoD). A WFoD is incredibly irritating for dark-mode users; at worst, it could put photosensitive epileptic users at risk. CSS is a render-blocking resource for a reason.
 
-### Contrast is complex
+### Use the Advanced Perceptual Contrast Algorithm
 
 When setting colors, especially for a dark background, I recommend checking your page's contrast using Accessible Perceptual Contrast Algorithm (APCA) values. You can do so in an online APCA checker or Chromium's developer tools (you might have to enable them in a menu for experimental preferences. I recommend using the web app.
 
@@ -793,6 +793,8 @@ Note that the APCA isn't fully mature as of early 2022. Until version 3.0 of the
 
 => https://yatil.net/blog/wcag-3-is-not-ready-yet WCAG 3 is not ready yet
 
+### What contrast algorithms don't cover: over-saturation
+
 Even if the APCA is much better than the WCAG's current naive contrast algorithms, it still doesn't account for all aspects of the relationship between perceptual contrast and color. This discussion on the SAPC-APCA repository covers some shortcomings; for instance, the current APCA doesn't account for the Helmholtz–Kohlrausch effect:
 
 => https://github.com/Myndex/SAPC-APCA/discussions/74 Dark Mode Color Palettes and APCA
@@ -800,12 +802,12 @@ Even if the APCA is much better than the WCAG's current naive contrast algorithm
 
 The Helmholtz–Kohlrausch effect describes how highly-saturated colors appear "brighter" than de-saturated colors with the same brightness. Excessive perceptual brightness against dark backgrounds can trigger halation, eye-strain, and overstimulation.
 
-Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes many on the autism spectrum.
+Yellow may have great contrast on dark backgrounds, but yellow and red can cause problems among people who deal with overstimulation; this includes many on the autism spectrum. This issue is a bit personal, since I do deal with overstimulation quite a bit.
 
 => https://www.tpgi.com/beyond-wcag-losing-spoons-online/ Beyond WCAG: Losing Spoons Online
 => https://www.experia.co.uk/blog/ultimate-guide-to-autism-friendly-colours/ The Ultimate Guide to Autism Friendly Colours
 
-If you want to use yellow and red, de-saturate them so that their color feels muted. This site's dark theme uses pale, washed-out yellow and pink for maximum contrast with minimal harshness.
+If you want to use significant amounts of "emergency colors" like yellow and red, de-saturate them so their color feels muted. This site's dark theme uses very pale, washed-out yellow and violet for maximum contrast with minimal harshness.
 
 Accounting for halation, overstimulation, and high-contrast needs is hard to do if you prioritize minute aesthetics before inclusivity.
 
