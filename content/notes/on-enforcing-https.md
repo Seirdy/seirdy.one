@@ -5,7 +5,7 @@ replyURI: "https://1mb.club/blog/https-redirects/"
 replyTitle: "Consider Disabling HTTPS Auto Redirects"
 replyType: "BlogPosting"
 replyAuthor: "Bradley Taunt"
-replyAuthorURI: "https://tdarb.org/"
+replyAuthorURI: "https://bt.ht/"
 ---
 One thing this article misses is the fact that webpages are delivered over the Web to Web browsers.
 

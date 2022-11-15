@@ -1,11 +1,11 @@
 ---
 title: "Notice box semantics"
 date: 2022-09-22T09:10:41-07:00
-replyURI: "https://tdarb.org/blog/notice-box.html"
+replyURI: "https://bt.ht/notice/"
 replyTitle: "RE: Creating a Simple HTML/CSS Notice Box"
 replyType: "BlogPosting "
 replyAuthor: "Bradley Taunt"
-replyAuthorURI: "https://tdarb.org/about.html"
+replyAuthorURI: "https://bt.ht/"
 ---
 
 I'd rather make a notice a `<section>` with a heading, or an `<aside>` if it's not related to the surrounding content.

@@ -1833,7 +1833,7 @@ The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and al
 
 The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for note&shy;worthiness, to avoid low-hanging fruit like mostly-blank pages.
 
-My favorite website club has to be the {{<mention-work itemtype="WebSite">}}{{< cited-work name="XHTML Club" url="https://xhtml.club/" >}} by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://tdarb.org" itemprop="author">}}{{</mention-work>}}, the creator of the original [1mb.club](https://1mb.club).
+My favorite website club has to be the {{<mention-work itemtype="WebSite">}}{{< cited-work name="XHTML Club" url="https://xhtml.club/" >}} by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://bt.ht/" itemprop="author">}}{{</mention-work>}}, the creator of the original [1mb.club](https://1mb.club).
 
 Also see [Motherfucking Website](https://motherfuckingwebsite.com/). Motherfucking Website inspired several unofficial sequels that tried to gently improve upon it. My favorite is [Best Motherfucking Website](https://bestmotherfucking.website/).
 
