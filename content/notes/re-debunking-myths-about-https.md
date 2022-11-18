@@ -1,7 +1,7 @@
 ---
 title: "Re: debunking myths about HTTPS"
 date: 2022-09-19T14:39:08-07:00
-replyURI: "https://blog.julien-maury.dev/en/snippets/https-myths/"
+replyURI: "https://web.archive.org/web/20220919214257/https://blog.julien-maury.dev/en/snippets/https-myths/"
 replyTitle: "Debunking myths about HTTPS"
 replyType: "Article"
 replyAuthor: "Julien Maury"

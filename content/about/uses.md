@@ -255,7 +255,7 @@ jq
 [htmltest](https://github.com/wjdp/htmltest) OR [html-proofer](https://github.com/gjtorikian/html-proofer)
 : Two very similar tools. html-proofer is slow but supports more features; I run the faster htmltest more often. They check for broken links, markup errors, and valid icons. htmltest's ability to cache links is really useful: instead of testing nearly two thousand links every run, I can spread the load over the course of a week. It's also much easier to build a static binary of htmltest than other link-checkers, like Lychee.
 
-[webhint](https://webhint.io)
+[webhint](https://webhint.io/)
 : When all the aforementioned tests pass, my staging site deploys and webhint runs on every page in its sitemap. Webhint checks HTTP headers, validates the Web App Manifest, ensures caching and compression work, checks for compatibility issues, validates compliance with a performance budget, and looks for common HTML/CSS mistakes. I skip its axe-based tests, since those are already covered by axe-core.
 
 Tools I have yet to add to this section:

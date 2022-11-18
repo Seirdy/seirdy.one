@@ -5,7 +5,7 @@ replyURI: "https://yatil.net/blog/resize-text-reflow"
 replyTitle: "WCAG SC 1.4.4 Resize Text and 1.4.10 Reflow"
 replyType: "BlogPosting"
 replyAuthor: "Eric Eggert"
-replyAuthorURI: "https://yatil.net"
+replyAuthorURI: "https://yatil.net/"
 ---
 
 This is a good article on the difference between SC 1.4.4 and 1.4.10. However, I don't think these criteria go far enough:

@@ -63,7 +63,7 @@ I also accept user feedback. Feel free to contact me through any means linked on
 The following automated tools supplement manual testing:
 
 - [axe-core](https://github.com/dequelabs/axe-core)
-- [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated)
+- [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/verify/automated/)
 - [AInspector](https://github.com/ainspector/ainspector-for-firefox)
 - [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 - [ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/)
@@ -179,7 +179,7 @@ I've implemented several features from IndieMark:
 
 - Microformats: representative `h-card`, in-text `h-card` and `h-cite` when referencing works, `h-feed`.
 
-- Sending and receiving Webmentions. I receive Webmentions with [webmentiond](https://github.com/zerok/webmentiond), and send them from my own computer using [Pushl](https://github.com/PlaidWeb/Pushl).
+- Sending and receiving Webmentions. I receive Webmentions with [webmentiond](https://github.com/zerok/webmentiond), and send them from my own computer using [Pushl](https://github.com/PlaidWeb/Pushl/).
 
 - Displaying Webmentions: I render backlinks, IndieWeb "likes" (not silo likes), and comments below posts. I model their appearance after Tumblr's display of interactions.
 

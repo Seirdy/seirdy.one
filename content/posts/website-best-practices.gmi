@@ -1770,7 +1770,7 @@ If you've got some time on your hands, I *highly* recommend reading the WCAG:
 
 The WCAG 2 standard is technology-neutral, so it doesn't contain Web-specific advice. For that, check the the how-to quick reference. It combines the WCAG with its supplementary list of techniques:
 
-=> https://www.w3.org/WAI/WCAG22/quickref How to Meet WCAG (Quick Reference)
+=> https://www.w3.org/WAI/WCAG22/quickref/ How to Meet WCAG (Quick Reference)
 => https://www.w3.org/WAI/WCAG22/Techniques/ Techniques for WCAG 2.2
 
 The WCAG are an excellent starting point for learning about accessibility, but make for a poor stopping point. Much of the content on this page simply isn't covered by the WCAG. One of my favorite resources for learning about what the WCAG *doesn't* cover is Axess Lab:

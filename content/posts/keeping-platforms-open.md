@@ -147,7 +147,7 @@ The reason societies with democratic governments are better places to live in th
 
 </blockquote>
 {{<quotecaption partOfType="OpinionNewsArticle">}}
-{{<indieweb-person first-name="Nathan" last-name="Myhrvold" url="http://www.nathanmyhrvold.com/" itemprop="author">}},
+{{<indieweb-person first-name="Nathan" last-name="Myhrvold" url="https://www.nathanmyhrvold.com/" itemprop="author">}},
 {{<cited-work name="The Virtue of Inefficient Government" url="https://slate.com/news-and-politics/1996/10/the-virtue-of-inefficient-government.html" extraName="headline">}}
 {{</quotecaption>}}
 {{</quotation>}}
