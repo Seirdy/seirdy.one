@@ -1,7 +1,7 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "72h" # 3.5 days
+CacheExpires: "50h" # 2 days
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
@@ -31,7 +31,7 @@ IgnoreURLs:
   - "^gemini://"
   - "mailto:"
   - "git@git"
-  - "http://[^/]*.onion"
+  - "http://[^/]*\\.onion"
   - "https://archive.is"
   - "https://archive.ph"
   - "https://archive.today"
@@ -61,6 +61,4 @@ IgnoreURLs:
   - "https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" # my DNS filters block this domain, cbf to work around it just for htmltest
   - "https://doi.org/10.1515/popets-2017-0023" # redirects to a different domain which tends to block requests. DOI is generally good about keeping links alive; it's kinda the point of the service.
   - "https://docs.graycot.dev/s/MFowZsw_F" # DNSSEC issue
-  - "https://tinybrain.fansaccessibility.html" # parsing error for https://www.tinybrain.fans/accessibility.html
-  - "https://www.tinybrain.fans/accessibility.html"
 OutputDir: "linter-configs/htmltest"

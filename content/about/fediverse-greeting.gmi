@@ -30,7 +30,7 @@ I am okay with you using whichever post-visibility you wish when replying to me,
 If I want to make a well-thought-out post that could benefit others, I’ll post it to my website’s “notes” section and syndicate it to Fedi with the “#POSSE” (Publish on Own Site, Syndicate Elsewhere) hashtag.
 
 => https://seirdy.one/notes/ My notes
-=> https://indieweb.org/posse POSSE
+=> https://indieweb.org/POSSE POSSE
 
 My notes also have a dedicated Atom and RSS feed. This is much lower-volume and “cleaner” than my Fediverse profile, if that’s what you prefer.
 

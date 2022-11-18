@@ -38,7 +38,7 @@ I try to always always add content-warnings (<abbr title="content-warn or conten
 
 I am okay with you using whichever post-visibility you wish when replying to me, but I speak only for myself. If I want to talk to you privately I will use an alternate means of communication.
 
-If I want to make a well-thought-out post that could benefit others, I'll post it to [my website's "notes" section](../../notes/) and syndicate it to Fedi with the "#POSSE" ([Publish on Own Site, Syndicate Elsewhere](https://indieweb.org/posse)) hashtag. My notes also have a dedicated Atom and RSS feed. This is much lower-volume and "cleaner" than my Fediverse profile, if that's what you prefer.
+If I want to make a well-thought-out post that could benefit others, I'll post it to [my website's "notes" section](../../notes/) and syndicate it to Fedi with the "#POSSE" ([Publish on Own Site, Syndicate Elsewhere](https://indieweb.org/POSSE)) hashtag. My notes also have a dedicated Atom and RSS feed. This is much lower-volume and "cleaner" than my Fediverse profile, if that's what you prefer.
 
 I will probably not boost pictures lacking alt-text, descriptions in the post body, or captions in comments. If I see a nice un-captioned picture, I’ll comment with my own caption instead. I often use a screen reader to reduce overstimulation and eye strain, and I sometimes use textual clients that can't display images; alt-text is really important to me!
 
