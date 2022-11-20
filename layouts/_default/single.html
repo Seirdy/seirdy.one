@@ -2,7 +2,9 @@
 {{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
 <main
 	itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Article" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
+<article class="h-entry hentry">
 	{{ partial "full-article.html" . }}
-	{{ partial "webmentions.html" . }}
+	{{ partial "interact.html" . }}
+</article>
 </main>
 {{ end }}

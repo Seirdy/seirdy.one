@@ -3,9 +3,11 @@
 {{- .Scratch.Set "codeIndex" 1 -}}
 <main
  itemprop="mainEntity" itemscope="" itemtype="https://schema.org/BlogPosting{{ with .Params.articleType }} https://schema.org/{{ . }}{{ end }}" itemid="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">
-	<link itemprop="isPartOf" href="{{ .Site.Params.CanonicalBaseURL }}/" />
+<link itemprop="isPartOf" href="{{ .Site.Params.CanonicalBaseURL }}/" />
+<article class="h-entry hentry">
 	{{ partial "full-article.html" . }}
-	{{ partial "webmentions.html" . }}
+	{{ partial "interact.html" . }}
+</article>
 </main>
 {{ partial "prev-next.html" . -}}
 {{- end }}

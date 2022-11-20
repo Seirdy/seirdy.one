@@ -1,0 +1,15 @@
+{{ with .Params.syndicatedCopies }}
+<h3>Syndication</h3>
+<p>This post has been syndicated to:</p>
+<ul>
+	{{- range . -}}
+	{{- $type := "SocialMediaPosting" -}}
+	{{- with ".type" -}}
+	{{- $type = . -}}
+	{{- end }}
+	<li>
+		<a itemprop="discussionUrl" class="u-syndication" rel="syndication" href="{{ .url }}">{{ .title }}</a>
+	</li>
+{{- end -}}
+</ul>
+{{- end -}}
