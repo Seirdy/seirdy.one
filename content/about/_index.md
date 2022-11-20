@@ -30,7 +30,7 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 <dd class="p-pronouns"><a href="https://pronoun.is/he/him" class="u-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></a></dd>
 
 <dt>Time zone</dt>
-<dd></dd>
+<dd>Pacific (UTC-08:00, or UTC-07:00 during daylight savings)</dd>
 
 <dt>Software forges</dt>
 <dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
