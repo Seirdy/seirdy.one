@@ -1,6 +1,6 @@
 # Seirdy (Rohan Kumar)
 
-Rohan Kumar : He/Him : Age 22
+Rohan Kumar : He/Him
 
 Online Handle: Seirdy
 
@@ -34,12 +34,15 @@ Featured in:
 
 Currently living at home in California, USA
 
-Would normally be in Portland, OR during the school year, but COVID-19 happened.
-
 => https://sr.ht/%7Eseirdy Sourcehut forge
 => https://github.com/Seirdy GitHub forge
 => https://gitlab.com/Seirdy GitLab forge
 => https://codeberg.org/Seirdy Codeberg forge
+
+More info:
+
+* Time zone: Pacific (UTC-08:00, UTC-07:00 during DST)
+* Age: 22
 
 ## Location (Seirdy, They/Them, online)
 
