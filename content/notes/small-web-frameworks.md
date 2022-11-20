@@ -15,3 +15,5 @@ People used to think that shrinking payload sizes would become less of an issue 
 
 I still think Vanilla is the least bad option for a good chunk of web apps.
 
+<ins datetime="2022-11-20">Update: this post was originally a reply to a Fediverse post by [@garbados@herd.bovid.space](https://herd.bovid.space/@garbados), which has since been deleted.</ins>
+

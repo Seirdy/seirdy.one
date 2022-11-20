@@ -1,10 +1,11 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "50h" # 2 days
+CacheExpires: "48h" # 2 days
 CheckFavicon: true
 EnforceHTML5: true
-IgnoreAltMissing: true # an empty alt makes presentation-role explicit, it's not a defect.
+IgnoreAltMissing: false
+IgnoreAltEmpty: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
 ExternalTimeout: 180
 HTTPConcurrencyLimit: 96
@@ -55,4 +56,6 @@ IgnoreURLs:
   - "https://faq.whatsapp.com/general/security-and-privacy/answering-your-questions-about-whatsapps-privacy-policy" # my DNS filters block this domain, cbf to work around it just for htmltest
   - "https://doi.org/10.1515/popets-2017-0023" # redirects to a different domain which tends to block requests. DOI is generally good about keeping links alive; it's kinda the point of the service.
   - "https://docs.graycot.dev/s/MFowZsw_F" # DNSSEC issue
+  # user has opted out of archiving
+  - "https://herd.bovid.space/@garbados"
 OutputDir: "linter-configs/htmltest"
