@@ -7,8 +7,8 @@ EnforceHTML5: true
 IgnoreAltMissing: false
 IgnoreAltEmpty: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
-ExternalTimeout: 180
-HTTPConcurrencyLimit: 96
+ExternalTimeout: 20
+HTTPConcurrencyLimit: 128
 IgnoreHTTPS:
   - "http://192.168.1"
   - "http://localhost:"
