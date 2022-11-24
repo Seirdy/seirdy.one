@@ -1,7 +1,7 @@
 ---
 title: "Containing web bloat"
 date: 2022-10-20T13:20:11-07:00
-replyURI: "https://mastodon.sdf.org/@khm/109201860585444737"
+replyURI: "https://web.archive.org/web/20221024151834/https://mastodon.sdf.org/@khm/109201860585444737"
 replyTitle: "Web technology has gotten bigger because web engineers just don’t care"
 replyType: "SocialMediaPosting"
 replyAuthor: "khm"
