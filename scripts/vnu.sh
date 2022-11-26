@@ -4,7 +4,7 @@ pwd="$(dirname "$0")"
 output_dir="$1"
 
 files_to_analyze() {
-	find "$output_dir" -type f -name '*.html' -o -name '*.svg' \
+	find "$output_dir" -type f -name '*.xhtml' -o -name '*.svg' \
 		| grep -Ev '(bimi\.svg|search/index\.x?html)$'
 }
 

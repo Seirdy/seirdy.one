@@ -60,7 +60,7 @@ done
 base_url="${1-http://localhost:8089}"
 
 # HTML validation is already parallelized, so run that single-threaded.
-make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize validate-html
+make -j1 HUGO_FLAGS=-DF HUGO_BASEURL="$base_url" clean hugo xhtmlize copy-to-xhtml validate-html
 make -j "$jobs" -f Makefile.online HUGO_BASEURL="$base_url" all-extra URLS="$(curl -sSL "$base_url/sitemap.xml" | htmlq loc -t | rg -v '/search/$' | tr '\n' ' ')" &
 make deploy-staging RSYNCFLAGS_EXTRA=-q
 make -f Makefile.online hint-online URLS="$(curl -sSL --compressed https://staging.seirdy.one/sitemap.xml | htmlq loc -t | rg -v '/(?:search|wcag-is-a-starting-point)/$' | sort | tr '\n' ' ')"
