@@ -5,7 +5,7 @@ replyURI: "https://plem.sapphic.site/notice/APB6VSqinvWjm1yHgW"
 replyTitle: "why does hardenize still check for Expect-CT when the header is deprecated"
 replyType: "SocialMediaPosting"
 replyAuthor: "r3g_5z"
-replyAuthorURI: "https://blog.terezi.dev/"
+replyAuthorURI: "https://blog.girlboss.ceo/"
 ---
 
 Speaking generally: I think most website security scanners (Webbkoll, Observatory, et al) lend themselves to cargo-cults. You don't need [most Content Security Policy directives](https://w3c.github.io/webappsec-csp/#csp-directives) for a PNG file, for instance. Warning against a missing `X-Frame-Options` feels wrong: even the latest version of iOS 9---the oldest iOS release to support secure TLS 1.2 <abbr>ECDSA</abbr> ciphers---seems to support `frame-ancestors` (correct me if I'm wrong).
