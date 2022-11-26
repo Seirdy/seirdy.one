@@ -4,6 +4,8 @@ date: 2022-11-25T22:45:19-08:00
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/APzIJgr4f1dTpMWKC8'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/7510/politics-and-37signals'
 ---
 Last year, 37signals employees shared the "pyramid of hate" in a work chat in response to seeing a list of "funny Asian names" of customers. Upper management responded by banning discussion of politics at work (I presume "politics" means "anything that creates a sense of social responsibility beyond investor value"). Its handling of the situation [caused a third of its employees to resign](https://www.nytimes.com/2021/04/30/technology/basecamp-politics-ban-resignations.html).
 
