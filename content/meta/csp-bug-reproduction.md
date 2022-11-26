@@ -108,8 +108,12 @@ Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; base-uri 'n
 
 You'll get a plain page with the specified CSP on port 8000. Edit as you see fit.
 
-An audio element
-----------------
+Sample elements
+---------------
+
+The following sections contain demos to see what breaks under a restrictive CSP.
+
+### An audio element
 
 I'm adding an `<audio>` element to demonstrate how a `sandbox` directive breaks WebKit's media controls. See [WebKit bug 237281](https://bugs.webkit.org/show_bug.cgi?id=237281) for more information.
 
