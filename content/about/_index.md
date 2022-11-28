@@ -76,6 +76,9 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 </dd>
 <dd>“Seirdy” on Linux Weekly News</dd>
 <dd>
+	<a href="https://www.jstpst.net/user/Seirdy" rel="me">jstpst</a>
+</dd>
+<dd>
 	<a href="https://lobste.rs/u/Seirdy" rel="me">Lobsters</a>
 </dd>
 <dd>

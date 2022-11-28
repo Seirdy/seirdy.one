@@ -4,7 +4,12 @@
 		"mailto:seirdy@seirdy.one",
 		"https://seirdy.one/",
 		"matrix:u/seirdy:seirdy.one",
-		"https://pleroma.envs.net/seirdy"
+		"irc://irc.libera.chat/Seirdy,isuser",
+		"irc://irc.oftc.net/Seirdy,isuser",
+		"irc://irc.snoonet.org/Seirdy,isuser",
+		"irc://irc.tilde.chat/Seirdy,isuser",
+		"https://pleroma.envs.net/Seirdy",
+		"https://pleroma.envs.net/users/Seirdy"
 	],
 	"links": [
 		{
@@ -23,9 +28,19 @@
 			"type": "text/html"
 		},
 		{
-			"rel": "http://webfinger.net/rel/profile-page",
-			"href": "https://pleroma.envs.net/seirdy",
+			"rel": "http://microformats.org/profile/hcard",
+			"href": "https://seirdy.one/",
 			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://pleroma.envs.net/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "self",
+			"type": "application/activity+json",
+			"href": "https://pleroma.envs.net/users/Seirdy"
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
@@ -35,6 +50,176 @@
 		{
 			"rel": "webmention",
 			"href": "https://seirdy.one/webmentions/receive"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discuss.coding.social/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discussion.fedoraproject.org/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://talk.desec.io/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discourse.gohugo.io/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://community.mojeek.com/u/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discourse.gnome.org/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://community.letsencrypt.org/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://ask.fedoraproject.org/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://kagifeedback.org/u/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://bestpractices.coreinfrastructure.org/en/users/13145",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://forum.minetest.net/memberlist.php?mode=viewprofile&u=27236",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://dev.to/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://codeberg.org/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://github.com/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://sr.ht/~seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://gitlab.torproject.org/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://gitlab.com/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://gitlab.gnome.org/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://bugzilla.mozilla.org/user_profile?user_id=683392",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://en.wikipedia.org/wiki/User:Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://tinygem.org/Seirdy/",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://archive.org/details/@seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://nixers.net/User-Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://www.jstpst.net/user/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://lobste.rs/u/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://www.reddit.com/user/Seirdy/",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://news.ycombinator.com/user?id=Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://lemmy.ml/u/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://littr.me/~Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://subreply.com/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://tilde.news/u/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://slashdot.org/~Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://tildes.net/user/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://keyoxide.org/wkd/seirdy%40seirdy.one",
+			"type": "text/html"
 		},
 		{
 			"rel": "pgpkey",
