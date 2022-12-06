@@ -27,7 +27,7 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 <dd class="p-gender-identity" itemprop="gender">Male</dd>
 
 <dt>Pronouns</dt>
-<dd class="p-pronouns"><a href="https://pronoun.is/he/him" class="u-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></a></dd>
+<dd class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></dd>
 
 <dt>Time zone</dt>
 <dd>Pacific (UTC-08:00, or UTC-07:00 during daylight savings)</dd>
@@ -61,7 +61,7 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 <dd class="p-gender-identity" itemprop="gender">Agender</dd>
 
 <dt>Pronouns</dt>
-<dd class="p-pronouns"><a href="https://pronoun.is/they/them" class="u-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></a></dd>
+<dd class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></dd>
 
 <dt>Social (Fediverse)</dt>
 <dd><a href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
