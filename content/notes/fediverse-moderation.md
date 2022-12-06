@@ -6,6 +6,11 @@ replyTitle: "For whom who use FediBlock, I think the built-in algorithm is good 
 replyType: "SocialMediaPosting"
 replyAuthor: "sysinhell"
 replyAuthorURI: "https://pleroma.envs.net/sysinshell"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AQLFwHnypZSiDs7cae'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/7537/fediverse-moderation'
 ---
 There's no real "recommendation algorithm" here. Mastodon 4.x has a "trending" feature, but that's it.
 
