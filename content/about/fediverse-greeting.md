@@ -32,7 +32,7 @@ I'll eventually move from Pleroma to my own Gotosocial instance, for many reason
 Fedi practices
 --------------
 
-If I say something insensitive or interact with someone I shouldn't, please let me know so I can be better.
+If I say something insensitive or interact with someone I shouldn’t, please let me know so I can be better. My DMs are open (i.e., you can always send me a direct message), and I have other forms of contact on my [About page](../)
 
 I try to always always add content-warnings (<abbr title="content-warn or content-warning">CWs</abbr>) to sensitive topics. Sometimes, I CW "regular" topics; common examples include "TechPost", "accessibility", and "shitpost". The latter type of CW allows you to reduce the prevalence of some of my interests in your timeline.
 
