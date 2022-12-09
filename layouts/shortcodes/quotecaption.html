@@ -7,9 +7,11 @@
 	{{- end -}}
 {{- end -}}
 <span class="h-cite" itemprop="citation" role="doc-credit">
-	<span itemprop="isPartOf" itemscope="" itemtype="https://schema.org/{{ .Get "partOfType" }}">
+	{{ with .Get "partOfType" -}}
+	<span itemprop="isPartOf" itemscope="" itemtype="https://schema.org/{{ . }}">
+	{{- end -}}
 		{{ .Inner | markdownify | safeHTML }}
-	</span>
+	{{- with .Get "partOfType" }}</span>{{ end }}
 </span>
 {{- with .Parent -}}{{ if eq .Name "quotation" }}
 </figcaption>
