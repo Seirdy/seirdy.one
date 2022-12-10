@@ -13,6 +13,8 @@ syndicatedCopies:
       url: 'https://tilde.news/s/euln3d/limited_utility_phrase_gnu_linux'
     - title: 'jstpst'
       url: 'https://www.jstpst.net/f/articles/7547/the-limited-utility-of-the-phrase-gnu-linux'
+    - title: 'Tildes'
+      url: 'https://tildes.net/~comp/13nx/the_limited_utility_of_the_phrase_gnu_linux'
 ---
 A specter is haunting the Linux community. Where lies productive discourse about operating systems, there also lies a danger. For the longer such discourse lasts, the greater the risk that the discourse shall be interrupted by The Interjection: an abomination brandished by a raging fossbro determined to contribute absolutely nothing to the discussion. [The standard fossbro interjection](https://stallman-copypasta.github.io/) begins:
 
