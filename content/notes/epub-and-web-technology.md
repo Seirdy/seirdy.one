@@ -6,6 +6,9 @@ replyTitle: "A full webkit process and actual JS running just to view an epub"
 replyType: "SocialMediaPosting"
 replyAuthor: "R. L. Dane"
 replyAuthorURI: "https://fosstodon.org/@RL_Dane"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AQVk1LyhgR0eoo4MWe'
 ---
 > The fact that I have to have a full WebKit process and actual JS running just to view an EPUB is really infuriating.
 >
