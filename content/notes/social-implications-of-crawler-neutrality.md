@@ -9,6 +9,8 @@ replyAuthorURI: "https://merlinjstar.com/"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AQVdsNiNG3MBsClnnM'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/social-implications-of-crawler-neutrality/475'
 ---
 You said something I'd like to draw attention to:
 
