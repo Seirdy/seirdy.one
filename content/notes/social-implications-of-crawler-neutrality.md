@@ -6,6 +6,9 @@ replyTitle: "Why I plan on getting away from LinkedIn by the end of 2023"
 replyType: "SocialMediaPosting"
 replyAuthor: "Merlin Star"
 replyAuthorURI: "https://merlinjstar.com/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AQVdsNiNG3MBsClnnM'
 ---
 You said something I'd like to draw attention to:
 
