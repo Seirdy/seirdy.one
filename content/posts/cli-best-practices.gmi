@@ -190,7 +190,7 @@ Thanks to Emily for reminding me of this on Fedi.
 5.  I need to take my own advice for programs like MOAC. Ugh.
 
 6.  See this Fediverse thread about forge accessibility:
-=> https://mastodon.technology/@codeberg/108403449317373462 
+=> https://web.archive.org/web/20220725162250/https://mastodon.technology/@codeberg/108403449317373462
 
 7.  For a good example, see Git’s distinction between regular output and porcelain-friendly output. The instability of the former and stability of the latter are explicitly documented in the Git man pages and in the official Git book.
 

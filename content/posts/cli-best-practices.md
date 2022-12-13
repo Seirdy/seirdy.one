@@ -214,7 +214,7 @@ References and further reading
 
 [^1]: Yes, it's possible to support re-sizing by using a TUI library like ncurses. Unfortunately, TUIs are out of scope for this article; I'm focusing mainly on CLIs.
 
-[^2]: See [this Fediverse thread](https://mastodon.technology/@codeberg/108403449317373462) about forge accessibility.
+[^2]: See [this Fediverse thread](https://web.archive.org/web/20220725162250/https://mastodon.technology/@codeberg/108403449317373462) about forge accessibility.
 
 [^3]: I need to take my own advice for programs like [MOAC](https://sr.ht/~seirdy/MOAC). Ugh.
 
