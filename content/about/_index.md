@@ -11,6 +11,10 @@ stype: "https://schema.org/AboutPage https://schema.org/ProfilePage"
 
 I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
 
+This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger: [acct:seirdy@seirdy.one](https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one). Any currently-active public account not listed via WebFinger isn't actually me; please let me know if you find one.
+
+I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript). I hope to migrate identity proofs to something besides OpenPGP in the future.
+
 Rohan: meat&shy;space persona {#Rohan}
 -----------------------------
 
@@ -103,8 +107,6 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 </dl>
 
 If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
-
-I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript).
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 

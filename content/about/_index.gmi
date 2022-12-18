@@ -6,6 +6,14 @@ Online Handle: Seirdy
 
 I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
 
+This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger:
+
+=> https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one WebFinger for acct:seirdy@seirdy.one
+
+Any currently-active public account not listed via WebFinger isn't actually me; please let me know if you find one.
+
+I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can verify those accounts on any Keyoxide instance using Web Key Directory. I hope to migrate identity proofs to something besides OpenPGP in the future.
+
 ## About this capsule
 
 This page's canonical location is on seirdy.one:
@@ -58,7 +66,7 @@ My handle is "Seirdy" on all the platforms I use:
 
 If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
 
-My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places. For IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, apionet, and a few smaller networks. Some more profiles are available via Ariadne identity proofs; you can look me up on Keyoxide using Web Key Directory.
+My username is Seirdy on Reddit, Hacker News, Lobsters, Tildes.net, Linux Weekly News, Codeberg, and a few other places. For IRC, my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, apionet, and a few smaller networks.
 
 My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space. My Matrix account used to be @seirdy:envs.net but I've since migrated to my own Conduit server.
 
