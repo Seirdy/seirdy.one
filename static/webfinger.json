@@ -143,6 +143,16 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://launchpad.net/~seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://pypi.org/user/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://bugzilla.mozilla.org/user_profile?user_id=683392",
 			"type": "text/html"
 		},
@@ -153,7 +163,17 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://linuxreviews.org/User:Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://tinygem.org/Seirdy/",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://getpocket.com/@2bzd3p90T15aMg2cU9A11cqAn9g8T9aK1aNTX0m75fuVH5W901d76Zh9S2eKH41c",
 			"type": "text/html"
 		},
 		{
