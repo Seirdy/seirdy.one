@@ -1,5 +1,4 @@
 {{- $wbmLinks := (slice "https://si3t.ch/log/2021-04-18-entetes-floc.html" "https://xmpp.org/2021/02/newsletter-02-feburary/" "https://gurlic.com/technology/post/393626430212145157" "https://gurlic.com/technology/post/343249858599059461" "https://www.librepunk.club/@penryn/108411423190214816" "https://benign.town/@josias/108457015755310198" "http://www.tuxmachines.org/node/148146" "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/" "https://bbbhltz.space/posts/thoughts-on-tech-feb2021/" "https://jorts.horse/@alice/108477866954580532" "https://brid.gy/comment/mastodon/@Seirdy@pleroma.envs.net/AK7FeQ4h2tUCKNwlXc/AK7GtGkE7JOVgm1Cgi" "https://fosstodon.org/@werwolf/108529382741681838" "https://mastodon.social/@WahbAllat/108986614624476982" "https://linuxrocks.online/@friend/109029028283860044" "https://fosstodon.org/@fullstackthaumaturge/108765040526523487" "https://inhji.de/notes/an-opinionated-list-of-best-practices-for-textual-websites" "https://ravidwivedi.in/whatsapp/" "https://hackers.town/@theruran/108440680870400884" "https://hackers.town/@theruran/108440475936938471" "https://mckinley.cc/twtxt/2022-may-aug.html#2022-06-25T16:06:07-07:00" "https://tarnkappe.info/lesetipps-bayern-it-sicherheit-db-app-trackt-neue-eu-datenbank/" "https://catcatnya.com/@kescher/109221687024062842" "https://catcatnya.com/@kescher/109221707054861018" "https://catcatnya.com/@kescher/109221721385520640" "https://catcatnya.com/@kescher/109221750082044200" "https://brid.gy/post/twitter/seirdy/1536747178877673475" "https://markesler.com/blog/website-design/" "https://catcatnya.com/@kescher/108601418196537980" "https://chaos.social/@n0toose/109035270210401105" "https://nicfab.it/en/posts/aware-digital-communication-respecting-privacy-and-the-apps-or-services-you-choose/" "https://haxf4rall.com/2022/09/23/a-collection-of-articles-about-hardening-linux/" "https://mastodon.randomroad.social/@dctrud/108680634691924661" "https://brid.gy/post/twitter/seirdy/1535891978969174016" "https://mastodon.technology/@codeberg/108403449317373462" "https://harveyr.net/posts/14kb/" "https://brid.gy/comment/mastodon/@Seirdy@pleroma.envs.net/ANUjukccjwEmivz3ia/ANUmmjSDUviUeCz42S") -}}
-{{- $archivetodayLinks := (slice "https://example.com") -}}
 {{- $rewritesDict := dict "" "" -}}
 {{- range $i, $r := (getCSV "," "/csv/rewrites.csv") -}}
 	{{- $rewritesDict = merge $rewritesDict (dict (index $r 0) (index $r 1)) -}}
@@ -7,21 +6,33 @@
 <h3 id="webmentions" tabindex="-1">Web&#173;mentions</h3>
 <p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
 {{ partial "webmention-form.html" . }}
-{{- $target := .RelPermalink | replaceRE "^/~seirdy/" "/" }}
-{{ $url1 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $target -}}
-{{ $webmentions := (getJSON $url1) -}}
-{{- if lt .Date.Unix 1653616670 -}}{{- /* commit c84c8d4 changed my URL schemes, so fetch menchies for the legacy scheme on old posts. */ -}}
-	{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
-	{{- $url2 := printf "https://seirdy.one/webmentions/get?status=approved&target=https://seirdy.one%s" $oldTarget -}}
-	{{- $webmentions = $webmentions | append (getJSON $url2) -}}
-{{- end -}}
-{{- if gt (len $webmentions) 0 -}}
+{{- /* Fetch all webmentions with bearer token */ -}}
+	{{ $bearer_token := "" }}
+	{{- with readFile ".webmentiond-token" -}}
+		{{- $auth := printf "Bearer %s" . -}}
+		{{- $bearer_token = dict "Authorization" $auth -}}
+	{{- end -}}
+	{{- $mentionsURL := "https://seirdy.one/webmentions/manage/mentions?limit=9999&status=approved" -}}
+	{{- $allMentions := (getJSON $mentionsURL $bearer_token).items -}}
+{{- /* Filter webmentions to just the ones for the current targets */ -}}
+	{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+	{{- $target := printf "%s%s" .Site.Params.CanonicalBaseURL $canonicalRelPermalink -}}
+	{{- $targets := (slice $target) -}}
+	{{- /* commit c84c8d4 changed my URL schemes, so fetch menchies for the legacy scheme on old posts. */ -}}
+	{{- if lt .Date.Unix 1653616670 -}}
+		{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
+		{{ $targets = (slice $target $oldTarget) }}
+	{{- end -}}
+	{{- $webmentions := where $allMentions "target" "in" $targets -}}
+{{- /* Render webmentions if they exist */ -}}
+{{- $count := (len $webmentions) -}}
+{{- if gt $count 0 -}}
 <p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don’t support them. I auto-replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
 <details>
-	<summary>Toggle Webmentions</summary>
+	<summary>Toggle {{ $count }} Webmentions</summary>
 	<dl>
 		{{ range sort $webmentions "created_at" -}}
-		{{ $webmention := . -}}
+			{{ $webmention := . -}}
 			{{- /* Boolean: should we should handle this webmention like a comment or a linkback? */ -}}
 			{{- $hasContent := and (isset $webmention "content") (gt (countrunes $webmention.content) 50) -}}
 			{{- $title := $webmention.title -}}
@@ -42,8 +53,6 @@
 			{{- end -}}
 			{{- if in $wbmLinks $src -}}
 				{{- $src = printf "https://web.archive.org/web/0/%s" $src -}}
-			{{- else if in $archivetodayLinks $src -}}
-				{{- $src = printf "https://archive.today/oldest/%s" $src -}}
 			{{- end -}}
 			{{ if (eq $webmention.type "like") -}}
 			<div itemprop="potentialAction" itemscope="" itemtype="https://schema.org/LikeAction" class="u-like h-cite">

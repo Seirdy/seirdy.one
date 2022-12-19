@@ -24,7 +24,9 @@ csv/webrings.csv:
 
 .PHONY: hugo
 hugo: csv/webrings.csv $(SRCFILES)
+	sh scripts/get-token.sh
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
+	rm .webmentiond-token
 	mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi
 
 # .hintrc-local for linting local files
