@@ -259,6 +259,8 @@ These engines try to find a website, typically at the domain-name level. They do
 
 ### Other
 
+[High Browse](https://highbrow.se/)
+: Uses a non-traditional ranking algorithm which does an excellent job of introducing non-SEO-optimized serendipity into search results. One of my favorite "surf-engines", as opposed to traditional "search-engines".
 
 [Keybot](https://www.keybot.com/)
 : A must-have for anyone who does translation work. It crawls the web looking for multilingual websites. Translators who are unsure about how to translate a given word or phrase can see its usage in two given languages, to learn from other human translators. My parents are fluent English speakers but sometimes struggle to express a given Hindi idiom in English; something like this could be useful to them, since machine translation isn't nuanced enough for every situation. Part of the [TTN Translation Network](https://www.ttn.ch/). Discovered in my access logs.
