@@ -80,7 +80,12 @@
 						{{ end -}}
 							<a class="u-url" itemprop="url" href="{{ $src }}" rel="nofollow ugc">liked</a> this
 					{{ else -}}
+						{{- if findRE `^https://brid.gy/[^/]*/mastodon` $webmention.source -}}
+							{{- $canonicalSrc := replaceRE "https://brid.gy/.*pleroma.envs.net/([^/]*)(.*)?" `https://pleroma.envs.net/notice/$1` $src -}}
+							<a class="u-url" itemprop="url" href="{{ $canonicalSrc }}" rel="nofollow ugc">
+						{{- else -}}
 						<a class="u-url" itemprop="url" href="{{ $src }}" rel="nofollow ugc">
+						{{- end -}}
 							<span itemprop="name" class="p-name">
 								{{ if $webmention.title -}}
 									{{ $title | truncate 200 | replaceRE ` \n` `
