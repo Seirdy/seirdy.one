@@ -26,7 +26,6 @@ csv/webrings.csv:
 hugo: csv/webrings.csv $(SRCFILES)
 	sh scripts/get-token.sh
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
-	rm .webmentiond-token
 	mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi
 
 # .hintrc-local for linting local files
@@ -39,7 +38,7 @@ hugo: csv/webrings.csv $(SRCFILES)
 
 .PHONY: clean
 clean:
-	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports mentions.json
+	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports mentions.json data/webmentions.json
 
 .PHONY: lint-css
 lint-css: $(CSS_DIR)/*.css

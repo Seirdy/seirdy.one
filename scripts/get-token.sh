@@ -18,9 +18,7 @@ key="$(_key)"
 set -u 
 
 # just a lil curl wrapper I use on seirdy.one
-ccurl() {
-	curl --proto "=https" --proto-default https --tlsv1.3 --cert-status --compressed $*
-}
+alias ccurl='curl --proto "=https" --proto-default https --tlsv1.3 --cert-status --compressed'
 
 _token() {
 	ccurl -sX POST https://seirdy.one/webmentions/authenticate/access-key -d "key=$key"
@@ -29,4 +27,5 @@ _token() {
 token="$(_token)"
 
 set +u
-printf '%s' "$token" >.webmentiond-token
+ccurl -H "Authorization: Bearer $token" 'https://seirdy.one/webmentions/manage/mentions?limit=9999&status=approved' >data/webmentions.json
+# printf '%s' "$token" >.webmentiond-token

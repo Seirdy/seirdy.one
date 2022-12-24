@@ -7,13 +7,7 @@
 <p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
 {{ partial "webmention-form.html" . }}
 {{- /* Fetch all webmentions with bearer token */ -}}
-	{{ $bearer_token := "" }}
-	{{- with readFile ".webmentiond-token" -}}
-		{{- $auth := printf "Bearer %s" . -}}
-		{{- $bearer_token = dict "Authorization" $auth -}}
-	{{- end -}}
-	{{- $mentionsURL := "https://seirdy.one/webmentions/manage/mentions?limit=9999&status=approved" -}}
-	{{- $allMentions := (getJSON $mentionsURL $bearer_token).items -}}
+{{- $allMentions := (index .Site.Data "webmentions").items -}}
 {{- /* Filter webmentions to just the ones for the current targets */ -}}
 	{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
 	{{- $target := printf "%s%s" .Site.Params.CanonicalBaseURL $canonicalRelPermalink -}}

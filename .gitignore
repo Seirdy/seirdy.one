@@ -19,3 +19,4 @@ public.eac
 styles/
 .vale.ini
 .webmentiond-token
+data/*.json
