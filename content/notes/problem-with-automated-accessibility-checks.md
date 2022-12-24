@@ -6,6 +6,9 @@ replyTitle: "I run Lighthouse and WAVE as…a baseline of sorts"
 replyType: "SocialMediaPosting"
 replyAuthor: "Todd Libby"
 replyAuthorURI: "https://toddl.dev/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AQs97KWObcsL5o0flw'
 ---
 
 > I run Lighthouse and WAVE as a "Hey, let's see what I have ahead of me" kind of thing. A baseline of sorts. Then I go into manual testing 
