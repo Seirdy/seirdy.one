@@ -1,8 +1,7 @@
 # Filter false positives from the .messages entry of Nu Validator output
 .messages |= map(
 	. | select(
-		.type == "error" and
-		(
+		.type == "error" and (
 			( # See https://github.com/w3c/css-validator/issues/361
 				.message == "CSS: Parse Error."
 				and .extract == "){outline:none}}@media(prefers"
@@ -10,6 +9,8 @@
 			)
 			or
 			( # See https://github.com/validator/validator/issues/1166
+			  # This false-positive has been fixed; will remove once validator.nu updates
+				# validator.w3.org/nu is up-to-date.
 				.message == "Attribute “media” not allowed on element “meta” at this point."
 				and (.extract | test(" name=\"theme-color\""))
 			)
