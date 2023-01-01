@@ -34,15 +34,20 @@ Featured in directories
 
 This site is featured in some cool directories.
 
-### Website minimalism
+### Website "clubs"
 
+The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="https://1mb.club/">}} by {{<indieweb-person itemprop="author" url="https://bt.ht/" first-name="Bradley" last-name="Taunt">}}{{</mention-work>}} inspired a number of similar website "clubs". I'm in all the ones I'm aware of except for the [No CSS Club](https://nocss.club/) and the [1kb club](https://1kb.club/).
+
+- [512KB Club](https://www.512kb.club/)
+- [250kb club](https://250kb.club/)
 - [10 KB Club](https://10kbclub.com/)
 - [no-JS Club](https://no-js.club/)
+- [Darktheme Club](https://darktheme.club/)
 - [XHTML Club](https://xhtml.club/)
-- [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
 
 ### Other directories
 
+- [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
 - [Indieweb Webring Directory](https://xn--sr8hvo.ws/directory)
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
@@ -68,6 +73,7 @@ Awards
 {{<image-figure id="internetnl-web">}}
 
 {{<picture name="internetnl-web" alt="Badge with text: 100% score in website test, internet.nl">}}
+
 <figcaption itemprop="caption">
 
 [Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/1745918/).
