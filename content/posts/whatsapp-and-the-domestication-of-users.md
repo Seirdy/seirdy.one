@@ -226,7 +226,7 @@ Translations are always welcome.
 
 - {{<mention-work itemprop="workTranslation" itemtype="BlogPosting">}}{{<indieweb-person itemprop="author" nickname="Skariko" url="https://www.lealternative.net/author/skariko/" org="Le Alternative" org-url="https://lealternative.net/">}} translated this article to <span itemprop="inLanguage">Italian</span>: {{<cited-work lang="it-IT" rel="alternate" url="https://www.lealternative.net/2021/12/13/whatsapp-e-laddomesticamento-degli-utenti/" name="WhatsApp e l’addomesticamento degli utent">}}{{</mention-work>}}.
 
-- {{<mention-work itemprop="workTranslation" itemtype="BlogPosting">}}{{<indieweb-person itemprop="author" nickname="puer robustus" url="https://www.puer-robustus.eu">}} translated this article to <span itemprop="inLanguage">German</span>: {{<cited-work lang="de-DE" rel="alternate" url="https://blog.puer-robustus.eu/domestizierung-von-nutzern/" name="WhatsApp und die Domestizierung von Nutzern">}}{{</mention-work>}}.
+- {{<mention-work itemprop="workTranslation" itemtype="BlogPosting">}}{{<indieweb-person itemprop="author" nickname="puer robustus" url="https://www.puer-robustus.eu">}} translated this article to <span itemprop="inLanguage">German</span>: {{<cited-work lang="de-DE" rel="alternate" url="https://blog.puer-robustus.eu/post/domestizierung-von-nutzern/" name="WhatsApp und die Domestizierung von Nutzern">}}{{</mention-work>}}.
 
 
 [^1]: <span itemprop="citation">Pierotti, R.; Fogg, B. (2017). The First Domestication: How Wolves and Humans Coevolved. Yale University Press.</span>
