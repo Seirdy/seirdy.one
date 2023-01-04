@@ -9,6 +9,8 @@ replyAuthorURI: "https://equel.social/@alasaarela"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/ARJXiGpWbQBm65f0Xw'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/7608/against-chasing-growth'
 ---
 > I see a lot of discussion about the fear that corporations and <abbr title="Venture Capitalists">VCs</abbr> will take over the fediverse. The thing is, Mastodon going mainstream will require a lot of capital and development of new products and innovations for this ecosystem...Let's also allow VC-backed startups to flourish building services for all of us.
 
