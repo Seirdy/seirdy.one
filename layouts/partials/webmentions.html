@@ -4,7 +4,7 @@
 	{{- $rewritesDict = merge $rewritesDict (dict (index $r 0) (index $r 1)) -}}
 {{- end -}}
 <h3 id="webmentions" tabindex="-1">Web&#173;mentions</h3>
-<p>This site supports <a href="https://indieweb.org/webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
+<p>This site supports <a href="https://indieweb.org/Webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
 {{ partial "webmention-form.html" . }}
 {{- /* Fetch all webmentions with bearer token */ -}}
 {{- $allMentions := (index .Site.Data "webmentions").items -}}
