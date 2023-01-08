@@ -1,5 +1,5 @@
 ---
-title: "Wkd and TOFU"
+title: "WKD and TOFU"
 date: 2023-01-08T14:04:22-08:00
 replyURI: "https://tilde.zone/@ryan/109655653939080034"
 replyTitle: "WKD is still TOFU so you should still verify out of band"
