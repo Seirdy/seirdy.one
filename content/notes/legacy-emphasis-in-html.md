@@ -6,6 +6,9 @@ replyTitle: "who decided it would be a good idea to teach beginning web develope
 replyType: "SocialMediaPosting"
 replyAuthor: "Jason Lefkowitz"
 replyAuthorURI: "https://jasonlefkowitz.net/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/ARY1Lj1vvf2mlUPbHM'
 ---
 Going forward, the [CSS Speech Module](https://www.w3.org/TR/css3-speech/) seems like a better place for auditory tonal indicators. The CSS we've already had for years should be a better place for visual presentation.
 
