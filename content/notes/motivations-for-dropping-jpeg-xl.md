@@ -6,6 +6,9 @@ replyTitle: "with the jpeg xl thing…pushing their own formats is convenient fo
 replyType: "SocialMediaPosting"
 replyAuthor: "Eevee"
 replyAuthorURI: "https://eev.ee/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/ARaAr2S33jEXsaYLWy'
 ---
 
 I do find their decision to drop JPEG-XL from Chromium problematic because it was clearly an example of them ignoring everyone else, showing the limits of Chromium's  collaborative decision making. However, "pushing their own formats" wasn't one of their reasons:
