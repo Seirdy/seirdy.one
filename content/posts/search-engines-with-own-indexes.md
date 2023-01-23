@@ -259,6 +259,7 @@ These engines try to find a website, typically at the domain-name level. They do
 
 ### Other
 
+
 [High Browse](https://highbrow.se/)
 : Uses a non-traditional ranking algorithm which does an excellent job of introducing non-SEO-optimized serendipity into search results. One of my favorite "surf-engines", as opposed to traditional "search-engines".
 
@@ -336,6 +337,9 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 
 [Search My Site](https://searchmysite.net)
 : Similar to Marginalia and Teclis, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth. Its API powers this site's search results; try it out using the search bar at the bottom of this page. Does not qualify because it's limited to user-submitted and/or hand-picked sites.
+
+[Blog Surf](https://blogsurf.io/)
+: A search engine for blogs with RSS/Atom feeds. Does not qualify because all blogs submitted to the index require manual review, but it seems interesting. Its "MarketRank" algorithm seems to give it a bias towards sites popular on "Hacker" "News".
 
 Misc
 ----
