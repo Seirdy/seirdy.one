@@ -58,6 +58,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
 - [Ye Olde Blogroll](https://blogroll.org/)
 - [Nerd Listings](http://nerdlistings.info/)
+- [ooh.directory](https://ooh.directory/)
 
 <details>
 <summary>Pending directories</summary>
