@@ -36,7 +36,7 @@ fetch_webmentions() {
 # fetch webmentions if we don't have a fresh copy already.
 
 if [ -f "$webmentions_file" ] \
-	&& [ "$(find "$webmentions_file" -mmin +90)" == "" ]; then
+	&& [ "$(find "$webmentions_file" -mmin +90)" = "" ]; then
 	echo 'Using cached webmentions'
 else
 	echo 'Fetching webmentions'
