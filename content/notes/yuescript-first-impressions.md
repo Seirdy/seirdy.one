@@ -1,6 +1,9 @@
 ---
 title: "Yuescript first impressions"
 date: 2023-02-15T09:35:15-08:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/ASi7iC9E0WfUIObg5A'
 ---
 I just discovered [Yuescript](https://yuescript.org/doc/), which is like MoonScript with more features. I have mixed feelings.
 
