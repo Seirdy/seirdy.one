@@ -80,7 +80,7 @@ Firefox
 : Default browser for most web pages. Trades some security for convenience. My setup is fingerprintable AF.
 
 Chromium
-: Used for web apps, security-sensitive work, and for certain specific web development tasks (Firefox is more than enough for most development tasks). Distribution packages of Chromium typically weaken many of its exploit mitigations (e.g. CFI), so I use [Thorium](https://github.com/Alex313031/Thorium) for now. Eventually, I might switch to [Hexavalent](https://github.com/Hexavalent-Browser/Hexavalent) once it's ready.
+: Used for web apps, security-sensitive work, and for certain specific web development tasks (Firefox is more than enough for most development tasks). Distribution packages of Chromium typically weaken many of its exploit mitigations (e.g. CFI), so I use [Thorium](https://github.com/Alex313031/Thorium) for now.
 
 Tor Browser
 : For anonymity (Safest level, or in Whonix at "Safer").
