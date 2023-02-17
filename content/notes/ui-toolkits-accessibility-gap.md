@@ -4,11 +4,11 @@ date: 2023-02-16T19:01:11-08:00
 replyURI: "https://www.warp.dev/blog/why-is-building-a-ui-in-rust-so-hard"
 replyTitle: "Why is building a UI in Rust so hard?"
 replyType: "BlogPosting"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
-#    - title: 'Lobsters'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/ASl0lOGNcl5GNJL6Jc'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/coy6gt/why_is_building_ui_rust_so_hard#c_f6rvfi'
 ---
 How does Warp stack against other toolkits when it comes to accessibility and system integration?
 
