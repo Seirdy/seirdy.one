@@ -118,11 +118,14 @@ Every administrator needs some tools to test their servers.
 [RustScan](https://rustscan.github.io/RustScan/)
 : A port-scanner that can scan all 65&nbsp;thousand ports in _seconds_. It optionally integrates with nmap. Don't use it on someone else's server without permission; this thing is brutal.
 
+[rnp](https://github.com/r12f/rnp)
+: A "layer-4 ping tool" that can measure the round-trip time of a plain TCP or QUIC connection, rather than using ICMP. Can also do light port-scanning.
+
 [q (DNS client)](https://github.com/natesales/q)
 : A DNS client that supports DNS-over-TLS, DNS-over-HTTPS, DNS-over-HTTP/3, DNS-over-QUIC, and Oblivious DNS-over-HTTPS. It sports a wide variety of options that aren't present in other `dig` replacements.
 
-[rnp](https://github.com/r12f/rnp)
-: A "layer-4 ping tool" that can measure the round-trip time of a plain TCP or QUIC connection, rather than using ICMP.
+[subfinder](https://github.com/projectdiscovery/subfinder)
+: Project Discovery's subdomain enumeration tool
 
 [cURL](https://curl.se/) OR [xh](https://github.com/ducaale/xh)
 : cURL supports a wide variety of features, protocols, TLS libraries, etc. `xh` is more focused on HTTP. I like to use both; when I don't need the features of cURL, I use xh for its simple color output and HTTPie-like syntax. Plus, it's nice to be able to test a server with two different HTTP+TLS implementations.

@@ -44,6 +44,7 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 * RustScan (don't use it on max settings without permission)
 * q, a DNS client that supports DoH, DoH3, DoQ, and ODoH.
 * rnp, a ping tool that supports TCP and QUIC "pings" to estimate handshake latency.
+* subfinder, Project Discovery's subdomain enumeration tool
 * both curl and xh for HTTP testing.
 * kinvolk's wrk2 fork and bombardier for HTTP load-testing
 * ssh-auditor
