@@ -1,6 +1,11 @@
 ---
 title: "ChatGPT reliance considered harmful"
 date: 2023-02-18T22:28:09-08:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/ASpSGG1Pn2hTBd7dz6'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/7820/chatgpt-reliance-considered-harmful'
 ---
 Designing tools to make people feel convenienced (the opposite of inconvenienced) is sometimes different from designing tools to make people's lives better.
 
