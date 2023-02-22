@@ -6,6 +6,8 @@ syndicatedCopies:
       url: 'https://pleroma.envs.net/notice/ASpSGG1Pn2hTBd7dz6'
     - title: 'jstpst'
       url: 'https://www.jstpst.net/f/just_post/7820/chatgpt-reliance-considered-harmful'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/chatgpt-reliance-considered-harmful/535'
 ---
 Designing tools to make people feel convenienced (the opposite of inconvenienced) is sometimes different from designing tools to make people's lives better.
 
