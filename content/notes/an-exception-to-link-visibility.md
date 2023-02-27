@@ -1,9 +1,9 @@
 ---
 title: "An exception to link visibility"
 date: 2023-02-27T09:22:13-08:00
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AT6yinEcOm8CWWGeBs'
 ---
 Making links recognizable in ways besides color is a basic accessibility requirement; in body text, underlining them makes their starting and ending locations obvious. I've recently decided to make a very personal exception:
 
