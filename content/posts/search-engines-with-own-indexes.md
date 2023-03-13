@@ -53,7 +53,7 @@ These are large engines that pass all my standard tests and more.
 
 Google
 : The biggest index. Allows submitting pages and sitemaps for crawling, and [even supports WebSub](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap) to automate the process. Powers a few other engines:
-  - [Startpage](https://www.startpage.com/), possibly the most popular Google proxy.
+  - [Startpage](https://www.startpage.com/), possibly the most popular Google proxy.[^2]
 
   - [GMX Search](https://search.gmx.com/web), run by a popular German email provider.
 
@@ -70,27 +70,27 @@ Google
 Bing
 : The runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/), sharing IndexNow page submissions with Yandex and Seznam. Its index powers many other engines:
   - Yahoo (and its sibling engine, One&shy;Search)
-  - DuckDuck&shy;Go[^2]
+  - DuckDuck&shy;Go[^3]
   - AOL
-  - Qwant (partial)[^3]
+  - Qwant (partial)[^4]
   - Ecosia
   - Ekoru
   - Privado
   - Findx
-  - Disconnect Search[^4]
+  - Disconnect Search[^5]
   - PrivacyWall
   - Lilo
   - Search&shy;Scene
   - Peekier
   - Oscobo
   - Million Short
-  - Yippy search[^5]
+  - Yippy search[^6]
   - Lycos
   - Givero
   - Swisscows
   - Fireball
   - Netzzappen
-  - You.com[^6]
+  - You.com[^7]
   - Partially powers MetaGer by default; this can be turned off
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
@@ -114,7 +114,7 @@ These engines pass most of the tests listed in the "methodology" section. All of
 
 
 [Right Dao](https://rightdao.com)
-: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^7]
+: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 
 [Gigablast](https://gigablast.com/)
 : It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
@@ -209,7 +209,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 
 [Brave Search](https://search.brave.com/)
-: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^8] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries.
+: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^9] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries.
 
 [Plumb](https://plumb.one/)
 : Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
@@ -246,7 +246,7 @@ These engines try to find a website, typically at the domain-name level. They do
 : The best in this category. Has a small but growing index of over 8 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 
 [search.tl](http://www.search.tl/)
-: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^9] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^10] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 [Thunderstone](https://search.thunderstone.com/)
 : A combined website catalog and search engine that focuses on categorization. Its [about page](https://search.thunderstone.com/texis/websearch19/about.html) claims: <q cite="https://search.thunderstone.com/texis/websearch19/about.html">We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of _sites_ not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you're trying to finding things like _'BillyBob's personal beer can page on AOL'_, try Yahoo or Dogpile.</q> This seems to be the polar opposite of the engines in the ["small or non-commercial Web" category](#small-or-non-commercial-web).
@@ -394,7 +394,7 @@ Why bother using non-mainstream search engines?
 
 ### Conflicts of interest
 
-Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^10]
+Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^11]
 
 One way to avoid this conflict of interest is to _use search engines that aren't linked to major content providers;_ i.e., use engines with their own independent indexes.
 
@@ -490,22 +490,26 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^1]: Yes, "indexes" is an acceptable plural form of the word "index". The word "indices" sounds weird to me outside a math class.
 
-[^2]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing). _Update, March 2022:_ DuckDuckGo [has the ability to downrank results on its own](https://web.archive.org/web/20220310222014/https://nitter.pussthecat.org/yegg/status/1501716484761997318); it was previously [working with Bing](https://www.nytimes.com/2022/02/23/technology/duckduckgo-conspiracy-theories.html) to get Bing to remove misinformation and spam.
+[^2]: Update: [A Startpage support article](https://support.startpage.com/hc/en-us/articles/4522435533844-What-is-the-relationship-between-Startpage-and-your-search-partners-like-Google-and-Microsoft-Bing-) updated on <time>2023-03-08</time> claims that Startpage uses Microsoft (probably Bing) too. In my own tests, I still see Google results. I'll update its placement if this changes.
 
-[^3]: Qwant claims to also use its own crawler for results, but it’s still mostly Bing in my experience. See the "semi-independent" section.
+[^3]: DuckDuckGo has a crawler called DuckDuckBot. This crawler doesn't impact the linked results displayed; it just grabs favicons and scrapes data for a few instant answers. DuckDuckGo's help pages claim that the engine uses over 400 sources; my interpretation is that at least 398 sources don't impact organic results. I don't think DuckDuckGo is transparent enough about the fact that their organic results are proxied. Compare DuckDuckGo side-by-side with Bing and Yandex and you'll see it's sourcing organic results from one of them (probably Bing). _Update, March 2022:_ DuckDuckGo [has the ability to downrank results on its own](https://web.archive.org/web/20220310222014/https://nitter.pussthecat.org/yegg/status/1501716484761997318); it was previously [working with Bing](https://www.nytimes.com/2022/02/23/technology/duckduckgo-conspiracy-theories.html) to get Bing to remove misinformation and spam.
 
-[^4]: Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
+[^4]: Qwant claims to also use its own crawler for results, but it’s still mostly Bing in my experience. See the "semi-independent" section.
 
-[^5]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
+[^5]: Disconnect Search allows users to have results proxied from Bing or Yahoo, but Yahoo sources its results from Bing.
 
-[^6]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^3] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case.
+[^6]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
 
-[^7]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
+[^7]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^4] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case.
 
-[^8]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+    <ins datetime="2023-03-13T13:34:30-07:00">Update: You.com seems to source organic link results from Bing, and only interleaves those results with its own curated infoboxes</ins>
 
-[^9]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^8]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
 
-[^10]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
+[^9]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+
+[^10]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+
+[^11]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
 
