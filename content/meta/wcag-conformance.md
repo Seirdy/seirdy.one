@@ -28,7 +28,7 @@ Principle 1: Perceivable
 [SC 1.1.1: Non-Text Content](https://w3c.github.io/wcag/understanding/non-text-content.html)
 : All non-text content on my site has a text alternative. Images have alt-text ([ST H37](https://w3c.github.io/wcag/techniques/html/H37)). I provide image and audio transcripts using `aria-describedby` when relevant ([ST ARIA15](https://w3c.github.io/wcag/techniques/aria/ARIA15) and [ST G74](https://w3c.github.io/wcag/techniques/general/G74)). Form controls have `<label>` elements ([ST H44](https://w3c.github.io/wcag/techniques/html/H44)). This covers SC 1.1.1's situations A, B, C, and D. Situation E is irrelevant, as my site has no CAPTCHAs. For situation F: I hide my avatar using null alt-text ([ST H67](https://w3c.github.io/wcag/techniques/html/H67)) and use `aria-hidden` on one instance of decorative emoji.
 
-### Guideline 1.2: Time-based Meida
+### Guideline 1.2: Time-based Media
 
 
 [SC 1.2.1: Audio-only and Video-only (Prerecorded)](https://w3c.github.io/wcag/understanding/audio-only-and-video-only-prerecorded.html)
