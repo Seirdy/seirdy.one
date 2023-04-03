@@ -1,6 +1,9 @@
 ---
 title: "ClientHello extension randomization"
 date: 2023-04-02T22:20:24-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AUGUJ8bnh1OubN4aNk'
 ---
 
 To limit ossification, Mozilla and Google have begun randomizing the order of TLS ClientHello extensions (as of [Chromium 110](https://chromestatus.com/feature/5124606246518784) and [NSS 3.84](https://bugzilla.mozilla.org/show_bug.cgi?id=1789436)).
