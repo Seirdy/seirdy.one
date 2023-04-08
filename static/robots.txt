@@ -28,4 +28,9 @@ Disallow: /
 User-Agent: BLEXBot
 Disallow: /
 
+# Eat shit, OpenAI.
+User-agent: ChatGPT-User
+Disallow: /
+
+
 Sitemap: https://seirdy.one/sitemap.xml
