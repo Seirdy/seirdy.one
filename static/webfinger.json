@@ -63,6 +63,11 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discourse.wicg.io/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://talk.desec.io/u/seirdy",
 			"type": "text/html"
 		},
@@ -139,6 +144,11 @@
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://gitlab.gnome.org/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://akkoma.dev/Seirdy",
 			"type": "text/html"
 		},
 		{
