@@ -1,6 +1,9 @@
 ---
 title: "Clang supports wiping call-used registers"
 date: 2023-04-17T00:01:52-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AUjf1wCr0xk0yCVpKK'
 ---
 Here's a compiler flag that slipped my notice: [Clear Linux has `-fzero-call-used-regs=used` in its `CFLAGS`](https://github.com/clearlinux/autospec/blob/46c9d3a49c51235efef62280deb9136f2ee9b203/autospec/specfiles.py#L542) for security-sensitive x86_64 packages, wiping call-used registers on return to protect against ROP exploits. In my benchmarks, there was almost no perf difference between `skip`, `used-gpr` and `used` which is surprising; I thought that this would really hurt instruction cache optimization.
 
