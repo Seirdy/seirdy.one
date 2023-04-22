@@ -6,9 +6,9 @@ replyTitle: "“the secret list of websites”"
 replyType: "BlogPosting"
 replyAuthor: "Chris Coyier"
 replyAuthorURI: "https://chriscoyier.net/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AUttq9kpOmeYZDHRTc'
 ---
 I added an entry to [my robots.txt](https://seirdy.one/robots.txt) to block ChatGPT's crawler, but blocking crawling isn't the same as blocking indexing; it looks like Google chose to use the [Common Crawl](https://commoncrawl.org/) for this and sidestep the need to do crawling of its own. That's a strange decision; after all, Google has a much larger proprietary index at its disposal.
 
