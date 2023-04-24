@@ -6,6 +6,11 @@ replyTitle: "“BoringSSL…is not intended for general use”"
 replyType: "Comment"
 replyAuthor: "AJ Jordan"
 replyAuthorURI: "https://strugee.net/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AUjf1wCr0xk0yCVpKK'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/9eas9d/you_should_prepare_for_openssl_3_x_secvuln#c_lreowa'
 ---
 
 Despite BoringSSL's "not intended for general use" warning, it's used by many projects:
@@ -14,5 +19,7 @@ Despite BoringSSL's "not intended for general use" warning, it's used by many pr
 - Cloudflare: used everywhere, including Quiche.
 - Apple's Secure Transport (it's in both major mobile OSes!)
 - Optionally: Nginx, libcurl
+- <ins datetime="2023-04-24">(Update <time>2023-04-24</time>) [Apple's SwiftNIO SSL](https://github.com/apple/swift-nio-ssl)</ins>
+- <ins datetime="2023-04-24">(Update <time>2023-04-24</time>) [AWS libcrypto](https://github.com/aws/aws-lc) is based on BoringSSL</ins>
 
 I use nginx-quic with BoringSSL without issue, although I did have to use [a separate script](https://github.com/tomwassenberg/certbot-ocsp-fetcher) to manage the OCSP cache. The script manages the cache better than Nginx ever did, so I recommend it; it should be trivial to switch it from OpenSSL to LibreSSL.
