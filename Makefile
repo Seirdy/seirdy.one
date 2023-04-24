@@ -65,7 +65,7 @@ validate-html:
 
 .PHONY: htmlproofer
 htmlproofer:
-	htmlproofer $(OUTPUT_DIR) --disable-external --checks Images,Scripts,Favicon,OpenGraph --ignore-empty-alt=true --ignore-files $(OUTPUT_DIR)/search/index.html --enforce-https=false --ignore-urls '../music.txt'
+	htmlproofer $(OUTPUT_DIR) --disable-external --checks Images,Scripts,Favicon,OpenGraph --ignore-files $(OUTPUT_DIR)/search/index.html --ignore-urls '../music.txt'
 
 linter-configs/htmltest.yml:
 	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) deploy@seirdy.one:/home/deploy/refcache.json linter-configs/htmltest/refcache.json

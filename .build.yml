@@ -4,9 +4,9 @@
 # hugo, brotli, ect (like gzip/zopfli), sd, htmlq (like jq for html), and xmllint.
 image: alpine/edge
 packages:
-  - curl # for webring update script
+  - curl # for webring update script, pre-installed on builds.sr.ht images
   - rsync
-  - git  # for Hugo's gitInfo
+  - git  # for Hugo's gitInfo, pre-installed on builds.sr.ht images
   - bmake
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one

@@ -67,6 +67,7 @@
 		"http-compression": "off",
 		"https-only": "error",
 		"sri": "error",
+		"detect-css-reflows": "off",
 		"manifest-exists": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
