@@ -78,7 +78,9 @@ Before you decide to trust one of my lists, please read the "Mistakes made" sect
 
 ## Mistakes made
 
-Here, I'll publicly document I document all significant mistakes I've made in the process. I sort entries in descending order by date addressed.
+Here, I publicly document all significant mistakes I've made in the process. I sort entries in descending order by date addressed.
+
+One mistake hasn't yet been listed; I'll wait for approval from one of the people impacted.
 
 ### Early April 2023: Oliphant's max list containing bad entries
 
