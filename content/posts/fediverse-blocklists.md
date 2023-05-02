@@ -5,6 +5,9 @@ date: 2023-05-02T00:00:54-07:00
 outputs:
     - html
     - gemtext
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AVEkLIaUf7JXnJkz2m'
 ---
 I maintain three blocklists for the Fediverse:
 
