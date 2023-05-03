@@ -68,12 +68,22 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 => https://github.com/fhanau/Efficient-Compression-Tool Efficient Compression Tool
 => https://github.com/boyter/scc scc
 
+## Server-side stuff
+
+* Custom build of nginx-quic with some patches. Statically l inked against zlib-ng, BoringSSL, PCRE2, musl, headers_more, and ngx_brotli. Patched for dynamic TLS record sizing, using externally-managed OCSP stapling files, static HPACK dictionaries, removing server signatures, adding dark-mode on in-binary error pages.
+* certbot-ocsp-fetcher
+* webmentiond Webmention receiver
+* Agate Gemini server
+* searchmysite-go
+* Conduit matrix server
+
 ## Services
 
 * Migadu: email provider
 * deSEC: managed DNS name servers
 * Namecheap: domain registrar (not endorsed)
 * Digital Ocean: VPS (not endorsed)
+* Search My Site: search API
 
 ## What I don't use
 

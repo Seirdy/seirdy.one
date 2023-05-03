@@ -250,7 +250,7 @@ I run these tools locally, on every applicable file. A full run takes under <tim
 : I use this just like axe-core: as a CLI utility to check every page on my sitemap for basic accessibility violations. I disable "potential-violations" checks because those have false-positives.
 
 jq
-: I use jq to ensure that all my JSON is valid. This includes my Web App Manifest file and Webfinger JSON. I also use jq to filter out false positives from the Nu HTML Checker.
+: I use jq to ensure that all my JSON is syntactically valid. This includes my Web App Manifest file and Webfinger JSON. I also use jq to filter out specific false positives from the Nu HTML Checker, all of which are reported upstream.
 
 [Feed Validator](https://github.com/w3c/feedvalidator)
 : I validate my Atom feeds using this tool. Like always, I filter out false positives and report them upstream.
@@ -273,13 +273,13 @@ All my server daemons are statically-linked binaries, which makes sandboxing eas
 
 
 Nginx
-: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, PCRE2 (non-JIT), and musl libc; patched for dynamic TLS records, basic OCSP support, larger buffers for dynamic zlib compression (necessary for zlib-ng), and static HPACK compression. I recommend most people use Caddy instead of Nginx. The only benefits of Nginx are certain modules providing application-server capabilities, the ability to re-load all configs with zero downtime, and better performance on limited hardware (although most sites won't need to handle more than a few hundred requests per second, which Caddy can handle perfectly well).
+: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli (static)](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, PCRE2 (non-JIT), and musl libc; patched for dynamic TLS records, basic externally-managed OCSP-stapling support, static HPACK compression, removing server signatures, and enabling dark mode on in-binary error pages. I recommend most people use Caddy instead of Nginx. The only benefits of Nginx are certain modules providing application-server capabilities, the ability to re-load all configs with zero downtime, better requests-per-second on limited hardware (although most sites won't need to handle more than a few hundred requests per second, which Caddy can handle *easily*), and kernel-accelerated TLS for maximizing bandwidth (usually unnecessary).
 
 [certbot-ocsp-fetcher](https://github.com/tomwassenberg/certbot-ocsp-fetcher)
 : Shell script to manage the OCSP cache for Nginx, since Nginx's own implementation shouldn't be used without running a trusted resolver (and is completely non-existent if you build with BoringSSL).
 
 [nginx-rotate-session-ticket-keys](https://github.com/GrapheneOS/nginx-rotate-session-ticket-keys)
-: Shell script to manage TLS session tickets, since Nginx's own implementation is really flawed. This replaces its default stateful session cache and also allows 0-RTT (also known as "early data") for idempotent requests. I patched it to use my statically-linked build of BoringSSL (I already had it sitting around after building it for Nginx).
+: Shell script to manage TLS session tickets, since Nginx's own implementation is really flawed (update: Nginx fixed it! I still keep this script since I can't be bothered to remove it). This replaces its default stateful session cache and also allows 0-RTT (also known as "early data") for idempotent requests. I patched it to use my statically-linked build of BoringSSL (I already had it sitting around after building it for Nginx).
 
 [webmentiond](https://webmentiond.org/)
 : Lightweight Webmention receiver.
@@ -310,6 +310,9 @@ I generally try to limit my dependence on services, preferring to run software m
 
 [Digital Ocean](https://www.digitalocean.com)
 : My VPS provider. I do not endorse Digital Ocean for most peoples' needs. It's far pricier than equivalent options, and is only worth that price if you need top-tier support and a very good SLA. That being said, it does offer a lot of free credits ($100 if you sign up with someone's referral code; another $100 if you're a student); I started using Digital Ocean for the free credits. Scaleway and BuyVM are much better options if you want to go cheap. If I ever manage to get my hands on a home internet connection with excellent uptime, I might switch to self-hosting.
+
+[Search My Site](https://searchmysite.net/)
+: I already pay for it; I might as well use it! Its API powers the site's search functionality, with searches proxied through a tiny Go wrapper on my backend.
 
 What I don't use
 ----------------
