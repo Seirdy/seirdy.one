@@ -68,7 +68,7 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 <dd class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></dd>
 
 <dt>Social (Fediverse)</dt>
-<dd><a href="https://pleroma.envs.net/seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
+<dd><a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
 <dd><a href="https://lemmy.ml/u/Seirdy" rel="me">@Seirdy<wbr />@lemmy<wbr />.ml</a> (Lemmy)</dd>
 
 <dt>Social (centralized)</dt>

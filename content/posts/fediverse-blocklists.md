@@ -9,6 +9,8 @@ syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AVEkLIaUf7JXnJkz2m'
 ---
+I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
+
 I maintain three blocklists for the Fediverse:
 
 

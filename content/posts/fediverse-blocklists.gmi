@@ -1,3 +1,6 @@
+I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse:
+=> https://pleroma.envs.net/Seirdy My Fediverse profile: @Seirdy@pleroma.envs.net
+
 I maintain three blocklists for the Fediverse:
 
 
