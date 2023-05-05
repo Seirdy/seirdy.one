@@ -6,6 +6,9 @@ replyTitle: "there must be a whole research area for “speculative human intera
 replyType: "SocialMediaPosting"
 replyAuthor: "Felipe Tavares"
 replyAuthorURI: "https://felipetavares.com/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AVKxcuTPWOwiZQvnma'
 ---
 instant.page (mentioned in another response) is popular, but it's not the only game in town. Google Chrome Labs made an alternative called [quicklink](https://github.com/GoogleChromeLabs/quicklink) which also attempts to optimize CPU time by preloading in-viewport pages during idle time. instant.page generally expects you to be using a mouse; results on touchscreens are pretty minimal and probably not worth the extra JS.
 
