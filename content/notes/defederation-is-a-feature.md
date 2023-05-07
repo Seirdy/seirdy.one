@@ -6,6 +6,9 @@ replyTitle: "The big issue with defederation"
 replyType: "SocialMediaPosting"
 replyAuthor: "PhilipKing"
 replyAuthorURI: "https://mastodon.social/@PhilipKing"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AVPKDFz3zy5nKiJTH6'
 ---
 
 Federation is a revocable privilege contingent upon instance staff maintaining a community that other instances feel safe connecting to. If staff fails to meet that obligation, the privilege is revoked. This allows moderation to scale across millions of users.
