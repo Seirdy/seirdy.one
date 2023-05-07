@@ -18,7 +18,7 @@ I maintain three blocklists for the Fediverse:
 : A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment.
 
 [`tier0.csv`](https://seirdy.one/pb/tier0.csv)
-: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for that purpose. Importing the retractions blocklist currently does nothing, unfortunately; right now, it's a manual process.
+: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for that purpose. Importing the retractions blocklist currently does nothing, unfortunately; right now, it's a manual process. Note that this list is larger than the bare-minimum I recommend; that'd be FediNuke.
 
 [`FediNuke.txt`](https://seirdy.one/pb/FediNuke.txt)
 : A curated subset of `tier0.csv`, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists.
@@ -30,7 +30,7 @@ This post is an attempt to document how they are made, their differences, their 
 How Tier-0 and FediNuke work
 ----------------------------
 
-[My tier-0 list](https://seirdy.one/pb/tier0.csv) (mirrored to `tier0.csv` in [the Oliphant repository](https://codeberg.org/oliphant/blocklists)) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **11 out of 20** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. A smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt).
+[My tier-0 list](https://seirdy.one/pb/tier0.csv) (mirrored to `tier0.csv` in [the Oliphant repository](https://codeberg.org/oliphant/blocklists)) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **11 out of 20** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
 When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 11 instead of 10.
 
@@ -71,6 +71,15 @@ The original goal was to make a blocklist appealing to instances with a more lai
 I pared that down to `FediNuke.txt`, which contains instances that were both really bad _and_ well-known. It's kind of hard to overlook how shitty each instance on the `FediNuke.txt` subset is. Common themes tend to be repeated unwelcome sui-bait from instance staff against individuals, creating or spreading dox materials against other users,[^1] unapologetic bigotry, uncensored shock content, and a complete lack of moderation.
 
 I think if you're starting a well-moderated instance, Tier 0 is a decent place to start (that's why it's in the standard CSV format). If you're making a client and want to give it a built-in blocklist, FediNuke is a good option.
+
+### Rationale for creating two subsets
+
+I used to just make a Tier-0 list. Later, I added the FediNuke list. Some people have asked why I don't just use one or the other; if Tier-0 was big enough to warrant FediNuke, why publish Tier-0 at all?
+
+I have two reasons for maintaining two blocklists:
+
+1. I didn't feel comfortable placing some Tier-0 instances right next to, e.g., openly Nazi instances when they weren't at the same level of severity. FediNuke's existence establishes that some instances on the list are much worse than others. Maintaining multiple blocklists makes their subjectivity more obvious.
+2. The lists can work together. As I previously mentioned, the division makes it easier for people to feel comfortable importing blocks. Some admins have found that importing FediNuke and gradually combing through the rest of Tier-0 is more approachable than an "all or nothing" approach.
 
 ### Trust, but verify
 
@@ -119,7 +128,10 @@ The biggest complaint I've heard is the lack of reasons and receipts. {{<mention
 
 I like the idea of a separation between receipt-tracking projects and blocklist-generating projects. Reasons in a blocklist tend to invite retaliatory harassment in an effort to make admins hide their blocklists, often in the form of (very dubious) legal threats (defamation and privacy regulations have come up).
 
+I also hope to see more tier-0 lists crop up. Any instance should be able to make a tier-0 list by sub-setting its own blocklist. When that happens, "Seirdy's Tier-0 list" will hopefully lose whatever authority it has.
+
 My greatest priority right now is solving retractions. Getting off of a list needs to be made much easier.
+
 
 [^1]: I did not consider dox attempts against certain neo-Nazis a reason to block.
 
