@@ -12,7 +12,7 @@ A large list of instances that I find worth suspending. After the first couple h
 => https://seirdy.one/pb/tier0.csv tier0.csv
 => https://seirdy.one/pb/tier0-retractions.csv tier0-retractions.csv
 
-A much smaller semi-curated subset of pleroma.envs.net suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing tier0.csv won't account for retractions; a sibling blocklist for tier-0 retractions exists for that purpose. Importing the retractions blocklist will remove its entries from your instance's blocklist.
+A much smaller semi-curated subset of pleroma.envs.net suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing tier0.csv won't account for retractions; a sibling blocklist for tier-0 retractions exists for that purpose. Importing the retractions blocklist currently does nothing, unfortunately; right now, it's a manual process.
 
 
 => https://seirdy.one/pb/FediNuke.txt FediNuke.txt
@@ -127,6 +127,8 @@ The biggest complaint I've heard is the lack of reasons and receipts. Are0h is w
 It doesn't have a lot of content yet, but that will change with time. I've shared my receipt archive with him.
 
 I like the idea of a separation between receipt-tracking projects and blocklist-generating projects. Reasons in a blocklist tend to invite retaliatory harassment in an effort to make admins hide their blocklists, often in the form of (very dubious) legal threats (defamation and privacy regulations have come up).
+
+My greatest priority right now is solving retractions. Getting off of a list needs to be made much easier.
 
 [note 1]: I did not consider dox attempts against certain neo-Nazis a reason to block.
 
