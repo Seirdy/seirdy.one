@@ -197,9 +197,6 @@ Scopia
 [Yioop!](https://www.yioop.com)
 : A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
-[Marlo](https://marlo.sandymaguire.me/)
-: Another FLOSS engine: [Marlo is written in Haskell](https://github.com/isovector/marlo). Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
-
 [Spyda](https://spyda.dev/)
 : {{<mention-work itemtype="BlogPosting">}}A small engine made by {{<indieweb-person itemprop="author" first-name="James" last-name="Mills" url="https://www.prologic.blog/">}}, described in {{<cited-work url="https://www.prologic.blog/2021/02/14/so-im-a.html" name="So I'm a Knucklehead eh?" extraName="headline">}}{{</mention-work>}}. It's written in Go; check out its [MIT-licensed Spyda source code](https://git.mills.io/prologic/spyda).
 
@@ -277,6 +274,9 @@ Quor
 
 [searchcode](https://searchcode.com/)
 : A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
+
+[Lixia Labs Search](https://search.lixialabs.com/)
+: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
 
 Other languages
 ---------------
@@ -377,6 +377,9 @@ These engines were originally included in the article, but have since been disco
 
 [Ninfex](https://web.archive.org/web/20220624172257/https://ninfex.com/)
 : A "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
+
+[Marlo](https://github.com/isovector/marlo)
+: Another FLOSS engine: Marlo is written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research. Originally available at `marlo.sandymaguire.me`.
 
 Exclusions
 ----------

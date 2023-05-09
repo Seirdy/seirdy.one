@@ -157,13 +157,11 @@ Results from these search engines don’t seem at all useful.
 * Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
 * Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 * Yioop!: A FLOSS search engine that boasts a very impressive feature-set: it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
-* Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 
 => https://crawlson.com Crawlson
 => https://www.anoox.com/  Anoox
 => https://archive.is/oVAre Plumb CPO
 => https://www.yioop.com Yioop!
-=> https://marlo.sandymaguire.me/ Marlo
 
 * Spyda: A small open-source engine made by James Mills, written in Go.
 
@@ -235,6 +233,7 @@ These engines try to find a website, typically at the domain-name level. They do
 * Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 * Bonzamate: a search engine specifically for Australian websites.
 * searchcode: A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
+* Lixia Labs Search: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
 
 => https://highbrow.se/ High Browse
 => https://www.keybot.com/ Keybot Translation Search Machine.
@@ -242,6 +241,7 @@ These engines try to find a website, typically at the domain-name level. They do
 => https://bonzamate.com.au/ Bonzamate
 => https://boyter.org/posts/abusing-aws-to-make-a-search-engine/ Blog post about Bonzamate: "Abuzing AWS to make a search engine".
 => https://searchcode.com/ searchcode
+=> https://search.lixialabs.com/ Lixia Labs Search
 
 ## Other languages
 
@@ -343,12 +343,14 @@ These engines were originally included in the article, but have since been disco
 * Gowiki: Very young, small index, but showed promise. I discovered this in the seirdy.one access logs. It was only available in the US. Seems down as of early 2022.
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 * Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
+* Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
 => https://gowiki.com  Gowiki
 => https://web.archive.org/web/20220429143153/https://www.meorca.com/search/ Meorca Search Engine (Wayback Machine snapshot)
 => https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
+=> https://marlo.sandymaguire.me/ Marlo
 
 ## Exclusions
 
