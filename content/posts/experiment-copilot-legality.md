@@ -1,6 +1,6 @@
 ---
 title: "An experiment to test GitHub Copilot's legality"
-date: 2022-07-01T17:30:45-07:00
+date: "2022-07-01T17:30:45-07:00"
 description: "A horrible idea to determine the legality of GitHub Copilot, or of re-creating proprietary speech synthesizers: create legal precedent that doesn't exist yet!"
 outputs:
     - html
@@ -136,7 +136,7 @@ I don't think that "going after" a smaller player just to manipulate our legal s
 Corrections
 -----------
 
-It's come to my attention that Eloquence may or may not still belong to Nuance. Further research is needed. Eloquent Technology was acquired by SpeechWorks in 2000.
+<span itemprop="correction" itemscope="" itemtype="https://schema.org/CorrectionComment">Updated on <time itemprop="datePublished">2022-07-02</time>: <span itemprop="text">It's has come to my attention that Eloquence may or may not still belong to Nuance. Further research is needed. Eloquent Technology was acquired by SpeechWorks in 2000.</span></span>
 
 </section>
 
