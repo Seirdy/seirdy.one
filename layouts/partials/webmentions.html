@@ -5,7 +5,7 @@
 {{- end -}}
 <h3 id="webmentions" tabindex="-1">Web&#173;mentions</h3>
 <p>This site supports <a href="https://indieweb.org/Webmention">Webmentions</a>, a backlink-based alternative to traditional comment forms.</p>
-{{ partial "webmention-form.html" . }}
+<details><summary>Send a Webmention</summary>{{ partial "webmention-form.html" . }}</details>
 {{- /* Fetch all webmentions with bearer token */ -}}
 {{- $allMentions := (index .Site.Data "webmentions").items -}}
 {{- /* Filter webmentions to just the ones for the current targets */ -}}
@@ -21,9 +21,9 @@
 {{- /* Render webmentions if they exist */ -}}
 {{- $count := (len $webmentions) -}}
 {{- if gt $count 0 -}}
-<p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don’t support them. I auto-replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
 <details>
 	<summary>Toggle {{ $count }} Webmentions</summary>
+	<p>Webmentions received for this post appear in the following list after I approve them. I sometimes send Webmentions to myself on behalf of linking sites that don’t support them. I auto-replace broken links with <a href="https://web.archive.org/">Wayback Machine</a> snapshots, if they exist.</p>
 	<dl>
 		{{ range sort $webmentions "created_at" -}}
 			{{ $webmention := . -}}
