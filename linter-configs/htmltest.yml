@@ -1,13 +1,13 @@
 DirectoryPath: "public"
 IgnoreDirs:
   - "search"
-CacheExpires: "48h" # 2 days
+CacheExpires: "120h" # 1 day
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreAltMissing: false
 IgnoreAltEmpty: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
-ExternalTimeout: 20
+ExternalTimeout: 10
 HTTPConcurrencyLimit: 128
 IgnoreHTTPS:
   - "http://192.168.1"
@@ -40,6 +40,8 @@ IgnoreURLs:
   - "https://seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
+  # - "https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one"
+  - "https://seirdy.one/.well-known/webfinger" # inexplicable false positive
   - "https://fediring.net/(previous|next)" # redir
   # - "https://forum.palemoon.org/viewtopic.php?f=1&t=25473" # manual check: blocks crawlers
   - "https://forum.palemoon.org/viewtopic.php"
@@ -50,6 +52,7 @@ IgnoreURLs:
   # - "https://forum.kuketz-blog.de/viewtopic.php?p=78202" # manual check: blocks crawlers
   - "https://forum.kuketz-blog.de/viewtopic.php"
   - "https://web.archive.org/" # the wayback machine itself.
+  - "https://i.reddit.com/r/web_design/comments/k0dmpj/an_opinionated_list_of_best_practices_for_textual/gdmxy4u/"
   - "https://gitweb.torproject.org/tor-browser.git/tree/browser/components/securitylevel/SecurityLevel.jsm.id=ffdf" # Seems to block htmltest; check manually
   - "https://lnk.dk" # blocks htmltest
   - "https://www.fastcompany.com/90759792/with-google-dominating-search-the-internet-needs-crawl-neutrality" # blocks htmltest
