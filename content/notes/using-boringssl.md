@@ -21,5 +21,6 @@ Despite BoringSSL's "not intended for general use" warning, it's used by many pr
 - Optionally: Nginx, libcurl
 - <ins datetime="2023-04-24">(Update <time>2023-04-24</time>) [Apple's SwiftNIO SSL](https://github.com/apple/swift-nio-ssl)</ins>
 - <ins datetime="2023-04-24">(Update <time>2023-04-24</time>) [AWS libcrypto](https://github.com/aws/aws-lc) is based on BoringSSL</ins>
+- <ins datetime="2023-05-26">(Update <time>2023-05-26</time>) the Envoy proxy [uses BoringSSL](https://www.envoyproxy.io/docs/envoy/latest/faq/build/boringssl)</ins>
 
 I use nginx-quic with BoringSSL without issue, although I did have to use [a separate script](https://github.com/tomwassenberg/certbot-ocsp-fetcher) to manage the OCSP cache. The script manages the cache better than Nginx ever did, so I recommend it; it should be trivial to switch it from OpenSSL to LibreSSL.
