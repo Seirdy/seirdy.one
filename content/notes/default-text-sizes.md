@@ -1,6 +1,9 @@
 ---
 title: "Default text sizes"
 date: 2023-05-27T14:32:30-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AW5on8jqNn98LAp48O'
 ---
 I've previously been an advocate of making websites with long-form body text increase the default size just a bit, since their text should be larger than the one-size-fits-all browser default; interfaces and navigation can be smaller. I didn't think we should expect users to change their default zoom levels, as that's a potential JavaScript-free fingerprinting vector.
 
