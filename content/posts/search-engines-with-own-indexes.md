@@ -211,9 +211,6 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 [Plumb](https://plumb.one/)
 : Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
-[Neeva](https://neeva.com)
-: Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva is one of few exceptions. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address or OAuth to use, and offers a paid tier with additional benefits.
-
 [Qwant](https://www.qwant.com)
 : Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
 
@@ -365,6 +362,8 @@ Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
 
+[Neeva](https://web.archive.org/web/20230528051432/https://neeva.com/blog/may-announcement)
+: Formerly in [the "semi-independent" section](#semi-independent-indexes). Combined Bing results with results from its own index. Bing normally isn't okay with this, but Neeva was one of few exceptions. Results were mostly identical to Bing, but original links not found by Bing frequently popped up. Long-tail and esoteric queries were less likely to feature original results. Required signing up with an email address or OAuth to use, and offered a paid tier with additional benefits. Acquired by Snowflake and announced its shut-down in May 2023.
 
 [wbsrch](https://xangis.com/the-wbsrch-experiment/)
 : In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.

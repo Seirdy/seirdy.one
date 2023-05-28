@@ -182,10 +182,6 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 => https://plumb.one/ Plumb
 
-* Neeva: Combines Bing results with results from its own index. Bing normally isn't okay with this, but Neeva is one of few exceptions. As of right now, results are mostly identical to Bing but original links not found by Bing frequently pop up. Long and esoteric queries are less likely to feature original results. Requires signing up with an email address or OAuth to use, and offers a paid tier with additional benefits.
-
-=> https://neeva.com/ Neeva
-
 * Qwant: Qwant claims to use its own index, but it still relies on Bing for most results. It seems to be in a position similar to Neeva. Try a side-by-side comparison to see if or how it compares with Bing.
 
 => https://www.qwant.com Qwant
@@ -337,6 +333,9 @@ Time for my first Gemini-exclusive content! A Gemini page about search engines w
 ## Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
+
+* Neeva: formerly in the "semi-independent" section. Combined Bing results with results from its own index. Bing normally isn't okay with this, but Neeva was one of few exceptions. Results were mostly identical to Bing, but original links not found by Bing frequently popped up. Long-tail and esoteric queries were less likely to feature original results. Required signing up with an email address or OAuth to use, and offered a paid tier with additional benefits.
+=> https://web.archive.org/web/20230528051432/https://neeva.com/blog/may-announcement Neeva shutdown announcement
 
 * gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
