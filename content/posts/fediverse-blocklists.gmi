@@ -17,7 +17,7 @@ A much smaller semi-curated subset of pleroma.envs.net suitable for the majority
 
 => https://seirdy.one/pb/FediNuke.txt FediNuke.txt
 
-A curated subset of tier0.csv, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists. This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and liklihood of reaching/harming people on other instances.
+A curated subset of tier0.csv, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists. This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and liklihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running blockbots, etc).
 
 Some of these lists are also sources for the Oliphant blocklists:
 => https://writer.oliphant.social/oliphant/the-blocklist-algorithm The Blocklist Algorithm - The Oliphant
