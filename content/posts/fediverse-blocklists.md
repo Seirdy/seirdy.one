@@ -15,10 +15,10 @@ I maintain three blocklists for the Fediverse:
 
 
 [The `pleroma.envs.net` blocklist](https://seirdy.one/pb/pleroma.envs.net.csv)
-: A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment.
+: A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment. Unlike the other two lists on this page, it wasn't made for general use (though you're welcome to use it as reference).
 
 [`tier0.csv`](https://seirdy.one/pb/tier0.csv)
-: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for that purpose. Importing the retractions blocklist currently does nothing, unfortunately; right now, it's a manual process. Note that this list is larger than the bare-minimum I recommend; that'd be FediNuke.
+: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for [FediBlockHole](https://github.com/eigenmagic/fediblockhole) users. Note that this list is larger than the bare-minimum I recommend; that'd be FediNuke.
 
 [`FediNuke.txt`](https://seirdy.one/pb/FediNuke.txt)
 : A curated subset of `tier0.csv`, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists. This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and liklihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running blockbots, etc). Bad instances that mostly keep to themselves are less likely to cause problems for a new admin, and therefore less likely to get included in this minimal list.
@@ -26,6 +26,8 @@ I maintain three blocklists for the Fediverse:
 Some of these lists are also sources for the Oliphant blocklists. {{<mention-work itemtype="BlogPosting">}}{{<indieweb-person name="Oliphant" url="https://oliphant.social/@Oliphant" itemprop="author">}} describes them in his article {{<cited-work name="The Blocklist Algorithm" extraName="headline" url="https://writer.oliphant.social/oliphant/the-blocklist-algorithm">}}.{{</mention-work>}}
 
 This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats.
+
+{{<toc>}}
 
 How Tier-0 and FediNuke work
 ----------------------------
@@ -70,7 +72,7 @@ The original goal was to make a blocklist appealing to instances with a more lai
 
 I pared that down to `FediNuke.txt`, which contains instances that were both really bad _and_ well-known. It's kind of hard to overlook how shitty each instance on the `FediNuke.txt` subset is. Common themes tend to be repeated unwelcome sui-bait from instance staff against individuals, creating or spreading dox materials against other users,[^1] unapologetic bigotry, uncensored shock content, and a complete lack of moderation.
 
-I think if you're starting a well-moderated instance, Tier 0 is a decent place to start (that's why it's in the standard CSV format). If you're making a client and want to give it a built-in blocklist, FediNuke is a good option.
+I think if you're starting a well-moderated instance, Tier 0 is a decent place to start (that's why it's in the standard CSV format). You should add and remove entries as you see fit. If you're making a client and want to give it a built-in blocklist, or are looking for a good "default" blocklist: FediNuke is a good option.
 
 ### Rationale for creating two subsets
 
@@ -79,7 +81,18 @@ I used to just make a Tier-0 list. Later, I added the FediNuke list. Some people
 I have two reasons for maintaining two blocklists:
 
 1. I didn't feel comfortable placing some Tier-0 instances right next to, e.g., openly Nazi instances when they weren't at the same level of severity. FediNuke's existence establishes that some instances on the list are much worse than others. Maintaining multiple blocklists makes their subjectivity more obvious.
+
 2. The lists can work together. As I previously mentioned, the division makes it easier for people to feel comfortable importing blocks. Some admins have found that importing FediNuke and gradually combing through the rest of Tier-0 is more approachable than an "all or nothing" approach.
+
+### Use FediBlockHole
+
+The CSV format I use is the format used by [FediBlockHole](https://github.com/eigenmagic/fediblockhole). I do this for two reasons:
+
+1. FediBlockHole supports retractions: admins can configure a merge strategy to support downgrading an entry's severity, with the lowest severity (`noop`) being equivalent to a removal with an optional reason.
+
+2. [Oliphant's blocklists](https://writer.oliphant.social/oliphant/the-blocklist-algorithm) use my blocklists as sources, and are powered by FediBlockHole.
+
+If FediBlockHole supports your Fediverse server (it currently only supports the Mastodon admin APIs), I recommend using that if you want retractions to work.
 
 ### Trust, but verify
 
@@ -130,7 +143,7 @@ I like the idea of a separation between receipt-tracking projects and blocklist-
 
 I also hope to see more tier-0 lists crop up. Any instance should be able to make a tier-0 list by sub-setting its own blocklist. When that happens, "Seirdy's Tier-0 list" will hopefully lose whatever authority it has.
 
-My greatest priority right now is solving retractions. Getting off of a list needs to be made much easier.
+My greatest priority right now is improving retractions. Getting off of a list needs to be made much easier.
 
 
 [^1]: I did not consider dox attempts against certain neo-Nazis a reason to block.
