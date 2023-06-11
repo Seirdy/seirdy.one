@@ -1,6 +1,9 @@
 ---
 title: "I love your website"
 date: 2023-06-11T13:18:10-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AWanqm7L8SzpPIpsMi'
 ---
 When I talk about website accessibility, I think a lot of people get stressed out and wonder if their personal site passes a really high bar. Some feel pressure to pass every single accessibility requirement they can.
 
