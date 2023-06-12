@@ -20,9 +20,7 @@ If you want me to consider accepting your follow request, you need to have made 
 
 Alternatively: DM me to introduce yourself and say why you want to follow me.
 
-If you send a follow request and you haven't done the above, I'll wait a day or two before checking again. If you still haven't done the above, I'll reject it.
-
-If you frequently and knowingly interact with hateful instances, I will respond to your follow request by blocking you. And possibly muting your instance.
+If you send a follow request and you haven’t done the above, I’ll wait before checking again. If you're on mastodon.social or mastodon.online, I'm less likely to accept and you might have to wait a while. If you're really close to hateful/hostile instances, I'll reject.
 
 Moving
 ------
