@@ -1,9 +1,9 @@
 ---
 title: "Irrevocable consent"
 date: 2023-06-15T11:39:21-07:00
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AWixDJSQJPt824CMZE'
 ---
 When I use my legal rights to request an organization to delete my data...
 
