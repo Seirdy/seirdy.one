@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e -u
 
-alias curl_cmd=curl --proto "=https" --proto-default https --http2 -siSL --tlsv1.3 --cert-status
+alias curl_cmd='curl --proto "=https" --proto-default https --http2 -siSL --tlsv1.3 --cert-status'
 
 ipv6_success=1
 ipv4_success=1
