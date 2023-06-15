@@ -28,8 +28,5 @@ tasks:
       cd seirdy.one
       export PATH=~/bin:$PATH
       # quick health + ip check
-      curl -6 --proto "=https" --proto-default https --http2 -siSL --tlsv1.3 --cert-status 'seirdy.one/ip'
-      echo
-      curl -4 --proto "=https" --proto-default https --http2 -sSL --tlsv1.3 --cert-status 'seirdy.one/ip'
-      echo
+      sh scripts/connectivity-check.sh
       bmake deploy-prod deploy-onion
