@@ -1,0 +1,56 @@
+---
+title: "De-federating P92"
+description: ""
+date: 2023-06-20T15:30:54-07:00
+description: "A compilation of my reasons and non-reasons for proactively de-federating from Facebook/Meta-affiliated projects, and refusing to support them."
+outputs:
+    - html
+    - gemtext
+#syndicatedCopies:
+#    - title: 'The Fediverse'
+#      url: ''
+---
+Facebook ("Meta") is launching a Twitter alternative that will interoperate with the Fediverse, currently codenamed "Barcelona" and "P92" (and [likely to be known as "Threads"](https://www.theverge.com/2023/6/8/23754304/instagram-meta-twitter-competitor-threads-activitypub)). We don't know the extent to which this will or won't interoperate; admins who've met with Facebook/Meta employees to discuss P92 have signed non-disclosure agreements. Most discussion can be framed in two ways:
+
+1. Whether P92 in particular is worth defederating from, should it involve an ActivityPub server.
+
+2. Whether Facebook/Meta projects in principle would be worth proactively blocking, should they attempt to interoperate with a Fediverse instance.
+
+I'm going to focus on the latter topic, as we know little about the former.
+
+Privacy concerns
+----------------
+
+Of the reasons to resist a Facebook/Meta presence in the Fediverse, privacy is relatively low on the list. The best way to mass-scrape Fediverse content has always been via large, established, well-connected instances' federated timelines. It's also quite hard to detect. I imagine that most of this happens through instances such as mastodon.social, fosstodon.org, and mstdn.jp.
+
+Authorized-fetch is an excellent way to increase friction for harassment, and it ought to be the default. Unfortunately, it does nothing to stop the scraping methods I outlined. Presenting it as a robust privacy measure gives users a false sense of privacy.
+
+If Facebook/Meta prioritizes data from its users' timelines and interactions, then enabling authorized-fetch and de-federating might admittedly offer limited protection. They've pulled similar moves before, with [shadow profiles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5544396/) of non-Facebook users based on phone numbers of its users' contacts.
+
+Incompatible values and complicity
+----------------------------------
+
+As I've said elsewhere, Facebook/Meta is doing this for a return on investment. This organization has one of the worst track records in Silicon Valley:
+
+- Facebook has aided and abetted in genocide...more than once. [Myanmar and Ethiopia are the main examples](https://www.theguardian.com/technology/2021/oct/07/facebooks-role-in-myanmar-and-ethiopia-under-new-scrutiny) I know of. After Myanmar, Facebook [repeated the same process in the Phillipines, fueling Duterte's bloody drug war](https://www.buzzfeednews.com/article/daveyalba/facebook-philippines-dutertes-drug-war) that claimed thousands of lives.
+
+- Facebook allowed the rise of Hindu nationalism in India, with [embarrassingly flimsy responses](https://time.com/6112549/facebook-india-islamophobia-love-jihad/) after receiving news coverage.
+
+- Facebook continued on its path [despite knowing the harm caused by its recommendation algorithms](https://archive.li/ElcvG).
+
+- Facebook played a key role in the [Facebook–Cambridge Analytica data scandal](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal).
+
+- Facebook's "real-name policy" has [its own Wikipedia page for its controversies](https://en.wikipedia.org/wiki/Facebook_real-name_policy_controversy), most of which relate to cultural supremacy, transphobia, and privacy. [Issues persisted years after Facebook claimed to make reforms](https://www.teenvogue.com/story/facebook-authentic-name-policy).
+
+I could go on.[^1] Any instance with staff doing any of the above would likely be widely de-federated; Facebook _profits_ from it. If Breitbart, the Daily Stormer, or Alex Jones announced they were joining the Fediverse, we wouldn't wait until after the obvious happens since _we already know what they deem acceptable._ Facebook should not get special treatment.
+
+I feel an obligation to resist any further growth of this company. Knowing what this organization has done, and without good reason to believe it has "stopped", I don't feel comfortable supporting it. Facebook starts projects like this to secure a return on investment. **I don't want to help Facebook secure a return on this investment.**
+
+Administrative decisions should be affirmations of shared community values. Facebook has demonstrated that it values growth at the expense of lives, if necessary. At a certain point, the right way to show our values is to put our foot down and say "no".
+
+I support initiatives such as [FediPact](https://fedipact.online/) to resist interoperating with Facebook/Meta projects. That being said, as I described in [my article outlining my blocklists]({{<relref "/posts/fediverse-blocklists.md">}}), I avoid suspending purely based on federation decisions. Remember that the FediPact list is not an authorative or comprehensive list of instances that will be proactively defederating from Facebook-affiliated servers.
+
+
+[^1]: [See this Fediverse thread](https://strangeobject.space/@james/110573260816922578) for a longer list, and [my coverage of how they fragmented the XMPP ecosystem]({{<relref "/posts/keeping-platforms-open.md#how-open-platforms-become-closed">}}).
+
+
