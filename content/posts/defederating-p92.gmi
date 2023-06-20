@@ -41,7 +41,12 @@ I feel an obligation to resist any further growth of this company. Knowing what 
 
 Administrative decisions should be affirmations of shared community values. Facebook has demonstrated that it values growth at the expense of lives, if necessary. At a certain point, the right way to show our values is to put our foot down and say "no".
 
-I support initiatives such as [FediPact](https://fedipact.online/) to resist interoperating with Facebook/Meta projects. That being said, as I described in [my article outlining my blocklists]({{<relref "/posts/fediverse-blocklists.md">}}), I avoid suspending purely based on federation decisions. Remember that the FediPact list is not an authorative or comprehensive list of instances that will be proactively defederating from Facebook-affiliated servers.
+I support initiatives such as FediPact to resist interoperating with Facebook/Meta projects.
+=> https://fedipact.online/ FediPact
+
+That being said, as I described in my article outlining my blocklists,
+=> gemini://seirdy.one/posts/2023/05/02/fediverse-blocklists/index.gmi My Fediverse blocklists
+I avoid suspending purely based on federation decisions. Remember that the FediPact list is not an authorative or comprehensive list of instances that will be proactively defederating from Facebook-affiliated servers.
 
 
 [note 1]: Further reading on Facebook's history:
