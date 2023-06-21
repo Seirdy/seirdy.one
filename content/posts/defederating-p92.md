@@ -9,6 +9,8 @@ outputs:
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AWteJDFLK0kgZu7kOG'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/8318/de-federating-p92'
 ---
 Facebook ("Meta") is launching a Twitter alternative that will interoperate with the Fediverse, currently codenamed "Barcelona" and "P92" (and [likely to be known as "Threads"](https://www.theverge.com/2023/6/8/23754304/instagram-meta-twitter-competitor-threads-activitypub)). We don't know the extent to which this will or won't interoperate; admins who've met with Facebook/Meta employees to discuss P92 have signed non-disclosure agreements. Most discussion can be framed in two ways:
 
