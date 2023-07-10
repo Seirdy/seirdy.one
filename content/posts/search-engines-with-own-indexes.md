@@ -116,9 +116,6 @@ These engines pass most of the tests listed in the "methodology" section. All of
 [Right Dao](https://rightdao.com)
 : Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
 
-[Gigablast](https://gigablast.com/)
-: It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast is tied with Right Dao for quality.
-
 [Alexandria](https://www.alexandria.org/)
 : A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
 
@@ -189,7 +186,7 @@ Scopia
 : Very poor quality. Results seem highly biased towards commercial sites.
 
 [Crawlson](https://www.crawlson.com)
-: Young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
+: Young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. This is often down; if the current downtime persists, I'll add it to the graveyard.
 
 [Anoox](https://www.anoox.com/)
 : Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
@@ -199,6 +196,9 @@ Scopia
 
 [Spyda](https://spyda.dev/)
 : {{<mention-work itemtype="BlogPosting">}}A small engine made by {{<indieweb-person itemprop="author" first-name="James" last-name="Mills" url="https://www.prologic.blog/">}}, described in {{<cited-work url="https://www.prologic.blog/2021/02/14/so-im-a.html" name="So I'm a Knucklehead eh?" extraName="headline">}}{{</mention-work>}}. It's written in Go; check out its [MIT-licensed Spyda source code](https://git.mills.io/prologic/spyda).
+
+[Slzii.com](https://www.slzii.com/)
+: A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
 
 ### Semi-independent indexes
 
@@ -362,8 +362,12 @@ Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
 
+
 [Neeva](https://web.archive.org/web/20230528051432/https://neeva.com/blog/may-announcement)
 : Formerly in [the "semi-independent" section](#semi-independent-indexes). Combined Bing results with results from its own index. Bing normally isn't okay with this, but Neeva was one of few exceptions. Results were mostly identical to Bing, but original links not found by Bing frequently popped up. Long-tail and esoteric queries were less likely to feature original results. Required signing up with an email address or OAuth to use, and offered a paid tier with additional benefits. Acquired by Snowflake and announced its shut-down in May 2023.
+
+[Gigablast](https://gigablast.com/)
+: It's been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers [Private.sh](https://private.sh). Gigablast was tied with Right Dao for quality. Shut down mid-2023.
 
 [wbsrch](https://xangis.com/the-wbsrch-experiment/)
 : In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn't finished indexing. It also had several dedicated per-language indexes.

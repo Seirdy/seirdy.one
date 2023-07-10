@@ -83,10 +83,6 @@ These engines pass most of the tests listed in the "methodology" section. All of
 * Right Dao: very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its userbase grows.⁸ For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones. It seems to be a bit lacking in more recent pages.
 => https://rightdao.com  Right Dao
 
-* Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powers Private.sh. Gigablast is tied with Right Dao for quality.
-=> https://gigablast.com/  Gigablast
-=> https://private.sh  Private.sh
-
 * Alexandria: A pretty new "non-profit, ad free" engine, with freely-licensed code. Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
 => https://www.alexandria.org/ Alexandria
 => https://github.com/alexandria-org/alexandria Alexandria engine source code
@@ -154,7 +150,7 @@ Results from these search engines don’t seem at all useful.
 => https://www.artadosearch.com/ Artado Search
 => https://www.activesearchresults.com  Active Search Results
 
-* Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs.
+* Crawlson: young, slow. In this category because its index has a cap of 10 URLs per domain. I initially discovered Crawlson in the seirdy.one access logs. This is often down; if the current downtime persists, I'll add it to the graveyard.
 * Anoox: Results are few and irrelevant; fails to find any results for basic terms. Allows site submission. It's also a lightweight social network and claims to be powered by its users, letting members vote on listings to alter rankings.
 * Yioop!: A FLOSS search engine that boasts a very impressive feature-set: it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
@@ -169,6 +165,9 @@ Results from these search engines don’t seem at all useful.
 => https://www.prologic.blog/2021/02/14/so-im-a.html Blog post introducing Spyda
 => https://git.mills.io/prologic/spyda Spyda source code
 
+Slzii.com: A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
+
+=> https://www.slzii.com/ Slzii.com
 
 ### Semi-independent indexes
 
@@ -336,6 +335,10 @@ These engines were originally included in the article, but have since been disco
 
 * Neeva: formerly in the "semi-independent" section. Combined Bing results with results from its own index. Bing normally isn't okay with this, but Neeva was one of few exceptions. Results were mostly identical to Bing, but original links not found by Bing frequently popped up. Long-tail and esoteric queries were less likely to feature original results. Required signing up with an email address or OAuth to use, and offered a paid tier with additional benefits.
 => https://web.archive.org/web/20230528051432/https://neeva.com/blog/may-announcement Neeva shutdown announcement
+
+* Gigablast: It’s been around for a while and also sports a classic web directory. Searches are a bit slow, and it charges to submit sites for crawling. It powered Private.sh. Gigablast was tied with Right Dao for quality. Shut down mid-2023.
+=> https://gigablast.com/  Gigablast
+=> https://private.sh  Private.sh
 
 * gus.guru: the original Gemini search engine. The index doesn't seem to be updated anymore.
 * wbsrch: In addition to its generalist search, it also had many other utilities related to domain name statistics. Failed multiple tests. Its index was a bit dated; it had an old backlog of sites it hadn’t finished indexing. It also had several dedicated per-language indexes.
