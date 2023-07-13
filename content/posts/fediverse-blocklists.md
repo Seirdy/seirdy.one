@@ -11,7 +11,7 @@ syndicatedCopies:
 ---
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
-I maintain three blocklists for the Fediverse:
+I maintain three main blocklists for the Fediverse:
 
 
 [The `pleroma.envs.net` blocklist](https://seirdy.one/pb/pleroma.envs.net.csv)
@@ -33,8 +33,7 @@ This post is an attempt to document how they are made, their differences, their 
 
 {{<toc>}}
 
-How Tier-0 and FediNuke work
-----------------------------
+## How Tier-0 and FediNuke work
 
 [My tier-0 list](https://seirdy.one/pb/tier0.csv) (mirrored to `tier0.csv` in [the Oliphant repository](https://codeberg.org/oliphant/blocklists)) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **11 out of 20** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
@@ -49,7 +48,9 @@ There were some block-overrides for instances with fewer than 11 votes. Here's h
 - If an instance contains **blatant/unapologetic bigotry** (something really undeniable, like Nazi imagery or excessive use of slurs in violent/hateful/definitely-not-reclaimed contexts) with staff approval or involvement, I may add it to both tier-0 and `FediNuke.txt` after I get multiple thumbs-up.
 - If an instance becomes **risky even to many tier-0 instances** (untagged gore, dox attempts, significant cybersecurity risk, <abbr title="child sexual exploitation material">CSEM</abbr>, etc. with staff approval or involvement): I may add it to both right away, skipping any process.
 
-Under ten controversial entries were excluded despite having more than enough votes. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
+Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
+
+I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; [I maintain a separate list for those](https://seirdy.one/pb/bsl.txt).
 
 ### Bias sources
 
@@ -69,8 +70,7 @@ If `tier0.csv` were merely an unbiased list of the most widely blocked instances
 
 Some instances migrate their domains. If the old instance was already deemed worthy of a suspension and the new instance maintains the same staff with no visible attempt to change its reputation, then I deem the new location to be as block-worthy as the old location and make an override. It's the same bad actors under a different banner.
 
-Intended use
-------------
+## Intended use
 
 The original goal was to make a blocklist appealing to instances with a more laid-back moderation approach, so that they would actually implement a decent blocklist and limit the reach of the worst actors. Unfortunately, the final `tier0.csv` blocklist is 350+ entries; this is still a bit much for the moderate instances.
 
@@ -113,8 +113,7 @@ Finally, you could just do something else entirely. I never use "your blocklist 
 
 Before you decide to trust one of my lists, please read the "Mistakes made" section.
 
-Mistakes made
--------------
+## Mistakes made
 
 Here, I publicly document all significant mistakes I've made in the process. I sort entries in descending order by date addressed.
 
@@ -138,8 +137,9 @@ Oliphant has been getting understandable push-back for this issue in his blockli
 
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great.
 
-Future
-------
+## Future
+
+Once Threads and/or Tumblr start federating, I plan to make a separate blocklist for "mainstream" social media platforms that prioritize profit over safety. I've explained my views on Threads in another post: {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="De-federating P92" url="../../../../2023/06/20/defederating-p92/" extraName="headline">}}{{</mention-work>}}.
 
 The biggest complaint I've heard is the lack of reasons and receipts. {{<mention-work itemtype="WebSite">}}{{<indieweb-person name="Are0h" url="https://roiskinda.cool/" itemprop="author">}} is working on a separate project called {{<cited-work name="The Bad Space" url="https://thebad.space/">}}{{</mention-work>}} to create an index of instances with receipts. It doesn't have a lot of content yet, but that will change with time. I've shared my receipt archive with him.
 

@@ -1,7 +1,7 @@
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse:
 => https://pleroma.envs.net/Seirdy My Fediverse profile: @Seirdy@pleroma.envs.net
 
-I maintain three blocklists for the Fediverse:
+I maintain three main blocklists for the Fediverse:
 
 
 => https://seirdy.one/pb/pleroma.envs.net.csv The pleroma.envs.net blocklist
@@ -43,7 +43,10 @@ There were some block-overrides for instances with fewer than 11 votes. Here's h
 * If an instance contains blatant/unapologetic bigotry (something really undeniable, like Nazi imagery or excessive use of slurs in violent/hateful/definitely-not-reclaimed contexts) with staff approval or involvement, I may add it to both tier-0 and FediNuke.txt after I get multiple thumbs-up.
 * If an instance becomes risky even to many tier-0 instances (untagged gore, dox attempts, significant cybersecurity risk, CSEM, etc. with staff approval or involvement): I may add it to both right away, skipping any process.
 
-Under ten controversial entries were excluded despite having more than enough votes. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
+Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
+
+I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; I maintain a separate list for those:
+=> https://seirdy.one/pb/bsl.txt
 
 ### Bias sources
 
@@ -144,6 +147,9 @@ Oliphant has been getting understandable push-back for this issue in his blockli
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great.
 
 ## Future
+
+Once Threads and/or Tumblr start federating, I plan to make a separate blocklist for "mainstream" social media platforms that prioritize profit over safety. I've explained my views on Threads in another post:
+=> ../../../../2023/06/20/defederating-p92/
 
 The biggest complaint I've heard is the lack of reasons and receipts. Are0h is working on a separate project called The Bad Space to create an index of instances with receipts.
 
