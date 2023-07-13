@@ -7,6 +7,15 @@ outputs:
     - html
     - gemtext
 description: "\"Privacy\" can mean different things in different contexts. Tracking-reduction and tracking-evasion represent different goals with some conflict and overlap."
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AKrSqXb8sLIO6wn9xw'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/ad1urr/two_types_privacy'
+    - title: 'Hacker News'
+      url: 'https://news.ycombinator.com/item?id=31891132'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/articles/7159/two-types-of-privacy'
 ---
 <section role="doc-preface">
 
