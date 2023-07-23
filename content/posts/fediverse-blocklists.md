@@ -50,7 +50,7 @@ There were some block-overrides for instances with fewer than 11 votes. Here's h
 
 Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
 
-I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; [I maintain a separate list for those](https://seirdy.one/pb/bsl.txt).
+I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; [I maintain a supplementary list for those](#supplementary-blocklists).
 
 ### Bias sources
 
@@ -136,6 +136,17 @@ Unfortunately, the situation was different for Oliphant's unified-max blocklist.
 Oliphant has been getting understandable push-back for this issue in his blocklists, but it's not fair for all of the criticism to be directed at him and none at me. Many small mistakes from multiple people, including me, cascaded into one big failure.
 
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great.
+
+## Supplementary blocklists
+
+Some supplementary blocklists I maintain with very different criteria:
+
+
+[BirdSiteLive and bird.makeup](https://seirdy.one/pb/bsl.txt)
+: These are services that allow Fediverse users to follow any Twitter user. Now that far-right figures are back on Twitter, these instance pose a problem. Admins wishing to ban a single Twitter user will need to ban that user across over 100 different Twitter mirrors. Moreover, any interactions with bridged accounts are unseen by the account holder on Twitter. Twitter users may not have consented to such mirroring. Admins wishing to simply ban mass-Twitter-mirroring can import this list.
+
+[Corporate social media with user-hostile dark patterns](https://seirdy.one/pb/corpo.txt)
+: A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes.
 
 ## Future
 

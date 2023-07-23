@@ -5,18 +5,15 @@ I maintain three main blocklists for the Fediverse:
 
 
 => https://seirdy.one/pb/pleroma.envs.net.csv The pleroma.envs.net blocklist
-
 A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment. Unlike the other two lists on this page, it wasn't made for general use (though you're welcome to use it as reference).
 
 
 => https://seirdy.one/pb/tier0.csv tier0.csv
 => https://seirdy.one/pb/tier0-retractions.csv tier0-retractions.csv
-
 A much smaller semi-curated subset of pleroma.envs.net suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. Regularly importing tier0.csv won't account for retractions; a sibling blocklist for tier-0 retractions exists for FediBlockHole users. Note that this list is larger than the bare-minimum I recommend; that'd be FediNuke.
 
 
 => https://seirdy.one/pb/FediNuke.txt FediNuke.txt
-
 A curated subset of tier0.csv, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists.
 
 This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and liklihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running blockbots, etc). Bad instances that mostly keep to themselves are less likely to cause problems for a new admin, and therefore less likely to get included in this minimal list.
@@ -45,8 +42,7 @@ There were some block-overrides for instances with fewer than 11 votes. Here's h
 
 Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
 
-I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; I maintain a separate list for those:
-=> https://seirdy.one/pb/bsl.txt
+I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; I maintain a supplementary list for those, described later.
 
 ### Bias sources
 
@@ -145,6 +141,16 @@ He pointed out that offering a unified-max list containing these blocks is a for
 Oliphant has been getting understandable push-back for this issue in his blocklists, but it's not fair for all of the criticism to be directed at him and none at me. Many small mistakes from multiple people, including me, cascaded into one big failure.
 
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great.
+
+## Supplementary blocklists
+
+Some supplementary blocklists I maintain with very different criteria:
+
+=> https://seirdy.one/pb/bsl.txt Twitter bridges: BirdSiteLive and bird.makeup
+These are services that allow Fediverse users to follow any Twitter user. Now that far-right figures are back on Twitter, these instance pose a problem. Admins wishing to ban a single Twitter user will need to ban that user across over 100 different Twitter mirrors. Moreover, any interactions with bridged accounts are unseen by the account holder on Twitter. Twitter users may not have consented to such mirroring. Admins wishing to simply ban mass-Twitter-mirroring can import this list.
+
+=> https://seirdy.one/pb/corpo.txt Corporate social media with user-hostile dark patterns
+A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes.
 
 ## Future
 
