@@ -3,10 +3,14 @@ Disallow: /noindex/
 Disallow: /misc/
 
 # I opt out of online advertising so malware that injects ads on my site won't get paid.
-# You should do the same.
+# You should do the same. my ads.txt file contains a standard placeholder to forbid any
+# compliant ad networks from paying for ad placement on my domain.
 User-Agent: Adsbot
 Disallow: /
 Allow: /ads.txt
+Allow: /app-ads.txt
+
+# The next three are borrowed from https://www.videolan.org/robots.txt
 
 # > This robot collects content from the Internet for the sole purpose of # helping educational institutions prevent plagiarism. [...] we compare student papers against the content we find on the Internet to see if we # can find similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
 #  --> fuck off.
@@ -26,6 +30,12 @@ Disallow: /
 # BLEXBot assists internet marketers to get information on the link structure of sites and their interlinking on the web, to avoid any technical and possible legal issues and improve overall online experience. (http://webmeup-crawler.com/)
 # --> fuck off.
 User-Agent: BLEXBot
+Disallow: /
+
+# Providing Intellectual Property professionals with superior brand protection services by artfully merging the latest technology with expert analysis. (https://www.checkmarknetwork.com/spider.html/)
+# "The Internet is just way to big to effectively police alone." (ACTUAL quote)
+# --> fuck off.
+User-agent: CheckMarkNetwork/1.0 (+https://www.checkmarknetwork.com/spider.html)
 Disallow: /
 
 # Eat shit, OpenAI.
