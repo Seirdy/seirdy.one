@@ -70,6 +70,8 @@ I pared that down to FediNuke.txt, which contains instances that were both reall
 
 I think if you're starting a well-moderated instance, Tier 0 is a decent place to start (that's why it's in the standard CSV format). You should add and remove entries as you see fit. If you're making a client and want to give it a built-in blocklist, or are looking for a good "default" blocklist, then FediNuke is a good option.
 
+However: if your instance grows larger (or if you intend to grow): you should be intentional about your moderation decisions, present and past. Your members ostensibly trust you, but not me. See the "trust but verify" section for for more information.
+
 ### Rationale for creating two subsets
 
 I used to just make a Tier-0 list. Later, I added the FediNuke list. Some people have asked why I don't just use one or the other; if Tier-0 was big enough to warrant FediNuke, why publish Tier-0 at all?
