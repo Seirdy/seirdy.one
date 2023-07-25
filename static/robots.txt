@@ -38,6 +38,11 @@ Disallow: /
 User-agent: CheckMarkNetwork/1.0 (+https://www.checkmarknetwork.com/spider.html)
 Disallow: /
 
+# Stop trademark violations and affiliate non-compliance in paid search. Automatically monitor your partner and affiliates’ online marketing to protect yourself from harmful brand violations and regulatory risks. We regularly crawl websites on behalf of our clients to ensure content compliance with brand and regulatory guidelines. (https://www.brandverity.com/why-is-brandverity-visiting-me)
+# --> fuck off.
+User-agent: BrandVerity/1.0
+Disallow: /
+
 # Eat shit, OpenAI.
 User-agent: ChatGPT-User
 Disallow: /
