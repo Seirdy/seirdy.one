@@ -300,6 +300,9 @@ This section has barely been started.
 berserker.town
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
 
+bungle.online
+: [Racial slurs from admin](https://web.archive.org/web/20230731203927/https://pleroma.mercurial.blog/notice/AYEijPLGfx2ZMOHK76), [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh).
+
 crlf.ninja
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
