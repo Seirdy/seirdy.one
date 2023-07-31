@@ -169,7 +169,7 @@ The following are receipts for instances on my blocklists, in no particular orde
 : Admin posts [Sandy Hook school shooting conspiracy theories](https://archive.ph/dT9Am), [transphobia](https://archive.ph/Km8Ju).
 
 1611.social
-: [antisemitism from admin](https://web.archive.org/web/20230628203218/https://1611.social/@tyler/posts/AX9r68rwjhEQzMKJbU), [anti-vax from admin](https://web.archive.org/web/20230729231211/https://1611.social/notice/AY3zJPmwNES1ZiCHZ2), [antisemitic caricature from admin](https://archive.ph/3wIRL).
+: [antisemitism from admin](https://web.archive.org/web/20230628203218/https://1611.social/@tyler/posts/AX9r68rwjhEQzMKJbU), [anti-vax from admin](https://archive.li/qFhQQ) with other local members, [antisemitic caricature from admin](https://archive.ph/3wIRL).
 
 4aem.com
 : Freeze peach PeerTube instance on the "tube" subdomain, hosting blatant antisemitic content. ["Clown World" dogwhistles](https://archive.ph/80Zwu), antisemitic ["Why Kanye West is right"](https://archive.ph/06UiV).
@@ -241,20 +241,38 @@ h5q.net
 kawa-kun.net
 : Instance [rejects deletes](https://web.archive.org/web/20230731050219/https://bbs.kawa-kun.com/about). (unfinished entry)
 
+freespeechextremist.com
+: [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism. MRF policies include a [block-notification bot](https://web.archive.org/web/20230731164723/https://freespeechextremist.com/about). The linked page also makes it clear that this is a freeze-peach instance.
+
+nicecrew.digital
+: [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
+
 leafposter.club
 : [Blatant antisemitism and queerphobia](https://web.archive.org/web/20230731051338/https://cawfee.club/notice/AVS1llk6NOrAVPAB60), [SWERF](https://web.archive.org/web/20230731050932/https://leafposter.club/@Upsman/posts/AVS1ImJqDW5yEPcgwi), [blatant racist use of slurs](https://web.archive.org/web/20230731051017/https://leafposter.club/@Leaflord/posts/AVS04CFlPbegMpCOP2).
 
 marsey.moe
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb). [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S)
 
+needs.vodka
+: Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
+
+noagendasocial.com OR noagendasocial.nl OR noagendatube.com
+: All three are far-right instances connected to the No Agenda show. [Queerphobia](https://archive.ph/Km8Ju). One of its more popular users is [openly an ethno-nationalist](https://web.archive.org/web/20230731165314/https://noagendasocial.com/@amerika) with [thinly-veiled genocidal views](https://web.archive.org/web/20230731165038/https://noagendasocial.com/@amerika/110652580178110907) and runs the far-right amerika.org blog. An even more popular user [regularly posts far-right content](https://web.archive.org/web/20230731165844/https://noagendasocial.com/@furgar/110558690945902519).
+
+poa.st
+: Nazi instance. See receipts for needs.vodka and shitpost.cloud for poast users.
+
 poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq).
 
 shitpost.cloud
-: Admin "Hoss" [uses racial slurs in an unreclaimed context](https://web.archive.org/web/20230730000845/https://shitpost.cloud/notice/AXuj12Qs30YmatTqbo), and [publicized reports](https://web.archive.org/web/20230731062033/https://shitpost.cloud/notice/AYA2Obde8BUywbo45w) against local users participating in a targeted transphobic harassment campaign.
+: Admin "Hoss" [uses racial slurs in an unreclaimed context](https://web.archive.org/web/20230730000845/https://shitpost.cloud/notice/AXuj12Qs30YmatTqbo), and [publicized reports](https://web.archive.org/web/20230731062033/https://shitpost.cloud/notice/AYA2Obde8BUywbo45w) against local users participating in a targeted transphobic harassment campaign. [A user with a violent racist display name](https://archive.ph/5Vb2Q), with staff participating later in the thread.
 
 varishangout.net
 : Instance permits lolicon/shotacon. [sample non-graphic thread containing queerphobia, esp. transphobia, with staff involvement](https://web.archive.org/web/20230729223647/https://varishangout.net/notice/AYBv4A9bwrZXfu0Hho), [another such thread](https://web.archive.org/web/20230729225002/https://varishangout.net/notice/AYBmTghTBGJaGbw9zM). [Staff member being openly transphobic](https://web.archive.org/web/20230729234932/https://varishangout.net/notice/AYAXPrAAe2y35X7JFQ). [Several members participating in transphobic harassment](https://web.archive.org/web/20230730232126/https://varishangout.net/notice/AY7wuahlngicOwhlxo).
+
+wolfgirl.bar
+: Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c).
 
 {{</ nofollow >}}
 
@@ -267,6 +285,9 @@ This section has barely been started.
 
 berserker.town
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
+
+federated.fun
+: [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw).
 
 shitposter.club
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84). [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330). [Some more racism](https://archive.ph/FSjhj). Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
