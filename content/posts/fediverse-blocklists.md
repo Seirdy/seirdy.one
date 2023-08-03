@@ -8,6 +8,10 @@ outputs:
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AVEkLIaUf7JXnJkz2m'
+evergreen: true
+sitemap:
+    ChangeFreq: daily
+    Priority: 0.7
 ---
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
@@ -162,7 +166,7 @@ The following are receipts for instances on my blocklists. Read the text surroun
 
 Receipts are biased towards patterns in staff behavior or pervasive patterns among users with staff approval, as that generally won't be solved with a federated report. A one-off user action taken out of context, without any sign of staff endorsement, isn't enough to end up on one of these lists because it's not indicative of an instance's moderation policies.
 
-<details><summary>Toggle receipts</summary>
+<details open=""><summary>Toggle receipts</summary>
 
 ### FediNuke entries
 
