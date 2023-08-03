@@ -162,15 +162,23 @@ Some supplementary blocklists I maintain with very different criteria:
 
 ## Receipts
 
-The following are receipts for instances on my blocklists. Read the text surrounding a link before navigating to it, and let that context serve as a content-warning. No links point directly to the source; all go to a third-party archiving service.
+The following are receipts for instances on my blocklists. Read the text surrounding a link before navigating to it, and let that context serve as a content-warning. No links point directly to the blocked instance; all go to a third-party archiving service.
 
-Receipts are biased towards patterns in staff behavior or pervasive patterns among users with staff approval, as that generally won't be solved with a federated report. A one-off user action taken out of context, without any sign of staff endorsement, isn't enough to end up on one of these lists because it's not indicative of an instance's moderation policies.
+Receipts are biased towards patterns in staff behavior or pervasive patterns among users with staff approval, as that generally won't be solved with a federated report. A one-off user action taken out of context, without any sign of staff endorsement, isn't enough to end up on one of these lists because it's not indicative of an instance's moderation policies. The one exception is receipts for legally risky media: I don't publish receipts for those, but it should be easy to verify them if you need to.
+
+I use archive links instead of screenshots. Screenshots pose accessibility issues, can be doctored, and are easy to take out of context.
 
 <details open=""><summary>Toggle receipts</summary>
 
 ### FediNuke entries
 
-**This section is a work-in-progress,** and it will grow with time. I'll add entries in alphabetical order unless someone requests that I skip ahead to one.
+Criteria for a good FediNuke receipt is stricter than the aforementioned criteria:
+
+- Reblogs are only significant if they are from a staff member and are boosting local users. They are mentioned alongside other receipts to indicate that the content in question is permitted by staff.
+- Each instance must have multiple receipts.
+- For larger instances: receipts must show staff behavior, or show consistent behavior from several users.
+
+**This section is a work-in-progress,** and it will grow with time.
 
 {{< nofollow >}}
 
@@ -286,13 +294,13 @@ kitsunemimi.club
 : [Admin "bronze" participates in racist harassment](https://web.archive.org/web/20230731183425/https://needs.vodka/notice/AYFCFHRqKX6RjsF7Fw), sends users [transphobic shock content](https://web.archive.org/web/20230731184313/https://pl.kitsunemimi.club/notice/AYG5j6YeP0wZI1jaPw). Runs the [HighRoller MRF policy](https://web.archive.org/web/20230731183641/https://pl.kitsunemimi.club/about) for a block-notification bot.
 
 kyaruc.moe
-: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM), [racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy)
+: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM), [racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy).
 
 leafposter.club
 : [Blatant antisemitism and queerphobia](https://web.archive.org/web/20230731051338/https://cawfee.club/notice/AVS1llk6NOrAVPAB60), [SWERF](https://web.archive.org/web/20230731050932/https://leafposter.club/@Upsman/posts/AVS1ImJqDW5yEPcgwi), [blatant racist use of slurs](https://web.archive.org/web/20230731051017/https://leafposter.club/@Leaflord/posts/AVS04CFlPbegMpCOP2).
 
 ligma.pro
-: The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org
+: The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
 
 marsey.moe
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb). [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S)
@@ -301,7 +309,7 @@ midwaytrades.com
 : Runs [a Libs of TikTok bot](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU). [Transphobic and misogynist admin](https://ghostarchive.org/archive/9qO8r).
 
 morale.ch
-: [Transphobia](http://archive.today/2023.08.03-163829/https://morale.ch/notes/9gq5de3opm), [blatant antisemitism](http://archive.today/2023.08.03-163438/https://morale.ch/notes/99afbs2fi7), and [both at once](http://archive.today/2023.08.03-163416/https://morale.ch/notes/99afgfh0il). All from the admin account.
+: [Transphobia](http://archive.today/2023.08.03-163829/https://morale.ch/notes/9gq5de3opm), [blatant antisemitism](http://archive.today/2023.08.03-163438/https://morale.ch/notes/99afbs2fi7), and [both at once](http://archive.today/2023.08.03-163416/https://morale.ch/notes/99afgfh0il). [Ableist holocaust denial](http://archive.today/2023.08.03-165106/https://morale.ch/notes/9fhmfgittd). All from the admin account.
 
 needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
