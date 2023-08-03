@@ -278,6 +278,12 @@ froth.zone
 geofront.rocks
 : Well-known Nazi instance. [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O). All from what seems to be the primary active user of the instance. Another user has a [blatantly nazi profile](https://web.archive.org/web/20230802235236/https://geofront.rocks/@flux) featuring violent transphobic shock content.
 
+gameliberty.club
+: [Freeze-peach rules](https://archive.ph/ir4hc) permit lolisho, which may be a legal risk depending on your jurisdiction. [Admin pinned posts](https://archive.ph/x9xUe) contain slurs in un-reclaimed contexts, and [runs an rsdb bot](https://gameliberty.club/@dailyslurbot) for more. Admin [posts racist memes](https://gameliberty.club/@matrix/110691184671379555), [more racist memes](https://gameliberty.club/@matrix/110691000630024399), [anti-pride](https://gameliberty.club/@matrix/110705822988959149).
+
+gleasonator.com
+: [Admin is an outspoken TERF](http://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/). User "caekislove" [pedojackets and sui-baits trans users](http://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](http://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery). [Admin is aware of the user but will not take action](https://web.archive.org/web/20230803184758/https://annihilation.social/notice/AWfGcY4mrHiPL3mgfQ) (unrelated extreme bigotry and Nazi iconography in thread).
+
 glee.li
 : [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv). More [blatant racism and transmisia](https://archive.ph/SI0xG). Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8). Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
 
@@ -380,12 +386,6 @@ freesoftwareextremist.com
 
 freetalklive.com
 : [Instance "about" page](https://web.archive.org/web/20230802051117/https://social.freetalklive.com/about) self-identifies as unmoderated, except for spam. Connected to the libertarian Free Talk Live show.
-
-gameliberty.club
-: [Freeze-peach rules](https://archive.ph/ir4hc) permit lolisho, which may be a legal risk depending on your jurisdiction. [Admin pinned posts](https://archive.ph/x9xUe) contain slurs in un-reclaimed contexts, and [runs an rsdb bot](https://gameliberty.club/@dailyslurbot) for more. Admin [posts racist memes](https://gameliberty.club/@matrix/110691184671379555), [more racist memes](https://gameliberty.club/@matrix/110691000630024399), [anti-pride](https://gameliberty.club/@matrix/110705822988959149).
-
-gleasonator.com
-: [Admin is an outspoken TERF](http://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/). User "caekislove" [pedojackets and sui-baits trans users](http://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](http://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery). [Admin is aware of the user but will not take action](https://web.archive.org/web/20230803184758/https://annihilation.social/notice/AWfGcY4mrHiPL3mgfQ) (unrelated extreme bigotry and Nazi iconography in thread).
 
 occultist.space OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol. Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
