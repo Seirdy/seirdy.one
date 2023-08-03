@@ -300,6 +300,9 @@ marsey.moe
 midwaytrades.com
 : Runs [a Libs of TikTok bot](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU). [Transphobic and misogynist admin](https://ghostarchive.org/archive/9qO8r).
 
+morale.ch
+: [Transphobia](http://archive.today/2023.08.03-163829/https://morale.ch/notes/9gq5de3opm), [blatant antisemitism](http://archive.today/2023.08.03-163438/https://morale.ch/notes/99afbs2fi7), and [both at once](http://archive.today/2023.08.03-163416/https://morale.ch/notes/99afgfh0il). All from the admin account.
+
 needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 
