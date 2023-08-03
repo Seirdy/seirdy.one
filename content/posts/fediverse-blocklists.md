@@ -191,7 +191,7 @@ anon-kenkai.net
 : [Blatant antisemitic caricature on the landing page](https://web.archive.org/web/20230729235305/https://peertube.anon-kenkai.com/) of its "peertube" subdomain. Admin on the "mitra" subdomain posts [anti-pride messages](https://archive.ph/9p5nw).
 
 asbestos.cafe
-: [Racism and ableism from admin](https://archive.ph/d7cfQ). [Admin sharing a dox](https://archive.ph/LUA10), [transmedical gatekeeping from a cis user](https://web.archive.org/web/20230731041522/https://the.asbestos.cafe/notice/AYCymnXAtifMLgNzJg).
+: [Racism and ableism from admin](https://archive.ph/d7cfQ). [Admin sharing a dox](https://archive.ph/LUA10), [transmedical gatekeeping from a cis user](https://web.archive.org/web/20230731041522/https://the.asbestos.cafe/notice/AYCymnXAtifMLgNzJg), [antisemitism](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS), [queerphobic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
 
 bae.st
 : [Admin profile page has an "n-word pass"](https://web.archive.org/web/20230730000208/https://bae.st/sjw). Runs a host of bots posting lewd artwork, some of which venture into lolicon and Black-fetishism territory (e.g. "NessaBot"). Runs "glow_in_the_dark_cia_agent", one of the biggest followbots on Fedi. Instance rejects deletes.
@@ -224,7 +224,7 @@ cawfee.club
 : [Racism from multiple users, including admin](https://web.archive.org/web/20230730210913/https://cawfee.club/notice/AY5J5qUA898oge9pa4). [Anti-Romani and racist posts from admin](https://web.archive.org/web/20230730211327/https://cawfee.club/notice/AXjafVFrE4C3c48Mm8). Users [engaging in more racism](https://web.archive.org/web/20230730211531/https://cawfee.club/notice/AY1UovIIgAoO6DfDX6). [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
 clew.lol
-: [Racist meme from admin](https://web.archive.org/web/20230730212140/https://clew.lol/@Tony/posts/ATlNGVY9vg0FLp8WlE), [another racist meme](https://web.archive.org/web/20230730212307/https://clew.lol/@Tony/posts/ATlKwuT1NWt0vjGDCq). [Racial slurs in bio of a user with a white-nationalist dog whistle in their handle](https://web.archive.org/web/20230730212536/https://clew.lol/@hh1488) who [posts NJP propaganda](https://web.archive.org/web/20230730212719/https://clew.lol/@hh1488/posts/ATxalxgkzTwstq0QNc).
+: [Racist meme from admin](https://web.archive.org/web/20230730212140/https://clew.lol/@Tony/posts/ATlNGVY9vg0FLp8WlE), [another racist meme](https://web.archive.org/web/20230730212307/https://clew.lol/@Tony/posts/ATlKwuT1NWt0vjGDCq). [Racial slurs in bio of a user with a white-nationalist dog whistle in their handle](https://web.archive.org/web/20230730212536/https://clew.lol/@hh1488) who [posts NJP propaganda](https://web.archive.org/web/20230730212719/https://clew.lol/@hh1488/posts/ATxalxgkzTwstq0QNc). [Local users participating in a transmisogynistic harassment campaign](https://web.archive.org/web/20230803154409/https://clew.lol/notice/AYMCIqKmuogqW2zLd2) with sui-bait.
 
 clubcyberia.co
 : Instance [features anti-black emotes](https://web.archive.org/web/20230730220345/https://clubcyberia.co/notice/AY9kBc1YiuBfP9TVgG). Users such as "Inginsub" often [post blatant racism](https://web.archive.org/web/20230730221532/https://clubcyberia.co/notice/AXSJ3fIo5mMORrLYPY). Hosts [a KiwiFarms staff member](https://web.archive.org/web/20230730222042/https://clubcyberia.co/users/crunklord420).
@@ -234,9 +234,10 @@ crucible.world
 
 cum.camp OR cum.salon
 : Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://web.archive.org/web/20230730233035/https://marsey.moe/@pernia@cum.salon/posts/AY8crsXbKZHmCIApgu).
+: The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires.
 
 decayable.ink
-: Instance is well-known for harassment campaigns. [Targeted transmisogynistic harassment](https://archive.ph/KfDpN). [Racist admin](https://archive.ph/5XvUx), and [aftermath of said harassment](https://web.archive.org/web/20230802213907/https://decayable.ink/notice/AYEnvhUP1mVan0dnCi). The [instance introductory post](https://decayable.ink/@Decayable/posts/ATYE6r7bOp2bhCRfdY) is chock-full of red flags.
+: Instance is well-known for harassment campaigns. [Targeted transmisogynistic harassment](https://archive.ph/KfDpN). [Racist admin](https://archive.ph/5XvUx), and [aftermath of said harassment](https://web.archive.org/web/20230802213907/https://decayable.ink/notice/AYEnvhUP1mVan0dnCi). The [instance introductory post](https://decayable.ink/@Decayable/posts/ATYE6r7bOp2bhCRfdY) is chock-full of red flags. [Another instance of haraassment](https://web.archive.org/web/20230803154310/https://decayable.ink/notice/AYMBCCDwBRL5nQUfGi).
 
 detroitriotcity.com
 : Well-known Nazi instance. [Instance "about" page](https://web.archive.org/web/20230801230826/https://detroitriotcity.com/about) says: <q>racial pejoratives, NSFW images & videos, insensitivity and contempt toward differences in sexual orientation and gender identification, and so-called “cyberbullying” are all commonplace on this instance</q> and has a staff account display name featuring an iron cross. Policies permitting lolicon may make it a legal risk, depending on your jurisdiction.
@@ -257,13 +258,16 @@ freeatlantis.com
 : Far-right MAGA instance. Admin has reblogged local users posting [extreme transmisogny](https://freeatlantis.com/@TXPatriot2021/110527351920294198), [xenophobia](https://freeatlantis.com/@Luther/110334945481724374), [anti-drag](https://freeatlantis.com/@waronmorons/110288183334646071), [MAGA](https://freeatlantis.com/@watson/110137469656072122), [anti-vax](https://freeatlantis.com/@watson/109743198074918647), [more anti-vax](https://freeatlantis.com/@Phil/109693908947686128). Admin posts [QAnon](https://freeatlantis.com/@surferistic/109733973331065745).
 
 freespeechextremist.com
-: [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism. [multiple other users engaging in transmisogny](https://web.archive.org/web/20230802003611/https://eientei.org/notice/AYEtXJ1Dea4cIBV488). MRF policies include a [block-notification bot](https://web.archive.org/web/20230731164723/https://freespeechextremist.com/about). The linked page also makes it clear that this is a freeze-peach instance, so reporting won't help.
+: [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism. [multiple other users engaging in transmisogyny](https://web.archive.org/web/20230802003611/https://eientei.org/notice/AYEtXJ1Dea4cIBV488), and [participating in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8). MRF policies include a [block-notification bot](https://web.archive.org/web/20230731164723/https://freespeechextremist.com/about). The linked page also makes it clear that this is a freeze-peach instance, so reporting won't help.
+
+froth.zone
+: [Blatant racism](http://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](http://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
 
 geofront.rocks
 : Well-known Nazi instance. [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O). All from what seems to be the primary active user of the instance. Another user has a [blatantly nazi profile](https://web.archive.org/web/20230802235236/https://geofront.rocks/@flux) featuring violent transphobic shock content.
 
 glee.li
-: [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv). More [blatant racism and transmisia](https://archive.ph/SI0xG). Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
+: [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv). More [blatant racism and transmisia](https://archive.ph/SI0xG). Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8). Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
 
 h5q.net
 : Contains untagged AI-generated photorealistic erotic content that may pose a legal risk in several jurisdictions.
@@ -296,13 +300,16 @@ needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 
 nicecrew.digital
-: [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
+: [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO). Has [a bot to spam threads with racist slurs](http://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
 
 noagendasocial.com
 : far-right instance connected to the No Agenda show. [Queerphobia](https://archive.ph/Km8Ju). One of its more popular users is [openly an ethno-nationalist](https://web.archive.org/web/20230731165314/https://noagendasocial.com/@amerika) with [thinly-veiled genocidal views](https://web.archive.org/web/20230731165038/https://noagendasocial.com/@amerika/110652580178110907) and runs the far-right amerika.org blog. An even more popular user [regularly posts far-right content](https://web.archive.org/web/20230731165844/https://noagendasocial.com/@furgar/110558690945902519).
 
 noagendasocial.nl OR noagendatube.com
 : Sibling instances of noagendasocial.com, also connected to the No Agenda Show.
+
+norwoodzero.net
+: Admin [pedojackets in a transphobic harassment campaign](https://web.archive.org/web/20230803155542/https://norwoodzero.net/notice/AYME53gDdYuiYrDxtQ). [Instance "about" page](https://web.archive.org/web/20230803160235/https://norwoodzero.net/about) contains racial slurs and an animated banner that says "whites only".
 
 poa.st
 : Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
@@ -311,7 +318,7 @@ poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq).
 
 ryona.agency OR plagu.ee
-: Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint). [Blatant racism from a local user](https://archive.ph/KoMXa). The [instance "about page" features MRF policies](https://web.archive.org/web/20230802204037/https://ryona.agency/about) to power a block-notification bot, to convert all posts (including DMs) to public visibility, and to reject deletes. Also runs a version of Pleroma [patched to allow bypassing authorized-fetch](https://web.archive.org/web/20230802204840/https://gitgud.io/ryonagency/pleroma/-/commit/d7fca9df32f4f083779371a3f843285188372ba6).
+: Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint). [Admin participates in transmisogynistic harassment](http://archive.today/2023.08.03-154852/https://ryona.agency/notice/AYMBAB2LPVkH8l7vk0). [Blatant racism from a local user](https://archive.ph/KoMXa). The [instance "about page" features MRF policies](https://web.archive.org/web/20230802204037/https://ryona.agency/about) to power a block-notification bot, to convert all posts (including DMs) to public visibility, and to reject deletes. Also runs a version of Pleroma [patched to allow bypassing authorized-fetch](https://web.archive.org/web/20230802204840/https://gitgud.io/ryonagency/pleroma/-/commit/d7fca9df32f4f083779371a3f843285188372ba6).
 : [plagu.ee is run by the same admin as ryona.agency](https://pleroma.envs.net/notice/ATvo35BQNlDY9DQQue), with similar patches and MRF policies applied as per [the plagu.ee "about" page](https://web.archive.org/web/20230410181459/https://plagu.ee/about).
 
 shitpost.cloud
@@ -352,7 +359,6 @@ firedragonstudios.com
 
 freesoftwareextremist.com
 : [ableism and antisemitism from local user "dookie"](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU), [ableist sui-bait](https://web.archive.org/web/20230802164139/https://freesoftwareextremist.com/notice/AYItcRuj1hvuTKLhmy), [ableism and queerphobia](https://web.archive.org/web/20230802233803/https://freesoftwareextremist.com/notice/AY7nGBF4CsuYydOyxM). Admin [often uses anti-Chinese racial slurs](https://web.archive.org/web/20230802231531/https://freesoftwareextremist.com/notice/ATzjhzI7r5Y8Cv1DW4), [more usage](https://web.archive.org/web/20230802231652/https://freesoftwareextremist.com/notice/AY1b8vq2iKh4mIiNcm), [other anti-asian slurs](http://archive.today/2023.08.02-232207/https://freesoftwareextremist.com/notice/ARbAeXyGwquJKoxFPk). Instance has fully open registration.
-
 
 freetalklive.com
 : [Instance "about" page](https://web.archive.org/web/20230802051117/https://social.freetalklive.com/about) self-identifies as unmoderated, except for spam. Connected to the libertarian Free Talk Live show.
