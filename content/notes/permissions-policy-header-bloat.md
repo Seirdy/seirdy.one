@@ -6,11 +6,11 @@ replyTitle: "I think we should be comparing wins relative to HTTP/3 with the lat
 replyType: "DiscussionForumPosting"
 replyAuthor: "Anne van Kesteren"
 replyAuthorURI: "https://annevankesteren.nl/"
-#syndicatedCopies:
-#    - title: 'GitHub'
-#      url: ''
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'GitHub'
+      url: 'https://github.com/w3c/webappsec-permissions-policy/issues/481#issuecomment-1259139696'
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AYNLYfnnAejTPh4csa'
 ---
 I'm a browser "with the latest in header compression", fetching a web page. I race a TCP-based ALPN run against an HTTPS record lookup (Chromium's behavior). Either the HTTP/2 ALPN wins the race, or the HTTPS DNS record does not exist. Both are, and will remain, common scenarios. So I fetch the page over HTTP/2. This is the initial request; dynamic HPACK hasn't kicked in. I download a 1.56kb HTTP response header:
 
