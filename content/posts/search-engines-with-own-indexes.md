@@ -32,8 +32,7 @@ I plan on updating the engines in the top two categories with more info comparin
 
 {{<toc>}}
 
-About the list
---------------
+## About the list
 
 I discuss my motivation for making this page in the [Rationale section](#rationale).
 
@@ -43,8 +42,7 @@ I mention details like "allows site submissions" and structured data support whe
 
 See the [Methodology section](#methodology) at the bottom to learn how I evaluated each one.
 
-General indexing search-engines
--------------------------------
+## General indexing search-engines
 
 ### Large indexes, good results
 
@@ -112,6 +110,9 @@ Google, Bing, and Yandex support structured data such as microformats1, microdat
 
 These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly. I wouldn't recommend using these engines to find specific answers; they're better for learning about a topic by finding interesting pages related to a set of keywords.
 
+
+[Stract](https://trystract.com/)
+: **My favorite generalist engine on this page.** Stract supports advanced ranking customization by allowing users ti import "optics" files, like a better version of Brave's "goggles" feature. [Stract is fully open-source](https://github.com/StractOrg/stract), with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
 
 [Right Dao](https://rightdao.com)
 : Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
@@ -217,8 +218,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 [Kagi Search](https://kagi.com/)
 : The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the [non-commercial section](#small-or-non-commercial-web) below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the [Kagi.ai](https://kagi.ai/) intelligent answer service and the [TinyGem](https://tinygem.org/) social bookmarking service, both of which play a role in Kagi.com in the present or future.
 
-Non-generalist search
----------------------
+## Non-generalist search
 
 These indexing search engines don’t have a Google-like “ask me anything” endgame; they’re trying to do something different. You aren't supposed to use these engines the same way you use GBY.
 
@@ -229,7 +229,7 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 : _My favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. <ins cite="https://memex.marginalia.nu/log/58-marginalia-open-source.gmi" datetime="2022-05-28T14:09:00-07:00">Update 2022-05-28: [Marginalia.nu is now open source.](https://memex.marginalia.nu/log/58-marginalia-open-source.gmi)</ins>
 
 [Teclis](http://teclis.com/)
-: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia.
+: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia. This has been down for maintenance for a while; I may end up having to move it to the Graveyard section.
 
 ### Site finders
 
@@ -275,8 +275,7 @@ Quor
 [Lixia Labs Search](https://search.lixialabs.com/)
 : A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
 
-Other languages
----------------
+## Other languages
 
 I'm unable to evaluate these engines properly since I don't speak the necessary languages. English searches on these are a hit-or-miss. I might have made a few mistakes in this category.
 
@@ -320,8 +319,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [kaz.kz](http://kaz.kz): Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
 
-Almost qualified
-----------------
+## Almost qualified
 
 These engines come close enough to passing my inclusion criteria that I felt I had to mention them. They all display original organic results that you can't find on other engines, and maintain their own indexes. Unfortunately, they don't quite pass.
 
@@ -338,8 +336,7 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 [Blog Surf](https://blogsurf.io/)
 : A search engine for blogs with RSS/Atom feeds. Does not qualify because all blogs submitted to the index require manual review, but it seems interesting. Its "MarketRank" algorithm seems to give it a bias towards sites popular on "Hacker" "News".
 
-Misc
-----
+## Misc
 
 
 Ask.com
@@ -348,8 +345,7 @@ Ask.com
 [Infinity Search](https://infinitysearch.co)
 : Partially evaluated. Young, small index. It recently split into a paid offering with the main index and [Infinity Decentralized](https://infinitydecentralized.com/), the latter of which allows users to select from community-hosted crawlers. I managed to try it out before it became a paid offering, and it seemed decent; however, I wasn't able to run the tests listed in the "Methodology" section. Allows submitting URLs and sitemaps into a text box, no other work required.
 
-Search engines without a web interface
---------------------------------------
+## Search engines without a web interface
 
 Some search engines are integrated into other appliances, but don't have a web portal.
 
@@ -357,8 +353,7 @@ Some search engines are integrated into other appliances, but don't have a web p
 
 - Amazon bought Alexa Internet (a web traffic analysis company, at the time unrelated to the Amazon Alexa virtual assistant) and discontinued its website ranking product. Amazon still runs the relevant crawlers, and also have [a bot called "Amazonbot"](https://developer.amazon.com/support/amazonbot). While Applebot powers the Siri personal assistant, Amazonbot powers the Alexa personal assistant <q cite="https://developer.amazon.com/support/amazonbot">to answer even more questions for customers</q>. Crawling the web to answer questions is the basis of a search engine.
 
-Graveyard
----------
+## Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
 
@@ -384,8 +379,7 @@ These engines were originally included in the article, but have since been disco
 [Marlo](https://github.com/isovector/marlo)
 : Another FLOSS engine: Marlo is written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research. Originally available at `marlo.sandymaguire.me`.
 
-Exclusions
-----------
+## Exclusions
 
 Two engines were excluded from this list for having a far-right focus.
 
@@ -393,8 +387,7 @@ One engine was excluded because it seems to be built using cryptocurrency in a w
 
 Some fascinating little engines seem like hobbyist proofs-of-concept. I decided not to include them in this list, but watch them with interest to see if they can become something viable.
 
-Rationale
----------
+## Rationale
 
 Why bother using non-mainstream search engines?
 
@@ -410,8 +403,7 @@ There's also a practical, less-ideological reason to try other engines: differen
 
 No search engine is truly unbiased. Most engines' ranking algorithms incorporate a method similar to [PageRank](https://en.wikipedia.org/wiki/PageRank), which biases them towards sites with many backlinks. Search engines have to deal with unwanted results occupying the confusing overlap between SEO spam, shock content, and duplicate content. When this content’s manipulation of ranking algos causes it to rank high, engines have to address it through manual action or algorithm refinement. Choosing to address it through either option, or choosing to leave it there for popular queries after receiving user reports, reflects bias. The best solution is to mix different ranking algorithms and indexes instead of using one engine for everything.
 
-Method&shy;ology {#methodology}
-----------------
+## Method&shy;ology {#methodology}
 
 ### Discovery
 
@@ -469,8 +461,7 @@ I didn't try to avoid personalization when testing engines that require account 
 
 I avoided "natural language" queries like questions, focusing instead on keyword searches and search operators. I also mostly ignored infoboxes (also known as "instant answers").
 
-Findings
---------
+## Findings
 
 What I learned by building this list has profoundly changed how I surf.
 
@@ -484,8 +475,7 @@ When building webpages, authors need to consider the barriers to entry for a new
 
 Try a "bad" engine from lower in the list. It might show you utter crap. But every garbage heap has an undiscovered treasure. I'm sure that some hidden gems you'll find will be worth your while. Let's add some serendipity to the SEO-filled Web.
 
-Acknow&shy;ledgements {#acknowledgements}
----------------------
+## Acknow&shy;ledgements {#acknowledgements}
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
