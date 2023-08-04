@@ -8,7 +8,7 @@ replyAuthor: "Anne van Kesteren"
 replyAuthorURI: "https://annevankesteren.nl/"
 syndicatedCopies:
     - title: 'GitHub'
-      url: 'https://github.com/w3c/webappsec-permissions-policy/issues/481#issuecomment-1259139696'
+      url: 'https://github.com/w3c/webappsec-permissions-policy/issues/481#issuecomment-1664943817'
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AYNLYfnnAejTPh4csa'
 ---
