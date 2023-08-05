@@ -192,6 +192,9 @@ Criteria for a good FediNuke receipt is stricter than the aforementioned criteri
 4aem.com
 : Freeze peach PeerTube instance on the "tube" subdomain, hosting blatant antisemitic content. ["Clown World" dogwhistles](https://archive.ph/80Zwu), antisemitic ["Why Kanye West is right"](https://archive.ph/06UiV).
 
+5dollah.click
+: [Blatantly racist use of slurs](https://web.archive.org/web/20230803174643/https://5dollah.click/notice/AYFv0JRxfVez3K6ftQ) from staff account, [more racism from same account](https://web.archive.org/web/20230803174620/https://5dollah.click/notice/AYGifHRMwMFURlzgye). The [other staff account is racist too](https://web.archive.org/web/20230804231543/https://5dollah.click/notice/AXpsKVU45gZ5zHyVTk). ["About" page](https://web.archive.org/web/20230804225043/https://5dollah.click/about) lists no rules.
+
 adachi.party
 : The instance in question is on the "pleroma" subdomain. Its "about" page has the "Kill, behead, roundhouse kick" copypasta with racial slurs. [Archived "about" page](https://archive.ph/muPe1). Later updated rules to include ["must advocate for racism/fascism/nazism"](https://archive.ph/6Tpq5). [Admin posts racist transphobia](https://web.archive.org/web/20230730175847/https://pleroma.adachi.party/notice/AYAMup3aR6WhWwuHXU).
 
@@ -275,11 +278,17 @@ freespeechextremist.com
 froth.zone
 : [Blatant racism](http://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](http://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
 
+gearlandia.haus
+: [Transphobic targeted harassment from multiple staff members](https://web.archive.org/web/20230805034502/https://gearlandia.haus/notice/AY8D5ossGoV9B7Eria), including sui-bait. [Racist use of slurs from another staff member](https://web.archive.org/web/20230805035409/https://gearlandia.haus/notice/AVBWXlFGHdqqogRnmK). [Assorted queerphobia from multiple users, including staff](https://web.archive.org/web/20230804224636/https://gearlandia.haus/notice/AV5ogisR5efiIwQzKa). Staff members sometimes post lolisho, which may pose a legal risk in some jurisdictions.
+
 geofront.rocks
 : Well-known Nazi instance. [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O). All from what seems to be the primary active user of the instance. Another user has a [blatantly nazi profile](https://web.archive.org/web/20230802235236/https://geofront.rocks/@flux) featuring violent transphobic shock content.
 
 gameliberty.club
 : [Freeze-peach rules](https://archive.ph/ir4hc) permit lolisho, which may be a legal risk depending on your jurisdiction. [Admin pinned posts](https://archive.ph/x9xUe) contain slurs in un-reclaimed contexts, and [runs an rsdb bot](https://gameliberty.club/@dailyslurbot) for more. Admin [posts racist memes](https://gameliberty.club/@matrix/110691184671379555), [more racist memes](https://gameliberty.club/@matrix/110691000630024399), [anti-pride](https://gameliberty.club/@matrix/110705822988959149).
+
+genderheretics.xyz
+: ["About" page explicitly labels the instance as transphobic](https://web.archive.org/web/20230804235043/https://genderheretics.xyz/about). Admin [posts unmarked NSFL medical gore](https://ghostarchive.org/archive/wlQdv) in a transmisogynistic context. [Anti-drag pedojacketing](https://web.archive.org/web/20230805000311/https://genderheretics.xyz/@william/posts/AYFfRi8X3hx6nJOaXY) from admin.
 
 gleasonator.com
 : [Admin is an outspoken TERF](http://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/). User "caekislove" [pedojackets and sui-baits trans users](http://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](http://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery). [Admin is aware of the user but will not take action](https://web.archive.org/web/20230803184758/https://annihilation.social/notice/AWfGcY4mrHiPL3mgfQ) (unrelated extreme bigotry and Nazi iconography in thread).
@@ -299,6 +308,9 @@ kawa-kun.net
 kitsunemimi.club
 : [Admin "bronze" participates in racist harassment](https://web.archive.org/web/20230731183425/https://needs.vodka/notice/AYFCFHRqKX6RjsF7Fw), sends users [transphobic shock content](https://web.archive.org/web/20230731184313/https://pl.kitsunemimi.club/notice/AYG5j6YeP0wZI1jaPw). Runs the [HighRoller MRF policy](https://web.archive.org/web/20230731183641/https://pl.kitsunemimi.club/about) for a block-notification bot.
 
+kiwifarms.cc
+: The official occasionally-online [KiwiFarms](https://www.cnet.com/culture/internet/kiwi-farms-what-to-know-about-the-hate-filled-message-forum-dropped-by-cloudflare/) Fediverse instance. Look up "KiwiFarms" online if you want receipts. It briefly came back once after a long period of downtime, so I'm not removing it during the current downtime.
+
 kyaruc.moe
 : Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM), [racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy).
 
@@ -309,7 +321,7 @@ ligma.pro
 : The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
 
 marsey.moe
-: boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb). [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S)
+: boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb). [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G)
 
 midwaytrades.com
 : Runs [a Libs of TikTok bot](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU). [Transphobic and misogynist admin](https://ghostarchive.org/archive/9qO8r).
@@ -386,6 +398,9 @@ freesoftwareextremist.com
 
 freetalklive.com
 : [Instance "about" page](https://web.archive.org/web/20230802051117/https://social.freetalklive.com/about) self-identifies as unmoderated, except for spam. Connected to the libertarian Free Talk Live show.
+
+kompost.cz
+: [Racism](https://ghostarchive.org/archive/cWEbG), [more racism](https://web.archive.org/web/20230804231946/https://kompost.cz/@fuxoft/110656548914018074), [transphobia](https://web.archive.org/web/20230804232125/https://kompost.cz/@fuxoft/110321506728744090), [queerphobia](https://ghostarchive.org/archive/Nmop2). All from admin.
 
 occultist.space OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol. Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
