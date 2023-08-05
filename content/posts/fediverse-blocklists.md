@@ -214,9 +214,6 @@ bae.st
 banepo.st
 : [Runs a blockbot](https://archive.ph/2c9Js). Admin posts [antisemitism, homophobia, and transphobia in one post](https://web.archive.org/web/20230730035807/https://www.banepo.st/notice/AXRzgFfrwY1BRaa9SK), [another with more of the same](https://archive.ph/JxXRv), [all of that with a side of ableism](https://web.archive.org/web/20230730040446/https://www.banepo.st/notice/AXql6rXn1tybo4umiO).
 
-baraag.net
-: Very well-known lolicon-friendly instance that does a poor job of moderating grooming and CSAM.
-
 bassam.social
 : [The admin equates people being against anti-queer discrimination with "oppression"](https://archive.ph/r1tDT). After a user [made a FediBlock post against bassam.social](https://mstdn.social/users/MagicLike/statuses/110430832688299722), its instance admin [doubled down on permitting bigotry](https://archive.ph/PQ7j0).
 
@@ -353,6 +350,9 @@ noagendasocial.nl OR noagendatube.com
 norwoodzero.net
 : Admin [pedojackets in a transphobic harassment campaign](https://web.archive.org/web/20230803155542/https://norwoodzero.net/notice/AYME53gDdYuiYrDxtQ). [Instance "about" page](https://web.archive.org/web/20230803160235/https://norwoodzero.net/about) contains racial slurs and an animated banner that says "whites only".
 
+pawoo.net
+: Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
+
 poa.st
 : Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
 
@@ -361,6 +361,9 @@ poast.org OR poast.tv
 
 poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq), and [makes racist homophobic slur-filled anti-antifa posts](https://web.archive.org/web/20230803191342/https://poster.place/notice/AYKzM8YDhgDVhxcsaG). Instance header contains an animated GIF full of slurs.
+
+rapemeat.solutions
+: The successor to hentai.baby, run by its admin. hentai.baby was known for posting real CSA material. Openly pro-CSA. Has drawn nudity in the instance background.
 
 ryona.agency OR plagu.ee
 : Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint). [Admin participates in transmisogynistic harassment](http://archive.today/2023.08.03-154852/https://ryona.agency/notice/AYMBAB2LPVkH8l7vk0). [Blatant racism from a local user](https://archive.ph/KoMXa). The [instance "about page" features MRF policies](https://web.archive.org/web/20230802204037/https://ryona.agency/about) to power a block-notification bot, to convert all posts (including DMs) to public visibility, and to reject deletes. Also runs a version of Pleroma [patched to allow bypassing authorized-fetch](https://web.archive.org/web/20230802204840/https://gitgud.io/ryonagency/pleroma/-/commit/d7fca9df32f4f083779371a3f843285188372ba6).
@@ -386,6 +389,9 @@ This section has barely been started.
 
 {{< nofollow >}}
 
+
+baraag.net
+: Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](http://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction.
 
 berserker.town
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
@@ -417,8 +423,9 @@ occultist.space OR enjoyer.network
 shitposter.club
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84). [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330). [Some more racism](https://archive.ph/FSjhj). Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
 
-shota.house
+shota.house OR burger.rodeo
 : Instance [self-identifies as a freeze peach haven](http://archive.today/2023.07.19-100816/https://shota.house/about) that permits unrealistic/2D lolisho; this may be a legal risk, depending on your jurisdiction. [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user. Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
+: [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
 
 {{</ nofollow >}}
 
