@@ -9,8 +9,6 @@
 {{- if or (eq .Page.Section "notes") (eq .Page.Title "Notes") -}}
 	{{- $isNotes = true -}}
 	{{- $action = "Noted" -}}
-{{- else -}}
-	{{- $logURL = $logURL | strings.ReplaceRE `\.md` `.gmi` -}}
 {{- end -}}
 {{- $needsModTime := gt (sub .Lastmod.Unix .Date.Unix) 900 -}}
 {{- $needsList := or (and (not $shortMeta) $needsModTime) (not $isNotes) -}}
