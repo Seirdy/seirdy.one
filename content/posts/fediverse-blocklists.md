@@ -235,6 +235,9 @@ breastmilk.club
 brighteon.social
 : [Brighteon's "about" page](https://web.archive.org/web/20230724044425/https://brighteon.social/about/more) marks the instance as a far-right cesspit. Instance is connected to [the Brighteon network](https://web.archive.org/web/20230729030855/https://www.brighteon.com/), a far-right network featuring shows such as "The Reality Camp" with Stacey Campfield.
 
+cachapa.xyz
+: Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf). Instance permits lolicon, and runs bots for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
+
 cawfee.club
 : [Racism from multiple users, including admin](https://web.archive.org/web/20230730210913/https://cawfee.club/notice/AY5J5qUA898oge9pa4). [Anti-Romani and racist posts from admin](https://web.archive.org/web/20230730211327/https://cawfee.club/notice/AXjafVFrE4C3c48Mm8). Users [engaging in more racism](https://web.archive.org/web/20230730211531/https://cawfee.club/notice/AY1UovIIgAoO6DfDX6). [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
@@ -294,7 +297,7 @@ gleasonator.com
 : [Admin is an outspoken TERF](http://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/). User "caekislove" [pedojackets and sui-baits trans users](http://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](http://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery). [Admin is aware of the user but will not take action](https://web.archive.org/web/20230803184758/https://annihilation.social/notice/AWfGcY4mrHiPL3mgfQ) (unrelated extreme bigotry and Nazi iconography in thread).
 
 glee.li
-: [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv). More [blatant racism and transmisia](https://archive.ph/SI0xG). Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8). Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
+: [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv). More [blatant racism and transmisia](https://archive.ph/SI0xG). Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8). [More blatanrt racism](https://web.archive.org/web/20230805180006/https://glee.li/notice/AYQQrs1oS2HvwPKxJA). All posts came from staff. Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
 
 h5q.net
 : Contains untagged AI-generated photorealistic erotic content that may pose a legal risk in several jurisdictions.
@@ -319,6 +322,9 @@ leafposter.club
 
 ligma.pro
 : The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
+
+lolicon.rocks
+: ["About" page](https://web.archive.org/web/20230805183555/https://posting.lolicon.rocks/about) states <q>posting.lolicon.rocks is a common carrier telecommunications provider that does not moderate content</q> and also features the owner with the handle "BlinkRape". [Owner profile bio](http://archive.today/2023.08.05-183749/https://posting.lolicon.rocks/BlinkRape) contains racist and ableist slurs. Owner [posts antisemitism](http://archive.today/2023.08.05-184903/https://posting.lolicon.rocks/notice/AYL1UBs25rFpSDuzY0), [blatant racism in a climate-denial thread](https://web.archive.org/web/20230805184950/https://posting.lolicon.rocks/notice/AYGVgyTLFFBIV1a6zI).
 
 marsey.moe
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb). [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G)
@@ -349,6 +355,9 @@ norwoodzero.net
 
 poa.st
 : Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
+
+poast.org OR poast.tv
+: Instances affiliated with poa.st.
 
 poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq), and [makes racist homophobic slur-filled anti-antifa posts](https://web.archive.org/web/20230803191342/https://poster.place/notice/AYKzM8YDhgDVhxcsaG). Instance header contains an animated GIF full of slurs.
@@ -407,6 +416,9 @@ occultist.space OR enjoyer.network
 
 shitposter.club
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84). [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330). [Some more racism](https://archive.ph/FSjhj). Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
+
+shota.house
+: Instance [self-identifies as a freeze peach haven](http://archive.today/2023.07.19-100816/https://shota.house/about) that permits unrealistic/2D lolisho; this may be a legal risk, depending on your jurisdiction. [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user. Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
 
 {{</ nofollow >}}
 
