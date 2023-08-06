@@ -46,6 +46,8 @@ Disallow: /
 # Eat shit, OpenAI.
 User-agent: ChatGPT-User
 Disallow: /
+User-agent: GPTBot
+Disallow: /
 
 
 Sitemap: https://seirdy.one/sitemap.xml
