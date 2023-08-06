@@ -338,6 +338,9 @@ morale.ch
 mugicha.club
 : Admin [participated in a transphobic targeted harassment campaign](https://web.archive.org/web/20230803192951/https://strelizia.net/notice/AY89eVVq0KBnBANq3k) with local users. [Anti-asian racist slurs from admin](https://web.archive.org/web/20230803192115/https://strelizia.net/notice/AYMZTqabCh9ZBRZFU8), [misogynistic racism from admin](https://web.archive.org/web/20230803192548/https://strelizia.net/notice/AYIxpdSJqqonI55f0q) with several local users with Confederate battle-flags in their display names. More [blatantly racist use of slurs from admin](https://web.archive.org/web/20230803192732/https://strelizia.net/notice/AYCAY6fkm4FiXMrv8K).
 
+natehiggers.online
+: Used to run a Pleroma instance, which shut down. A WriteFreely instance is still up on the "wf" subdomain. Domain name is obvious wordplay on racist use of slurs. The WriteFreely blog features [COVID conspiracy theories](https://web.archive.org/web/20230806204753/https://wf.natehiggers.online/pfizer-loves-to-mutate-viruses-for-fun-and-profit), [violent racist transmisogyny](https://web.archive.org/web/20230806205054/https://wf.natehiggers.online/lizard-person-and-new-zealands-first-trans-gendered-prime-minister-suddenly), [anti-vax](https://web.archive.org/web/20230806205719/https://wf.natehiggers.online/one-world-government-eu-and-us-cdc-both-authorize-giving-con-vid-injections-to), and other far-right content.
+
 needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 
@@ -352,6 +355,9 @@ noagendasocial.nl OR noagendatube.com
 
 norwoodzero.net
 : Admin [pedojackets in a transphobic harassment campaign](https://web.archive.org/web/20230803155542/https://norwoodzero.net/notice/AYME53gDdYuiYrDxtQ). [Instance "about" page](https://web.archive.org/web/20230803160235/https://norwoodzero.net/about) contains racial slurs and an animated banner that says "whites only".
+
+onionfarms.org
+: ["About" page](https://web.archive.org/web/20230806210051/https://onionfarms.org/about) says <q>This is a Mastodon server for the Onionfarms and Kiwifarms communites</q> [sic] and [admin bio confirms it](https://web.archive.org/web/20230806210312/https://onionfarms.org/@admin).
 
 pawoo.net
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
@@ -377,6 +383,12 @@ seal.cafe
 
 shitpost.cloud
 : Admin "Hoss" [uses racial slurs in an unreclaimed context](https://web.archive.org/web/20230730000845/https://shitpost.cloud/notice/AXuj12Qs30YmatTqbo), and [publicized reports](https://web.archive.org/web/20230731062033/https://shitpost.cloud/notice/AYA2Obde8BUywbo45w) against local users participating in a targeted transphobic harassment campaign. [A user with a violent racist display name](https://archive.ph/5Vb2Q), with staff participating later in the thread.
+
+skinheads.social OR skinheads.eu
+: The Antisocial Network is for white-nationalist skinhead subculture. ["Aryans" bot](https://ghostarchive.org/archive/T8rZZ), [white pride](http://archive.today/2023.08.06-214417/https://skinheads.eu/@ultras), [Nordic resistance movement](http://archive.today/2023.08.06-214448/https://skinheads.eu/@nordic).
+
+skinheads.uk OR skinheads.io
+: Alternate domains for The Antisocial Network.
 
 usualsuspects.lol
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
