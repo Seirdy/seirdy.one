@@ -160,6 +160,10 @@ Some supplementary blocklists I maintain with very different criteria:
 [Corporate social media with user-hostile dark patterns](https://seirdy.one/pb/corpo.txt)
 : A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes.
 
+[Spammy subdomains](https://seirdy.one/pb/spammy-subdomains.txt)
+: These domains are often used for HTTP tunneling or short-lived spin-up-spin-down servers. Fediverse instances running on their subdomains almost certainly aren't in it for the long haul, and very frequently shut down within hours or days without doing a clean self-destruct. Note that this is not to be confused with traditional dynamic-DNS subdomains, which are often used for longer-lived servers (although some admins do understandably block those anyway).
+: This list might prove useful in non-Fediverse contexts as well; I imagine it could be useful for moderating Matrix rooms.
+
 ## Receipts
 
 The following are receipts for instances on my blocklists. Read the text surrounding a link before navigating to it, and let that context serve as a content-warning. No links point directly to the blocked instance; all go to a third-party archiving service.
