@@ -45,6 +45,8 @@ This post is an attempt to document how they are made, their differences, their 
 
 When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 11 instead of 10.
 
+All entries use the root domains when applicable, or are as close to the root domain as possible without triggering false-positives.
+
 ### Overrides
 
 There were some block-overrides for instances with fewer than 11 votes. Here's how I went about overriding:
@@ -445,6 +447,11 @@ ryona.agency OR plagu.ee
 : The [instance "about page" features MRF policies](https://web.archive.org/web/20230802204037/https://ryona.agency/about) to power a block-notification bot, to convert all posts (including DMs) to public visibility, and to reject deletes.
 : Also runs a version of Pleroma [patched to allow bypassing authorized-fetch](https://web.archive.org/web/20230802204840/https://gitgud.io/ryonagency/pleroma/-/commit/d7fca9df32f4f083779371a3f843285188372ba6).
 : [plagu.ee is run by the same admin as ryona.agency](https://pleroma.envs.net/notice/ATvo35BQNlDY9DQQue), with similar patches and MRF policies applied as per [the plagu.ee "about" page](https://web.archive.org/web/20230410181459/https://plagu.ee/about).
+
+schwartzwelt.xyz
+: Admin participates in a transphobic harassment campaign by [posting transphobic pedojacketing sui-bait containing Nazi iconography](https://web.archive.org/web/20230808021511/https://amala.schwartzwelt.xyz/notice/AY89V5Y55t9jdvpr9c). [More blatant transphobia from admin](https://web.archive.org/web/20230808023622/https://amala.schwartzwelt.xyz/notice/AYTSo1vSMIZE2hKXB2).
+: Admin [participates in anti-indigenous racist harassment](https://web.archive.org/web/20230808024805/https://amala.schwartzwelt.xyz/notice/AYMVgC61Pka5RUfjaS).
+: Local user ["Agartha_Noble" posts blatant racism](https://web.archive.org/web/20230808024312/https://amala.schwartzwelt.xyz/notice/AYRLX09MQtpO2D0lwe) in a thread about race-mixing.
 
 seal.cafe
 : Users including admin [participate in transphobic targeted harassment](http://archive.today/2023.08.05-231441/https://clubcyberia.co/notice/AYEajR8kZyASfOEtoO).
