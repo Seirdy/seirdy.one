@@ -18,6 +18,7 @@
 	{{ end -}}
 	<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
 	<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
+	<link href="{{ printf `https://webmention.io/webmention?forward=%s` .Site.Params.WebmentionEndpoint}}" rel="pingback" />
 	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
 	{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
 	<!--Feeds for both notes and articles; articles come first unless we're in the notes section.-->
