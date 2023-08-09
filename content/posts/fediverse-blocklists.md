@@ -399,14 +399,19 @@ mugicha.club
 : More [blatantly racist use of slurs from admin](https://web.archive.org/web/20230803192732/https://strelizia.net/notice/AYCAY6fkm4FiXMrv8K).
 
 natehiggers.online
-: Used to run a Pleroma instance, which shut down. A WriteFreely instance is still up on the "wf" subdomain. Domain name is obvious wordplay on racist use of slurs.
+: Used to run an awful Pleroma instance, which shut down. A WriteFreely instance is still up on the "wf" subdomain. Domain name is an obvious [spoonerism](https://www.wordnik.com/words/spoonerism) of racist use of slurs.
 : The WriteFreely blog features [COVID conspiracy theories](https://web.archive.org/web/20230806204753/https://wf.natehiggers.online/pfizer-loves-to-mutate-viruses-for-fun-and-profit), [violent racist transmisogyny](https://web.archive.org/web/20230806205054/https://wf.natehiggers.online/lizard-person-and-new-zealands-first-trans-gendered-prime-minister-suddenly), [anti-vax](https://web.archive.org/web/20230806205719/https://wf.natehiggers.online/one-world-government-eu-and-us-cdc-both-authorize-giving-con-vid-injections-to), and other far-right content.
+
+narrativerry.xyz
+: Admin posts [blatant anti-Indian racism](https://web.archive.org/web/20230808151934/https://pleroma.narrativerry.xyz/notice/AY8awZ3lCW2pXp6TWi).
+: Admin [combines antisemitic conspiracy theories, homophobia, and racism in a slur-filled thread](https://web.archive.org/web/20230808153236/https://annihilation.social/notice/AXyTzERY59CX89mqn2).
 
 needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 
 nicecrew.digital
-: [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO). Has [a bot to spam threads with racist slurs](http://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
+: [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
+: Has [a bot to spam threads with racist slurs](http://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
 
 noagendasocial.com
 : Far-right instance connected to the No Agenda show.
@@ -469,6 +474,11 @@ skinheads.social OR skinheads.eu
 
 skinheads.uk OR skinheads.io
 : Alternate domains for The Antisocial Network.
+
+strelizia.net
+: Instance "About" page [lists MRF policies to reject deletes and run a block-notification bot](https://web.archive.org/web/20230808161017/https://strelizia.net/about).
+: Admin [posts anti-Black racism](https://web.archive.org/web/20230808164722/https://strelizia.net/notice/AYFGEQcTnNSkcuIa36), [more blatant racism](https://web.archive.org/web/20230808164433/https://strelizia.net/notice/AY6JupLlwAlUJpprvc), and [some other slurs in non-reclaimed contexts](https://web.archive.org/web/20230808165632/https://strelizia.net/notice/AYCHMhIdT8w6L2YvD6)
+: Local user "nikiboo" posts [blatant anti-Black racism](https://web.archive.org/web/20230808181414/https://strelizia.net/notice/AXrIC2vJqLE5c296ps) (re-blogged by admin), has a profile photo with Nazi imagery.
 
 usualsuspects.lol
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
@@ -537,6 +547,10 @@ shota.house OR burger.rodeo
 : [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user.
 : Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
 : [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
+
+starnix.network
+: Note: there are multiple Fediverse servers on different subdomains, such as "pl" and "mstdn."
+: Staff includes [the admin of annihilation.social and dembased.xyz](https://web.archive.org/web/20230808200151/https://pl.starnix.network/users/dc) (FediNuke).
 
 whinge.town OR whinge.house
 : [Racism from staff](https://archive.ph/2023.08.06-220550/https://whinge.town/notice/AYRc8jFNLiVczKvKr2#selection-8031.56-8031.62), [more racism](https://web.archive.org/web/20230806215920/https://whinge.town/notice/AYRgdl4uzRV9Sh5GOe), [ableist misogyny](https://web.archive.org/web/20230806223813/https://whinge.town/notice/AXq0Y0n2HDzVWsmOMi).
