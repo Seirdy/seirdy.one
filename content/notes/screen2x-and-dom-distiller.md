@@ -1,6 +1,9 @@
 ---
 title: "Screen2x and DOM Distiller"
 date: 2023-08-08T22:12:56-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AYXnLTyukHT3XlpTCi'
 ---
 I just tried Chromium's "Screen2x" article distiller (experimental in `chrome://flags`).
 
