@@ -427,6 +427,12 @@ norwoodzero.net
 : Admin [invites others users for the purpose of harassing trans users](https://web.archive.org/web/20230807201105/https://norwoodzero.net/notice/AYTiBWAQFwxg3WuJv6).
 : [Instance "about" page](https://web.archive.org/web/20230803160235/https://norwoodzero.net/about) contains racial slurs and an animated banner that says "whites only".
 
+nyanide.com
+: [Staff member sends transmisogynistic pedojacketing harassment](https://web.archive.org/web/20230810042952/https://lab.nyanide.com/notice/AYYjrpwtd8JLXZ2Z2u).
+: Same [staff member posts blatant extreme racism (CW: SA)](https://web.archive.org/web/20230810042358/https://shitposter.club/notice/AYYgsMhI2c3OcuelgO).
+: Same [staff member sends anti-vax harassment to other users](https://web.archive.org/web/20230810042917/https://lab.nyanide.com/notice/AYYiuhMzspK1qc387c).
+: [Two staff members in a racist and antisemitic thread](https://web.archive.org/web/20230810043205/https://lab.nyanide.com/notice/AYWCxeOho0ZKeFICSe).
+
 onionfarms.org
 : ["About" page](https://web.archive.org/web/20230806210051/https://onionfarms.org/about) says <q>This is a Mastodon server for the Onionfarms and Kiwifarms communites</q> [sic] and [admin bio confirms it](https://web.archive.org/web/20230806210312/https://onionfarms.org/@admin).
 
