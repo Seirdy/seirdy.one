@@ -523,7 +523,9 @@ crlf.ninja
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
 federated.fun
+wikileaks2.org
 : [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw). Admin profile [pinned an extremely transphobic post](https://web.archive.org/web/20230805061250/https://ryona.agency/notice/AYMq4VFzPr2yEcvG3k).
+: Admin [switched to running misinformation.wikileaks2.org instead](https://web.archive.org/web/20230810182335/https://misinformation.wikileaks2.org/notice/AYVR3y1faCJhhpwhjk).
 
 firedragonstudios.com
 : Currently runs an instance on the "pleroma" subdomain.
