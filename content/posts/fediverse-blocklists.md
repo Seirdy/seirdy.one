@@ -451,6 +451,10 @@ poster.place
 rapemeat.solutions
 : The successor to hentai.baby, run by its admin. hentai.baby was known for posting real CSA material. Openly pro-CSA. Has drawn nudity in the instance background.
 
+rayci.st
+: [Admin posts racial slurs](https://web.archive.org/web/20230810044615/https://clubcyberia.co/notice/AYPi3VK6AH4GUHkRua), [anti-Indian racism](https://web.archive.org/web/20230810045450/https://rayci.st/notice/AXmZFe2pzEX2de5ZfE), [anti-Black racist use of slurs](https://web.archive.org/web/20230810045536/https://rayci.st/notice/AXj1aII05WxPKYyaC8), and [some antisemitism](https://web.archive.org/web/20230810050100/https://shitposter.club/notice/AXtq0w1YWMAapYudxQ).
+: [Admin spams the MutualAid guppe group with shock content](https://web.archive.org/web/20230810045712/https://rayci.st/notice/AXcsEwPnK89XXciiRc).
+
 ryona.agency OR plagu.ee
 : Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint).
 : [Admin participates in transmisogynistic harassment](http://archive.today/2023.08.03-154852/https://ryona.agency/notice/AYMBAB2LPVkH8l7vk0).
@@ -559,7 +563,8 @@ starnix.network
 : Staff includes [the admin of annihilation.social and dembased.xyz](https://web.archive.org/web/20230808200151/https://pl.starnix.network/users/dc) (FediNuke).
 
 whinge.town OR whinge.house
-: [Racism from staff](https://archive.ph/2023.08.06-220550/https://whinge.town/notice/AYRc8jFNLiVczKvKr2#selection-8031.56-8031.62), [more racism](https://web.archive.org/web/20230806215920/https://whinge.town/notice/AYRgdl4uzRV9Sh5GOe), [ableist misogyny](https://web.archive.org/web/20230806223813/https://whinge.town/notice/AXq0Y0n2HDzVWsmOMi).
+: [Racism from staff](https://archive.ph/2023.08.06-220550/https://whinge.town/notice/AYRc8jFNLiVczKvKr2#selection-8031.56-8031.62), [more racism](https://web.archive.org/web/20230806215920/https://whinge.town/notice/AYRgdl4uzRV9Sh5GOe), [even more racism](https://web.archive.org/web/20230810043814/https://whinge.town/notice/AYWeC172YMlUxsWJe4).
+: [Ableist misogyny](https://web.archive.org/web/20230806223813/https://whinge.town/notice/AXq0Y0n2HDzVWsmOMi).
 : Both instances were set up by the same user ([confirmation 1](https://web.archive.org/web/20230806224027/https://whinge.house/notice/ARzsikv2kOK3V5JaWO), [confirmation 2](https://web.archive.org/web/20230806224027/https://freespeechextremist.com/notice/ARzRYo4L2sPkJv1E2a)), who mains on the former.
 
 {{</ nofollow >}}
