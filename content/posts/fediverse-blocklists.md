@@ -420,8 +420,9 @@ narrativerry.xyz
 : Admin posts [blatant anti-Indian racism](https://web.archive.org/web/20230808151934/https://pleroma.narrativerry.xyz/notice/AY8awZ3lCW2pXp6TWi).
 : Admin [combines antisemitic conspiracy theories, homophobia, and racism in a slur-filled thread](https://web.archive.org/web/20230808153236/https://annihilation.social/notice/AXyTzERY59CX89mqn2).
 
-needs.vodka
+shortstacksran.ch OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
+: shortstacksran.ch is the continuation of squid.kids and shortstackran.ch (note the extra "s"), by the same admin. [See prior FediBlock post](https://pleroma.envs.net/notice/ARU20uCgVwHeewEm6S). On the new instance, the admin posts [extremely racist use of slurs](https://web.archive.org/web/20230811200737/https://shortstacksran.ch/notice/AYbjnyIOQ5ZYOpQtaC), and [racist antisemitism](https://web.archive.org/web/20230811200824/https://shortstacksran.ch/notice/AYbeUcILUiKOtOMWVE).
 
 nicecrew.digital
 : [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
