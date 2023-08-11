@@ -78,6 +78,10 @@ If `tier0.csv` were merely an unbiased list of the most widely blocked instances
 
 Some instances migrate their domains. If the old instance was already deemed worthy of a suspension and the new instance maintains the same staff with no visible attempt to change its reputation, then I deem the new location to be as block-worthy as the old location and make an override. It's the same bad actors under a different banner.
 
+### Refreshing
+
+**Refreshes are a manual process.** Refreshes update my tier-0 list, but do not update FediNuke; that list is a manually-curated subset of my tier-0 list. Every time I refresh, I get prompted with changes (if they exist) so I can review them. Since my tier-0 is a subset of the pleroma.envs.net blocklist, all additions should have some level of approval from me already, but I've started giving new additions a second look anyway. Manual review, subsetting the pleroma.envs.net blocklist, having a large number of bias sources, and some level of vetting for my bias sources should mitigate the risk of one bias source "going rogue" and compromising its blocklist right before a refresh.
+
 ### Retractions
 
 A separate list exists for retractions from my tier0.csv list. I don't add entries to my retractions list when I remove dead instances, or when an admin on a removed instance prefers not to be included in it (some wish to remain less prominent).
