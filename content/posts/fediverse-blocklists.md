@@ -190,7 +190,7 @@ Criteria for a good FediNuke receipt is stricter than the aforementioned criteri
 
 
 13bells.com
-: Admin posts [Sandy Hook school shooting conspiracy theories](https://archive.ph/dT9Am), [transphobia](https://archive.ph/Km8Ju).
+: Admin posts [Sandy Hook school shooting conspiracy theories](https://archive.ph/dT9Am), [transphobia](https://archive.ph/Km8Ju), and [queerphobia](https://web.archive.org/web/20230810193444/https://13bells.com/@amiko/110810353137172742).
 
 1611.social
 : [antisemitism from admin](https://web.archive.org/web/20230628203218/https://1611.social/@tyler/posts/AX9r68rwjhEQzMKJbU), [anti-vax from admin](https://archive.li/qFhQQ) with other local members, [antisemitic caricature from admin](https://archive.ph/3wIRL).
@@ -204,7 +204,9 @@ Criteria for a good FediNuke receipt is stricter than the aforementioned criteri
 : ["About" page](https://web.archive.org/web/20230804225043/https://5dollah.click/about) lists no rules.
 
 adachi.party
-: The instance in question is on the "pleroma" subdomain. Its "about" page has the "Kill, behead, roundhouse kick" copypasta with racial slurs. [Archived "about" page](https://archive.ph/muPe1). Later updated rules to include ["must advocate for racism/fascism/nazism"](https://archive.ph/6Tpq5). [Admin posts racist transphobia](https://web.archive.org/web/20230730175847/https://pleroma.adachi.party/notice/AYAMup3aR6WhWwuHXU).
+: The instance in question is on the "pleroma" subdomain. Its "about" page has the "Kill, behead, roundhouse kick" copypasta with racial slurs. [Archived "about" page](https://archive.ph/muPe1).
+: Later updated rules to include ["must advocate for racism/fascism/nazism"](https://archive.ph/6Tpq5).
+: [Admin posts racist transphobia](https://web.archive.org/web/20230730175847/https://pleroma.adachi.party/notice/AYAMup3aR6WhWwuHXU), [mass-tags other users with blatant racism](https://web.archive.org/web/20230811042822/https://pleroma.adachi.party/notice/AYbC2xyPJdrZH05CWO).
 
 annihilation.social OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
@@ -515,6 +517,7 @@ baraag.net
 
 berserker.town
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
+: Permissive policies have made space for [anti-diversity eugenics dogwhistles](http://archive.today/2023.08.10-192342/https://berserker.town/@mayonesa/110730803970638239) evolving into [xenophobic eugenics](https://web.archive.org/web/20230810192310/https://berserker.town/@mayonesa/110667720613227224).
 
 bungle.online
 : [Racial slurs from admin](https://web.archive.org/web/20230731203927/https://pleroma.mercurial.blog/notice/AYEijPLGfx2ZMOHK76), [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh).
