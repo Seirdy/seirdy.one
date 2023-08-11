@@ -41,17 +41,17 @@ This post is an attempt to document how they are made, their differences, their 
 
 ## How Tier-0 and FediNuke work
 
-[My tier-0 list](https://seirdy.one/pb/tier0.csv) (mirrored to `tier0.csv` in [the Oliphant repository](https://codeberg.org/oliphant/blocklists)) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **11 out of 20** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
+[My tier-0 list](https://seirdy.one/pb/tier0.csv) (mirrored to `tier0.csv` in [the Oliphant repository](https://codeberg.org/oliphant/blocklists)) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **13 out of 24** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
-When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 11 instead of 10.
+When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 13 instead of 12.
 
 All entries use the root domains when applicable, or are as close to the root domain as possible without triggering false-positives.
 
 ### Overrides
 
-There were some block-overrides for instances with fewer than 11 votes. Here's how I went about overriding:
+There were some block-overrides for instances with fewer than 13 votes. Here's how I went about overriding:
 
-- If an instance has **10 votes,** I may elect to add it after additional review instead of waiting for it to hit 11 votes. It still has 50% consensus at that point.
+- If an instance has **11 votes,** I may elect to add it after additional review instead of waiting for it to hit 13 votes.
 - If an instance is run by **the same staff as another Tier-0 instance** and has **at least 5 votes,** I may add it after asking other admins about it and getting multiple thumbs-up from admins who import tier-0.
 - If an instance contains **blatant/unapologetic bigotry** (something really undeniable, like Nazi imagery or excessive use of slurs in violent/hateful/definitely-not-reclaimed contexts) with staff approval or involvement, I may add it to both tier-0 and `FediNuke.txt` after I get multiple thumbs-up.
 - If an instance becomes **risky even to many tier-0 instances** (untagged gore, dox attempts, significant cybersecurity risk, <abbr title="child sexual exploitation material">CSEM</abbr>, etc. with staff approval or involvement): I may add it to both right away, skipping any process.
@@ -80,7 +80,7 @@ Some instances migrate their domains. If the old instance was already deemed wor
 
 ### Refreshing
 
-**Refreshes are a manual process.** Refreshes update my tier-0 list, but do not update FediNuke; that list is a manually-curated subset of my tier-0 list. Every time I refresh, I get prompted with changes (if they exist) so I can review them. Since my tier-0 is a subset of the pleroma.envs.net blocklist, all additions should have some level of approval from me already, but I've started giving new additions a second look anyway. Manual review, subsetting the pleroma.envs.net blocklist, having a large number of bias sources, and some level of vetting for my bias sources should mitigate the risk of one bias source "going rogue" and compromising its blocklist right before a refresh.
+**Refreshes are a manual process.** Refreshes update my tier-0 list, but do not update FediNuke; that list is a manually-curated subset of my tier-0 list. Every time I refresh, I get prompted with changes (if they exist) so I can review them. Since my tier-0 is a subset of the `pleroma.envs.net` blocklist, all additions should have some level of approval from me already, but I've started giving new additions a second look anyway. Manual review, subsetting the `pleroma.envs.net` blocklist, having a large number of bias sources, and some level of vetting for my bias sources should mitigate the risk of one bias source "going rogue" and compromising its blocklist right before a refresh.
 
 ### Retractions
 
@@ -127,7 +127,7 @@ Importing `FediNuke.txt` and then individually importing `tier0.csv` entries aft
 
 Another option is to use some text-processing tools to find entries that are common between Tier-0 and another trusted instance's blocklist. You can import the overlap.
 
-Finally, you could just do something else entirely. I never use "your blocklist is different from mine" as a block-reason; even "totally open federation" is never the sole reason for `pleroma.envs.net` suspending an instance. Suspending instances for not using my own blocklist feels wrong.
+Finally, you could just do something else entirely. I never use "your blocklist is different from mine" as a block-reason; even "totally open federation" is never the sole reason for `pleroma.envs.net` suspending an instance. Suspending instances for not using my own blocklist feels wrong; it'd turn these lists into a source of authority and cross the line from moderation to cop behavior.
 
 Before you decide to trust one of my lists, please read the "Mistakes made" section.
 
