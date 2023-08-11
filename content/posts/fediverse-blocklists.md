@@ -170,9 +170,17 @@ Some supplementary blocklists I maintain with very different criteria:
 
 The following are receipts for instances on my blocklists. Read the text surrounding a link before navigating to it, and let that context serve as a content-warning. No links point directly to the blocked instance; all go to a third-party archiving service.
 
-Receipts are biased towards patterns in staff behavior or pervasive patterns among users with staff approval, as that generally won't be solved with a federated report. A one-off user action taken out of context, without any sign of staff endorsement, isn't enough to end up on one of these lists because it's not indicative of an instance's moderation policies. The one exception is receipts for legally risky media: I don't publish receipts for those, but it should be easy to verify them if you need to.
-
 I use archive links instead of screenshots. Screenshots pose accessibility issues, can be doctored, and are easy to take out of context.
+
+### Receipt criteria
+
+Receipts are biased towards patterns in staff behavior or pervasive patterns among users with staff approval, as that generally won't be solved with a federated report. A one-off user action taken out of context, without any sign of staff endorsement, isn't enough to end up on one of these lists because it's not indicative of an instance's moderation policies.
+
+Receipts revolving around slur usage depend on context. Slurs used in reclaimed contexts aren't grounds for defederation. Patterns of slur usage in discriminatory contexts would warrant adding a receipt. I'm a native English speaker, so I mainly consider English slurs. I give the benefit of doubt to users who aren't native English speakers when using English slurs, depending on context. When I'm unsure, I ask for feedback from other mods from the relevant marginalized group.
+
+Some receipts aren't reasons to block, but exist to contextualize other receipts. For example: I may mention that an instance has open-registration only to highlight that the instance's moderation policies will allow additional bad actors in the future.
+
+One exception is receipts for legally risky media (e.g. sexual depictions of minors): I don't publish archive links for those. It should be easy to verify them yourself if you need to; I'll provide a user handle if necessary.
 
 <details open=""><summary>Toggle receipts</summary>
 
@@ -181,7 +189,7 @@ I use archive links instead of screenshots. Screenshots pose accessibility issue
 Criteria for a good FediNuke receipt is stricter than the aforementioned criteria:
 
 - Reblogs are only significant if they are from a staff member and are boosting local users. They are mentioned alongside other receipts to indicate that the content in question is permitted by staff.
-- Each instance must have multiple receipts.
+- Each instance must have multiple receipts. I'm working towards getting at least three receipts for most instances.
 - For larger instances: receipts must show staff behavior, or show consistent behavior from several users.
 
 **This section is a work-in-progress,** and it will grow with time.
@@ -526,6 +534,8 @@ crlf.ninja
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
 federated.fun
+
+
 wikileaks2.org
 : [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw). Admin profile [pinned an extremely transphobic post](https://web.archive.org/web/20230805061250/https://ryona.agency/notice/AYMq4VFzPr2yEcvG3k).
 : Admin [switched to running misinformation.wikileaks2.org instead](https://web.archive.org/web/20230810182335/https://misinformation.wikileaks2.org/notice/AYVR3y1faCJhhpwhjk).
