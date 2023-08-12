@@ -313,8 +313,9 @@ fluf.club
 : [Transphobia from admin](http://archive.today/2023.08.02-003048/https://freesoftwareextremist.com/notice/AYHzC307R2T8F9hpI0), [more transphobia](https://web.archive.org/web/20230802003149/https://eientei.org/notice/AYEuW35LVZ48XYOXPk), [transphobic sui-bait](https://web.archive.org/web/20230802003447/https://shitposter.club/notice/AYEKwm6THNpfFCVjm4).
 : The [instance "about" page](https://web.archive.org/web/20230805192514/https://fluf.club/about) recommends freespeechextremist.com and kiwifarms.cc as instances "with similar moderation policies"; both those instances are on FediNuke with receipts.
 
-freak.university
+freak.university OR pedo.school
 : Instance known for permitting paraphilia including pedophilia, and also explicitly allows minors (13+ although [that limit may be lowered](https://archive.today/2023.08.02-041801/https://freak.university/@headmasters/110743455953705070)). Scroll through local users on `/directory` for more receipts.
+: pedo.school [has identical rules on its "About" page](http://archive.today/2023.06.10-032721/https://pedo.school/about). Instance contains untagged sexual depictions of minors and multiple self-described "pro-c" users; scroll through local users on `/directory` for more receipts.
 
 freeatlantis.com
 : Far-right MAGA instance.
@@ -421,6 +422,11 @@ narrativerry.xyz
 : Admin posts [blatant anti-Indian racism](https://web.archive.org/web/20230808151934/https://pleroma.narrativerry.xyz/notice/AY8awZ3lCW2pXp6TWi).
 : Admin [combines antisemitic conspiracy theories, homophobia, and racism in a slur-filled thread](https://web.archive.org/web/20230808153236/https://annihilation.social/notice/AXyTzERY59CX89mqn2).
 
+nobodyhasthe.biz
+: ["About" page](https://web.archive.org/web/20230812043648/https://pleroma.nobodyhasthe.biz/about) lists multiple admins and mods with swastikas in their display names and/or profile photos.
+: [Admin "ShariVegas" is an unapologetic white supremacist](https://web.archive.org/web/20230812044221/https://pleroma.nobodyhasthe.biz/notice/AXrR8x4yddPB9nEKrQ) and [antisemite](http://archive.today/2023.08.12-044406/https://pleroma.nobodyhasthe.biz/objects/d1ce538f-3788-448c-a74f-7e2ab7a4db75).
+: [Admin "thomaslewis" makes fun of a report against a blatantly racist user](https://web.archive.org/web/20230812044743/https://pleroma.nobodyhasthe.biz/notice/APJkc4Ju9vntVMVLiy) while adding a homophobic and antisemitic slur of his own.
+
 shortstacksran.ch OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 : shortstacksran.ch is the continuation of squid.kids and shortstackran.ch (note the extra "s"), by the same admin. [See prior FediBlock post](https://pleroma.envs.net/notice/ARU20uCgVwHeewEm6S). On the new instance, the admin posts [extremely racist use of slurs](https://web.archive.org/web/20230811200737/https://shortstacksran.ch/notice/AYbjnyIOQ5ZYOpQtaC), and [racist antisemitism](https://web.archive.org/web/20230811200824/https://shortstacksran.ch/notice/AYbeUcILUiKOtOMWVE).
@@ -440,7 +446,7 @@ noagendasocial.nl OR noagendatube.com
 
 norwoodzero.net
 : Admin [pedojackets in a transphobic harassment campaign](https://web.archive.org/web/20230803155542/https://norwoodzero.net/notice/AYME53gDdYuiYrDxtQ).
-: Admin [invites others users for the purpose of harassing trans users](https://web.archive.org/web/20230807201105/https://norwoodzero.net/notice/AYTiBWAQFwxg3WuJv6).
+: Admin [invites others users for the purpose of harassing trans users](https://web.archive.org/web/20230807201105/https://norwoodzero.net/notice/AYTiBWAQFwxg3WuJv6). [Another example, using the fact that the instance is "barely defederated" as a selling point](https://web.archive.org/web/20230812041051/https://norwoodzero.net/notice/AYdS8m9yyTQAKCUfy4).
 : [Instance "about" page](https://web.archive.org/web/20230803160235/https://norwoodzero.net/about) contains racial slurs and an animated banner that says "whites only".
 
 nyanide.com
@@ -570,6 +576,7 @@ occultist.space OR enjoyer.network
 shitposter.club
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84).
 : [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD).
+: User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
 : [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
 : User "coolboymew" rants about [how misgendering and pronouns shouldn't be taken seriously because they're "politically charged"](https://web.archive.org/web/20230806033734/https://shitposter.club/notice/AYQepfaGcVJsd2NyZE).
 : [Some more racism from user "triodug"](http://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
