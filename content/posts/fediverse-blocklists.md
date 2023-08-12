@@ -277,6 +277,7 @@ clew.lol
 
 clubcyberia.co
 : Instance [features anti-black emotes](https://web.archive.org/web/20230730220345/https://clubcyberia.co/notice/AY9kBc1YiuBfP9TVgG). Users such as "Inginsub" often [post blatant racism](https://web.archive.org/web/20230730221532/https://clubcyberia.co/notice/AXSJ3fIo5mMORrLYPY). Hosts [a KiwiFarms staff member](https://web.archive.org/web/20230730222042/https://clubcyberia.co/users/crunklord420).
+: Staff member [publicizes reports against extremely transphobic harassment](http://archive.today/2023.08.12-014232/https://clubcyberia.co/notice/AYdQ5Rt3vLgaXzqVtY) in a reply to said harassment (YWNBAW-like copypasta).
 
 crucible.world
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
@@ -505,6 +506,11 @@ strelizia.net
 : Admin [posts anti-Black racism](https://web.archive.org/web/20230808164722/https://strelizia.net/notice/AYFGEQcTnNSkcuIa36), [more blatant racism](https://web.archive.org/web/20230808164433/https://strelizia.net/notice/AY6JupLlwAlUJpprvc), and [some other slurs in non-reclaimed contexts](https://web.archive.org/web/20230808165632/https://strelizia.net/notice/AYCHMhIdT8w6L2YvD6)
 : Local user "nikiboo" posts [blatant anti-Black racism](https://web.archive.org/web/20230808181414/https://strelizia.net/notice/AXrIC2vJqLE5c296ps) (re-blogged by admin), has a profile photo with Nazi imagery.
 
+thechimp.zone
+: Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
+: Admin [participates in queerphobic harassment](https://web.archive.org/web/20230812013407/https://thechimp.zone/notice/AYXFLeLaNjVnI4GewK).
+: [Admin profile contains racial slurs](https://web.archive.org/web/20230718054535/https://thechimp.zone/users/thegreatape).
+
 usualsuspects.lol
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
 
@@ -538,10 +544,7 @@ bungle.online
 crlf.ninja
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
-federated.fun
-
-
-wikileaks2.org
+federated.fun OR wikileaks2.org
 : [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw). Admin profile [pinned an extremely transphobic post](https://web.archive.org/web/20230805061250/https://ryona.agency/notice/AYMq4VFzPr2yEcvG3k).
 : Admin [switched to running misinformation.wikileaks2.org instead](https://web.archive.org/web/20230810182335/https://misinformation.wikileaks2.org/notice/AYVR3y1faCJhhpwhjk).
 
