@@ -471,8 +471,9 @@ poast.org OR poast.tv
 poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq), and [makes racist homophobic slur-filled anti-antifa posts](https://web.archive.org/web/20230803191342/https://poster.place/notice/AYKzM8YDhgDVhxcsaG). Instance header contains an animated GIF full of slurs.
 
-rapemeat.solutions
-: The successor to hentai.baby, run by its admin. hentai.baby was known for posting real CSA material. Openly pro-CSA. Has drawn nudity in the instance background.
+rapemeat.solutions OR rapemeat.express
+: rapemeat.solutions is the successor to hentai.baby, run by its admin. hentai.baby was known for posting real CSA material. Openly pro-CSA. Has drawn nudity in the instance background.
+: rapemeat.express is the more public counterpart to rapemeat.solutions according to [its "About" page](https://web.archive.org/web/20230813060551/https://rapemeat.express/about).
 
 rayci.st
 : [Admin posts racial slurs](https://web.archive.org/web/20230810044615/https://clubcyberia.co/notice/AYPi3VK6AH4GUHkRua), [anti-Indian racism](https://web.archive.org/web/20230810045450/https://rayci.st/notice/AXmZFe2pzEX2de5ZfE), [anti-Black racist use of slurs](https://web.archive.org/web/20230810045536/https://rayci.st/notice/AXj1aII05WxPKYyaC8), and [some antisemitism](https://web.archive.org/web/20230810050100/https://shitposter.club/notice/AXtq0w1YWMAapYudxQ).
