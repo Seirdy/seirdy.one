@@ -35,7 +35,7 @@ I maintain three main blocklists for the Fediverse:
 
 Some of these lists are also sources for the Oliphant blocklists. {{<mention-work itemtype="BlogPosting">}}{{<indieweb-person name="Oliphant" url="https://oliphant.social/@Oliphant" itemprop="author">}} describes them in his article {{<cited-work name="The Blocklist Algorithm" extraName="headline" url="https://writer.oliphant.social/oliphant/the-blocklist-algorithm">}}.{{</mention-work>}}
 
-This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats.
+This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats. It also contains a work-in-progress list of receipts for instances in FediNuke and my Tier-0.
 
 {{<toc>}}
 
@@ -395,7 +395,7 @@ lolicon.rocks
 
 marsey.moe
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb).
-: [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G)
+: [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G), [blatantly transphobic jokes](http://archive.today/2023.08.12-192245/https://marsey.moe/notice/AYduTzUXJ5bwlIBkQK).
 
 merovingian.club
 : [Instance "About" page](https://web.archive.org/web/20230805223728/https://merovingian.club/about/more) bills it as "a club for redpilled exiles".
@@ -426,6 +426,7 @@ nobodyhasthe.biz
 : ["About" page](https://web.archive.org/web/20230812043648/https://pleroma.nobodyhasthe.biz/about) lists multiple admins and mods with swastikas in their display names and/or profile photos.
 : [Admin "ShariVegas" is an unapologetic white supremacist](https://web.archive.org/web/20230812044221/https://pleroma.nobodyhasthe.biz/notice/AXrR8x4yddPB9nEKrQ) and [antisemite](http://archive.today/2023.08.12-044406/https://pleroma.nobodyhasthe.biz/objects/d1ce538f-3788-448c-a74f-7e2ab7a4db75).
 : [Admin "thomaslewis" makes fun of a report against a blatantly racist user](https://web.archive.org/web/20230812044743/https://pleroma.nobodyhasthe.biz/notice/APJkc4Ju9vntVMVLiy) while adding a homophobic and antisemitic slur of his own.
+: [Moderator "BobRoss" has a bio starting with <q>Spreading the joy of antisemitism</q>](https://web.archive.org/web/20230812191733/https://pleroma.nobodyhasthe.biz/BobRoss) and encourages calling users slurs instead of reporting as <q>an integral part of the culture around here</q>.
 
 shortstacksran.ch OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
@@ -517,6 +518,11 @@ thechimp.zone
 : Admin [participates in queerphobic harassment](https://web.archive.org/web/20230812013407/https://thechimp.zone/notice/AYXFLeLaNjVnI4GewK).
 : [Admin profile contains racial slurs](https://web.archive.org/web/20230718054535/https://thechimp.zone/users/thegreatape).
 
+thenobody.club
+: Admin [participates in a transmisogynistic harassment campaign](https://web.archive.org/web/20230813033821/https://member.thenobody.club/notice/AYfZzC36XOLSbL4MyG).
+: [Racist and antisemitic use of slurs from admin](https://web.archive.org/web/20230813034819/https://member.thenobody.club/notice/AXwUlbbBVMnzu6VzG4), along with some heavy xenophobia shortly after.
+: [More racist xenophobia from admin](https://web.archive.org/web/20230813034920/https://member.thenobody.club/notice/AXsHtsJBBeQG0YrmBU).
+
 usualsuspects.lol
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
 
@@ -524,6 +530,11 @@ varishangout.net
 : Instance permits lolicon/shotacon. [sample non-graphic thread containing queerphobia, esp. transphobia, with staff involvement](https://web.archive.org/web/20230729223647/https://varishangout.net/notice/AYBv4A9bwrZXfu0Hho), [another such thread](https://web.archive.org/web/20230729225002/https://varishangout.net/notice/AYBmTghTBGJaGbw9zM).
 : [Staff member being openly transphobic](https://web.archive.org/web/20230729234932/https://varishangout.net/notice/AYAXPrAAe2y35X7JFQ).
 : [Several members participating in transphobic harassment](https://web.archive.org/web/20230730232126/https://varishangout.net/notice/AY7wuahlngicOwhlxo).
+
+vtuberfan.social
+: Racism and other hate-speech, CW for unmarked nudity in profile pictures and banners.
+: [Admin "Sivee" posts blatant racism](https://web.archive.org/web/20230726201042/https://vtuberfan.social/notice/AY0Vl0GncaKuVuYFwe), and local user "Saige" replies with violent racist bait. Sivee likely went by the same handle on `seal.cafe`.
+: Saige [posts homophobic bait](https://web.archive.org/web/20230726201224/https://vtuberfan.social/notice/AY1h5fIkwcCpslSSlU).
 
 wolfgirl.bar
 : Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c). [Sends Nazi imagery with racial slurs to Jewish users](https://archive.ph/YaGJ7).
