@@ -380,7 +380,8 @@ kiwifarms.cc
 : The official occasionally-online [KiwiFarms](https://www.cnet.com/culture/internet/kiwi-farms-what-to-know-about-the-hate-filled-message-forum-dropped-by-cloudflare/) Fediverse instance. Look up "KiwiFarms" online if you want receipts. It briefly came back once after a long period of downtime, so I'm not removing it during the current downtime.
 
 kyaruc.moe
-: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM), [racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy).
+: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM). Later changed their mind, got mad about being on it, and [publicized a dox](https://web.archive.org/web/20230813204417/https://boymoder.biz/notice/AYh9JolXzLgzlb9XGq).
+: [Racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy)
 
 leafposter.club
 : [Blatant antisemitism and queerphobia](https://web.archive.org/web/20230731051338/https://cawfee.club/notice/AVS1llk6NOrAVPAB60), [SWERF](https://web.archive.org/web/20230731050932/https://leafposter.club/@Upsman/posts/AVS1ImJqDW5yEPcgwi), [blatant racist use of slurs](https://web.archive.org/web/20230731051017/https://leafposter.club/@Leaflord/posts/AVS04CFlPbegMpCOP2).
@@ -478,6 +479,11 @@ rapemeat.solutions OR rapemeat.express
 rayci.st
 : [Admin posts racial slurs](https://web.archive.org/web/20230810044615/https://clubcyberia.co/notice/AYPi3VK6AH4GUHkRua), [anti-Indian racism](https://web.archive.org/web/20230810045450/https://rayci.st/notice/AXmZFe2pzEX2de5ZfE), [anti-Black racist use of slurs](https://web.archive.org/web/20230810045536/https://rayci.st/notice/AXj1aII05WxPKYyaC8), and [some antisemitism](https://web.archive.org/web/20230810050100/https://shitposter.club/notice/AXtq0w1YWMAapYudxQ).
 : [Admin spams the MutualAid guppe group with shock content](https://web.archive.org/web/20230810045712/https://rayci.st/notice/AXcsEwPnK89XXciiRc).
+
+rebelbase.site
+: Admin [posts blatant transphobia](https://web.archive.org/web/20230814024949/https://rebelbase.site/notice/AX6t2x7AChyiuhFUsy), [posts more thinly-veiled transphobia](https://web.archive.org/web/20230814023544/https://rebelbase.site/notice/AYhQJk2zbUcyGiH82i), [insists on misgendering](https://web.archive.org/web/20230814025301/https://rebelbase.site/notice/AX1YsLPgYHR6DQmEgS).
+: Admin is [anti-abortion](https://web.archive.org/web/20230814023633/https://rebelbase.site/notice/AYSDZeztvwDeSsgsbY), [identifies as an MRA](https://web.archive.org/web/20230814023557/https://rebelbase.site/notice/AYfMikFnBX2q120e1Y).
+: Elsewhere on the site is a user who posts [COVID denial](https://web.archive.org/web/20230603013809/https://rebelbase.site/notice/ACAQrNpLxyWyYvDpke), [anti-vax with a side of queerphobia and Islamophobia](https://web.archive.org/web/20230814030006/https://rebelbase.site/@Bram_Christiaens/posts/AR4TNA8GFndIBMEfz6).
 
 ryona.agency OR plagu.ee
 : Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint).
