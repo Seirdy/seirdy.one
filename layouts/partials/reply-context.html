@@ -7,7 +7,7 @@
 	{{- $replyAuthorType = . -}}
 {{- end -}}
 {{- $replyAuthorRel := "author" -}}
-{{- if eq $replyAuthorType "Organization" -}}
+{{- if in $replyAuthorType (slice "Organization" "NewsMediaOrganization") -}}
 	{{- $replyAuthorRel = "publisher" -}}
 {{- end -}}
 <aside role="note">
