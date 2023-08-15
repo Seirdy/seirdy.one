@@ -370,9 +370,6 @@ h5q.net
 iddqd.social
 : Admin posts [anti-Black caricatures](https://archive.ph/1dIUL), supports [organized predatory retaliation against DEI efforts](https://archive.ph/PfHYX). [Instance landing page](https://archive.ph/0JlGl) markets itself as an instance for 4chan users.
 
-kawa-kun.net
-: Instance [rejects deletes](https://web.archive.org/web/20230731050219/https://bbs.kawa-kun.com/about). (unfinished entry)
-
 kitsunemimi.club
 : [Admin "bronze" participates in racist harassment](https://web.archive.org/web/20230731183425/https://needs.vodka/notice/AYFCFHRqKX6RjsF7Fw), sends users [transphobic shock content](https://web.archive.org/web/20230731184313/https://pl.kitsunemimi.club/notice/AYG5j6YeP0wZI1jaPw). Runs the [HighRoller MRF policy](https://web.archive.org/web/20230731183641/https://pl.kitsunemimi.club/about) for a block-notification bot.
 
@@ -515,6 +512,9 @@ skinheads.social OR skinheads.eu
 skinheads.uk OR skinheads.io
 : Alternate domains for The Antisocial Network.
 
+spinster.xyz
+: (unfinished entry) TERF instance created by Alex Gleason, admin of gleasonator.com; see its entry.
+
 strelizia.net
 : Instance "About" page [lists MRF policies to reject deletes and run a block-notification bot](https://web.archive.org/web/20230808161017/https://strelizia.net/about).
 : Admin [posts anti-Black racism](https://web.archive.org/web/20230808164722/https://strelizia.net/notice/AYFGEQcTnNSkcuIa36), [more blatant racism](https://web.archive.org/web/20230808164433/https://strelizia.net/notice/AY6JupLlwAlUJpprvc), and [some other slurs in non-reclaimed contexts](https://web.archive.org/web/20230808165632/https://strelizia.net/notice/AYCHMhIdT8w6L2YvD6)
@@ -584,6 +584,9 @@ freesoftwareextremist.com
 
 freetalklive.com
 : [Instance "about" page](https://web.archive.org/web/20230802051117/https://social.freetalklive.com/about) self-identifies as unmoderated, except for spam. Connected to the libertarian Free Talk Live show.
+
+kawa-kun.net
+: Instance [rejects deletes](https://web.archive.org/web/20230731050219/https://bbs.kawa-kun.com/about). (unfinished entry)
 
 kompost.cz
 : [Racism](https://ghostarchive.org/archive/cWEbG), [more racism](https://web.archive.org/web/20230804231946/https://kompost.cz/@fuxoft/110656548914018074), [transphobia](https://web.archive.org/web/20230804232125/https://kompost.cz/@fuxoft/110321506728744090), [queerphobia](https://ghostarchive.org/archive/Nmop2). All from admin.
