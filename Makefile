@@ -14,7 +14,7 @@ GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
 SSHFLAGS = -o KexAlgorithms=sntrup761x25519-sha512@openssh.com
-RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3 -e "ssh $(SSHFLAGS)" --chmod=D755,F644
+RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3/gif/ico -e "ssh $(SSHFLAGS)" --chmod=D755,F644
 RSYNCFLAGS_EXTRA ?=
 # compression gets slow for extreme levels like the old "70109"
 ECT_LEVEL=9
