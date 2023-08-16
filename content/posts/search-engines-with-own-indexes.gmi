@@ -70,10 +70,6 @@ These are large engines that pass all my standard tests and more.
 
 4. Mojeek: Seems privacy-oriented with a large index containing billions of pages. Quality isn’t at Google/Bing/Yandex’s level, but it’s not bad either. If I had to use Mojeek as my default general search engine, I’d live. Partially powers eTools.ch. At this moment, I think that Mojeek is the best alternative to GBY for general web search.
 
-5. Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns: its privacy policy describes advanced fingerprinting metrics, and it doesn't work without JavaScript. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively.
-
-=> https://petalsearch.com/  petalsearch.com
-
 Google, Bing, and Yandex support structured data such as microformats1, microdata, RDFa, Open Graph markup, and JSON-LD. Yandex's support for microformats1 is limited; for instance, it can parse h-card metadata for organizations but not people. Open Graph and Schema.org are the only supported vocabularies I'm aware of. Mojeek is evaluating structured data; it's interested in Open Graph and Schema.org vocabularies.
 
 ### Smaller indexes or less relevant results
@@ -177,7 +173,8 @@ Slzii.com: A new web portal with a search engine. Has a tiny index dominated by 
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.
 
-* Brave Search: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.¹⁰ The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100%) but can drop for advanced queries.
+* Brave Search: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.¹⁰ The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100%) but can drop for advanced queries. (update: Brave's Bing contract appears to have expired as of April 2023).
+I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has held payments to creators without disclosing that creators couldn't receive rewards, has made dangerously misleading claims about fingerprinting resistance (will update with a link to my thoughts on the matter), is run by a CEO who spent thousands of dollars opposing gay marriage, and has rewritten typed URLs with affiliate links.
 
 => https://search.brave.com/ Brave Search
 
@@ -202,11 +199,12 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 ### Small/non-commercial Web
 
 * Marginalia Search: A recent addition similar to Wiby, and *my favorite entry on this page*. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. Update 2022-05-27: Marginalia.nu is now open source
-* Teclis: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as microformats, microdata, and RDFa. It claims to also use some results from Marginalia. This has been down for maintenance for a while; I may end up having to move it to the Graveyard section.
+* Teclis: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as microformats, microdata, and RDFa. It claims to also use some results from Marginalia. The Web interface has been shut down, but its standalone API is still available for Kagi customers.
 
 => https://search.marginalia.nu/ search.marginalia.nu
 => https://memex.marginalia.nu/log/58-marginalia-open-source.gmi Announcement: marginalia.nu goes open source
 => http://teclis.com/ Teclis
+=> https://kagifeedback.org/d/1838-teclis-is-broken Teclis free version shutdown notice
 
 ### Site finders
 
@@ -336,6 +334,9 @@ Time for my first Gemini-exclusive content! A Gemini page about search engines w
 ## Graveyard
 
 These engines were originally included in the article, but have since been discontinued.
+
+* Petal search: A search engine by Huawei that recently switched from searching for Android apps to general search. Despite its surprisingly good results, I wouldn't recommend it due to privacy concerns: its privacy policy describes advanced fingerprinting metrics, and it doesn't work without JavaScript. Requires an account to submit sites. I discovered this via my access logs. Be aware that in some jurisdictions, it doesn't use its own index: in Russia and some EU regions it uses Yandex and Qwant, respectively. Inaccessible as of June 2023.
+=> https://web.archive.org/web/20230118225122/https://www.petalsearch.com/  petalsearch.com
 
 * Neeva: formerly in the "semi-independent" section. Combined Bing results with results from its own index. Bing normally isn't okay with this, but Neeva was one of few exceptions. Results were mostly identical to Bing, but original links not found by Bing frequently popped up. Long-tail and esoteric queries were less likely to feature original results. Required signing up with an email address or OAuth to use, and offered a paid tier with additional benefits.
 => https://web.archive.org/web/20230528051432/https://neeva.com/blog/may-announcement Neeva shutdown announcement
