@@ -558,6 +558,11 @@ vtuberfan.social
 wolfgirl.bar
 : Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c). [Sends Nazi imagery with racial slurs to Jewish users](https://archive.ph/YaGJ7).
 
+yggdrasil.social
+: The first rule of [the yggdrasil.social "about" page](https://web.archive.org/web/20230819213623/https://yggdrasil.social/about) says "No LGBTQ. Period. No homosexuality" followed by blatant transphobia.
+: [Profile for "Ricotta"](https://web.archive.org/web/20230819214035/https://yggdrasil.social/users/Ricotta), the current most active user, has a swastika in their display name and a bio that includes "National Socialist" and "TERF".
+: [Blatant racism from another user](http://archive.today/2023.08.19-214624/https://yggdrasil.social/notice/AXQJkwOuwrASMJo74C).
+
 {{</ nofollow >}}
 
 ### Tier-0 entries, excluding FediNuke
