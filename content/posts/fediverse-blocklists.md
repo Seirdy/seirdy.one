@@ -522,7 +522,10 @@ spinster.xyz OR neenster.org
 : Staff member [posts blatant transmisogyny](https://ghostarchive.org/archive/6kUM3).
 : Another staff member [openly admits to being a TERF in their profile](http://archive.today/2023.04.13-194916/https://spinster.xyz/@ninapaley).
 : A third staff member [posts a rant against the validity of trans women](http://archive.today/2023.08.16-204546/https://spinster.xyz/notice/AIvseZMWKEEMu5ul96), with several local members piling on in the replies.
-: Neenster shares staff members (Alex Gleason, Nina Paley). The latter [links to a blog with more TERF content](http://archive.today/2023.08.19-204435/https://blog.ninapaley.com/2023/02/07/he-ing-corinna/).
+: Neenster shares staff members (Alex Gleason, Nina Paley). The latter [posts self-described TERF content](https://web.archive.org/web/20230819205253/https://neenster.org/notice/AYlc7DIFkvKPPwgIka) and [links to her blog with more TERF content](http://archive.today/2023.08.19-204435/https://blog.ninapaley.com/2023/02/07/he-ing-corinna/).
+
+nnia.space
+: Paraphile pro-zoo pro-MAP _and pro-contact_ instance that also allows minors. [Pro-C zoosexuality](https://web.archive.org/web/20230819210233/https://nnia.space/@scramblecore/110910301694831861). They try to avoid getting defederated by moving discourse around contact stances to their Matrix servers, but is very clearly full of pro-C individuals and minors alike.
 
 strelizia.net
 : Instance "About" page [lists MRF policies to reject deletes and run a block-notification bot](https://web.archive.org/web/20230808161017/https://strelizia.net/about).
