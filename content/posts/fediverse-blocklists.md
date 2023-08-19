@@ -465,6 +465,9 @@ onionfarms.org
 pawoo.net
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
 
+pieville.net
+: Admin is a white nationalist who [supports building an ethno-state, and genocide](http://archive.today/2023.08.19-214916/https://pieville.net/@Alex_Linder/110882938852628318). [Admin profile](https://web.archive.org/web/20230819215516/https://pieville.net/@Alex_Linder) features more blatant slur-filled racism, antisemitism, etc.
+
 poa.st
 : Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
 
