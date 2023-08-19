@@ -517,11 +517,12 @@ skinheads.social OR skinheads.eu
 skinheads.uk OR skinheads.io
 : Alternate domains for The Antisocial Network.
 
-spinster.xyz
-: TERF instance created by Alex Gleason, admin of gleasonator.com; see its entry. Instance mostly engages in transmisogyny.
+spinster.xyz OR neenster.org
+: Spinster is a TERF instance created by Alex Gleason, admin of gleasonator.com; see its entry. Instance mostly engages in transmisogyny.
 : Staff member [posts blatant transmisogyny](https://ghostarchive.org/archive/6kUM3).
 : Another staff member [openly admits to being a TERF in their profile](http://archive.today/2023.04.13-194916/https://spinster.xyz/@ninapaley).
 : A third staff member [posts a rant against the validity of trans women](http://archive.today/2023.08.16-204546/https://spinster.xyz/notice/AIvseZMWKEEMu5ul96), with several local members piling on in the replies.
+: Neenster shares staff members (Alex Gleason, Nina Paley). The latter [links to a blog with more TERF content](http://archive.today/2023.08.19-204435/https://blog.ninapaley.com/2023/02/07/he-ing-corinna/).
 
 strelizia.net
 : Instance "About" page [lists MRF policies to reject deletes and run a block-notification bot](https://web.archive.org/web/20230808161017/https://strelizia.net/about).
