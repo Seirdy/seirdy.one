@@ -286,7 +286,7 @@ crucible.world
 
 cum.camp OR cum.salon
 : Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://web.archive.org/web/20230730233035/https://marsey.moe/@pernia@cum.salon/posts/AY8crsXbKZHmCIApgu).
-: The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires.
+: The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires; however, [it came back after transferring to Epik](https://web.archive.org/web/20230819012541/https://shitposter.club/notice/AYpWAIw53KQXoohBbM).
 
 decayable.ink
 : Instance is well-known for harassment campaigns.
