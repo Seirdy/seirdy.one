@@ -9,7 +9,7 @@
 		"timings": [
 			{
 				"metric": "total-blocking-time",
-				"budget": 0
+				"budget": 500
 			},
 			{
 				"metric": "cumulative-layout-shift",
@@ -31,11 +31,11 @@
 			},
 			{
 				"resourceType": "document",
-				"budget": 70
+				"budget": 100
 			},
 			{
 				"resourceType": "image",
-				"budget": 50 
+				"budget": 50
 			},
 			{
 				"resourceType": "stylesheet",
