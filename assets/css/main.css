@@ -206,7 +206,9 @@ html {
 	}
 
 	/* A11y: If we have a list of disclosure widgets, we need some
-	 * non-interactive space on the screen that's safe to tap. */
+	 * non-interactive space on the screen that's safe to tap.
+	 * Containment does not include paint because the focus-outline
+	 * will overflow. */
 	details,
 	fieldset,
 	form {
