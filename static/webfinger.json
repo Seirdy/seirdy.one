@@ -252,6 +252,16 @@
 			"type": "text/html"
 		},
 		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://fedoraproject.org/wiki/User:Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://invent.kde.org/seirdy",
+			"type": "text/html"
+		},
+		{
 			"rel": "pgpkey",
 			"type": "application/pgp-keys",
 			"href": "https://seirdy.one/publickey.asc",
