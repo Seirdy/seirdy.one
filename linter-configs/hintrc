@@ -68,6 +68,8 @@
 		"https-only": "error",
 		"sri": "error",
 		"detect-css-reflows": "off",
+		"detect-css-reflows/layout": "off",
+		"detect-css-reflows/paint": "off",
 		"manifest-exists": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
