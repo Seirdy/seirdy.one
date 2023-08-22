@@ -6,6 +6,9 @@ replyTitle: "do you pay to remove ads, or continue to view content while breakin
 replyType: "SocialMediaPosting"
 replyAuthor: "tinfoilhat"
 replyAuthorURI: "https://nzsocial.net/@tinfoilhat"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AYz2rpF6pH4G8dzWGO'
 ---
 
 [There is no such agreement on the web](https://seirdy.one/notes/2022/08/12/user-agents-set-the-terms/):
