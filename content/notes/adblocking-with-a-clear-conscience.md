@@ -9,6 +9,8 @@ replyAuthorURI: "https://nzsocial.net/@tinfoilhat"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AYz2rpF6pH4G8dzWGO'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/8640/adblocking-with-a-clear-conscience'
 ---
 
 [There is no such agreement on the web](https://seirdy.one/notes/2022/08/12/user-agents-set-the-terms/):
