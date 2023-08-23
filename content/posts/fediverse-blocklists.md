@@ -367,6 +367,10 @@ glee.li
 h5q.net
 : Contains untagged AI-generated photorealistic erotic content that may pose a legal risk in several jurisdictions.
 
+haeder.net
+: [Instance blocklist reasons are unapologetically queerphobic](https://web.archive.org/web/20230823231236/https://f.haeder.net/friendica), calling nonbinary individuals "delusional" and saying <q>We don't need more diversity and tollerance when this doesn't fall back on us straight people</q>.
+: [Admin bio](http://archive.today/2023.08.23-235040/https://microblog.social/@roland@f.haeder.net) has blatant transphobia and hashtags such as <q>SayNoToWoke</q>.
+
 iddqd.social
 : Admin posts [anti-Black caricatures](https://archive.ph/1dIUL), supports [organized predatory retaliation against DEI efforts](https://archive.ph/PfHYX). [Instance landing page](https://archive.ph/0JlGl) markets itself as an instance for 4chan users.
 
