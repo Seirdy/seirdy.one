@@ -12,7 +12,7 @@
 {{- end -}}
 <aside role="note">
 <p>
-	Reply to <span class="h-cite in-reply-to" itemprop="about" itemscope="" itemtype="https://schema.org/{{ $schemaType }}">
+	Reply to <span class="h-cite u-in-reply-to" itemprop="about" itemscope="" itemtype="https://schema.org/{{ $schemaType }}">
 		<cite itemprop="name" class="p-name">
 			<a class="u-url" itemprop="url" href="{{ .replyURI }}">{{ .replyTitle | safeHTML}}</a>
 		</cite>{{ if .replyAuthor }} by
