@@ -64,7 +64,6 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 <summary>Pending directories</summary>
 
 - [LinkLane](https://www.linklane.net/) (pending)
-- [Blog Surf](https://blogsurf.io/) (pending)
 
 </details>
 
