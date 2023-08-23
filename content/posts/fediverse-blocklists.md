@@ -474,6 +474,10 @@ poa.st
 poast.org OR poast.tv
 : Instances affiliated with poa.st.
 
+pisskey.io OR sad.cab
+: Graf, admin of poa.st, [also runs (and block-evades from) pisskey.io](http://archive.today/2023.08.23-010514/https://pisskey.io/notes/967qzpya6e), and [sends racist transphobic antisemitic harassment](http://archive.today/2023.08.23-171937/https://pisskey.io/notes/975lgwb22i) from it too.
+: Also [runs sad.cab](http://archive.today/2023.08.23-171431/https://sad.cab/graf).
+
 poster.place
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq), and [makes racist homophobic slur-filled anti-antifa posts](https://web.archive.org/web/20230803191342/https://poster.place/notice/AYKzM8YDhgDVhxcsaG). Instance header contains an animated GIF full of slurs.
 
