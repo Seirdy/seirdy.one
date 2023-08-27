@@ -649,6 +649,12 @@ whinge.town OR whinge.house
 : [Ableist misogyny](https://web.archive.org/web/20230806223813/https://whinge.town/notice/AXq0Y0n2HDzVWsmOMi).
 : Both instances were set up by the same user ([confirmation 1](https://web.archive.org/web/20230806224027/https://whinge.house/notice/ARzsikv2kOK3V5JaWO), [confirmation 2](https://web.archive.org/web/20230806224027/https://freespeechextremist.com/notice/ARzRYo4L2sPkJv1E2a)), who mains on the former.
 
+wideboys.org
+: There used to be an instance on the "social" subdomain, but it shut down. However, there is still a WriteFreely instance on the "blog" subdomain. The instance on the "social" subdomain has been mostly superseded by beefyboys.win.
+: On the root domain is [a wiki describing how this domain is affiliated with beefyboys.win](https://web.archive.org/web/20230827195937/https://wideboys.org/BEEFYBOYS.WIN). The [beefyboys.win "about" page](https://web.archive.org/web/20230827200822/https://beefyboys.win/about) confirms this.
+: Since beefyboys.win is on FediNuke and wideboys.org is part of the same network with staff and member overlap, and wideboys.org still federates on the "blog" subdomain, it's on the list too. But since it only federates via WriteFreely at the time of writing, it looks like a smaller harassment vector so it's demoted to my tier-0 list.
+
+
 {{</ nofollow >}}
 
 </details>
