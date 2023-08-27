@@ -16,8 +16,9 @@ OUTPUT_DIR = public
 SSHFLAGS = -o KexAlgorithms=sntrup761x25519-sha512@openssh.com
 RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3/gif/ico -e "ssh $(SSHFLAGS)" --chmod=D755,F644
 RSYNCFLAGS_EXTRA ?=
-# compression gets slow for extreme levels like the old "70109"
-ECT_LEVEL=9
+# compression gets slow for extreme levels like the old "70109".
+# Diminishing returns after level 6; sometimes even larger files.
+ECT_LEVEL=6
 
 csv/webrings.csv:
 	sh scripts/populate-webrings.sh
@@ -31,14 +32,14 @@ hugo: csv/webrings.csv $(SRCFILES)
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
 .hintrc-local: .hintrc
-	jq --tab '.connector .name = "local" | del(.connector .options)' <linter-configs/hintrc >.hintrc-local
+	jaq --tab '.connector .name = "local" | del(.connector .options)' <linter-configs/hintrc >.hintrc-local
 
 .hintrc-devserver: .hintrc
-	jq --tab '.extends = ["development"] | .hints["http-compression","https-only","ssllabs","sri"] = "off"' <linter-configs/hintrc >.hintrc-devserver
+	jaq --tab '.extends = ["development"] | .hints["http-compression","https-only","ssllabs","sri"] = "off"' <linter-configs/hintrc >.hintrc-devserver
 
 .PHONY: clean
 clean:
-	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports mentions.json data/webmentions.json
+	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports
 
 .PHONY: lint-css
 lint-css: $(CSS_DIR)/*.css
@@ -56,8 +57,8 @@ equal-access:
 
 .PHONY: validate-json
 validate-json:
-	jq -reM '""' $(OUTPUT_DIR)/manifest.min.*.webmanifest 1>/dev/null
-	jq -reM '""' $(OUTPUT_DIR)/webfinger.json 1>/dev/null
+	jaq -re '""' $(OUTPUT_DIR)/manifest.min.*.webmanifest 1>/dev/null
+	jaq -re '""' $(OUTPUT_DIR)/webfinger.json 1>/dev/null
 
 .PHONY: validate-html
 validate-html:
@@ -116,15 +117,6 @@ xhtmlize:
 .PHONY: copy-to-xhtml
 copy-to-xhtml:
 	find $(OUTPUT_DIR) -type f -name "*.html" -exec sh scripts/copy-file-to-xhtml.sh {} \;
-
-# save webmentions to a file, don't send yet
-mentions.json: hugo
-	# gather old version of the site
-	# rsync $(RSYNCFLAGS) --exclude '*.gz' --exclude '*.br' --exclude '*.png' --exclude-from .rsyncignore $(WWW_RSYNC_DEST)/ old
-	static-webmentions -f mentions.json.unfiltered find
-	# filter the webmentions a bit; jq offers more flexibility than config.toml
-	jq '[ .[] | select(.Dest|test("https://(git.sr.ht/~seirdy/seirdy.one/log/master|seirdy.one|web.archive.org|archive.is|en.wikipedia.org|matrix.to|([a-z]*.)?reddit.com|github.com)") | not) ]' <mentions.json.unfiltered >mentions.json
-	rm mentions.json.unfiltered
 
 .PHONY: deploy-html
 deploy-html:

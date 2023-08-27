@@ -3,7 +3,7 @@
 set -e -u
 
 root_dir="$(dirname "$0")/.."
-vnu_output="$(jq --from-file "$root_dir/linter-configs/vnu_filter.jq")"
+vnu_output="$(jaq --from-file "$root_dir/linter-configs/vnu_filter.jq")"
 if [ "$vnu_output" = '' ]; then
 	echo "All markup is valid"
 else
