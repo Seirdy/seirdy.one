@@ -6,6 +6,11 @@ replyTitle: "Wouldn't, say, installing the Dark Reader extension have much less 
 replyType: "DiscussionForumPosting"
 replyAuthor: "Allium"
 replyAuthorURI: "https://gitlab.torproject.org/Allium"
+syndicatedCopies:
+    - title: 'Tor Project GitLab'
+      url: 'https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40337#note_2937536'
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AZCWxOH1fC9CUnxmoi'
 ---
 
 These addons work by injecting or altering stylesheets in the page, and are trivially detectable. A good rule of thumb is that if it can trigger a CSP violation in the developer console, it is trivial to detect with JavaScript.
