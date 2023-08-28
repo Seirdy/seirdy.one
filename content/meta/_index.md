@@ -59,12 +59,12 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Ye Olde Blogroll](https://blogroll.org/)
 - [Nerd Listings](http://nerdlistings.info/)
 - [ooh.directory](https://ooh.directory/)
+- [List-Me.com](https://list-me.com/)
 
 <details>
 <summary>Pending directories</summary>
 
 - [LinkLane](https://www.linklane.net/) (pending)
-- [List-Me.com](https://list-me.com/) (pending)
 
 </details>
 
