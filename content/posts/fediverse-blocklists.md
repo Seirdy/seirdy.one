@@ -263,6 +263,9 @@ cachapa.xyz
 : Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
 : Instance permits lolicon, and runs bots for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
 
+catgirl.life OR peervideo.club
+: Both are part of [the Waifu Hunter Club's suite of services](http://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](http://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](http://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
+
 cawfee.club
 : [Racism from multiple users, including admin](https://web.archive.org/web/20230730210913/https://cawfee.club/notice/AY5J5qUA898oge9pa4).
 : [Anti-Romani and racist posts from admin](https://web.archive.org/web/20230730211327/https://cawfee.club/notice/AXjafVFrE4C3c48Mm8).
@@ -408,6 +411,9 @@ merovingian.club
 
 midwaytrades.com
 : Runs [a Libs of TikTok bot](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU). [Transphobic and misogynist admin](https://ghostarchive.org/archive/9qO8r).
+
+mirr0r.city
+: Paraphilia- and pedophilia-focused instance that [explicitly welcomes pro-contacts and neo-Nazis](http://web.archive.org/web/20230828183201/https://mirr0r.city/notice/AVr8KfJybjh4eFdHAO).
 
 mouse.services
 : Admin [posts blatantly racist use of slurs](http://archive.today/2023.08.19-042746/https://miss.mouse.services/notes/9ijlonbgrd), [more racism](http://archive.today/2023.08.19-054501/https://miss.mouse.services/notes/9icb5d8xav).
@@ -653,7 +659,6 @@ wideboys.org
 : There used to be an instance on the "social" subdomain, but it shut down. However, there is still a WriteFreely instance on the "blog" subdomain. The instance on the "social" subdomain has been mostly superseded by beefyboys.win.
 : On the root domain is [a wiki describing how this domain is affiliated with beefyboys.win](https://web.archive.org/web/20230827195937/https://wideboys.org/BEEFYBOYS.WIN). The [beefyboys.win "about" page](https://web.archive.org/web/20230827200822/https://beefyboys.win/about) confirms this.
 : Since beefyboys.win is on FediNuke and wideboys.org is part of the same network with staff and member overlap, and wideboys.org still federates on the "blog" subdomain, it's on the list too. But since it only federates via WriteFreely at the time of writing, it looks like a smaller harassment vector so it's demoted to my tier-0 list.
-
 
 {{</ nofollow >}}
 
