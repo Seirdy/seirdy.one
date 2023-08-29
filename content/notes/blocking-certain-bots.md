@@ -11,6 +11,8 @@ syndicatedCopies:
       url: 'https://gist.github.com/dangovorenefekt/b187b30e59ed1b827515cdbc833bc1bf?permalink_comment_id=4621262#gistcomment-4621262'
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AXQOGKrOajCIX9XgEC'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 
 > I don't want my content on those sites in any form and I don't want my content to feed their algorithms. Using robot.txt assumes they will 'obey' it. But they may choose not to.
