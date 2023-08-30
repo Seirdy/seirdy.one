@@ -6,6 +6,11 @@ replyTitle: "Semantic Markup for Callouts: A Not-Quite-RFC for Admonitions in HT
 replyType: "BlogPosting"
 replyAuthor: "toastal"
 replyAuthorURI: "https://toast.al"
+syndicatedCopies:
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/ehzhcw/semantic_markup_for_callouts#c_ddiqt8'
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AZFO77yIoQhSicea1I'
 ---
 
 Interesting proposal! Some thoughts:
