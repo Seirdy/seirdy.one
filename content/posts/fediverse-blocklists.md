@@ -33,6 +33,8 @@ I maintain three main blocklists for the Fediverse:
 
   Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
 
+All lists, just like all my content on seirdy.one, are CC-BY-SA licensed. Feel free to use them in your own projects accordingly.
+
 This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats. It also contains a work-in-progress list of receipts for instances in FediNuke and my Tier-0.
 
 {{<toc>}}
@@ -151,7 +153,7 @@ Unfortunately, the situation was different for Oliphant's unified-max blocklist.
 
 Oliphant got understandable push-back for this issue in his blocklists, but it's not fair for all of the criticism to be directed at him and none at me. Many small mistakes from multiple people, including me, cascaded into one big failure.
 
-Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great. I became less involved in Oliphant's list; by the end of August 2023, I decided to withdraw as a source for it as soon as a hard-fork takes off.
+Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great. I became less involved in Oliphant's list; by the end of August 2023, I decided to withdraw from the project completely. I'm not prohibiting the use of my blocklists in raw-domain form, as I don't think a "list of domains" constitutes a creative work worth restricting beyond the provisions of a CC-BY-SA license.
 
 ## Supplementary blocklists
 
