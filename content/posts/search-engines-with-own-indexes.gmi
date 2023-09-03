@@ -116,7 +116,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 * Entfer: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information about who made it. Its index is small, but it does seem to return results related to the query.
 * Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
-* websearchengine.org and tuxdex.com: Both are run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies.
 
 => https://burf.co/ Burf.co
 => https://entfer.com/ Entfer
@@ -199,10 +198,14 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 ### Small/non-commercial Web
 
 * Marginalia Search: A recent addition similar to Wiby, and *my favorite entry on this page*. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. Update 2022-05-27: Marginalia.nu is now open source
-* Teclis: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as microformats, microdata, and RDFa. It claims to also use some results from Marginalia. The Web interface has been shut down, but its standalone API is still available for Kagi customers.
-
 => https://search.marginalia.nu/ search.marginalia.nu
 => https://memex.marginalia.nu/log/58-marginalia-open-source.gmi Announcement: marginalia.nu goes open source
+
+* Ichido: An engine that just rolled out its own independent index, with a lot of careful thought put into its ranking algorithm. Like Marginalia, it's biased towards the non-commercial Web: it downranks ads, CAPTCHAs, trackers, SEO, and obfuscation.
+=> https://ichi.do/ Ichido search engine
+=> https://blog.ichi.do/post/2023/08/20/a-new-ichido/ Blog post documenting how Ichido works.
+
+* Teclis: A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as microformats, microdata, and RDFa. It claims to also use some results from Marginalia. The Web interface has been shut down, but its standalone API is still available for Kagi customers.
 => http://teclis.com/ Teclis
 => https://kagifeedback.org/d/1838-teclis-is-broken Teclis free version shutdown notice
 
@@ -351,6 +354,7 @@ These engines were originally included in the article, but have since been disco
 * Meorca: A UK-based search engine that claims not to "index pornography or illegal content websites". It also features an optional social network ("blog"). Discovered in the seirdy.one access logs.
 * Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 * Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
+* websearchengine.org and tuxdex.com: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment

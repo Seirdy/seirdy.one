@@ -151,9 +151,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Siik](https://siik.co/)
 : Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
-[websearchengine.org](https://websearchengine.org) OR [tuxdex.com](https://tuxdex.com)
-: Both are run by the same people, powered by their [inetdex.com](https://inetdex.com) index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies.
-
 [ChatNoir](https://www.chatnoir.eu/)
 : An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
 
@@ -226,6 +223,9 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 
 [Marginalia Search](https://search.marginalia.nu/)
 : _My favorite entry on this page_. It has its own crawler but is strongly biased towards non-commercial, personal, and/or minimal sites. It's a great response to the increasingly SEO-spam-filled SERPs of GBY. Partially powers Teclis, which in turn partially powers Kagi. <ins cite="https://memex.marginalia.nu/log/58-marginalia-open-source.gmi" datetime="2022-05-28T14:09:00-07:00">Update 2022-05-28: [Marginalia.nu is now open source.](https://memex.marginalia.nu/log/58-marginalia-open-source.gmi)</ins>
+
+[Ichido](https://ichi.do/)
+: An engine that just rolled out its own independent index, with a lot of careful thought put into its ranking algorithm. Like Marginalia, it's biased towards the non-commercial Web: it downranks ads, CAPTCHAs, trackers, SEO, and obfuscation. [More info about Ichido is in a blog post](https://blog.ichi.do/post/2023/08/20/a-new-ichido/).
 
 [Teclis](http://teclis.com/)
 : A project by the creator of Kagi search. Uses its own crawler that measures content blocked by uBlock Origin, and extracts content with the open-source article scrapers Trafilatura and Readability.js. This is quite an interesting approach: tracking blocked elements discourages tracking and advertising; using Trafilatura and Readability.js encourages the use of semantic HTML and Semantic Web standards such as [microformats](https://microformats.org/), [microdata](https://html.spec.whatwg.org/multipage/microdata.html), and [RDFa](https://www.w3.org/TR/rdfa-primer/). It claims to also use some results from Marginalia. [The Web interface has been shut down](https://kagifeedback.org/d/1838-teclis-is-broken/2), but its standalone API is still available for Kagi customers.
@@ -380,6 +380,10 @@ These engines were originally included in the article, but have since been disco
 
 [Marlo](https://github.com/isovector/marlo)
 : Another FLOSS engine: Marlo is written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research. Originally available at `marlo.sandymaguire.me`.
+
+websearchengine.org OR tuxdex.com
+: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
+
 
 ## Exclusions
 
