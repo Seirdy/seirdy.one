@@ -1,16 +1,30 @@
 {{ $light_svg := resources.GetMatch (printf "/p/%s.svg" (.Get "name")) -}}
 {{ $light_png := resources.GetMatch (printf "/p/%s.png" (.Get "name")) -}}
+{{ $light_jpg := resources.GetMatch (printf "/p/%s.jpg" (.Get "name")) -}}
 {{ $light_webp := resources.GetMatch (printf "/p/%s.webp" (.Get "name")) -}}
 {{ $light_avif := resources.GetMatch (printf "/p/%s.avif" (.Get "name")) -}}
 {{ $light_jxl := resources.GetMatch (printf "/p/%s.jxl" (.Get "name")) -}}
 {{ $dark_svg := resources.GetMatch (printf "/p/%s_dark.svg" (.Get "name")) -}}
 {{ $dark_png := resources.GetMatch (printf "/p/%s_dark.png" (.Get "name")) -}}
+{{ $dark_jpg := resources.GetMatch (printf "/p/%s_dark.jpg" (.Get "name")) -}}
 {{ $dark_webp := resources.GetMatch (printf "/p/%s_dark.webp" (.Get "name")) -}}
 {{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) -}}
 {{ $dark_jxl := resources.GetMatch (printf "/p/%s_dark.jxl" (.Get "name")) -}}
 
-{{- $img_width := $light_png.Width -}}
-{{- $img_height := $light_png.Height -}}
+{{- $orig_img := $light_png -}}
+{{- $orig_img_type := "image/png" -}}
+{{- $orig_img_dark := $dark_png -}}
+{{- $orig_img_dark_type := "image/png" -}}
+{{- with $light_jpg -}}
+	{{- $orig_img_type = "image/jpeg" -}}
+	{{- $orig_img = $light_jpg -}}
+{{- end -}}
+{{- with $dark_jpg -}}
+	{{- $orig_img_dark_type = "image/jpeg" -}}
+	{{- $orig_img_dark = $dark_jpg -}}
+{{- end -}}
+{{- $img_width := $orig_img.Width -}}
+{{- $img_height := $orig_img.Height -}}
 {{- with (.Get "sf") -}}
 	{{- $img_width = (mul $img_width . | math.Round) -}}
 	{{- $img_height = (mul $img_height . | math.Round ) -}}
@@ -46,11 +60,11 @@
 		type="image/webp"
 		media="screen and (prefers-color-scheme: dark)" />
 	{{ end -}}
-	{{ with $dark_png -}}
-	{{ $dark_png_src := . | resources.Fingerprint "md5" -}}
+	{{ with $orig_img_dark -}}
+	{{ $orig_dark_src := . | resources.Fingerprint "md5" -}}
 	<source
-		srcset="{{ $dark_png_src.RelPermalink }}"
-		type="image/png"
+		srcset="{{ $orig_dark_src.RelPermalink }}"
+		type="{{ $orig_img_dark_type }}"
 		media="screen and (prefers-color-scheme: dark)" />
 	{{ end -}}
 	{{- if not (in site.BaseURL ".onion") -}}
@@ -79,13 +93,13 @@
 		srcset="{{ $light_webp_src.RelPermalink }}"
 		type="image/webp" />
 	{{ end -}}
-	{{ $light_png_src := $light_png | resources.Fingerprint "md5" -}}
+	{{ $orig_src := $orig_img | resources.Fingerprint "md5" -}}
 	<source
-		srcset="{{ $light_png_src.RelPermalink }}"
-		type="image/png" />
+		srcset="{{ $orig_src.RelPermalink }}"
+		type="{{ $orig_img_type }}" />
 	<img{{ with .Get "class" }} class="{{ . }}"{{ end }}
 		width="{{ $img_width }}" height="{{ $img_height }}"
-		src="{{ $light_png_src.Permalink }}" alt='{{ .Get "alt" }}'
+		src="{{ $orig_src.Permalink }}" alt='{{ .Get "alt" }}'
 		{{ with .Parent -}}
 		{{ if eq .Name "transcribed-image-figure" -}}
 		{{ with .Get "id" -}}
