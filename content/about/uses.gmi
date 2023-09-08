@@ -6,7 +6,7 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 
 ## Environment
 
-* OS: Fedora 36
+* OS: Fedora, latest stable release.
 * Wayland compositor: Sway
 * Shell: zsh (interactive), dash (non-interactive/shell-scripts)
 * Terminal Emulator: Foot. Sometimes gnome-terminal when I'm using a screen reader.
@@ -16,17 +16,21 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 * `$EDITOR`: Neovim
 * Browser: Firefox for most pages, Chromium for apps, NetSurf when I'm low on battery.
 * Coreutils alternatives: ripgrep, sd (better multiline regexes than sed), fd
-* Music player: mpd, along with my mpd scripts
-* Video player: three builds of mpv, two with a PGO run on different types of video (anime and live-action-with-filmgrain). Often paired with yt-dlp and mpv_sponsorblock
-* Image viewer: mpv (one less program to keep track of), swayimg. Both support AVIF and JPEG-XL now.
 * Session manager: tmux (I don't use it for tiling, Sway handles that)
 * IRC client: WeeChat. Might use senpai eventually, if I can get it to play well with espeak-ng.
 * News: Newsboat. I'm thinking of switching to a feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports WebSub.
+* Containers: Toolbox: Creates quick mutable environments for me to mess around as root. I use Fedora Rawhide for more bleeding-edge packages in these environments. Quick mutable environments to mess around in or use different toolchains are pretty much my only use of containers.
 * Screen reader: Orca
 
 => https://sr.ht/~seirdy/mpd-scripts/ mpd-scripts page
 => https://github.com/po5/mpv_sponsorblock mpv_sponsorblock
 => https://sr.ht/~taiite/senpai/ senpai
+
+## Multimedia
+
+* Music player: mpd, along with my mpd scripts
+* Video player: three builds of mpv, two with a PGO run on different types of video (anime and live-action-with-filmgrain). Often paired with yt-dlp and mpv_sponsorblock
+* Image viewer: mpv (one less program to keep track of), swayimg. Both support AVIF and JPEG-XL now.
 
 ## Mail:
 

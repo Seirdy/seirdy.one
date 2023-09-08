@@ -8,17 +8,15 @@ date: "2022-06-16T17:16:18-07:00"
 ---
 Here's the software I use. I've recently started to reduce my use of <abbr title="Textual User Interfaces">TUIs</abbr> in favor of <abbr title="Command Line Interfaces">CLIs</abbr> for a variety of reasons. When possible, I try to use lightweight programs that can run on any machine, from a single-board computer to a giant desktop. I don't ever want to feel like I need to upgrade my hardware to do the same tasks as before: hardware upgrades should only be justified by my use-cases significantly changing, existing hardware being broken beyond repair, or upstream abandonment of security patches.[^1]
 
-Hardware
---------
+## Hardware
 
 My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300U CPU (Haswell), with simultaneous multithreading disabled.
 
-Environment
------------
+## Environment
 
 
-Fedora 36
-: Primary OS. Uses Linux, Systemd, GNU libc, GNU coreutils, dnf, firewalld, and SELinux.
+Fedora
+: Primary OS, latest stable version. Uses Linux, Systemd, GNU libc, GNU coreutils, dnf, firewalld, and SELinux.
 
 Sway
 : Dynamic Wayland compositor that focuses on tiling window management but also supports tabbed and stacking layouts.
@@ -32,8 +30,7 @@ DASH
 Foot
 : Primary terminal emulator. Sometimes I use gnome-terminal when I'm using a screen reader.
 
-Basic utilities
----------------
+## Basic utilities
 
 
 Neovim
@@ -48,6 +45,24 @@ ripgrep
 [fd](https://github.com/sharkdp/fd)
 : Better parallel execution than `find -exec`. I still use `find` in many situations, though.
 
+Tmux
+: I typically don't use it for tiling or tabs, except over SSH. Sway has me covered there. I instead use Tmux for session management and for buffer manipulation (regex search, piping the buffer, writing the buffer to a file, etc).
+
+WeeChat
+: IRC client. I might use [senpai](https://sr.ht/~taiite/senpai/) eventually, if I can get it to play well with espeak-ng.
+
+Newsboat
+: Feed reader for RSS and Atom feeds. I'm thinking of switching to a feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports [WebSub](https://websub.net/draft).
+
+Toolbox
+: Creates quick mutable environments for me to mess around as root. I use Fedora Rawhide for more bleeding-edge packages in these environments. Quick mutable environments to mess around in or use different toolchains are pretty much my only use of containers.
+
+Orca
+: Screen reader. Great for when I'm dealing with overstimulation and need to "turn everything off" for a while. I don't actually rely on this to use my machine.
+
+## Multimedia
+
+
 mpd
 : My music player daemon, paired with [my mpd scripts](https://sr.ht/~seirdy/mpd-scripts/) and [mpd-mpris](https://github.com/natsukagami/mpd-mpris).
 
@@ -58,20 +73,7 @@ mpv
 [swayimg](https://github.com/artemsen/swayimg)
 : Secondary image viewer; grabs window dimensions from the currently-focused window in Sway.
 
-Tmux
-: I typically don't use it for tiling or tabs, except over SSH. Sway has me covered there. I instead use Tmux for session management and for buffer manipulation (regex search, piping the buffer, writing the buffer to a file, etc).
-
-WeeChat
-: IRC client. I might use [senpai](https://sr.ht/~taiite/senpai/) eventually, if I can get it to play well with espeak-ng.
-
-Newsboat
-: Feed reader for RSS and Atom feeds. I'm thinking of switching to a feed-to-IMAP or Maildir setup eventually so I can get sync and use mblaze, and replace a TUI with a CLI. Ideally something that supports [WebSub.](https://websub.net/draft)
-
-Orca
-: Screen reader. Great for when I'm dealing with overstimulation and need to "turn everything off" for a while. I don't actually rely on this to use my machine.
-
-Browsers
---------
+## Browsers
 
 I always disable JavaScript and <abbr title="Just-In-Time">JIT</abbr>-compilation unless it's absolutely required.
 
@@ -88,8 +90,7 @@ Tor Browser
 NetSurf
 : When I'm low on battery or want to experiment a bit.
 
-Mail
-----
+## Mail
 
 Email sucks but it's the only lightweight, open, federated protocol for subject-delimited threaded discussions that meets my needs. It also makes working with open-source projects easier: it gives me one place to look for patches and issues so I don't have to open GitHub, Codeberg, GitLab, Sourcehut, etc. in different tabs and check each one.[^2]
 
@@ -104,13 +105,12 @@ msmtp
 : Routine tasks, displaying my inbox or list threads, reading email, organizing my messages
 
 Neomutt
-: My mail user agent, for the tasks that mbsync isn't good for (e.g. manual organization)
+: My mail user agent, for the tasks that mblaze isn't good for (e.g. manual organization)
 
 [w3m-sandbox](https://git.sr.ht/~seirdy/bwrap-scripts/tree/trunk/item/w3m-sandbox)
 : Displays HTML mail in a sandboxed environment. Networking and most filesystem access are disabled; using its full unrestricted functionality will involve syscalls I forbid with seccomp and crash the program.
 
-Networking and penetration testing
-----------------------------------
+## Networking and penetration testing
 
 Every administrator needs some tools to test their servers.
 
@@ -136,8 +136,7 @@ Every administrator needs some tools to test their servers.
 [ssh-audit](https://github.com/jtesta/ssh-audit)
 : I check my SSH config against [this SSH policy](../ssh-policy.txt). It's based on the GrapheneOS infrastructure's SSH configs.
 
-Other tools
------------
+## Other tools
 
 Everyday utilities I can't live without:
 
@@ -186,8 +185,7 @@ bmake
 <a href="https://github.com/yt-dlp" id="yt-dlp">yt-dlp</a>
 : Download videos from hundreds of different sites, including YouTube. Integrates with external downloaders like aria2 and downloads DASH chunks in parallel to max out your connection speed. yt-dlp also integrates with Sponsorblock to add skippable chapters for the segments I'd otherwise have to manually skip (sponsored content, subscription-begging, an ending segment featuring other videos, and other useless bullshit). I've forgotten what it's like to watch a video ad.
 
-This website
-------------
+## This website
 
 I use multiple aforementioned tools (Neovim, bmake, sd, etc.) for routine tasks when building seirdy.one.
 
@@ -273,7 +271,7 @@ All my server daemons are statically-linked binaries, which makes sandboxing eas
 
 
 Nginx
-: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli (static)](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, PCRE2 (non-JIT), and musl libc; patched for dynamic TLS records, basic externally-managed OCSP-stapling support, static HPACK compression, removing server signatures, and enabling dark mode on in-binary error pages. I recommend most people use Caddy instead of Nginx. The only benefits of Nginx are certain modules providing application-server capabilities, the ability to re-load all configs with zero downtime, better requests-per-second on limited hardware (although most sites won't need to handle more than a few hundred requests per second, which Caddy can handle *easily*), and kernel-accelerated TLS for maximizing bandwidth (usually unnecessary).
+: Specifically, [nginx-quic](https://quic.nginx.org/) with the [headers_more](https://github.com/openresty/headers-more-nginx-module) and [ngx_brotli (static)](https://github.com/google/ngx_brotli) modules. Statically linked against zlib-ng, BoringSSL, PCRE2 (non-JIT), and musl libc; patched for dynamic TLS records, basic externally-managed OCSP-stapling support, static HPACK compression, removing server signatures, and enabling dark mode on in-binary error pages. I recommend most people use Caddy instead of Nginx. The only benefits of Nginx are certain modules providing application-server capabilities, the ability to re-load all configs with zero downtime, better requests-per-second on limited hardware (although most sites won't need to handle more than a few hundred requests per second, which Caddy can handle _easily_), and kernel-accelerated TLS for maximizing bandwidth (usually unnecessary).
 
 [certbot-ocsp-fetcher](https://github.com/tomwassenberg/certbot-ocsp-fetcher)
 : Shell script to manage the OCSP cache for Nginx, since Nginx's own implementation shouldn't be used without running a trusted resolver (and is completely non-existent if you build with BoringSSL).
@@ -293,8 +291,7 @@ Agate
 [Conduit](https://conduit.rs/)
 : Faster and more lightweight Matrix server in a single binary.
 
-Services
---------
+## Services
 
 I generally try to limit my dependence on services, preferring to run software myself. I do make a few compromises.
 
@@ -314,8 +311,7 @@ I generally try to limit my dependence on services, preferring to run software m
 [Search My Site](https://searchmysite.net/)
 : I already pay for it; I might as well use it! Its API powers the site's search functionality, with searches proxied through a tiny Go wrapper on my backend.
 
-What I don't use
-----------------
+## What I don't use
 
 These are tools that I don't use, or avoid using.
 
