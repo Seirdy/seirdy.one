@@ -15,16 +15,18 @@ sitemap:
 ---
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
-I maintain three main blocklists for the Fediverse:
+I maintain four main blocklists for the Fediverse:
 
 
 [The `pleroma.envs.net` blocklist](https://seirdy.one/pb/pleroma.envs.net.csv)
-: A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment. Unlike the other two lists on this page, it wasn't made for general use (though you're welcome to use it as reference).
+: A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment.
+
+  Unlike the other two lists on this page, **it wasn't made for general use** (though you're welcome to use it as reference, or as one of many sources for a consensus-based list with a minimum severity level).
 
 [`tier0.csv`](https://seirdy.one/pb/tier0.csv)
-: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards. I hope to make it a good starting point for your instance's blocklist, with wiggle room for your own adjustments. I encourage you to add and remove entries as you see fit. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for [FediBlockHole](https://github.com/eigenmagic/fediblockhole) users.
+: A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards, though somewhat heavy-handed. I hope to make it a good **starting point** for your instance's blocklist, with wiggle room for your own adjustments. I encourage you to add and remove entries as you see fit. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for [FediBlockHole](https://github.com/eigenmagic/fediblockhole) users.
 
-  Note that **this list is larger than the bare-minimum I recommend;** that'd be FediNuke. If you're skeptical of imported blocklists, you should start there.
+  Note that **this list is larger than the bare-minimum I recommend.** the bare-minimum is FediNuke. If you're skeptical of imported blocklists, you should start there. If you run an instance for many others: please do not blindly import this list unless you intend to review its entries.
 
 [`FediNuke.txt`](https://seirdy.one/pb/FediNuke.txt)
 : A curated subset of `tier0.csv`, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists.
@@ -32,6 +34,9 @@ I maintain three main blocklists for the Fediverse:
   This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and likelihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running blockbots, etc). Bad instances that mostly keep to themselves are less likely to cause problems for a new admin, and therefore less likely to get included in this minimal list.
 
   Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
+
+[`tier1.csv`](https://seirdy.one/pb/tier1.csv)
+: Identical to `tier0.csv`, except with the addition of some instances that I believe require an admin to make a more informed decision, or at least be aware of should they abstain from moderating. Either they are contentious entries or have detailed context I can't distill into a few pithy sentences like other entries.
 
 All lists, just like all my content on seirdy.one, are CC-BY-SA licensed. Feel free to use them in your own projects accordingly.
 
@@ -661,6 +666,10 @@ wideboys.org
 : Since beefyboys.win is on FediNuke and wideboys.org is part of the same network with staff and member overlap, and wideboys.org still federates on the "blog" subdomain, it's on the list too. But since it only federates via WriteFreely at the time of writing, it looks like a smaller harassment vector so it's demoted to my tier-0 list.
 
 {{</ nofollow >}}
+
+## Tier-1 entries, excluding Tier-0
+
+This section hasn't been started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision.
 
 </details>
 
