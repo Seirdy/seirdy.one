@@ -683,7 +683,7 @@ This section hasn't been started yet. It'll be for entries that demand a lengthi
 
 Once Threads and/or Tumblr start federating, I plan to make a separate blocklist for "mainstream" social media platforms that prioritize profit over safety. I've explained my views on Threads in another post: {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="De-federating P92" url="../../../../2023/06/20/defederating-p92/" extraName="headline">}}{{</mention-work>}}.
 
-The biggest complaint I've heard is the lack of reasons and receipts. I'm working on adding them to this page. {{<mention-work itemtype="WebSite">}}{{<indieweb-person name="Are0h" url="https://roiskinda.cool/" itemprop="author">}} is working on a separate project called {{<cited-work name="The Bad Space" url="https://thebad.space/">}}{{</mention-work>}} to create an index of instances with receipts. It doesn't have a lot of content yet, but that will change with time. I've shared my receipt archive with him.
+The biggest complaint I've heard is the lack of reasons and receipts. I'm working on adding them to this page.
 
 I like the idea of a separation between receipt-tracking projects and blocklist-generating projects. Reasons in a blocklist tend to invite retaliatory harassment in an effort to make admins hide their blocklists, often in the form of (very dubious) legal threats (defamation and privacy regulations have come up).
 
