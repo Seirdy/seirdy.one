@@ -486,6 +486,9 @@ pawlicker.com
 pawoo.net
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
 
+pibvt.net
+: Lolisho and actual photos of toddlers posted by MAPs. [FediBlock post](https://pleroma.envs.net/notice/AS9QjlcEaQgZKbz5gO) with some more details.
+
 pieville.net
 : Admin is a white nationalist who [supports building an ethno-state, and genocide](http://archive.today/2023.08.19-214916/https://pieville.net/@Alex_Linder/110882938852628318). [Admin profile](https://web.archive.org/web/20230819215516/https://pieville.net/@Alex_Linder) features more blatant slur-filled racism, antisemitism, etc.
 
@@ -566,6 +569,9 @@ thenobody.club
 : Admin [participates in a transmisogynistic harassment campaign](https://web.archive.org/web/20230813033821/https://member.thenobody.club/notice/AYfZzC36XOLSbL4MyG).
 : [Racist and antisemitic use of slurs from admin](https://web.archive.org/web/20230813034819/https://member.thenobody.club/notice/AXwUlbbBVMnzu6VzG4), along with some heavy xenophobia shortly after.
 : [More racist xenophobia from admin](https://web.archive.org/web/20230813034920/https://member.thenobody.club/notice/AXsHtsJBBeQG0YrmBU).
+
+truthsocial.co.in
+: Named after Donald Trump's "Truth Social" network. [A glimpse at their local timeline](https://web.archive.org/web/20230914234747/https://truthsocial.co.in/public/local) shows mostly far-right content befitting of the instance name. One of the main posters, "Kittruth", regularly [posts racist talking points](https://web.archive.org/web/20230914235535/https://truthsocial.co.in/@Kittruth/111065663686727434). Instance seems completely unmoderated, with [spambots such as "leoedward" going unnoticed for months](https://web.archive.org/web/20230915000055/https://truthsocial.co.in/@leoedward).
 
 usualsuspects.lol
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
