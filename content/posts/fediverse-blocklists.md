@@ -11,17 +11,17 @@ syndicatedCopies:
 evergreen: true
 sitemap:
     ChangeFreq: daily
-    Priority: 0.7
+    Priority: 0.8
 ---
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
-I maintain four main blocklists for the Fediverse:
+I maintain four main blocklists for the Fediverse. Do not import them until you've read everything until the "receipts" section.
 
 
 [The `pleroma.envs.net` blocklist](https://seirdy.one/pb/pleroma.envs.net.csv)
 : A large list of instances that I find worth suspending. After the first couple hundred entries (imported and then reviewed), I started collecting receipts. Since early 2023, every entry has documented reasons and receipts. I share these with multiple people in a collaborative document, but I don't share it publicly due to risk of harassment.
 
-  Unlike the other two lists on this page, **it wasn't made for general use** (though you're welcome to use it as reference, or as one of many sources for a consensus-based list with a minimum severity level).
+  Unlike the other two lists on this page, **it wasn't made for general use.** You're welcome to use it as reference, or as one of many sources for a consensus-based list with a minimum required consensus level.
 
 [`tier0.csv`](https://seirdy.one/pb/tier0.csv)
 : A much smaller semi-curated subset of `pleroma.envs.net` suitable for the majority of instances wishing to uphold the Mastodon Covenant's moderation standards, though somewhat heavy-handed. I hope to make it a good **starting point** for your instance's blocklist, with wiggle room for your own adjustments. I encourage you to add and remove entries as you see fit. Regularly importing `tier0.csv` won't account for retractions; [a sibling blocklist for tier-0 retractions](https://seirdy.one/pb/tier0-retractions.csv) exists for [FediBlockHole](https://github.com/eigenmagic/fediblockhole) users.
@@ -159,6 +159,19 @@ Unfortunately, the situation was different for Oliphant's unified-max blocklist.
 Oliphant got understandable push-back for this issue in his blocklists, but it's not fair for all of the criticism to be directed at him and none at me. Many small mistakes from multiple people, including me, cascaded into one big failure.
 
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great. I became less involved in Oliphant's list; by the end of August 2023, I decided to withdraw from the project completely. I'm not prohibiting the use of my blocklists in raw-domain form, as I don't think a "list of domains" constitutes a creative work worth restricting beyond the provisions of a CC-BY-SA license.
+
+**If you have read this far** and plan to import my lists or a list that imports mine, please delete the following fake entries from the lists or modify the "canary" subdomains:
+
+```
+000delete.this.line.if.you.have.read.the.documentation.on.seirdy.one
+canary.tier1.example.com
+canary.tier0.example.com
+canary.fedinuke.example.com
+```
+
+Doing so signals that you've read these docs. If you build a consensus-based blocklist that uses my lists as a source, I suggest adding your own canary domains.
+
+If you see an instance whose blocklist contains these entries, unmodified: if it's a large or open-registration instance, assume the moderators aren't doing their jobs and *do not register* for it. Single-user or tiny tight-knit instances are free to import whatever they want, though. Moderators of large or open-registration instances should be willing to set aside ten minutes to read something before importing a list.
 
 ## Supplementary blocklists
 
