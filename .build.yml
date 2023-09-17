@@ -21,7 +21,7 @@ tasks:
   - deps: |
       printf "VerifyHostKeyDNS=yes\nKexAlgorithms=sntrup761x25519-sha512@openssh.com\n" >> ~/.ssh/config
       # mirrored at https://seirdy.one/misc/binaries.tar.gz
-      rsync -Wv deploy@seirdy.one:/home/deploy/binaries.tar.gz .
+      rsync -Wv deploy@seirdy.one:/var/www/pb/binaries.tar.gz .
       mkdir -p ~/bin
       tar xzf binaries.tar.gz -oC ~/bin
   - build_deploy: |
