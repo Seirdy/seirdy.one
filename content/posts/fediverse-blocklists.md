@@ -171,7 +171,7 @@ canary.fedinuke.example.com
 
 Doing so signals that you've read these docs. If you build a consensus-based blocklist that uses my lists as a source, I suggest adding your own canary domains.
 
-If you see an instance whose blocklist contains these entries, unmodified: if it's a large or open-registration instance, assume the moderators aren't doing their jobs and *do not register* for it. Single-user or tiny tight-knit instances are free to import whatever they want, though. Moderators of large or open-registration instances should be willing to set aside ten minutes to read something before importing a list.
+If you see an instance whose blocklist contains these entries, unmodified: if it's a large or open-registration instance, assume the moderators aren't doing their jobs and _do not register_ for it. Single-user or tiny tight-knit instances are free to import whatever they want, though. Moderators of large or open-registration instances should be willing to set aside ten minutes to read something before importing a list.
 
 ## Supplementary blocklists
 
@@ -187,6 +187,16 @@ Some supplementary blocklists I maintain with very different criteria:
 [Spammy subdomains](https://seirdy.one/pb/spammy-subdomains.txt)
 : These domains are often used for HTTP tunneling or short-lived spin-up-spin-down servers. Fediverse instances running on their subdomains almost certainly aren't in it for the long haul, and very frequently shut down within hours or days without doing a clean self-destruct. Note that this is not to be confused with traditional dynamic-DNS subdomains, which are often used for longer-lived servers (although some admins do understandably block those anyway).
 : This list might prove useful in non-Fediverse contexts as well; I imagine it could be useful for moderating Matrix rooms.
+
+## Frequently-asked questions
+
+### Why don't you use tags for easy filtering?
+
+Tags remove nuance. There exist gray areas that make it hard to determine whether an instance clearly fits within a tag; choosing to include or exclude that instance is choosing to make a statement about what "counts". I prefer to describe an instance's reason in my own words, properly.
+
+### How do I get off a list?
+
+If you believe a receipt is inaccurate or you don't belong on a given list, contact me. My contact info should be easy to find on my "about" page. I can't promise I'll respond quickly; feel free to re-send your request if I don't respond within a couple days. I might not be receptive to requests from FediNuke instances, though. I'd prefer if you made an effort to respond to the concerns raised by a receipt if possible.
 
 ## Receipts
 
