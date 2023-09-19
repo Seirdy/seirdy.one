@@ -37,7 +37,7 @@ I maintain four main blocklists for the Fediverse. Do not import them until you'
   Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
 
 [`tier1.csv`](https://seirdy.one/pb/tier1.csv)
-: Identical to `tier0.csv`, except with the addition of some instances that I believe require an admin to make a more informed decision, or at least be aware of should they abstain from moderating. Either they are contentious entries or have detailed context I can't distill into a few pithy sentences like other entries.
+: Identical to `tier0.csv`, except with the addition of some instances that I believe require an admin to make a more informed decision, or at least be aware of should they abstain from moderating. Either they are contentious entries or have detailed context I can't distill into a few pithy sentences like other entries. Entries of lower severity may also end up here.
 
 All lists, just like all my content on seirdy.one, are CC-BY-SA licensed. Feel free to use them in your own projects accordingly.
 
@@ -634,9 +634,6 @@ berserker.town
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
 : Permissive policies have made space for [anti-diversity eugenics dogwhistles](http://archive.today/2023.08.10-192342/https://berserker.town/@mayonesa/110730803970638239) evolving into [xenophobic eugenics](https://web.archive.org/web/20230810192310/https://berserker.town/@mayonesa/110667720613227224).
 
-bungle.online
-: [Racial slurs from admin](https://web.archive.org/web/20230731203927/https://pleroma.mercurial.blog/notice/AYEijPLGfx2ZMOHK76), [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh).
-
 crlf.ninja
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
@@ -699,7 +696,10 @@ wideboys.org
 
 ## Tier-1 entries, excluding Tier-0
 
-This section hasn't been started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision.
+This section hasn't been properly started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision; or for entries of lower severity.
+
+bungle.online
+: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh).
 
 </details>
 
