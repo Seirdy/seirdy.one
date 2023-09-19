@@ -215,6 +215,8 @@ Some receipts aren't reasons to block, but exist to contextualize other receipts
 
 One exception is receipts for legally risky media (e.g. sexual depictions of minors): I don't publish archive links for those. It should be easy to verify them yourself if you need to; I'll provide a user handle if necessary.
 
+I grouped some related domains together and added receipts to them collectively. If you see multiple consecutive domains, that's why.
+
 <details open=""><summary>Toggle receipts</summary>
 
 ### FediNuke entries
