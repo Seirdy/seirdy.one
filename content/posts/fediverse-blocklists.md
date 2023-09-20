@@ -161,6 +161,22 @@ Oliphant got understandable push-back for this issue in his blocklists, but it's
 
 Since then, Oliphant has removed that admin's list (and his own) from his blocklists' trusted sources. I removed the same ones. Oliphant also stopped generating the unified-max blocklist, as the potential for misuse was too great. I became less involved in Oliphant's list; by the end of August 2023, I decided to withdraw from the project completely. I'm not prohibiting the use of my blocklists in raw-domain form, as I don't think a "list of domains" constitutes a creative work worth restricting beyond the provisions of a CC-BY-SA license.
 
+### July 2023: bad receipt for bungle.online
+
+A receipt for bungle.online, at the time a tier-0 instance, cited slurs from the admin account. One was a racial slur. However, I later found that the slur may have been used in a reclaimed context. I subsequently demoted the instance to tier-1 and removed that receipt.
+
+Now I endeavor to be more careful about examining my preconceived notions when using slur-usage as a receipt. If a receipt revolves around slur usage, I should do a better job considering *how* the slur was used if there aren't many other receipts indicating a pattern of discriminatory usage. I also should specifically seek approval from people of the relevant marginalized identity before publishing.
+
+### Other errata
+
+More minor corrections:
+
+- August 2023: I mistakenly said that ryona.agency and plagu.ee have an MRF policy to convert DMs to public posts. This was false: the policy converts followers-only and unlisted posts to public, but not DMs.
+
+- August 2023: I assumed that an account called "Shishihime" was a bot. The admin later claimed that it was an actual user. I then retracted the "bot" description.
+
+## Important modifications before importing
+
 **If you have read this far** and plan to import my lists or a list that imports mine, please delete the following fake entries from the lists or modify the "canary" subdomains:
 
 ```
@@ -292,7 +308,7 @@ brighteon.social
 
 cachapa.xyz
 : Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
-: Instance permits lolicon, and runs bots for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
+: Instance permits lolicon, and runs accounts for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
 
 catgirl.life OR peervideo.club
 : Both are part of [the Waifu Hunter Club's suite of services](http://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](http://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](http://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
@@ -696,12 +712,16 @@ wideboys.org
 
 {{</ nofollow >}}
 
-## Tier-1 entries, excluding Tier-0
+### Tier-1 entries, excluding Tier-0
 
 This section hasn't been properly started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision; or for entries of lower severity.
 
+{{<nofollow>}}
+
 bungle.online
-: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh).
+: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh). Also posts [body-shaming fatphobia](http://archive.today/2023.09.20-173637/https://bungle.online/notes/9jkj570prd), [anti-kink](http://archive.today/2023.09.20-174033/https://bungle.online/notes/9jlpkqzk90).
+
+{{</nofollow>}}
 
 </details>
 
