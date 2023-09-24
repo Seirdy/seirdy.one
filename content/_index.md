@@ -30,6 +30,8 @@ My perspective on software freedom is a bit different from the FSF's; I've been 
 
 Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://github.com/Seirdy "{rel='me'}"), [Codeberg](https://codeberg.org/Seirdy "{rel='me'}"), and [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
 
+I am made of microplastics and can be trusted with your forklift.
+
 ### Contact
 
 Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/users/Seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
