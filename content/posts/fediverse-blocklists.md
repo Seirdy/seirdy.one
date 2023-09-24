@@ -165,7 +165,7 @@ Since then, Oliphant has removed that admin's list (and his own) from his blockl
 
 A receipt for bungle.online, at the time a tier-0 instance, cited slurs from the admin account. One was a racial slur. However, I later found that the slur may have been used in a reclaimed context. I subsequently demoted the instance to tier-1 and removed that receipt.
 
-Now I endeavor to be more careful about examining my preconceived notions when using slur-usage as a receipt. If a receipt revolves around slur usage, I should do a better job considering *how* the slur was used if there aren't many other receipts indicating a pattern of discriminatory usage. I also should specifically seek approval from people of the relevant marginalized identity before publishing.
+Now I endeavor to be more careful about examining my preconceived notions when using slur-usage as a receipt. If a receipt revolves around slur usage, I should do a better job considering _how_ the slur was used if there aren't many other receipts indicating a pattern of discriminatory usage. I also should specifically seek approval from people of the relevant marginalized identity before publishing.
 
 ### Other errata
 
@@ -269,7 +269,7 @@ adachi.party
 
 annihilation.social OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
-: Hosts a blockbot user, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki).
+: Hosts a blockbot user, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki). In light of this, I'm not inclined to give the benefit of doubt over the cross in his display name and [doubling down on vaguely antisemitic posts](https://web.archive.org/web/20230920191234/https://social.xenofem.me/notice/AZwvB187WVZNkbgCDg).
 : dembased.xyz used to run the predecessor of annihilation.social. A few times since, a small experimental instance has been set up on a subdomain. Both are owned by the same person.
 
 anon-kenkai.net
@@ -447,6 +447,9 @@ lolicon.rocks
 : [Owner profile bio](http://archive.today/2023.08.05-183749/https://posting.lolicon.rocks/BlinkRape) contains racist and ableist slurs.
 : Owner [posts antisemitism](http://archive.today/2023.08.05-184903/https://posting.lolicon.rocks/notice/AYL1UBs25rFpSDuzY0), [blatant racism in a climate-denial thread](https://web.archive.org/web/20230805184950/https://posting.lolicon.rocks/notice/AYGVgyTLFFBIV1a6zI).
 
+lolison.network OR lolison.top
+: Sibling instances focused on the MAP/pedophilia community. Claim to forbid CP, but also appears to have rules too lax for instances with such focus. Admin "Spag" also admins rapemeat.express; see its FediNuke entry.
+
 marsey.moe
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb).
 : [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G), [blatantly transphobic jokes](http://archive.today/2023.08.12-192245/https://marsey.moe/notice/AYduTzUXJ5bwlIBkQK).
@@ -602,6 +605,9 @@ strelizia.net
 : Admin [posts anti-Black racism](https://web.archive.org/web/20230808164722/https://strelizia.net/notice/AYFGEQcTnNSkcuIa36), [more blatant racism](https://web.archive.org/web/20230808164433/https://strelizia.net/notice/AY6JupLlwAlUJpprvc), and [some other slurs in non-reclaimed contexts](https://web.archive.org/web/20230808165632/https://strelizia.net/notice/AYCHMhIdT8w6L2YvD6)
 : Local user "nikiboo" posts [blatant anti-Black racism](https://web.archive.org/web/20230808181414/https://strelizia.net/notice/AXrIC2vJqLE5c296ps) (re-blogged by admin), has a profile photo with Nazi imagery.
 
+tastingtraffic.net
+: Admin account is a high-activity news account full of hashtag spam. Frequently posts [far-right transphobia/queerphobia](http://archive.today/2023.09.18-151425/https://tastingtraffic.net/@InternationalTechNews/111086792935014280), [another example](https://web.archive.org/web/20230924135533/https://tastingtraffic.net/@InternationalTechNews/110968062234187455). The same content is frequently pasted in multiple posts per day.
+
 thechimp.zone
 : Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
 : Admin [participates in queerphobic harassment](https://web.archive.org/web/20230812013407/https://thechimp.zone/notice/AYXFLeLaNjVnI4GewK).
@@ -717,6 +723,7 @@ wideboys.org
 This section hasn't been properly started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision; or for entries of lower severity.
 
 {{<nofollow>}}
+
 
 bungle.online
 : Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh). Also posts [body-shaming fatphobia](http://archive.today/2023.09.20-173637/https://bungle.online/notes/9jkj570prd), [anti-kink](http://archive.today/2023.09.20-174033/https://bungle.online/notes/9jlpkqzk90).
