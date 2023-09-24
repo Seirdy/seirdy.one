@@ -439,6 +439,11 @@ kyaruc.moe
 leafposter.club
 : [Blatant antisemitism and queerphobia](https://web.archive.org/web/20230731051338/https://cawfee.club/notice/AVS1llk6NOrAVPAB60), [SWERF](https://web.archive.org/web/20230731050932/https://leafposter.club/@Upsman/posts/AVS1ImJqDW5yEPcgwi), [blatant racist use of slurs](https://web.archive.org/web/20230731051017/https://leafposter.club/@Leaflord/posts/AVS04CFlPbegMpCOP2).
 
+liberdon.com
+: Freeze-peach ancap instance.
+: Medical misinformation: [COVIDspiracy](http://archive.today/2023.09.24-143510/https://liberdon.com/@spinneria/111104720878148352), [anti-vax](http://archive.today/2023.09.24-143454/https://liberdon.com/@nosat/111112112220569150), [more anti-vax](http://archive.today/2023.09.24-143533/https://liberdon.com/@Rpallavicini/111103983187635747)) across three different users.
+: Across four users: [transphobia](http://archive.today/2023.09.24-143435/https://liberdon.com/@rimugu/111025931153300897), [flat-earth conspiracy theories](http://archive.today/2023.09.24-143442/https://liberdon.com/@nosat/111118400907550652), [antisemitism](http://archive.today/2023.09.24-143450/https://liberdon.com/@aristoh4ck8r/111109158090162800), [blatant nazism](http://archive.today/2023.09.24-143502/https://liberdon.com/@aristoh4ck8r/111106321430714757), and [fashjacketing antifa](<http://archive.today/2023.09.24-144351/https://liberdon.com/@Rpallavicini/110768707732981452>.
+
 ligma.pro
 : The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
 
