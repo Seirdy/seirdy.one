@@ -47,9 +47,9 @@ This post is an attempt to document how they are made, their differences, their 
 
 ## How Tier-0 and FediNuke work
 
-[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **15 out of 28** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
+[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **14 out of 26** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
-When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 15 instead of 14.
+When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 14 instead of 13.
 
 All entries use the root domains when applicable, or are as close to the root domain as possible without triggering false-positives.
 
@@ -57,10 +57,10 @@ All entries use the root domains when applicable, or are as close to the root do
 
 There were some block-overrides for instances with fewer than 15 votes. Here's how I went about overriding:
 
-- If an instance has **13 votes,** I may elect to add it after additional review instead of waiting for it to hit 15 votes.
+- If an instance has **10 votes,** I may elect to add it after additional review instead of waiting for it to hit 14 votes.
 - If an instance is run by **the same staff as another Tier-0 instance** and has **at least 5 votes,** I may add it after asking other admins about it and getting multiple thumbs-up from admins who import tier-0.
 - If an instance contains **blatant/unapologetic bigotry** (something really undeniable, like Nazi imagery or excessive use of slurs in violent/hateful/definitely-not-reclaimed contexts) with staff approval or involvement, I may add it to both tier-0 and `FediNuke.txt` after I get multiple thumbs-up.
-- If an instance becomes **risky even to many tier-0 instances** (untagged gore, dox attempts, significant cybersecurity risk, <abbr title="child sexual abuse material">CSAM</abbr>, etc. with staff approval or involvement): I may add it to both right away, skipping any process.
+- If an instance becomes **risky even to many tier-0 instances** (untagged gore, dox attempts, significant cybersecurity risk, <abbr title="child sexual abuse material">CSAM</abbr>, etc. with staff approval or involvement): I may add it to both right away, skipping any process. This is rare.
 
 Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
 
