@@ -310,6 +310,10 @@ cachapa.xyz
 : Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
 : Instance permits lolicon, and runs accounts for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
 
+cannibal.cafe
+: Shares some staff with lolison.top; see its FediNuke entry. Staff-endorsed instances in the "local bubble" include nnia.space, freak.university, rapemeat.express, and other instances on FediNuke for similar reasons.
+: Admin [is explicitly pro-contact](http://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).
+
 catgirl.life OR peervideo.club
 : Both are part of [the Waifu Hunter Club's suite of services](http://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](http://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](http://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
 
@@ -688,6 +692,10 @@ kawa-kun.net
 
 kompost.cz
 : [Racism](https://ghostarchive.org/archive/cWEbG), [more racism](https://web.archive.org/web/20230804231946/https://kompost.cz/@fuxoft/110656548914018074), [transphobia](https://web.archive.org/web/20230804232125/https://kompost.cz/@fuxoft/110321506728744090), [queerphobia](https://ghostarchive.org/archive/Nmop2). All from admin.
+
+maladaptive.art
+: [Blatant racism in a transphobic sui-bait thread](https://web.archive.org/web/20230927221541/https://ap.maladaptive.art/notice/Aa4MbafnEqYugwYMca) from a local user who [appears to be a staff member](https://web.archive.org/web/20230927222451/https://ap.maladaptive.art/notice/ANZimzWDcU3GqX0dge).
+: Same user [posting blatant transphobia](https://web.archive.org/web/20230927225431/https://ap.maladaptive.art/@opal/posts/AZM01RTPDcsHmrse24), [misgendering in a transphobic thread](https://web.archive.org/web/20230927224155/https://ap.maladaptive.art/notice/Aa4Mj9DfC7jTrW01OC).
 
 occultist.space OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol (FediNuke). Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
