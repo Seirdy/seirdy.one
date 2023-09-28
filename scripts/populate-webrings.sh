@@ -76,7 +76,7 @@ values_to_csv() {
 # 		echo "null"
 # 	} | values_to_csv
 # }
-
+#
 endless_orbit() {
 	printf 'Endless Orbit,'
 	{
@@ -101,7 +101,7 @@ netizens() {
 print_csv_values() {
 	# george
 	endless_orbit
-	netizens
+	# netizens
 }
 
 if [ "$dry_run" = '1' ]; then
