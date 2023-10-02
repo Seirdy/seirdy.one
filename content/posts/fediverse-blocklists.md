@@ -352,6 +352,10 @@ decayable.ink
 detroitriotcity.com
 : Well-known Nazi instance. [Instance "about" page](https://web.archive.org/web/20230801230826/https://detroitriotcity.com/about) says: <q>racial pejoratives, NSFW images & videos, insensitivity and contempt toward differences in sexual orientation and gender identification, and so-called “cyberbullying” are all commonplace on this instance</q> and has a staff account display name featuring an iron cross. Policies permitting lolicon may make it a legal risk, depending on your jurisdiction.
 
+djsumdog.com
+: Admin posts [blatant transphobia](https://web.archive.org/web/20231002145800/https://annihilation.social/notice/AZsHN1lZgOVeSltXDU), [more blatant transphobia](http://archive.today/2023.10.02-144509/https://djsumdog.com/@djsumdog/posts/AZiGbeyuCkMvdtEN5E). [Defends teaching children to be transphobic on moral grounds](https://web.archive.org/web/20231002150542/https://pleroma.soykaf.com/notice/AZhV9sPBBYZSEL8LWS).
+: [Jan 6th conspiracy theories](http://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZZCfoxpXdfdhH2L3I) while [calling participants "discount Mandelas"](http://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZVZCzBbydqpJfrX4y).
+
 eientei.org
 : [Instance "about" page](https://web.archive.org/web/20230801231939/https://eientei.org/about) explicitly describes it as a racist instance, anad uses racial slurs. MRF policies on the "about" page feature a blockbot and rejecting deletes. Admin [posts antisemitic caricatures](https://web.archive.org/web/20230801233538/https://eientei.org/notice/AW33QYo0a9vhhJUyC8). User "lina" has [a bio with blatant bigotry](https://web.archive.org/web/20230801232340/https://eientei.org/users/lina).
 
@@ -424,6 +428,9 @@ h5q.net
 haeder.net
 : [Instance blocklist reasons are unapologetically queerphobic](https://web.archive.org/web/20230823231236/https://f.haeder.net/friendica), calling nonbinary individuals "delusional" and saying <q>We don't need more diversity and tollerance when this doesn't fall back on us straight people</q>.
 : [Admin bio](http://archive.today/2023.08.23-235040/https://microblog.social/@roland@f.haeder.net) has blatant transphobia and hashtags such as <q>SayNoToWoke</q>.
+
+hitchhiker.social OR battlepenguin.video
+: Sibling instances of djsumdog.com, run by the same admin; see its entry.
 
 iddqd.social
 : Admin posts [anti-Black caricatures](https://archive.ph/1dIUL), supports [organized predatory retaliation against DEI efforts](https://archive.ph/PfHYX). [Instance landing page](https://archive.ph/0JlGl) markets itself as an instance for 4chan users.
