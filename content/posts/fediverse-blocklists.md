@@ -591,6 +591,10 @@ seal.cafe
 : [Antisemitic transphobia from a user](http://archive.today/2023.08.05-233142/https://seal.cafe/notice/AYQ8TapnphkMxOo1Sa).
 : [Admin posting sui-bait in response to a trans woman coming out](https://web.archive.org/web/20230807202118/https://outdoors.lgbt/@ActuallyAubrey/110846065304916833).
 
+shaw.app
+: Admin [pedojackets trans people](http://archive.today/2023.10.02-135443/https://shaw.app/notes/9jpwpvgstpoxf5hl), posts [blatant denial of trans validity](http://archive.today/2023.10.02-135442/https://shaw.app/notes/9j7y04uihayc4xgo) (alongside other far-right talking points), and leaves [transphobic replies to trans women](http://archive.today/2023.10.02-135533/https://shaw.app/notes/9jb1ayl0u3bi899q).
+: [Anti-mask post](http://archive.today/2023.10.02-135406/https://shaw.app/notes/9j96scd5b2y52za5) from admin.
+
 shitpost.cloud
 : Admin "Hoss" [uses racial slurs in an unreclaimed context](https://web.archive.org/web/20230730000845/https://shitpost.cloud/notice/AXuj12Qs30YmatTqbo).
 : Admin [publicized reports](https://web.archive.org/web/20230731062033/https://shitpost.cloud/notice/AYA2Obde8BUywbo45w) against local users participating in a targeted transphobic harassment campaign.
