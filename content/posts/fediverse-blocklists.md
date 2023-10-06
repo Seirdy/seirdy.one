@@ -267,6 +267,9 @@ adachi.party
 : Later updated rules to include ["must advocate for racism/fascism/nazism"](https://archive.ph/6Tpq5).
 : [Admin posts racist transphobia](https://web.archive.org/web/20230730175847/https://pleroma.adachi.party/notice/AYAMup3aR6WhWwuHXU), [mass-tags other users with blatant racism](https://web.archive.org/web/20230811042822/https://pleroma.adachi.party/notice/AYbC2xyPJdrZH05CWO).
 
+adtension.com
+: Admin [posts blatant anti-Black racism](https://ghostarchive.org/archive/Z3O7P), and [doubles-down with more](http://archive.today/2023.10.04-010357/https://mastodon.adtension.com/@admin/111173994405081956) after being called out on it.
+
 annihilation.social OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
 : Hosts a blockbot user, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki). In light of this, I'm not inclined to give the benefit of doubt over the cross in his display name and [doubling down on vaguely antisemitic posts](https://web.archive.org/web/20230920191234/https://social.xenofem.me/notice/AZwvB187WVZNkbgCDg).
