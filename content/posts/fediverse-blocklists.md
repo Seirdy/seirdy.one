@@ -326,6 +326,10 @@ cawfee.club
 : Users [engaging in more racism](https://web.archive.org/web/20230730211531/https://cawfee.club/notice/AY1UovIIgAoO6DfDX6).
 : [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
+childlove.space
+: Pro-contact MAP instance. [Admin profile](http://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](http://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact.
+: This pro-contact instance [explicitly allows minors](http://archive.today/2023.10.06-201812/https://childlove.space/about/) in its ToS.
+
 clew.lol
 : [Racist meme from admin](https://web.archive.org/web/20230730212140/https://clew.lol/@Tony/posts/ATlNGVY9vg0FLp8WlE).
 : [Another racist meme](https://web.archive.org/web/20230730212307/https://clew.lol/@Tony/posts/ATlKwuT1NWt0vjGDCq).
