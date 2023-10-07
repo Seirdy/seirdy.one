@@ -175,6 +175,8 @@ More minor corrections:
 
 - August 2023: I assumed that an account called "Shishihime" was a bot. The admin later claimed that it was an actual user. I then retracted the "bot" description.
 
+- September 2023: I incorrectly stated that a local user on ap.maladaptive.art was a staff member. I retracted the statement.
+
 ## Important modifications before importing
 
 **If you have read this far** and plan to import my lists or a list that imports mine, please delete the following fake entries from the lists or modify the "canary" subdomains:
@@ -712,7 +714,7 @@ kompost.cz
 : [Racism](https://ghostarchive.org/archive/cWEbG), [more racism](https://web.archive.org/web/20230804231946/https://kompost.cz/@fuxoft/110656548914018074), [transphobia](https://web.archive.org/web/20230804232125/https://kompost.cz/@fuxoft/110321506728744090), [queerphobia](https://ghostarchive.org/archive/Nmop2). All from admin.
 
 maladaptive.art
-: [Blatant racism in a transphobic sui-bait thread](https://web.archive.org/web/20230927221541/https://ap.maladaptive.art/notice/Aa4MbafnEqYugwYMca) from a local user who [appears to be a staff member](https://web.archive.org/web/20230927222451/https://ap.maladaptive.art/notice/ANZimzWDcU3GqX0dge).
+: [Blatant racism in a transphobic sui-bait thread](https://web.archive.org/web/20230927221541/https://ap.maladaptive.art/notice/Aa4MbafnEqYugwYMca).
 : Same user [posting blatant transphobia](https://web.archive.org/web/20230927225431/https://ap.maladaptive.art/@opal/posts/AZM01RTPDcsHmrse24), [misgendering in a transphobic thread](https://web.archive.org/web/20230927224155/https://ap.maladaptive.art/notice/Aa4Mj9DfC7jTrW01OC).
 
 occultist.space OR enjoyer.network
