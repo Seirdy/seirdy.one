@@ -50,14 +50,14 @@ $ tool --help
 ║                                                         ║
 ╚═════════════════════════════════════════════════════════╝
 
-Usage: tool <command> [options] 
+Usage: tool <command> [options]
 Commands:
   tool init [directory]	creates a new project
-  tool manage	allows you to manage an existing project 
+  tool manage	allows you to manage an existing project
 
 Options:
   --help	Show help	[boolean]
-  --version	Show version number	[boolean] 
+  --version	Show version number	[boolean]
 ```
 
 {{</codefigure>}}

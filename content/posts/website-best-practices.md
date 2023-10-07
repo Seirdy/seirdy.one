@@ -1540,7 +1540,7 @@ A workaround is to use the "text" ARIA role to remove the semantics of elements.
 ```figure {str1="text" str2="br"}
 <h1>
   <span role="text">Digital accessibility, <br>
-    for everyone. 
+    for everyone.
   </span>
 </h1>
 ```

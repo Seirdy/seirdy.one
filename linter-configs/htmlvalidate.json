@@ -1,0 +1,34 @@
+{
+	"extends": [
+		"html-validate:recommended",
+		"html-validate:standard",
+		"html-validate:a11y",
+		"html-validate:document"
+	],
+	"rules": {
+		"attribute-empty-style": [
+			"error",
+			{
+				"style": "empty"
+			}
+		],
+		"attribute-boolean-style": [
+			"error",
+			{
+				"style": "empty"
+			}
+		],
+		"void-style": [
+			"error",
+			{
+				"style": "selfclosing"
+			}
+		],
+		"require-sri": [
+			"off"
+		],
+		"prefer-button": [
+			"off"
+		]
+	}
+}
