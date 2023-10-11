@@ -153,6 +153,11 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://git.envs.net/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://launchpad.net/~seirdy",
 			"type": "text/html"
 		},
