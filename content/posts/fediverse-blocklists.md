@@ -351,6 +351,9 @@ cum.camp OR cum.salon
 : Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://web.archive.org/web/20230730233035/https://marsey.moe/@pernia@cum.salon/posts/AY8crsXbKZHmCIApgu).
 : The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires; however, [it came back after transferring to Epik](https://web.archive.org/web/20230819012541/https://shitposter.club/notice/AYpWAIw53KQXoohBbM).
 
+cunnyborea.space
+: Appears to be a racist pro-contact pedophilia-themed instance. One admin [has swastikas in their profile bio](https://web.archive.org/web/20231020044329/https://freespeechextremist.com/users/AabwnOHSvtsRxC0HAm) and several variations on "total \_\_\_ death". The other admin's bio [has blatant racism and antisemitism](http://archive.today/2023.10.20-051331/https://eientei.org/users/$AacBlKKa9AaXillm08).
+
 decayable.ink
 : Instance is well-known for harassment campaigns.
 : [Targeted transmisogynistic harassment](https://archive.ph/KfDpN), and [aftermath of said harassment](https://web.archive.org/web/20230802213907/https://decayable.ink/notice/AYEnvhUP1mVan0dnCi).
