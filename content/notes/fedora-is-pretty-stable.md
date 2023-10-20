@@ -6,6 +6,9 @@ replyTitle: "Fedora is specifically not a stable distro, it's often considered t
 replyType: "SocialMediaPosting"
 replyAuthor: "Athena L.M."
 replyAuthorURI: "https://alm.website/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/Aawcp2Op2yTiZl5zfs'
 ---
 
 Fedora is a stable distro now, with three levels of pre-release: Rawhide is unstable, Branched is *sort of* like an alpha release, and Beta is for early adopters.
