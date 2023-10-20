@@ -29,6 +29,9 @@
 		],
 		"prefer-button": [
 			"off"
+		],
+		"no-trailing-whitespace": [
+			"off"
 		]
 	}
 }

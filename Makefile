@@ -83,8 +83,12 @@ hint: hugo .hintrc-local
 	hint --config .hintrc-local -f codeframe $(OUTPUT_DIR)
 	rm .hintrc-local
 
+.PHONY: html-validate
+html-validate:
+	pnpm -s dlx html-validate --ext=html -c linter-configs/htmlvalidate.json $(OUTPUT_DIR)
+
 .PHONY: lint-local
-lint-local: validate-html validate-json lint-css
+lint-local: html-validate validate-html validate-json lint-css
 
 # dev server, includes future and draft posts
 .PHONY: serve
