@@ -313,7 +313,8 @@ brighteon.social {#brighteon}
 
 cachapa.xyz {#cachapa}
 : Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
-: Instance permits lolicon, and runs accounts for it such as "Shishihime"; this may be a legal risk, depending on your jurisdiction.
+: [Root domain's "about" page](https://web.archive.org/web/20231025062617/https://cachapa.xyz/about/) contains transphobic, racist, queerphobic, and other slurs in a list of things the owner "hates".
+: Instance permits lolicon, and runs accounts for it such as "Shishihime" and "NahidaBot"; this may be a legal risk, depending on your jurisdiction.
 
 cannibal.cafe {#cannibal}
 : Shares some staff with lolison.top; see its FediNuke entry. Staff-endorsed instances in the "local bubble" include nnia.space, freak.university, rapemeat.express, and other instances on FediNuke for similar reasons.
