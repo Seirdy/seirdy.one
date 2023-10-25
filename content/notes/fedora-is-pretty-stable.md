@@ -5,7 +5,7 @@ replyURI: "https://solarpunk.moe/@alilly/111264290797323783"
 replyTitle: "Fedora is specifically not a stable distro, it's often considered the early-adopter distro."
 replyType: "SocialMediaPosting"
 replyAuthor: "Athena L.M."
-replyAuthorURI: "https://alm.website/"
+replyAuthorURI: "https://alm.website/me"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/Aawcp2Op2yTiZl5zfs'
