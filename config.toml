@@ -77,6 +77,13 @@ disableKinds = ["taxonomy", "term"]
 		url = "/resume/"
 		weight = 50
 
+	[[menu.main]]
+		identifier = "Support"
+		name = "Support"
+		title = "support"
+		url = "/support/"
+		weight = 50
+
 [permalinks]
 	posts = "/posts/:year/:month/:day/:filename"
 	notes = "/notes/:year/:month/:day/:filename"
