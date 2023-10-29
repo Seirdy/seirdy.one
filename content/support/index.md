@@ -7,9 +7,15 @@ description: "Support my work by sending me donations! This helps me continue Fe
 ---
 I do some things that might help you:
 
-- Fediverse moderation
-- Blogging
-- Coding (not much of that in public right now, but maybe soon!)
+
+Fediverse moderation
+: I moderate the pleroma.envs.net Akkoma server as [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/Seirdy "{rel='me'}"), and [I curate some blocklists]({{<relref "/posts/fediverse-blocklists.md">}}). This includes FediNuke; including supersets that include it, this is likely the most popular blocklist across the Fediverse.
+
+Blogging
+: See [the "Articles" section]({{<relref "/posts/">}}) for long-form articles, or [the "Notes" section]({{<relref "/notes/">}}) for short-form microblogs.
+
+Coding
+: Not much of that in public right now, but more are on the way (including the programs that generate my blocklists).
 
 If you like anything I do and want to support me, you can send me a donation:
 
