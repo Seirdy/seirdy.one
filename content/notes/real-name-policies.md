@@ -9,6 +9,8 @@ replyAuthorURI: "https://drewdevault.com/"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AbKpVF5i61wfz25CPg'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 
 The primary, hopefully-unintended function of a "real-name policy" is to exclude people and make people *less* genuine. Many aren't at home with the name deemed by society to be "real".

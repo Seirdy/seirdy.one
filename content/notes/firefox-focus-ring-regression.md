@@ -4,6 +4,8 @@ date: 2023-10-31T05:11:06-07:00
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AbKRMDqztwWekHX4qG'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 
 Firefox 120 appears to have regressed to its older WebKit-like blue focus outlines; it briefly had dual-color white-and-blue outlines.
