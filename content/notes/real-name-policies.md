@@ -6,9 +6,9 @@ replyTitle: "Send me your thoughts on “real name” policies in free software 
 replyType: "SocialMediaPosting"
 replyAuthor: "Drew Devault"
 replyAuthorURI: "https://drewdevault.com/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AbKpVF5i61wfz25CPg'
 ---
 
 The primary, hopefully-unintended function of a "real-name policy" is to exclude people and make people *less* genuine. Many aren't at home with the name deemed by society to be "real".
