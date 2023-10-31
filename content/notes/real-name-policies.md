@@ -9,6 +9,8 @@ replyAuthorURI: "https://drewdevault.com/"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AbKpVF5i61wfz25CPg'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/8983/real-name-policies'
     - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
 ---
