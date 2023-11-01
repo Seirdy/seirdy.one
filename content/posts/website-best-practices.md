@@ -938,7 +938,7 @@ When this is not possible, provide instructions that explain how to use the cont
 
 One key difference between buttons and links is the cursor appearance. Buttons should not turn the cursor into a "hand" or "pointer" icon. The article {{<mention-work itemtype="BlogPosting" itemprop="citation" role="doc-credit">}}{{<cited-work url="https://hidde.blog/some-pointers-on-default-cursors/" name="Some pointers on default cursors" extraName="headline">}} by {{<indieweb-person itemprop="author" name="Hidde de Vries" url="https://hidde.blog/about-me/">}}{{</mention-work>}} covers both sides of the issue. Personally, I think it's best to respect the convention of the browser and OS rather than break it.
 
-Read more about the differences between buttons and links in {{<mention-work itemtype="BlogPosting">}}{{<cited-work url="https://yatil.net/blog/buttons-vs-links" name="Buttons vs. Links" extraName="headline">}} by {{<indieweb-person url="https://yatil.net/" first-name="Eric" last-name="Eggbert">}}{{</mention-work>}}.
+Read more about the differences between buttons and links in {{<mention-work itemtype="BlogPosting">}}{{<cited-work url="https://yatil.net/blog/buttons-vs-links" name="Buttons vs. Links" extraName="headline">}} by {{<indieweb-person itemprop="author" url="https://yatil.net/" first-name="Eric" last-name="Eggbert">}}{{</mention-work>}}.
 
 ### Visible non-interactive semantics
 
