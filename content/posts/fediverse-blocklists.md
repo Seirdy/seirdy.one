@@ -728,8 +728,8 @@ shitposter.club {#spc}
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84).
 : [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [More transphobia from other users](https://web.archive.org/web/20230831030108/https://shitposter.club/notice/AZCc1yv50GaHraJnf6).
 : User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
+: User "Nudhul" [posts racist spam in the "MutualAid" hashtag](https://web.archive.org/web/20231103203216/https://clubcyberia.co/notice/AbFYbNOEt3Xa79cDBY).
 : [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
-: User "coolboymew" rants about [how misgendering and pronouns shouldn't be taken seriously because they're "politically charged"](https://web.archive.org/web/20230806033734/https://shitposter.club/notice/AYQepfaGcVJsd2NyZE).
 : [Some more racism from user "triodug"](http://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
 : Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
 
