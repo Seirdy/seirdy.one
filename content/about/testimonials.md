@@ -5,6 +5,9 @@ outputs:
 title: Testimonials
 description: "What do people think about Seirdy? These are some quotes about me."
 date: "2023-11-03T09:30:00-07:00"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AbR4Lu5PUFCOUbhtaq'
 ---
 Here are some things that others have said about me:
 
