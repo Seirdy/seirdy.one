@@ -12,13 +12,20 @@
 {{- end -}}
 {{- $needsModTime := gt (sub .Lastmod.Unix .Date.Unix) 900 -}}
 {{- $needsList := or (and (not $shortMeta) $needsModTime) (not $isNotes) -}}
+{{- $gemini := "" }}
+{{- with .OutputFormats.Get "gemtext" -}}
+	{{- $gemini = replace .Permalink "/gemini" "" 1 | safeURL -}}
+{{- end -}}
+{{- if not (eq .Page.Section "posts" ) -}}
+	{{- $gemini = replace $gemini "/index.gmi" ".gmi" | safeURL -}}
+{{- end -}}
 {{- if $needsList }}
 <ul>
 {{- else}}
 <p>
 {{- end }}
 {{ if $needsList }}<li>{{ end }}
-{{- $action }} <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{ partial "indieweb-author.html" -}}{{ if not $shortMeta }} on his <a rel="canonical" itemprop="url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{replace .Permalink "/gemini" "" 1 | safeURL}}">Gemini capsule</a>{{ end }}{{- end -}}.
+{{- $action }} <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> by {{ partial "indieweb-author.html" -}}{{ if not $shortMeta }} on his <a rel="canonical" itemprop="url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{ $gemini }}">Gemini capsule</a>{{ end }}{{- end -}}.
 {{ if $needsList }}</li>{{ end }}
 			{{- if gt (sub .Lastmod.Unix .Date.Unix) 900 -}}
 {{ if $needsList }}<li>{{ end }}
