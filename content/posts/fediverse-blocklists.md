@@ -471,6 +471,12 @@ liberdon.com {#liberdon}
 ligma.pro {#ligma}
 : The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
 
+loli.church {#loli-church}
+: [Instance announcement post explicitly condones racist posts](http://archive.today/2023.10.20-055501/https://loli.church/notes/9k2rdrdih5) (reblogged by admin). Author of that post [also posts blatant antisemitism](http://archive.today/2023.10.20-060532/https://loli.church/notes/9kwsbbt8e8) and [anti-Indigenous ethno-nationalism](http://archive.today/2023.10.20-060735/https://loli.church/notes/9kmk1o2lwp).
+: [loli.church is the new home of fediverse.dotnet00.dev](http://archive.today/2023.10.20-053340/https://loli.church/notes/9k2si4ywl3). Receipts from the old instance: [Racist user "Wiz"](http://archive.today/2023.08.01-163514/https://fediverse.dotnet00.dev/notes/9hugibpler), posts [edgy bigotry](http://archive.today/2023.08.01-191114/https://fediverse.dotnet00.dev/notes/9huygvr5jc).
+: Receipts from the old instance: Reporting probably won't help, as [the admin maintains a freeze-peach policy](http://archive.today/2023.08.01-174423/https://fediverse.dotnet00.dev/notes/97i5gzjd8n) and [regularly boosts racist content themself](http://archive.today/2023.08.01-174611/https://fediverse.dotnet00.dev/notes/97nxwl75iy).
+: The users in receipts for `dotnet00.dev` are now on `loli.church` with the same handles. Their profiles contain uncensored loli hentai.
+
 lolicon.rocks {#lolicon-rocks}
 : ["About" page](https://web.archive.org/web/20230805183555/https://posting.lolicon.rocks/about) states <q>posting.lolicon.rocks is a common carrier telecommunications provider that does not moderate content</q> and also features the owner with the handle "BlinkRape".
 : [Owner profile bio](http://archive.today/2023.08.05-183749/https://posting.lolicon.rocks/BlinkRape) contains racist and ableist slurs.
