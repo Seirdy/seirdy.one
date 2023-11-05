@@ -330,7 +330,7 @@ cawfee.club {#cawfee}
 : [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
 childlove.space {#childlove}
-: Pro-contact MAP instance. [Admin profile](http://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](http://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact.
+: Pro-contact MAP instance. [Admin profile](http://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](http://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact. Appears to contain many users close to Newgon, a bigoted pro-contact conspiratorial group.
 : This pro-contact instance [explicitly allows minors](http://archive.today/2023.10.06-201812/https://childlove.space/about/) in its ToS.
 
 clew.lol {#clew}
