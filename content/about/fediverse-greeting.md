@@ -8,8 +8,9 @@ date: "2022-06-11T18:20:00+00:00"
 ---
 Hey, I'm [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/Seirdy). Please read the "Follow requests" section before following me on the Fediverse (<abbr title="Fediverse">Fedi</abbr>). The rest is optional.
 
-Follow requests
----------------
+## Follow requests
+
+If you're on an instance with more than 10k active users, such as mastodon.social or mastodon.online, I'm unlikely to accept. You might have to wait a while. I recommend migrating to a smaller instance, preferably one with fewer than 1k active users.
 
 If you want me to consider accepting your follow request, you need to have made multiple posts. Your profile should also contain at least three of the following:
 
@@ -20,15 +21,9 @@ If you want me to consider accepting your follow request, you need to have made 
 
 Alternatively: DM me to introduce yourself and say why you want to follow me.
 
-If you send a follow request and you haven’t done the above, I’ll wait before checking again. If you're on mastodon.social or mastodon.online, I'm less likely to accept and you might have to wait a while. If you're really close to hateful/hostile instances, I'll reject.
+If you're really close to hateful/hostile instances, I'll reject.
 
-Moving
-------
-
-I'll eventually move from Pleroma to my own Gotosocial instance, for many reasons. I'm first waiting for Misskey to fix its HTTP signatures so that it can federate with Gotosocial.
-
-Fedi practices
---------------
+## Fedi practices
 
 If I say something insensitive or interact with someone I shouldn’t, please let me know so I can be better. My DMs are open (i.e., you can always send me a direct message), and I have other forms of contact on my [About page](../)
 
