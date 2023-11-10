@@ -12,6 +12,6 @@
 	<span id="{{ $id }}" tabindex="-1">
 	<strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> {{ $codeIndex }}</strong>{{with .Get "lang"}} (<span itemprop="programmingLanguage">{{ . }}</span>){{ end -}}
 	</span>:
-{{ .Inner | markdownify | safeHTML }}
+{{ .Inner | .Page.RenderString | safeHTML }}
 </figcaption>
 {{- .Page.Scratch.Set "codeIndex" (add 1 $codeIndex) -}}
