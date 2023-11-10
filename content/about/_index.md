@@ -161,6 +161,7 @@ More information is available in [my "uses" page]({{<relref "uses">}}).
 
 I watch <span class="p-category category">anime</span>. Some of my favorites, in no particular order:
 
+- Pluto
 - Code Geass
 - Mawaru Penguindrum
 - No Game No Life: Zero
