@@ -52,7 +52,7 @@ lint-css: $(CSS_DIR)/*.css
 equal-access:
 	cp -r $(OUTPUT_DIR) $(OUTPUT_DIR).eac
 	find $(OUTPUT_DIR).eac -type f -name "*.html" | xargs -n1 sd 'content-visibility:auto;' ''
-	achecker $(OUTPUT_DIR).eac/
+	pnpm --package accessibility-checker dlx achecker $(OUTPUT_DIR).eac/
 	rm -rf $(OUTPUT_DIR).eac
 
 .PHONY: validate-json

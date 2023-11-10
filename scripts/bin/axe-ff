@@ -5,4 +5,4 @@ PATH="scripts/bin:$PATH"
 output_dir="$1"
 shift
 urls="$(echo "$*" | tr ' ' '\n' | sd '^https?://[^/]*' "file://$PWD/$output_dir" | sd '/$' '/index.html' | tr '\n' ' ')"
-axe $urls -b firefox --show-errors
+pnpm --package @axe-core/cli -s dlx axe $urls -b firefox --show-errors
