@@ -501,11 +501,17 @@ ins,
  * figure captions shouldn't look like regular paragraphs; there should
  * be some extra space.
  * This does not hold true for figures in somewhat distinct sections; the
- * section should instead get the spacing. A section that constitutes a
- * separate schema.org object would qualify. */
+ * parent section should instead get the spacing. A section that
+ * constitutes a separate schema.org object would qualify. */
 figure,
 section[itemprop="mentions"] {
 	margin: 1.5em 0;
+}
+
+/* image captions, on the other hand, should look more separate from
+ * surrounding paragraphs. */
+figure[itemtype="https://schema.org/ImageObject"] {
+	margin: 1.5em;
 }
 
 section[itemprop="mentions"] > figure {
