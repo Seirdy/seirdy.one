@@ -10,6 +10,8 @@ syndicatedCopies:
       url: 'https://pleroma.envs.net/notice/Abk95iMHVwXLGBw956'
     - title: 'Lobsters'
       url: 'https://lobste.rs/s/v1yooo/proposal_html_element_for_spoilers'
+    - title: 'WICG Discourse'
+      url: 'http://discourse.wicg.io/t/standardized-spoiler-tag/5814/15?u=seirdy'
 ---
 <section role="doc-introduction">
 
