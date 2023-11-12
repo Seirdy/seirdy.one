@@ -1,0 +1,138 @@
+## Introduction
+
+> I wish it were possible to look up any medical issue without being exposed to the most graphic photographs ever taken by man or beast.
+=> https://akko.wtf/objects/8fd2f79b-9529-441d-8b6f-079ac4a8f599 — Velveteen, Post on akko.wtf
+
+While browsing the WICG discussion forms, I stumbled upon a proposal for a standardized <spoiler> element in HTML5:
+=> https://discourse.wicg.io/t/standardized-spoiler-tag/5814 Standardized spoiler tag
+
+I made two comments, and stopped myself before writing a third; this called for a blog post. I think HTML should have a spoiler element.
+
+## Prior art
+
+Spoilers are already implemented in several places around the Web, but without a standard set of semantics.
+
+A useful reference is the markup used in the Matrix protocol. Matrix messages may include a standardized subset of HTML, with some additional features provided by HTML attributes.
+
+The following syntax creates a spoiler in Matrix:
+
+```
+<span data-mx-spoiler="optional placeholder text">hidden content</span>
+```
+
+Here's a screenshot of what a spoiler element looks like in Element, a Matrix client:
+=> gemini://seirdy.one/misc/spoiler.png Screenshot of small faded text reading “optional placeholder text” followed by blurred regular text
+
+Note: this format is called "org.matrix.custom.html". The Matrix Specification Client-Server API, section 11.2.2.6: "Spoiler messages" specifies the spoiler syntax, semantics, and recommended client behavior.
+=> https://spec.matrix.org/v1.8/client-server-api/#spoiler-messages Matrix Client-Server API
+
+The visual result is typically the placeholder text followed by blurred or blacked-out hidden contents, revealed upon user interaction. Children aren't limited to text; this is a common approach to hiding images.
+
+Here's an image marked sensitive on Firefish (a Fediverse server) shows a blurred placeholder.
+=> gemini://seirdy.one/misc/spoiler-fedi.png screenshot: a post by @freeplay@kitsunes.club shows a blurred image under placeholder text reading "NSFW: Click to show".
+=> https://pleroma.envs.net/notice/AZNKmYaNv9UOa9e3wO Original thread
+
+Some clients support Markdown flavors with the following syntax:
+
+```
+||optional placeholder text|Fluffychat and Discord hide this.||
+>!Reddit hides this.<
+```
+
+## Comparison with "details"
+
+On the WICG forum, one user asked about the differences between "spoiler" and "details". The two elements have very much in common; I'd even go so far as to say that "spoiler" elements could also make use of "summary" children for placeholder text. That being said, the semantics and behavior have important differences.
+
+Note: "summary" was originally specified as a block-level button, not an inline element. This may require changes to the definition of "summary". I don’t believe that the changes should significantly impact conformant pages, but non-conforming pages that incorrectly use "summary" elements without the required "details" parent may be impacted. Perhaps we really do need a new element for spoiler summaries. 
+
+### Semantics
+
+While a disclosure widget exists to allow toggling information, a spoiler exists to make information inaccessible without consent: invisible, inaudible, unreadable. A disclosure widget helps divert user’s attention away from hidden text; a spoiler protects users from hidden text.
+
+Following the examples in the “Prior Art” section, "summary" can be an optional first-child of a "spoiler" while remaining a mandatory first-child of "details".
+
+### Behavior
+
+Semantic differences should impact how activation works. Spoiler text should not be revealed until the placeholder text has been read. Unread spoiler text may include off-screen placeholders, placeholders that a screen/braille-reader hasn’t reached yet, and perhaps even spoiler text whose placeholders haven’t reached a magnifier’s viewport. Spoilers shouldn’t be revealed by accident.
+
+For visual users, placeholder text should be in the viewport for a minimum duration. A user-agent should expose a setting to increase this duration. Ideally, it could allow users to supply keywords for sensitive or non-sensitive topics for auto-hiding or auto-revealing spoilers. Spoiler text matching sensitive topics should require some form of additional confirmation.
+
+Functionality such as find-in-page may indicate a match obscured by a "spoiler", but shouldn’t activate the "spoiler". It may expand a disclosure widget.
+
+### Presentation
+
+"details" is a block element; "spoiler" can be either an inline or block element. A few words within a paragraph can be hidden behind a "spoiler". "details" tends to work more effectively on larger sections of content. A "summary" should obscure content, but not the size of said content; it obscures content without removing it.
+
+For printouts, behavior should mirror "details". Print hidden if it's hidden in the browser, and print revealed if it's been revealed in the browser.
+
+## Use-cases
+
+Several overlapping use-cases exist:
+
+* “Spoilers” for plot-twists. These are common on wikis such as TV Tropes.
+* A warning for imagery that may be inappropriate in a public setting (you might want to hide erotic or gory content when you’re on the train).
+* Content-warnings for potentially triggering topics.
+* Hiding a joke’s punchline, or the answer to a riddle.
+* Hiding user-generated content that’s been flagged by other users, awaiting moderation
+
+I could go on. This is an immensely useful feature that HTML just doesn't address right now.
+
+## Potential attributes
+
+Some semantic configurability should be possible with HTML attributes:
+
+
+* "preview": A boolean attribute for "spoiler". Hidden content could have a preview available or have no preview at all. A "true" value could show a partial preview of a sensitive image (e.g. a version with a reduced resolution and saturation, passed through a heavy blur filter); a "false" value could simply hide the content behind censor bars or filler content.
+* "preview-alt": An attribute for any element that supports the "alt" attribute. This can supply alt-text for hidden versions of media without overly descriptive language, analogous to blurred or pixelated previews. "Black-and-white photo of a large wound" could be an image's "preview-alt" text, while the actual alt text could describe the image more...vividly.[note 1]
+* "loading": "img", "iframe", and other elements already support "loading="lazy"" to enable native lazy loading. A thread on the WICG forums proposes allowing the attribute on container elements to apply to their children, singling out "details" in particular. As "spoiler" hides content, hidden children may have loading deferred until their parent "spoiler" element activates.
+=> https://discourse.wicg.io/t/add-loading-lazy-attribute-to-details-element/6060 The referenced WICG thread about lazy loading
+
+## Considerations
+
+### Considerations for user-agents
+
+* Many browser developer tools allow viewing a page's media; for example, the Network Inspector allows rendering the body of an individual request. A request for an image inside a "spoiler" should not unnecessarily bypass this. Browsers with such features shouldn't ship "spoiler" support until a developer-tools toggle for "show spoiler contents" is ready. Should this also apply to spoiler text?
+* Users who frequently visit a website may wish for a site-specific setting to auto-show sensitive media. This is a common setting on social media sites.
+* A simple click-to-toggle would interfere with selection, as repeated clicking is a common way to select text. We should come up with an alternative.
+
+### Considerations for authors
+
+* In some situations, could alt-text be more sensitive than visual media? If so, perhaps "preview-alt" could apply even without a parent "spoiler" element.
+* Good preview-alt-text is descriptive enough to inform the decision to toggle media, but not so descriptive that it needs a spoiler of its own. Reaching that balance is extremely difficult.
+* This might be a situation in which SEO-style keyword-stuffing might actually have real merit, to accurately trigger users' own keyword filters.
+* Authors may wish to provide a JavaScript polyfill for clients that lack support, and perhaps preface their content or links with a "noscript" warning for clients lacking support for both "spoiler" and scripting.
+* How should authors describe severity levels? An image containing blood could depict a minor scrape or severe medical gore. We'll need guidelines on how to do this, just as we have guidelines on alt-text.
+
+### Privacy considerations
+
+* User keyword filters may present a fingerprinting vector. Anonymity-focused browsers like the Tor Browser probably shouldn't expose this functionality. Perhaps spoilers combined with lazy-loading should be disqualified from auto-revealing.
+* A user who consistently declines to reveal spoilers with certain placeholder text may be fingerprinted accordingly. The Tor Browser's "safest" mode disables lazy loading and JavaScript, which should close this fingerprinting vector.
+
+## Further work
+
+We may need to create additional corresponding ARIA roles for spoilers. I can't really on an ideal one.
+
+We may also need to define a vocabulary for well-known spoilers, and encourage authors to use that vocabulary when relevant. This could improve how well auto-revealing spoilers works. Of course, I'm not proposing that any content matching that vocabulary should receive a spoiler; I'm only proposing to choose that vocabulary when writing spoiler-text, if it's relevant. I don't think we should be prescriptive about what to use spoilers on across the entire Web.
+
+There should be a way to spoiler a whole page, or a whole website, if the primary focus of the page/website is a sensitive topic. This is common on sites devoted to erotic or age-gated content.
+
+Other areas may benefit from standardized spoiler-like semantics. Someday, chapter indicators in media containers could come with Sponsorblock-inspired vocabulary; some chapters could be marked "sensitive" and auto-pause while displaying a reason. If other spoiler-like semantics exist, we should create mappings between proposed HTML semantics and existing semantics. Perhaps such an exercise would change how we develop HTML semantics for spoilers.
+
+## Snarky thoughts: conflicts of interests
+
+Ad companies probably won’t want to hide ads containing sexual/erotic, anxiety-inducing, or shock content behind spoilers; they profit FROM what spoilers protect against. Sites with such ads probably won’t benefit from hiding such content behind spoilers if ads are exempt.
+
+A good solution would be for ads to identify themselves as such along with the psychological weaknesses they prey on (porn addictions, anxiety, eating disorders, gambling addictions, etc.) so that user-agents could selectively or globally block them. For some reason, I don’t think adtech companies would like this very much. More research is required to find a form of basic compassion that allows dominant advertising business models to exist.
+
+##acknowledgements
+
+Thanks to Athena Martin for providing feedback on an initial draft. She raised concerns about user-agents without support, the possibility of specifying machine-readable severity levels, and printouts.
+
+Thanks to ~keith for bringing up good points concerning prescriptivity of spoiler norms.
+
+---
+
+
+[note 1]: I came up with the idea of this attribute when I was browsing some Wikipedia articles on medical topics and ended up on the article for "maggot therapy". I had uBlock Origin configured to make large media click-to-load, and the figure captions told me which ones would be safe to load when others were in the room. However, figure captions aren't a replacement for alt-text:
+=> gemini://seirdy.one/posts/2020/11/23/website-best-practices/ See the "putting images in context" section of this post
+
