@@ -115,7 +115,7 @@ Functionality such as find-in-page may indicate a match obscured by a spoiler, b
 
 ### Presentation
 
-`details` is a block element; `spoiler` can be either an inline or block element. A few words within a paragraph can be hidden behind a spoiler. `details` tends to work more effectively on larger sections of content. A `summary` should obscure content, but not the size of said content; it _obscures_ content without _removing_ it.
+`details` is a block element; `spoiler` can be either an inline or block element. A few words within a paragraph can be hidden behind a spoiler. `details` tends to work more effectively on larger sections of content. A `spoiler` should obscure content, but not the size of said content; it _obscures_ content without _removing_ it.
 
 For printouts, behavior should mirror `details`. Print hidden if it's hidden in the browser, and print revealed if it's been revealed in the browser.
 
