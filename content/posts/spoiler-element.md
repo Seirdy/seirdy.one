@@ -5,6 +5,11 @@ date: 2023-11-12T13:48:00-08:00
 outputs:
     - html
     - gemtext
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/Abk95iMHVwXLGBw956'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/v1yooo/proposal_html_element_for_spoilers'
 ---
 <section role="doc-introduction">
 
