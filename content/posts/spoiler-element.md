@@ -83,13 +83,14 @@ An image marked sensitive on Firefish (a Fediverse server) shows a blurred place
 
 {{<codefigure>}}{{<codecaption>}}
 
-Some clients support Markdown flavors with special syntax for spoilers:
+More special syntax for spoilers:[^2]
 
 {{</codecaption>}}
 
 ```figure
 ||optional placeholder text|Fluffychat and Discord hide this.||
 >!Reddit hides this.<
+[spoiler=optional placeholder text]BBCode hides this[/spoiler]
 ```
 
 {{</codefigure>}}
@@ -99,7 +100,7 @@ Some clients support Markdown flavors with special syntax for spoilers:
 
 ## Comparison with `details`
 
-On the <abbr>WICG</abbr> forum, one user asked about the differences between `spoiler` and `details`. The two elements have very much in common; I'd even go so far as to say that `spoiler` elements could also make use of `summary` children for placeholder text.[^2] That being said, the semantics and behavior have important differences.
+On the <abbr>WICG</abbr> forum, one user asked about the differences between `spoiler` and `details`. The two elements have very much in common; I'd even go so far as to say that `spoiler` elements could also make use of `summary` children for placeholder text.[^3] That being said, the semantics and behavior have important differences.
 
 ### Semantics
 
@@ -148,7 +149,7 @@ Some semantic configurability should be possible with HTML attributes:
 : A boolean attribute for `spoiler`. Hidden content could have a preview available or have no preview at all. A "true" value could show a partial preview of a sensitive image (e.g. a version with a reduced resolution and saturation, passed through a heavy blur filter); a "false" value could simply hide the content behind censor bars or filler content.
 
 `preview-alt`
-: An attribute for any element that supports the `alt` attribute. This can supply alt-text for hidden versions of media without overly descriptive language, analogous to blurred or pixelated previews. "Black-and-white photo of a large wound" could be an image's "preview-alt" text, while the actual alt text could describe the image more..._vividly_.[^3]
+: An attribute for any element that supports the `alt` attribute. This can supply alt-text for hidden versions of media without overly descriptive language, analogous to blurred or pixelated previews. "Black-and-white photo of a large wound" could be an image's "preview-alt" text, while the actual alt text could describe the image more..._vividly_.[^4]
 
 `loading`
 : `img`, `iframe`, and other elements already support `loading="lazy"` to enable native lazy loading. [A thread on the WICG forums](https://discourse.wicg.io/t/add-loading-lazy-attribute-to-details-element/6060) proposes allowing the attribute on container elements to apply to their children, singling out `details` in particular. As `spoiler` hides content, hidden children may have loading deferred until their parent `spoiler` element activates.
@@ -213,13 +214,17 @@ Thanks to {{<indieweb-person itemprop="mentions" name="Athena Martin" url="https
 
 Thanks to {{<indieweb-person itemprop="mentions" name="~keith" url="https://keithhacks.cyou/">}} for bringing up good points concerning prescriptivity of spoiler norms.
 
+Thanks to {{<indieweb-person itemprop="mentions" name="Locria Cyber" url="https://www.1a-insec.net/">}} for reminding me about BBCode.
+
 </section>
 
 
 [^1]: This format is called `org.matrix.custom.html`. The {{<mention-work itemtype="TechArticle">}}<cite itemprop="name headline" class="p-name">Matrix Specification Client-Server API</cite>, section 11.2.2.6: <a class="u-url" itemprop="url" href="https://spec.matrix.org/v1.8/client-server-api/#spoiler-messages">“Spoiler messages”</a>{{</mention-work>}} specifies the spoiler syntax, semantics, and recommended client behavior.
 
-[^2]: Note that `summary` was originally specified as a block-level button, not an inline element. This may require changes to the definition of `summary`. I don't believe that the changes should significantly impact conformant pages, but non-conforming pages that incorrectly use `summary` elements without the required `details` parent may be impacted. Perhaps we really do need a new element for spoiler summaries.
+[^2]: [BBCode](https://www.bbcode.org/posting-a-spoiler-with-bbcode.php) is the oldest example of dedicated spoiler syntax I know of.
 
-[^3]: I came up with the idea of this attribute when I was browsing some Wikipedia articles on medical topics and ended up on the article for "maggot therapy". I had uBlock Origin configured to make large media click-to-load, and the figure captions told me which ones would be safe to load when others were in the room. However, [figure captions aren't a replacement for alt-text]({{<relref "website-best-practices.md#putting-images-in-context">}}).
+[^3]: Note that `summary` was originally specified as a block-level button, not an inline element. This may require changes to the definition of `summary`. I don't believe that the changes should significantly impact conformant pages, but non-conforming pages that incorrectly use `summary` elements without the required `details` parent may be impacted. Perhaps we really do need a new element for spoiler summaries.
+
+[^4]: I came up with the idea of this attribute when I was browsing some Wikipedia articles on medical topics and ended up on the article for "maggot therapy". I had uBlock Origin configured to make large media click-to-load, and the figure captions told me which ones would be safe to load when others were in the room. However, [figure captions aren't a replacement for alt-text]({{<relref "website-best-practices.md#putting-images-in-context">}}).
 
 

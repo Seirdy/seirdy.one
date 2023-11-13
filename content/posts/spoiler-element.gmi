@@ -32,12 +32,14 @@ Here's an image marked sensitive on Firefish (a Fediverse server) shows a blurre
 => gemini://seirdy.one/misc/spoiler-fedi.png screenshot: a post by @freeplay@kitsunes.club shows a blurred image under placeholder text reading "NSFW: Click to show".
 => https://pleroma.envs.net/notice/AZNKmYaNv9UOa9e3wO Original thread
 
-Some clients support Markdown flavors with the following syntax:
+More special syntax for spoilers:
 
 ```
 ||optional placeholder text|Fluffychat and Discord hide this.||
 >!Reddit hides this.<
 ```
+
+=> https://www.bbcode.org/posting-a-spoiler-with-bbcode.php BBCode is the oldest example of dedicated spoiler syntax I know of.
 
 ## Comparison with "details"
 
