@@ -83,7 +83,7 @@ An image marked sensitive on Firefish (a Fediverse server) shows a blurred place
 
 {{<codefigure>}}{{<codecaption>}}
 
-More special syntax for spoilers:[^2]
+More special syntax for spoilers:
 
 {{</codecaption>}}
 
@@ -94,6 +94,8 @@ More special syntax for spoilers:[^2]
 ```
 
 {{</codefigure>}}
+
+[BBCode](https://www.bbcode.org/posting-a-spoiler-with-bbcode.php) is the oldest example of dedicated spoiler syntax I know of.
 
 </section>
 <section>
@@ -220,8 +222,6 @@ Thanks to {{<indieweb-person itemprop="mentions" name="Locria Cyber" url="https:
 
 
 [^1]: This format is called `org.matrix.custom.html`. The {{<mention-work itemtype="TechArticle">}}<cite itemprop="name headline" class="p-name">Matrix Specification Client-Server API</cite>, section 11.2.2.6: <a class="u-url" itemprop="url" href="https://spec.matrix.org/v1.8/client-server-api/#spoiler-messages">“Spoiler messages”</a>{{</mention-work>}} specifies the spoiler syntax, semantics, and recommended client behavior.
-
-[^2]: [BBCode](https://www.bbcode.org/posting-a-spoiler-with-bbcode.php) is the oldest example of dedicated spoiler syntax I know of.
 
 [^3]: Note that `summary` was originally specified as a block-level button, not an inline element. This may require changes to the definition of `summary`. I don't believe that the changes should significantly impact conformant pages, but non-conforming pages that incorrectly use `summary` elements without the required `details` parent may be impacted. Perhaps we really do need a new element for spoiler summaries.
 
