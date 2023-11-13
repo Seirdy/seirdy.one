@@ -16,6 +16,8 @@ syndicatedCopies:
       url: 'https://news.indieweb.org/en'
     - title: 'jstpst'
       url: 'https://www.jstpst.net/f/just_post/9051/proposal-an-html-element-for-spoilers'
+    - title: 'WHATWG HTML issue tracker'
+      url: 'https://github.com/whatwg/html/issues/9926'
 ---
 <section role="doc-introduction">
 
