@@ -14,6 +14,8 @@ syndicatedCopies:
       url: 'http://discourse.wicg.io/t/standardized-spoiler-tag/5814/15?u=seirdy'
     - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/9051/proposal-an-html-element-for-spoilers'
 ---
 <section role="doc-introduction">
 
