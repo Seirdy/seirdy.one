@@ -184,7 +184,7 @@ Some semantic configurability should be possible with HTML attributes:
 
 ### Further work
 
-We may need to create additional corresponding <abbr title="Accessible Rich Internet Applications">ARIA</abbr> roles for spoilers. I can't really on an ideal one.
+We may need to create additional corresponding <abbr title="Accessible Rich Internet Applications">ARIA</abbr> roles for spoilers. I can't decide on an ideal existing one.
 
 We may also need to define a vocabulary for well-known spoilers, and encourage authors to use that vocabulary when relevant. This could improve how well auto-revealing spoilers works. Of course, I'm not proposing that any content matching that vocabulary should receive a spoiler; I'm only proposing to choose that vocabulary when writing spoiler-text, if it's relevant. I don't think we should be prescriptive about what to use spoilers on across the entire Web.
 
