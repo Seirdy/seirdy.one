@@ -12,6 +12,8 @@ syndicatedCopies:
       url: 'https://lobste.rs/s/v1yooo/proposal_html_element_for_spoilers'
     - title: 'WICG Discourse'
       url: 'http://discourse.wicg.io/t/standardized-spoiler-tag/5814/15?u=seirdy'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 <section role="doc-introduction">
 
