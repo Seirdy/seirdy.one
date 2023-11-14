@@ -24,11 +24,15 @@ cleanup() {
 }
 trap cleanup EXIT
 
+run_tidy () {
+	tidy -asxhtml -config linter-configs/tidy.conf 2>/dev/null || true
+}
+
 # delete the stylesheet from the html file; we'll re-insert it later.
 # Also remove two indentation levels
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | sd '^\t(?:\t)?' '' >"$tmp_file"
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | sd '^\t(?:\t)?' '' | run_tidy >"$tmp_file"
 {
-	head -n7 "$tmp_file" | sd -s '/>' ' />'
+	head -n7 "$tmp_file"
 	cat "$OUTPUT_DIR/tmp.css"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	tail -n +8 "$tmp_file" \
@@ -38,6 +42,5 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | s
 		| sd -s '&nbsp;' '&#160;' \
 		| sd -f m 'class="u-photo photo"[^<]*<' 'class="u-photo photo"/> <' \
 		| sd '([a-z])<(data|time)' '$1 <$2' \
-		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1' \
-		| sd '([^ ])/>' '$1 />'
+		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1'
 } >"$html_file"
