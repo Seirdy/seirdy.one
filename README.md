@@ -24,6 +24,7 @@ Before deploying, I use some tools to process the output.
 
 - `xmllint`, part of libxml2, to format the generated polygot XHTML5 markup.
 - [sd](https://github.com/chmln/sdA) (for advanced multi-line regex operations, much of which exist to fix `xmllint`'s output)
+- a patched version of html-tidy
 
 I also apply static compression at max levels, using the following tools:
 
