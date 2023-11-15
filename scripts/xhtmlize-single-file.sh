@@ -37,8 +37,8 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
 			-e '1,7d' \
-			-e 's|"u-photo photo" ?/><span|"u-photo photo" ?/>&#160;<span|' \
 			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
+			-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
 			-E \
 			-e 's|([a-z])<data|\1 <data|' \
 			-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
