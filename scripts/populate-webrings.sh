@@ -51,7 +51,6 @@ while getopts "hd" flags; do
 			;;
 		*)
 			bad_option "$flags" 'invalid option'
-			exit 1
 			;;
 	esac
 done

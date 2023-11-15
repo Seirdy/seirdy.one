@@ -25,12 +25,14 @@ key() {
 }
 
 token() {
-	ccurl -sX POST "$auth_url" -d "key=$(key)"
+	key_response="$(key)"
+	ccurl -sX POST "$auth_url" -d "key=$key_response"
 }
 
 # use that token to fetch all webmentions
 fetch_webmentions() {
-	ccurl --compressed -H "Authorization: Bearer $(token)" "$webmentions_url" -o "$webmentions_file"
+	token_response="$(token)"
+	ccurl --compressed -H "Authorization: Bearer $token_response" "$webmentions_url" -o "$webmentions_file"
 }
 
 # fetch webmentions if we don't have a fresh copy already.
