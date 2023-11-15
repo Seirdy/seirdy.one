@@ -30,7 +30,7 @@ token() {
 
 # use that token to fetch all webmentions
 fetch_webmentions() {
-	ccurl --compressed -H "Authorization: Bearer $(token)" "$webmentions_url"
+	ccurl --compressed -H "Authorization: Bearer $(token)" "$webmentions_url" -o "$webmentions_file"
 }
 
 # fetch webmentions if we don't have a fresh copy already.
@@ -40,5 +40,5 @@ if [ -f "$webmentions_file" ] \
 	echo 'Using cached webmentions'
 else
 	echo 'Fetching webmentions'
-	fetch_webmentions >"$webmentions_file"
+	fetch_webmentions
 fi
