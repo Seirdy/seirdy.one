@@ -56,60 +56,20 @@ while getopts "hd" flags; do
 	esac
 done
 
-trim_trailing_comma() {
-	sd ',$' ''
-}
-
-values_to_csv() {
-	tr '\n' ',' | trim_trailing_comma && echo
-}
-
-# values for the GEORGE webring
-# Left bc I quit trying to make a good first-party iframe alternative
-# that conformed to my site design standards while also imparting the
-# message of GEORGE as intended.
-# george() {
-# 	printf 'GEORGE,'
-# 	{
-# 		curl -sSL --compressed 'https://george.gh0.pw/embed.cgi?seirdy' \
-# 		| htmlq -a href 'main p a' 
-# 		echo "null"
-# 	} | values_to_csv
-# }
-#
 endless_orbit() {
 	printf 'Endless Orbit,'
-	{
-		curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
-		| grep -C 1 https://seirdy.one/
-		echo "'null',"
-	} | sd https://seirdy.one/ https://linkyblog.neocities.org/webring.html \
-		| sd "\n|'" '' | trim_trailing_comma
-		echo
-}
-
-netizens() {
-	printf 'Netizens,'
-	{
-		curl -sSL --compressed https://netizensring.link/onionring-variables.js \
-		| grep -C 1 https://seirdy.one/
-	} | sd 'https://seirdy.one/,?' 'https://netizensring.link/' \
-		| sd "\n|'|\r" '' | trim_trailing_comma 
-		echo ',null'
-}
-
-print_csv_values() {
-	# george
-	endless_orbit
-	# netizens
+	curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
+	| grep -C 1 https://seirdy.one/ \
+	| tr -d "'\n" | sed 's|https://seirdy.one/|https://linkyblog.neocities.org/webring.html|'
+	echo 'null'
 }
 
 if [ "$dry_run" = '1' ]; then
-	print_csv_values
+	endless_orbit
 elif [ -f "$webrings_dest" ]; then
 		echo "webrings file already generated"
 else
-	print_csv_values | cat "$webrings_src" - >"$webrings_dest"
+	endless_orbit | cat "$webrings_src" - >"$webrings_dest"
 fi
 
 # vi:ft=sh

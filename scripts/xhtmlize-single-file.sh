@@ -10,13 +10,13 @@
 # use xmllint to do the formatting.
 # xmllint ruins inline CSS so delete the inline CSS and re-insert it.
 # xmllint also adds extra whitespace around <pre><code> which we remove
-# with "sd". I chose sd since it handles newlines well.
+# with sed.
 # It also decreases indents by one level
 
 set -e -u
 
 html_file="$1"
-tmp_file="$html_file.tmp"
+tmp_file="$(mktemp)"
 xhtml_file=${html_file%*.html}.xhtml
 
 cleanup() {
@@ -30,17 +30,18 @@ run_tidy () {
 
 # delete the stylesheet from the html file; we'll re-insert it later.
 # Also remove two indentation levels
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | sd '^\t(?:\t)?' '' | run_tidy >"$tmp_file"
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | run_tidy >"$tmp_file"
 {
 	head -n7 "$tmp_file"
 	cat "$OUTPUT_DIR/tmp.css"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
-	tail -n +8 "$tmp_file" \
-		| sd '<pre(?: tabindex="0")?>\n(?:\t|\s)*<(code|samp)( |>)' '<pre tabindex="0"><$1$2' \
-		| sd '(?:\n)?</(code|samp)>\n(?:[\t\s]*)?</pre>' '</$1></pre>' \
-		| sd '</span>(?:&nbsp;)?.span itemprop="familyName"' '</span>&#160;<span itemprop="familyName"' \
-		| sd -s '&nbsp;' '&#160;' \
-		| sd -f m 'class="u-photo photo"[^<]*<' 'class="u-photo photo"/> <' \
-		| sd '([a-z])<(data|time)' '$1 <$2' \
-		| sd '</span>(<a[^>]*rel="(?:nofollow ugc|ugc nofollow)"(?:[^>]*)?>liked</a>)' '</span> $1'
+	sed \
+			-e '1,7d' \
+			-e 's|\.svg" width="16" /><span|svg" width="16" /> <span|' \
+			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
+			-E \
+			-e 's|([a-z])<data|\1 <data|' \
+			-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
+			-e 's#<pre( tabindex="0")?>\n(\t|\s)*<(code|samp)( |>)#<pre tabindex="0"><\3\4#' \
+			"$tmp_file"
 } >"$html_file"
