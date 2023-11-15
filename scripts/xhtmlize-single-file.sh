@@ -42,6 +42,7 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$
 			-E \
 			-e 's|([a-z])<data|\1 <data|' \
 			-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
+			-e 's#^[\t\s]*<(code|/pre)#<\1#' \
 			"$tmp_file" \
 		| awk '/^<\/code>/{printf "%s",$0;next}7'
 } >"$html_file"
