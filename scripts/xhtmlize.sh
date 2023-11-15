@@ -8,7 +8,7 @@ set -e -u
 output_dir="$1"
 script_dir="$(dirname "$0")"
 
-printf '<style>%s</style>\n' "$(htmlq -t style <"$output_dir/index.html")" >"$output_dir/tmp.css"
+sed -e '7q;d' "$output_dir/index.html" | tr -d '\t' >"$output_dir/tmp.css"
 cleanup() {
 	rm -f "$output_dir/tmp.css"
 }
