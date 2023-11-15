@@ -8,9 +8,6 @@ set -e -u
 output_dir="$1"
 script_dir="$(dirname "$0")"
 
-tidy_version="$(tidy -version)"
-export TIDY="<meta content=\"$tidy_version\" name=\"generator\" />"
-
 {
 	printf '\t' && sed -e '7q;d' "$output_dir/index.html"
 } >"$output_dir/tmp.css"
