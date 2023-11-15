@@ -29,7 +29,7 @@ run_tidy () {
 
 # delete the stylesheet from the html file; we'll re-insert it later.
 # Also remove two indentation levels
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | run_tidy >"$tmp_file"
+sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$tmp_file"
 {
 	head -n7 "$tmp_file"
 	cat "${OUTPUT_DIR:?}/tmp.css"
@@ -37,12 +37,11 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | r
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
 			-e '1,7d' \
-			-e "s|name=\"generator\" />|name=\"generator\" />\n${TIDY:?}|" \
-			-e 's|\.svg" width="16" /><span|.svg" width="16" /> <span|' \
+			-e 's|"u-photo photo" ?/><span|"u-photo photo" ?/>&#160;<span|' \
 			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
 			-E \
 			-e 's|([a-z])<data|\1 <data|' \
 			-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
-			-e 's#<pre( tabindex="0")?>\n(\t|\s)*<(code|samp)( |>)#<pre tabindex="0"><\3\4#' \
-			"$tmp_file"
+			"$tmp_file" \
+		| awk '/^<\/code>/{printf "%s",$0;next}7'
 } >"$html_file"
