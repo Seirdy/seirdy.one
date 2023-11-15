@@ -6,6 +6,11 @@ replyTitle: "We Need to Bring Back Webrings"
 replyType: "BlogPosting"
 replyAuthor: "Arne Bahlo"
 replyAuthorURI: "https://arne.me/"
+syndicatedCopies:
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/comments/3tsiiw/reply'
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AboaFMxxNcJfCgE95s'
 ---
 
 Webrings are alive and well; they don't need to be "brought back" because they're already here.
