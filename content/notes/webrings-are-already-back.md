@@ -11,6 +11,8 @@ syndicatedCopies:
       url: 'https://lobste.rs/comments/3tsiiw/reply'
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AboaFMxxNcJfCgE95s'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/9060/webrings-are-already-back'
 ---
 
 Webrings are alive and well; they don't need to be "brought back" because they're already here.
