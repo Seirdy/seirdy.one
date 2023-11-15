@@ -4,7 +4,7 @@ outputs:
     - gemtext
     - atom
     - RSS
-title: Seirdy's Home
+title: Seirdy’s Home
 sitemap:
     - ChangeFreq: weekly
     - Priority: 0.9
