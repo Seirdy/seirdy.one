@@ -37,7 +37,7 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | r
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	sed \
 			-e '1,7d' \
-			-e 's|\.svg" width="16" /><span|svg" width="16" /> <span|' \
+			-e 's|\.svg" width="16" /><span|.svg" width="16" /> <span|' \
 			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
 			-E \
 			-e 's|([a-z])<data|\1 <data|' \
