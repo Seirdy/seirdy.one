@@ -88,7 +88,7 @@ html-validate:
 	pnpm -s dlx html-validate --ext=html -c linter-configs/htmlvalidate.json $(OUTPUT_DIR)
 
 .PHONY: lint-local
-lint-local: html-validate validate-html validate-json lint-css
+lint-local: html-validate validate-html validate-json lint-css htmlproofer
 
 # dev server, includes future and draft posts
 .PHONY: serve
