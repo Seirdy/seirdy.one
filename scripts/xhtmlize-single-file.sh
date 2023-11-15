@@ -17,7 +17,6 @@ set -e -u
 
 html_file="$1"
 tmp_file="$(mktemp)"
-xhtml_file=${html_file%*.html}.xhtml
 
 cleanup() {
 	rm -f "$tmp_file"
@@ -33,10 +32,12 @@ run_tidy () {
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 | run_tidy >"$tmp_file"
 {
 	head -n7 "$tmp_file"
-	cat "$OUTPUT_DIR/tmp.css"
+	cat "${OUTPUT_DIR:?}/tmp.css"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
+	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
 			-e '1,7d' \
+			-e "s|name=\"generator\" />|name=\"generator\" />\n${TIDY:?}|" \
 			-e 's|\.svg" width="16" /><span|.svg" width="16" /> <span|' \
 			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
 			-E \
