@@ -1,6 +1,6 @@
 baseURL = "https://seirdy.one/" # just the default, I have mirrors
 languageCode = "en-us"
-title = "Seirdy's Home"
+title = "Seirdy’s Home"
 timeZone = "UTC"
 summaryLength = 150
 
@@ -18,7 +18,7 @@ disableKinds = ["taxonomy", "term"]
 	canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
 	webmentionEndpoint = "https://seirdy.one/webmentions/receive"
 	logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
-	copyright = "Copyright © 2021 Rohan Kumar"
+	copyright = "Copyright © 2023 Rohan “Seirdy” Kumar"
 	dark = "auto"
 	highlight = false
 	icon = "/favicon.svg"
@@ -28,7 +28,7 @@ disableKinds = ["taxonomy", "term"]
 	lastmod = ['lastmod', ':git', 'date', 'publishDate']
 
 [author]
-	name = "Rohan Kumar"
+	name = "Seirdy"
 	url = "https://seirdy.one/"
 	first = "Rohan"
 	last = "Kumar"
