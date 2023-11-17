@@ -87,8 +87,17 @@ hint: hugo .hintrc-local
 html-validate:
 	pnpm -s dlx html-validate --ext=html -c linter-configs/htmlvalidate.json $(OUTPUT_DIR)
 
+.validate-feed-main:
+	scripts/bin/validate-feed file://$(PWD)/$(OUTPUT_DIR)/atom.xml
+.validate-feed-posts:
+	scripts/bin/validate-feed file://$(PWD)/$(OUTPUT_DIR)/posts/atom.xml
+.validate-feed-notes:
+	scripts/bin/validate-feed file://$(PWD)/$(OUTPUT_DIR)/notes/atom.xml
+validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
+.PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
+
 .PHONY: lint-local
-lint-local: html-validate validate-html validate-json lint-css htmlproofer
+lint-local: html-validate validate-html validate-json lint-css htmlproofer validate-feeds
 
 # dev server, includes future and draft posts
 .PHONY: serve

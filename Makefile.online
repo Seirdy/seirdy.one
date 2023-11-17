@@ -42,15 +42,6 @@ axe-ff:
 
 .PHONY: axe axe-ff
 
-.validate-feed-main:
-	scripts/bin/validate-feed $(HUGO_BASEURL)atom.xml
-.validate-feed-posts:
-	scripts/bin/validate-feed $(HUGO_BASEURL)posts/atom.xml
-.validate-feed-notes:
-	scripts/bin/validate-feed $(HUGO_BASEURL)notes/atom.xml
-validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
-.PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
-
 .PHONY: all-extra
 all-extra: axe-ff validate-json equal-access htmlproofer lint-css validate-feeds
 
