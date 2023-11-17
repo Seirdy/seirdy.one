@@ -47,7 +47,7 @@ This post is an attempt to document how they are made, their differences, their 
 
 ## How Tier-0 and FediNuke work
 
-[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **14 out of 26** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
+[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **14 out of 27** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
 When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 14 instead of 13.
 
