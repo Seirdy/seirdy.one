@@ -16,8 +16,8 @@ This repository is pushed to the following forges:
 - [Sourcehut](https://sr.ht/~seirdy/seirdy.one/)
 - [GitLab.com](https://gitlab.com/Seirdy/seirdy.one)
 - [GitHub](https://github.com/Seirdy/seirdy.one)
-- [Codeberg](https://codeberg.org/Seirdy/seirdy.one)
-- [envs.net gitea](https://git.envs.net/Seirdy/seirdy.one)
+- [Codeberg (forgejo)](https://codeberg.org/Seirdy/seirdy.one)
+- [envs.net (gitea)](https://git.envs.net/Seirdy/seirdy.one)
 
 ## Dependencies
 
