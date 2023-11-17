@@ -287,8 +287,10 @@ asbestos.cafe {#asbestos}
 : [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin.
 : [Queerphobic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
 
-bae.st {#baest}
+bae.st {#baest} OR skippers-bin.com
 : [Admin profile page has an "n-word pass"](https://web.archive.org/web/20230730000208/https://bae.st/sjw). Runs a host of bots posting lewd artwork, some of which venture into lolicon and Black-fetishism territory (e.g. "NessaBot"). Runs "glow_in_the_dark_cia_agent", one of the biggest followbots on Fedi. Instance rejects deletes.
+: [Another admin has a Confederate battle-flag and unreclaimed transphobic slurs in their display name](https://web.archive.org/web/20231117114815/https://bae.st/users/mactonite).
+: [skippers-bin.com is run by the same person as bae.st](http://archive.today/2023.11.17-114233/https://skippers-bin.com/@sjw).
 
 banepo.st {#banepost}
 : [Runs a blockbot](https://archive.ph/2c9Js). Admin posts [antisemitism, homophobia, and transphobia in one post](https://web.archive.org/web/20230730035807/https://www.banepo.st/notice/AXRzgFfrwY1BRaa9SK), [another with more of the same](https://archive.ph/JxXRv), [all of that with a side of ableism](https://web.archive.org/web/20230730040446/https://www.banepo.st/notice/AXql6rXn1tybo4umiO).
