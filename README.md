@@ -2,6 +2,13 @@
 
 [![builds.sr.ht status](https://builds.sr.ht/~seirdy/seirdy.one.svg)](https://builds.sr.ht/~seirdy/seirdy.one)
 
+Code for my personal website, [seirdy.one](https://seirdy.one). Built with Hugo.
+
+Also builds my Gemini capsule: <gemini://seirdy.one/>.
+
+I document [my site design standards](https://seirdy.one/meta/site-design/) on my website.
+
+
 ## Repository mirroring
 
 This repository is pushed to the following forges:
@@ -11,12 +18,6 @@ This repository is pushed to the following forges:
 - [GitHub](https://github.com/Seirdy/seirdy.one)
 - [Codeberg](https://codeberg.org/Seirdy/seirdy.one)
 - [envs.net gitea](https://git.envs.net/Seirdy/seirdy.one)
-
-Code for my personal website, [seirdy.one](https://seirdy.one). Built with Hugo.
-
-Also builds my Gemini capsule: <gemini://seirdy.one/>.
-
-I document [my site design standards](https://seirdy.one/meta/site-design/) on my website.
 
 ## Dependencies
 
