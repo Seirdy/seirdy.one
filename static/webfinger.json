@@ -208,6 +208,26 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://raddle.me/user/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://donate.stripe.com/dR65nv5BWg3icq46oo",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://liberapay.com/Seirdy/",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://ko-fi.com/Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://lobste.rs/u/Seirdy",
 			"type": "text/html"
 		},
