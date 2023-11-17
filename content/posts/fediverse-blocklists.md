@@ -540,7 +540,7 @@ nicecrew.digital {#nicecrew}
 : Has [a bot to spam threads with racist slurs](http://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
 
 nnia.cc OR nnia.space {#nnia}
-: Paraphile pro-zoo pro-MAP _and pro-contact_ instance that also allows minors. [Pro-C zoosexuality](https://web.archive.org/web/20230819210233/https://nnia.space/@scramblecore/110910301694831861). They try to avoid getting defederated by moving discourse around contact stances to their Matrix servers, but is very clearly full of pro-C individuals and minors alike.
+: Paraphile pro-zoo pro-MAP instance that also allows both minors and pro-contact users to register. [Pro-C zoosexuality](https://web.archive.org/web/20230819210233/https://nnia.space/@scramblecore/110910301694831861).
 : nnia.cc is a newer instance that [claims to be a continuation of nnia.space](https://web.archive.org/web/20231104224647/https://nnia.cc/about). It also claims to have closed federation, but I included it alongside nnia.space should that ever change, since I can't imagine that FediNuke users would wish to federate with it anyway.
 
 noagendasocial.com {#nas}
