@@ -520,11 +520,14 @@ narrativerry.xyz {#narrativerry}
 : Admin posts [blatant anti-Indian racism](https://web.archive.org/web/20230808151934/https://pleroma.narrativerry.xyz/notice/AY8awZ3lCW2pXp6TWi).
 : Admin [combines antisemitic conspiracy theories, homophobia, and racism in a slur-filled thread](https://web.archive.org/web/20230808153236/https://annihilation.social/notice/AXyTzERY59CX89mqn2).
 
-nobodyhasthe.biz {#nobodyhasthebiz}
+nobodyhasthe.biz {#nobodyhasthebiz} OR nationalist.social
 : ["About" page](https://web.archive.org/web/20230812043648/https://pleroma.nobodyhasthe.biz/about) lists multiple admins and mods with swastikas in their display names and/or profile photos.
 : [Admin "ShariVegas" is an unapologetic white supremacist](https://web.archive.org/web/20230812044221/https://pleroma.nobodyhasthe.biz/notice/AXrR8x4yddPB9nEKrQ) and [antisemite](http://archive.today/2023.08.12-044406/https://pleroma.nobodyhasthe.biz/objects/d1ce538f-3788-448c-a74f-7e2ab7a4db75).
 : [Admin "thomaslewis" makes fun of a report against a blatantly racist user](https://web.archive.org/web/20230812044743/https://pleroma.nobodyhasthe.biz/notice/APJkc4Ju9vntVMVLiy) while adding a homophobic and antisemitic slur of his own.
 : [Moderator "BobRoss" has a bio starting with <q>Spreading the joy of antisemitism</q>](https://web.archive.org/web/20230812191733/https://pleroma.nobodyhasthe.biz/BobRoss) and encourages calling users slurs instead of reporting as <q>an integral part of the culture around here</q>.
+: nobodyhasthe.biz eventually migrated to nationalist.social. [Instance announcement establishes the connection](http://archive.today/2023.11.15-195940/https://nationalist.social/@thomas/posts/AbmS8a2es8aS2giTy4). Contains the same/similar staff handles.
+: Some local users on the new instance: [a self-identified racist with nazi iconography](http://archive.today/2023.11.15-200939/https://nationalist.social/@NateHiggers1488), and [a blatantly antisemitic white nationalist](http://archive.today/2023.11.15-200737/https://nationalist.social/@nike/posts/Abpuph0qDAPoIw5mT2).
+: [Admins of nationalist.social made it clear that reporting won't help](http://archive.today/2023.11.15-200150/https://nationalist.social/@thomas/posts/AboHPaZzPrl5S98PCa), if you're still holding out hope for some reason.
 
 shortstacksran.ch {#ssr} OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
