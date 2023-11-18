@@ -17,18 +17,16 @@
 		{{- $oldTarget := $target | replaceRE "/posts" "" | replaceRE "/$" ".html" -}}
 		{{ $targets = (slice $target $oldTarget) }}
 	{{- end -}}
-	{{- /* We can't just use a simple "where" function because we need to ignore URL anchors when making a comparison: https://discourse.gohugo.io/t/add-like-comparison-operator-to-the-where-function/42013/4 */ -}}
+	{{- /* We can't just use a simple "where" function because we need to ignore URL anchors/query-params when making a comparison: https://discourse.gohugo.io/t/add-like-comparison-operator-to-the-where-function/42013/4 */ -}}
 	{{- $webmentions := slice -}}
 	{{- range $allMentions -}}
 		{{- if in $targets .target -}}
 			{{ $webmentions = $webmentions | append . }}
 		{{- else -}}
-			{{- $fragment := printf `#%s` (urls.Parse .target).Fragment -}}
-			{{- if gt (len $fragment) 1 -}}
-				{{- $trimmedTarget := strings.TrimSuffix $fragment .target -}}
-				{{- if in $targets $trimmedTarget -}}
-					{{ $webmentions = $webmentions | append . }}
-				{{- end -}}
+			{{- $u := urls.Parse .target -}}
+			{{- $trimmedTarget := printf `https://%s%s` $u.Hostname $u.Path -}}
+			{{- if in $targets $trimmedTarget -}}
+				{{ $webmentions = $webmentions | append . }}
 			{{- end -}}
 		{{- end -}}
 	{{- end -}}
