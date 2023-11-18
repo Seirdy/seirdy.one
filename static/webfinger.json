@@ -183,6 +183,11 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://ln.ht/~Seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://tinygem.org/Seirdy/",
 			"type": "text/html"
 		},
