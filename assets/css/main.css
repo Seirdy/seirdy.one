@@ -183,11 +183,9 @@ html {
 	h1,
 	h2,
 	h3,
-	html,
 	main,
 	pre,
 	summary,
-	dl > div,
 	:not(nav) > ol,
 	[role="doc-endnotes"],
 	[role="doc-preface"] {
@@ -257,7 +255,6 @@ html {
 	dd {
 		margin: 0;
 		padding: .25em .25em .5em 1.75em;
-		contain: inline-size layout paint;
 	}
 
 	aside > a,
@@ -287,11 +284,9 @@ html {
 		margin-left: -.25em;
 	}
 
-	/* stylelint-disable selector-max-compound-selectors -- simplest way to target post-meta */
-	h1 + ul > li > a {
+	h1 + ul a {
 		margin-left: 0;
 	}
-	/* stylelint-enable selector-max-compound-selectors */
 
 	/* Increase tap-target size of title links. */
 
