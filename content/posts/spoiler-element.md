@@ -1,6 +1,6 @@
 ---
 title: "Proposal: an HTML element for spoilers"
-description: "An informal proposal for dedicated elements for spoiler tags in HTML: use-cases, syntax, semantics, recommended UA behavior, and comparisions with <details>."
+description: "An informal proposal for dedicated elements for spoiler tags in HTML: use-cases, syntax, semantics, recommended UA behavior, and comparisons with <details>."
 date: 2023-11-12T13:48:00-08:00
 outputs:
     - html
