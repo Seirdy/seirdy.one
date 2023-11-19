@@ -1,6 +1,9 @@
 ---
 title: "Choosing an encrypted DNS protocol"
 date: 2023-11-18T19:30:46-07:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/Abx4oDbeirFSCS0c2i'
 ---
 The three most popular DNS protocols with transit encryption are DNS-over-HTTPS (<abbr>DoH</abbr>), DNS-over-TLS (<abbr>DoT</abbr>), and DNS-over-QUIC (<abbr>DoQ</abbr>). This should help you choose what to use:
 
