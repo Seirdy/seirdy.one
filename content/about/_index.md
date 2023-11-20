@@ -171,6 +171,7 @@ I watch <span class="p-category category">anime</span>. Some of my favorites, in
 - Saga of Tanya the Evil
 - Monogatari
 - Attack on Titan
+- Violet Evergarden
 
 I think that at least one entry in that list has some problematic messages, but my personal interpretation was a bit unorthodox and it felt wrong to exclude it.
 
