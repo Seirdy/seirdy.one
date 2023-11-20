@@ -270,7 +270,7 @@ adachi.party {#adachi}
 : [Admin posts racist transphobia](https://web.archive.org/web/20230730175847/https://pleroma.adachi.party/notice/AYAMup3aR6WhWwuHXU), [mass-tags other users with blatant racism](https://web.archive.org/web/20230811042822/https://pleroma.adachi.party/notice/AYbC2xyPJdrZH05CWO).
 
 adtension.com {#adtension}
-: Admin [posts blatant anti-Black racism](https://ghostarchive.org/archive/Z3O7P), and [doubles-down with more](http://archive.today/2023.10.04-010357/https://mastodon.adtension.com/@admin/111173994405081956) after being called out on it.
+: Admin [posts blatant anti-Black racism](https://ghostarchive.org/archive/Z3O7P), and [doubles-down with more](https://archive.today/2023.10.04-010357/https://mastodon.adtension.com/@admin/111173994405081956) after being called out on it.
 
 annihilation.social {#annihilation} OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
@@ -290,7 +290,7 @@ asbestos.cafe {#asbestos}
 bae.st {#baest} OR skippers-bin.com
 : [Admin profile page has an "n-word pass"](https://web.archive.org/web/20230730000208/https://bae.st/sjw). Runs a host of bots posting lewd artwork, some of which venture into lolicon and Black-fetishism territory (e.g. "NessaBot"). Runs "glow_in_the_dark_cia_agent", one of the biggest followbots on Fedi. Instance rejects deletes.
 : [Another admin has a Confederate battle-flag and unreclaimed transphobic slurs in their display name](https://web.archive.org/web/20231117114815/https://bae.st/users/mactonite).
-: [skippers-bin.com is run by the same person as bae.st](http://archive.today/2023.11.17-114233/https://skippers-bin.com/@sjw).
+: [skippers-bin.com is run by the same person as bae.st](https://archive.today/2023.11.17-114233/https://skippers-bin.com/@sjw).
 
 banepo.st {#banepost}
 : [Runs a blockbot](https://archive.ph/2c9Js). Admin posts [antisemitism, homophobia, and transphobia in one post](https://web.archive.org/web/20230730035807/https://www.banepo.st/notice/AXRzgFfrwY1BRaa9SK), [another with more of the same](https://archive.ph/JxXRv), [all of that with a side of ableism](https://web.archive.org/web/20230730040446/https://www.banepo.st/notice/AXql6rXn1tybo4umiO).
@@ -314,16 +314,16 @@ brighteon.social {#brighteon}
 : [Brighteon's "about" page](https://web.archive.org/web/20230724044425/https://brighteon.social/about/more) marks the instance as a far-right cesspit. Instance is connected to [the Brighteon network](https://web.archive.org/web/20230729030855/https://www.brighteon.com/), a far-right network featuring shows such as "The Reality Camp" with Stacey Campfield.
 
 cachapa.xyz {#cachapa}
-: Admin [posts blatant racism](http://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](http://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
+: Admin [posts blatant racism](https://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transphobic sui-biat](https://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
 : [Root domain's "about" page](https://web.archive.org/web/20231025062617/https://cachapa.xyz/about/) contains transphobic, racist, queerphobic, and other slurs in a list of things the owner "hates".
 : Instance permits lolicon, and runs accounts for it such as "Shishihime" and "NahidaBot"; this may be a legal risk, depending on your jurisdiction.
 
 cannibal.cafe {#cannibal}
 : Shares some staff with lolison.top; see its FediNuke entry. Staff-endorsed instances in the "local bubble" include nnia.space, freak.university, rapemeat.express, and other instances on FediNuke for similar reasons.
-: Admin [is explicitly pro-contact](http://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).
+: Admin [is explicitly pro-contact](https://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).
 
 catgirl.life {#catgirl-life} OR peervideo.club
-: Both are part of [the Waifu Hunter Club's suite of services](http://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](http://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](http://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
+: Both are part of [the Waifu Hunter Club's suite of services](https://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](https://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](https://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
 
 cawfee.club {#cawfee}
 : [Racism from multiple users, including admin](https://web.archive.org/web/20230730210913/https://cawfee.club/notice/AY5J5qUA898oge9pa4).
@@ -332,8 +332,8 @@ cawfee.club {#cawfee}
 : [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
 childlove.space {#childlove} OR childlove.su
-: Pro-contact MAP instance. [Admin profile](http://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](http://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact. Appears to contain many users close to Newgon, a bigoted pro-contact conspiratorial group.
-: This pro-contact instance [explicitly allows minors](http://archive.today/2023.10.06-201812/https://childlove.space/about/) in its ToS.
+: Pro-contact MAP instance. [Admin profile](https://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](https://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact. Appears to contain many users close to Newgon, a bigoted pro-contact conspiratorial group.
+: This pro-contact instance [explicitly allows minors](https://archive.today/2023.10.06-201812/https://childlove.space/about/) in its ToS.
 
 clew.lol {#clew}
 : [Racist meme from admin](https://web.archive.org/web/20230730212140/https://clew.lol/@Tony/posts/ATlNGVY9vg0FLp8WlE).
@@ -343,7 +343,7 @@ clew.lol {#clew}
 
 clubcyberia.co {#clubcyberia}
 : Instance [features anti-black emotes](https://web.archive.org/web/20230730220345/https://clubcyberia.co/notice/AY9kBc1YiuBfP9TVgG). Users such as "Inginsub" often [post blatant racism](https://web.archive.org/web/20230730221532/https://clubcyberia.co/notice/AXSJ3fIo5mMORrLYPY). Hosts [a KiwiFarms staff member](https://web.archive.org/web/20230730222042/https://clubcyberia.co/users/crunklord420).
-: Staff member [publicizes reports against extremely transphobic harassment](http://archive.today/2023.08.12-014232/https://clubcyberia.co/notice/AYdQ5Rt3vLgaXzqVtY) in a reply to said harassment (YWNBAW-like copypasta).
+: Staff member [publicizes reports against extremely transphobic harassment](https://archive.today/2023.08.12-014232/https://clubcyberia.co/notice/AYdQ5Rt3vLgaXzqVtY) in a reply to said harassment (YWNBAW-like copypasta).
 
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
@@ -355,7 +355,7 @@ cum.camp {#cumcamp} OR cum.salon
 : The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires; however, [it came back after transferring to Epik](https://web.archive.org/web/20230819012541/https://shitposter.club/notice/AYpWAIw53KQXoohBbM).
 
 cunnyborea.space {#cunnyborea}
-: Appears to be a racist pro-contact pedophilia-themed instance. One admin [has swastikas in their profile bio](https://web.archive.org/web/20231020044329/https://freespeechextremist.com/users/AabwnOHSvtsRxC0HAm) and several variations on "total \_\_\_ death". The other admin's bio [has blatant racism and antisemitism](http://archive.today/2023.10.20-051331/https://eientei.org/users/$AacBlKKa9AaXillm08).
+: Appears to be a racist pro-contact pedophilia-themed instance. One admin [has swastikas in their profile bio](https://web.archive.org/web/20231020044329/https://freespeechextremist.com/users/AabwnOHSvtsRxC0HAm) and several variations on "total \_\_\_ death". The other admin's bio [has blatant racism and antisemitism](https://archive.today/2023.10.20-051331/https://eientei.org/users/$AacBlKKa9AaXillm08).
 
 decayable.ink {#decayable}
 : Instance is well-known for harassment campaigns.
@@ -368,8 +368,8 @@ detroitriotcity.com {#drc}
 : Well-known Nazi instance. [Instance "about" page](https://web.archive.org/web/20230801230826/https://detroitriotcity.com/about) says: <q>racial pejoratives, NSFW images & videos, insensitivity and contempt toward differences in sexual orientation and gender identification, and so-called “cyberbullying” are all commonplace on this instance</q> and has a staff account display name featuring an iron cross. Policies permitting lolicon may make it a legal risk, depending on your jurisdiction.
 
 djsumdog.com {#djsumdog}
-: Admin posts [blatant transphobia](https://web.archive.org/web/20231002145800/https://annihilation.social/notice/AZsHN1lZgOVeSltXDU), [more blatant transphobia](http://archive.today/2023.10.02-144509/https://djsumdog.com/@djsumdog/posts/AZiGbeyuCkMvdtEN5E). [Defends teaching children to be transphobic on moral grounds](https://web.archive.org/web/20231002150542/https://pleroma.soykaf.com/notice/AZhV9sPBBYZSEL8LWS).
-: [Jan 6th conspiracy theories](http://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZZCfoxpXdfdhH2L3I) while [calling participants "discount Mandelas"](http://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZVZCzBbydqpJfrX4y).
+: Admin posts [blatant transphobia](https://web.archive.org/web/20231002145800/https://annihilation.social/notice/AZsHN1lZgOVeSltXDU), [more blatant transphobia](https://archive.today/2023.10.02-144509/https://djsumdog.com/@djsumdog/posts/AZiGbeyuCkMvdtEN5E). [Defends teaching children to be transphobic on moral grounds](https://web.archive.org/web/20231002150542/https://pleroma.soykaf.com/notice/AZhV9sPBBYZSEL8LWS).
+: [Jan 6th conspiracy theories](https://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZZCfoxpXdfdhH2L3I) while [calling participants "discount Mandelas"](https://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZVZCzBbydqpJfrX4y).
 
 eientei.org {#eientei}
 : [Instance "about" page](https://web.archive.org/web/20230801231939/https://eientei.org/about) explicitly describes it as a racist instance, anad uses racial slurs. MRF policies on the "about" page feature a blockbot and rejecting deletes. Admin [posts antisemitic caricatures](https://web.archive.org/web/20230801233538/https://eientei.org/notice/AW33QYo0a9vhhJUyC8). User "lina" has [a bio with blatant bigotry](https://web.archive.org/web/20230801232340/https://eientei.org/users/lina).
@@ -383,12 +383,12 @@ eveningzoo.club {#eveningzoo}
 : [White nationalism from user](https://web.archive.org/web/20230802000313/https://eveningzoo.club/@WeavingTales/posts/AYBsfFdqlsr3nxioz2).
 
 fluf.club {#fluf}
-: [Transphobia from admin](http://archive.today/2023.08.02-003048/https://freesoftwareextremist.com/notice/AYHzC307R2T8F9hpI0), [more transphobia](https://web.archive.org/web/20230802003149/https://eientei.org/notice/AYEuW35LVZ48XYOXPk), [transphobic sui-bait](https://web.archive.org/web/20230802003447/https://shitposter.club/notice/AYEKwm6THNpfFCVjm4).
+: [Transphobia from admin](https://archive.today/2023.08.02-003048/https://freesoftwareextremist.com/notice/AYHzC307R2T8F9hpI0), [more transphobia](https://web.archive.org/web/20230802003149/https://eientei.org/notice/AYEuW35LVZ48XYOXPk), [transphobic sui-bait](https://web.archive.org/web/20230802003447/https://shitposter.club/notice/AYEKwm6THNpfFCVjm4).
 : The [instance "about" page](https://web.archive.org/web/20230805192514/https://fluf.club/about) recommends freespeechextremist.com and kiwifarms.cc as instances "with similar moderation policies"; both those instances are on FediNuke with receipts.
 
 freak.university {#freak-uni} OR pedo.school
 : Instance known for permitting paraphilia including pedophilia, and also explicitly allows minors (13+ although [that limit may be lowered](https://archive.today/2023.08.02-041801/https://freak.university/@headmasters/110743455953705070)). Scroll through local users on `/directory` for more receipts.
-: pedo.school [has identical rules on its "About" page](http://archive.today/2023.06.10-032721/https://pedo.school/about). Instance contains untagged sexual depictions of minors and multiple self-described "pro-c" users; scroll through local users on `/directory` for more receipts.
+: pedo.school [has identical rules on its "About" page](https://archive.today/2023.06.10-032721/https://pedo.school/about). Instance contains untagged sexual depictions of minors and multiple self-described "pro-c" users; scroll through local users on `/directory` for more receipts.
 
 freeatlantis.com {#freeatlantis}
 : Far-right MAGA instance.
@@ -397,12 +397,12 @@ freeatlantis.com {#freeatlantis}
 
 freespeechextremist.com {#fse}
 : [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism.
-: [Multiple other users engaging in transmisogyny](https://web.archive.org/web/20230802003611/https://eientei.org/notice/AYEtXJ1Dea4cIBV488), and [participating in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
+: [Multiple other users engaging in transmisogyny](https://web.archive.org/web/20230802003611/https://eientei.org/notice/AYEtXJ1Dea4cIBV488), and [participating in a transmisogynistic harassment campaign](https://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
 : [Transphobic blanket-pedojacketing](https://web.archive.org/web/20230803185746/https://freespeechextremist.com/notice/AYJ1aYy7Uutycamkuu).
 : MRF policies include a [block-notification bot](https://web.archive.org/web/20230731164723/https://freespeechextremist.com/about). The linked page also makes it clear that this is a freeze-peach instance, so reporting won't help.
 
 froth.zone {#froth}
-: [Blatant racism](http://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](http://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
+: [Blatant racism](https://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](https://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
 
 gearlandia.haus {#gearlandia}
 : [Transphobic targeted harassment from multiple staff members](https://web.archive.org/web/20230805034502/https://gearlandia.haus/notice/AY8D5ossGoV9B7Eria), including sui-bait.
@@ -426,14 +426,14 @@ genderheretics.xyz {#genderheretics}
 : [Anti-drag pedojacketing](https://web.archive.org/web/20230805000311/https://genderheretics.xyz/@william/posts/AYFfRi8X3hx6nJOaXY) from admin.
 
 gleasonator.com {#gleasonator}
-: [Admin is an outspoken TERF](http://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/).
-: User "caekislove" [pedojackets and sui-baits trans users](http://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](http://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery).
+: [Admin is an outspoken TERF](https://archive.today/2022.08.07-110329/https://blog.alexgleason.me/trans/), who [was head of engineering for Truth Social](https://web.archive.org/web/20230803181726/https://soapbox.pub/blog/soapbox-awarded-grant/).
+: User "caekislove" [pedojackets and sui-baits trans users](https://archive.today/2023.08.03-190023/https://gleasonator.com/notice/AYJ72Lm5gRlKpIEUJU), does [homophobic pedojacketing as well](https://web.archive.org/web/20230803185742/https://freespeechextremist.com/notice/AYKvBEbxq0k2psshlY), and [posts extreme classism](https://archive.today/2023.08.03-190720/https://gleasonator.com/notice/AYL1K2K8WseIIv7xtg) (violent imagery).
 : [Admin is aware of the user but will not take action](https://web.archive.org/web/20230803184758/https://annihilation.social/notice/AWfGcY4mrHiPL3mgfQ) (unrelated extreme bigotry and Nazi iconography in thread).
 
 glee.li {#getgle}
 : [Racist harassment of Mutual Aid posts](https://archive.ph/Vz1Yv).
 : More [blatant racism and transmisia](https://archive.ph/SI0xG).
-: Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](http://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
+: Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](https://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
 : [More blatant racism](https://web.archive.org/web/20230805180006/https://glee.li/notice/AYQQrs1oS2HvwPKxJA).
 : Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
 
@@ -442,7 +442,7 @@ h5q.net {#h5q}
 
 haeder.net {#haeder}
 : [Instance blocklist reasons are unapologetically queerphobic](https://web.archive.org/web/20230823231236/https://f.haeder.net/friendica), calling nonbinary individuals "delusional" and saying <q>We don't need more diversity and tollerance when this doesn't fall back on us straight people</q>.
-: [Admin bio](http://archive.today/2023.08.23-235040/https://microblog.social/@roland@f.haeder.net) has blatant transphobia and hashtags such as <q>SayNoToWoke</q>.
+: [Admin bio](https://archive.today/2023.08.23-235040/https://microblog.social/@roland@f.haeder.net) has blatant transphobia and hashtags such as <q>SayNoToWoke</q>.
 
 hitchhiker.social {#hitchhiker} OR battlepenguin.video
 : Sibling instances of djsumdog.com, run by the same admin; see its entry.
@@ -467,29 +467,29 @@ leafposter.club {#leafposter}
 
 liberdon.com {#liberdon}
 : Freeze-peach ancap instance.
-: Medical misinformation: [COVIDspiracy](http://archive.today/2023.09.24-143510/https://liberdon.com/@spinneria/111104720878148352), [anti-vax](http://archive.today/2023.09.24-143454/https://liberdon.com/@nosat/111112112220569150), [more anti-vax](http://archive.today/2023.09.24-143533/https://liberdon.com/@Rpallavicini/111103983187635747)) across three different users.
-: Across four users: [transphobia](http://archive.today/2023.09.24-143435/https://liberdon.com/@rimugu/111025931153300897), [flat-earth conspiracy theories](http://archive.today/2023.09.24-143442/https://liberdon.com/@nosat/111118400907550652), [antisemitism](http://archive.today/2023.09.24-143450/https://liberdon.com/@aristoh4ck8r/111109158090162800), [blatant nazism](http://archive.today/2023.09.24-143502/https://liberdon.com/@aristoh4ck8r/111106321430714757), and [fashjacketing antifa](http://archive.today/2023.09.24-144351/https://liberdon.com/@Rpallavicini/110768707732981452).
+: Medical misinformation: [COVIDspiracy](https://archive.today/2023.09.24-143510/https://liberdon.com/@spinneria/111104720878148352), [anti-vax](https://archive.today/2023.09.24-143454/https://liberdon.com/@nosat/111112112220569150), [more anti-vax](https://archive.today/2023.09.24-143533/https://liberdon.com/@Rpallavicini/111103983187635747)) across three different users.
+: Across four users: [transphobia](https://archive.today/2023.09.24-143435/https://liberdon.com/@rimugu/111025931153300897), [flat-earth conspiracy theories](https://archive.today/2023.09.24-143442/https://liberdon.com/@nosat/111118400907550652), [antisemitism](https://archive.today/2023.09.24-143450/https://liberdon.com/@aristoh4ck8r/111109158090162800), [blatant nazism](https://archive.today/2023.09.24-143502/https://liberdon.com/@aristoh4ck8r/111106321430714757), and [fashjacketing antifa](https://archive.today/2023.09.24-144351/https://liberdon.com/@Rpallavicini/110768707732981452).
 
 ligma.pro {#ligma}
 : The admin [threatened mass violence](https://archive.ph/1CWNR), [threatened animal cruelty](https://archive.ph/lDbc0), [posted unmarked gore (CW: NSFL gore)](https://archive.ph/BJ4Iu), [bragged about making death threats](https://archive.ph/fHnSg). After his infosec.exchange alt got banned he set up shop on fosstodon.org.
 
 loli.church {#loli-church}
-: [Instance announcement post explicitly condones racist posts](http://archive.today/2023.10.20-055501/https://loli.church/notes/9k2rdrdih5) (reblogged by admin). Author of that post [also posts blatant antisemitism](http://archive.today/2023.10.20-060532/https://loli.church/notes/9kwsbbt8e8) and [anti-Indigenous ethno-nationalism](http://archive.today/2023.10.20-060735/https://loli.church/notes/9kmk1o2lwp).
-: [loli.church is the new home of fediverse.dotnet00.dev](http://archive.today/2023.10.20-053340/https://loli.church/notes/9k2si4ywl3). Receipts from the old instance: [Racist user "Wiz"](http://archive.today/2023.08.01-163514/https://fediverse.dotnet00.dev/notes/9hugibpler), posts [edgy bigotry](http://archive.today/2023.08.01-191114/https://fediverse.dotnet00.dev/notes/9huygvr5jc).
-: Receipts from the old instance: Reporting probably won't help, as [the admin maintains a freeze-peach policy](http://archive.today/2023.08.01-174423/https://fediverse.dotnet00.dev/notes/97i5gzjd8n) and [regularly boosts racist content themself](http://archive.today/2023.08.01-174611/https://fediverse.dotnet00.dev/notes/97nxwl75iy).
+: [Instance announcement post explicitly condones racist posts](https://archive.today/2023.10.20-055501/https://loli.church/notes/9k2rdrdih5) (reblogged by admin). Author of that post [also posts blatant antisemitism](https://archive.today/2023.10.20-060532/https://loli.church/notes/9kwsbbt8e8) and [anti-Indigenous ethno-nationalism](https://archive.today/2023.10.20-060735/https://loli.church/notes/9kmk1o2lwp).
+: [loli.church is the new home of fediverse.dotnet00.dev](https://archive.today/2023.10.20-053340/https://loli.church/notes/9k2si4ywl3). Receipts from the old instance: [Racist user "Wiz"](https://archive.today/2023.08.01-163514/https://fediverse.dotnet00.dev/notes/9hugibpler), posts [edgy bigotry](https://archive.today/2023.08.01-191114/https://fediverse.dotnet00.dev/notes/9huygvr5jc).
+: Receipts from the old instance: Reporting probably won't help, as [the admin maintains a freeze-peach policy](https://archive.today/2023.08.01-174423/https://fediverse.dotnet00.dev/notes/97i5gzjd8n) and [regularly boosts racist content themself](https://archive.today/2023.08.01-174611/https://fediverse.dotnet00.dev/notes/97nxwl75iy).
 : The users in receipts for `dotnet00.dev` are now on `loli.church` with the same handles. Their profiles contain uncensored loli hentai.
 
 lolicon.rocks {#lolicon-rocks}
 : ["About" page](https://web.archive.org/web/20230805183555/https://posting.lolicon.rocks/about) states <q>posting.lolicon.rocks is a common carrier telecommunications provider that does not moderate content</q> and also features the owner with the handle "BlinkRape".
-: [Owner profile bio](http://archive.today/2023.08.05-183749/https://posting.lolicon.rocks/BlinkRape) contains racist and ableist slurs.
-: Owner [posts antisemitism](http://archive.today/2023.08.05-184903/https://posting.lolicon.rocks/notice/AYL1UBs25rFpSDuzY0), [blatant racism in a climate-denial thread](https://web.archive.org/web/20230805184950/https://posting.lolicon.rocks/notice/AYGVgyTLFFBIV1a6zI).
+: [Owner profile bio](https://archive.today/2023.08.05-183749/https://posting.lolicon.rocks/BlinkRape) contains racist and ableist slurs.
+: Owner [posts antisemitism](https://archive.today/2023.08.05-184903/https://posting.lolicon.rocks/notice/AYL1UBs25rFpSDuzY0), [blatant racism in a climate-denial thread](https://web.archive.org/web/20230805184950/https://posting.lolicon.rocks/notice/AYGVgyTLFFBIV1a6zI).
 
 lolison.network {#lolison} OR lolison.top
 : Sibling instances focused on the MAP/pedophilia community. Claim to forbid CP, but also appears to have rules too lax for instances with such focus. Admin "Spag" also admins rapemeat.express; see its FediNuke entry.
 
 marsey.moe {#marsey}
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb).
-: [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G), [blatantly transphobic jokes](http://archive.today/2023.08.12-192245/https://marsey.moe/notice/AYduTzUXJ5bwlIBkQK).
+: [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G), [blatantly transphobic jokes](https://archive.today/2023.08.12-192245/https://marsey.moe/notice/AYduTzUXJ5bwlIBkQK).
 
 merovingian.club {#merovingian}
 : [Instance "About" page](https://web.archive.org/web/20230805223728/https://merovingian.club/about/more) bills it as "a club for redpilled exiles".
@@ -500,13 +500,13 @@ midwaytrades.com {#midwaytrades}
 : Runs [a Libs of TikTok bot](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU). [Transphobic and misogynist admin](https://ghostarchive.org/archive/9qO8r).
 
 mirr0r.city {#mirr0r}
-: Paraphilia- and pedophilia-focused instance that [explicitly welcomes pro-contacts and neo-Nazis](http://web.archive.org/web/20230828183201/https://mirr0r.city/notice/AVr8KfJybjh4eFdHAO).
+: Paraphilia- and pedophilia-focused instance that [explicitly welcomes pro-contacts and neo-Nazis](https://web.archive.org/web/20230828183201/https://mirr0r.city/notice/AVr8KfJybjh4eFdHAO).
 
 mouse.services {#mouse-services}
-: Admin [posts blatantly racist use of slurs](http://archive.today/2023.08.19-042746/https://miss.mouse.services/notes/9ijlonbgrd), [more racism](http://archive.today/2023.08.19-054501/https://miss.mouse.services/notes/9icb5d8xav).
+: Admin [posts blatantly racist use of slurs](https://archive.today/2023.08.19-042746/https://miss.mouse.services/notes/9ijlonbgrd), [more racism](https://archive.today/2023.08.19-054501/https://miss.mouse.services/notes/9icb5d8xav).
 
 morale.ch {#morale}
-: [Transphobia](http://archive.today/2023.08.03-163829/https://morale.ch/notes/9gq5de3opm), [blatant antisemitism](http://archive.today/2023.08.03-163438/https://morale.ch/notes/99afbs2fi7), and [both at once](http://archive.today/2023.08.03-163416/https://morale.ch/notes/99afgfh0il). [Ableist holocaust denial](http://archive.today/2023.08.03-165106/https://morale.ch/notes/9fhmfgittd). All from the admin account.
+: [Transphobia](https://archive.today/2023.08.03-163829/https://morale.ch/notes/9gq5de3opm), [blatant antisemitism](https://archive.today/2023.08.03-163438/https://morale.ch/notes/99afbs2fi7), and [both at once](https://archive.today/2023.08.03-163416/https://morale.ch/notes/99afgfh0il). [Ableist holocaust denial](https://archive.today/2023.08.03-165106/https://morale.ch/notes/9fhmfgittd). All from the admin account.
 
 mugicha.club {#mugicha}
 : Admin [participated in a transphobic targeted harassment campaign](https://web.archive.org/web/20230803192951/https://strelizia.net/notice/AY89eVVq0KBnBANq3k) with local users.
@@ -524,12 +524,12 @@ narrativerry.xyz {#narrativerry}
 
 nobodyhasthe.biz {#nobodyhasthebiz} OR nationalist.social
 : ["About" page](https://web.archive.org/web/20230812043648/https://pleroma.nobodyhasthe.biz/about) lists multiple admins and mods with swastikas in their display names and/or profile photos.
-: [Admin "ShariVegas" is an unapologetic white supremacist](https://web.archive.org/web/20230812044221/https://pleroma.nobodyhasthe.biz/notice/AXrR8x4yddPB9nEKrQ) and [antisemite](http://archive.today/2023.08.12-044406/https://pleroma.nobodyhasthe.biz/objects/d1ce538f-3788-448c-a74f-7e2ab7a4db75).
+: [Admin "ShariVegas" is an unapologetic white supremacist](https://web.archive.org/web/20230812044221/https://pleroma.nobodyhasthe.biz/notice/AXrR8x4yddPB9nEKrQ) and [antisemite](https://archive.today/2023.08.12-044406/https://pleroma.nobodyhasthe.biz/objects/d1ce538f-3788-448c-a74f-7e2ab7a4db75).
 : [Admin "thomaslewis" makes fun of a report against a blatantly racist user](https://web.archive.org/web/20230812044743/https://pleroma.nobodyhasthe.biz/notice/APJkc4Ju9vntVMVLiy) while adding a homophobic and antisemitic slur of his own.
 : [Moderator "BobRoss" has a bio starting with <q>Spreading the joy of antisemitism</q>](https://web.archive.org/web/20230812191733/https://pleroma.nobodyhasthe.biz/BobRoss) and encourages calling users slurs instead of reporting as <q>an integral part of the culture around here</q>.
-: nobodyhasthe.biz eventually migrated to nationalist.social. [Instance announcement establishes the connection](http://archive.today/2023.11.15-195940/https://nationalist.social/@thomas/posts/AbmS8a2es8aS2giTy4). Contains the same/similar staff handles.
-: Some local users on the new instance: [a self-identified racist with nazi iconography](http://archive.today/2023.11.15-200939/https://nationalist.social/@NateHiggers1488), and [a blatantly antisemitic white nationalist](http://archive.today/2023.11.15-200737/https://nationalist.social/@nike/posts/Abpuph0qDAPoIw5mT2).
-: [Admins of nationalist.social made it clear that reporting won't help](http://archive.today/2023.11.15-200150/https://nationalist.social/@thomas/posts/AboHPaZzPrl5S98PCa), if you're still holding out hope for some reason.
+: nobodyhasthe.biz eventually migrated to nationalist.social. [Instance announcement establishes the connection](https://archive.today/2023.11.15-195940/https://nationalist.social/@thomas/posts/AbmS8a2es8aS2giTy4). Contains the same/similar staff handles.
+: Some local users on the new instance: [a self-identified racist with nazi iconography](https://archive.today/2023.11.15-200939/https://nationalist.social/@NateHiggers1488), and [a blatantly antisemitic white nationalist](https://archive.today/2023.11.15-200737/https://nationalist.social/@nike/posts/Abpuph0qDAPoIw5mT2).
+: [Admins of nationalist.social made it clear that reporting won't help](https://archive.today/2023.11.15-200150/https://nationalist.social/@thomas/posts/AboHPaZzPrl5S98PCa), if you're still holding out hope for some reason.
 
 shortstacksran.ch {#ssr} OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
@@ -537,7 +537,7 @@ shortstacksran.ch {#ssr} OR needs.vodka
 
 nicecrew.digital {#nicecrew}
 : [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
-: Has [a bot to spam threads with racist slurs](http://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
+: Has [a bot to spam threads with racist slurs](https://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
 
 nnia.cc OR nnia.space {#nnia}
 : Paraphile pro-zoo pro-MAP instance that also allows both minors and pro-contact users to register. [Pro-C zoosexuality](https://web.archive.org/web/20230819210233/https://nnia.space/@scramblecore/110910301694831861).
@@ -567,7 +567,7 @@ onionfarms.org {#onionfarms}
 : ["About" page](https://web.archive.org/web/20230806210051/https://onionfarms.org/about) says <q>This is a Mastodon server for the Onionfarms and Kiwifarms communites</q> [sic] and [admin bio confirms it](https://web.archive.org/web/20230806210312/https://onionfarms.org/@admin).
 
 pawlicker.com {#pawlicker}
-: [Root domain hosts a pro-KiwiFarms and transphobic essay](https://web.archive.org/web/20230825211851/https://www.pawlicker.com/essays/troonshine.html). Admin [posts transmisogyny](https://ghostarchive.org/archive/eL15z), [more transphobia](http://archive.today/2023.08.25-214543/https://seal.cafe/@PhenomX6@fedi.pawlicker.com/posts/AXWOTf5oJdrZo2EvtQ) (the person he references knowing more is a KF staff member), [even more transphobia](http://archive.today/2023.08.25-215639/https://seal.cafe/@PhenomX6@fedi.pawlicker.com/posts/AXWN3ovZ1nkUpBYqpM).
+: [Root domain hosts a pro-KiwiFarms and transphobic essay](https://web.archive.org/web/20230825211851/https://www.pawlicker.com/essays/troonshine.html). Admin [posts transmisogyny](https://ghostarchive.org/archive/eL15z), [more transphobia](https://archive.today/2023.08.25-214543/https://seal.cafe/@PhenomX6@fedi.pawlicker.com/posts/AXWOTf5oJdrZo2EvtQ) (the person he references knowing more is a KF staff member), [even more transphobia](https://archive.today/2023.08.25-215639/https://seal.cafe/@PhenomX6@fedi.pawlicker.com/posts/AXWN3ovZ1nkUpBYqpM).
 
 pawoo.net {#pawoo}
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
@@ -576,7 +576,7 @@ pibvt.net {#pibvt}
 : Lolisho and actual photos of toddlers posted by MAPs. [FediBlock post](https://pleroma.envs.net/notice/AS9QjlcEaQgZKbz5gO) with some more details.
 
 pieville.net {#pieville}
-: Admin is a white nationalist who [supports building an ethno-state, and genocide](http://archive.today/2023.08.19-214916/https://pieville.net/@Alex_Linder/110882938852628318). [Admin profile](https://web.archive.org/web/20230819215516/https://pieville.net/@Alex_Linder) features more blatant slur-filled racism, antisemitism, etc.
+: Admin is a white nationalist who [supports building an ethno-state, and genocide](https://archive.today/2023.08.19-214916/https://pieville.net/@Alex_Linder/110882938852628318). [Admin profile](https://web.archive.org/web/20230819215516/https://pieville.net/@Alex_Linder) features more blatant slur-filled racism, antisemitism, etc.
 
 poa.st {#poast}
 : Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
@@ -585,8 +585,8 @@ poast.org {#poast-org} OR poast.tv
 : Instances affiliated with poa.st.
 
 pisskey.io {#pisskey} OR sad.cab
-: Graf, admin of poa.st, [also runs (and block-evades from) pisskey.io](http://archive.today/2023.08.23-010514/https://pisskey.io/notes/967qzpya6e), and [sends racist transphobic antisemitic harassment](http://archive.today/2023.08.23-171937/https://pisskey.io/notes/975lgwb22i) from it too.
-: Also [runs sad.cab](http://archive.today/2023.08.23-171431/https://sad.cab/graf).
+: Graf, admin of poa.st, [also runs (and block-evades from) pisskey.io](https://archive.today/2023.08.23-010514/https://pisskey.io/notes/967qzpya6e), and [sends racist transphobic antisemitic harassment](https://archive.today/2023.08.23-171937/https://pisskey.io/notes/975lgwb22i) from it too.
+: Also [runs sad.cab](https://archive.today/2023.08.23-171431/https://sad.cab/graf).
 
 poster.place {#poster-place}
 : Staff member "spitfire" [spams the "mutualaid" guppe group and hashtag with extreme queerphobia](https://web.archive.org/web/20230730195759/https://breastmilk.club/notice/AWy4STyPAWSj5e0SYq), and [makes racist homophobic slur-filled anti-antifa posts](https://web.archive.org/web/20230803191342/https://poster.place/notice/AYKzM8YDhgDVhxcsaG). Instance header contains an animated GIF full of slurs.
@@ -606,7 +606,7 @@ rebelbase.site {#rebelbase}
 
 ryona.agency {#ryona} OR plagu.ee
 : Admin bio features [blatant racism, antisemitism, misogyny, and other bigotry](https://web.archive.org/web/20230802203632/https://ryona.agency/mint).
-: [Admin participates in transmisogynistic harassment](http://archive.today/2023.08.03-154852/https://ryona.agency/notice/AYMBAB2LPVkH8l7vk0).
+: [Admin participates in transmisogynistic harassment](https://archive.today/2023.08.03-154852/https://ryona.agency/notice/AYMBAB2LPVkH8l7vk0).
 : [Blatant racism from a local user](https://archive.ph/KoMXa).
 : The [instance "about page" features MRF policies](https://web.archive.org/web/20230802204037/https://ryona.agency/about) to power a block-notification bot, to convert all posts (including followers-only posts) to public visibility, and to reject deletes.
 : Also runs a version of Pleroma [patched to allow bypassing authorized-fetch](https://web.archive.org/web/20230802204840/https://gitgud.io/ryonagency/pleroma/-/commit/d7fca9df32f4f083779371a3f843285188372ba6).
@@ -618,14 +618,14 @@ schwartzwelt.xyz {#schwartzwelt}
 : Local user ["Agartha_Noble" posts blatant racism](https://web.archive.org/web/20230808024312/https://amala.schwartzwelt.xyz/notice/AYRLX09MQtpO2D0lwe) in a thread about race-mixing.
 
 seal.cafe {#sc}
-: Users including admin [participate in transphobic targeted harassment](http://archive.today/2023.08.05-231441/https://clubcyberia.co/notice/AYEajR8kZyASfOEtoO).
-: [Racist slurs from admin](http://archive.today/2023.08.05-232010/https://seal.cafe/notice/AYOtc7ux1QIVPNrgzg).
-: [Antisemitic transphobia from a user](http://archive.today/2023.08.05-233142/https://seal.cafe/notice/AYQ8TapnphkMxOo1Sa).
+: Users including admin [participate in transphobic targeted harassment](https://archive.today/2023.08.05-231441/https://clubcyberia.co/notice/AYEajR8kZyASfOEtoO).
+: [Racist slurs from admin](https://archive.today/2023.08.05-232010/https://seal.cafe/notice/AYOtc7ux1QIVPNrgzg).
+: [Antisemitic transphobia from a user](https://archive.today/2023.08.05-233142/https://seal.cafe/notice/AYQ8TapnphkMxOo1Sa).
 : [Admin posting sui-bait in response to a trans woman coming out](https://web.archive.org/web/20230807202118/https://outdoors.lgbt/@ActuallyAubrey/110846065304916833).
 
 shaw.app {#shaw-app}
-: Admin [pedojackets trans people](http://archive.today/2023.10.02-135443/https://shaw.app/notes/9jpwpvgstpoxf5hl), posts [blatant denial of trans validity](http://archive.today/2023.10.02-135442/https://shaw.app/notes/9j7y04uihayc4xgo) (alongside other far-right talking points), and leaves [transphobic replies to trans women](http://archive.today/2023.10.02-135533/https://shaw.app/notes/9jb1ayl0u3bi899q).
-: [Anti-mask post](http://archive.today/2023.10.02-135406/https://shaw.app/notes/9j96scd5b2y52za5) from admin.
+: Admin [pedojackets trans people](https://archive.today/2023.10.02-135443/https://shaw.app/notes/9jpwpvgstpoxf5hl), posts [blatant denial of trans validity](https://archive.today/2023.10.02-135442/https://shaw.app/notes/9j7y04uihayc4xgo) (alongside other far-right talking points), and leaves [transphobic replies to trans women](https://archive.today/2023.10.02-135533/https://shaw.app/notes/9jb1ayl0u3bi899q).
+: [Anti-mask post](https://archive.today/2023.10.02-135406/https://shaw.app/notes/9j96scd5b2y52za5) from admin.
 
 shitpost.cloud {#shitpost-cloud}
 : Admin "Hoss" [uses racial slurs in an unreclaimed context](https://web.archive.org/web/20230730000845/https://shitpost.cloud/notice/AXuj12Qs30YmatTqbo).
@@ -633,7 +633,7 @@ shitpost.cloud {#shitpost-cloud}
 : [A user with a violent racist display name](https://archive.ph/5Vb2Q), with staff participating later in the thread.
 
 skinheads.social {#skinheads1} OR skinheads.eu
-: The Antisocial Network is for white-nationalist skinhead subculture. ["Aryans" bot](https://ghostarchive.org/archive/T8rZZ)[white pride](http://archive.today/2023.08.06-214417/https://skinheads.eu/@ultras), [Nordic resistance movement](http://archive.today/2023.08.06-214448/https://skinheads.eu/@nordic).
+: The Antisocial Network is for white-nationalist skinhead subculture. ["Aryans" bot](https://ghostarchive.org/archive/T8rZZ)[white pride](https://archive.today/2023.08.06-214417/https://skinheads.eu/@ultras), [Nordic resistance movement](https://archive.today/2023.08.06-214448/https://skinheads.eu/@nordic).
 
 skinheads.uk {#skinheads2} OR skinheads.io
 : Alternate domains for The Antisocial Network.
@@ -641,9 +641,9 @@ skinheads.uk {#skinheads2} OR skinheads.io
 spinster.xyz {#spinster} OR neenster.org
 : Spinster is a TERF instance created by Alex Gleason, admin of gleasonator.com; see its entry. Instance mostly engages in transmisogyny.
 : Staff member [posts blatant transmisogyny](https://ghostarchive.org/archive/6kUM3).
-: Another staff member [openly admits to being a TERF in their profile](http://archive.today/2023.04.13-194916/https://spinster.xyz/@ninapaley).
-: A third staff member [posts a rant against the validity of trans women](http://archive.today/2023.08.16-204546/https://spinster.xyz/notice/AIvseZMWKEEMu5ul96), with several local members piling on in the replies.
-: Neenster shares staff members (Alex Gleason, Nina Paley). The latter [posts self-described TERF content](https://web.archive.org/web/20230819205253/https://neenster.org/notice/AYlc7DIFkvKPPwgIka) and [links to her blog with more TERF content](http://archive.today/2023.08.19-204435/https://blog.ninapaley.com/2023/02/07/he-ing-corinna/).
+: Another staff member [openly admits to being a TERF in their profile](https://archive.today/2023.04.13-194916/https://spinster.xyz/@ninapaley).
+: A third staff member [posts a rant against the validity of trans women](https://archive.today/2023.08.16-204546/https://spinster.xyz/notice/AIvseZMWKEEMu5ul96), with several local members piling on in the replies.
+: Neenster shares staff members (Alex Gleason, Nina Paley). The latter [posts self-described TERF content](https://web.archive.org/web/20230819205253/https://neenster.org/notice/AYlc7DIFkvKPPwgIka) and [links to her blog with more TERF content](https://archive.today/2023.08.19-204435/https://blog.ninapaley.com/2023/02/07/he-ing-corinna/).
 
 strelizia.net {#strelizia}
 : Instance "About" page [lists MRF policies to reject deletes and run a block-notification bot](https://web.archive.org/web/20230808161017/https://strelizia.net/about).
@@ -651,7 +651,7 @@ strelizia.net {#strelizia}
 : Local user "nikiboo" posts [blatant anti-Black racism](https://web.archive.org/web/20230808181414/https://strelizia.net/notice/AXrIC2vJqLE5c296ps) (re-blogged by admin), has a profile photo with Nazi imagery.
 
 tastingtraffic.net {#tastingtraffic}
-: Admin account is a high-activity news account full of hashtag spam. Frequently posts [far-right transphobia/queerphobia](http://archive.today/2023.09.18-151425/https://tastingtraffic.net/@InternationalTechNews/111086792935014280), [another example](https://web.archive.org/web/20230924135533/https://tastingtraffic.net/@InternationalTechNews/110968062234187455). The same content is frequently pasted in multiple posts per day.
+: Admin account is a high-activity news account full of hashtag spam. Frequently posts [far-right transphobia/queerphobia](https://archive.today/2023.09.18-151425/https://tastingtraffic.net/@InternationalTechNews/111086792935014280), [another example](https://web.archive.org/web/20230924135533/https://tastingtraffic.net/@InternationalTechNews/110968062234187455). The same content is frequently pasted in multiple posts per day.
 
 thechimp.zone {#thechimp-zone}
 : Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
@@ -685,7 +685,7 @@ wolfgirl.bar {#wolfgirl}
 yggdrasil.social {#yggdrasil}
 : The first rule of [the yggdrasil.social "about" page](https://web.archive.org/web/20230819213623/https://yggdrasil.social/about) says "No LGBTQ. Period. No homosexuality" followed by blatant transphobia.
 : [Profile for "Ricotta"](https://web.archive.org/web/20230819214035/https://yggdrasil.social/users/Ricotta), the current most active user, has a swastika in their display name and a bio that includes "National Socialist" and "TERF".
-: [Blatant racism from another user](http://archive.today/2023.08.19-214624/https://yggdrasil.social/notice/AXQJkwOuwrASMJo74C).
+: [Blatant racism from another user](https://archive.today/2023.08.19-214624/https://yggdrasil.social/notice/AXQJkwOuwrASMJo74C).
 
 {{</ dd-id >}} {{</ nofollow >}}
 
@@ -697,11 +697,11 @@ This section has barely been started.
 
 
 baraag.net {#baraag}
-: Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](http://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction.
+: Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](https://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction.
 
 berserker.town {#berserker}
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
-: Permissive policies have made space for [anti-diversity eugenics dogwhistles](http://archive.today/2023.08.10-192342/https://berserker.town/@mayonesa/110730803970638239) evolving into [xenophobic eugenics](https://web.archive.org/web/20230810192310/https://berserker.town/@mayonesa/110667720613227224).
+: Permissive policies have made space for [anti-diversity eugenics dogwhistles](https://archive.today/2023.08.10-192342/https://berserker.town/@mayonesa/110730803970638239) evolving into [xenophobic eugenics](https://web.archive.org/web/20230810192310/https://berserker.town/@mayonesa/110667720613227224).
 
 crlf.ninja {#crlf}
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
@@ -717,7 +717,7 @@ firedragonstudios.com {#firedragonstudios}
 
 freesoftwareextremist.com {#freesoftwareextremist}
 : [Ableism and antisemitism from local user "dookie"](https://web.archive.org/web/20230802162551/https://freesoftwareextremist.com/notice/AYBwS5rDjFaDyIqKtU), [ableist sui-bait](https://web.archive.org/web/20230802164139/https://freesoftwareextremist.com/notice/AYItcRuj1hvuTKLhmy), [ableism and queerphobia](https://web.archive.org/web/20230802233803/https://freesoftwareextremist.com/notice/AY7nGBF4CsuYydOyxM).
-: Admin [often uses anti-Chinese racial slurs](https://web.archive.org/web/20230802231531/https://freesoftwareextremist.com/notice/ATzjhzI7r5Y8Cv1DW4), [more usage](https://web.archive.org/web/20230802231652/https://freesoftwareextremist.com/notice/AY1b8vq2iKh4mIiNcm), [other anti-asian slurs](http://archive.today/2023.08.02-232207/https://freesoftwareextremist.com/notice/ARbAeXyGwquJKoxFPk).
+: Admin [often uses anti-Chinese racial slurs](https://web.archive.org/web/20230802231531/https://freesoftwareextremist.com/notice/ATzjhzI7r5Y8Cv1DW4), [more usage](https://web.archive.org/web/20230802231652/https://freesoftwareextremist.com/notice/AY1b8vq2iKh4mIiNcm), [other anti-asian slurs](https://archive.today/2023.08.02-232207/https://freesoftwareextremist.com/notice/ARbAeXyGwquJKoxFPk).
 : Instance has fully open registration.
 
 freetalklive.com {#ftl}
@@ -742,11 +742,11 @@ shitposter.club {#spc}
 : User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
 : User "Nudhul" [posts racist spam in the "MutualAid" hashtag](https://web.archive.org/web/20231103203216/https://clubcyberia.co/notice/AbFYbNOEt3Xa79cDBY).
 : [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
-: [Some more racism from user "triodug"](http://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
+: [Some more racism from user "triodug"](https://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
 : Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
 
 shota.house {#shota-house} OR burger.rodeo
-: Instance [self-identifies as a freeze peach haven](http://archive.today/2023.07.19-100816/https://shota.house/about) that permits unrealistic/2D lolisho; this may be a legal risk, depending on your jurisdiction.
+: Instance [self-identifies as a freeze peach haven](https://archive.today/2023.07.19-100816/https://shota.house/about) that permits unrealistic/2D lolisho; this may be a legal risk, depending on your jurisdiction.
 : [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user.
 : Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
 : [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
@@ -775,7 +775,7 @@ This section hasn't been properly started yet. It'll be for entries that demand 
 
 
 bungle.online {#bungle}
-: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh). Also posts [body-shaming fatphobia](http://archive.today/2023.09.20-173637/https://bungle.online/notes/9jkj570prd), [anti-kink](http://archive.today/2023.09.20-174033/https://bungle.online/notes/9jlpkqzk90).
+: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh). Also posts [body-shaming fatphobia](https://archive.today/2023.09.20-173637/https://bungle.online/notes/9jkj570prd), [anti-kink](https://archive.today/2023.09.20-174033/https://bungle.online/notes/9jlpkqzk90).
 
 {{</ dd-id >}} {{</nofollow>}}
 
