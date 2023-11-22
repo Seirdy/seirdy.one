@@ -4,6 +4,10 @@ date: 2023-11-21T22:30:17-08:00
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/Ac3YFDiQUINNybAA4W'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/9096/more-native-than-a-web-app'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 Whenever I discover a new GUI toolkit, my first question is always "is it more native than the Web?" For reference, here are some ways Web apps have better system integration than Flutter:
 
