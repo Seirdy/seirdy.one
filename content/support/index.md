@@ -29,5 +29,8 @@ If you like anything I do and want to support me, you can send me a donation:
 [Ko-Fi](https://ko-fi.com/Seirdy "{rel='me'}")
 : Supports both recurring and one-time donations. You may optionally publicize your donation.
 
+[GitHub Sponsors](https://github.com/sponsors/Seirdy "{rel='me'}")
+: Supports both recurring and one-time donations. Requires a GitHub account. Can be public or visible to just me.
+
 Thank you!
 
