@@ -16,8 +16,10 @@ stale_after_minutes=90
 fallback_stale_after_minutes=1440
 
 skip_check=0
+times_run=0
 
 check_cached_webmentions() {
+	times_run="$((times_run + 1))"
 	if [ "$skip_check" = 0 ]; then
 		expires_in="$fallback_stale_after_minutes"
 		if [ $# -gt 0 ]; then
@@ -34,8 +36,8 @@ check_cached_webmentions() {
 				exit_status=0
 			fi
 		fi
-		if [ "$exit_status" = 1 ]; then
-			echo "webmentions are outdated. failed to fetch for over a day."
+		if [ "$exit_status" = 1 ] && [ "$times_run" = 2 ]; then
+			echo "Webmentions are outdated. failed to fetch for over a day."
 		fi
 		exit "$exit_status"
 	fi
