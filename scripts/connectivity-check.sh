@@ -1,14 +1,14 @@
 #!/bin/sh
 set -e -u
 
-alias curl_cmd='curl --proto "=https" --proto-default https --http2 -siSL --tlsv1.3 --cert-status'
-
 ipv6_success=1
 ipv4_success=1
 
-curl_cmd -6 'seirdy.one/ip' || ipv6_success=0
+curl_wrapper="$(dirname "$0")/curl-wrapper.sh"
+
+"$curl_wrapper" -6 'https://seirdy.one/ip' || ipv6_success=0
 echo
-curl_cmd -4 'seirdy.one/ip' || ipv4_success=0
+"$curl_wrapper" -4 'https://seirdy.one/ip' || ipv4_success=0
 echo
 
 if [ "$ipv6_success" = 0 ] && [ "$ipv4_success" = 0 ]; then

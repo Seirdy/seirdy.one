@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e -u
-pwd="$(dirname "$0")"
+dirname="$(dirname "$0")"
 output_dir="$1"
 
 find_files_to_analyze() {
@@ -8,12 +8,9 @@ find_files_to_analyze() {
 		| grep -Ev '(bimi\.svg|search/index\.x?html)$'
 }
 
-files_to_analyze="$(find_files_to_analyze)"
+# files_to_analyze="$(find_files_to_analyze)"
 
 # we skip the BIMI icon (VNU can't handle SVG 1.2) and the search page (it has raw templates).
-vnu \
-	--stdout \
-	--format json \
-	--also-check-svg \
-	$files_to_analyze \
-	| sh "$pwd/filter-vnu.sh"
+find_files_to_analyze \
+	| xargs vnu --stdout --format json --also-check-svg \
+	| sh "$dirname/filter-vnu.sh"
