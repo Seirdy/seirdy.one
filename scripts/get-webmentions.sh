@@ -24,8 +24,6 @@ check_cached_webmentions() {
 		expires_in="$fallback_stale_after_minutes"
 		if [ $# -gt 0 ]; then
 			expires_in="$1"
-		else
-			echo "Failed to fetch webmentions. Using fallback cache expiry."
 		fi
 		exit_status=1
 		if [ -f "$webmentions_file" ]; then
@@ -34,12 +32,14 @@ check_cached_webmentions() {
 				echo 'Using cached webmentions'
 				skip_check=1
 				exit_status=0
+				return 0
 			fi
+			return 1
 		fi
 		if [ "$exit_status" = 1 ] && [ "$times_run" = 2 ]; then
 			echo "Webmentions are outdated. failed to fetch for over a day."
+			exit "$exit_status"
 		fi
-		exit "$exit_status"
 	fi
 }
 
