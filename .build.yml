@@ -1,13 +1,13 @@
 ---
 # we rsync binaries.tar.gz from the same server we deploy to.
 # it contains these static-pie binaries:
-# hugo, brotli, ect (like gzip/zopfli), sd, htmlq (like jq for html), and xmllint.
+# hugo, brotli, ect (like gzip/zopfli), and xmllint.
 image: alpine/edge
 packages:
-  - curl # for webring update script, pre-installed on builds.sr.ht images
+  - curl # Fetches webmentions and webring links. Pre-inistalled.
   - rsync
-  - git  # for Hugo's gitInfo, pre-installed on builds.sr.ht images
-  - bmake
+  - git  # Powers Hugo's gitInfo. Pre-installed
+  - bmake # gmake is fine too
 sources:
   - https://git.sr.ht/~seirdy/seirdy.one
 secrets:
@@ -19,14 +19,7 @@ triggers:
     to: seirdy@seirdy.one
 tasks:
   - deps: |
-      printf "VerifyHostKeyDNS=yes\nKexAlgorithms=sntrup761x25519-sha512@openssh.com\n" >> ~/.ssh/config
-      # mirrored at https://seirdy.one/misc/binaries.tar.gz
-      rsync -Wv deploy@seirdy.one:/var/www/pb/binaries.tar.gz .
-      mkdir -p ~/bin
-      tar xzf binaries.tar.gz -oC ~/bin
+      sh seirdy.one/scripts/setup-ci.sh
   - build_deploy: |
       cd seirdy.one
-      export PATH=~/bin:$PATH
-      # quick health + ip check
-      sh scripts/connectivity-check.sh
-      bmake deploy-prod deploy-onion
+      bmake ci

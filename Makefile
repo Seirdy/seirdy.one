@@ -163,6 +163,12 @@ deploy-onion:
 	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion copy-to-xhtml
 	@$(MAKE) WWW_ROOT=/var/www/seirdy.onion HUGO_BASEURL='http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/' OUTPUT_DIR=public_onion deploy-html
 
+# in CI, check connectivity and then build + deploy the clearnet and onion sites.
+.PHONY: ci
+ci:
+	sh scripts/connectivity-check.sh
+	@$(MAKE) deploy-prod deploy-onion
+
 # we only deploy html to the staging site
 .PHONY: deploy-staging
 deploy-staging:
