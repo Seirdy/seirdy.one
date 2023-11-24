@@ -37,7 +37,7 @@
 		<activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
 		<poco:preferredUsername>Seirdy</poco:preferredUsername>
 		<poco:displayName>Seirdy</poco:displayName>
-    <name>Rohan Kumar</name>
+    <name>Seirdy</name>
 		<uri>https://seirdy.one/</uri>
   </author>
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
@@ -48,8 +48,8 @@
 		<title>{{ .Title }}</title>
 		<link rel="alternate" type="text/html" href="{{ .Permalink }}" /><id>{{ .Permalink }}</id>
 		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published><updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
-		<author><name>Rohan Kumar</name><uri>https://seirdy.one/</uri></author>
-		<rights>CC-BY-SA 4.0 by Rohan Kumar</rights>
+		<author><name>Seirdy</name><uri>https://seirdy.one/</uri></author>
+		<rights>CC-BY-SA 4.0</rights>
 		{{- with .Params.replyURI -}}
 		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" />
 		{{- end -}}
