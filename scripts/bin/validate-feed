@@ -39,7 +39,6 @@ done
 
 url="$1"
 
-
 find_rel_mention_count() {
 	curl -s "$url" | grep -cF 'rel="mentioned"'
 }

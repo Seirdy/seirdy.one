@@ -1,4 +1,6 @@
 #!/bin/sh
+
+set -e -u
 # Runs axe on every page of my sitemap
 # first arg is output directory, after that comes urls from a sitemap. We replace the urls with equivalent local file paths.
 PATH="$(dirname "$0"):$PATH"

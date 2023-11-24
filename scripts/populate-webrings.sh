@@ -8,7 +8,6 @@
 
 set -e -u
 
-
 # the name of this program
 progname="$(basename "$0")"
 dirname="$(dirname "$0")"
@@ -58,15 +57,15 @@ done
 endless_orbit() {
 	printf 'Endless Orbit,'
 	curl -sSL --compressed https://linkyblog.neocities.org/onionring/onionring-variables.js \
-	| grep -C 1 https://seirdy.one/ \
-	| tr -d "'\n" | sed 's|https://seirdy.one/|https://linkyblog.neocities.org/webring.html|'
+		| grep -C 1 https://seirdy.one/ \
+		| tr -d "'\n" | sed 's|https://seirdy.one/|https://linkyblog.neocities.org/webring.html|'
 	echo 'null'
 }
 
 if [ "$dry_run" = '1' ]; then
 	endless_orbit
 elif [ -f "$webrings_dest" ]; then
-		echo "webrings file already generated"
+	echo "webrings file already generated"
 else
 	endless_orbit | cat "$webrings_src" - >"$webrings_dest"
 fi

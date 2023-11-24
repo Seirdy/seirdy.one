@@ -23,7 +23,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-run_tidy () {
+run_tidy() {
 	tidy -asxhtml -config linter-configs/tidy.conf 2>/dev/null || true
 }
 
@@ -36,13 +36,13 @@ sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
-			-e '1,7d' \
-			-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
-			-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
-			-E \
-			-e 's|([a-z])<data|\1 <data|' \
-			-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
-			-e 's#^[\t\s]*<(code|/pre)#<\1#' \
-			"$tmp_file" \
+		-e '1,7d' \
+		-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
+		-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
+		-E \
+		-e 's|([a-z])<data|\1 <data|' \
+		-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
+		-e 's#^[\t\s]*<(code|/pre)#<\1#' \
+		"$tmp_file" \
 		| awk '/^<\/code>/{printf "%s",$0;next}7'
 } >"$html_file"
