@@ -82,6 +82,10 @@ fetch_webmentions() {
 }
 
 # fetch webmentions if we don't have a fresh copy already.
-if ! check_cached_webmentions "$stale_after_minutes"; then
+if [ -f "$webmentions_file" ]; then
+	if ! check_cached_webmentions "$stale_after_minutes"; then
+		fetch_webmentions
+	fi
+else
 	fetch_webmentions
 fi
