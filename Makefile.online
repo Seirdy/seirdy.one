@@ -24,7 +24,7 @@ LIGHTHOUSE_ARGS += --budget-path linter-configs/budget.json --output html --outp
 
 hint-online:
 	@echo "Running webhint"
-	@hint --config linter-configs/hintrc $(URLS)
+	hint --config linter-configs/hintrc $(URLS)
 lighthouse:
 	mkdir -p $(CHROME_PROFILE)
 	CHROME_PATH=$(CHROME_PATH) CHROME_PROFILE=$(CHROME_PROFILE) JS_FLAGS='' lighthouse $(URLS) $(LIGHTHOUSE_ARGS)
@@ -40,8 +40,9 @@ axe-ff:
 	@echo "Running axe with Firefox"
 	@scripts/bin/axe-ff $(OUTPUT_DIR) $(URLS)
 
+
 .PHONY: axe axe-ff
 
 .PHONY: all-extra
-all-extra: axe-ff validate-json equal-access htmlproofer lint-css validate-feeds
+all-extra: axe-ff equal-access lint-local
 

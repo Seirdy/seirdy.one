@@ -3,7 +3,8 @@
 		"name": "puppeteer",
 		"options": {
 			"browser": "Chromium",
-			"headless": true
+			"headless": true,
+			"puppeteerOptions": {"args": ["--no-sandbox"]}
 		}
 	},
 	"extends": [
@@ -43,8 +44,6 @@
 			"error",
 			{
 				"ignore": [
-					"time",
-					"picture",
 					"a[download]",
 					"a[referrerpolicy]",
 					"a[translate]",
@@ -52,7 +51,6 @@
 					"samp[translate]",
 					"span[translate]",
 					"img[decoding]",
-					"meta[name=color-scheme]",
 					"meta[name=theme-color]"
 				]
 			}
@@ -64,12 +62,20 @@
 				"maxAgeTarget": 10800
 			}
 		],
-		"http-compression": "off",
+		"http-compression": ["error", {
+			"resource": {
+				"zopfli": false
+			},
+			"html": {
+				"zopfli": false
+			}
+		}],
 		"https-only": "error",
 		"sri": "error",
-		"detect-css-reflows": "off",
-		"detect-css-reflows/layout": "off",
-		"detect-css-reflows/paint": "off",
+		"no-http-redirects": "error",
+		"detect-css-reflows/layout": "hint",
+		"detect-css-reflows/paint": "hint",
+		"detect-css-reflows/composite": "hint",
 		"manifest-exists": "error",
 		"manifest-file-extension": "error",
 		"manifest-is-valid": "error",
@@ -83,10 +89,7 @@
 		"no-vulnerable-javascript-libraries": "off",
 		"html-checker": "off",
 		"image-optimization-cloudinary": "off",
-		"no-disallowed-headers": [ "error",
-			{
-				"ignore": ["x-frame-options"]
-			}],
+		"no-disallowed-headers": "error",
 		"meta-charset-utf-8": "error",
 		"disown-opener": "error",
 		"content-type": ["error", {
