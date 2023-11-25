@@ -16,7 +16,7 @@ syndicatedCopies:
     - title: 'Tildes'
       url: 'https://tildes.net/~comp/13nx/the_limited_utility_of_the_phrase_gnu_linux'
 ---
-A specter is haunting the Linux community. Where lies productive discourse about operating systems, there also lies a danger. For the longer such discourse lasts, the greater the risk that the discourse shall be interrupted by The Interjection: an abomination brandished by a raging fossbro determined to contribute absolutely nothing to the discussion. [The standard fossbro interjection](https://stallman-copypasta.github.io/) begins:
+The standard fossbro interjection goes:
 
 > I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
 
