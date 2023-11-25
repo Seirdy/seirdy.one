@@ -4,7 +4,6 @@ DEVSERVER_URL="http://localhost:1313/"
 
 DOMAIN = seirdy.one
 HUGO_BASEURL = "https://$(DOMAIN)/"
-HUGO_FLAGS = --gc --ignoreCache
 USER = deploy@$(DOMAIN)
 WWW_ROOT = /var/www/$(DOMAIN)
 GEMINI_ROOT = /srv/gemini/$(DOMAIN)
@@ -145,7 +144,7 @@ deploy: deploy-html deploy-gemini
 .PHONY: .prepare-deploy
 .prepare-deploy:
 	@$(MAKE) clean
-	@$(MAKE) hugo
+	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' hugo
 	@$(MAKE) xhtmlize
 
 # deploy steps need to happen one at a time
@@ -187,5 +186,5 @@ lint-and-deploy-staging:
 .PHONY: deploy-envs
 deploy-envs:
 	@$(MAKE) -j1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy copy-to-xhtml
-	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs html-validate validate-html validate-json lint-css
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs html-validate validate-html validate-json
 	@$(MAKE) SSHFLAGS='-o KexAlgorithms=curve25519-sha256@libssh.org' HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
