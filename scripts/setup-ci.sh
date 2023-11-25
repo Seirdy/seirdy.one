@@ -9,6 +9,6 @@ KexAlgorithms=sntrup761x25519-sha512@openssh.com" >> ~/.ssh/config
 
 # mirrored at https://seirdy.one/pb/binaries.tar.gz
 rsync -WPv deploy@seirdy.one:/var/www/pb/binaries.tar.gz .
-mkdir -p /usr/local/bin
-tar xzf binaries.tar.gz -oC /usr/local/bin
+mkdir -p ~/bin
+tar xzf binaries.tar.gz -oC ~/bin
 rm binaries.tar.gz
