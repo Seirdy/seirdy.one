@@ -1,6 +1,5 @@
 {{/* All pages are one or two clicks from the navbar. If two clicks, add a breadcrumb list. */}}
 {{- if and (not .IsHome) (not .Parent.IsHome) -}}
-<hr />
 <nav aria-labelledby="bc-label"
 	itemscope="" itemprop="breadcrumb" itemtype="https://schema.org/BreadcrumbList">
 	<span id="bc-label">You are here:&#160;</span>
@@ -8,6 +7,7 @@
 		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
 	</ol>
 </nav>
+<hr />
 {{- end -}}
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}

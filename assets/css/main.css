@@ -318,7 +318,8 @@ html {
 	/* The nav has to be distant-enough from the top to make room for a
 	 * skip-link. The breadcrumbs also can't have their focus-outlines
 	 * overflow while CSS containment is enabled. */
-	header > nav {
+	header > nav,
+	nav[itemprop="breadcrumb"] {
 		padding: .75em 0 .25em;
 	}
 
