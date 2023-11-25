@@ -14,13 +14,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
 	xmlns="http://www.w3.org/2005/Atom"
+	xml:lang="{{ .Site.LanguageCode }}"
 	xmlns:activity="http://activitystrea.ms/spec/1.0/"
+	xmlns:admin="http://webns.net/mvcb/"
 	xmlns:media="http://search.yahoo.com/mrss/"
 	xmlns:ostatus="http://ostatus.org/schema/1.0"
 	xmlns:poco="http://portablecontacts.net/spec/1.0"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:thr="http://purl.org/syndication/thread/1.0"
-	xml:lang="{{ .Site.LanguageCode }}">
+	xmlns:thr="http://purl.org/syndication/thread/1.0">
 	<title>{{ $title }} on {{ .Site.Title }}</title>
 	<subtitle>
 		{{- if .Params.Description -}}
@@ -35,11 +37,12 @@
 	<sy:updateFrequency>2</sy:updateFrequency>
   <author>
 		<activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-		<poco:preferredUsername>Seirdy</poco:preferredUsername>
-		<poco:displayName>Seirdy</poco:displayName>
-    <name>Seirdy</name>
+		<poco:preferredUsername>{{ .Site.Author.name }}</poco:preferredUsername>
+		<poco:displayName>{{ .Site.Author.nick }}</poco:displayName>
+    <name>{{ .Site.Author.name }}</name>
 		<uri>https://seirdy.one/</uri>
   </author>
+	<admin:errorReportsTo rdf:resource="mailto:seirdy@seirdy.one" />
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
   <id>{{ .Permalink }}</id>
   {{ range $pages -}}
@@ -48,7 +51,7 @@
 		<title>{{ .Title }}</title>
 		<link rel="alternate" type="text/html" href="{{ .Permalink }}" /><id>{{ .Permalink }}</id>
 		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published><updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
-		<author><name>Seirdy</name><uri>https://seirdy.one/</uri></author>
+		<author><name>{{ .Site.Author.name }}</name><uri>https://seirdy.one/</uri></author>
 		<rights>CC-BY-SA 4.0</rights>
 		{{- with .Params.replyURI -}}
 		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" />
