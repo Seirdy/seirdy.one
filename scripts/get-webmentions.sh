@@ -32,7 +32,7 @@ check_cached_webmentions() {
 				echo 'Using cached webmentions'
 				skip_check=1
 				exit_status=0
-				return 0
+				exit 0
 			fi
 			return 1
 		fi
@@ -71,7 +71,7 @@ verify_webmentions() {
 # use the token to fetch all webmentions.
 fetch_webmentions() {
 	echo 'Fetching webmentions'
-	token_response="$(token)"
+	token_response="$(token)" || return 1
 	"$curl_wrapper" --compressed -H "Authorization: Bearer $token_response" "$webmentions_url" -o "$webmentions_file.tmp" || return 1
 	if verify_webmentions; then
 		mv "$webmentions_file.tmp" "$webmentions_file"
