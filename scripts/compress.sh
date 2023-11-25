@@ -5,6 +5,7 @@
 # 2. "gzip" or "brotli"
 # 3. ECT zopfli compression level
 
+# no pipefail here since there are no pipes.
 set -e -u
 
 output_dir="$1"

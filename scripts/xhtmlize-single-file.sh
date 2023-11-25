@@ -13,6 +13,8 @@
 # with sed.
 # It also decreases indents by one level
 
+#shellcheck disable=SC3040  # This only sets pipefail if it's available and otherwise does nothing
+set -o pipefail 2>/dev/null || true
 set -e -u
 
 html_file="$1"

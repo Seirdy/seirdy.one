@@ -2,6 +2,7 @@
 # Take a single polygot (X)HTML file and make a .xhtml copy of it. Do
 # the same for static-compressed versions.
 
+# no pipefail here since there are no pipes.
 set -e -u
 
 html_file="$1"

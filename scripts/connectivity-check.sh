@@ -1,4 +1,8 @@
 #!/bin/sh
+# Ensure that we can connect to seirdy.one, and print the ipv4/ipv6 addresses used. The latter makes searching through my server logs easier.
+# Return a bad exit code if we can't connect over either ipv4 or ipv6.
+
+# no pipefail here since there are no pipes.
 set -e -u
 
 ipv6_success=1

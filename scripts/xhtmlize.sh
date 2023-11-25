@@ -3,6 +3,7 @@
 # Runs xhtmlize-single-file.sh on every single html file in the output dir.
 # exits if xhtmlize-single-file fails.
 
+# no pipefail here since there are no pipes.
 set -e -u
 
 output_dir="$1"

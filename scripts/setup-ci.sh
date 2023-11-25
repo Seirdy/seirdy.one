@@ -1,6 +1,8 @@
 #!/bin/sh
 # For CI: configures SSH and installs binaries that I use to build my site.
 # The binaries are statically-linked for Linux on x86_64
+
+# no pipefail here since there are no pipes.
 set -e -u
 
 # configure ssh

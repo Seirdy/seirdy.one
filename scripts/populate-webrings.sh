@@ -6,6 +6,9 @@
 # first-party HTML+CSS page. This script fetches webring links by
 # parsing the iframes and appends appropriate values to my webrings.csv file.
 
+#shellcheck disable=SC3040  # This only sets pipefail if it's available (e.g. in Bash, Zsh) and otherwise does nothing (in other POSIX shells like Busybox sh and dash)
+set -o pipefail 2>/dev/null
+
 set -e -u
 
 # the name of this program

@@ -4,6 +4,7 @@
 # Uses POSIX and cURL in CI, also uses any pass/pash-compatible pwmngr otherwise
 # The response is cached for 90 minutes. If fetching fresh webmentions fails, fall back to the cached version for up to one day (1440 minutes). If cached webmentions are older than a day, error out.
 
+# no pipefail here since there are no pipes.
 set -e -u
 
 dirname="$(dirname "$0")"
