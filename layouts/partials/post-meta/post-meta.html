@@ -34,7 +34,7 @@
 			{{- end -}}
 			{{- if not $isNotes -}}
 {{ if $needsList }}<li>{{ else }}<br />{{ end }}
-			{{ partial "wordcount.html" . -}}
+			{{ partial "post-meta/wordcount.html" . -}}
 {{ if $needsList }}</li>{{ end }}
 			{{- end -}}
 {{- if $needsList }}

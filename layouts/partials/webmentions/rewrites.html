@@ -1,0 +1,5 @@
+{{- $rewritesDict := dict "" "" -}}
+{{- range $i, $r := (getCSV "," "/csv/rewrites.csv") -}}
+	{{- $rewritesDict = merge $rewritesDict (dict (index $r 0) (index $r 1)) -}}
+{{- end -}}
+{{- return $rewritesDict -}}
