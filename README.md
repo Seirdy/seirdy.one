@@ -55,17 +55,18 @@ To lint:
 - A very recent build of the W3C's [Nu HTML checker](https://github.com/validator/validator) to validate the HTML and XHTML, available on your `$PATH` as `vnu`. I have a very simple shell-script wrapper for this that invokes `java -jar`.
 - [jq](https://stedolan.github.io/jq/), to filter false-positives from the Nu HTML checker and to verify that JSON files parse.
 - [HTMLProofer](https://github.com/gjtorikian/html-proofer), version 5 or later. Requires Ruby.
+- W3C feed validator (requires Python)
 
 More in-depth local tests:
 
 - Axe-Core, using the CLI and a headless browser (Firefox or Chromium).
-- IBM Equal Access Checker, using the CLI and a headless Chromium. Runs on a patched version of the site with a modified stylesheet due to a bug (reported upstream).
+- IBM Equal Access Checker, using the CLI and a headless Chromium. Runs on a patched version of the site with all instances of `content-visibility` removed from the stylesheet. I do this to work around [a false-positive, reported upstream](https://github.com/IBMa/equal-access/issues/1008).
 
 Remote tests:
 
+- WebHint (normally run on every page in my sitemap)
 - Lighthouse
-- WebHint (might not pass; only informative)
-- Feed validator (requires Python)
+- redbot
 
 ## Build instructions
 
