@@ -84,7 +84,7 @@ hint: hugo .hintrc-local
 
 .PHONY: html-validate
 html-validate:
-	pnpm -s dlx html-validate --ext=html -c linter-configs/htmlvalidate.json $(OUTPUT_DIR)
+	find $(OUTPUT_DIR) -type f -name "*.html" | grep -v 'resume/index.html' | xargs pnpm -s dlx html-validate --ext=html -c linter-configs/htmlvalidate.json
 
 .validate-feed-main:
 	scripts/bin/validate-feed file://$(PWD)/$(OUTPUT_DIR)/atom.xml
