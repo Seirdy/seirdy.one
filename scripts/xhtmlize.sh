@@ -11,7 +11,7 @@ script_dir="$(dirname "$0")"
 temp_resume="$(mktemp)"
 
 # I have an alias for a redirect. I also define the redirect in Nginx, but this is there for the envs.net/~seirdy mirror. Hugo aliases don't have trailing slashes; this will trip up xmllint.
-sed -i -E -e 's#<((link|meta) .*)">#<\1" />#' "$output_dir/resume/index.html"
+sed -i -e 's|<html lang="en-us"|<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us"|' -E -e 's#<((link|meta) .*)">#<\1" />#' "$output_dir/resume/index.html"
 mv "$output_dir/resume/index.html" "$temp_resume"
 
 {
