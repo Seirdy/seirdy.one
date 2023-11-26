@@ -20,4 +20,5 @@ trap cleanup EXIT
 export XMLLINT_INDENT='	'
 export OUTPUT_DIR="$output_dir"
 find "$output_dir" -type f -name '*.html' -exec sh "$script_dir/xhtmlize-single-file.sh" {} \;
+find "$output_dir" -type f -name '*.xml' -exec xmllint --noblanks --encode UTF-8 --noent {} --output {} \;
 # done
