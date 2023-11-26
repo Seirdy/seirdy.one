@@ -1,6 +1,7 @@
 ---
 title: "Introducing breadcrumbs"
 date: 2022-07-07T18:12:10-07:00
+lastMod: 2022-07-07T18:12:10-07:00
 ---
 I just rolled out breadcrumbs for my website. Now, any page that is not linked directly from the navbar or site footer will have a breadcrumb list in its header. The breadcrumb list shows how to reach the page, starting from a navbar link. The first item is the navbar or footer link; the second link is the current page.
 
