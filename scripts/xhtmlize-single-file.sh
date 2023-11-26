@@ -25,12 +25,19 @@ cleanup() {
 }
 trap cleanup EXIT
 
-run_tidy() {
-	tidy -asxhtml -config linter-configs/tidy.conf 2>/dev/null || true
+# run_tidy() {
+# 	tidy -asxhtml -config linter-configs/tidy.conf 2>/dev/null || true
+# }
+
+run_xmllint() {
+	xmllint --format --encode UTF-8 --noent - || {
+		echo "$html_file"
+		exit 1
+	}
 }
 
 # delete the stylesheet from the html file; we'll re-insert it later.
-sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$tmp_file"
+sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 {
 	head -n7 "$tmp_file"
 	cat "${OUTPUT_DIR:?}/tmp.css"
