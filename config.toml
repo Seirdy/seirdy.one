@@ -71,13 +71,6 @@ disableKinds = ["taxonomy", "term"]
 		weight = 40
 
 	[[menu.main]]
-		identifier = "resume"
-		name = "Resume"
-		title = "resume"
-		url = "/resume/"
-		weight = 50
-
-	[[menu.main]]
 		identifier = "Support"
 		name = "Support"
 		title = "support"
