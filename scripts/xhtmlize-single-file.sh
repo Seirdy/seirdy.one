@@ -30,7 +30,6 @@ run_tidy() {
 }
 
 # delete the stylesheet from the html file; we'll re-insert it later.
-# Also remove two indentation levels
 sed 7d "$html_file" | xmllint --format --encode UTF-8 --noent - | tail -n +2 >"$tmp_file"
 {
 	head -n7 "$tmp_file"
