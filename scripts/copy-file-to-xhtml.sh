@@ -9,5 +9,9 @@ html_file="$1"
 xhtml_file="${html_file%*.html}.xhtml"
 
 cp -p "$html_file" "$xhtml_file"
-[ -f "$html_file.gz" ] && cp -p "$html_file.gz" "$xhtml_file.gz"
-[ -f "$html_file.br" ] && cp -p "$html_file.br" "$xhtml_file.br"
+if [ -f "$html_file.gz" ]; then
+	cp -p "$html_file.gz" "$xhtml_file.gz"
+fi
+if [ -f "$html_file.br" ]; then
+	cp -p "$html_file.br" "$xhtml_file.br"
+fi

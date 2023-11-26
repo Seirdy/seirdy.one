@@ -128,7 +128,7 @@ xhtmlize:
 
 .PHONY: copy-to-xhtml
 copy-to-xhtml:
-	find $(OUTPUT_DIR) -type f -name "*.html" -exec sh scripts/copy-file-to-xhtml.sh {} \;
+	find $(OUTPUT_DIR) -type f -name "*.html" | grep -v 'resume/index.html' | xargs -n1 sh scripts/copy-file-to-xhtml.sh
 
 .PHONY: deploy-html
 deploy-html:
