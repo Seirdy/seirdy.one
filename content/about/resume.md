@@ -1,7 +1,7 @@
 ---
 date: "2021-01-23T12:21:38-08:00"
 keywords: intern, python, golang, go, lua, moonscript, shell, bash, zsh, posix, java, haskell, C, influxdb, influxdata, chronograf, grafana, kapacitor, numpy, scipy, pandas, jupyter, docker, podman, buildah, skopeo, kubernetes, openshift, cloud native, physics, jenkins, git, gitlab, github, linux, bsd, red hat, fedora, debian, ubuntu, opensuse, suse
-title: Rohan Kumar
+title: Resumé
 description: "Detail-oriented, committed, self-motivated, OSS enthusiast proficient in Python, Go, Linux/UNIX systems, and cloud-native computing looking for an internship."
 aliases:
     - "/resume/"
