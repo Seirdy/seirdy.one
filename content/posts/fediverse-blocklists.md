@@ -708,7 +708,7 @@ crlf.ninja {#crlf}
 
 federated.fun {#federated-fun} OR wikileaks2.org
 : [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw). Admin profile [pinned an extremely transphobic post](https://web.archive.org/web/20230805061250/https://ryona.agency/notice/AYMq4VFzPr2yEcvG3k).
-: Admin [switched to running misinformation.wikileaks2.org instead](https://web.archive.org/web/20230810182335/https://misinformation.wikileaks2.org/notice/AYVR3y1faCJhhpwhjk).
+: Admin [switched to running misinformation.wikileaks2.org instead](https://web.archive.org/web/20230810182335/https://misinformation.wikileaks2.org/notice/AYVR3y1faCJhhpwhjk), and [continues posting queerphobia on the new instance](https://web.archive.org/web/20231127113147/https://misinformation.wikileaks2.org/notice/AcDQadrG6c4NC98azQ).
 
 firedragonstudios.com {#firedragonstudios}
 : Currently runs an instance on the "pleroma" subdomain.
@@ -732,6 +732,9 @@ kompost.cz {#kompost}
 maladaptive.art {#maladaptive-art}
 : [Blatant racism in a transphobic sui-bait thread](https://web.archive.org/web/20230927221541/https://ap.maladaptive.art/notice/Aa4MbafnEqYugwYMca).
 : Same user [posting blatant transphobia](https://web.archive.org/web/20230927225431/https://ap.maladaptive.art/@opal/posts/AZM01RTPDcsHmrse24), [misgendering in a transphobic thread](https://web.archive.org/web/20230927224155/https://ap.maladaptive.art/notice/Aa4Mj9DfC7jTrW01OC), and [antisemitism](https://web.archive.org/web/20231022044401/https://ap.maladaptive.art/notice/AaiyV5x86yTyG2OBrU).
+
+novoa.nagoya {#novoa}
+: [Antisemitism from admin](https://archive.today/2023.11.22-140629/https://novoa.nagoya/notes/9m4x4tzf1m).
 
 occultist.space {#occultist-space} OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol (FediNuke). Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
