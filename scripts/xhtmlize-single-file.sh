@@ -51,5 +51,6 @@ sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 		-e 's|([a-z])<data|\1 <data|' \
 		-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
 		-e 's#^[\t\s]*<(code|/pre)#<\1#' \
-		"$tmp_file"
+		"$tmp_file" \
+		| awk '/^<\/code>/{printf "%s",$0;next}7'
 } >"$html_file"
