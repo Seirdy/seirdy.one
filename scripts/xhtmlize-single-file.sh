@@ -45,7 +45,7 @@ sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
 		-e '1,7d' \
-		-e 's|</span>(&nbsp;)?.span itemprop="familyName|</span>&#160;<span itemprop="familyName"|' \
+		-e 's|</span><span itemprop="familyName"|</span>\&#160;<span itemprop="familyName"|' \
 		-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
 		-E \
 		-e 's|([a-z])<data|\1 <data|' \
