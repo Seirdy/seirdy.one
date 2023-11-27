@@ -96,7 +96,7 @@ validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
 .PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
 
 .PHONY: lint-local
-lint-local: html-validate validate-html validate-json lint-css htmlproofer validate-feeds
+lint-local: html-validate validate-html validate-json htmlproofer validate-feeds
 
 # dev server, includes future and draft posts
 .PHONY: serve
@@ -186,5 +186,5 @@ lint-and-deploy-staging:
 .PHONY: deploy-envs
 deploy-envs:
 	@$(MAKE) -j1 HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs .prepare-deploy copy-to-xhtml
-	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs html-validate validate-html validate-json
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs html-validate validate-html validate-json validate-feeds
 	@$(MAKE) SSHFLAGS='-o KexAlgorithms=curve25519-sha256@libssh.org' HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
