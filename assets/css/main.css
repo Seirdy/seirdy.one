@@ -148,7 +148,6 @@ html {
 	h3,
 	li article,
 	summary,
-	[role="doc-backlink"],
 	[role="doc-endnotes"] {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 3em;
@@ -186,7 +185,6 @@ html {
 	main,
 	pre,
 	summary,
-	:not(nav) > ol,
 	[role="doc-endnotes"],
 	[role="doc-preface"] {
 		contain: inline-size layout paint;
@@ -210,7 +208,6 @@ html {
 	details,
 	fieldset,
 	form {
-		contain: inline-size layout;
 		margin: .5em 0;
 	}
 
@@ -630,11 +627,6 @@ form > div {
 }
 
 input {
-	/* Browsers like Safari make the submit button pill-shaped which
-	 * clashes with the input box. One of the only purely-cosmetic changes
-	 * on this site. */
-	appearance: none;
-
 	/* Don't shrink the size of the text in forms or make it system-ui. */
 	font-family: sans-serif;
 	font-size: inherit;
