@@ -10,6 +10,7 @@
 	{{- $period = "hourly" -}}
 {{- end -}}
 {{- $icon := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
+{{- $image := resources.Get "/favicon192.png" | resources.Fingerprint "md5" -}}
 {{- $logo := resources.Get "/atom.svg" | resources.Fingerprint "md5" -}}
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
@@ -22,7 +23,8 @@
 	xmlns:poco="http://portablecontacts.net/spec/1.0"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:thr="http://purl.org/syndication/thread/1.0">
+	xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xmlns:webfeeds="http://webfeeds.org/rss/1.0">
 	<title>{{ $title }} on {{ .Site.Title }}</title>
 	<subtitle>
 		{{- if .Params.Description -}}
@@ -31,8 +33,11 @@
 			{{- .Site.Params.Description -}}
 		{{- end -}}
 	</subtitle>
-	<icon>{{ $icon.Permalink }}</icon><logo>{{ $logo.Permalink }}</logo>
 	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
+	<icon>{{ $icon.Permalink }}</icon>
+	<webfeeds:icon>{{ $icon.Permalink }}</webfeeds:icon>
+	<logo>{{ $logo.Permalink }}</logo>
+	<webfeeds:accentColor>191919</webfeeds:accentColor>
 	<sy:updatePeriod>{{ $period }}</sy:updatePeriod>
 	<sy:updateFrequency>2</sy:updateFrequency>
   <author>
@@ -43,16 +48,20 @@
 		<uri>https://seirdy.one/</uri>
   </author>
 	<admin:errorReportsTo rdf:resource="mailto:seirdy@seirdy.one" />
+	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
   <id>{{ .Permalink }}</id>
   {{ range $pages -}}
 	{{- if not .Params.Private -}}
   <entry>
 		<title>{{ .Title }}</title>
-		<link rel="alternate" type="text/html" href="{{ .Permalink }}" /><id>{{ .Permalink }}</id>
-		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published><updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+		<link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+		<id>{{ .Permalink }}</id>
+		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+		<updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 		<author><name>{{ .Site.Author.name }}</name><uri>https://seirdy.one/</uri></author>
 		<rights>CC-BY-SA 4.0</rights>
+		<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
 		{{- with .Params.replyURI -}}
 		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" />
 		{{- end -}}
@@ -66,9 +75,9 @@
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
 		{{- with .Params.image -}}
-		{{- $image := resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
-		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+		{{- $image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
 		{{- end -}}
+		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
 		<content type="xhtml" xml:base="{{ .Permalink }}">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 					{{- if .Params.replyURI -}}
