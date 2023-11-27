@@ -33,6 +33,7 @@ disableKinds = ["taxonomy", "term"]
 	first = "Rohan"
 	last = "Kumar"
 	nick = "Seirdy"
+	email = "seirdy@seirdy.one"
 
 [menu]
 	[[menu.main]]

@@ -36,6 +36,7 @@
 	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
 	<icon>{{ $icon.Permalink }}</icon>
 	<webfeeds:icon>{{ $icon.Permalink }}</webfeeds:icon>
+	<webfeeds:cover>{{ $logo.Permalink }}</webfeeds:cover>
 	<logo>{{ $logo.Permalink }}</logo>
 	<webfeeds:accentColor>191919</webfeeds:accentColor>
 	<sy:updatePeriod>{{ $period }}</sy:updatePeriod>
@@ -45,9 +46,10 @@
 		<poco:preferredUsername>{{ .Site.Author.name }}</poco:preferredUsername>
 		<poco:displayName>{{ .Site.Author.nick }}</poco:displayName>
     <name>{{ .Site.Author.name }}</name>
+    <email>{{ .Site.Author.email }}</email>
 		<uri>https://seirdy.one/</uri>
   </author>
-	<admin:errorReportsTo rdf:resource="mailto:seirdy@seirdy.one" />
+	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
   <id>{{ .Permalink }}</id>
