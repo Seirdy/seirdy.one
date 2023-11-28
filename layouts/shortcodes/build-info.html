@@ -1,7 +1,7 @@
 {{- $now := now -}}
 {{- $buildCtx := "on my workstation" -}}
 {{- with getenv "JOB_URL" -}}
-	{{- $buildCtx = `<a href="{{ . }}">on builds.sr.ht</a>` | safeHTML -}}
+	{{- $buildCtx = printf `<a href="%s">on builds.sr.ht</a>` . | safeHTML -}}
 {{- end -}}
 <p>
 	This site was last built on
