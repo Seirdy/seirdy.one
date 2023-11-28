@@ -124,6 +124,10 @@ disableKinds = ["taxonomy", "term"]
 	about = ["HTML", "atom", "RSS"]
 	meta = ["HTML", "atom", "RSS"]
 
+[security]
+	[security.funcs]
+		getenv = ['^JOB_URL$']
+
 # https://github.com/nekr0z/static-webmentions
 [webmentions]
 	newDir = "public"

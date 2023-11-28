@@ -5,6 +5,8 @@ outputs:
     - html
 description: "About this site. How it's built, why it's built that way, privacy, accessibility, mirrors, etc."
 ---
+{{<build-info>}}
+
 How I run this site
 -------------------
 

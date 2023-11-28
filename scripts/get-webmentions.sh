@@ -49,7 +49,7 @@ trap check_cached_webmentions EXIT
 # Grab my long-lived key (password). We will use this to authenticate.
 key() {
 	set +u
-	if [ -n "$BUILD_SUBMITTER" ]; then
+	if [ -n "$JOB_URL" ]; then
 		cat ~/.webmentiond-key
 	else
 		pash show webmentiond-ci-key

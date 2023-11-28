@@ -1,0 +1,12 @@
+{{- $now := now -}}
+{{- $buildCtx := "on my workstation" -}}
+{{- with getenv "JOB_URL" -}}
+	{{- $buildCtx = `<a href="{{ . }}">on builds.sr.ht</a>` | safeHTML -}}
+{{- end -}}
+<p>
+	This site was last built on
+	<time datetime="{{ $now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ $now.Format "2006-01-02 15:04:05-07:00" | safeHTML }}</time>
+	by
+	<a href="https://github.com/gohugoio/hugo/tree/{{ .Site.Hugo.CommitHash }}">Hugo {{ .Site.Hugo.Version }}</a>
+	{{ $buildCtx }}.
+</p>

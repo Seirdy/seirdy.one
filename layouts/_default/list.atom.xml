@@ -52,6 +52,7 @@
 	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+	<generator uri="https://gohugo.io/" version="{{ .Site.Hugo.Version }}">Hugo {{ .Site.Hugo.Version }}</generator>
   <id>{{ .Permalink }}</id>
   {{ range $pages -}}
 	{{- if not .Params.Private -}}
