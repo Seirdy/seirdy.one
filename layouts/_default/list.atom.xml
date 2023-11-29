@@ -12,6 +12,7 @@
 {{- $faviconSvg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
 {{- $image := resources.Get "/favicon192.png" | resources.Fingerprint "md5" -}}
 {{- $atomLogo := resources.Get "/atom.svg" | resources.Fingerprint "md5" -}}
+{{- /*rejected http://backend.userland.com/creativeCommonsRssModule, as it's completely redundant with <rights> and rel-license. */ -}}
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
 	xmlns="http://www.w3.org/2005/Atom"
@@ -35,6 +36,7 @@
 		{{- end -}}
 	</subtitle>
 	<link rel="self" type="application/atom+xml" href="{{ .Permalink }}atom.xml" />
+	<link rel="hub" href="{{ .Site.Params.Hub }}" />
 	<icon>{{ $faviconSvg.Permalink }}</icon>
 	<webfeeds:icon>{{ $image.Permalink }}</webfeeds:icon>
 	<webfeeds:cover>{{ $atomLogo.Permalink }}</webfeeds:cover>
@@ -50,8 +52,10 @@
     <name>{{ .Site.Author.name }}</name>
     <email>{{ .Site.Author.email }}</email>
 		<uri>https://seirdy.one/</uri>
+		<link rel="avatar" type="image/svg+xml" href="{{ $faviconSvg.Permalink }}" />
   </author>
 	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
+	<rights type="text">>Copyright © {{ now.Year }} Rohan Kumar</rights>
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ site.LastChange.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 	<generator uri="https://gohugo.io/" version="{{ .Site.Hugo.Version }}">Hugo {{ .Site.Hugo.Version }}</generator>
@@ -65,7 +69,7 @@
 		<published>{{ .Date.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
 		<updated>{{ .Lastmod.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 		<author><name>{{ .Site.Author.name }}</name><uri>https://seirdy.one/</uri></author>
-		<rights>CC-BY-SA 4.0</rights>
+		<rights type="text">>Copyright © {{ now.Year }} Rohan Kumar</rights>
 		<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
 		{{- with .Params.replyURI -}}
 		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" />
