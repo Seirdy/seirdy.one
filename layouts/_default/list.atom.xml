@@ -58,7 +58,6 @@
   {{ range $pages -}}
 	{{- if not .Params.Private -}}
   <entry>
-		{{- .Page.Scratch.Set "codeIndex" 1 -}}
 		<title>{{ .Title }}</title>
 		<link rel="alternate" type="text/html" href="{{ .Permalink }}" />
 		<id>{{ .Permalink }}</id>

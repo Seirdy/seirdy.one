@@ -1,0 +1,17 @@
+{{- $codeIndex := (.Page.Scratch.Get "codeIndexRss") -}}
+{{- $id := (printf `code-%d` $codeIndex) -}}
+{{- with .Get "id" -}}
+	{{- $id = . -}}
+{{- end -}}
+{{ with .Parent }}
+	{{- with .Get "id" -}}
+		{{- $id = . -}}
+	{{- end -}}
+{{- end -}}
+<figcaption id="{{ $id }}-caption">
+	<span id="{{ $id }}" tabindex="-1">
+	<strong itemprop="name"> <span itemprop="codeSampleType">Code snippet</span> {{ $codeIndex }}</strong>{{with .Get "lang"}} (<span itemprop="programmingLanguage">{{ . }}</span>){{ end -}}
+	</span>:
+{{ .Inner | .Page.RenderString | safeHTML }}
+</figcaption>
+{{- .Page.Scratch.Set "codeIndexRss" (add 1 $codeIndex) -}}
