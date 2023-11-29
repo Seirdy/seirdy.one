@@ -25,6 +25,7 @@
 	{{- end -}}
 {{- /* Render webmentions if they exist */ -}}
 {{- $count := (len $webmentions) -}}
+{{- .Page.Scratch.Set "webmentionCount" $count -}}<!--For use in atom feed-->
 {{- if gt $count 0 -}}
 <details>
 	<summary>Toggle {{ $count }} Webmentions</summary>
