@@ -130,7 +130,7 @@ xhtmlize: hugo
 	sh scripts/xhtmlize.sh $(OUTPUT_DIR)
 
 .PHONY: copy-to-xhtml
-copy-to-xhtml: xhtmlize
+copy-to-xhtml:
 	find $(OUTPUT_DIR) -type f -name "*.html" | grep -v 'resume/index.html' | xargs -n1 sh scripts/copy-file-to-xhtml.sh
 
 .PHONY: deploy-html
@@ -188,6 +188,7 @@ lint-and-deploy-staging:
 
 .PHONY: deploy-envs
 deploy-envs:
+	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs xhtmlize
 	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs copy-to-xhtml
 	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs html-validate validate-html validate-json validate-feeds
 	@$(MAKE) SSHFLAGS='-o KexAlgorithms=curve25519-sha256@libssh.org' HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
