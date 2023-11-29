@@ -52,7 +52,6 @@
     <name>{{ .Site.Author.name }}</name>
     <email>{{ .Site.Author.email }}</email>
 		<uri>https://seirdy.one/</uri>
-		<link rel="avatar" type="image/svg+xml" href="{{ $faviconSvg.Permalink }}" />
   </author>
 	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
 	<rights type="text">>Copyright © {{ now.Year }} Rohan Kumar</rights>
