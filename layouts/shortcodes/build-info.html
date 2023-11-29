@@ -5,7 +5,7 @@
 {{- end -}}
 <p>
 	This site was last built on
-	<time datetime="{{ $now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ $now.Format "2006-01-02 15:04:05-07:00" | safeHTML }}</time>
+	<time datetime="{{ $now.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ $now.UTC.Format "2006-01-02 15:04:05-07:00" | safeHTML }}</time>
 	by
 	<a href="https://github.com/gohugoio/hugo/tree/{{ .Site.Hugo.CommitHash }}">Hugo {{ .Site.Hugo.Version }}</a>
 	{{ $buildCtx }}.

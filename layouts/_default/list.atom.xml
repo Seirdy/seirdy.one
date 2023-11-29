@@ -53,7 +53,7 @@
   </author>
 	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
-  <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+  <updated>{{ site.LastChange.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 	<generator uri="https://gohugo.io/" version="{{ .Site.Hugo.Version }}">Hugo {{ .Site.Hugo.Version }}</generator>
   <id>{{ .Permalink }}</id>
   {{ range $pages -}}
@@ -62,8 +62,8 @@
 		<title>{{ .Title }}</title>
 		<link rel="alternate" type="text/html" href="{{ .Permalink }}" />
 		<id>{{ .Permalink }}</id>
-		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
-		<updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+		<published>{{ .Date.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+		<updated>{{ .Lastmod.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 		<author><name>{{ .Site.Author.name }}</name><uri>https://seirdy.one/</uri></author>
 		<rights>CC-BY-SA 4.0</rights>
 		<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />

@@ -2,9 +2,9 @@
 
 {{ $lastmod := .Lastmod -}}
 {{ if lt .Date $lastmod -}}
-Originally posted {{ .Date.Format "2006-01-02" }}. Last updated {{ .Lastmod.Format "2006-01-02" }}.
+Originally posted {{ .Date.UTC.Format "2006-01-02" }}. Last updated {{ .Lastmod.UTC.Format "2006-01-02" }}.
 {{ else -}}
-Posted {{ .Date.Format "2006-01-02" }}.
+Posted {{ .Date.UTC.Format "2006-01-02" }}.
 {{ end }}
 {{ trim (readFile (replace $.File.Path ".md" ".gmi")) "\n" | safeHTML }}
 
