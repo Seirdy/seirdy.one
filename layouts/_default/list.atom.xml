@@ -83,6 +83,9 @@
 		{{- $image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
 		{{- end -}}
 		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+		{{ with .Description -}}
+		<summary type="text">{{ . }}</summary>
+		{{- end }}
 		<content type="xhtml" xml:base="{{ .Permalink }}">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 					{{- if .Params.replyURI -}}
