@@ -3,7 +3,8 @@
 # Runs xhtmlize-single-file.sh on every single html file in the output dir.
 # exits if xhtmlize-single-file fails.
 
-# no pipefail here since there are no pipes.
+#shellcheck disable=SC3040  # This only sets pipefail if it's available and otherwise does nothing
+set -o pipefail 2>/dev/null || true
 set -e -u
 
 output_dir="$1"
@@ -25,5 +26,5 @@ trap cleanup EXIT
 
 export XMLLINT_INDENT='	'
 export OUTPUT_DIR="$output_dir"
-find "$output_dir" -type f -name '*.html' -exec sh "$script_dir/xhtmlize-single-file.sh" {} \;
-find "$output_dir" -type f -name '*.xml' -exec xmllint --noblanks --encode UTF-8 --noent {} --output {} \;
+find "$output_dir" -type f -name '*.html' | xargs -n1 sh "$script_dir/xhtmlize-single-file.sh"
+find "$output_dir" -type f -name '*.xml' | xargs -I_ xmllint --noblanks --encode UTF-8 --noent _ --output _
