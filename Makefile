@@ -132,7 +132,7 @@ copy-to-xhtml:
 
 .PHONY: deploy-html
 deploy-html:
-	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete
+	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete | grep -v 'l\.gz$$'
 
 .PHONY: deploy-gemini
 deploy-gemini:
