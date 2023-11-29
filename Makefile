@@ -147,8 +147,7 @@ deploy: deploy-html deploy-gemini
 .PHONY: .prepare-deploy
 .prepare-deploy:
 	@$(MAKE) clean
-	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' hugo
-	@$(MAKE) xhtmlize
+	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' xhtmlize
 
 # deploy steps need to happen one at a time
 .PHONY: deploy-prod
