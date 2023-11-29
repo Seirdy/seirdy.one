@@ -40,6 +40,7 @@
 	<webfeeds:cover>{{ $atomLogo.Permalink }}</webfeeds:cover>
 	<logo>{{ $atomLogo.Permalink }}</logo>
 	<webfeeds:accentColor>191919</webfeeds:accentColor>
+	<webfeeds:related layout="card" target="browser" />
 	<sy:updatePeriod>{{ $period }}</sy:updatePeriod>
 	<sy:updateFrequency>2</sy:updateFrequency>
   <author>
