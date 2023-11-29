@@ -22,8 +22,11 @@ ECT_LEVEL=6
 csv/webrings.csv:
 	sh scripts/populate-webrings.sh
 
+data/bookmarks.json:
+	sh scripts/get-bookmarks.sh
+
 .PHONY: hugo
-hugo: csv/webrings.csv $(SRCFILES)
+hugo: csv/webrings.csv data/bookmarks.json $(SRCFILES)
 	sh scripts/get-webmentions.sh
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
 	mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi
@@ -38,7 +41,7 @@ hugo: csv/webrings.csv $(SRCFILES)
 
 .PHONY: clean
 clean:
-	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports
+	rm -rf $(OUTPUT_DIR) .lighthouseci lighthouse-reports data/webmentions.json csv/webrings.csv data/bookmarks.json
 
 .PHONY: lint-css
 lint-css: $(CSS_DIR)/*.css
@@ -123,11 +126,11 @@ compress: gzip brotli
 .PHONY: gzip brotli compress
 
 .PHONY: xhtmlize
-xhtmlize:
+xhtmlize: hugo
 	sh scripts/xhtmlize.sh $(OUTPUT_DIR)
 
 .PHONY: copy-to-xhtml
-copy-to-xhtml:
+copy-to-xhtml: xhtmlize
 	find $(OUTPUT_DIR) -type f -name "*.html" | grep -v 'resume/index.html' | xargs -n1 sh scripts/copy-file-to-xhtml.sh
 
 .PHONY: deploy-html
