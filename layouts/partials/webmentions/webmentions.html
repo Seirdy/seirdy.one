@@ -13,14 +13,10 @@
 	{{- /* We can't just use a simple "where" function because we need to ignore URL anchors/query-params when making a comparison: https://discourse.gohugo.io/t/add-like-comparison-operator-to-the-where-function/42013/4 */ -}}
 	{{- $webmentions := slice -}}
 	{{- range partialCached "webmentions/all-webmentions.html" . -}}
-		{{- if in $targets .target -}}
+		{{- $u := urls.Parse .target -}}
+		{{- $trimmedTarget := printf `https://%s%s` $u.Hostname $u.Path -}}
+		{{- if in $targets $trimmedTarget -}}
 			{{ $webmentions = $webmentions | append . }}
-		{{- else -}}
-			{{- $u := urls.Parse .target -}}
-			{{- $trimmedTarget := printf `https://%s%s` $u.Hostname $u.Path -}}
-			{{- if in $targets $trimmedTarget -}}
-				{{ $webmentions = $webmentions | append . }}
-			{{- end -}}
 		{{- end -}}
 	{{- end -}}
 {{- /* Render webmentions if they exist */ -}}
@@ -40,7 +36,7 @@
 			{{- if findRE "@Seirdy" $webmention.title -}}
 				{{- $title = $title | replaceRE `^@Seirdy@pleroma.envs.net(\n| )?` "" -}}
 				{{- /* Mastodon webmentions may include the author in the title followed by a colon; this is redundant. */ -}}
-				{{- if and (isset $webmention "author_name") (findRE `@` $webmention.source) (not (findRE "^https://bridg.gy" $webmention.source)) -}}
+				{{- if and (isset $webmention "author_name") (findRE `@` $webmention.source) (not (findRE "^https://brid.gy" $webmention.source)) -}}
 					{{ $title = $title | replaceRE `^[^:]{0,20}: ?` "" | replaceRE `^"@Seirdy@pleroma.envs.net ?` `"` }}
 				{{- end -}}
 			{{- end -}}
