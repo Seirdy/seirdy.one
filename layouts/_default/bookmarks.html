@@ -7,8 +7,7 @@
 		Timestamp format: <code>YYYY-MM-DD HH:MM</code>, as per <cite><a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a></cite>
 	</p>
 	<ol>
-		{{ $bookmarks := getJSON "https://seirdy.one/data/bookmarks.json" -}}
-		{{ range sort $bookmarks "tags" "desc" -}}
+		{{ range sort (index .Site.Data "bookmarks") "tags" "desc" -}}
 		{{ $bookmark := . -}}
 			{{- $tags := split $bookmark.tags "," -}}
 			{{- $firstTag := index $tags 0 }}
