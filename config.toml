@@ -23,7 +23,7 @@ disableKinds = ["taxonomy", "term"]
 	highlight = false
 	icon = "/favicon.svg"
 	indieAuth = "https://indielogin.com/auth"
-	hub = "https://websubhub.com/hub"
+	# hub = "https://websubhub.com/hub"
 
 [frontmatter]
 	lastmod = ['lastmod', ':git', 'date', 'publishDate']
