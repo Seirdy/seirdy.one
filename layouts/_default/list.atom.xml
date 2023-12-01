@@ -54,7 +54,7 @@
 		<uri>https://seirdy.one/</uri>
   </author>
 	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
-	<rights type="text">>Copyright © {{ now.Year }} Rohan Kumar</rights>
+	<rights type="text">Copyright © {{ now.Year }} Rohan Kumar</rights>
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ site.LastChange.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 	<generator uri="https://gohugo.io/" version="{{ .Site.Hugo.Version }}">Hugo {{ .Site.Hugo.Version }}</generator>
