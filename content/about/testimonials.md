@@ -119,5 +119,17 @@ crushy blushy fedi idol
 {{< /quotecaption >}}
 {{</quotation>}}
 
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
+Seirdy is like if you made a mod a person. It’s really horrifying.
+
+</blockquote>
+{{< quotecaption>}}
+{{<indieweb-person name="Anonymous" itemprop="author">}}
+{{< /quotecaption >}}
+{{</quotation>}}
+
 TODO: mark this up an h-feed: a `<ul>` element containing `<li>` children with `itemprop="dataFeedElement"` schema.org markup, and `<figure class="h-entry">` grandchildren.
 
