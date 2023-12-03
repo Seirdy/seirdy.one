@@ -23,7 +23,6 @@
 	xmlns:ostatus="http://ostatus.org/schema/1.0"
 	xmlns:poco="http://portablecontacts.net/spec/1.0"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:thr="http://purl.org/syndication/thread/1.0"
 	xmlns:webfeeds="http://webfeeds.org/rss/1.0">
@@ -73,13 +72,14 @@
 		<rights type="text">Copyright © {{ now.Year }} Rohan Kumar</rights>
 		<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
 		{{- with .Params.replyURI -}}
-		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" />
+		<thr:in-reply-to ref="{{ . }}" href="{{ . }}" type="text/html" />
+		<link rel="related" type="text/html" href="{{ . }}" />
 		{{- end -}}
 		{{- with .Params.replyAuthorURI -}}
 		<link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="{{ . }}"/>
 		{{- end -}}
 		{{- $type := "article" -}}
-		{{- if eq .Section "notes" -}}
+		{{- if eq .Section "notes" -}}{{ /* TODO: add bookmark type and convert bookmarks to their own post types. */ -}}
 			{{- $type = "note" -}}
 		{{- end -}}
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
@@ -99,7 +99,9 @@
 					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | replaceRE `<meta content="true" ?/>` "" | safeHTML -}}
 			</div>
 		</content>
-		<slash:comments>{{ .Page.Scratch.Get "webmentionCount" }}</slash:comments>
+		{{- /* TODO: add application/atom+xml version of comments. */ }}
+		<link rel="replies" type="text/html" href="{{ .Permalink }}#webmentions" thr:count="{{ .Page.Scratch.Get "webmentionCount" }}" />
+		<thr:total>{{ .Page.Scratch.Get "webmentionCount" }}</thr:total>
 	</entry>
   {{ end -}}
 	{{- end }}
