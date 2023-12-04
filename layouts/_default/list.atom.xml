@@ -16,16 +16,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
 	xmlns="http://www.w3.org/2005/Atom"
-	xml:lang="{{ .Site.LanguageCode }}"
 	xmlns:activity="http://activitystrea.ms/spec/1.0/"
 	xmlns:admin="http://webns.net/mvcb/"
+	xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
 	xmlns:media="http://search.yahoo.com/mrss/"
 	xmlns:ostatus="http://ostatus.org/schema/1.0"
 	xmlns:poco="http://portablecontacts.net/spec/1.0"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:thr="http://purl.org/syndication/thread/1.0"
-	xmlns:webfeeds="http://webfeeds.org/rss/1.0">
+	xmlns:webfeeds="http://webfeeds.org/rss/1.0"
+	xml:lang="{{ .Site.LanguageCode }}">
+	<cf:treatAs>list</cf:treatAs>
+	<cf:listinfo>
+		<cf:sort
+			ns="http://www.w3.org/2005/Atom"
+			element="published" data-type="date" label="Date published" default="true"/>
+	</cf:listinfo>
 	<title>{{ $title }} on {{ .Site.Title }}</title>
 	<subtitle>
 		{{- if .Params.Description -}}
@@ -79,7 +86,8 @@
 		<link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="{{ . }}"/>
 		{{- end -}}
 		{{- $type := "article" -}}
-		{{- if eq .Section "notes" -}}{{ /* TODO: add bookmark type and convert bookmarks to their own post types. */ -}}
+		{{- /* TODO: add bookmark type and convert bookmarks to their own post types. */ -}}
+		{{- if eq .Section "notes" -}}
 			{{- $type = "note" -}}
 		{{- end -}}
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
@@ -99,8 +107,11 @@
 					{{ partial "processed-content.html" . | replaceRE `(?: )?(?:item(type|scope|prop|id|ref)="[^"]*"|class="language-figure")` "" | replaceRE `<meta content="true" ?/>` "" | safeHTML -}}
 			</div>
 		</content>
-		{{- /* TODO: add application/atom+xml version of comments. */ }}
-		<link rel="replies" type="text/html" href="{{ .Permalink }}#webmentions" thr:count="{{ .Page.Scratch.Get "webmentionCount" }}" />
+		{{- /* TODO: add application/atom+xml version of comments. */ -}}
+		<link
+			rel="replies" type="text/html"
+			href="{{ .Permalink }}#webmentions"
+			thr:count="{{ .Page.Scratch.Get "webmentionCount" }}" />
 		<thr:total>{{ .Page.Scratch.Get "webmentionCount" }}</thr:total>
 	</entry>
   {{ end -}}
