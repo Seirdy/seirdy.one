@@ -5,7 +5,7 @@ replyURI: "https://adrianroselli.com/2020/03/i-dont-care-what-google-or-apple-or
 replyTitle: "I Don’t Care What Google or Apple or Whoever Did"
 replyType: "BlogPosting"
 replyAuthor: "Adrian Roselli"
-replyAuthorURI: "https://adrianroselli.com/posts"
+replyAuthorURI: "https://adrianroselli.com/"
 ---
 Large organizations' choices influence my decisions in only one way: by telling me what users are familiar with. For instance: when building a search-results page, it might make sense to borrow the basic semantics of existing search engines (Google, Bing, etc.) so the interface is familiar.
 
