@@ -68,6 +68,8 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 <summary>Pending directories</summary>
 
 - [LinkLane](https://www.linklane.net/) (pending)
+- [Responsive Web Directory](https://kalechips.net/responsive/) (pending)
+- [Accessible Net Directory](https://pinkvampyr.leprd.space/accessiblenet/) (pending)
 
 </details>
 
