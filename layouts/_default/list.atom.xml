@@ -9,9 +9,9 @@
 {{- if eq .Section "notes" -}}
 	{{- $period = "hourly" -}}
 {{- end -}}
-{{- $faviconSvg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
-{{- $image := resources.Get "/favicon192.png" | resources.Fingerprint "md5" -}}
-{{- $atomLogo := resources.Get "/atom.svg" | resources.Fingerprint "md5" -}}
+{{- $faviconSvg := partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg" -}}
+{{- $image := partialCached "cache-bust.html" "/favicon192.png" "/favicon192.png" -}}
+{{- $atomLogo := partial "cache-bust.html" "/atom.svg" -}}
 {{- /*rejected http://backend.userland.com/creativeCommonsRssModule, as it's completely redundant with <rights> and rel-license. */ -}}
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed
@@ -93,7 +93,7 @@
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
 		{{- with .Params.image -}}
-		{{- $image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
+			{{- $image := partial "cache-bust.html" (printf "/p/%s" . ) -}}
 		{{- end -}}
 		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
 		{{ with .Description -}}

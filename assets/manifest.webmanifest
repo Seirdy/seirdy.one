@@ -1,8 +1,8 @@
-{{- $192png := resources.Get "/favicon192.png" | resources.Fingerprint "md5" }}
-{{- $512png := resources.Get "/favicon512.png" | resources.Fingerprint "md5" }}
-{{- $1024svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
-{{- $maskablesvg := resources.Get "/maskable_android.svg" | resources.Fingerprint "md5" -}}
-{{- $monochromesvg := resources.Get "/monochrome.svg" | resources.Fingerprint "md5" -}}
+{{- $192png := partialCached "cache-bust.html" "/favicon192.png" "favicon192.png" }}
+{{- $512png := partialCached "cache-bust.html" "/favicon512.png" "favicon512.png" }}
+{{- $1024svg := partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg" }}
+{{- $maskablesvg := partial "cache-bust.html" "/maskable_android.svg" }}
+{{- $monochromesvg := partial "cache-bust.html" "/monochrome.svg" }}
 {
 	"name": "{{site.Title}}",
 	"short_name": "Seirdy",

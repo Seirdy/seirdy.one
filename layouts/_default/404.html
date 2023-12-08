@@ -17,7 +17,7 @@
 <meta name="robots" content="noindex,nofollow,nosnippet" />
 <title>{{ .Title }}</title>
 {{ if not (in site.BaseURL ".onion") -}}
-{{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
+{{ $icon_svg := partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg" }}
 {{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
 {{- end }}
 {{ $icon_192 := resources.Get "/favicon192.png" | resources.Fingerprint "md5" }}

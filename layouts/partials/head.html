@@ -55,10 +55,10 @@
 	{{- end -}}
 	<!--the Tor Browser's safest setting disables SVGs but still downloads them to avoid fingerprinting-->
 	{{ if not (in site.BaseURL ".onion") -}}
-	{{ $icon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" }}
+	{{ $icon_svg := partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg" }}
 	{{- printf `<link rel="icon" sizes="any" href="%s" type="image/svg+xml" />` $icon_svg.RelPermalink | safeHTML }}
 	{{- end }}
-	{{ $icon_192 := resources.Get "/favicon192.png" | resources.Fingerprint "md5" }}
+	{{ $icon_192 := partialCached "cache-bust.html" "/favicon192.png" "/favicon192.png" }}
 	{{- printf `<link rel="icon" sizes="192x192" href="%s" type="image/png" />` $icon_192.RelPermalink | safeHTML -}}
 	<meta name="color-scheme" content="light dark" />
 	<meta name="format-detection" content="telephone=no" /><!-- Why does apple do this -->
@@ -70,10 +70,10 @@
 	<meta property="og:type" content="article" />
 	{{- end -}}
 	<!-- ANOTHER meta image?! When will it end? -->
-	{{- $og_image := resources.Get "/favicon512.png" | resources.Fingerprint "md5" -}}
+	{{- $og_image := partialCached "cache-bust.html" "/favicon512.png" "/favicon512.png" -}}
 	{{- $og_image_alt := "" -}}<!--Default open graph image is purely decorative and visual, so it should be hidden from assistive technologies.-->
 	{{- with .Params.image -}}
-		{{- $og_image = resources.Get (printf "/p/%s" . ) | resources.Fingerprint "md5" -}}
+		{{- $og_image = partial "cache-bust.html" (printf "/p/%s" .) -}}
 	{{- end -}}
 	{{- with .Params.image_alt -}}
 		{{- $og_image_alt = . -}}

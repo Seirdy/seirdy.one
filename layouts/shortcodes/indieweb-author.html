@@ -1,5 +1,4 @@
-{{- $favicon := resources.Get "/favicon.png" -}}<!-- re-using the favicon for the author photo -->
-{{- $favicon_base64 := $favicon.Content | base64Encode -}}<!--
+<!-- re-using the favicon for the author photo
 	Reader mode implementations use .p-author, itemprop=author, and/or .author to add
 	a byline. Some also strip elements matching the "byline" class to avoid duplicating
 	the byline. Mozilla Readability uses both microformats1 and microformats2 while

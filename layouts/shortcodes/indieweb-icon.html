@@ -1,10 +1,10 @@
-{{ $favicon := resources.Get "/favicon.png" -}}
-{{- $favicon_base64 := $favicon.Content | base64Encode -}}
-{{- $favicon_svg := resources.Get "/favicon.svg" | resources.Fingerprint "md5" -}}
+{{- $src := "" -}}
 {{- if in site.BaseURL ".onion" -}}
-<img itemprop="image" width="16" height="16" alt=""
-	src="data:image/png;base64,{{ $favicon_base64 }}" class="u-photo photo" />
+{{- $favicon := resources.Get "/favicon.png" -}}
+{{- $favicon_base64 := $favicon.Content | base64Encode -}}
+{{- $src = printf "data:image/png;base64,%s" $favicon_base64 -}}
 {{- else -}}
-<img itemprop="image" width="16" height="16" alt=""
-	src="{{ $favicon_svg.Permalink }}" class="u-photo photo" />
-{{- end }}
+{{- with (partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg") -}}
+{{- $src = .Permalink -}}
+{{- end -}}{{- end -}}
+<img itemprop="image" width="16" height="16" alt="" src="{{ $src }}" class="u-photo photo" />

@@ -21,14 +21,14 @@
 	>
 	{{ with $opus -}}
 	{{- $download_url = $opus.RelPermalink -}}
-	{{ $opus_src := . | resources.Fingerprint "md5" -}}
+	{{ $opus_src := partial "cache-bust.html" . -}}
 	<source
 		src="{{ $opus_src.RelPermalink }}"
 		type='audio/ogg; codecs="opus"' />
 	{{ end -}}
 	{{ with $mp3 -}}
 	{{- $download_url = $mp3.RelPermalink -}}
-	{{ $mp3_src := . | resources.Fingerprint "md5" -}}
+	{{ $mp3_src := partial "cache-bust.html" . -}}
 	<source
 		src="{{ $mp3_src.RelPermalink }}"
 		type="audio/mpeg" />
