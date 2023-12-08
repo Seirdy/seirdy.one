@@ -9,8 +9,8 @@ set -e -u
 
 dirname="$(dirname "$0")"
 curl_wrapper="$dirname/curl-wrapper.sh"
-auth_url='https://seirdy.one/webmentions/authenticate/access-key'
-webmentions_url='https://seirdy.one/webmentions/manage/mentions?limit=9999&status=approved'
+auth_url='https://collector.seirdy.one/webmentions/authenticate/access-key'
+webmentions_url='https://collector.seirdy.one/webmentions/manage/mentions?limit=9999&status=approved'
 webmentions_file="$dirname/../data/webmentions.json"
 
 stale_after_minutes=90

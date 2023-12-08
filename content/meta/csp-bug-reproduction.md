@@ -15,7 +15,7 @@ What this page demonstrates
 This is a test page that demonstrates the following Content-Security-Policy (<abbr>CSP</abbr>):
 
 ```
-default-src 'none' 'report-sample';img-src 'self';style-src 'sha256-7cS8Hu9ov7dRhfioeeb9J8mtB9/iLLpVIZsMM+BJUcs=' 'report-sample';frame-ancestors 'none';base-uri 'none';form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;manifest-src 'self';media-src 'self';sandbox allow-same-origin allow-scripts allow-forms;report-uri https://collector.seirdy.one;connect-src https://collector.seirdy.one
+default-src 'none' 'report-sample';img-src 'self';style-src 'sha256-7cS8Hu9ov7dRhfioeeb9J8mtB9/iLLpVIZsMM+BJUcs=' 'report-sample';frame-ancestors 'none';base-uri 'none';form-action https://collector.seirdy.one/webmentions/receive https://seirdy.one/search/;manifest-src 'self';media-src 'self';sandbox allow-same-origin allow-scripts allow-forms;report-uri https://collector.seirdy.one;connect-src https://collector.seirdy.one
 ```
 
 Here's a multi-line version, to reduce horizontal scrolling:
@@ -26,7 +26,7 @@ img-src 'self';
 style-src 'sha256-HASH' 'report-sample';
 frame-ancestors 'none';
 base-uri 'none';
-form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;
+form-action https://collector.seirdy.one/webmentions/receive https://seirdy.one/search/;
 manifest-src 'self';
 media-src 'self';
 sandbox allow-same-origin allow-scripts allow-forms;
@@ -45,7 +45,7 @@ img-src 'self';
 style-src 'sha256-HASH';
 frame-ancestors 'none';
 base-uri 'none';
-form-action https://seirdy.one/webmentions/receive https://seirdy.one/search/;
+form-action https://collector.seirdy.one/webmentions/receive https://seirdy.one/search/;
 manifest-src 'self';
 upgrade-insecure-requests;
 sandbox allow-same-origin allow-forms

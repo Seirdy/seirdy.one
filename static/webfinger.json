@@ -49,7 +49,7 @@
 		},
 		{
 			"rel": "webmention",
-			"href": "https://seirdy.one/webmentions/receive"
+			"href": "https://collector.seirdy.one/webmentions/receive"
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",

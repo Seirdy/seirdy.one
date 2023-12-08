@@ -37,7 +37,7 @@ IgnoreURLs:
   - "https://archive.ph"
   - "https://archive.today"
   - "https://ogp.me/ns"
-  - "https://seirdy.one/webmentions/"
+  - "https://collector.seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
   # - "https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one"

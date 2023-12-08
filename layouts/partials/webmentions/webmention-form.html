@@ -2,7 +2,7 @@
 	<legend>Publish a response on your own website, and link back to this page's canonical location. Then share your link here to turn it into a Webmention.</legend>
 	<form
 		itemprop="potentialAction" itemscope="" itemtype="https://schema.org/CommentAction"
-		action="https://seirdy.one/webmentions/receive" method="post">
+		action="{{ .Site.Params.webmentionEndpoint }}" method="post">
 		<meta itemprop="actionStatus" content="PotentialActionStatus" />
 		{{ $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
 		<input type="hidden" name="target" value="{{ .Site.Params.canonicalBaseURL }}{{ $canonicalRelPermalink }}" />
