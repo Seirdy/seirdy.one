@@ -47,6 +47,7 @@ sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 		-e '1,7d' \
 		-e 's|</span><span itemprop="familyName"|</span>\&#160;<span itemprop="familyName"|' \
 		-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
+		-e 's|<pre>|<pre tabindex="0">|' \
 		-E \
 		-e 's|([a-z])<data|\1 <data|' \
 		-e 's#</span>(<a[^>]*rel="(nofollow ugc|ugc nofollow)"([^>]*)?>liked</a>)#</span> \1#' \
