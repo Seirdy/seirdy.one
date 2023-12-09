@@ -82,7 +82,9 @@ Awards and badges
 
 <figcaption itemprop="caption">
 
-[Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/1745918/).
+[Internet.nl](https://internet.nl/) offers an automated website security check. Relevant buzzwords include IPv6, DNSSEC, TLS, HTTP security headers, and RPKI. [See a report for seirdy.one](https://internet.nl/site/seirdy.one/2510940/).
+
+Internet.nl penalizes the use of [0-RTT](https://blog.cloudflare.com/introducing-0-rtt/) because it opens sites up to replay attacks. Since passing the test, I moved all non-idempotent content to other subdomains. Save for some fancy Nginx redirects, everything on the `seirdy.one` domain is static public content. This property made it safe to enable 0-RTT without being at risk of replay attacks. As of right now, I don't pass the test, but I consider the 0-RTT failure to be a false positive.
 
 </figcaption>
 
