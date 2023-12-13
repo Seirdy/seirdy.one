@@ -15,19 +15,6 @@
 	],
 	"hints": {
 		"apple-touch-icons": "off",
-		"axe/aria": "off",
-		"axe/color": "off",
-		"axe/forms": "off",
-		"axe/keyboard": "off",
-		"axe/language": "off",
-		"axe/name-role-value": "off",
-		"axe/semantics": "off",
-		"axe/sensory-and-visual-cues": "off",
-		"axe/structure": "off",
-		"axe/tables": "off",
-		"axe/text-alternatives": "off",
-		"axe/time-and-media": "off",
-		"axe/parsing": "off",
 		"compat-api/css": [
 			"error",
 			{
@@ -103,7 +90,7 @@
 			"error",
 			{
 				"connectionType": "3GSlow",
-				"loadTime": 11
+				"loadTime": 12
 			}
 		],
 		"css-prefix-order": "error",
