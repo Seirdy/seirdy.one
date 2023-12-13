@@ -16,7 +16,7 @@ sed -i -e 's|<html lang="en-us"|<html xmlns="http://www.w3.org/1999/xhtml" lang=
 mv "$output_dir/resume/index.html" "$temp_resume"
 
 {
-	printf '\t' && sed -e '7q;d' "$output_dir/index.html"
+	sed -e '7q;d' "$output_dir/index.html"
 } >"$output_dir/tmp.css"
 cleanup() {
 	rm -f "$output_dir/tmp.css"

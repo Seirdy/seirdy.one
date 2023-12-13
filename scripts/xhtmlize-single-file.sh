@@ -39,12 +39,13 @@ run_xmllint() {
 # delete the stylesheet from the html file; we'll re-insert it later.
 sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 {
-	head -n7 "$tmp_file"
+	head -n7 "$tmp_file" | sed -e 's/^\t//'
 	cat "${OUTPUT_DIR:?}/tmp.css"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
 		-e '1,7d' \
+		-e 's/^\t//' \
 		-e 's|</span><span itemprop="familyName"|</span>\&#160;<span itemprop="familyName"|' \
 		-e 's|class="u-photo photo"[^<]*<|class="u-photo photo"/> <|' \
 		-e 's|<pre>|<pre tabindex="0">|' \
