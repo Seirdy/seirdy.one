@@ -75,7 +75,11 @@
 		<id>{{ .Permalink }}</id>
 		<published>{{ .Date.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
 		<updated>{{ .Lastmod.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
-		<author><name>{{ .Site.Author.name }}</name><uri>https://seirdy.one/</uri></author>
+		<author>
+			<name>{{ .Site.Author.name }}</name>
+			<uri>https://seirdy.one/</uri>
+			<email>{{ .Site.Author.email }}</email>
+		</author>
 		<rights type="text">Copyright © {{ now.Year }} Rohan Kumar</rights>
 		<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
 		{{- with .Params.replyURI -}}
