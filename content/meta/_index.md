@@ -51,6 +51,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 - [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
 - [textonly.website](https://textonly.website/)
+- [Responsive Web Directory](https://kalechips.net/responsive/) (pending)
 - [Indieweb Webring Directory](https://xn--sr8hvo.ws/directory)
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
@@ -68,7 +69,6 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 <summary>Pending directories</summary>
 
 - [LinkLane](https://www.linklane.net/) (pending)
-- [Responsive Web Directory](https://kalechips.net/responsive/) (pending)
 - [Accessible Net Directory](https://pinkvampyr.leprd.space/accessiblenet/) (pending)
 
 </details>
