@@ -17,7 +17,6 @@
 <feed
 	xmlns="http://www.w3.org/2005/Atom"
 	xmlns:activity="http://activitystrea.ms/spec/1.0/"
-	xmlns:admin="http://webns.net/mvcb/"
 	xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
 	xmlns:media="http://search.yahoo.com/mrss/"
 	xmlns:ostatus="http://ostatus.org/schema/1.0"
@@ -61,7 +60,7 @@
     <email>{{ .Site.Author.email }}</email>
 		<uri>https://seirdy.one/</uri>
   </author>
-	<admin:errorReportsTo rdf:resource="mailto:{{ .Site.Author.email }}" />
+	<admin:errorReportsTo xmlns:admin="http://webns.net/mvcb/" rdf:resource="mailto:{{ .Site.Author.email }}" />
 	<rights type="text">Copyright © {{ now.Year }} Rohan Kumar</rights>
 	<link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
   <updated>{{ site.LastChange.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
