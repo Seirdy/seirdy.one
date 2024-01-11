@@ -3,7 +3,7 @@ title: "Enshittification and user domestication"
 date: 2024-01-11T06:03:58-05:00
 syndicatedCopies:
     - title: 'The Fediverse'
-      url: 'https://pleroma.envs.net/notice/AbKRMDqztwWekHX4qG'
+      url: 'https://pleroma.envs.net/notice/AdjrspyvCIZcBcJWGu'
     - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
     - title: 'jstpst'
