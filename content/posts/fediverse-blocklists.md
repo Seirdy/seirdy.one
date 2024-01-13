@@ -284,7 +284,7 @@ asbestos.cafe {#asbestos}
 : [Racism and ableism from admin](https://archive.ph/d7cfQ).
 : [Admin sharing a dox](https://archive.ph/LUA10)
 : [Transmedical gatekeeping from a cis user](https://web.archive.org/web/20230731041522/https://the.asbestos.cafe/notice/AYCymnXAtifMLgNzJg).
-: [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin.
+: [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin. [Admin defends antisemitism](https://web.archive.org/web/20240110032818/https://the.asbestos.cafe/notice/AdgBSAo0q5L63JPXtY).
 : [Queerphobic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
 
 bae.st {#baest} OR skippers-bin.com
@@ -345,6 +345,9 @@ clubcyberia.co {#clubcyberia}
 : Instance [features anti-black emotes](https://web.archive.org/web/20230730220345/https://clubcyberia.co/notice/AY9kBc1YiuBfP9TVgG). Users such as "Inginsub" often [post blatant racism](https://web.archive.org/web/20230730221532/https://clubcyberia.co/notice/AXSJ3fIo5mMORrLYPY). Hosts [a KiwiFarms staff member](https://web.archive.org/web/20230730222042/https://clubcyberia.co/users/crunklord420).
 : Staff member [publicizes reports against extremely transphobic harassment](https://archive.today/2023.08.12-014232/https://clubcyberia.co/notice/AYdQ5Rt3vLgaXzqVtY) in a reply to said harassment (YWNBAW-like copypasta).
 
+cottoncandy.cafe {#cottoncandy}
+: [pro-contact MAP admin](https://archive.ph/2023.12.02-032342/https://monk.ey.business/users/AbX87tTlQhM3rfD02y), [pro-contact user](https://archive.today/2023.12.02-032427/https://monk.ey.business/users/Abk2pkdrZc2eWowPYG). [Instance local bubble](http://archive.today/2023.12.02-032716/https://cottoncandy.cafe/about) shows that the admin endorses other pro-contact instances.
+
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
 : [More transphobia from admin](https://web.archive.org/web/20230730232208/https://crucible.world/notice/AYES99sUhEtMulC7M0)
@@ -385,6 +388,10 @@ eveningzoo.club {#eveningzoo}
 fluf.club {#fluf}
 : [Transphobia from admin](https://archive.today/2023.08.02-003048/https://freesoftwareextremist.com/notice/AYHzC307R2T8F9hpI0), [more transphobia](https://web.archive.org/web/20230802003149/https://eientei.org/notice/AYEuW35LVZ48XYOXPk), [transphobic sui-bait](https://web.archive.org/web/20230802003447/https://shitposter.club/notice/AYEKwm6THNpfFCVjm4).
 : The [instance "about" page](https://web.archive.org/web/20230805192514/https://fluf.club/about) recommends freespeechextremist.com and kiwifarms.cc as instances "with similar moderation policies"; both those instances are on FediNuke with receipts.
+
+foxgirl.lol {#foxgirl}
+: [Blatantly antisemitic use of slurs from admin](https://web.archive.org/web/20231225070141/https://freespeechextremist.com/notice/Ad8mJ08CxEkH8APY9o).
+: [transphobic slurs from admin](https://web.archive.org/web/20231225070742/https://freespeechextremist.com/notice/Ad33CMpHuq0UPsrYYa).
 
 freak.university {#freak-uni} OR pedo.school
 : Instance known for permitting paraphilia including pedophilia, and also explicitly allows minors (13+ although [that limit may be lowered](https://archive.today/2023.08.02-041801/https://freak.university/@headmasters/110743455953705070)). Scroll through local users on `/directory` for more receipts.
@@ -487,9 +494,10 @@ lolicon.rocks {#lolicon-rocks}
 lolison.network {#lolison} OR lolison.top
 : Sibling instances focused on the MAP/pedophilia community. Claim to forbid CP, but also appears to have rules too lax for instances with such focus. Admin "Spag" also admins rapemeat.express; see its FediNuke entry.
 
-marsey.moe {#marsey}
+marsey.moe {#marsey} OR taihou.website
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb).
 : [boks.moe moved to marsey.moe](https://web.archive.org/web/20230730191654/https://shitposter.club/notice/AX3ZOWyu6dX384tV32), which features a [hitler-themed racist "Witster_" account](https://archive.ph/2dTWR), [making fun of mutual aid posts](https://archive.ph/Uri4S), [racist misogyny](https://web.archive.org/web/20230804231317/https://marsey.moe/notice/AXyBmu2bgZCX3hTp2G), [blatantly transphobic jokes](https://archive.today/2023.08.12-192245/https://marsey.moe/notice/AYduTzUXJ5bwlIBkQK).
+: Staff member [later moved to taihou.website](https://web.archive.org/web/20231228001500/https://5dollah.click/notice/Ad2xwISZPH2lfgprMm). The staff member then went on to post [rape threats](https://archive.today/2023.12.28-001750/https://rebased.taihou.website/notice/Ad6aKh8SogLOrXocXA), [anti-vax](https://web.archive.org/web/20231228212535/https://5dollah.click/notice/AdFx25iI8W92yerpOC), [indophobic racism](https://web.archive.org/web/20231228213012/https://5dollah.click/notice/AdH6xZc8jRYUxsQyxM), and [some more xenophobia](https://web.archive.org/web/20231229202055/https://5dollah.click/notice/AdJKrnOyLPU7fBKmhc)
 
 merovingian.club {#merovingian}
 : [Instance "About" page](https://web.archive.org/web/20230805223728/https://merovingian.club/about/more) bills it as "a club for redpilled exiles".
@@ -571,6 +579,11 @@ pawlicker.com {#pawlicker}
 
 pawoo.net {#pawoo}
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
+
+parcero.bond {#parcero}
+: [Blatantly racist slur use from admin](https://web.archive.org/web/20231228002424/https://parcero.bond/notice/AdFAk7TtAOSWOdVTTE).
+: [Antisemitism from admin](https://archive.today/2023.12.28-002727/https://parcero.bond/notice/AdE0tKsBYHTBpxfQ5Q).
+: [Sui-bait from admin](https://web.archive.org/web/20231228002906/https://parcero.bond/notice/AdDoer14YwYJja9V5s).
 
 pibvt.net {#pibvt}
 : Lolisho and actual photos of toddlers posted by MAPs. [FediBlock post](https://pleroma.envs.net/notice/AS9QjlcEaQgZKbz5gO) with some more details.
@@ -729,6 +742,9 @@ kawa-kun.net {#kawa-kun}
 kompost.cz {#kompost}
 : [Racism](https://ghostarchive.org/archive/cWEbG), [more racism](https://web.archive.org/web/20230804231946/https://kompost.cz/@fuxoft/110656548914018074), [transphobia](https://web.archive.org/web/20230804232125/https://kompost.cz/@fuxoft/110321506728744090), [queerphobia](https://ghostarchive.org/archive/Nmop2). All from admin.
 
+krackhou.se {#krackhouse}
+: Admin makes [a blatantly racist TND post](https://web.archive.org/web/20231119231756/https://guns.krackhou.se/@trashblaster/statuses/01H9R7ZFR5GMGBC35NVT0HB642), and [a second such post](https://web.archive.org/web/20231119231725/https://guns.krackhou.se/@trashblaster/statuses/01H7QST57SQSB71VP52SW1H65B). [More racial slurs](https://web.archive.org/web/20231120000253/https://guns.krackhou.se/@trashblaster/statuses/01HC2SQ8F4WQZ4N1R6C8P3N9K9).
+
 maladaptive.art {#maladaptive-art}
 : [Blatant racism in a transphobic sui-bait thread](https://web.archive.org/web/20230927221541/https://ap.maladaptive.art/notice/Aa4MbafnEqYugwYMca).
 : Same user [posting blatant transphobia](https://web.archive.org/web/20230927225431/https://ap.maladaptive.art/@opal/posts/AZM01RTPDcsHmrse24), [misgendering in a transphobic thread](https://web.archive.org/web/20230927224155/https://ap.maladaptive.art/notice/Aa4Mj9DfC7jTrW01OC), and [antisemitism](https://web.archive.org/web/20231022044401/https://ap.maladaptive.art/notice/AaiyV5x86yTyG2OBrU).
@@ -753,6 +769,10 @@ shota.house {#shota-house} OR burger.rodeo
 : [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user.
 : Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
 : [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
+
+someotherguy.xyz {#someotherguy}
+: Xenophobic ["build the wall" admin](https://archive.today/2023.12.25-063556/https://pleroma.someotherguy.xyz/notice/Ad7t2XHnqOn3Rw3paK).
+: ["Family values" queerphobic pedojacketing](https://ghostarchive.org/archive/1S0Lc?wr=false).
 
 starnix.network {#starnix}
 : Note: there are multiple Fediverse servers on different subdomains, such as "pl" and "mstdn."
