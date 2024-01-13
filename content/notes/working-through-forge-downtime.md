@@ -1,6 +1,9 @@
 ---
 title: "Working through forge downtime"
 date: 2024-01-13T14:30:07-05:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AdoShAiPVBE5MPZdIG'
 ---
 Sourcehut and Codeberg are experiencing reliability issues due to an ongoing layer-3 DDoS attack.
 
