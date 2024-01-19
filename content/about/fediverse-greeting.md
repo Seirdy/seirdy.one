@@ -18,6 +18,7 @@ If you want me to consider accepting your follow request, you need to have made 
 - A bio
 - Your pronouns
 - A personal website
+- Interactions with me within a week of sending a follow-request
 
 Alternatively: DM me to introduce yourself and say why you want to follow me.
 
