@@ -20,17 +20,20 @@ Coding
 If you like anything I do and want to support me, you can send me a donation:
 
 
-[Liberapay](https://liberapay.com/Seirdy/donate "{rel='me'}")
+[Liberapay](https://liberapay.com/Seirdy/donate "{rel='me payment'}")
 : Ideal for recurring donations, but also supports one-time payments. Requires a Liberapay account. You may optionally publicize your donation.
 
-[Stripe](https://donate.stripe.com/dR65nv5BWg3icq46oo "{rel='me'}")
+[Stripe](https://donate.stripe.com/dR65nv5BWg3icq46oo "{rel='me payment'}")
 : Supports one-time-donations. Does not require an account. Your can't publicize this donation.
 
-[Ko-Fi](https://ko-fi.com/Seirdy "{rel='me'}")
+[Ko-Fi](https://ko-fi.com/Seirdy "{rel='me payment'}")
 : Supports both recurring and one-time donations. You may optionally publicize your donation.
 
-[GitHub Sponsors](https://github.com/sponsors/Seirdy "{rel='me'}")
+[GitHub Sponsors](https://github.com/sponsors/Seirdy "{rel='me payment'}")
 : Supports both recurring and one-time donations. Requires a GitHub account. Can be public or visible to just me.
+
+[Cash App](https://cash.app/$seirdy "{rel='me payment'}")
+: Supports one-time-donations. Requires an account. Your can't publicize this donation. Lower fees than the other Stripe-based options on this page.
 
 Thank you!
 
