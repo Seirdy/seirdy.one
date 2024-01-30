@@ -19,8 +19,12 @@
 	<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
 	<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
 	<link href="{{ printf `https://webmention.io/webmention?forward=%s` .Site.Params.WebmentionEndpoint}}" rel="pingback" />
-	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify | resources.Fingerprint "md5" -}}
-	{{- printf `<link href="%s" rel="manifest" />` $webmanifest.RelPermalink | safeHTML -}}
+	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify -}}
+	{{- $cacheBuster := $webmanifest.Content | crypto.FNV32a -}}
+	{{- $webmanifestFingerprinted := printf "/manifest.%d.webmanifest" $cacheBuster -}}
+	{{- with resources.Copy $webmanifestFingerprinted $webmanifest -}}
+		{{- printf `<link href="%s" rel="manifest" />` .RelPermalink | safeHTML -}}
+	{{- end -}}
 	<!--Feeds for both notes and articles; articles come first unless we're in the notes section.-->
 	{{- if or (eq .Section "notes") (eq .Title "Notes") -}}
 	<link rel="alternate" type="application/atom+xml" href="{{ site.BaseURL }}notes/atom.xml" title="Notes" />
