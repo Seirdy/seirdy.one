@@ -14,13 +14,14 @@ temp_resume="$(mktemp)"
 # I have an alias for a redirect. I also define the redirect in Nginx, but this is there for the envs.net/~seirdy mirror. Hugo aliases don't have trailing slashes; this will trip up xmllint.
 sed -i -e 's|<html lang="en-us"|<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us"|' -E -e 's#<((link|meta) .*)">#<\1" />#' "$output_dir/resume/index.html"
 mv "$output_dir/resume/index.html" "$temp_resume"
-
+# {{ $css.Content | safeCSS }}/*]]>*/-->
 {
-	sed -e '7q;d' "$output_dir/index.html"
-} >"$output_dir/tmp.css"
+	sed -e '7q;d' "$output_dir/index.html" \
+		| sed -e 's|<style>|<style><\!--/\*--><\!\[CDATA\[/\*><\!--\*/|' -e 's|</style>|/\*\]\]>\*/--></style>|'
+} >"$output_dir/tmp.xhtml"
 cleanup() {
-	rm -f "$output_dir/tmp.css"
-	mv "$temp_resume"  "$output_dir/resume/index.html"
+	rm "$output_dir/tmp.xhtml"
+	mv "$temp_resume" "$output_dir/resume/index.html"
 }
 trap cleanup EXIT
 

@@ -40,7 +40,7 @@ run_xmllint() {
 sed 7d "$html_file" | run_xmllint | tail -n +2 >"$tmp_file"
 {
 	head -n7 "$tmp_file" | sed -e 's/^\t//'
-	cat "${OUTPUT_DIR:?}/tmp.css"
+	cat "${OUTPUT_DIR:?}/tmp.xhtml"
 	# shellcheck disable=SC2016 # these are regex statements, not shell expressions
 	#shellcheck source=/home/rkumar/Executables/ghq/git.sr.ht/~seirdy/seirdy.one/scripts/xhtmlize.sh
 	sed \
