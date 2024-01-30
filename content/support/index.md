@@ -12,7 +12,7 @@ Fediverse moderation
 : I moderate the pleroma.envs.net Akkoma server as [@Seirdy@pleroma.envs.net](https://pleroma.envs.net/Seirdy "{rel='me'}"), and [I curate some blocklists]({{<relref "/posts/fediverse-blocklists.md">}}). This includes FediNuke; including supersets that include it, this is likely the most popular blocklist across the Fediverse.
 
 Blogging
-: See [the "Articles" section]({{<relref "/posts/">}}) for long-form articles, or [the "Notes" section]({{<relref "/notes/">}}) for short-form microblogs.
+: See [the "Articles" section]({{<relref "/posts/_index.md">}}) for long-form articles, or [the "Notes" section]({{<relref "/notes/_index.md">}}) for short-form microblogs.
 
 Coding
 : Not much of that in public right now, but more are on the way (including the programs that generate my blocklists).

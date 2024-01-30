@@ -1,4 +1,5 @@
-{{- $codeIndex := (.Page.Scratch.Get "codeIndex") -}}
+{{- .Page.Scratch.Add "codeIndex" 1 -}}
+{{- $codeIndex := (int (.Page.Scratch.Get "codeIndex")) -}}
 {{- $id := (printf `code-%d` $codeIndex) -}}
 {{- with .Get "id" -}}
 	{{- $id = . -}}
@@ -14,4 +15,3 @@
 	</span>:
 {{ .Inner | .Page.RenderString | safeHTML }}
 </figcaption>
-{{- .Page.Scratch.Set "codeIndex" (add 1 $codeIndex) -}}
