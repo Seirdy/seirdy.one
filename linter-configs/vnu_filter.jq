@@ -21,7 +21,7 @@
 			( # See https://github.com/w3c/css-validator/issues/361
 				.message == "CSS: Parse Error."
 				and .extract == "not(:focus-visible){outline:no"
-				and (.url | test("index.xhtml"))
+				and (.url | test(".xhtml"))
 				and .hiliteLength == 1
 			) or
 			( # See https://github.com/w3c/css-validator/issues/361
