@@ -59,7 +59,7 @@ equal-access:
 
 .PHONY: validate-json
 validate-json:
-	jaq -re '""' $(OUTPUT_DIR)/manifest.min.*.webmanifest 1>/dev/null
+	jaq -re '""' $(OUTPUT_DIR)/manifest.*.webmanifest 1>/dev/null
 	jaq -re '""' $(OUTPUT_DIR)/webfinger.json 1>/dev/null
 
 .PHONY: validate-html
