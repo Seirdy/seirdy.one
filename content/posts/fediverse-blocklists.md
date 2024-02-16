@@ -346,7 +346,7 @@ clubcyberia.co {#clubcyberia}
 : Staff member [publicizes reports against extremely transphobic harassment](https://archive.today/2023.08.12-014232/https://clubcyberia.co/notice/AYdQ5Rt3vLgaXzqVtY) in a reply to said harassment (YWNBAW-like copypasta).
 
 cottoncandy.cafe {#cottoncandy}
-: [pro-contact MAP admin](https://archive.ph/2023.12.02-032342/https://monk.ey.business/users/AbX87tTlQhM3rfD02y), [pro-contact user](https://archive.today/2023.12.02-032427/https://monk.ey.business/users/Abk2pkdrZc2eWowPYG). [Instance local bubble](http://archive.today/2023.12.02-032716/https://cottoncandy.cafe/about) shows that the admin endorses other pro-contact instances.
+: [pro-contact MAP admin](https://archive.ph/2023.12.02-032342/https://monk.ey.business/users/AbX87tTlQhM3rfD02y), [pro-contact user](https://archive.today/2023.12.02-032427/https://monk.ey.business/users/Abk2pkdrZc2eWowPYG). [Instance local bubble](https://archive.today/2023.12.02-032716/https://cottoncandy.cafe/about) shows that the admin endorses other pro-contact instances.
 
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
@@ -560,6 +560,10 @@ noagendasocial.com {#nas}
 noagendasocial.nl {#nasnl} OR noagendatube.com
 : Sibling instances of noagendasocial.com, also connected to the No Agenda Show.
 
+noauthority.social {#noauthority}
+: [Run by the admin of noagendasocial.com](https://archive.today/2024.02.16-052626/https://noagendasocial.com/@eriner) ([see the No Agenda Social FediNuke entry](#nas)). Features [more blatant transphobia from the admin](https://archive.today/2024.02.16-052700/https://noauthority.social/@eriner/111837215988394617).
+: [Instance "about" page](https://archive.today/2024.02.16-051953/https://noauthority.social/about) describes it as a free-speech instance with a link to [a directory of other instances with similar policies](https://web.archive.org/web/20240216052134/https://freezepeach.social/); all the live domains on that list are also on FediNuke with receipts.
+
 norwoodzero.net {#norwoodzero}
 : Admin [pedojackets in a transphobic harassment campaign](https://web.archive.org/web/20230803155542/https://norwoodzero.net/notice/AYME53gDdYuiYrDxtQ).
 : Admin [invites others users for the purpose of harassing trans users](https://web.archive.org/web/20230807201105/https://norwoodzero.net/notice/AYTiBWAQFwxg3WuJv6). [Another example, using the fact that the instance is "barely defederated" as a selling point](https://web.archive.org/web/20230812041051/https://norwoodzero.net/notice/AYdS8m9yyTQAKCUfy4).
@@ -681,6 +685,11 @@ truthsocial.co.in {#truthsocialcoin}
 
 usualsuspects.lol {#usualsuspects}
 : Admin led [targeted transphobic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
+
+vampiremaid.cafe {#vampiremaid}
+: Admin [posts white nationalism](https://archive.today/2023.11.19-233105/https://vampiremaid.cafe/notice/AbjiluX5uvtvZBlFk8), [blatant racism](https://archive.today/2023.11.19-234054/https://vampiremaid.cafe/notice/AbI9XvdcGiolHCUVGq), [antisemitism](https://archive.today/2023.11.19-232514/https://vampiremaid.cafe/notice/AbnqFr0D5HZ3cGRcRs), and [more racism and antisemitism](https://archive.today/2023.11.19-235053/https://vampiremaid.cafe/notice/AbAjAG8qQYGx0EQntQ) with unreclaimed slurs.
+: Admin posts [a context-free "HH"](https://archive.today/2023.11.19-234110/https://vampiremaid.cafe/notice/AbL3pMUhedktF38CX2) and [boosts swastikas from Poast](https://archive.today/2023.11.19-234537/https://vampiremaid.cafe/notice/AbQhaXiob17tg11JmC).
+: Note that the instance heavily features suggestive lolicon.
 
 varishangout.net {#varis}
 : Instance permits lolicon/shotacon. [sample non-graphic thread containing queerphobia, esp. transphobia, with staff involvement](https://web.archive.org/web/20230729223647/https://varishangout.net/notice/AYBv4A9bwrZXfu0Hho), [another such thread](https://web.archive.org/web/20230729225002/https://varishangout.net/notice/AYBmTghTBGJaGbw9zM).
