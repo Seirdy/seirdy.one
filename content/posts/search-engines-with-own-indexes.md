@@ -335,6 +335,9 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 [Blog Surf](https://blogsurf.io/)
 : A search engine for blogs with RSS/Atom feeds. Does not qualify because all blogs submitted to the index require manual review, but it seems interesting. Its "MarketRank" algorithm seems to give it a bias towards sites popular on "Hacker" "News".
 
+[Kukei.eu](https://kukei.eu/)
+: A curated search engine for web developers, which crawls [a hand-picked list of sites](https://github.com/Kukei-eu/spider/blob/914b8dfffc10cb3a948561aef2bf86937d3a0b2e/index-sources.js). As it does not index the whole Web, it doesn't qualify. I still find it interesting.
+
 ## Misc
 
 
@@ -383,7 +386,6 @@ These engines were originally included in the article, but have since been disco
 
 websearchengine.org OR tuxdex.com
 : Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
-
 
 ## Exclusions
 
