@@ -282,7 +282,7 @@ anon-kenkai.net {#anon-kenkai}
 
 asbestos.cafe {#asbestos}
 : [Racism and ableism from admin](https://archive.ph/d7cfQ).
-: [Admin sharing a dox](https://archive.ph/LUA10)
+: [Admin sharing a dox attempt](https://archive.ph/LUA10)
 : [Transmedical gatekeeping from a cis user](https://web.archive.org/web/20230731041522/https://the.asbestos.cafe/notice/AYCymnXAtifMLgNzJg).
 : [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin. [Admin defends antisemitism](https://web.archive.org/web/20240110032818/https://the.asbestos.cafe/notice/AdgBSAo0q5L63JPXtY).
 : [Queerphobic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
@@ -466,7 +466,7 @@ kiwifarms.cc {#kf}
 : The official occasionally-online [KiwiFarms](https://www.cnet.com/culture/internet/kiwi-farms-what-to-know-about-the-hate-filled-message-forum-dropped-by-cloudflare/) Fediverse instance. Look up "KiwiFarms" online if you want receipts. It briefly came back once after a long period of downtime, so I'm not removing it during the current downtime.
 
 kyaruc.moe {#kyaruc}
-: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM). Later changed their mind, got mad about being on it, and [publicized a dox](https://web.archive.org/web/20230813204417/https://boymoder.biz/notice/AYh9JolXzLgzlb9XGq).
+: Admin [sui-baiting to get on this list](https://web.archive.org/web/20230802182509/https://ak.kyaruc.moe/notice/AYHzrqQ7hXqfemWlfM). Later changed their mind, got mad about being on it, and [publicized an attempted dox](https://web.archive.org/web/20230813204417/https://boymoder.biz/notice/AYh9JolXzLgzlb9XGq).
 : [Racist use of slurs](https://ghostarchive.org/archive/mWst4), [targeted ableist harassment](https://web.archive.org/web/20230802222537/https://clubcyberia.co/notice/AXtFrDv5xhLpVMHzqy)
 
 leafposter.club {#leafposter}
@@ -765,10 +765,11 @@ occultist.space {#occultist-space} OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol (FediNuke). Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
 
 shitposter.club {#spc}
-: Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84).
 : [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [More transphobia from other users](https://web.archive.org/web/20230831030108/https://shitposter.club/notice/AZCc1yv50GaHraJnf6).
 : User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
+: [Hosts user "Amerika", an outspoken eugenicist and nationalist](https://ghostarchive.org/archive/sIgyp). See receipts for their other account in [the FediNuke entry for noagendasocial.com](#nas).
 : User "Nudhul" [posts racist spam in the "MutualAid" hashtag](https://web.archive.org/web/20231103203216/https://clubcyberia.co/notice/AbFYbNOEt3Xa79cDBY).
+: Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84).
 : [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
 : [Some more racism from user "triodug"](https://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
 : Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
