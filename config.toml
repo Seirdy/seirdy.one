@@ -100,7 +100,7 @@ disableKinds = ["taxonomy", "term"]
 	suffixes = ["webmanifest"]
 
 [outputFormats]
-	[outputFormats.Gemini]
+	[outputFormats.Gemtext]
 		name = "GEMTEXT"
 		isPlainText = true
 		isHTML = false
