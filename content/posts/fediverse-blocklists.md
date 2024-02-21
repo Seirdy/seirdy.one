@@ -547,6 +547,10 @@ nicecrew.digital {#nicecrew}
 : [Blatant anti-Black racism from staff](https://web.archive.org/web/20230731154105/https://nicecrew.digital/notice/AT5UuihBpC4ZI8xIlk), [anti-Black racist caricature from staff](https://web.archive.org/web/20230731153949/https://nicecrew.digital/notice/AYCsMzQsKax7qc0b1E). [Antisemitic COVIDspiracy from staff](https://web.archive.org/web/20230731160204/https://nicecrew.digital/notice/AY4YmRWar1CMk4usOO).
 : Has [a bot to spam threads with racist slurs](https://archive.today/2023.08.03-153949/https://nicecrew.digital/@nice-nigger).
 
+nightshift.social {#nightshift}
+: [Anti-Black racism and antisemitism from staff](https://ghostarchive.org/archive/Z6hC4?wr=false).
+: [Extreme anti-black racism](https://ghostarchive.org/archive/Dfln4) and [more antisemitism](https://ghostarchive.org/archive/kAK8G) from another staff member.
+
 nnia.cc OR nnia.space {#nnia}
 : Paraphile pro-zoo pro-MAP instance that also allows both minors and pro-contact users to register. [Pro-C zoosexuality](https://web.archive.org/web/20230819210233/https://nnia.space/@scramblecore/110910301694831861).
 : nnia.cc is a newer instance that [claims to be a continuation of nnia.space](https://web.archive.org/web/20231104224647/https://nnia.cc/about). It also claims to have closed federation, but I included it alongside nnia.space should that ever change, since I can't imagine that FediNuke users would wish to federate with it anyway.
@@ -596,7 +600,7 @@ pieville.net {#pieville}
 : Admin is a white nationalist who [supports building an ethno-state, and genocide](https://archive.today/2023.08.19-214916/https://pieville.net/@Alex_Linder/110882938852628318). [Admin profile](https://web.archive.org/web/20230819215516/https://pieville.net/@Alex_Linder) features more blatant slur-filled racism, antisemitism, etc.
 
 poa.st {#poast}
-: Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users.
+: Well-known Nazi instance. See receipts for needs.vodka, kitsunemimi.club, and shitpost.cloud for poast users. Also see [this Poast thread containing unapologetic racism, transphobia, and other bigotry from the Poast admin and users](https://archive.today/2024.02.21-072914/https://poa.st/notice/Aez6vYIX8PuuRpoKpM) volunteering receipts for this resource.
 
 poast.org {#poast-org} OR poast.tv
 : Instances affiliated with poa.st.
