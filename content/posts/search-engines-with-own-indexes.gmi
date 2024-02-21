@@ -185,11 +185,13 @@ I can't in good conscience recommend using Brave Search, as the company runs cry
 
 => https://www.qwant.com Qwant
 
-* Kagi Search: The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the non-commercial section below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the Kagi.ai intelligent answer service and the TinyGem social bookmarking service, both of which play a role in Kagi.com in the present or future.
+* Kagi Search: Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the non-commercial section below), and claims to also use results from Google and Brave. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the Kagi.ai intelligent answer service and the TinyGem social bookmarking service, both of which play a role in Kagi.com in the present or future. I'm concerned about the company's biases, as it seems happy to double down on partnering with Brave and recommending suicide methods.
 
 => https://kagi.com/ Kagi Search
 => https://kagi.ai/ Kagi.ai
 => https://tinygem.org/ TinyGem
+=> https://kagifeedback.org/d/2808-reconsider-your-partnership-with-brave Kagi feedback ticket on partnership with Brave, allowing blatant homophobia in the discussion.
+=> https://kagifeedback.org/d/865-suicide-results-should-probably-have-a-dont-do-that-widget-like-google/50 Kagi feedback ticket on suicide results
 
 ## Non-generalist search
 
