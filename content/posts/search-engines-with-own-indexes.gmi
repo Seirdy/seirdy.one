@@ -95,6 +95,9 @@ These engines pass most of the tests listed in the "methodology" section. All of
 => https://github.com/RimoChan/sese-engine SeSe back-end Python code
 => https://github.com/YunYouJun/sese-engine-ui SeSe-UI Vue-based front-end
 
+* greppr: its tagline is "Search the Internet with no filters, no tracking, no ads." At the time of writing, it has over 3 million pages indexed. It's surprisingly good at finding interesting new results for broad short-tail queries, if you're willing to scroll far enough down the page. It appears to be good at finding recent pages.
+=> https://greppr.org/ greppr
+
 Yep supports Open Graph and some JSON-LD at the moment. A look through the source code for Alexandria and Gigablast didn't seem to reveal the use of any structured data. The surprising quality of results from SeSe and Right Dao seems influenced by the crawlers' high-quality starting locations (e.g. Wikipedia).
 
 ### Smaller indexes, hit-and-miss
