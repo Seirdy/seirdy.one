@@ -148,9 +148,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Burf.co](https://burf.co/)
 : Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 
-[Entfer](https://entfer.com/)
-: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information about who made it. Its index is small, but it does seem to return results related to the query.
-
 [Siik](https://siik.co/)
 : Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
@@ -389,6 +386,10 @@ These engines were originally included in the article, but have since been disco
 
 websearchengine.org OR tuxdex.com
 : Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
+
+[Entfer](https://web.archive.org/web/20230810032916/https://entfer.com/)
+: a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
+
 
 ## Exclusions
 

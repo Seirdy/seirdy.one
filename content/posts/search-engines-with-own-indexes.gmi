@@ -117,11 +117,9 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://www.exactseek.com/ ExactSeek
 
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
-* Entfer: a newcomer that lets registered users upvote/downvote search results to customize ranking. Doesn't offer much information about who made it. Its index is small, but it does seem to return results related to the query.
 * Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
 => https://burf.co/ Burf.co
-=> https://entfer.com/ Entfer
 => https://siik.co/ Siik
 => https://inetdex.com inetdex.com
 
@@ -362,6 +360,7 @@ These engines were originally included in the article, but have since been disco
 * Ninfex: a "people-powered" search engine that combines aspects of link aggregators and search. It lets users vote on submissions and it also displays links to forums about submissions.
 * Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 * websearchengine.org and tuxdex.com: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
+* Entfer: a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
@@ -369,6 +368,7 @@ These engines were originally included in the article, but have since been disco
 => https://web.archive.org/web/20220429143153/https://www.meorca.com/search/ Meorca Search Engine (Wayback Machine snapshot)
 => https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
 => https://marlo.sandymaguire.me/ Marlo
+=> https://web.archive.org/web/20230810032916/https://entfer.com/ Entfer
 
 ## Exclusions
 
