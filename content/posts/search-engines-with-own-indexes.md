@@ -157,6 +157,9 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Secret Search Engine Labs](http://www.secretsearchenginelabs.com/)
 : Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its [CashRank algorithm](http://www.secretsearchenginelabs.com/tech/cashrank.php). Allows site submission.
 
+[Gabanza](https://www.gabanza.com/)
+: A search engine from a hosting company. I found few details abou the search engine itself, and the index was small, but it was suitable for discovering new pages related to short broad queries.
+
 ### Fledgling engines
 
 Results from these search engines don't seem particularly relevant; indexes in this category tend to be small.

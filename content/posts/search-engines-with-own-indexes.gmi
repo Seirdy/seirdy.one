@@ -125,6 +125,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 * ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 * Secret Search Engine Labs: Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its CashRank algorithm. Allows site submission.
+* Gabanza: a search engine from a hosting company. I found few details abou the search engine itself, and the index was small, but it was suitable for discovering new pages related to short broad queries.
 
 => https://www.chatnoir.eu/ ChatNoir
 => https://commoncrawl.org/ Common Crawl
@@ -132,6 +133,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ ChatNoir Announcement
 => http://www.secretsearchenginelabs.com/ Secret Search Engine Labs
 => http://www.secretsearchenginelabs.com/tech/cashrank.php CashRank Algorithm
+=> https://www.gabanza.com/ Gabanza - The new search engine.
 
 ### Unusable engines, irrelevant results
 
