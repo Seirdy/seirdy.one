@@ -65,12 +65,25 @@ endless_orbit() {
 	echo 'null'
 }
 
+focus_first() {
+	printf 'Focus First,'
+	curl -sSL --compressed https://owlsroost.xyz/webring/onionring-variables.js \
+		| grep -C 1 https://seirdy.one/ \
+		| tr -d "'\r\n\t" | sed 's|https://seirdy.one/|https://owlsroost.xyz/webring/index.html|'
+	echo 'null'
+}
+
+all_lines() {
+	endless_orbit
+	focus_first
+}
+
 if [ "$dry_run" = '1' ]; then
 	endless_orbit
 elif [ -f "$webrings_dest" ]; then
 	echo "webrings file already generated"
 else
-	endless_orbit | cat "$webrings_src" - >"$webrings_dest"
+	all_lines | cat "$webrings_src" - >"$webrings_dest"
 fi
 
 # vi:ft=sh
