@@ -256,9 +256,9 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 * Baidu: Chinese. Very large index; it's a major engine alongside GBY. Offers webmaster tools for site submission.
 * Qihoo 360: Chinese. I’m not sure how independent this one is.
-* Toutiao: Chinese. Not sure how independent this one is either.
+* Toutiao: Chinese. Not sure how independent this one is either. Its index appears limited outside of its own content distribution platform.
 * Sogou: Chinese
-* Yisou: Chinese
+* Yisou: Chinese, by Yahoo. Appears defunct.
 * Naver: Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
 * Daum: Korean. Also unsure about its independence.
 * Seznam: Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools and using IndexNow.

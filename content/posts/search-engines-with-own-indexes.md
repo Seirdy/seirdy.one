@@ -287,11 +287,11 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - Qihoo 360: Chinese. I'm not sure how independent this one is.
 
-- Toutiao: Chinese. Not sure how independent this one is either.
+- Toutiao: Chinese. Not sure how independent this one is either. Its index appears limited outside of its own content distribution platform.
 
 - Sogou: Chinese
 
-- Yisou: Chinese
+- Yisou: Chinese, by Yahoo. Appears defunct.
 
 - [Naver](https://search.naver.com): Korean. Allows submitting sitemaps and feeds. Discovered via some Searx metasearch instances.
 
