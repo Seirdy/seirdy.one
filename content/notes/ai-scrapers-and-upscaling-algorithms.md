@@ -1,6 +1,9 @@
 ---
 title: "AI scrapers and upscaling algorithms"
-date: 2024-03-12T19:14:48-04:00
+date: 2024-03-12T19:15:48-04:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/Afn5Cgk7O06nWocHlg'
 ---
 
 Using neural nets trained on other people's work to create (and often profit from) new work in their style without compensation is problematic. I don't think that doing the same for upscaling algorithms is.
