@@ -10,6 +10,8 @@ Disallow: /
 Allow: /ads.txt
 Allow: /app-ads.txt
 
+## IP-violation scanners ##
+
 # The next three are borrowed from https://www.videolan.org/robots.txt
 
 # > This robot collects content from the Internet for the sole purpose of # helping educational institutions prevent plagiarism. [...] we compare student papers against the content we find on the Internet to see if we # can find similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
@@ -43,6 +45,15 @@ Disallow: /
 User-agent: BrandVerity/1.0
 Disallow: /
 
+## Misc. icky stuff ##
+
+# Pipl assembles online identity information from multiple independent sources to create the most complete picture of a digital identity and connect it to real people and their offline identity records. When all the fragments of online identity data are collected, connected, and corroborated, the result is a more trustworthy identity.
+# --> fuck off.
+User-agent: PiplBot
+Disallow: /
+
+## Gen-AI data scrapers ##
+
 # Eat shit, OpenAI.
 User-agent: ChatGPT-User
 Disallow: /
@@ -58,8 +69,12 @@ Disallow: /
 # Reuters thinks this works so I might as well give it a shot.
 User-agent: anthropic-ai
 Disallow: /
-
 User-agent: Claude-Web
+Disallow: /
+
+# FacebookBot crawls public web pages to improve language models for our speech recognition technology.
+# <https://developers.facebook.com/docs/sharing/bot/?_fb_noscript=1>
+User-Agent:  FacebookBot
 Disallow: /
 
 # I'm not blocking CCBot for now. It publishes a free index for anyone to use.
@@ -71,6 +86,6 @@ Disallow: /
 # <https://openwebsearch.eu/common-goals-with-common-crawl/>.
 # Omgilibot/Omgili is similar to CCBot, except it sells the scrape results.
 # I'm not familiar enough with Omgili to make a call here.
-# In the long run, my embedded robots meta-tags and headers should cover gen-AI
+# In the long run, my embedded robots meta-tags and headers could cover gen-AI
 
 Sitemap: https://seirdy.one/sitemap.xml
