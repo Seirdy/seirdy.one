@@ -49,5 +49,8 @@ Disallow: /
 User-agent: GPTBot
 Disallow: /
 
+# Official way to opt-out of Google's generative AI training: https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers
+User-agent: Google-Extended
+Disallow: /
 
 Sitemap: https://seirdy.one/sitemap.xml
