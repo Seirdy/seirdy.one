@@ -1,5 +1,4 @@
 .well-known/tr*
-.well-known/matrix/
 .well-known/acme-challenge/
 _*
 misc/
