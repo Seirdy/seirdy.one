@@ -47,5 +47,5 @@ This is a basic [IndieWeb site](https://indieweb.org/).
 
 In addition to its [canonical url](https://seirdy.one), a "rough draft" of this website also exists on my [Tildeverse page](https://envs.net/~seirdy/). This site's content also appears on my [Gemini capsule](gemini://seirdy.one).
 
-For more information about the site, its design, and available feeds: [see the "meta" section](./meta/).
+For more information about the site, its design, badges/awards, and available feeds: [see the "meta" section](./meta/). This site's contents are [authored by me, not generative AI](./meta/#non-bot).
 
