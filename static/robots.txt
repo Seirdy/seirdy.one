@@ -49,18 +49,28 @@ Disallow: /
 User-agent: GPTBot
 Disallow: /
 
-# Official way to opt-out of Google's generative AI training: https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers
+# Official way to opt-out of Google's generative AI training:
+# <https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers>
 User-agent: Google-Extended
 Disallow: /
 
-# There isn't any public documentation for this AFAICT, but Reuters thinks this works so I might as well give it a shot.
+# There isn't any public documentation for this AFAICT.
+# Reuters thinks this works so I might as well give it a shot.
 User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Claude-Web
 Disallow: /
 
-# I'm not blocking CCBot for now, since it's also used for upstart/hobbyist search engines like Alexandria and for genuinely useful academic work I personally like. I'm hoping my embedded robots meta-tags and headers will cover gen-AI opt-outs instead.
-# Omgilibot/Omgili is similar to CCBot, except it sells the scrape results. I'm not familiar enough to make a call here.
+# I'm not blocking CCBot for now. It publishes a free index for anyone to use.
+# Googe used this to train the initial version of Bard (now called Gemini).
+# I allow CCBot since its index is also used for upstart/hobbyist search engines
+# like Alexandria and for genuinely useful academic work I personally like.
+# I allow Owler for similar reasons:
+# <https://openwebsearch.eu/owler/#owler-opt-out>
+# <https://openwebsearch.eu/common-goals-with-common-crawl/>.
+# Omgilibot/Omgili is similar to CCBot, except it sells the scrape results.
+# I'm not familiar enough with Omgili to make a call here.
+# In the long run, my embedded robots meta-tags and headers should cover gen-AI
 
 Sitemap: https://seirdy.one/sitemap.xml
