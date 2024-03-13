@@ -53,4 +53,14 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+# There isn't any public documentation for this AFAICT, but Reuters thinks this works so I might as well give it a shot.
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# I'm not blocking CCBot for now, since it's also used for upstart/hobbyist search engines like Alexandria and for genuinely useful academic work I personally like. I'm hoping my embedded robots meta-tags and headers will cover gen-AI opt-outs instead.
+# Omgilibot/Omgili is similar to CCBot, except it sells the scrape results. I'm not familiar enough to make a call here.
+
 Sitemap: https://seirdy.one/sitemap.xml
