@@ -1,10 +1,7 @@
-{{- $src := "" -}}
+{{ $favicon := "/favicon.svg" -}}
 {{- if in site.BaseURL ".onion" -}}
-{{- $favicon := resources.Get "/favicon.png" -}}
-{{- $favicon_base64 := $favicon.Content | base64Encode -}}
-{{- $src = printf "data:image/png;base64,%s" $favicon_base64 -}}
-{{- else -}}
-{{- with (partialCached "cache-bust.html" "/favicon.svg" "/favicon.svg") -}}
-{{- $src = .Permalink -}}
-{{- end -}}{{- end -}}
-<img itemprop="image" width="16" height="16" alt="" src="{{ $src }}" class="u-photo photo" />
+	{{- $favicon = "/favicon.png" -}}
+{{- end -}}
+{{- with (partialCached "cache-bust.html" "/favicon.png" "/favicon.png") -}}
+<img itemprop="image" width="16" height="16" alt="" src="{{ .Permalink }}" class="u-photo photo" />
+{{- end -}}
