@@ -24,7 +24,7 @@
 					</a>
 				</h2>
 				{{- .Scratch.Set "shortMeta" true -}}
-				{{- partial "post-meta/post-meta.html" . }}
+				{{- partial "post-meta/post-meta.html" (dict "context" . "isList" true) }}
 				{{- if eq .Section "notes" }}
 				<div class="e-content entry-content" itemprop="articleBody">
 					{{- if .Params.replyURI -}}

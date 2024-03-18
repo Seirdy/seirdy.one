@@ -1,7 +1,7 @@
 <header>
 	<h1 itemprop="name headline" class="p-name entry-title" id="h1" tabindex="-1">{{ .Title }}</h1>
 	{{- if not .Params.disableMeta -}}
-	{{- partial "post-meta/post-meta.html" . -}}
+	{{- partial "post-meta/post-meta.html" (dict "context" . "isList" false) -}}
 	{{- end -}}
 </header>
 <hr />

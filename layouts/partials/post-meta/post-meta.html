@@ -1,22 +1,22 @@
-{{- $canonicalRelPermalink := .RelPermalink | replaceRE "^/~seirdy/" "/" -}}
+{{- $canonicalRelPermalink := .context.RelPermalink | replaceRE "^/~seirdy/" "/" -}}
 {{- $isNotes := false -}}
 {{- $action := "Posted" -}}
 {{- $shortMeta := false -}}
-{{- $logURL := printf "%scontent/%s" .Site.Params.logUrlPrefix .File.Path -}}
-{{- if .Scratch.Get "shortMeta" -}}
+{{- $logURL := printf "%scontent/%s" .context.Site.Params.logUrlPrefix .context.File.Path -}}
+{{- if .context.Scratch.Get "shortMeta" -}}
 	{{- $shortMeta = true -}}
 {{- end -}}
-{{- if or (eq .Page.Section "notes") (eq .Page.Title "Notes") -}}
+{{- if or (eq .context.Page.Section "notes") (eq .context.Page.Title "Notes") -}}
 	{{- $isNotes = true -}}
 	{{- $action = "Noted" -}}
 {{- end -}}
-{{- $needsModTime := gt (sub .Lastmod.Unix .Date.Unix) 900 -}}
+{{- $needsModTime := gt (sub .context.Lastmod.Unix .context.Date.Unix) 900 -}}
 {{- $needsList := or (and (not $shortMeta) $needsModTime) (not $isNotes) -}}
 {{- $gemini := "" }}
-{{- with .OutputFormats.Get "gemtext" -}}
+{{- with .context.OutputFormats.Get "gemtext" -}}
 	{{- $gemini = replace .Permalink "/gemini" "" 1 | safeURL -}}
 {{- end -}}
-{{- if not (eq .Page.Section "posts" ) -}}
+{{- if not (eq .context.Page.Section "posts" ) -}}
 	{{- $gemini = replace $gemini "/index.gmi" ".gmi" | safeURL -}}
 {{- end -}}
 {{- if $needsList }}
@@ -25,16 +25,16 @@
 <p>
 {{- end }}
 {{ if $needsList }}<li>{{ end }}
-{{- $action }} <time{{ if not (.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.UTC.Format "2006-01-02" }}</time> by {{ partialCached "indieweb-author.html" . -}}{{ if not $shortMeta }} on his <a rel="canonical" itemprop="url" class="u-url url" href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{ $gemini }}">Gemini capsule</a>{{ end }}{{- end -}}.
+{{- $action }} <time{{ if not (.context.Params.evergreen) }} itemprop="dateCreated datePublished" class="dt-published published"{{ end }} datetime="{{ .context.Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ .context.Date.UTC.Format "2006-01-02" }}</time> by {{ partialCached "indieweb-author.html" .context -}}{{ if not .isList }} on his <a rel="canonical" itemprop="url" class="u-url url" href="{{ .context.Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}">Website</a>{{- with .context.OutputFormats.Get "gemtext" -}}{{- printf " " -}}and <a rel="syndication" class="u-syndication" href="{{ $gemini }}">Gemini capsule</a>{{ end }}{{- end -}}.
 {{ if $needsList }}</li>{{ end }}
-			{{- if gt (sub .Lastmod.Unix .Date.Unix) 900 -}}
+			{{- if gt (sub .context.Lastmod.Unix .context.Date.Unix) 900 -}}
 {{ if $needsList }}<li>{{ end }}
-			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.UTC.Format "2006-01-02" }}</time>.{{ if not $shortMeta }} <a href="{{ $logURL }}">Changelog</a>{{ end }}
+			Last updated <time itemprop="dateModified" class="dt-updated updated" datetime="{{ .context.Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ .context.Lastmod.UTC.Format "2006-01-02" }}</time>.{{ if not .isList }} <a href="{{ $logURL }}">Changelog</a>{{ end }}
 {{ if $needsList }}</li>{{ end }}
 			{{- end -}}
 			{{- if not $isNotes -}}
 {{ if $needsList }}<li>{{ else }}<br />{{ end }}
-			{{ partial "post-meta/wordcount.html" . -}}
+			{{ partial "post-meta/wordcount.html" .context -}}
 {{ if $needsList }}</li>{{ end }}
 			{{- end -}}
 {{- if $needsList }}
