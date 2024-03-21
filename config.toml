@@ -13,159 +13,173 @@ pygmentsUseClasses = false
 disableKinds = ["taxonomy", "term"]
 
 [params]
-	description = "My personal IndieWeb site. I write about and develop software to promote user autonomy. Topics include accessibility, security, privacy, and software freedom."
-	src = "https://sr.ht/~seirdy/seirdy.one/"
-	canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
-	webmentionEndpoint = "https://collector.seirdy.one/webmentions/receive"
-	logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
-	copyright = "Copyright © 2023 Rohan “Seirdy” Kumar"
-	dark = "auto"
-	highlight = false
-	icon = "/favicon.svg"
-	indieAuth = "https://indielogin.com/auth"
-	# hub = "https://websubhub.com/hub"
+description = "My personal IndieWeb site. I write about and develop software to promote user autonomy. Topics include accessibility, security, privacy, and software freedom."
+src = "https://sr.ht/~seirdy/seirdy.one/"
+canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
+webmentionEndpoint = "https://collector.seirdy.one/webmentions/receive"
+logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
+copyright = "Copyright © 2023 Rohan “Seirdy” Kumar"
+dark = "auto"
+highlight = false
+icon = "/favicon.svg"
+indieAuth = "https://indielogin.com/auth"
+# hub = "https://websubhub.com/hub"
 
 [frontmatter]
-	lastmod = ['lastmod', ':git', 'date', 'publishDate']
+lastmod = ['lastmod', ':git', 'date', 'publishDate']
 
 [author]
-	name = "Seirdy"
-	url = "https://seirdy.one/"
-	first = "Rohan"
-	last = "Kumar"
-	nick = "Seirdy"
-	email = "seirdy@seirdy.one"
+name = "Seirdy"
+url = "https://seirdy.one/"
+first = "Rohan"
+last = "Kumar"
+nick = "Seirdy"
+email = "seirdy@seirdy.one"
 
 [menu]
-	[[menu.main]]
-		identifier = "articles"
-		name = "Articles"
-		title = "articles"
-		url = "/posts/"
-		weight = 10
+[[menu.main]]
+identifier = "articles"
+name = "Articles"
+title = "articles"
+url = "/posts/"
+weight = 10
 
-	[[menu.main]]
-		identifier = "notes"
-		name = "Notes"
-		title = "notes"
-		url = "/notes/"
-		weight = 15
+[[menu.main]]
+identifier = "notes"
+name = "Notes"
+title = "notes"
+url = "/notes/"
+weight = 15
 
-	[[menu.main]]
-		identifier = "bookmarks"
-		name = "Bookmarks"
-		title = "bookmarks"
-		url = "/bookmarks/"
-		weight = 20
+[[menu.main]]
+identifier = "bookmarks"
+name = "Bookmarks"
+title = "bookmarks"
+url = "/bookmarks/"
+weight = 20
 
-	[[menu.main]]
-		identifier = "about"
-		name = "About"
-		title = "about"
-		url = "/about/"
-		weight = 30
+[[menu.main]]
+identifier = "about"
+name = "About"
+title = "about"
+url = "/about/"
+weight = 30
 
-	[[menu.main]]
-		identifier = "meta"
-		name = "Meta"
-		title = "meta"
-		url = "/meta/"
-		weight = 40
+[[menu.main]]
+identifier = "meta"
+name = "Meta"
+title = "meta"
+url = "/meta/"
+weight = 40
 
-	[[menu.main]]
-		identifier = "Support"
-		name = "Support"
-		title = "support"
-		url = "/support/"
-		weight = 50
+[[menu.main]]
+identifier = "Support"
+name = "Support"
+title = "support"
+url = "/support/"
+weight = 50
 
 [permalinks]
-	posts = "/posts/:year/:month/:day/:filename"
-	notes = "/notes/:year/:month/:day/:filename"
+posts = "/posts/:year/:month/:day/:filename"
+notes = "/notes/:year/:month/:day/:filename"
 
 [markup.goldmark.renderer]
-	xhtml = true
-	unsafe = true
+xhtml = true
+unsafe = true
 
 [markup.tableOfContents]
-	ordered = true
-	startLevel = 2
-	endLevel = 3
+ordered = true
+startLevel = 2
+endLevel = 3
 
 # lifted from https://git.sr.ht/~sircmpwn/drewdevault.com
 [mediaTypes]
 [mediaTypes."text/gemini"]
-	suffixes = ["gmi"]
+suffixes = ["gmi"]
 [mediaTypes."application/manifest+json"]
-	suffixes = ["webmanifest"]
+suffixes = ["webmanifest"]
 
 [outputFormats]
-	[outputFormats.Gemtext]
-		name = "GEMTEXT"
-		isPlainText = true
-		isHTML = false
-		mediaType = "text/gemini"
-		protocol = "gemini://"
-		permalinkable = true
-		path = "gemini/"
+[outputFormats.Gemtext]
+name = "GEMTEXT"
+isPlainText = true
+isHTML = false
+mediaType = "text/gemini"
+protocol = "gemini://"
+permalinkable = true
+path = "gemini/"
 
-	[outputFormats.atom]
-		baseName="atom"
-		isPlainText = true
-		mediaType = "application/xml"
+[outputFormats.atom]
+baseName="atom"
+isPlainText = true
+mediaType = "application/xml"
 
-	[outputformats.html]
-		mediaType = "application/xhtml+xml"
+[outputformats.html]
+mediaType = "application/xhtml+xml"
 
 [outputs]
-	home = ["HTML", "atom", "GEMTEXT", "RSS"]
-	section = ["HTML", "atom", "RSS"]
-	posts = ["HTML", "atom", "RSS"]
-	notes = ["HTML", "atom", "RSS"]
-	about = ["HTML", "atom", "RSS"]
-	meta = ["HTML", "atom", "RSS"]
+home = ["HTML", "atom", "GEMTEXT", "RSS"]
+section = ["HTML", "atom", "RSS"]
+posts = ["HTML", "atom", "RSS"]
+notes = ["HTML", "atom", "RSS"]
+about = ["HTML", "atom", "RSS"]
+meta = ["HTML", "atom", "RSS"]
 
 [security]
-	[security.funcs]
-		getenv = ['^JOB_URL$']
+[security.funcs]
+getenv = ['^JOB_URL$']
 
 # https://github.com/nekr0z/static-webmentions
 [webmentions]
-	newDir = "public"
-	oldDir = "old"
-	webmentionsFile = "mentions.json"
-	excludeSources = [
-		"/tags/*",                    # only trailing * are supported at the moment
-		"/posts/*",                     # this only excludes /posts/index.html, not /posts/somepost/
-		"/",                          # same as "/index.html"
-	]
+newDir = "public"
+oldDir = "old"
+webmentionsFile = "mentions.json"
+excludeSources = [
+	"/tags/*",                    # only trailing * are supported at the moment
+	"/posts/*",                     # this only excludes /posts/index.html, not /posts/somepost/
+	"/",                          # same as "/index.html"
+]
 
-	# addresses that we don't want to send webmentions to
-	# other schemes and stuff that I link to too often
-	excludeDestinations = [
-		"mailto:",
-		"gemini:",
-		"https://web.archive.org",
-		"https://lists.sr.ht/~seirdy/seirdy.one-comments",
-		"https://seirdy.one",
-	]
+# addresses that we don't want to send webmentions to
+# other schemes and stuff that I link to too often
+excludeDestinations = [
+	"mailto:",
+	"gemini:",
+	"https://web.archive.org",
+	"https://lists.sr.ht/~seirdy/seirdy.one-comments",
+	"https://seirdy.one",
+]
 
 [imaging.exif]
-	# Regexp matching the fields you want to Exclude from the (massive) set of Exif info
-	# available. As we cache this info to disk, this is for performance and
-	# disk space reasons more than anything.
-	# If you want it all, put ".*" in this config setting.
-	# Note that if neither this or ExcludeFields is set, Hugo will return a small
-	# default set: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
-	includeFields = ""
+# Regexp matching the fields you want to Exclude from the (massive) set of Exif info
+# available. As we cache this info to disk, this is for performance and
+# disk space reasons more than anything.
+# If you want it all, put ".*" in this config setting.
+# Note that if neither this or ExcludeFields is set, Hugo will return a small
+# default set: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
+includeFields = ""
 
-	# Regexp matching the Exif fields you want to exclude. This may be easier to use
-	# than IncludeFields above, depending on what you want.
-	excludeFields = ".*"
+# Regexp matching the Exif fields you want to exclude. This may be easier to use
+# than IncludeFields above, depending on what you want.
+excludeFields = ".*"
 
 # don't minify html but minify other resources
 # Don't minify atom feeds because it messes up whitespace in entry contents.
 [minify]
-	minifyOutput = true
-	disableXML = true
-	disableHTML = true
+minifyOutput = true
+disableXML = true
+disableHTML = true
+
+
+
+[segments]
+[segments.posts]
+[[segments.posts.includes]]
+output = 'html'
+path = '{/posts,/posts/**}'
+[[segments.notes.includes]]
+output = 'html'
+path = '{/notes,/notes/**}'
+[[segments.entries.includes]]
+output = 'html'
+path = '{/notes,/notes/**,/posts,/posts/**}'
