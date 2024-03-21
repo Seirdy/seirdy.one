@@ -88,4 +88,7 @@ Disallow: /
 # I'm not familiar enough with Omgili to make a call here.
 # In the long run, my embedded robots meta-tags and headers could cover gen-AI
 
+# I don't block cohere-ai or Perplexitybot: they don't appear to actually scrape data for LLM training purposes. The crawling powers search engines with integrated pre-trained LLMs.
+# TODO: investigate whether YouBot scrapes to train its own in-house LLM.
+
 Sitemap: https://seirdy.one/sitemap.xml
