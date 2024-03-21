@@ -275,6 +275,7 @@ adtension.com {#adtension}
 annihilation.social {#annihilation} OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
 : Hosts a blockbot user, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki). In light of this, I'm not inclined to give the benefit of doubt over the cross in his display name and [doubling down on vaguely antisemitic posts](https://web.archive.org/web/20230920191234/https://social.xenofem.me/notice/AZwvB187WVZNkbgCDg). [Another example of antisemitic caricatures from the admin](https://web.archive.org/web/20231103144028/https://annihilation.social/notice/AbMGtcC0mKuqdyKQxE).
+: [Blatant antisemitism from local user](https://web.archive.org/web/20240320005033/https://annihilation.social/notice/Af5EadUiy1vaqFtQxM).
 : dembased.xyz used to run the predecessor of annihilation.social. A few times since, a small experimental instance has been set up on a subdomain. Both are owned by the same person.
 
 anon-kenkai.net {#anon-kenkai}
