@@ -678,7 +678,7 @@ tastingtraffic.net {#tastingtraffic}
 theblab.org {#theblab}
 : Instance explicitly permits, and admin reblogs, openly ethno-nationalist/Nazi content from local users.
 : [TheBlab.org "about" page](https://ghostarchive.org/archive/AyVDy?wr=true) says: <q cite="https://theblab.org/about">The Blab is the place for refugees of places that claim to be free speech. After the shekelcaust of Gab an alternative was needed. This is that alternative.</q>.
-:  [Admin profile page](https://ghostarchive.org/archive/VKLRm?wr=true) contains multiple reblogs of local users posting racial slurs, Nazi imagery, and antisemitism. [More racism from local users].
+:  [Admin profile page](https://ghostarchive.org/archive/VKLRm?wr=true) contains multiple reblogs of local users posting racial slurs, Nazi imagery, and antisemitism. [More racism from local users](https://archive.today/2024.03.22-120858/https://theblab.org/@Weaponized_Honesty/112134020761568654).
 
 thechimp.zone {#thechimp-zone}
 : Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
