@@ -675,6 +675,11 @@ strelizia.net {#strelizia}
 tastingtraffic.net {#tastingtraffic}
 : Admin account is a high-activity news account full of hashtag spam. Frequently posts [far-right transphobia/queerphobia](https://archive.today/2023.09.18-151425/https://tastingtraffic.net/@InternationalTechNews/111086792935014280), [another example](https://web.archive.org/web/20230924135533/https://tastingtraffic.net/@InternationalTechNews/110968062234187455). The same content is frequently pasted in multiple posts per day.
 
+theblab.org {#theblab}
+: Instance explicitly permits, and admin reblogs, openly ethno-nationalist/Nazi content from local users.
+: [TheBlab.org "about" page](https://ghostarchive.org/archive/AyVDy?wr=true) says: <q cite="https://theblab.org/about">The Blab is the place for refugees of places that claim to be free speech. After the shekelcaust of Gab an alternative was needed. This is that alternative.</q>.
+:  [Admin profile page](https://ghostarchive.org/archive/VKLRm?wr=true) contains multiple reblogs of local users posting racial slurs, Nazi imagery, and antisemitism. [More racism from local users].
+
 thechimp.zone {#thechimp-zone}
 : Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
 : Admin [participates in queerphobic harassment](https://web.archive.org/web/20230812013407/https://thechimp.zone/notice/AYXFLeLaNjVnI4GewK).
