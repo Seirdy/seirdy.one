@@ -1,12 +1,12 @@
 {{- $now := now -}}
-{{- $buildCtx := "on my workstation" -}}
+{{- $buildCtx := `on <a href="../about/uses/#hardware">my workstation</a>` -}}
 {{- with getenv "JOB_URL" -}}
-	{{- $buildCtx = printf `<a href="%s">on builds.sr.ht</a>` . | safeHTML -}}
+	{{- $buildCtx = printf `on builds.sr.ht. <a href="%s">See build log</a>` -}}
 {{- end -}}
 <p>
 	This site was last built on
 	<time datetime="{{ $now.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ $now.UTC.Format "2006-01-02 15:04:05-07:00" | safeHTML }}</time>
 	by
 	<a href="https://github.com/gohugoio/hugo/tree/{{ .Site.Hugo.CommitHash }}">Hugo {{ .Site.Hugo.Version }}</a>
-	{{ $buildCtx }}.
+	{{ $buildCtx | safeHTML}}.
 </p>
