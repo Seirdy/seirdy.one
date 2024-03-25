@@ -19,6 +19,9 @@ RSYNCFLAGS_EXTRA ?=
 # Diminishing returns after level 6; sometimes even larger files.
 ECT_LEVEL=6
 
+# For quick builds, just build these sections:
+RENDER_SECTIONS=entries
+
 csv/webrings.csv:
 	sh scripts/populate-webrings.sh
 
@@ -29,7 +32,7 @@ data/bookmarks.json:
 hugo: csv/webrings.csv data/bookmarks.json $(SRCFILES)
 	sh scripts/get-webmentions.sh
 	hugo -b $(HUGO_BASEURL) $(HUGO_FLAGS) -d $(OUTPUT_DIR)
-	mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi
+	find "$(OUTPUT_DIR)/about/_index.gmi" && mv $(OUTPUT_DIR)/about/_index.gmi $(OUTPUT_DIR)/about/index.gmi || echo
 
 # .hintrc-local for linting local files
 # same as regular .hintrc but with a different connector.
@@ -128,6 +131,8 @@ compress: gzip brotli
 .PHONY: xhtmlize
 xhtmlize: hugo
 	sh scripts/xhtmlize.sh $(OUTPUT_DIR)
+
+.PHONY: quick-build
 
 .PHONY: copy-to-xhtml
 copy-to-xhtml:
