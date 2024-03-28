@@ -6,6 +6,13 @@ replyTitle: "Shorter fingerprinting (Hugo issue 6241)"
 replyType: "DiscussionForumPosting"
 replyAuthor: "XhmikosR"
 replyAuthorURI: "https://github.com/XhmikosR"
+syndicatedCopies:
+    - title: 'GitHub'
+      url: 'https://github.com/gohugoio/hugo/issues/6241#issuecomment-2024366155'
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AgIcAivbPcYOAwtSam'
+		- title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 
 I use a quick `crypto.FNV32a`-based fix for short cache-busting fingerprints that doesn't directly rely on the unstable `.Key` method.
