@@ -11,7 +11,7 @@ syndicatedCopies:
       url: 'https://github.com/gohugoio/hugo/issues/6241#issuecomment-2024366155'
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AgIcAivbPcYOAwtSam'
-		- title: 'IndieNews'
+    - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
 ---
 
