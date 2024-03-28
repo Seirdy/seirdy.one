@@ -1,0 +1,9 @@
+{
+	"contacts": [
+		{
+			"email_address": "seirdy@seirdy.one",
+			"matrix_id": "@seirdy:seirdy.one",
+			"role": "m.role.admin"
+		}
+	]
+}
