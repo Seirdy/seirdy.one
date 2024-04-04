@@ -7,6 +7,13 @@
 # no pipefail here since there are no pipes.
 set -e -u
 
+exit_on_connectivity_failure() {
+	echo "You are offline"
+	exit 0
+}
+
+sh scripts/connectivity-check.sh || exit_on_connectivity_failure
+
 dirname="$(dirname "$0")"
 curl_wrapper="$dirname/curl-wrapper.sh"
 auth_url='https://collector.seirdy.one/webmentions/authenticate/access-key'
