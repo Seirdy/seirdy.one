@@ -75,11 +75,13 @@ focus_first() {
 
 all_lines() {
 	endless_orbit
+	&>2 echo "fetched endless orbit"
 	focus_first
+	&>2 echo "fetched focus_first"
 }
 
 if [ "$dry_run" = '1' ]; then
-	endless_orbit
+	all_lines
 elif [ -f "$webrings_dest" ]; then
 	echo "webrings file already generated"
 else
