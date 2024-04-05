@@ -5,7 +5,7 @@
 # The response is cached for 90 minutes. If fetching fresh webmentions fails, fall back to the cached version for up to one day (1440 minutes). If cached webmentions are older than a day, error out.
 
 # no pipefail here since there are no pipes.
-set -e -u
+set -e
 
 exit_on_connectivity_failure() {
 	echo "You are offline"
@@ -15,6 +15,8 @@ exit_on_connectivity_failure() {
 if [ -z "$JOB_URL" ]; then
 	sh scripts/connectivity-check.sh || exit_on_connectivity_failure
 fi
+
+set -u
 
 dirname="$(dirname "$0")"
 curl_wrapper="$dirname/curl-wrapper.sh"
