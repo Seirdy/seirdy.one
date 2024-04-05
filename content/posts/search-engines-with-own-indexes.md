@@ -51,11 +51,13 @@ These are large engines that pass all my standard tests and more.
 
 Google
 : The biggest index. Allows submitting pages and sitemaps for crawling, and [even supports WebSub](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap) to automate the process. Powers a few other engines:
-  - [Startpage](https://www.startpage.com/), possibly the most popular Google proxy.[^2]
+  - A former version of [Startpage](https://www.startpage.com/), possibly the most popular Google proxy. Startpage now uses Bing[^2]
 
   - [GMX Search](https://search.gmx.com/web), run by a popular German email provider.
 
   - (discontinued) Runnaroo
+
+  - [Mullvad Leta](https://leta.mullvad.net/faq)
 
   - [SAPO](https://www.sapo.pt/) (Portuguese interface, can work with English results)
 
@@ -392,7 +394,6 @@ websearchengine.org OR tuxdex.com
 
 [Entfer](https://web.archive.org/web/20230810032916/https://entfer.com/)
 : a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
-
 
 ## Exclusions
 

@@ -26,8 +26,9 @@ These are large engines that pass all my standard tests and more.
 
 1. Google: the biggest index. Allows submitting pages and sitemaps for crawling, and even supports WebSub to automate the process. Powers a few other engines:
 
-* Startpage
+* *formerly* Startpage; it switched to Bing. Line the results up against DuckDuckGo or Ecosia to see for yourself.
 * GMX search
+* Mullvad Leta (leta.mullvad.com)
 * (discontinued) Runnaroo
 * SAPO (Portuguese interface, can work with English results)
 * DSearch
@@ -39,6 +40,7 @@ These are large engines that pass all my standard tests and more.
 
 * Yahoo (and its sibling engine, OneSearch)
 * DuckDuckGo³
+* Startpage
 * AOL
 * Qwant (partial)⁴
 * Ecosia
