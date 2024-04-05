@@ -12,7 +12,9 @@ exit_on_connectivity_failure() {
 	exit 0
 }
 
-sh scripts/connectivity-check.sh || exit_on_connectivity_failure
+if [ -z "$JOB_URL" ]; then
+	sh scripts/connectivity-check.sh || exit_on_connectivity_failure
+fi
 
 dirname="$(dirname "$0")"
 curl_wrapper="$dirname/curl-wrapper.sh"
