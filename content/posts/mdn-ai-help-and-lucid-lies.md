@@ -203,6 +203,6 @@ Thanks to {{<indieweb-person itemprop="mentions" name="Emily" url="https://uni.h
 
 [^3]: I recommend Chromium's Lighthouse for simple measurements, and the Firefox Performance Monitor for detailed analysis. Plenty of tools exist between those extremes.
 
-[^4]: This included my Webmention collector and my CSP-report collector (only used on my staging site and a dedicated CSP debugging page), which I moved to `collector.seirdy.one`. All that's left here is a static site, Libravatar endpoint (implemented in Nginx configs), single-user WebFinger endpoint (implemented with Nginx configs), Webmention endpoint, and a not-so-secret DNS resolver)
+[^4]: This included my Webmention collector and my CSP-report collector (only used on my staging site and a dedicated CSP debugging page), which I moved to `collector.seirdy.one`. All that's left here is a static site, Libravatar endpoint (implemented in Nginx configs), single-user WebFinger endpoint (implemented with Nginx configs), Webmention endpoint, and a not-so-secret DNS resolver
 
 
