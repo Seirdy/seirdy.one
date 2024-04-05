@@ -14,6 +14,8 @@ exit_on_connectivity_failure() {
 
 if [ -z "$JOB_URL" ]; then
 	sh scripts/connectivity-check.sh || exit_on_connectivity_failure
+else
+	echo "running in CI"
 fi
 
 set -u

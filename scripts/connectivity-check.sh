@@ -5,6 +5,8 @@
 # no pipefail here since there are no pipes.
 set -e -u
 
+echo "running connecivity check"
+
 ipv6_success=1
 ipv4_success=1
 
