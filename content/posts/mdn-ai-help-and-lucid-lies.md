@@ -13,6 +13,16 @@ tags:
 outputs:
     - html
     - gemtext
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/Agapi3dfjYXK6kulMG'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/9780/mdn-s-ai-help-and-lucid-lies'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/mdn-s-ai-help-and-lucid-lies/1013'
+
 ---
 <section role="doc-introduction" itemprop="backstory">
 
