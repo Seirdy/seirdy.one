@@ -251,7 +251,7 @@ Our recommendations need to take into account the fact that "privacy" means diff
 Ack&shy;nowledge&shy;ments {#acknowledgements}
 --------------------------
 
-My article could be considered a "derivative work" of {{<mention-work itemtype="Article" itemprop="citation" role="doc-credit">}}{{<cited-work name="Recommending Tools" url="https://sec.eff.org/articles/recommending-tools">}} by <span itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher">the EFF</span>{{</mention-work>}}. That article laid the foundations for my thought process.
+My article could be considered a "derivative work" of {{<mention-work itemtype="Article" itemprop="citation" role="doc-credit">}}{{<cited-work name="Recommending Tools" url="https://sec.eff.org/articles/recommending-tools">}} by <span itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher"><span itemprop="name">the EFF</span></span>{{</mention-work>}}. That article laid the foundations for my thought process.
 
 This article is an expansion of the ideas I presented in the microblog entry {{<mention-work itemtype="SocialMediaPosting">}}{{<cited-work name="On tracker blocking" url="../../../../../notes/2022/06/06/on-tracker-blocking/">}}{{</mention-work>}}. That microblog entry was a response to the article {{<mention-work itemtype="Article" itemprop="citation" role="doc-credit">}}{{<cited-work name="Browser Tracking" url="https://madaidans-insecurities.github.io/browser-tracking.html">}} by {{<indieweb-person name="Madaidan" url="https://madaidans-insecurities.github.io/">}}{{</mention-work>}}; this article's coverage of TE draws from that article.
 
