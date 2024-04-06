@@ -77,7 +77,7 @@ The assistive technology implications are an afterthought that don't get equal t
 
 ## Conflating broad and specific questions
 
-Broad questions already tend to have more documentation than specific questions. Trained on this understandably-biased documentation, AI Help tends to fall flat when asked for any overly specific advice.
+Broad questions already tend to have more documentation than specific questions. Trained on this understandably biased documentation, AI Help tends to fall flat when asked for any overly specific advice.
 
 ### Example: asking about specific page speed metrics
 
@@ -125,7 +125,7 @@ Here's what AI Help had to say:
 >
 > 3. Regularly review and update security practices: Stay informed about the latest security best practices and updates related to 0-RTT and TLS to ensure that your static site remains secure. For more detailed information on 0-RTT and its security implications, you can refer to the [TLS 1.3 specification](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) on MDN.
 
-This is the most clear-cut lie that MDN's AI Help has told me so far. Simple static sites represent some of the safest uses of 0-RTT, without any extra backend protections: replaying a simple request for a static asset doesn't help an attacker until we introduce other complexities to our backend.
+This is the most clear-cut lie that MDN's AI Help has told me so far. Static sites represent some of the safest uses of 0-RTT, without any extra backend protections: replaying a request for a static asset doesn't help an attacker until we introduce other complexities to our backend.
 
 On MDN and the Web in general, advice on 0-RTT tends to be general to all sites, or apply to common CMS platforms; little applies specifically to static sites. MDN gave us generic advice that only applies to a complex CMS when asked specifically about static sites.
 
@@ -136,7 +136,7 @@ An LLM may be able to answer simpler questions, such as:
 - <q>What is a static site?</q>
 - <q>Are static sites vulnerable to replay attacks?</q>
 
-The ability to answer such questions isn't unique. Asking a chatroom, a forum, or even a simple link-and-summary search engine should pull up useful information.
+The ability to answer such questions isn't unique. Asking a chatroom, a forum, or even a link-and-summary search engine should pull up useful information.
 
 An LLM cannot be trusted to synthesize different concepts without conflating them, or to switch from broad to specific concepts. Pseudo-hallucinations fill the gap.
 
@@ -170,7 +170,7 @@ I do like the tool's ability to suggest links to relevant MDN pages. Perhaps it 
 
 ### Implications for LLMs as a whole
 
-Some topics get written about more than others. Our society disproportionately incentivizes generic, far-reaching, easy-to-create, and profitable content. I don't think it's currently possible to source nontrivial training data without biases. More importantly: I'm skeptical that such an impossibly comprehensive data set would entirely eliminate the conflations I described in this article. Tripping over bias to fall into a lucid lie is one of a range of symptoms of an inability to actually think.
+Some topics get written about more than others. Our society disproportionately incentivizes generic, far-reaching, easy-to-create, and profitable content. I don't think it's currently possible to source nontrivial training data without biases. More importantly: I'm skeptical that such an impossibly comprehensive data set would eliminate the conflations I described in this article. Tripping over bias to fall into a lucid lie is one of a range of symptoms of an inability to actually think.
 
 {{<quotation>}}
 
@@ -184,7 +184,7 @@ The model, <i>per se,</i> doesn't exist until after the training process is comp
 {{< /quotecaption >}}
 {{</quotation>}}
 
-Current LLMs can't critically examine training data and its biases. For humans, such critical analysis is often difficult; for machines, it's **currently impossible.** Until we make such a breakthrough, LLMs can never be remotely honest. Nobody should consider deploying an LLM to perform a role that demands significant accountability. Answering questions honestly and accurately demands accountability for dishonest and inaccurate answers, so this responsibility shouldn't be delegated to an LLM. To market an LLM as capable of answering questions reflects dishonesty or ignorance; neither inspires trust. Hallucinations are one thing, but miscategorizing facts due to an inability to critically analyze biases and topic relations in training data is something that no amount of reinforcement learning will fix. These are lucid lies.
+Current LLMs can't critically examine training data and its biases. For humans, such critical analysis is often difficult; for machines, it's **currently impossible.** Until we make such a breakthrough, LLMs can never be remotely honest. Nobody should consider deploying an LLM to perform a role that demands significant accountability. Answering questions honestly and accurately demands accountability for dishonest and inaccurate answers, so this responsibility shouldn't fall to LLM. To market an LLM as capable of answering questions reflects dishonesty or ignorance; neither inspires trust. Hallucinations are one thing, but miscategorizing facts due to an inability to critically analyze biases and topic relations in training data is something that no amount of reinforcement learning will fix. These are lucid lies.
 
 This article on AI focused on the inherent untrustworthiness of LLMs. Stay tuned for a follow-up article about AI that focuses on data-scraping and the theory of labor. It'll examine what makes many forms of generative AI ethically problematic, and the constraints employed by more ethical forms. I'll edit this paragraph with a link to the follow-up post when it's ready.
 
@@ -196,7 +196,7 @@ This article on AI focused on the inherent untrustworthiness of LLMs. Stay tuned
 
 Thanks to {{<indieweb-person itemprop="mentions" name="Athena Martin" url="https://www.alm.website/me">}} for providing feedback on an initial draft. She helped me better communicate the idea that LLMs are statistical models, not thinking machines. With her permission, I borrowed a quote from her feedback to use in my conclusion.
 
-Thanks to {{<indieweb-person itemprop="mentions" name="Emily" url="https://uni.horse/">}} for highlighting that biased data shouldn't be depicted as the root of the issue; the issue is an LLM's inability to think. I agreed, and reworded (and re-titled) much of this article in response.
+Thanks to {{<indieweb-person itemprop="mentions" name="Emily" url="https://uni.horse/">}} for highlighting that biased data isn't the root of the issue; the issue is an LLM's inability to think. I agreed, and reworded (and re-titled) much of this article in response.
 
 </section>
 
