@@ -176,11 +176,11 @@ Some topics get written about more than others. Our society disproportionately i
 
 <blockquote itemprop="text">
 
-The model, _per se,_ doesn't exist until after the training process is completed, and has no ability to make such decisions at all. It bases its statistical model of language on the entirety of the training data with no discrimination, except maybe a little outlier exclusion.
+The model, <i>per se,</i> doesn't exist until after the training process is completed, and has no ability to make such decisions at all. It bases its statistical model of language on the entirety of the training data with no discrimination, except maybe a little outlier exclusion.
 
 </blockquote>
 {{< quotecaption partOfType="SocialMediaPosting">}}
-{{<indieweb-person itemprop="mentions" name="Athena Martin" url="https://alm.website/me">}} in a {{<cited-work name="Fediverse DM">}}
+{{<indieweb-person itemprop="mentions" name="Athena Martin" url="https://www.alm.website/me">}} in a {{<cited-work name="Fediverse DM">}}
 {{< /quotecaption >}}
 {{</quotation>}}
 
@@ -194,7 +194,7 @@ This article on AI focused on the inherent untrustworthiness of LLMs. Stay tuned
 
 ## Ack&shy;nowledge&shy;ments {#acknowledgements}
 
-Thanks to {{<indieweb-person itemprop="mentions" name="Athena Martin" url="https://alm.website/me">}} for providing feedback on an initial draft. She helped me better communicate the idea that LLMs are statistical models, not thinking machines. With her permission, I borrowed a quote from her feedback to use in my conclusion.
+Thanks to {{<indieweb-person itemprop="mentions" name="Athena Martin" url="https://www.alm.website/me">}} for providing feedback on an initial draft. She helped me better communicate the idea that LLMs are statistical models, not thinking machines. With her permission, I borrowed a quote from her feedback to use in my conclusion.
 
 Thanks to {{<indieweb-person itemprop="mentions" name="Emily" url="https://uni.horse/">}} for highlighting that biased data shouldn't be depicted as the root of the issue; the issue is an LLM's inability to think. I agreed, and reworded (and re-titled) much of this article in response.
 
