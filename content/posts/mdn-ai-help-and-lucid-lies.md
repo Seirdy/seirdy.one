@@ -9,6 +9,7 @@ replyAuthor: "Steve Teixeira"
 replyAuthorURI: "https://mozilla.social/@stevetex"
 tags:
     - accessibility
+    - web
     - AI
 outputs:
     - html
@@ -16,13 +17,16 @@ outputs:
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/Agapi3dfjYXK6kulMG'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/a4kxhs/mdn_s_ai_help_lucid_lies'
     - title: 'jstpst'
       url: 'https://www.jstpst.net/f/just_post/9780/mdn-s-ai-help-and-lucid-lies'
     - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
     - title: 'The Mojeek Discourse'
       url: 'https://community.mojeek.com/t/mdn-s-ai-help-and-lucid-lies/1013'
-
+    - title: 'Tildes'
+      url: 'https://tildes.net/~comp/1ffp/mdns_ai_help_and_lucid_lies'
 ---
 <section role="doc-introduction" itemprop="backstory">
 
@@ -130,7 +134,7 @@ This is also partly a hallucination: MDN has no documentation on what a replay a
 An LLM may be able to answer simpler questions, such as:
 
 - <q>What is a static site?</q>
-- <q>Are static sites vulnerable to reply attacks?</q>
+- <q>Are static sites vulnerable to replay attacks?</q>
 
 The ability to answer such questions isn't unique. Asking a chatroom, a forum, or even a simple link-and-summary search engine should pull up useful information.
 

@@ -111,7 +111,7 @@ This is also partly a hallucination: MDN has no documentation on what a replay a
 An LLM may be able to answer simpler questions, such as:
 
 * "What is a static site?"
-* "Are static sites vulnerable to reply attacks?"
+* "Are static sites vulnerable to replay attacks?"
 
 The ability to answer such questions isn't unique. Asking a chatroom, a forum, or even a simple link-and-summary search engine should pull up useful information.
 
