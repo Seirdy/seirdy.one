@@ -326,6 +326,8 @@ Unfortunately, pages with lazy loading don't finish loading off-screen images in
 
 ### Against speculative pre-loading
 
+<ins itemprop="correction" itemscope="" itemtype="https://schema.org/CorrectionComment">Update <time itemprop="datePublished">2024-04-06</time>: I've updated my stance on this. If you use the [Speculation Rules API](https://wicg.github.io/nav-speculation/speculation-rules.html), preloading will obey user preferences in a standard cross-site way.</ins>
+
 A common objection to my case against lazy-loading is that users may be more likely to click a link than scroll to the end, so pages should prioritize pre-loading the link. Pre-loading a page's essential resources is fine. Speculatively pre-loading content on separate pages isn't.
 
 Many users with poor connections also have capped data, and would prefer that pages don't decide to predictively load many pages ahead-of-time for them. The overlap between these two groups grows especially pronounced as data cap overages trigger throttling; this is enough to trigger [a seasonal pattern in Japan](https://web.archive.org/web/20220402004738/https://nitter.pussthecat.org/yoavweiss/status/1195036487538003968).
