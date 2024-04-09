@@ -68,16 +68,17 @@ Try reproducing the bug on the following pages:
 2. [This page's canonical location](https://seirdy.one/meta/csp-bug-reproduction/).
 3. [My homepage](https://seirdy.one/)
 4. [This page, but with an empty `sandbox` directive](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=strict)
+4. [This page, but with a maximally strict CSP that breaks images, CSS, and more](https://seirdy.one/meta/csp-bug-reproduction/?sandbox=broken)
 
 Note the following:
 
-- If you can reproduce the bug on all four pages: the offending directives include a fetch directive.
+- If you can reproduce the bug on all five pages: the offending directives include a fetch directive.
 
 - If you can reproduce the bug on all pages _except_ the third or fourth: the offending directive is probably a `sandbox` directive's `allow-scripts` or `allow-same-origin` parameter, respectively.
 
 - If you can reproduce the bug on the second page but cannot reproduce the bug on the first page, [a different missing `sandbox` parameter](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox) is probably the culprit.
 
-- If you can only reproduce the bug on my 404 page: the offending directive is `sandbox` without `allow-same-origin`.
+- If you can only reproduce the fourth and fifth page: the offending directive is `sandbox` without `allow-same-origin`.
 
 Other places to test
 --------------------
