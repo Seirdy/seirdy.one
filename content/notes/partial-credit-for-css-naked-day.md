@@ -1,6 +1,11 @@
 ---
 title: "Partial credit for CSS Naked Day"
 date: 2024-04-09T00:00:01-04:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AghSP3X5WSt51T4cwC'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 
 For [CSS Naked Day](https://css-naked-day.github.io/), I decided to do something a little different. I didn't want to actually disable my stylesheet: very long lines of small text aren't terribly accessible, and fingerprinting-averse readers of my Onion site may not wish to zoom in (I know for a fact that these people exist; I've spoken to them, and I don't like reducing my readers to numbers in an analytics dashboard).
