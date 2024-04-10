@@ -16,7 +16,7 @@ sitemap:
 ---
 I moderate the "pleroma.envs.net" Akkoma instance on the Fediverse, as <a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy@pleroma.envs.net</a>.
 
-I maintain four main blocklists for the Fediverse. Do not import them until you've read everything until the "receipts" section.
+I maintain four main blocklists for the Fediverse. Do not import them until you've read everything until the "receipts" section. I encourage blocklist skeptics to read the "receipts" sections, and to treat them as lists of reported content rather than importable blocklists.
 
 
 [The `pleroma.envs.net` blocklist](https://seirdy.one/pb/pleroma.envs.net.csv)
