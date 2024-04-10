@@ -353,7 +353,7 @@ crlf.ninja {#crlf}
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances.
 : Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76).
 : [Admin publicizes blocks](https://archive.ph/hASVN).
-: [Admin uses triple-paren antisemitic dogwhistle](
+: [Admin uses triple-paren antisemitic dogwhistle](http://archive.today/2024.04.10-201320/https://crlf.ninja/notice/AgWVbdmSKxK4JegxU0).
 
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
