@@ -349,6 +349,12 @@ clubcyberia.co {#clubcyberia}
 cottoncandy.cafe {#cottoncandy}
 : [pro-contact MAP admin](https://archive.ph/2023.12.02-032342/https://monk.ey.business/users/AbX87tTlQhM3rfD02y), [pro-contact user](https://archive.today/2023.12.02-032427/https://monk.ey.business/users/Abk2pkdrZc2eWowPYG). [Instance local bubble](https://archive.today/2023.12.02-032716/https://cottoncandy.cafe/about) shows that the admin endorses other pro-contact instances.
 
+crlf.ninja {#crlf}
+: Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances.
+: Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76).
+: [Admin publicizes blocks](https://archive.ph/hASVN).
+: [Admin uses triple-paren antisemitic dogwhistle](
+
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
 : [More transphobia from admin](https://web.archive.org/web/20230730232208/https://crucible.world/notice/AYES99sUhEtMulC7M0)
@@ -678,7 +684,7 @@ tastingtraffic.net {#tastingtraffic}
 theblab.org {#theblab}
 : Instance explicitly permits, and admin reblogs, openly ethno-nationalist/Nazi content from local users.
 : [TheBlab.org "about" page](https://ghostarchive.org/archive/AyVDy?wr=true) says: <q cite="https://theblab.org/about">The Blab is the place for refugees of places that claim to be free speech. After the shekelcaust of Gab an alternative was needed. This is that alternative.</q>.
-:  [Admin profile page](https://ghostarchive.org/archive/VKLRm?wr=true) contains multiple reblogs of local users posting racial slurs, Nazi imagery, and antisemitism. [More racism from local users](https://archive.today/2024.03.22-120858/https://theblab.org/@Weaponized_Honesty/112134020761568654).
+: [Admin profile page](https://ghostarchive.org/archive/VKLRm?wr=true) contains multiple reblogs of local users posting racial slurs, Nazi imagery, and antisemitism. [More racism from local users](https://archive.today/2024.03.22-120858/https://theblab.org/@Weaponized_Honesty/112134020761568654).
 
 thechimp.zone {#thechimp-zone}
 : Admin [sends transphobic pedojacketing harassment to trans users](https://web.archive.org/web/20230811225851/https://thechimp.zone/notice/AYdPIQYHNfAO7u4C5Q), with racial slurs to boot.
@@ -723,20 +729,17 @@ yggdrasil.social {#yggdrasil}
 
 ### Tier-0 entries, excluding FediNuke
 
-This section has barely been started.
+This section is very unfinished. Receipt criteria and threshold is weaker than FediNuke. I encourage most admins to scroll through this list and decide what is or is not acceptable for their instance.
 
 {{< nofollow >}} {{< dd-id >}}
 
 
 baraag.net {#baraag}
-: Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](https://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction.
+: Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](https://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction. Consider blocking media if you wish to federate.
 
 berserker.town {#berserker}
 : [Refuses to moderate hate speech](https://web.archive.org/web/20230730180929/https://berserker.town/@mayonesa/107949925239774313) (the post in question has received reports, but [the admin tends to dig his heels in](https://web.archive.org/web/20230730185902/https://berserker.town/@thor/110731212646060568) when it comes to this stuff). [About page](https://web.archive.org/web/20230730181711/https://berserker.town/about) doesn't ban such content.
 : Permissive policies have made space for [anti-diversity eugenics dogwhistles](https://archive.today/2023.08.10-192342/https://berserker.town/@mayonesa/110730803970638239) evolving into [xenophobic eugenics](https://web.archive.org/web/20230810192310/https://berserker.town/@mayonesa/110667720613227224).
-
-crlf.ninja {#crlf}
-: Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances. Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76). [Admin publicizes blocks](https://archive.ph/hASVN).
 
 federated.fun {#federated-fun} OR wikileaks2.org
 : [Blatant transphobia from admin](https://web.archive.org/web/20230731162711/https://federated.fun/notice/AX46KDxhSkSNkxbSvw). Admin profile [pinned an extremely transphobic post](https://web.archive.org/web/20230805061250/https://ryona.agency/notice/AYMq4VFzPr2yEcvG3k).
@@ -774,7 +777,7 @@ novoa.nagoya {#novoa}
 occultist.space {#occultist-space} OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol (FediNuke). Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
 
-shitposter.club {#spc}
+shitposter.club {#spc} OR shitposter.world
 : [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [More transphobia from other users](https://web.archive.org/web/20230831030108/https://shitposter.club/notice/AZCc1yv50GaHraJnf6).
 : User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
 : [Hosts user "Amerika", an outspoken eugenicist and nationalist](https://ghostarchive.org/archive/sIgyp). See receipts for their other account in [the FediNuke entry for noagendasocial.com](#nas).
@@ -783,12 +786,20 @@ shitposter.club {#spc}
 : [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
 : [Some more racism from user "triodug"](https://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
 : Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
+: shitposter.world is the successor to shitposter.club following technical difficulties: [background information](https://archive.today/2024.04.01-022457/https://shitposter.world/notice/AgQHvGpoVFEjzZvXlI) and [admin confirmation](https://archive.today/2024.04.01-143407/https://shitposter.world/notice/AgPLQomASwKKwMzqSm).
+: [shitposter.world rejects deletes](https://web.archive.org/web/20240331172752/https://shitposter.world/about) with the NoIncomingDeletes MRF policy; [source code of the MRF policy](https://web.archive.org/web/20240403195604/https://gitgud.io/Zero/pleroma/-/raw/stable/lib/pleroma/web/activity_pub/mrf/no_incoming_deletes.ex).
 
 shota.house {#shota-house} OR burger.rodeo
 : Instance [self-identifies as a freeze peach haven](https://archive.today/2023.07.19-100816/https://shota.house/about) that permits unrealistic/2D lolisho; this may be a legal risk, depending on your jurisdiction.
 : [Staff defends permitting bigotry while dismissing concerns about hate-speech](https://web.archive.org/web/20230805192932/https://shitposter.club/notice/AWUxNv5hDmQJygRNdg). With that context, reporting won't address problems like [racist Black fetishism](https://web.archive.org/web/20230805201903/https://clubcyberia.co/notice/AYPLQckGRDb9Dm2gU4) from one user.
 : Harassment risk seems low, however, and admins claim that the instance will moderate harassment but not "opinion".
 : [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
+
+soc0.outrnat.nl {#outrnat}
+: Alleging [reverse-racism](http://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9e9oqn5357).
+: Appears to be [the former admin of springbo.cc](http://archive.today/2023.06.29-052017/https://soc.outrnat.nl/notes/9gk8lk7of10cdo9l), with a self-professed fascist.
+: Admin was [a member of Prometheus Information Systems](http://archive.today/2023.08.03-191608/https://akko.disqordia.space/notice/AYD8SJUeraaSZI8OXY).
+: Admin [encourages spamming hashtags](http://archive.today/2023.06.29-152421/https://outerkosm.us/notes/9d7pl7vzvq), [more spam encouragement](http://archive.today/2023.06.29-152405/https://outerkosm.us/notes/9d5wudn8rj), [defending RMS](http://archive.today/2023.06.29-152333/https://outerkosm.us/notes/9dg381vtpy), [the "millions must die" dogwhistle](http://archive.today/2023.06.29-152304/https://outerkosm.us/notes/9d8u8wml55), ["they're not sending their best"](http://archive.today/2023.06.29-152253/https://outerkosm.us/notes/9d7mgkbjpp), [retaliatory CSEM accusations](http://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9d68zgq9lo).
 
 someotherguy.xyz {#someotherguy}
 : Xenophobic ["build the wall" admin](https://archive.today/2023.12.25-063556/https://pleroma.someotherguy.xyz/notice/Ad7t2XHnqOn3Rw3paK).
