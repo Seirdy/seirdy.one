@@ -39,7 +39,7 @@ I maintain four main blocklists for the Fediverse. Do not import them until you'
 [`tier1.csv`](https://seirdy.one/pb/tier1.csv)
 : Identical to `tier0.csv`, except with the addition of some instances that I believe require an admin to make a more informed decision, or at least be aware of should they abstain from moderating. Either they are contentious entries or have detailed context I can't distill into a few pithy sentences like other entries. Entries of lower severity may also end up here.
 
-All lists, just like all my content on seirdy.one, are CC-BY-SA licensed. Feel free to use them in your own projects accordingly.
+All these lists, just like all my content on seirdy.one, are CC-BY-SA licensed. However, I'd rather you not use them in another blocklist-related project without contacting me first. I made a lot of decisions about how these blocklists work and learned some tough lessons; I'd rather not see someone repeat my mistakes.
 
 This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats. It also contains a work-in-progress list of receipts for instances in FediNuke and my Tier-0.
 
@@ -426,7 +426,7 @@ gearlandia.haus {#gearlandia}
 
 geofront.rocks {#geofront}
 : Well-known Nazi instance.
-: [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O). All from what seems to be the primary active user of the instance.
+: [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O), [more racism](https://ghostarchive.org/archive/RGPfP). All from what seems to be the primary active user of the instance.
 : Another user has a [blatantly Nazi profile](https://web.archive.org/web/20230802235236/https://geofront.rocks/@flux) featuring violent transphobic shock content.
 
 gameliberty.club {#gameliberty}
@@ -718,7 +718,8 @@ vtuberfan.social {#vtuberfan}
 : Saige [posts homophobic bait](https://web.archive.org/web/20230726201224/https://vtuberfan.social/notice/AY1h5fIkwcCpslSSlU).
 
 wolfgirl.bar {#wolfgirl}
-: Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c). [Sends Nazi imagery with racial slurs to Jewish users](https://archive.ph/YaGJ7).
+: Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c). [Sends Nazi imagery with racial slurs to Jewish users](https://web.archive.org/web/20230731190102/https://wolfgirl.bar/notice/AYCbKZqp4ty1mhrJE8) while defending slavery.
+: 
 
 yggdrasil.social {#yggdrasil}
 : The first rule of [the yggdrasil.social "about" page](https://web.archive.org/web/20230819213623/https://yggdrasil.social/about) says "No LGBTQ. Period. No homosexuality" followed by blatant transphobia.
