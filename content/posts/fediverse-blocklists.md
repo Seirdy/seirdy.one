@@ -719,7 +719,6 @@ vtuberfan.social {#vtuberfan}
 
 wolfgirl.bar {#wolfgirl}
 : Admin [participates in racist harassment](https://web.archive.org/web/20230731171233/https://needs.vodka/notice/AYFBR71kngKIwM7Moa), posting [openly Nazi bigoted slur-filled content](https://web.archive.org/web/20230731170555/https://wolfgirl.bar/notice/AUj1Rrjrtm87kjCF9c). [Sends Nazi imagery with racial slurs to Jewish users](https://web.archive.org/web/20230731190102/https://wolfgirl.bar/notice/AYCbKZqp4ty1mhrJE8) while defending slavery.
-: 
 
 yggdrasil.social {#yggdrasil}
 : The first rule of [the yggdrasil.social "about" page](https://web.archive.org/web/20230819213623/https://yggdrasil.social/about) says "No LGBTQ. Period. No homosexuality" followed by blatant transphobia.
