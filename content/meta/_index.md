@@ -122,3 +122,15 @@ Like Not By AI, [Nonbot.org](https://nonbot.org/) offers badges to indicate that
 
 {{</image-figure>}}
 
+{{<image-figure id="html-hobbyist">}}
+
+{{<picture name="html-hobbyist" alt="Stylized text reading “I am an HTML hobbyist” on top of a solid orange upside-down house-shaped pentagon, and a globe in the upper-right.">}}
+
+<figcaption itemprop="caption">
+
+As per [the HTML Hobbyist website](https://www.htmlhobbyist.com/): I <q cite="https://www.htmlhobbyist.com/">pledge to make a simple, honest website with the proper use of HTML, the use of CSS only where essential, and the use of JavaScript _only where it’s absolutely necessary._</q> CSS on seirdy.one is optional, and JavaScript on public pages is non-existent.
+
+</figcaption>
+
+{{</image-figure>}}
+
