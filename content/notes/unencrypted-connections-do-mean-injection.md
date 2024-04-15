@@ -7,6 +7,11 @@ replyType: "SocialMediaPosting"
 replyAuthor: "dflxh"
 replyAuthorURI: "https://lethallava.land/@dflxh"
 replyDate: "2024-04-15T08:52:40-04:00"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AgIhXz3q628odren2G'
+    - title: 'IndieNews'
+      url: 'https://news.indieweb.org/en'
 ---
 [My previous response to similar concerns]({{<relref "/notes/on-enforcing-https.md">}}) is relevant. To elaborate:
 

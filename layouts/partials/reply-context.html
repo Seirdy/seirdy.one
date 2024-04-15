@@ -19,7 +19,8 @@
 		<span itemprop="{{ $replyAuthorRel }}" itemscope="" itemtype="https://schema.org/{{ $replyAuthorType }}" class="h-card vcard p-author">
 			<a itemprop="url" href="{{ .replyAuthorURI }}" class="u-url url">
 				<span itemprop="name" class="p-name fn n">{{ .replyAuthor }}</span></a>
-		</span>{{ end }}
+		</span>{{ end }}{{ with .replyDate -}}
+		{{- $replyDate := time.AsTime . -}}, posted <time datetime="{{ $replyDate.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ $replyDate.UTC.Format "2006-01-02" | safeHTML }}</time>{{ end }}
 	</span>
 </p>
 </aside>
