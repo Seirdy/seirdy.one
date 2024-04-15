@@ -6,10 +6,14 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 
 ## Environment
 
-* OS: Fedora, latest stable release.
-* Wayland compositor: Sway
-* Shell: zsh (interactive), dash (non-interactive/shell-scripts)
-* Terminal Emulator: Foot. Sometimes gnome-terminal when I'm using a screen reader.
+I don't currently use a prebuilt desktop environment. I assemble mine out of the following components:
+
+* Fedora: Primary OS, latest stable version. Uses Linux, Systemd, GNU libc, GNU coreutils, dnf, firewalld, and SELinux.
+* Sway: Dynamic Wayland compositor that focuses on tiling window management but also supports tabbed and stacking layouts.
+* Zsh: Login shell. POSIX-compatible and mostly Bash-compatible. Custom static build to skip checking system files and improve startup performance.
+* DASH: Minimal POSIX-compatible shell that I use for non-interactive purposes (e.g. shell scripts). When statically-linked, its startup time is negligible even on the most underpowered hardware. This is really important to me, since many of my most-used commands are shell-script wrappers that I expect to run in a few milliseconds.
+* Foot: Primary terminal emulator. Sometimes I use gnome-terminal when I'm using a screen reader.
+* i3status-rust: Status bar. It's more efficient to use this single program than to shell out to a dozen utilities. Given the widgets I cram into it, it's more lightweight than most alternatives.
 
 ## Basic utilities:
 

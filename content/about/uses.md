@@ -14,6 +14,8 @@ My main computer is a 2013 HP Elitebook 840 G1. It has a dual-core Intel i5-4300
 
 ## Environment
 
+I don't currently use a prebuilt desktop environment. I assemble mine out of the following components:
+
 
 Fedora
 : Primary OS, latest stable version. Uses Linux, Systemd, GNU libc, GNU coreutils, dnf, firewalld, and SELinux.
@@ -29,6 +31,9 @@ DASH
 
 Foot
 : Primary terminal emulator. Sometimes I use gnome-terminal when I'm using a screen reader.
+
+i3status-rust
+: Status bar. It's more efficient to use this single program than to shell out to a dozen utilities. Given the widgets I cram into it, it's more lightweight than most alternatives.
 
 ## Basic utilities
 
@@ -59,6 +64,9 @@ Toolbox
 
 Orca
 : Screen reader. Great for when I'm dealing with overstimulation and need to "turn everything off" for a while. I don't actually rely on this to use my machine.
+
+Nheko
+: One of the few Matrix clients that supports custom room emotes (both inline and in reactions) and stickers.
 
 ## Multimedia
 
