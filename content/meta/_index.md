@@ -48,7 +48,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 - [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
 - [textonly.website](https://textonly.website/)
-- [Responsive Web Directory](https://kalechips.net/responsive/) (pending)
+- [Responsive Web Directory](https://kalechips.net/responsive/)
 - [Indieweb Webring Directory](https://xn--sr8hvo.ws/directory)
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
