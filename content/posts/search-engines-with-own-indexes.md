@@ -65,6 +65,8 @@ Google
 
   - [13TABS](https://www.13tabs.com/)
 
+  - [Zarebin](https://zarebin.ir/) (Persian, can return English results)
+
   - A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
 
 Bing
@@ -392,7 +394,6 @@ websearchengine.org OR tuxdex.com
 
 [Entfer](https://web.archive.org/web/20230810032916/https://entfer.com/)
 : a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
-
 
 Dead engines I don't have an extended description for:
 

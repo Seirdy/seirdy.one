@@ -33,6 +33,7 @@ These are large engines that pass all my standard tests and more.
 * SAPO (Portuguese interface, can work with English results)
 * DSearch
 * 13TABS
+* Zarebin.ir (Persian, can return English results)
 * A host of other engines using Programmable Search Engine's client-side scripts.
 => https://developers.google.com/custom-search/ Programmable Search Engine
 
