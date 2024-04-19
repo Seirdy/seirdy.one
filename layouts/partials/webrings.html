@@ -14,11 +14,8 @@
 	<ol>
 	{{- range $i, $r := $webringData }}
 		{{- $webringName := index $r 0 }}
-		<li>{{- $webringName -}}
+		<li><a href="{{- index $r 2 -}}">{{- $webringName }} webring home</a>
 				<ol>
-					<li>
-						<a href="{{- index $r 2 -}}">{{- $webringName }} webring home</a>
-					</li>
 					<li>
 						<a href="{{- index $r 1 -}}" rel="nofollow ugc" referrerpolicy="{{ $refPol }}">Previous {{ $webringName }} site</a>
 					</li>
