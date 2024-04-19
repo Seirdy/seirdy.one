@@ -123,6 +123,18 @@ crushy blushy fedi idol
 
 <blockquote itemprop="text">
 
+Meow, you're kind of cool?
+
+</blockquote>
+{{< quotecaption>}}
+{{<indieweb-person name="Laura" url="https://artemislena.eu/plurality.html" itemprop="author">}}
+{{< /quotecaption >}}
+{{</quotation>}}
+
+{{<quotation>}}
+
+<blockquote itemprop="text">
+
 Seirdy is like if you made a mod a person. It’s really horrifying.
 
 </blockquote>
