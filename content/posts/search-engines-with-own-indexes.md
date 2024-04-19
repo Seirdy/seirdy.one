@@ -311,8 +311,6 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [Vuhuv](https://www.vuhuv.com.tr/): Turkish. [alt domain](https://tr.vuhuv.com/)
 
-- [Parsijoo](https://www.parsijoo.ir/): Persian
-
 - [search.ch](https://www.search.ch): Regional search engine for Switzerland; users can restrict searches to their local regions.
 
 - [fastbot](https://www.fastbot.de/): German
@@ -394,6 +392,11 @@ websearchengine.org OR tuxdex.com
 
 [Entfer](https://web.archive.org/web/20230810032916/https://entfer.com/)
 : a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
+
+
+Dead engines I don't have an extended description for:
+
+- [Parsijoo](https://www.parsijoo.ir/): Persian search engine.
 
 ## Exclusions
 

@@ -277,14 +277,12 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 
 * ALibw.com: Chinese, found in my access logs.
 * Vuhuv: Turkish
-* Parsijoo: Persian
 * search.ch: Regional search engine for Switzerland; users can restrict searches to their local regions.
 * fastbot: German
 
 => https://www.alibw.com/ ALibw.com (Chinese)
 => https://www.vuhuv.com.tr/ Vuhuv
 => https://tr.vuhuv.com/ Yuhuv (alternate domain)
-=> https://www.parsijoo.ir/  Parsijoo
 => https://www.search.ch  search.ch
 => https://www.fastbot.de/  fastbot
 
@@ -365,6 +363,7 @@ These engines were originally included in the article, but have since been disco
 * Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 * websearchengine.org and tuxdex.com: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
 * Entfer: a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
+* Parsijoo: Persian search engine
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
@@ -373,6 +372,7 @@ These engines were originally included in the article, but have since been disco
 => https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
 => https://marlo.sandymaguire.me/ Marlo
 => https://web.archive.org/web/20230810032916/https://entfer.com/ Entfer
+=> https://www.parsijoo.ir/  Parsijoo
 
 ## Exclusions
 
