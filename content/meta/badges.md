@@ -88,7 +88,7 @@ These are some people/websites I think are cool! I might eventually move these t
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="162" height="62" class="pix">}}</a>
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
-<a href="https://georgemoody.envs.net/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
+<a href="https://georgemoody.envs.net/">{{<picture name="b/georgemoody" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "Friendly sites" badges
