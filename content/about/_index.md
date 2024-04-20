@@ -15,8 +15,7 @@ This page lists my most relevant accounts. A more comprehensive list of my onlin
 
 I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript). I hope to migrate identity proofs to something besides OpenPGP in the future.
 
-Rohan: meat&shy;space persona {#Rohan}
------------------------------
+## Rohan: meat&shy;space persona {#Rohan}
 
 I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc).
 
@@ -51,8 +50,7 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 
 My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub, GitLab, and Codeberg too. I accept contributions from any of these platforms; use whichever you prefer.
 
-Seirdy: online persona {#Seirdy}
-----------------------
+## Seirdy: online persona {#Seirdy}
 
 I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan.
 
@@ -118,8 +116,7 @@ If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{
 
 </div>
 
-Selected projects
------------------
+## Selected projects
 
 
 [Clogstats](https://sr.ht/~seirdy/clogstats/)
@@ -128,8 +125,7 @@ Selected projects
 [MOAC](https://sr.ht/~seirdy/MOAC/)
 : Generate passwords and analyze password strength given physical limits to computing. Based on a weblog/gemlog entry: [Becoming physically immune to brute-force attacks](../posts/2021/01/12/password-strength/). Written in Go.
 
-Interests, preferences, et cetera
----------------------------------
+## Interests, preferences, et cetera
 
 I ought to come up with more interests than these, but that sounds hard.
 
@@ -169,9 +165,9 @@ I watch <span class="p-category category">anime</span>. Some of my favorites, in
 - Black Lagoon
 - Serial Experiments Lain
 - Saga of Tanya the Evil
-- Monogatari
 - Attack on Titan
 - Violet Evergarden
+- To Your Eternity
 
 I think that at least one entry in that list has some problematic messages, but my personal interpretation was a bit unorthodox and it felt wrong to exclude it.
 
