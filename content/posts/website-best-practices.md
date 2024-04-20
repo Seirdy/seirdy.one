@@ -988,6 +988,12 @@ Some image optimization tools I use:
 [`pngquant`](https://pngquant.org)
 : lossy PNG compression. Can reduce the size of the color palette.
 
+[`gifsicle`](https://www.lcdf.org/gifsicle/)
+: Optimizes GIF images, static or animated. Supports many dithering options and advanced optimization options for animations.
+
+[`didder`](https://github.com/makew0rld/didder)
+: Offers more advanced dithering options than gifsicle and pngquant.
+
 [`oxipng`](https://github.com/shssoichiro/oxipng)
 : Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
 

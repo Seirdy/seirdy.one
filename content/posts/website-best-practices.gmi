@@ -916,7 +916,13 @@ This behavior is particularly frustrating on long pages. Imagine if pressing Tab
 Some image optimization tools I use:
 
 => https://pngquant.org pngquant
-lossy PNG compression. Can reduce the size of the color palette.
+Lossy PNG compression. Can reduce the size of the color palette.
+
+=> https://www.lcdf.org/gifsicle/ gifsicle
+Optimizes GIF images, static or animated. Supports many dithering options and advanced optimization options for animations.
+
+=> https://github.com/makew0rld/didder didder
+Offers more advanced dithering options than gifsicle and pngquant.
 
 => https://github.com/shssoichiro/oxipng Oxipng
 Lossless PNG compression. It's like a parallelized version of OptiPNG that also supports an implementation of ZopfliPNG compression
