@@ -32,6 +32,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/vcss" alt="W3C valid CSS." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Fatom.xml">{{<picture name="b/valid-atom" alt="Valid Atom feed." width="162" height="62" class="pix">}}</a>
+<a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Findex.xml">{{<picture name="b/valid-rss" alt="Valid RSS feed." width="162" height="62" class="pix">}}</a>
 <a href="https://www.w3.org/TR/WCAG22/">{{<picture name="b/valid-wai-aaa" alt="W3C WAI-AAA WCAG 2.0." width="162" height="62" class="pix">}}</a>
 <a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
 <a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
