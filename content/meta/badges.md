@@ -13,6 +13,11 @@ Use this to link to me!
 
 <a href="https://seirdy.one/">{{<picture name="b/sticker_88x31" alt="My favicon, a white colon and semicolon on a black backround, next to the word Seirdy." width="162" height="62" class="pix">}}</a>
 
+Note that this image's URL is cache-busted. It will change any time I alter my badge, and is **not** hotlink-friendly. If you wish to hotlink, use one of these URLs:
+
+- `https://seirdy.one/sticker_88x31.png`
+- `https://seirdy.one/sticker_88x31.gif`
+
 ## About this site
 
 Read more about the design of this site in my [site design standards page]({{<relref "/meta/site-design.md">}}).
@@ -87,6 +92,7 @@ These are some people/websites I think are cool! I might eventually move these t
 <a href="https://tea.cuddleslut.fr/">{{<picture name="b/tea_banner" alt="the word “tea” over a nonbinary flag next to a blushing personified teacup." width="162" height="62" class="pix">}}</a>
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="162" height="62" class="pix">}}</a>
+<a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://georgemoody.envs.net/">{{<picture name="b/georgemoody" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
