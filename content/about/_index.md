@@ -1,23 +1,23 @@
 ---
 date: 2020-10-30
-title: About Seirdy (Rohan Kumar)
+title: About Seirdy (Rohan Kumar, aka Cadmus)
 outputs:
     - html
     - gemtext
-description: "Get to know Rohan Kumar, also known as Seirdy. Contact info, my projects, interests, online accounts, etc."
+description: "Get to know Rohan Kumar, also known as Cadmus and Seirdy. Contact info, my projects, interests, online accounts, etc."
 stype: "https://schema.org/AboutPage https://schema.org/ProfilePage"
 ---
 <div itemscope="" itemprop="about" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 
-I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
+I'm known as Seirdy, or as Rohan/Cadmus (interchangeable). There are some differences between these two personas, but the line between the two is blurry. It's fine to mix them up. [Yes, I'm plural!](https://pluralpedia.org/w/Main_Page) It's no secret, but I don't usually show it. I haven't yet come up with a system name.
 
 This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger: [acct:seirdy@seirdy.one](https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one). Any currently-active public account not listed via WebFinger isn't actually me; please let me know if you find one.
 
 I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript). I hope to migrate identity proofs to something besides OpenPGP in the future.
 
-## Rohan: meat&shy;space persona {#Rohan}
+## Rohan/Cadmus: meat&shy;space persona {#Rohan}
 
-I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc).
+I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc), or as <span itemprop="alternateName" class="p-nickname nickname">Cadmus</span> with friends.
 
 <dl>
 <dt>Age</dt>
@@ -52,7 +52,7 @@ My preferred forge for personal projects is Sourcehut, but my repositories have 
 
 ## Seirdy: online persona {#Seirdy}
 
-I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan.
+I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan and Cadmus.
 
 <dl>
 

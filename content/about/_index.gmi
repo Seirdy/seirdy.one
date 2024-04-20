@@ -1,10 +1,11 @@
 # Seirdy (Rohan Kumar)
 
-Rohan Kumar : He/Him
+Rohan Kumar, aka Cadmus : He/Him
 
 Online Handle: Seirdy
 
-I'm known as Rohan and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up.
+I'm known as Rohan or Cadmus (interchangeable) and as Seirdy. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up. Yes, I'm plural! It's no secret, but I don't usually show it. I haven't yet come up with a system name.
+=> https://pluralpedia.org/w/Main_Page Pluralpedia
 
 This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger:
 
@@ -38,7 +39,7 @@ I have a Tor hidden Web service which mirrors this site's contents, except for t
 Featured in:
 => gemini://nightfall.city/writers-lane/ Writer's Lane, Nightfall City
 
-## Location (Rohan, He/Him, meatspace)
+## Location (Rohan/Cadmus, He/Him, meatspace)
 
 Currently living at home in California, USA
 
