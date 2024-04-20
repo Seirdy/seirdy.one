@@ -70,7 +70,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 </details>
 
-## Awards and badges
+## Awards and novelty badges
 
 {{<image-figure id="internetnl-web">}}
 
