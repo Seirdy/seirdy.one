@@ -5,7 +5,7 @@ outputs:
     - html
 description: "My curation of 88x31 badges, representing what I and this site use and stand for."
 ---
-My collection of 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 4&#160;kb (preferably under 3&#160;kb) and avoid excessively flashy animations for me to consider it.
+My collection of 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 3&#160;kb and avoid excessively flashy animations for me to consider it. [See some tools I use for image optimization]({{<relref "/posts/website-best-practices.md#image-optimization">}}).
 
 ## My badge
 
