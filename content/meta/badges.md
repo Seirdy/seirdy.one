@@ -27,6 +27,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://www.torproject.org/">{{<picture name="b/tor" alt="The Tor Project." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/cookie_free" alt="This site is certified 100% cookie free!" width="162" height="62" class="pix">}}
 {{<picture name="b/javascript-zero" alt="Proudly zero JavaScript!" width="162" height="62" class="pix">}}
+{{<picture name="b/web11" alt="Web 1.1." width="162" height="62" class="pix">}}
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
@@ -53,6 +54,7 @@ Before you email me about how my site has invalid markup and doesn't deserve the
 {{<picture name="b/noblink" alt="No <blink> tags! 3.0." width="162" height="62" class="pix">}}
 {{<picture name="b/right2repair" alt="I support right to repair." width="162" height="62" class="pix">}}
 <a href="https://www.w3.org/Promotion/WIP/">{{<picture name="b/wip" alt="The text “Web Interoperability Pledge” next to a drawing of gears." width="162" height="62" class="pix">}}</a>
+<a href="https://archive.webstandards.org/bannerx.html">{{<picture name="b/wpsnowbord" alt="A wasp next to the words “standards NOW!”" width="162" height="62" class="pix">}}</a>
 <a href="https://web.archive.org/web/20060206224207fw_/http://www.subreality.com/yellow.htm">{{<picture name="b/yellow_ribbon" alt="Yellow ribbon: online friendship means something!" width="162" height="62" class="pix">}}</a>
 
 ### Notes on "Ideological affinity, Web-related" badges
