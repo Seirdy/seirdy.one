@@ -98,6 +98,7 @@ These are some people/websites I think are cool! I might eventually move these t
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://georgemoody.envs.net/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
+<a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase" width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "Friendly sites" badges
