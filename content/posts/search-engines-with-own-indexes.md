@@ -221,6 +221,9 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 [Kagi Search](https://kagi.com/)
 : The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the [non-commercial section](#small-or-non-commercial-web) below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the [Kagi.ai](https://kagi.ai/) intelligent answer service and the [TinyGem](https://tinygem.org/) social bookmarking service, both of which play a role in Kagi.com in the present or future. Unrelatedly: I'm concerned about the company's biases, as it seems happy to [use Brave's commercial API](https://kagifeedback.org/d/2808-reconsider-your-partnership-with-brave) (allowing blatant homophobia in the comments) and [allow its results to recommend suicide methods without intervention](https://kagifeedback.org/d/865-suicide-results-should-probably-have-a-dont-do-that-widget-like-google/50). I reject the idea that avoiding an option that may seem politically biased is the same as being unbiased if such a decision has real political implications.
 
+[SVMetaSearch](https://svmetasearch.eu.org/)
+: A SearxNG metasearch engine that also includes results from its own index. All other sources can be turned off. Like most public Searx/SearxNG instances, reliability is very poor.
+
 ## Non-generalist search
 
 These indexing search engines don’t have a Google-like “ask me anything” endgame; they’re trying to do something different. You aren't supposed to use these engines the same way you use GBY.
