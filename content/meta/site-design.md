@@ -11,8 +11,7 @@ This site may look bare-bones on the surface, but I put much thought into it. I 
 
 {{<toc>}}
 
-Accessibility statement
------------------------
+## Accessibility statement
 
 I hold seirdy.one to the highest accessibility standards possible. For more information about seirdy.one's accessibility-related work, read {{<mention-work itemtype="BlogPosting">}}{{<cited-work url="https://seirdy.one/posts/2020/11/23/website-best-practices/" name="Best practices for inclusive textual websites" extraName="headline">}}{{</mention-work>}}.
 
@@ -74,16 +73,19 @@ WAVE reports no errors. AXE sometimes fails to measure contrast, but otherwise r
 
 I run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors. I repeat this run with every change to my Hugo templates and stylesheets.
 
-To work around [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line.
+<del datetime="2024-04-22">To work around [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line</del>. <ins datetime="2024-04-22">Update: the issue has been resolved</ins>
 
-Compatibility statement
------------------------
+## Compatibility statement
+
+### Conformance
 
 This website uses well structured, semantic, [polygot XHTML5](https://www.w3.org/TR/html-polyglot/) (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) extensions where appropriate), enhanced with CSS for styling.
 
-This website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this improves support in older browsers such as Internet Explorer 11. Users can access this site without extra plug-ins or polyfills. The site does use strictly-optional modern features (e.g. CSS containment) that don't create significant visual differences.
+This website conforms to Web standards. Each build runs `xmllint` to catch syntax errors. Every few commits, I run a local build of [the Nu HTML Checker](https://github.com/validator/validator) and [html proofer](https://github.com/gjtorikian/html-proofer) across all 200-something pages in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq), and I [report and fix false-positives](https://github.com/w3c/css-validator/issues?q=author%3ASeirdy) when possible.
 
-This website conforms to Web standards. Each build runs `xmllint` to catch syntax errors. Every few commits, I run a local build of [the Nu HTML Checker](https://github.com/validator/validator) and [html proofer](https://github.com/gjtorikian/html-proofer), and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq), and I [report and fix false-positives](https://github.com/w3c/css-validator/issues?q=author%3ASeirdy) when possible.
+### Cross-browser compatibility
+
+This website does **not** rely on modern development practices such as CSS Grid, Flexbox, SVG 2, Web fonts, and JavaScript; this improves support in older browsers such as Internet Explorer 11. Users can access this site without extra plug-ins or polyfills. The site does use strictly-optional modern features (e.g. CSS containment) that don't create significant visual differences.
 
 I also perform cross-browser testing for HTML [and XHTML versions](#markup) of my pages. I test with, but [do not necessarily endorse]({{<relref "/notes/pale-moon.md">}}), a large variety of browsers:
 
@@ -122,8 +124,7 @@ Some engines I have not yet tested, but hope to try in the future:
 - [Moon](https://github.com/ZeroX-DG/moon)
 - [hastur](https://github.com/robinlinden/hastur)
 
-Machine-friendliness
---------------------
+## Machine-friendliness
 
 I use machine-friendliness as an alternative perspective to traditional search-engine-optimization, the latter of which incentivizes low-quality content. It's a major part of what I've dubbed ["agent optimization"]({{<relref "notes/agent-optimization.md">}}).
 
@@ -157,8 +158,7 @@ This site works well in the Diffbot article extractor. Diffbot powers a variety 
 
 This site has poor compatibility with the Chromium DOM Distiller's flawed techniques. Regions with high link-densities, such as citations, get filtered out. DOM Distiller also removes footnotes, and sometimes [DPUB-ARIA](https://w3c.github.io/dpub-aria/) sections near the end of an article (acknowledgements, conclusions).
 
-Static IndieWeb
----------------
+## Static IndieWeb
 
 I want to show how far I can take IndieWeb concepts on a fully static site, leaving dynamism to ancillary services.
 
@@ -219,8 +219,7 @@ I'm not opposed to these features, but I probably won't implement support for th
 
 - Some sort of daemon to replace the Bridgy service. I don't plan to run my own Bridgy instance: Bridgy requires Python, but I prefer installing statically-linked native executables.
 
-Privacy
--------
+## Privacy
 
 This site is **privacy-respecting.** Its <abbr title="Content Security Policy">CSP</abbr> blocks all scripts, third-parties, and other problematic features. For details on this site's privacy, [read the privacy policy](../privacy/).
 

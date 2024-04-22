@@ -31,18 +31,16 @@ Read more about the design of this site in my [site design standards page]({{<re
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
-<a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/vcss" alt="W3C valid CSS." width="162" height="62" class="pix">}}</a>
+<a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/valid-css" alt="W3C valid CSS." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Fatom.xml">{{<picture name="b/valid-atom" alt="Valid Atom feed." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Findex.xml">{{<picture name="b/valid-rss" alt="Valid RSS feed." width="162" height="62" class="pix">}}</a>
-<a href="https://www.w3.org/TR/WCAG22/">{{<picture name="b/valid-wai-aaa" alt="W3C WAI-AAA WCAG 2.0." width="162" height="62" class="pix">}}</a>
+<a href="{{<relref "/meta/wcag-conformance.md">}}">{{<picture name="b/wcag22" alt="W3C WAI-AA WCAG 2.2." width="162" height="62" class="pix">}}</a>
 <a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
 <a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "About this site" badges
 
-The W3C Valid HTML5 badge isn't offered by the new Nu HTML Validator, but I use it anyways because my markup is valid. I regularly test all 200-something pages on this site with a local instance of the validator.
-
-Before you email me about how my site has invalid markup and doesn't deserve the "Valid HTML5" badge: The validator also has false positives, which I report upstream (and sometimes fix) and silence in a JQ filter. I use a bleeding-edge version of the Nu HTML Checker and its Jigsaw CSS Validator dependency, as those have the fewest false positives.
+The W3C Valid HTML5 badge isn't offered by the new Nu HTML Checker because [HTML5 is about conformance, not validity](https://html5doctor.com/html5-check-it-before-you-wreck-it-with-miketm-smith/). I use it anyways because my markup does fully conform _and_ is well-formed polygot XHTML5, despite false-positives from validators; [see my conformance statement]({{<relref "/meta/site-design.md#conformance">}}).
 
 ## Ideological affinity, web-related
 
