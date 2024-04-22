@@ -5,7 +5,7 @@ title: How to build this site
 description: "Instructions for re-building seirdy.one from its source code"
 date: "2023-11-24T21:44:00-08:00"
 ---
-Wanna steal this website? You're allowed to! Just remember that it's licensed under the CC-BY-SA (for content) and ISC (for code) licenses.
+Wanna steal this website? You're allowed to! Just remember that it's licensed under the CC-BY-SA (for content) and GNU Affero GPL Version 3 (for code) licenses.
 
 Once you put a few binaries in your `$PATH`, building is just a `make` invocation away.
 
