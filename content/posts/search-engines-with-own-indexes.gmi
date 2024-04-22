@@ -217,6 +217,9 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 => http://teclis.com/ Teclis
 => https://kagifeedback.org/d/1838-teclis-is-broken Teclis free version shutdown notice
 
+* Clew: a FOSS new engine with a small index of several thousand pages. It focuses on independent content and downranks ads and trackers; there seems to be a real focus on quality over quantity, which makes it excellent for short-tail searches (especially around technical concepts). Ranking is more egalitarian than other engines, making it better for discovery and surfing than research. It's designed to be small and lightweight, with a compact index. Discovered in the seirdy.one access logs.
+=> https://clew.se/ Clew
+
 ### Site finders
 
 These engines try to find a website, typically at the domain-name level. They don't focus on capturing particular pages within websites.
