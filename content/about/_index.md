@@ -19,12 +19,14 @@ I've published a version of my OpenPGP key via Web Key Directory; this version h
 
 I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc), or as <span itemprop="alternateName" class="p-nickname nickname">Cadmus</span> with friends.
 
+I intentionally make very delayed updates to information such as my location.
+
 <dl>
 <dt>Age</dt>
 <dd><time datetime="P8400D">23</time></dd>
 
 <dt>Location</dt>
-<dd><span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/State" class="p-region">California</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
+<dd>Somewhere in <span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/Place" class="p-region">New England</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
 
 <dt>Gender</dt>
 <dd class="p-gender-identity" itemprop="gender">Male</dd>
@@ -33,7 +35,7 @@ I go by <span itemprop="name" class="p-name fn n"><span itemprop="givenName" cla
 <dd class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></dd>
 
 <dt>Time zone</dt>
-<dd>Pacific (UTC-08:00, or UTC-07:00 during daylight savings)</dd>
+<dd>America/New_York (EST, UTC-05:00; or EDT, UTC-04:00 during daylight savings)</dd>
 
 <dt>Software forges</dt>
 <dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>

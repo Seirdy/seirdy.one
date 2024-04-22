@@ -41,7 +41,9 @@ Featured in:
 
 ## Location (Rohan/Cadmus, He/Him, meatspace)
 
-Currently living at home in California, USA
+I intentionally make very delayed updates to information such as my location.
+
+Currently living somewhere in New England, USA.
 
 => https://sr.ht/%7Eseirdy Sourcehut forge
 => https://github.com/Seirdy GitHub forge
@@ -50,7 +52,7 @@ Currently living at home in California, USA
 
 More info:
 
-* Time zone: Pacific (UTC-08:00, UTC-07:00 during DST)
+* Time zone: "America/New_York" (EDT or EST)
 * Age: 23
 
 ## Location (Seirdy, They/Them, online)
