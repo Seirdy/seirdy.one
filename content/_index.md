@@ -16,7 +16,7 @@ About me
 <meta itemprop="url" content="https://seirdy.one" />
 <div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
-I'm <a itemprop="url" href="https://seirdy.one" rel="author me home canonical" class="u-url u-uid url">{{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (<span class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></span>). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (<span class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></span>). Mixing them up is fine.
+I'm <a itemprop="url" href="https://seirdy.one/" rel="author me home bookmark" class="u-url u-uid url">{{% indieweb-icon %}} <span itemprop="name" class="p-name fn n"> <span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span></a> (<span class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></span>). I'm also known by my more casual online handle <span itemprop="alternateName" class="p-nickname nickname">Seirdy</span> (<span class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></span>). Mixing them up is fine.
 
 The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectOf'}").
 
