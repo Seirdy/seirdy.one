@@ -71,8 +71,9 @@ I might eventually move these to a separate page under the "About" section of my
 {{<picture name="b/trans-rights" alt="Trans rights now!" width="162" height="62" class="pix">}}
 {{<picture name="b/adhd" alt="ADHD." width="162" height="62" class="pix">}}
 <a href="https://www.autisticasfxxk.com/">{{<picture name="b/autisticasfxxk.com" alt="The words “autistic as fuck” flash over a pick background. The word “fuck” is censored." width="162" height="62" class="pix">}}</a>
-<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
 <a href="https://www.defectivebydesign.org/">{{<picture name="b/dbd" alt="Defective by design. Eliminate DRM now!" width="162" height="62" class="pix">}}</a>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
+<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
 
 ## Things I use
 
