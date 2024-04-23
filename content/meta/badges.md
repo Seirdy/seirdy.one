@@ -37,6 +37,8 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="{{<relref "/meta/wcag-conformance.md">}}">{{<picture name="b/wcag22" alt="W3C WAI-AA WCAG 2.2." width="162" height="62" class="pix">}}</a>
 <a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
 <a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
+<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "About this site" badges
 
@@ -72,8 +74,6 @@ I might eventually move these to a separate page under the "About" section of my
 {{<picture name="b/adhd" alt="ADHD." width="162" height="62" class="pix">}}
 <a href="https://www.autisticasfxxk.com/">{{<picture name="b/autisticasfxxk.com" alt="The words “autistic as fuck” flash over a pick background. The word “fuck” is censored." width="162" height="62" class="pix">}}</a>
 <a href="https://www.defectivebydesign.org/">{{<picture name="b/dbd" alt="Defective by design. Eliminate DRM now!" width="162" height="62" class="pix">}}</a>
-<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
-<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
 
 ## Things I use
 
