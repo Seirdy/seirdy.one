@@ -353,7 +353,7 @@ crlf.ninja {#crlf}
 : Instance admin [endorses sending toxic racist slurs and being "horrible"](https://web.archive.org/web/20230731191030/https://thechimp.zone/notice/AYGJJeBPdUXSuC7Fui) to people for blocking instances.
 : Admin [participated in a transphobic dogpiling campaign](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76).
 : [Admin publicizes blocks](https://archive.ph/hASVN).
-: [Admin uses triple-paren antisemitic dogwhistle](http://archive.today/2024.04.10-201320/https://crlf.ninja/notice/AgWVbdmSKxK4JegxU0).
+: [Admin uses triple-paren antisemitic dogwhistle](https://archive.today/2024.04.10-201320/https://crlf.ninja/notice/AgWVbdmSKxK4JegxU0).
 
 crucible.world {#crucible}
 : Admin participating in [extremely transphobic harassment](https://web.archive.org/web/20230730231641/https://ryona.agency/notice/AY8AHumTq4cb2lik76)
@@ -797,10 +797,10 @@ shota.house {#shota-house} OR burger.rodeo
 : [lemmy.burger.rodeo is run by the same staff](https://web.archive.org/web/20230805203903/https://pl.kitsunemimi.club/notice/AWO4XxahVkogIxdvMG) and has the same policies.
 
 soc0.outrnat.nl {#outrnat}
-: Alleging [reverse-racism](http://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9e9oqn5357).
-: Appears to be [the former admin of springbo.cc](http://archive.today/2023.06.29-052017/https://soc.outrnat.nl/notes/9gk8lk7of10cdo9l), with a self-professed fascist.
-: Admin was [a member of Prometheus Information Systems](http://archive.today/2023.08.03-191608/https://akko.disqordia.space/notice/AYD8SJUeraaSZI8OXY).
-: Admin [encourages spamming hashtags](http://archive.today/2023.06.29-152421/https://outerkosm.us/notes/9d7pl7vzvq), [more spam encouragement](http://archive.today/2023.06.29-152405/https://outerkosm.us/notes/9d5wudn8rj), [defending RMS](http://archive.today/2023.06.29-152333/https://outerkosm.us/notes/9dg381vtpy), [the "millions must die" dogwhistle](http://archive.today/2023.06.29-152304/https://outerkosm.us/notes/9d8u8wml55), ["they're not sending their best"](http://archive.today/2023.06.29-152253/https://outerkosm.us/notes/9d7mgkbjpp), [retaliatory CSEM accusations](http://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9d68zgq9lo).
+: Alleging [reverse-racism](https://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9e9oqn5357).
+: Appears to be [the former admin of springbo.cc](https://archive.today/2023.06.29-052017/https://soc.outrnat.nl/notes/9gk8lk7of10cdo9l), with a self-professed fascist.
+: Admin was [a member of Prometheus Information Systems](https://archive.today/2023.08.03-191608/https://akko.disqordia.space/notice/AYD8SJUeraaSZI8OXY).
+: Admin [encourages spamming hashtags](https://archive.today/2023.06.29-152421/https://outerkosm.us/notes/9d7pl7vzvq), [more spam encouragement](https://archive.today/2023.06.29-152405/https://outerkosm.us/notes/9d5wudn8rj), [defending RMS](https://archive.today/2023.06.29-152333/https://outerkosm.us/notes/9dg381vtpy), [the "millions must die" dogwhistle](https://archive.today/2023.06.29-152304/https://outerkosm.us/notes/9d8u8wml55), ["they're not sending their best"](https://archive.today/2023.06.29-152253/https://outerkosm.us/notes/9d7mgkbjpp), [retaliatory CSEM accusations](https://archive.today/2023.06.29-152247/https://outerkosm.us/notes/9d68zgq9lo).
 
 someotherguy.xyz {#someotherguy}
 : Xenophobic ["build the wall" admin](https://archive.today/2023.12.25-063556/https://pleroma.someotherguy.xyz/notice/Ad7t2XHnqOn3Rw3paK).
