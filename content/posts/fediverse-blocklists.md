@@ -409,11 +409,12 @@ freeatlantis.com {#freeatlantis}
 : Admin has reblogged local users posting [extreme transmisogny](https://freeatlantis.com/@TXPatriot2021/110527351920294198), [xenophobia](https://freeatlantis.com/@Luther/110334945481724374), [anti-drag](https://freeatlantis.com/@waronmorons/110288183334646071), [MAGA](https://freeatlantis.com/@watson/110137469656072122), [anti-vax](https://freeatlantis.com/@watson/109743198074918647), [more anti-vax](https://freeatlantis.com/@Phil/109693908947686128).
 : Admin posts [QAnon](https://freeatlantis.com/@surferistic/109733973331065745).
 
-freespeechextremist.com {#fse}
+freespeechextremist.com {#fse} OR fsebugoutzone.org
 : [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism.
 : [Multiple other users engaging in transmisogyny](https://web.archive.org/web/20230802003611/https://eientei.org/notice/AYEtXJ1Dea4cIBV488), and [participating in a transmisogynistic harassment campaign](https://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
 : [Transphobic blanket-pedojacketing](https://web.archive.org/web/20230803185746/https://freespeechextremist.com/notice/AYJ1aYy7Uutycamkuu).
 : MRF policies include a [block-notification bot](https://web.archive.org/web/20230731164723/https://freespeechextremist.com/about). The linked page also makes it clear that this is a freeze-peach instance, so reporting won't help.
+: In April 2024, FSE migraterd to fsebugoutzone.org due to technical issues. [Blog post](https://ghostarchive.org/archive/dPeoa), [new matching admin profile](https://ghostarchive.org/archive/gYiL1), [new "about" page](https://ghostarchive.org/archive/ZQtJj). The MRF policies listed include rejecting deletes, block-notification, and a freeze-peach moderation policy.
 
 froth.zone {#froth}
 : [Blatant racism](https://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](https://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
