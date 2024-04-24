@@ -162,7 +162,7 @@ These considerations are far more subjective, debatable, and deserving of skepti
 
 8. Don't conflate CLIs and TUIs. A CLI should be non-interactive; a TUI should be interactive. Exceptions exist for really simple interfaces (e.g. Magic-Wormhole and others like it) that accept user input; however, as the interface grows more complex, consider splitting the program into two sibling programs, one of which can have a "pure" non-interactive CLI.
 
-9. Go above and beyond by writing separate integrations for environments like [Emacspeak](http://emacspeak.sourceforge.net/).[^9]
+9. Go above and beyond by writing separate integrations for environments like [Emacspeak](https://github.com/tvraman/emacspeak).[^9]
 
 Name conflicts
 --------------

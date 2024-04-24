@@ -2,6 +2,7 @@
 title: "Proposal: an HTML element for spoilers"
 description: "An informal proposal for dedicated elements for spoiler tags in HTML: use-cases, syntax, semantics, recommended UA behavior, and comparisons with “details”"
 date: 2023-11-12T13:48:00-08:00
+lastmod: 2023-11-29T13:09:39Z
 outputs:
     - html
     - gemtext
@@ -11,7 +12,7 @@ syndicatedCopies:
     - title: 'Lobsters'
       url: 'https://lobste.rs/s/v1yooo/proposal_html_element_for_spoilers'
     - title: 'WICG Discourse'
-      url: 'http://discourse.wicg.io/t/standardized-spoiler-tag/5814/15?u=seirdy'
+      url: 'https://discourse.wicg.io/t/standardized-spoiler-tag/5814/15?u=seirdy'
     - title: 'IndieNews'
       url: 'https://news.indieweb.org/en'
     - title: 'jstpst'
