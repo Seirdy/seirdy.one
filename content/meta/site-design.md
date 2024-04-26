@@ -119,7 +119,7 @@ Some engines I have not yet tested, but hope to try in the future:
 - [Flow Browser](https://www.ekioh.com/flow-browser/)
 - [gngr](https://gngr.info/)
 - [WeasyPrint](https://weasyprint.org/)
-- [Netzhaut](https://netzhaut.dev/)
+- [Netzhaut](https://web.archive.org/web/20230405031300/http://netzhaut.dev/)
 - [Kozmonaut](https://github.com/twilco/kosmonaut)
 - [Moon](https://github.com/ZeroX-DG/moon)
 - [hastur](https://github.com/robinlinden/hastur)

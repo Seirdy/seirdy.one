@@ -39,7 +39,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 - [512KB Club](https://www.512kb.club/)
 - [250kb club](https://250kb.club/)
-- [10 KB Club](https://10kbclub.com/)
+- [10 KB Club (archived)](https://web.archive.org/web/20231208000921/https://10kbclub.com/)
 - [no-JS Club](https://no-js.club/)
 - [Darktheme Club](https://darktheme.club/)
 - [XHTML Club](https://xhtml.club/)

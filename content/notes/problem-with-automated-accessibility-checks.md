@@ -1,7 +1,8 @@
 ---
 title: "The problem with automated accessibility checks"
 date: 2022-12-22T09:52:09-08:00
-replyURI: "https://a11y.info/@todd/109552097339472503"
+lastmod: 2022-12-24T16:27:09Z
+replyURI: "https://web.archive.org/web/20230201213609/https://a11y.info/@todd/109552097339472503"
 replyTitle: "I run Lighthouse and WAVE as…a baseline of sorts"
 replyType: "SocialMediaPosting"
 replyAuthor: "Todd Libby"

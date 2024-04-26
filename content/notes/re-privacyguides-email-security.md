@@ -1,7 +1,7 @@
 ---
 title: "Re: Privacy Guides email security"
 date: 2022-10-20T00:35:50-07:00
-replyURI: "https://www.privacyguides.org/basics/email-security/"
+replyURI: "https://www.privacyguides.org/en/basics/email-security/"
 replyTitle: "Email Security"
 replyType: "TechArticle"
 replyAuthor: "Privacy Guides"

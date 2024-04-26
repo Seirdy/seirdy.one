@@ -1036,8 +1036,8 @@ I only recommend using SVG in images; not embeds, objects, or directly in the bo
 Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
 This advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers. Moreover, tools like usvg can simplify complex SVGs to a tiny subset of the SVG spec.
-=> https://github.com/RazrFalcon/resvg/tree/master/usvg usvg
-=> https://github.com/RazrFalcon/resvg/blob/6b73d2a2a55be02f4913ef69eb16647623a50f49/docs/usvg_spec.adoc usvg specification
+=> https://github.com/RazrFalcon/resvg/tree/master/crates/usvg usvg
+=> https://github.com/RazrFalcon/resvg/blob/ad139d38e3db11fd6313e0409bf86f92eb52b383/crates/usvg/docs/spec.adoc usvg specification
 
 Two tools that can optimize the size of an SVG file are SVGO and the now-discontinued svgcleaner:
 => https://github.com/svg/svgo SVGO
@@ -1748,9 +1748,9 @@ The 250kb club gathers websites at or under 250kb, and also rewards websites tha
 
 => https://250kb.club/ The 250kb Club
 
-The 10 KB Club does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
+The 10 KB Club did the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also had guidelines for noteworthiness, to avoid low-hanging fruit like mostly-blank pages.
 
-=> https://10kbclub.com/ The 10 KB Club
+=> https://web.archive.org/web/20231208000921/https://10kbclub.com/ The 10 KB Club
 
 My favorite website club has to be the XHTML Club by Bradley Taunt, the creator of the original 1mb.club.
 

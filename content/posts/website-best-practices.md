@@ -1099,7 +1099,7 @@ Light and dark variants of legacy formats (PNG, JPG, GIF), WebP, and AVIF can ca
 
 I only recommend using SVG in images; avoid using them in embeds, objects, or directly in the body. Remember that users may save images, and open them in a non-browser image viewer with reduced SVG compatibility. To maintain maximum compatibility, stick the subset of the [secure static processing mode](https://www.w3.org/TR/SVG/conform.html#secure-static-mode) of [SVG Static](https://www.w3.org/TR/SVG11/feature#SVG-static). Specifically, the subset that appears in the [SVG Tiny Portable<wbr />/Secure (<abbr title="Portable/Secure">PS</abbr>) spec](https://datatracker.ietf.org/doc/draft-svg-tiny-ps-abrotman/). SVG Tiny PS is a subset of [SVG Tiny&nbsp;1.2](https://www.w3.org/TR/SVGTiny12/intro.html), which is a supported export format in most vector drawing programs. Ignore the elements specifically required for SVG Tiny PS; your image can be a standard SVG that only utilizes a tiny subset of the full SVG spec.
 
-This advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers. Moreover, tools like [usvg](https://github.com/RazrFalcon/resvg/tree/master/usvg) can simplify complex SVGs to [a tiny subset of the SVG spec](https://github.com/RazrFalcon/resvg/blob/6b73d2a2a55be02f4913ef69eb16647623a50f49/docs/usvg_spec.adoc).
+This advice might seem daunting, but it’s usually easy to use existing tools to generate an SVG Tiny file and manually edit it to support the SVG secure static mode. SVGs that conform to this subset should be compatible with Qt5's SVG implementation, librsvg (used by Wikipedia and GNOME), and most operating systems' icon renderers. Moreover, tools like [usvg](https://github.com/RazrFalcon/resvg/tree/master/crates/usvg) can simplify complex SVGs to [a tiny subset of the SVG spec](https://github.com/RazrFalcon/resvg/blob/ad139d38e3db11fd6313e0409bf86f92eb52b383/crates/usvg/docs/spec.adoc).
 
 Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Too much lossy SVG compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression. Compress in moderation.
 
@@ -1839,7 +1839,7 @@ Raw content true to its construction:
 
 The [250kb club](https://250kb.club/) gathers websites at or under 250kb, and also rewards websites that have a high ratio of content size to total size.
 
-The [10KB Club](https://10kbclub.com/) does the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also has guidelines for note&shy;worthiness, to avoid low-hanging fruit like mostly-blank pages.
+The [10KB Club](https://web.archive.org/web/20231208000921/https://10kbclub.com/) did the same with a 10kb homepage budget (excluding favicons and webmanifest icons). It also had guidelines for note&shy;worthiness, to avoid low-hanging fruit like mostly-blank pages.
 
 My favorite website club has to be the {{<mention-work itemtype="WebSite">}}{{< cited-work name="XHTML Club" url="https://xhtml.club/" >}} by {{<indieweb-person first-name="Bradley" last-name="Taunt" url="https://bt.ht/" itemprop="author">}}{{</mention-work>}}, the creator of the original [1mb.club](https://1mb.club).
 
@@ -1918,7 +1918,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^25]: An earlier version of this article recommended a background of `#111`, but two helpful readers sensitive to overstimulation and halation found `#191919` preferable.
 
-[^26]: Lē also [shared their experience in A11y Rules](https://a11yrules.com/podcast/le-silveus-mcnamara-talks-about-neurodivergence-color-choices-and-overstimulation/), one of my favorite podcasts
+[^26]: Lē also [shared their experience in A11y Rules](https://web.archive.org/web/20230530094242/https://a11yrules.com/podcast/le-silveus-mcnamara-talks-about-neurodivergence-color-choices-and-overstimulation/), one of my favorite podcasts
 
 [^27]: When making an earlier version of this site's dark-mode color palette, I made the mistake of exclusively testing in cheap or poorly-calibrated displays with bright black points. I mistakenly thought that my `#0b0b0b` background was bright enough to [prevent halation](#halation). Only after testing on a better screen did I realize that it would look almost completely black; I subsequently lightened the background to `#111` to strike a good balance.
 

@@ -1,11 +1,12 @@
 ---
 title: "Self signed certificate problems"
 date: 2022-10-17T11:41:38-07:00
-replyURI: "https://snowdin.town/notice/AOevybwoSx4xW4lX3w"
+lastmod: 2022-10-17T11:41:38-07:00
+replyURI: "https://web.archive.org/web/20230422173223/https://snowdin.town/notice/AOevybwoSx4xW4lX3w"
 replyTitle: "self-signatures should have been treated as something normal"
 replyType: "SocialMediaPosting"
 replyAuthor: "Luna Saphira Dragofelis"
-replyAuthorURI: "https://snowdin.town/users/LunaDragofelis"
+replyAuthorURI: "https://buff.tomboyfan.club/users/LunaDragofelis"
 ---
 > in my opinion, self-signatures should have been treated as something normal, with a warning only triggered if the site has been visited before and the signing key has changed
 

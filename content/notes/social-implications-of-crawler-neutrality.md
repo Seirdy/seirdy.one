@@ -1,7 +1,8 @@
 ---
 title: "Social implications of crawler neutrality"
 date: 2022-12-11T13:20:35-08:00
-replyURI: "https://weirder.earth/@MerlinJStar/109496963818257286"
+date: 2022-12-11T21:45:27Z
+replyURI: "https://web.archive.org/web/20221211214948/https://weirder.earth/@MerlinJStar/109496963818257286"
 replyTitle: "Why I plan on getting away from LinkedIn by the end of 2023"
 replyType: "SocialMediaPosting"
 replyAuthor: "Merlin Star"
