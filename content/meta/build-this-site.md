@@ -43,7 +43,7 @@ Before deploying, I use some tools for post-processing:
 
 - More POSIX utilities.
 
-I also apply static compression at max levels, using the following tools:
+I also apply static compression at high levels, using the following tools:
 
 - [Efficient Compression Tool](https://github.com/fhanau/Efficient-Compression-Tool) (`ect`). It's like zopfli but more efficient and faster. If you don't have it installed, it should be trivial to edit `scripts/compress.sh` to replace `ect` with `gzip` or `zopfli`.
 
@@ -63,9 +63,9 @@ Other lints/checks I run also use additional command-line utilities such as `sd`
 
 - [html-validate](https://html-validate.org/)
 
-- A very recent build of the W3C's [Nu HTML checker](https://github.com/validator/validator) to validate the HTML and XHTML, available on your `$PATH` as `vnu`. I have a very simple shell-script wrapper for this that invokes `java -jar`.
+- A very recent build of the W3C's [Nu HTML checker](https://github.com/validator/validator) to validate the HTML and XHTML, available on your `$PATH` as `vnu`. I have a very simple shell-script wrapper for this that invokes `java -jar`. You may have to update the CSS-Validator submodule to its latest commit to avoid false positives.
 
-- [jaq](https://github.com/01mf02/jaq), to filter false-positives from the Nu HTML checker and to verify that JSON files parse. You can replace `jaq` with `jq` without any issue.
+- [jaq](https://github.com/01mf02/jaq), to filter false-positives from the Nu HTML checker and to verify that JSON files parse. You can replace `jaq` with `jq` without any issues.
 
 - [HTMLProofer](https://github.com/gjtorikian/html-proofer), version 5 or later. Requires Ruby.
 
@@ -73,13 +73,15 @@ Other lints/checks I run also use additional command-line utilities such as `sd`
 
 #### Slow linters
 
+These linters use headless browsers and take several minutes to validate my whole site.
+
 - Axe-Core, using the CLI and a headless browser (Firefox or Chromium).
 
 - IBM Equal Access Checker, using the CLI and a headless Chromium. Runs on a patched version of the site with all instances of `content-visibility` removed from the stylesheet. I do this to work around [a false-positive, reported upstream](https://github.com/IBMa/equal-access/issues/1008).
 
 #### Testing the deployed site
 
-- WebHint (normally runs on every page in my sitemap)
+- WebHint (normally runs on every page in my sitemap with a headless browser. Abandonware but still works.)
 - Lighthouse
 - redbot
 
@@ -87,11 +89,11 @@ Other lints/checks I run also use additional command-line utilities such as `sd`
 
 - To just build the HTML: `make hugo`
 
-- To build the polygot formatted HTML and XHTML: `make hugo xhtmlize`
+- To build the polygot formatted HTML and XHTML: `make xhtmlize`
 
-- To lint and validate: `make hugo xhtmlize lint-local`
+- To lint and validate: `make xhtmlize lint-local`
 
-- To build everything and compress: `make hugo xhtmlize compress copy-to-xhtml`
+- To build everything and compress: `make xhtmlize compress copy-to-xhtml`
 
 - To deploy the clearnet site and corresponding Tor hidden service: `make deploy-prod deploy-onion`.
 
