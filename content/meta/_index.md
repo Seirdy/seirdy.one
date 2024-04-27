@@ -15,7 +15,7 @@ Hugo pulls Webmentions from my Webmention endpoint during builds, so I can have 
 
 ### Services this site relies on
 
-This site is hosted on a virtual private server I rent from Digital Ocean, with 1&nbsp;virtual CPU and 1&nbsp;GB of memory. I don't necessarily endorse Digital Ocean; for now, I'm only using it for the free credits. I use name servers from [deSEC](https://desec.io/), and do recommend it to others who want managed DNSSEC.
+This site is hosted on a virtual private server I rent from Digital Ocean, alongside some other personal services. I don't necessarily endorse Digital Ocean; for now, I'm only using it for the free credits. I use name servers from [deSEC](https://desec.io/), and do recommend it to others who want managed DNSSEC.
 
 This site encrypts HTTPS traffic with an OCSP-stapled TLS certificate signed by Let's Encrypt. It regularly pulls package updates from Fedora's official repository mirrors.
 
@@ -37,6 +37,9 @@ This site is featured in some cool directories.
 
 The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="https://1mb.club/">}} by {{<indieweb-person itemprop="author" url="https://bt.ht/" first-name="Bradley" last-name="Taunt">}}{{</mention-work>}} inspired a number of similar website "clubs". I'm in all the ones I'm aware of except for the [No CSS Club](https://nocss.club/) and the [1kb club](https://1kb.club/).
 
+<details>
+<summary>Toggle clubs</summary>
+
 - [512KB Club](https://www.512kb.club/)
 - [250kb club](https://250kb.club/)
 - [10 KB Club (archived)](https://web.archive.org/web/20231208000921/https://10kbclub.com/)
@@ -44,7 +47,12 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Darktheme Club](https://darktheme.club/)
 - [XHTML Club](https://xhtml.club/)
 
+</details>
+
 ### Other directories
+
+<details>
+<summary>Toggle other directories</summary>
 
 - [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
 - [textonly.website](https://textonly.website/)
@@ -68,6 +76,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Accessible Net Directory](https://pinkvampyr.leprd.space/accessiblenet/) (pending)
 
+</details>
 </details>
 
 ## Awards and novelty badges
