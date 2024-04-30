@@ -28,6 +28,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 {{<picture name="b/cookie_free" alt="This site is certified 100% cookie free!" width="162" height="62" class="pix">}}
 {{<picture name="b/javascript-zero" alt="Proudly zero JavaScript!" width="162" height="62" class="pix">}}
 {{<picture name="b/web11" alt="Web 1.1." width="162" height="62" class="pix">}}
+<a href="https://www.512kb.club/">{{<picture name="b/green-team" alt="512kb Club Green Team." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
@@ -91,14 +92,21 @@ See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 
 These are some people/websites I think are cool! I might eventually move these to a separate page under the "About" section of my site.
 
-<a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="162" height="62" class="pix">}}</a>
+### Reciprocal
+
+Sites that link back to me:
+
 <a href="https://tea.cuddleslut.fr/">{{<picture name="b/tea_banner" alt="the word “tea” over a nonbinary flag next to a blushing personified teacup." width="162" height="62" class="pix">}}</a>
+<a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
+<a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
+
+### Other
+
+<a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="162" height="62" class="pix">}}</a>
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="162" height="62" class="pix">}}</a>
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
-<a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
-<a href="https://georgemoody.envs.net/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
-<a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
+<a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
 
