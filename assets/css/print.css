@@ -7,6 +7,9 @@
 	}
 
 	/* Hide screen-only content */
+	/* Table of Contents is useless in print layouts without page numbers,
+	 * which I haven't implemented yet */
+	#toc,
 	[href="#h1"], /* Skip link */
 	[role="doc-backlink"], /* can't navigate back on print. */
 	aside:not([role="note"]),
