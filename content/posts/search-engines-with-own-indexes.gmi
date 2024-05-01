@@ -468,7 +468,10 @@ What I learned by building this list has profoundly changed how I surf.
 
 Using one engine for everything ignores the fact that different engines have different strengths. For example: while Google is focused on being an "answer engine", other engines are better than Google at discovering new websites related to a broad topic. Fortunately, browsers like Chromium and Firefox make it easy to add many search engine shortcuts for easy switching.
 
-When talking to search engine founders, I found that the biggest obstacle to growing an index is getting blocked by sites. Cloudflare is one of the worst offenders. Too many sites block perfectly well-behaved crawlers, only allowing major players like Googlebot, BingBot, and TwitterBot; this cements the current duopoly over English search and is harmful to the health of the Web as a whole.
+When talking to search engine founders, I found that the biggest obstacle to growing an index is getting blocked by sites. Cloudflare was one of the worst offenders, although it has since launched a "verified bots" program to improve things:
+=> https://blog.cloudflare.com/friendly-bots Cloudflare blog: Announcing Friendly Bots
+
+Too many sites block perfectly well-behaved crawlers, only allowing major players like Googlebot, BingBot, and TwitterBot; this cements the current duopoly over English search and is harmful to the health of the Web as a whole.
 
 Too many people optimize sites specifically for Google without considering the long-term consequences of their actions. One of many examples is how Google's JavaScript support rendered the practice of testing a website without JavaScript or images "obsolete": almost no non-GBY engines on this list are JavaScript-aware.
 
