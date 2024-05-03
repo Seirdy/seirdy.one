@@ -1,6 +1,7 @@
 # I regularly validate every page with the Nu HTML Checker.
 # It has false positives; I report them upstream and silence them here.
 # I use jq/jaq to remove them from the JSON output.
+# Use the latest commit of Nu and its css-validator submodule for best results.
 .messages |= map(
 	. | select(
 		.type == "info" and (

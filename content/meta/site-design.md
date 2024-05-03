@@ -35,7 +35,7 @@ I conform to all <abbr>WCAG</abbr> AAA success criteria (<abbr>SC</abbr>) _excep
 <abbr>SC</abbr> 3.1.6 Pronunciation
 : I do not currently offer any pronunciation information.
 
-I have only tested <abbr>WCAG</abbr> compliance in mainstream browser engines (Blink, Gecko, WebKit). For full details on how I meet every <abbr>WCAG</abbr> success criterion, read <cite>[Details on <abbr>WCAG</abbr> 2.2 conformance]({{<relref "wcag-conformance.md">}})</cite>.
+I have only tested <abbr>WCAG</abbr> compliance in mainstream browser engines (Blink, Gecko, WebKit). For full details on how I meet every <abbr>WCAG</abbr> success criterion, read <cite>[Details on <abbr>WCAG</abbr> 2.2 conformance]({{<relref "/meta/wcag-conformance.md">}})</cite>.
 
 The <abbr>WCAG</abbr> presents a starting point, not a stopping point. Here are some non-<abbr>WCAG</abbr> accessibility criteria I consider:
 
@@ -71,7 +71,7 @@ The following automated tools supplement manual testing:
 
 WAVE reports no errors. AXE sometimes fails to measure contrast, but otherwise reports no errors. IBM Equal Access reports no errors, and finds some items which need manual review.
 
-I run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors. I repeat this run with every change to my Hugo templates and stylesheets.
+I run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker (local build, latest commit of the validator and its CSS-Validator submodule), and webhint on every page in my sitemap. After filtering out false-positives (and reporting them upstream), I receive no errors. I repeat this run with every change to my Hugo templates and stylesheets.
 
 <del datetime="2024-04-22">To work around [issue 1008 in IBM Equal Access Checker](https://github.com/IBMa/equal-access/issues/1008), I remove all instances of `content-visibility` from my site's CSS before running `achecker` from the command line</del>. <ins datetime="2024-04-22">Update: the issue has been resolved</ins>
 
@@ -81,7 +81,7 @@ I run axe-core, the IBM Equal Access Accessibility Checker, the Nu HTML Checker 
 
 This website uses well structured, semantic, [polygot XHTML5](https://www.w3.org/TR/html-polyglot/) (including [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) and [DPUB-ARIA](https://www.w3.org/TR/dpub-aria-1.1/) extensions where appropriate), enhanced with CSS for styling.
 
-This website conforms to Web standards. Each build runs `xmllint` to catch syntax errors. Every few commits, I run a local build of [the Nu HTML Checker](https://github.com/validator/validator) and [html proofer](https://github.com/gjtorikian/html-proofer) across all 200-something pages in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq), and I [report and fix false-positives](https://github.com/w3c/css-validator/issues?q=author%3ASeirdy) when possible.
+This website conforms to Web standards. Each build runs `xmllint` to catch syntax errors. Every few commits, I run a local build of [the Nu HTML Checker](https://github.com/validator/validator) and [html proofer](https://github.com/gjtorikian/html-proofer) across all 200-something pages in my sitemap, and see no errors. I do [filter out false Nu positives](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq), and I [report and fix false-positives](https://github.com/w3c/css-validator/issues?q=author%3ASeirdy) when possible. See [my docs for building and validating this site]({{<relref "/meta/build-this-site.md">}}) for more information.
 
 ### Cross-browser compatibility
 

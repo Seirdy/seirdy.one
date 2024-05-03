@@ -28,7 +28,6 @@ Read more about the design of this site in my [site design standards page]({{<re
 {{<picture name="b/cookie_free" alt="This site is certified 100% cookie free!" width="162" height="62" class="pix">}}
 {{<picture name="b/javascript-zero" alt="Proudly zero JavaScript!" width="162" height="62" class="pix">}}
 {{<picture name="b/web11" alt="Web 1.1." width="162" height="62" class="pix">}}
-<a href="https://www.512kb.club/">{{<picture name="b/green-team" alt="512kb Club Green Team." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>

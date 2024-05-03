@@ -292,7 +292,7 @@ Principle 4: Robust
 
 
 [SC 4.1.1: Parsing](https://w3c.github.io/wcag/understanding/parsing.html)
-: I validate all the required properties using the Nu HTML Checker and `xmllint`. All pages are well-formed polygot (X)HTML5. Every deploy contains a step that runs `xmllint` to ensure that all content is well-formed.
+: I validate all the required properties using the Nu HTML Checker and `xmllint`. All pages are well-formed polygot (X)HTML5. Every deploy contains a step that runs `xmllint` to ensure that all content is well-formed. Note that this requirement has been dropped from WCAG 2.2.
 
 [SC 4.1.2: Name, Role, Value](https://w3c.github.io/wcag/understanding/name-role-value.html)
 : I use standard HTML controls, enhanced by fully-compliant WAI-ARIA 1.2 and DPUB-ARIA 1.1. I regularly run the Nu HTML Checker, axe-core, and IBM Equal Access Checker on every page of my site to validate this.

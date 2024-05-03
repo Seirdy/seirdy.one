@@ -244,7 +244,7 @@ I run these tools locally, on every applicable file. A full run takes under <tim
 
 
 [Nu HTML Checker](https://validator.github.io/validator/)
-: A Java utility (eww) to validate all my HTML, SVG, and CSS content. I [filter false-positives with a jq script](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) after reporting them upstream.
+: A Java utility (eww) to validate all my HTML, SVG, and CSS content. I [filter false-positives with a jq script](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq) after reporting them upstream. I sometimes make small contributions to Nu and its CSS-Validator submodule, and always use the latest commit of both.
 
 [stylelint](https://github.com/stylelint/stylelint)
 : CSS linter that checks for problems like descending specificity or complex selectors.
