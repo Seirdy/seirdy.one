@@ -117,7 +117,7 @@ I support compatibility to the following degrees:
 - Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but all major functions work.
 - Basic features in abandoned engines and Dillo. Some ancillary features may not work (e.g. forms for Webmentions and search), but users can browse and read.
 
-[^0]: WeasyPrint doesn't support `details`, but I don't fully count this against my site's support for its engine because WeasyPrint targets non-interactive print media. Instead, I just ensure that the site makes sense in WeasyPrint without special `details` styling. Since my stylesheets define a border around `summary` elements, and since I they always start with the word "toggle", they make sense even when not rendered with special builtin styles.
+[^0]: WeasyPrint doesn't support `details`, but I don't fully count this against my site's support for its engine because WeasyPrint targets non-interactive print media. Instead, I just ensure that the site makes sense in WeasyPrint without special `details` styling. Since my stylesheets define a border around `summary` and `details` elements, and since I they always start with the word "toggle", they mostly make sense even when not rendered with special builtin styles.
 
 Some engines I have not yet tested, but hope to try in the future:
 
