@@ -1,7 +1,7 @@
 /* CSS that adds the bare minimum for a simple, accessible,
- * touch-friendly layout.
+ * touch-friendly layout compatible with as many UAs as possible.
  * Nothing here exists purely for cosmetics; everything addresses a
- * specific a11y, compatibility, or critical
+ * specific accessibility, compatibility, or critical
  * usability need.
  *
  * Three exceptions:
@@ -36,9 +36,9 @@
  * years.
  *
  * To keep myself from caring about minute details, I limited myself to
- * only defining spacing in increments of .25em. Pixels are 1px or
- * multiples of 3px. This also improves compression. No more "finding
- * the perfect value".
+ * only defining spacing in increments of .25em. Pixels are multiples of
+ * 3px. This also improves compression.
+ * No more "finding the perfect value".
  *
  * I cite WCAG 2.2 success criteria with "SC". I also tried to meet
  * the Google a11y requirement of 48px tap targets separated by atl
@@ -449,7 +449,10 @@ h1 {
 	body {
 		-webkit-hyphens: auto;
 		hyphens: auto;
-		padding: 0 8px;
+		/* Use an absolute unit for side margins so they don't increase with zoom.
+		 * I computed this based on the thickness I saw in scrollbars and
+		 * bezels on some watches. */
+		padding: 0 6px;
 	}
 
 	li > a,
@@ -564,18 +567,49 @@ img,
 mark, /* borders provide a distinguishing factor besides color */
 pre,
 summary {
-	border: 1px solid;
+	border: thin solid;
 }
+
+/* Putting a border around <details> makes summaries and
+ * the toggled details linked together as a sort of non-semantic
+ * section. I did this because in some situations (such as print layouts
+ * or PDF generators), <summary> receives no styling; it looks like
+ * ordinary text! There's no indication that it represents a toggle. Of
+ * course, you can't actually toggle things on a printed page, so I
+ * understand why they had to do this. Still, I think it's necessary to
+ * provide an indicator that you're looking at a section that was
+ * toggled somehow. Assistive technologies expose the button semantics
+ * of the <summary> and read its contents (which on seirdy.one start
+ * with the word "toggle"; interactive mouse/keyboard users can click it
+ * and see the list-style-type; print users should also have some
+ * indication.
+ *
+ * We still have more work to do, though. The contents of <details> are
+ * smooshed up against the border, so introduce some padding. This
+ * padding should apply to all top-level children of `details` *except*
+ * the `summary`, since we don't want a double-border.
+ *
+ * By applying this padding, we also happen to ensure that `details`
+ * children never protrude outside the `details` container. We can then
+ * apply some CSS containment for free without consequences. */
 
 /* A black border is too harsh; the extra visual noise is distracting
  * to users with eye-tracking or ADHD. Only special items like headings
- * should draw gaze. */
+ * should draw gaze.
+ *
+ * We also need padding around inline code snippets so the border
+ * doesn't touch the letters and screw up readability. */
+details,
 :not(pre) > code,
 :not(pre) > samp {
-	border: 1px solid #999;
+	border: thin solid #999;
 
 	/* borders shouldn't touch text */
 	padding: 0 .25em;
+}
+
+summary {
+	margin: 0 -0.25em;
 }
 
 /* center standalone images; same justification as
@@ -675,4 +709,7 @@ form :focus {
 /* Todo:
  * - Wait till Webkit fixes its broken-ass default dark stylesheet
  *   then consider trimming the dark stylesheet I provide.
+ *   (UPDATE: they did! now I'll wait maybe three years for it to roll
+ *   out as much as possible before removing my dark styles or
+ *   relegating them to an optional stylesheet.)
  * */
