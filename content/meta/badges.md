@@ -99,7 +99,7 @@ Sites that link back to me:
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
 
-### Other
+### Other cool sites
 
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="162" height="62" class="pix">}}</a>
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
@@ -115,5 +115,6 @@ The Yesterweb is winding down its social activity after admin burnout, but it re
 
 ## Other
 
+{{<picture name="b/lain" alt="Close-up of Lain Iwakura’s eyes with a static filter." width="162" height="62" class="pix">}}
 {{<picture name="b/graphicdesign" alt="The words “graphic design is my passion” next to a bad drawing of a frog. Sarcasm implied." width="162" height="62" class="pix">}}
 {{<picture name="b/ilovehorror" alt="I heart horror." width="162" height="62" class="pix">}}
