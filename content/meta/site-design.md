@@ -100,7 +100,7 @@ Mainstream engine forks
 : Pale Moon and recent versions of K-Meleon use Goanna, a single-process fork of Firefox's Gecko engine. Ultralight is a proprietary, source-available fork of WebKit focused on lightweight embedded webviews. My site works in these engines without any noticeable issues.
 
 Alternative engines
-: I test compatibility with current alternative engines: the SerenityOS browser, Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml and Servo. The site is usable in NetSurf, and the SerenityOS browser. Servo is the only engine in this category with support for `<details>`. ~~[The SerenityOS browser lacks ECDSA certificate support](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine.~~ <ins itemprop="correction" itemscope="" itemtype="https://schema.org/CorrectionComment" cite="https://github.com/SerenityOS/serenity/commit/f9386737a631b5f3b7eb1920bd4440a2784359e9">Update <time itemprop="datePublished">2024-01-30</time>: <span itemprop="text">[SerenityOS LibTLS merged support for these ciphers in October 2023](https://github.com/SerenityOS/serenity/commit/f9386737a631b5f3b7eb1920bd4440a2784359e9), resolving this incompatibility</span></ins>. The SerenityOS browser also has issues displaying my inline SVG avatar.
+: I test compatibility with current alternative engines: Ladybird (the SerenityOS browser), Servo, NetSurf, Kristall, and litehtml. I have excellent compatibility with litehtml, Ladybird, and Servo. The site is usable in NetSurf. litehtml and NetSurf do not support `<details>`, but remain usable. ~~[The SerenityOS browser lacks ECDSA certificate support](https://github.com/SerenityOS/serenity/issues/14160), but the Tildeverse mirror works fine.~~ <ins itemprop="correction" itemscope="" itemtype="https://schema.org/CorrectionComment" cite="https://github.com/SerenityOS/serenity/commit/f9386737a631b5f3b7eb1920bd4440a2784359e9">Update <time itemprop="datePublished">2024-01-30</time>: <span itemprop="text">[SerenityOS LibTLS merged support for these ciphers in October 2023](https://github.com/SerenityOS/serenity/commit/f9386737a631b5f3b7eb1920bd4440a2784359e9), resolving this incompatibility</span></ins>.
 
 Textual browsers
 : The site works well with textual browsers. All features except `<details>` work in Lynx and Links2. I include [felinks (an ELinks fork)](https://github.com/rkd77/elinks), edbrowse, and w3m in my tests. [w3m doesn't support soft hyphens](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173), but the site is still otherwise usable in it. I support these engines by making CSS a strictly-optional progressive enhancement and by using semantic markup. I test with Edbrowse less often. No textual browser supports `<details>`.
@@ -108,21 +108,26 @@ Textual browsers
 Abandoned engines
 : I occasionally test abandoned engines, sometimes with a TLS-terminating proxy if necessary. These engines include Tkhtml, KHTML, Dillo,[^1] Internet Explorer[^2] (with and without compatibility mode), Netscape Navigator, old Presto-based Opera versions,[^3] and outdated versions of current browsers. No abandoned engine supports `<details>`. I use Linux, but testing in Internet Explorer depends on my access to a Windows machine. Besides the `<details>` issues, the site works well in Internet Explorer 11 and Opera Presto. The site has layout issues but remains usable in Tkhtml, KHTML, and Netscape.
 
+Others
+: WeasyPrint uses a custom browser engine optimized for print. I test a small selection of representative pages with it. Should I ever stumble across a VR headset, I'll be sure to test Wolvic too.
+
 I support compatibility to the following degrees:
 
-- Works without major issues in mainstream engines, the Tor browser, Goanna, and Ultralight.
+- Works without major issues in mainstream engines, the Tor browser's "Safest" mode (assuming use of the Onion service which does not use SVGs), Ladybird, Goanna, Ultralight, and WeasyPrint.[^0]
 - Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but all major functions work.
-- Basic features in abandoned engines, Dillo, the SerenityOS browser. Some ancillary features may not work (e.g. forms for Webmentions and search), but users can browse and read.
+- Basic features in abandoned engines and Dillo. Some ancillary features may not work (e.g. forms for Webmentions and search), but users can browse and read.
+
+[^0]: WeasyPrint doesn't support `details`, but I don't fully count this against my site's support for its engine because WeasyPrint targets non-interactive print media. Instead, I just ensure that the site makes sense in WeasyPrint without special `details` styling. Since my stylesheets define a border around `summary` elements, and since I they always start with the word "toggle", they make sense even when not rendered with special builtin styles.
 
 Some engines I have not yet tested, but hope to try in the future:
 
 - [Flow Browser](https://www.ekioh.com/flow-browser/)
 - [gngr](https://gngr.info/)
-- [WeasyPrint](https://weasyprint.org/)
 - [Netzhaut](https://web.archive.org/web/20230405031300/http://netzhaut.dev/)
 - [Kozmonaut](https://github.com/twilco/kosmonaut)
 - [Moon](https://github.com/ZeroX-DG/moon)
 - [hastur](https://github.com/robinlinden/hastur)
+- [Wolvic](https://wolvic.org/en/)
 
 ## Machine-friendliness
 
@@ -224,7 +229,7 @@ I'm not opposed to these features, but I probably won't implement support for th
 This site is **privacy-respecting.** Its <abbr title="Content Security Policy">CSP</abbr> blocks all scripts, third-parties, and other problematic features. For details on this site's privacy, [read the privacy policy](../privacy/).
 
 
-[^1]: Although no official announcement of Dillo's demise exists, the browser's development halted years ago. The Dillo website's domain name expired, so [I mirrored the Dillo repository]({{<relref "/notes/dillo-repository-mirror.md">}}).
+[^1]: Although no official announcement of Dillo's demise exists, the browser's development halted years ago. The Dillo website's domain name expired, so [I mirrored the Dillo repository]({{<relref "/notes/dillo-repository-mirror.md">}}). The project has since been picked up by a different team that does not use the original Dillo domain, and [Dillo work continues on GitHub](https://dillo-browser.github.io/).
 
 [^2]: [Internet Explorer's engine isn't abandoned]({{<relref "internet-explorer-is-almost-gone.md">}}). Microsoft discontinued the consumer version, but supports the browser for enterprise users. I used to have access to the latter; I now test with "Internet Explorer Mode" in Edge when I can access a Windows machine.
 
