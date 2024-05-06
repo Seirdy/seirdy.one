@@ -59,9 +59,17 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
 <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
 
+### Software used by seirdy.one
+
+<a href="https://fedoraproject.org/">{{<picture name="b/fedora" alt="Powered by Fedora™." width="162" height="62" class="pix">}}</a>
+<a href="https://nginx.org/">{{<picture name="b/nginx" alt="Nginx powered." width="162" height="62" class="pix">}}</a>
+<a href="https://llvm.org/">{{<picture name="b/llvm" alt="LLVM compiler infrastructure." width="162" height="62" class="pix">}}</a>
+
 ### Notes on "About this site" badges
 
 The W3C Valid HTML5 badge isn't offered by the new Nu HTML Checker because [HTML5 is about conformance, not validity](https://html5doctor.com/html5-check-it-before-you-wreck-it-with-miketm-smith/). I use it anyways because my markup does fully conform _and_ is well-formed polygot XHTML5, despite false-positives from validators; [see my conformance statement]({{<relref "/meta/site-design.md#conformance">}}).
+
+I build Nginx, Conduit, Webmentiond, and other software for seirdy.one using LLVM in a Chimera Linux container, due to LLVM's release-build-optimized sanitizers such as ControlFlowIntegrity.
 
 ## Ideological affinity, web-related
 
@@ -100,8 +108,6 @@ I might eventually move these to a separate page under the "About" section of my
 See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 
 <a href="https://fediverse.party/en/fediverse/">{{<picture name="b/fediverse" alt="Join the fediverse." width="162" height="62" class="pix">}}</a>
-<a href="https://fedoraproject.org/">{{<picture name="b/fedora" alt="Powered by Fedora™." width="162" height="62" class="pix">}}</a>
-<a href="https://nginx.org/">{{<picture name="b/nginx" alt="Nginx powered." width="162" height="62" class="pix">}}</a>
 <a href="https://www.gutenberg.org/">{{<picture name="b/gutenberg" alt="Project Gutenberg." width="162" height="62" class="pix">}}</a>
 <a href="https://archive.org/?noscript=true">{{<picture name="b/internetarchive" alt="Internet Archive." width="162" height="62" class="pix">}}</a>
 <a href="https://wiby.me/about/">{{<picture name="b/wiby" alt="Wiby.me search." width="162" height="62" class="pix">}}</a>
