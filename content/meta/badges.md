@@ -119,7 +119,7 @@ Sites that link back to me:
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
 
-### Other cool sites
+### Other personal sites
 
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="162" height="62" class="pix">}}</a>
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
@@ -127,7 +127,11 @@ Sites that link back to me:
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
+
+### Other sites
+
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
+<a href="https://xkcd.com/">{{<picture name="b/xkcd" alt="xkcd." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "Friendly sites" badges
 
