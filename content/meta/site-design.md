@@ -113,11 +113,9 @@ Others
 
 I support compatibility to the following degrees:
 
-- Works without major issues in mainstream engines, the Tor browser's "Safest" mode (assuming use of the Onion service which does not use SVGs), Ladybird, Goanna, Ultralight, and WeasyPrint.[^0]
-- Fully operable in textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but all major functions work.
+- Works without major issues in mainstream engines, the Tor browser's "Safest" mode (assuming use of the Onion service which does not use SVGs), Goanna, Ultralight, and WeasyPrint.[^4]
+- Fully operable in Ladybird, textual browsers, litehtml, and NetSurf. Some issues (e.g. missing `<details>`) might make the experience unpleasant, but all major functions work. Ladybird only displays minor cosmetic issues in my stylesheet, none of which make any part of the site inoperable.[^5]
 - Basic features in abandoned engines and Dillo. Some ancillary features may not work (e.g. forms for Webmentions and search), but users can browse and read.
-
-[^0]: WeasyPrint doesn't support `details`, but I don't fully count this against my site's support for its engine because WeasyPrint targets non-interactive print media. Instead, I just ensure that the site makes sense in WeasyPrint without special `details` styling. Since my stylesheets define a border around `summary` and `details` elements, and since I they always start with the word "toggle", they mostly make sense even when not rendered with special builtin styles.
 
 Some engines I have not yet tested, but hope to try in the future:
 
@@ -234,5 +232,9 @@ This site is **privacy-respecting.** Its <abbr title="Content Security Policy">C
 [^2]: [Internet Explorer's engine isn't abandoned]({{<relref "internet-explorer-is-almost-gone.md">}}). Microsoft discontinued the consumer version, but supports the browser for enterprise users. I used to have access to the latter; I now test with "Internet Explorer Mode" in Edge when I can access a Windows machine.
 
 [^3]: Strictly speaking, Opera still supports Presto to a limited degree. Opera Mini's "Extreme" mode still uses a server-side Presto rendering engine; see {{<mention-work itemprop="citation" role="doc-credit" itemtype="Article">}}{{<cited-work name="Opera Browsers, Modes & Engines" url="https://dev.opera.com/articles/browsers-modes-engines/" extraName="headline">}}{{</mention-work>}}. That said, I do test with the outdated desktop Presto engine in a sandboxed environment.
+
+[^4]: WeasyPrint doesn't support `details`, but I don't fully count this against my site's support for its engine because WeasyPrint targets non-interactive print media. Instead, I just ensure that the site makes sense in WeasyPrint without special `details` styling. Since my stylesheets define a border around `summary` and `details` elements, and since I they always start with the word "toggle", they mostly make sense even when not rendered with special builtin styles.
+
+[^5]: Ladybird clips the superscripts I use for footnotes, rendering their text invisible but still clickable. They look like blank underlines with no text, but are still clickable and navigate to the appropriate footnote with a backlink. Borders around `<details>` are buggy. Everything otherwise works.
 
 
