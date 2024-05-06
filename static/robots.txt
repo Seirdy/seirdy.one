@@ -2,52 +2,88 @@ User-agent: *
 Disallow: /noindex/
 Disallow: /misc/
 
-# I opt out of online advertising so malware that injects ads on my site won't get paid.
-# You should do the same. my ads.txt file contains a standard placeholder to forbid any
-# compliant ad networks from paying for ad placement on my domain.
+# I opt out of online advertising so malware that injects ads on my site won't
+# get paid. You should do the same. my ads.txt file contains a standard
+# placeholder to forbid any compliant ad networks from paying for ad placement
+# on my domain.
 User-Agent: Adsbot
 Disallow: /
 Allow: /ads.txt
 Allow: /app-ads.txt
 
+# Enabling our crawler to access your site offers several significant benefits
+# to you as a publisher. By allowing us access, you enable the maximum number
+# of advertisers to confidently purchase advertising space on your pages. Our
+# comprehensive data insights help advertisers understand the suitability and
+# context of your content, ensuring that their ads align with your audience's
+# interests and needs. This alignment leads to improved user experiences,
+# increased engagement, and ultimately, higher revenue potential for your
+# publication. (https://www.peer39.com/crawler-notice)
+#  --> fuck off.
+User-agent: peer39_crawler
+User-Agent: peer39_crawler/1.0
+Disallow: /
+
 ## IP-violation scanners ##
 
 # The next three are borrowed from https://www.videolan.org/robots.txt
 
-# > This robot collects content from the Internet for the sole purpose of # helping educational institutions prevent plagiarism. [...] we compare student papers against the content we find on the Internet to see if we # can find similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
+# > This robot collects content from the Internet for the sole purpose of #
+# helping educational institutions prevent plagiarism. [...] we compare student
+# papers against the content we find on the Internet to see if we # can find
+# similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
 #  --> fuck off.
 User-Agent: TurnitinBot
 Disallow: /
 
-# > NameProtect engages in crawling activity in search of a wide range of brand and other intellectual property violations that may be of interest to our clients. (http://www.nameprotect.com/botinfo.html)
+# > NameProtect engages in crawling activity in search of a wide range of brand
+# and other intellectual property violations that may be of interest to our
+# clients. (http://www.nameprotect.com/botinfo.html)
 #  --> fuck off.
 User-Agent: NPBot
 Disallow: /
 
-# iThenticate is a new service we have developed to combat the piracy of intellectual property and ensure the originality of written work for# publishers, non-profit agencies, corporations, and newspapers. (http://www.slysearch.com/)
+# iThenticate is a new service we have developed to combat the piracy of
+# intellectual property and ensure the originality of written work for#
+# publishers, non-profit agencies, corporations, and newspapers.
+# (http://www.slysearch.com/)
 #  --> fuck off.
 User-Agent: SlySearch
 Disallow: /
 
-# BLEXBot assists internet marketers to get information on the link structure of sites and their interlinking on the web, to avoid any technical and possible legal issues and improve overall online experience. (http://webmeup-crawler.com/)
+# BLEXBot assists internet marketers to get information on the link structure
+# of sites and their interlinking on the web, to avoid any technical and
+# possible legal issues and improve overall online experience.
+# (http://webmeup-crawler.com/)
 # --> fuck off.
 User-Agent: BLEXBot
 Disallow: /
 
-# Providing Intellectual Property professionals with superior brand protection services by artfully merging the latest technology with expert analysis. (https://www.checkmarknetwork.com/spider.html/)
+# Providing Intellectual Property professionals with superior brand protection
+# services by artfully merging the latest technology with expert analysis.
+# (https://www.checkmarknetwork.com/spider.html/)
 # "The Internet is just way to big to effectively police alone." (ACTUAL quote)
 # --> fuck off.
 User-agent: CheckMarkNetwork/1.0 (+https://www.checkmarknetwork.com/spider.html)
 Disallow: /
 
-# Stop trademark violations and affiliate non-compliance in paid search. Automatically monitor your partner and affiliates’ online marketing to protect yourself from harmful brand violations and regulatory risks. We regularly crawl websites on behalf of our clients to ensure content compliance with brand and regulatory guidelines. (https://www.brandverity.com/why-is-brandverity-visiting-me)
+# Stop trademark violations and affiliate non-compliance in paid search.
+# Automatically monitor your partner and affiliates’ online marketing to
+# protect yourself from harmful brand violations and regulatory risks. We
+# regularly crawl websites on behalf of our clients to ensure content
+# compliance with brand and regulatory guidelines.
+# (https://www.brandverity.com/why-is-brandverity-visiting-me)
 # --> fuck off.
 User-agent: BrandVerity/1.0
 Disallow: /
 
 ## Misc. icky stuff ##
 
-# Pipl assembles online identity information from multiple independent sources to create the most complete picture of a digital identity and connect it to real people and their offline identity records. When all the fragments of online identity data are collected, connected, and corroborated, the result is a more trustworthy identity.
+# Pipl assembles online identity information from multiple independent sources
+# to create the most complete picture of a digital identity and connect it to
+# real people and their offline identity records. When all the fragments of
+# online identity data are collected, connected, and corroborated, the result
+# is a more trustworthy identity.
 # --> fuck off.
 User-agent: PiplBot
 Disallow: /
@@ -56,7 +92,6 @@ Disallow: /
 
 # Eat shit, OpenAI.
 User-agent: ChatGPT-User
-Disallow: /
 User-agent: GPTBot
 Disallow: /
 
@@ -68,11 +103,15 @@ Disallow: /
 # There isn't any public documentation for this AFAICT.
 # Reuters thinks this works so I might as well give it a shot.
 User-agent: anthropic-ai
-Disallow: /
 User-agent: Claude-Web
 Disallow: /
+# Extremely aggressive crawling with no documentation. people had to email the
+# company about this for robots.txt guidance.
+User-agent: ClaudeBot
+Disallow: /
 
-# FacebookBot crawls public web pages to improve language models for our speech recognition technology.
+# FacebookBot crawls public web pages to improve language models for our speech
+# recognition technology.
 # <https://developers.facebook.com/docs/sharing/bot/?_fb_noscript=1>
 User-Agent:  FacebookBot
 Disallow: /
@@ -88,7 +127,9 @@ Disallow: /
 # I'm not familiar enough with Omgili to make a call here.
 # In the long run, my embedded robots meta-tags and headers could cover gen-AI
 
-# I don't block cohere-ai or Perplexitybot: they don't appear to actually scrape data for LLM training purposes. The crawling powers search engines with integrated pre-trained LLMs.
+# I don't block cohere-ai or Perplexitybot: they don't appear to actually
+# scrape data for LLM training purposes. The crawling powers search engines
+# with integrated pre-trained LLMs.
 # TODO: investigate whether YouBot scrapes to train its own in-house LLM.
 
 Sitemap: https://seirdy.one/sitemap.xml
