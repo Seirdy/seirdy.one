@@ -93,6 +93,7 @@ I might eventually move these to a separate page under the "About" section of my
 {{<picture name="b/adhd" alt="ADHD." width="162" height="62" class="pix">}}
 <a href="https://www.autisticasfxxk.com/">{{<picture name="b/autisticasfxxk.com" alt="The words “autistic as fuck” flash over a pick background. The word “fuck” is censored." width="162" height="62" class="pix">}}</a>
 <a href="https://www.defectivebydesign.org/">{{<picture name="b/dbd" alt="Defective by design. Eliminate DRM now!" width="162" height="62" class="pix">}}</a>
+<a href="https://en.wikipedia.org/wiki/Illegal_number?useskin=vector">{{<picture name="b/aacs" alt="The characters “8 8 8 C 0” over the vertical strips of the digital free speech flag." width="162" height="62" class="pix">}}</a>
 
 ## Things I use
 
