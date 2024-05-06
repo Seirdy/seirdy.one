@@ -150,5 +150,6 @@ The Yesterweb is winding down its social activity after admin burnout, but it re
 ## Other
 
 {{<picture name="b/lain" alt="Close-up of Lain Iwakura’s eyes with a static filter." width="162" height="62" class="pix">}}
+<a href="https://ooo.eeeee.ooo/">{{<picture name="b/miku" alt="The text “This site is Miku-approved” next to Hatsune Miku." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/graphicdesign" alt="The words “graphic design is my passion” next to a bad drawing of a frog. Sarcasm implied." width="162" height="62" class="pix">}}
 {{<picture name="b/ilovehorror" alt="I heart horror." width="162" height="62" class="pix">}}
