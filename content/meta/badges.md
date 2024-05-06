@@ -18,6 +18,24 @@ Note that this image's URL is cache-busted. It will change any time I alter my b
 - `https://seirdy.one/sticker_88x31.png`
 - `https://seirdy.one/sticker_88x31.gif`
 
+{{<codefigure>}}{{<codecaption lang="Shell">}}
+
+Code to generate my 88x31 button using [my favicon.svg file](../../favicon.svg), ImageMagick, `rsvg-convert`, and `pngquant`.
+
+{{</codecaption>}}
+
+```figure
+magick -background black -size 56x31 -fill white \
+  -gravity center -font "Iosevka-Term" -pointsize 16 'label:Seirdy' \
+  tmp.png
+rsvg-convert favicon.svg -aw 31 \
+  | convert - tmp.png +append -background white -splice 1x0+31+0 - \
+  | pngquant -s 1 28 - >sticker_88x31.png
+rm tmp.png
+```
+
+{{</codefigure>}}
+
 ## About this site
 
 Read more about the design of this site in my [site design standards page]({{<relref "/meta/site-design.md">}}).
@@ -25,6 +43,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://anybrowser.org/campaign/">{{<picture name="b/any_browser" alt="The text “any browser you like.” next to a light prism." width="162" height="62" class="pix">}}</a>
 <a href="https://dd-b.net/lynx-enhanced.html">{{<picture name="b/lynx_enh" alt="Lynx Enhanced." width="162" height="62" class="pix">}}</a>
 <a href="https://www.torproject.org/">{{<picture name="b/tor" alt="The Tor Project." width="162" height="62" class="pix">}}</a>
+<a href="https://web.archive.org/web/20230607005614/http://www.ermel.org/handcoded/">{{<picture name="b/handcoded" alt="100% hand-coded HTML." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/cookie_free" alt="This site is certified 100% cookie free!" width="162" height="62" class="pix">}}
 {{<picture name="b/javascript-zero" alt="Proudly zero JavaScript!" width="162" height="62" class="pix">}}
 {{<picture name="b/web11" alt="Web 1.1." width="162" height="62" class="pix">}}
@@ -86,6 +105,7 @@ See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 <a href="https://www.gutenberg.org/">{{<picture name="b/gutenberg" alt="Project Gutenberg." width="162" height="62" class="pix">}}</a>
 <a href="https://archive.org/?noscript=true">{{<picture name="b/internetarchive" alt="Internet Archive." width="162" height="62" class="pix">}}</a>
 <a href="https://wiby.me/about/">{{<picture name="b/wiby" alt="Wiby.me search." width="162" height="62" class="pix">}}</a>
+<a href="https://github.com/yt-dlp/yt-dlp">{{<picture name="b/yt-dl" alt="The word “youtube-dl” flashes on a command prompt" width="162" height="62" class="pix">}}</a>
 
 ## Friendly sites
 
