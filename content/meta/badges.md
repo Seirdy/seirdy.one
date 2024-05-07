@@ -48,6 +48,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 {{<picture name="b/web11" alt="Web 1.1." width="162" height="62" class="pix">}}
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
+{{<picture name="b/mobilefriendly" alt="Mobile friendly." width="162" height="62" class="pix">}}
 <a href="https://www.w3.org/developers/tools/">{{<picture name="b/heartvalidator" alt="I heart validator." width="162" height="62" class="pix">}}</a>
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/valid-css" alt="W3C valid CSS." width="162" height="62" class="pix">}}</a>
@@ -65,6 +66,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://nginx.org/">{{<picture name="b/nginx" alt="Nginx powered." width="162" height="62" class="pix">}}</a>
 <a href="https://llvm.org/">{{<picture name="b/llvm" alt="LLVM compiler infrastructure." width="162" height="62" class="pix">}}</a>
 <a href="https://www.torproject.org/">{{<picture name="b/tor" alt="The Tor Project." width="162" height="62" class="pix">}}</a>
+<a href="https://gohugo.io/">{{<picture name="b/hugo" alt="Logo for the Hugo static site generator." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "About this site" badges
 
@@ -113,8 +115,9 @@ See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 <a href="https://archive.org/?noscript=true">{{<picture name="b/internetarchive" alt="Internet Archive." width="162" height="62" class="pix">}}</a>
 <a href="https://wiby.me/about/">{{<picture name="b/wiby" alt="Wiby.me search." width="162" height="62" class="pix">}}</a>
 <a href="https://neovim.io/">{{<picture name="b/neovim" alt="Made with NeoVim." width="162" height="62" class="pix">}}</a>
-<a href="https://github.com/yt-dlp/yt-dlp">{{<picture name="b/yt-dl" alt="The word “youtube-dl” flashes on a command prompt" width="162" height="62" class="pix">}}</a>
-<a href="https://matrix.org/">{{<picture name="b/matrix" alt="Matrix" width="162" height="62" class="pix">}}</a>
+<a href="https://github.com/yt-dlp/yt-dlp">{{<picture name="b/yt-dl" alt="The word “youtube-dl” flashes on a command prompt." width="162" height="62" class="pix">}}</a>
+<a href="https://matrix.org/">{{<picture name="b/matrix" alt="Matrix." width="162" height="62" class="pix">}}</a>
+<a href="https://github.com/gorhill/uBlock">{{<picture name="b/ublock-origin" alt="uBlock Origin now!" width="162" height="62" class="pix">}}</a>
 
 ## Friendly sites
 
@@ -140,6 +143,7 @@ Sites that link back to me:
 
 ### Other sites
 
+<a href="https://eightyeightthirty.one/">{{<picture name="b/eightyeightthirtyone" alt="eighty eight thirty dot one." width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
 <a href="https://xkcd.com/">{{<picture name="b/xkcd" alt="xkcd." width="162" height="62" class="pix">}}</a>
 
