@@ -121,22 +121,24 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
 * Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
+* ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
+=> https://www.chatnoir.eu/ ChatNoir
+=> https://commoncrawl.org/ Common Crawl
 
 => https://burf.co/ Burf.co
 => https://siik.co/ Siik
 => https://inetdex.com inetdex.com
 
-* ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 * Secret Search Engine Labs: Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its CashRank algorithm. Allows site submission.
 * Gabanza: a search engine from a hosting company. I found few details abou the search engine itself, and the index was small, but it was suitable for discovering new pages related to short broad queries.
+* Jambot: docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
-=> https://www.chatnoir.eu/ ChatNoir
-=> https://commoncrawl.org/ Common Crawl
 => https://github.com/chatnoir-eu ChatNoir source code (GitHub)
 => https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ ChatNoir Announcement
 => http://www.secretsearchenginelabs.com/ Secret Search Engine Labs
 => http://www.secretsearchenginelabs.com/tech/cashrank.php CashRank Algorithm
 => https://www.gabanza.com/ Gabanza - The new search engine.
+=> https://jambot.com/ Jambot
 
 ### Unusable engines, irrelevant results
 

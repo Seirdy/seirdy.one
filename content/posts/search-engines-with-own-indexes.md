@@ -116,7 +116,7 @@ These engines pass most of the tests listed in the "methodology" section. All of
 : **My favorite generalist engine on this page.** Stract supports advanced ranking customization by allowing users ti import "optics" files, like a better version of Brave's "goggles" feature. [Stract is fully open-source](https://github.com/StractOrg/stract), with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
 
 [Right Dao](https://rightdao.com)
-: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8]
+: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8] For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones. It seems to be a bit lacking in more recent pages.
 
 [Alexandria](https://www.alexandria.org/)
 : A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
@@ -163,6 +163,9 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 [Gabanza](https://www.gabanza.com/)
 : A search engine from a hosting company. I found few details abou the search engine itself, and the index was small, but it was suitable for discovering new pages related to short broad queries.
+
+[Jambo](https://jambot.com/)
+: Docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
 ### Fledgling engines
 
