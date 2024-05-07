@@ -130,11 +130,11 @@ Sites that link back to me:
 <a href="https://tea.cuddleslut.fr/">{{<picture name="b/tea_banner" alt="the word “tea” over a nonbinary flag next to a blushing personified teacup." width="162" height="62" class="pix">}}</a>
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
+<a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
 
 ### Other personal sites
 
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="162" height="62" class="pix">}}</a>
-<a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="162" height="62" class="pix">}}</a>
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
