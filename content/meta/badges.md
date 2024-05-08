@@ -38,6 +38,9 @@ rm tmp.png
 
 ## About this site
 
+
+### Site design standards
+
 Read more about the design of this site in my [site design standards page]({{<relref "/meta/site-design.md">}}).
 
 <a href="https://anybrowser.org/campaign/">{{<picture name="b/any_browser" alt="The text “any browser you like.” next to a light prism." width="162" height="62" class="pix">}}</a>
@@ -49,16 +52,11 @@ Read more about the design of this site in my [site design standards page]({{<re
 {{<picture name="b/is_it_slow_say_so" alt="Is it slow? Say so!" width="162" height="62" class="pix">}}
 {{<picture name="b/dark-mode" alt="Made for Dark Mode!" width="162" height="62" class="pix">}}
 {{<picture name="b/mobilefriendly" alt="Mobile friendly." width="162" height="62" class="pix">}}
-<a href="https://www.w3.org/developers/tools/">{{<picture name="b/heartvalidator" alt="I heart validator." width="162" height="62" class="pix">}}</a>
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/html5" alt="W3C valid HTML5." width="162" height="62" class="pix">}}</a>
 <a href="https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/linter-configs/vnu_filter.jq">{{<picture name="b/valid-css" alt="W3C valid CSS." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Fatom.xml">{{<picture name="b/valid-atom" alt="Valid Atom feed." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Findex.xml">{{<picture name="b/valid-rss" alt="Valid RSS feed." width="162" height="62" class="pix">}}</a>
 <a href="{{<relref "/meta/wcag-conformance.md">}}">{{<picture name="b/wcag22" alt="W3C WAI-AA WCAG 2.2." width="162" height="62" class="pix">}}</a>
-<a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
-<a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
-<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
-<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
 
 ### Software that seirdy.one runs on
 
@@ -67,6 +65,16 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://llvm.org/">{{<picture name="b/llvm" alt="LLVM compiler infrastructure." width="162" height="62" class="pix">}}</a>
 <a href="https://www.torproject.org/">{{<picture name="b/tor" alt="The Tor Project." width="162" height="62" class="pix">}}</a>
 <a href="https://gohugo.io/">{{<picture name="b/hugo" alt="Logo for the Hugo static site generator." width="162" height="62" class="pix">}}</a>
+<a href="https://www.w3.org/developers/tools/">{{<picture name="b/heartvalidator" alt="I heart validator." width="162" height="62" class="pix">}}</a>
+
+### Other info about this site
+
+<a href="https://www.mabsland.com/Adoption.html">{{<picture name="b/panda_14c" alt="Smug panda fursona next to the text “Web 14”." width="162" height="62" class="pix">}}</a>
+<a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
+<a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
+<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">{{<picture name="b/agplv3" alt="AGPL v3: Free Software. It stands for GNU Affero General Public Licence, version 3." width="162" height="62" class="pix">}}</a>
+
 
 ### Notes on "About this site" badges
 
