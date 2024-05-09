@@ -123,6 +123,7 @@ See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 <a href="https://archive.org/?noscript=true">{{<picture name="b/internetarchive" alt="Internet Archive." width="162" height="62" class="pix">}}</a>
 <a href="https://wiby.me/about/">{{<picture name="b/wiby" alt="Wiby.me search." width="162" height="62" class="pix">}}</a>
 <a href="https://neovim.io/">{{<picture name="b/neovim" alt="Made with NeoVim." width="162" height="62" class="pix">}}</a>
+<a href="https://ffmpeg.org/">{{<picture name="b/ffmpeg" alt="FFmpeg." width="162" height="62" class="pix">}}</a>
 <a href="https://github.com/yt-dlp/yt-dlp">{{<picture name="b/yt-dl" alt="The word “youtube-dl” flashes on a command prompt." width="162" height="62" class="pix">}}</a>
 <a href="https://matrix.org/">{{<picture name="b/matrix" alt="Matrix." width="162" height="62" class="pix">}}</a>
 <a href="https://github.com/gorhill/uBlock">{{<picture name="b/ublock-origin" alt="uBlock Origin now!" width="162" height="62" class="pix">}}</a>
