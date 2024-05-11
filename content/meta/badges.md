@@ -3,9 +3,9 @@ date: "2024-04-19T04:08:01-04:00"
 title: "Classic web badges"
 outputs:
     - html
-description: "My curation of 88x31 badges, representing what I and this site use and stand for."
+description: "My curation of over 70 88x31 badges, representing what I and this site use and stand for."
 ---
-My collection of 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 3&#160;kb and avoid excessively flashy animations for me to consider it. [See some tools I use for image optimization]({{<relref "/posts/website-best-practices.md#image-optimization">}}).
+My collection of over 70 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 3&#160;kb and avoid excessively flashy animations for me to consider it. [See some tools I use for image optimization]({{<relref "/posts/website-best-practices.md#image-optimization">}}).
 
 ## My badge
 
@@ -90,6 +90,7 @@ I build Nginx, Conduit, Webmentiond, and other software for seirdy.one using LLV
 <a href="https://yesterweb.org/no-to-web3/">{{<picture name="b/keep" alt="Keep the Web free. Say no to Web3." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/nn" alt="I support Net Neutrality." width="162" height="62" class="pix">}}
 {{<picture name="b/noblink" alt="No <blink> tags! 3.0." width="162" height="62" class="pix">}}
+{{<picture name="b/frames-suck" alt="The text “Campaign against frames!” next to a crossed-out webpage full of frames." width="162" height="62" class="pix">}}
 {{<picture name="b/right2repair" alt="I support right to repair." width="162" height="62" class="pix">}}
 <a href="https://www.w3.org/Promotion/WIP/">{{<picture name="b/wip" alt="The text “Web Interoperability Pledge” next to a drawing of gears." width="162" height="62" class="pix">}}</a>
 <a href="https://archive.webstandards.org/bannerx.html">{{<picture name="b/wpsnowbord" alt="A wasp next to the words “standards NOW!”" width="162" height="62" class="pix">}}</a>
@@ -162,7 +163,7 @@ The Yesterweb is winding down its social activity after admin burnout, but it re
 
 ## Other
 
-{{<picture name="b/lain" alt="Close-up of Lain Iwakura’s eyes with a static filter." width="162" height="62" class="pix">}}
+<a href="https://web.archive.org/web/20160124020349/http://www.geneon-ent.co.jp/rondorobe/anime/lain/">{{<picture name="b/lain" alt="Close-up of Lain Iwakura’s eyes with a static filter." width="162" height="62" class="pix">}}</a>
 <a href="https://ooo.eeeee.ooo/">{{<picture name="b/miku" alt="The text “This site is Miku-approved” next to Hatsune Miku." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/graphicdesign" alt="The words “graphic design is my passion” next to a bad drawing of a frog. Sarcasm implied." width="162" height="62" class="pix">}}
 {{<picture name="b/ilovehorror" alt="I heart horror." width="162" height="62" class="pix">}}
