@@ -274,12 +274,15 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 * Seznam: Czech, seems relatively privacy-friendly. Discovered in the seirdy.one access logs. It allows site submission with webmaster tools and using IndexNow.
 * Cốc Cốc: Vietnamese
 * go.mail.ru: Russian
+* LetSearch.ru: Russian. Allows link submission
 
 => https://www.daum.net/ Daum (Korean)
 => https://search.naver.com  Naver
 => https://www.seznam.cz/  Seznam
 => https://coccoc.com/search  Cốc Cốc
 => https://go.mail.ru/ go.mail.ru
+=> https://letsearch.ru/ LetSearch.ru
+=> https://letsearch.ru/bots LetSearch.ru bots and URL submission page
 
 ### Smaller indexes
 

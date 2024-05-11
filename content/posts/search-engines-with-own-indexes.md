@@ -316,6 +316,8 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [go.mail.ru](https://go.mail.ru/): Russian
 
+- [LetSearch.ru](https://letsearch.ru/): Russian. [Allows URL submission](https://letsearch.ru/bots)
+
 ### Smaller indexes
 
 - [ALibw.com](https://www.alibw.com/): Chinese, found in my access logs.
