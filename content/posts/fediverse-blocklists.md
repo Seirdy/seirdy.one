@@ -726,6 +726,10 @@ yggdrasil.social {#yggdrasil}
 : [Profile for "Ricotta"](https://web.archive.org/web/20230819214035/https://yggdrasil.social/users/Ricotta), the current most active user, has a swastika in their display name and a bio that includes "National Socialist" and "TERF".
 : [Blatant racism from another user](https://archive.today/2023.08.19-214624/https://yggdrasil.social/notice/AXQJkwOuwrASMJo74C).
 
+zhub.link {#zhub}
+: Admin [strolling into mentions of trans lesbians to post queerphobia](https://archive.today/2024.05.11-025205/https://zhub.link/@Revertron/112354798424416207), later [doubling down on it](https://archive.today/2024.04.29-214406/https://zhub.link/@Revertron/112354849124040026), describing transness as "ugly, illogical". [An earlier example](https://archive.today/2023.09.21-085824/https://zhub.link/@Revertron/110904424139458352) claiming to be oppressed for being labelled homophobic for holding homophobic beliefs.
+: Admin [posts Islamophobic pedojacketing](https://archive.today/2023.12.08-083222/https://zhub.link/@Revertron/111542203459128334).
+
 {{</ dd-id >}} {{</ nofollow >}}
 
 ### Tier-0 entries, excluding FediNuke
