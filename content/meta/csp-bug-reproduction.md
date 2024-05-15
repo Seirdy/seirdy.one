@@ -80,6 +80,8 @@ Note the following:
 
 - If you can only reproduce the fourth and fifth page: the offending directive is `sandbox` without `allow-same-origin`.
 
+I'm also interested in differences for Firefox users pre- and post- version 128, since [this bug was apparently fixed in Firefox 128](https://bugzilla.mozilla.org/show_bug.cgi?id=1411641).
+
 Other places to test
 --------------------
 
