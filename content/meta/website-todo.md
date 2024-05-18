@@ -1,7 +1,6 @@
 ---
 title: "Website todo"
 date: 2024-05-09T00:49:19-04:00
-draft: true
 outputs:
     - html
 description: "A catalog of all the website improvements I hope to make on seirdy.one, but haven't gotten to yet (and some that I have)."
