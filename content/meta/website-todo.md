@@ -12,6 +12,8 @@ Here's a catalog of all the website improvements I hope to make on seirdy.one, b
 
 These are roughly in descending order of importance:
 
+- Implement [the well-known button standard](https://paste.scorpion-ghost.ts.net/paste/182d4ab3-2e94-4063-b40a-ebd208b2d3a2/org) (by [Arch](https://arch.dog/), via [this Fediverse post](https://floofy.tech/@arch/112461865365597998)).
+
 - Add a blogroll.
 
 - Create separate pages for bookmarks instead of filling them all on one page, and add Atom/RSS feeds for them.
