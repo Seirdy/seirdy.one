@@ -30,7 +30,8 @@ magick -background black -size 56x31 -fill white \
   -gravity center -font "Iosevka-Term" -pointsize 16 'label:Seirdy' \
   tmp.png
 rsvg-convert favicon.svg -aw 31 \
-  | convert - tmp.png +append -background white -splice 1x0+31+0 - \
+  | convert - tmp.png +append -background white -splice 1x0+31+0 \
+    -shave 1x1 -bordercolor white -border 1 - \
   | pngquant -s 1 28 - >sticker_88x31.png
 rm tmp.png
 ```
