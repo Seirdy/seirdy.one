@@ -4,6 +4,7 @@ title: "Classic web badges"
 outputs:
     - html
 description: "My curation of over 70 88x31 badges, representing what I and this site use and stand for."
+image: "b/sticker_88x31.png"
 ---
 My collection of over 70 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 3&#160;kb and avoid excessively flashy animations for me to consider it. [See some tools I use for image optimization]({{<relref "/posts/website-best-practices.md#image-optimization">}}).
 
@@ -70,6 +71,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 ### Other info about this site
 
 <a href="https://www.mabsland.com/Adoption.html">{{<picture name="b/panda_14c" alt="Smug panda fursona next to the text “Web 14”." width="162" height="62" class="pix">}}</a>
+<a href="https://tildeverse.org/">{{<picture name="b/tildeverse" alt="Tildeverse." width="162" height="62" class="pix">}}</a>
 <a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="162" height="62" class="pix">}}</a>
 <a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="162" height="62" class="pix">}}</a>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="162" height="62" class="pix">}}</a>
@@ -150,11 +152,13 @@ Sites that link back to me:
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="162" height="62" class="pix">}}</a>
+<a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="162" height="62" class="pix">}}</a>
 
 ### Other sites
 
 <a href="https://eightyeightthirty.one/">{{<picture name="b/eightyeightthirtyone" alt="eighty eight thirty dot one." width="162" height="62" class="pix">}}</a>
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="162" height="62" class="pix">}}</a>
+<a href="https://www.egscomics.com/">{{<picture name="b/egs" alt="El Goonish Shive." width="162" height="62" class="pix">}}</a>
 <a href="https://xkcd.com/">{{<picture name="b/xkcd" alt="xkcd." width="162" height="62" class="pix">}}</a>
 
 ### Notes on "Friendly sites" badges
@@ -167,3 +171,31 @@ The Yesterweb is winding down its social activity after admin burnout, but it re
 <a href="https://ooo.eeeee.ooo/">{{<picture name="b/miku" alt="The text “This site is Miku-approved” next to Hatsune Miku." width="162" height="62" class="pix">}}</a>
 {{<picture name="b/graphicdesign" alt="The words “graphic design is my passion” next to a bad drawing of a frog. Sarcasm implied." width="162" height="62" class="pix">}}
 {{<picture name="b/ilovehorror" alt="I heart horror." width="162" height="62" class="pix">}}
+
+## Credits
+
+Many were sourced from [88x41db.com](https://88x31db.com/), which itself sources from other directories.
+
+The following badges come from the sites they link to:
+
+- Any browser you like
+- 100% hand-coded HTML
+- Atom and RSS validation badges
+- Web-14 censorship panda
+- AGPLv3 license
+- Say no to Web3
+- Web Interoperability Pledge
+- Standards NOW!
+- Yellow ribbon
+- Autistic as fxxk
+- Defective by Design
+- Wiby.me
+- All "friendly sites" badges except xkcd (I don't know who made that)
+
+Other credits:
+
+- The W3C CSS badge is from {{<mention-work role="doc-credit" itemtype="Article" itemprop="citation">}}{{<cited-work name="The W3C “validation” icons" url="https://www.w3.org/QA/Tools/Icons" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="World Wide Web Consortium">W3C</abbr>{{</mention-work>}}
+- I took the WAI-AA WCAG 2.2 badge from {{<mention-work role="doc-credit" itemtype="WebPage" itemprop="citation">}}{{<cited-work name="Adding WCAG Conformance Logos" url="https://www.w3.org/WAI/standards-guidelines/wcag/conformance-logos/" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="Web Accessibility Initiative">WAI</abbr>{{</mention-work>}}.
+- I cropped the "I ❤ Validator" badge from {{<mention-work role="doc-credit" itemtype="Article" itemprop="citation">}}{{<cited-work name="W3C launches Validator Donation and Sponsorship Campaign" url="https://www.w3.org/news/2008/w3c-launches-validator-donation-and-sponsorship-campaign/" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="World Wide Web Consortium">W3C</abbr>{{</mention-work>}}.
+- The El Goonish Shive badge is from [an old archived version of its website](https://web.archive.org/web/20071223104609/http://www.egscomics.com:80/banners.html).
+- Tildeverse badge made by {{<indieweb-person itemprop="mentions" name="DJ Chase" url="https://dj-chase.com/">}}.
