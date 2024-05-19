@@ -153,6 +153,7 @@ Sites that link back to me:
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="162" height="62" class="pix">}}</a>
+<a href="https://easrng.net/">{{<picture name="b/easrng" alt="easrng." width="162" height="62" class="pix">}}</a>
 <a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="162" height="62" class="pix">}}</a>
 
 ### Other sites
