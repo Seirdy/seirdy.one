@@ -33,14 +33,14 @@
 			"type": "text/html"
 		},
 		{
-			"rel": "http://webfinger.net/rel/profile-page",
-			"href": "https://pleroma.envs.net/Seirdy",
-			"type": "text/html"
+			"rel": "self",
+			"type": "application/activity+json",
+			"href": "https://pleroma.envs.net/users/Seirdy"
 		},
 		{
 			"rel": "self",
 			"type": "application/activity+json",
-			"href": "https://pleroma.envs.net/users/Seirdy"
+			"href": "https://chai.kibbutz.gay/users/Seirdy"
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
