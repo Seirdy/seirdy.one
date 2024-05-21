@@ -144,6 +144,7 @@ Sites that link back to me:
 <a href="https://daudix.codeberg.page/about/">{{<picture name="b/daudix" alt="Daudix." width="162" height="62" class="pix">}}</a>
 <a href="https://dj-chase.com/">{{<picture name="b/dj-chase" alt="DJ Chase." width="162" height="62" class="pix">}}</a>
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="162" height="62" class="pix">}}</a>
+<a href="https://slatecave.net/railstation">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
 
 ### Other personal sites
 
@@ -151,7 +152,6 @@ Sites that link back to me:
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="162" height="62" class="pix">}}</a>
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="162" height="62" class="pix">}}</a>
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="162" height="62" class="pix">}}</a>
-<a href="https://slatecave.net/">{{<picture name="b/slatecave" alt="slatecave.net." width="162" height="62" class="pix">}}</a>
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="162" height="62" class="pix">}}</a>
 <a href="https://easrng.net/">{{<picture name="b/easrng" alt="easrng." width="162" height="62" class="pix">}}</a>
 <a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="162" height="62" class="pix">}}</a>
