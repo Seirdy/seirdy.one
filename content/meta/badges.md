@@ -197,7 +197,11 @@ The following badges come from the sites they link to:
 Other credits:
 
 - The W3C CSS badge is from {{<mention-work role="doc-credit" itemtype="Article" itemprop="citation">}}{{<cited-work name="The W3C “validation” icons" url="https://www.w3.org/QA/Tools/Icons" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="World Wide Web Consortium">W3C</abbr>{{</mention-work>}}
+
 - I took the WAI-AA WCAG 2.2 badge from {{<mention-work role="doc-credit" itemtype="WebPage" itemprop="citation">}}{{<cited-work name="Adding WCAG Conformance Logos" url="https://www.w3.org/WAI/standards-guidelines/wcag/conformance-logos/" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="Web Accessibility Initiative">WAI</abbr>{{</mention-work>}}.
+
 - I cropped the "I ❤ Validator" badge from {{<mention-work role="doc-credit" itemtype="Article" itemprop="citation">}}{{<cited-work name="W3C launches Validator Donation and Sponsorship Campaign" url="https://www.w3.org/news/2008/w3c-launches-validator-donation-and-sponsorship-campaign/" extraName="headline">}} by the <abbr itemscope="" itemtype="https://schema.org/Organization" itemprop="publisher" title="World Wide Web Consortium">W3C</abbr>{{</mention-work>}}.
+
 - The El Goonish Shive badge is from [an old archived version of its website](https://web.archive.org/web/20071223104609/http://www.egscomics.com:80/banners.html).
+
 - Tildeverse badge made by {{<indieweb-person itemprop="mentions" name="DJ Chase" url="https://dj-chase.com/">}}.
