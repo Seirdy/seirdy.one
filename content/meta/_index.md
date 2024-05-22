@@ -70,6 +70,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [ooh.directory](https://ooh.directory/)
 - [List-Me.com](https://list-me.com/)
 - [Sloop Modern Web Directory](https://directory.sloop.nz/modern/)
+- [BUKMARK.CLUB](https://bukmark.club/)
 
 <details>
 <summary>Pending directories</summary>
