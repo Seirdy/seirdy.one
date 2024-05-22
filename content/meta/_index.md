@@ -69,6 +69,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Nerd Listings](http://nerdlistings.info/)
 - [ooh.directory](https://ooh.directory/)
 - [List-Me.com](https://list-me.com/)
+- [Sloop Modern Web Directory](https://directory.sloop.nz/modern/)
 
 <details>
 <summary>Pending directories</summary>
