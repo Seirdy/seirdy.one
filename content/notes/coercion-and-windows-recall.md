@@ -6,6 +6,11 @@ replyTitle: "I’ve got some news for Microsoft about how domestic abuse works."
 replyType: "SocialMediaPosting"
 replyAuthor: "evacide"
 replyAuthorURI: "https://hachyderm.io/@evacide/112481894385686328"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/931a72b0-09e9-42c8-b727-7b7a029b791c'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/technology/10008/coercion-and-windows-recall-cw-vague-references-to-domestic'
 ---
 The best ways to improve opsec against coercion are to:
 
