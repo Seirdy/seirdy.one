@@ -6,6 +6,9 @@ replyTitle: "A look at search engines with their own indexes"
 replyType: "BlogPosting"
 replyAuthor: "Seirdy"
 replyAuthorURI: "https://seirdy.one/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AiDUlrCthb1fPcvSgi'
 ---
 
 My search engine article blew up recently, as [yet another major publication linked it](https://arstechnica.com/gadgets/2024/05/bing-outage-shows-just-how-little-competition-google-search-really-has/2/) (yay! /gen), so I made some fixes:
