@@ -113,7 +113,7 @@ These engines pass most of the tests listed in the "methodology" section. All of
 
 
 [Stract](https://trystract.com/)
-: **My favorite generalist engine on this page.** Stract supports advanced ranking customization by allowing users ti import "optics" files, like a better version of Brave's "goggles" feature. [Stract is fully open-source](https://github.com/StractOrg/stract), with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
+: **My favorite generalist engine on this page.** Stract supports advanced ranking customization by allowing users to import "optics" files, like a better version of Brave's "goggles" feature. [Stract is fully open-source](https://github.com/StractOrg/stract), with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
 
 [Right Dao](https://rightdao.com)
 : Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8] For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones. It seems to be a bit lacking in more recent pages.
@@ -138,10 +138,10 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 
 [Infotiger](https://alpha.infotiger.com/)
-: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotier has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
+: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotiger also has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
 
 [seekport](http://www.seekport.com/)
-: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms. but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
+: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 
 [Exalead](https://www.exalead.com/search/)
 : Slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the [Curlie](https://curlie.org) directory. No relevant results for "Oppenheimer" and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
@@ -151,9 +151,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 [Burf.co](https://burf.co/)
 : Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
-
-[Siik](https://siik.co/)
-: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 
 [ChatNoir](https://www.chatnoir.eu/)
 : An experimental engine by researchers that uses the [Common Crawl](https://commoncrawl.org/) index. The engine is [open source](https://github.com/chatnoir-eu). See the [announcement](https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ) on the Common Crawl mailing list (Google Groups).
@@ -328,8 +325,6 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 - [fastbot](https://www.fastbot.de/): German
 
-- [Moose.at](https://www.moose.at): German (Austria-based)
-
 - [SOLOFIELD](https://solofield.net): Japanese
 
 - [kaz.kz](http://kaz.kz): Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
@@ -406,9 +401,16 @@ websearchengine.org OR tuxdex.com
 [Entfer](https://web.archive.org/web/20230810032916/https://entfer.com/)
 : a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
 
+[Siik](https://web.archive.org/web/20221002041725/https://siik.co/)
+: Lacked contact info, and the ToS and Privacy Policy links were dead. Seemed to have PHP errors in the backend for some of its instant-answer widgets. If you scrolled past all that, you'd find web results powered by what seems to be its own index. These results did tend to be somewhat relevant, but the index seemed too small for more specific queries.
+
+
 Dead engines I don't have an extended description for:
 
 - [Parsijoo](https://www.parsijoo.ir/): Persian search engine.
+
+- [Moose.at](https://www.moose.at): German (Austria-based). The site is still up but redirects searches to Brave.
+
 
 ## Exclusions
 
@@ -510,7 +512,7 @@ Try a "bad" engine from lower in the list. It might show you utter crap. But eve
 
 Some of this content came from the [Search Engine Map](https://www.searchenginemap.com/) and [Search Engine Party](https://searchengine.party/). A few web directories also proved useful.
 
-{{<indieweb-person itemprop="mentions" first-name="Matt" last-name="Wells" url="https://gigablast.com/bio.html" org="Gigablast" org-url="https://gigablast.com/">}} also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://gigablast.com/blog.html).
+{{<indieweb-person itemprop="mentions" first-name="Matt" last-name="Wells" url="https://web.archive.org/web/20230220000629/https://www.gigablast.com/bio.html" org="Gigablast" org-url="https://web.archive.org/web/20230331095814/https://www.gigablast.com/">}} also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the [Gigablast blog](https://web.archive.org/web/20230321113801/https://gigablast.com/blog.html).
 
 {{<mention-work itemprop="mentions" itemtype="BlogPosting">}}{{<cited-work name="A 2021 List of Alternative Search Engines and Search Resources" url="https://thenewleafjournal.com/a-2021-list-of-alternative-search-engines-and-search-resources/">}} by {{<indieweb-person itemprop="author" first-name="Nicholas" last-name="Ferrell" url="https://emucafe.club/channel/naferrell" org="The New Leaf Journal" org-url="https://thenewleafjournal.com/">}}{{</mention-work>}} is a great post on alternative search engines. He also gave me some [useful details](https://lists.sr.ht/~seirdy/seirdy.one-comments/%3C20210618031450.rb2twu4ypek6vvl3%40rkumarlappie.attlocal.net%3E) about Seznam, Naver, Baidu, and Goo.
 

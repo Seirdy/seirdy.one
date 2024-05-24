@@ -79,7 +79,7 @@ Google, Bing, and Yandex support structured data such as microformats1, microdat
 
 These engines pass most of the tests listed in the "methodology" section. All of them seem relatively privacy-friendly. I wouldn't recommend using these engines to find specific answers; they're better for learning about a topic by finding interesting pages related to a set of keywords.
 
-* Stract: My favorite generalist engine on this page. Stract supports advanced ranking customization by allowing users ti import "optics" files, like a better version of Brave's "goggles" feature. Stract is fully open-source, with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
+* Stract: My favorite generalist engine on this page. Stract supports advanced ranking customization by allowing users to import "optics" files, like a better version of Brave's "goggles" feature. Stract is fully open-source, with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
 => https://trystract.com/ Stract
 => https://github.com/StractOrg/stract Stract source code (GitHub)
 
@@ -108,7 +108,7 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
 
 * Infotiger: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section; I look forward to the day it "graduates" to the previous section. Infotiger also has a Tor hidden service.
-* seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms. but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
+* seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 * ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
 
@@ -120,13 +120,11 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => https://www.exactseek.com/ ExactSeek
 
 * Burf.co: Very small index, but seems fine at ranking more relevant results higher. Allows site submission without any extra steps.
-* Siik: Lacks contact info, and the ToS and Privacy Policy links are dead. Seems to have PHP errors in the backend for some of its instant-answer widgets. If you scroll past all that, it does have web results powered by what seems to be its own index. These results do tend to be somewhat relevant, but the index seems too small for more specific queries.
 * ChatNoir: An experimental engine by researchers that uses the Common Crawl index. The engine is open source. There's more information in its announcement on the Common Crawl mailing list (Google Groups).
 => https://www.chatnoir.eu/ ChatNoir
 => https://commoncrawl.org/ Common Crawl
 
 => https://burf.co/ Burf.co
-=> https://siik.co/ Siik
 => https://inetdex.com inetdex.com
 
 * Secret Search Engine Labs: Very small index with very little SEO spam; it toes the line between a "search engine" and a "surf engine". It's best for reading about broad topics that would otherwise be dominated by SEO spam, thanks to its CashRank algorithm. Allows site submission.
@@ -297,11 +295,9 @@ I’m unable to evaluate these engines properly since I don’t speak the necess
 => https://www.search.ch  search.ch
 => https://www.fastbot.de/  fastbot
 
-* Moose.at: German (Austria-based)
 * SOLOFIELD: Japanese
 * kaz.kz: Kazakh and Russian, with a focus on "Kazakhstan's segment of the Internet"
 
-=> https://www.moose.at  Moose.at
 => https:solofield.net SOLOFIELD
 => https://kaz.kz/ kaz.kz
 
@@ -374,7 +370,6 @@ These engines were originally included in the article, but have since been disco
 * Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 * websearchengine.org and tuxdex.com: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
 * Entfer: a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
-* Parsijoo: Persian search engine
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
@@ -383,7 +378,14 @@ These engines were originally included in the article, but have since been disco
 => https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
 => https://marlo.sandymaguire.me/ Marlo
 => https://web.archive.org/web/20230810032916/https://entfer.com/ Entfer
+
+* Siik: Lacked contact info, and the ToS and Privacy Policy links were dead. Seemed to have PHP errors in the backend for some of its instant-answer widgets. If you scrolled past all that, you'd find web results powered by what seems to be its own index. These results did tend to be somewhat relevant, but the index seemed too small for more specific queries.
+* Parsijoo: Persian search engine
+* Moose.at: German (Austria-based). The site is still up but redirects searches to Brave.
+
+=> https://web.archive.org/web/20221002041725/https://siik.co/ Siik
 => https://www.parsijoo.ir/  Parsijoo
+=> https://www.moose.at  Moose.at
 
 ## Exclusions
 
@@ -493,7 +495,7 @@ Some of this content came from the Search Engine Map and Search Engine Party. A 
 
 Matt from Gigablast also gave me some helpful information about GBY which I included in the "Rationale" section. He's written more about big tech in the Gigablast blog:
 
-=> https://gigablast.com/blog.html Gigablast blog
+=> https://web.archive.org/web/20230321113801/https://gigablast.com/blog.html Gigablast blog
 
 Nicholas A. Ferrell of The New Leaf Journal wrote a great post on alternative search engines.
 
