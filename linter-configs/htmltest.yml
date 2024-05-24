@@ -42,6 +42,7 @@ IgnoreURLs:
   - "https://seirdy.one/search/"
   # - "https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one"
   - "https://seirdy.one/.well-known/webfinger" # inexplicable false positive
+  - "https://strugee.net/" # refuses connection
   - "https://fediring.net/(previous|next)" # redir
   # - "https://forum.palemoon.org/viewtopic.php?f=1&t=25473" # manual check: blocks crawlers
   - "https://forum.palemoon.org/viewtopic.php"
