@@ -414,7 +414,7 @@ Dead engines I don't have an extended description for:
 
 ## Exclusions
 
-Two engines were excluded from this list for having a far-right focus.
+Three engines were excluded from this list for having a far-right focus.
 
 One engine was excluded because it seems to be built using cryptocurrency in a way I'd rather not support.
 
