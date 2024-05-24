@@ -494,7 +494,7 @@ Professional critics often work anonymously because personalization can damage t
 
 Some engines, like Kagi and the Ask.com family of engines, have unique-looking results from external indexes. Unique results alone don't always imply independence, as an engine could alter ranking or add filters (something that very few engines are permitted to do; Google and Microsoft generally impose a strict ToS forbidding modification).
 
-Another possible indicator I look for is word substitutions. Returning the same results for "matza gebrent" and "matzo brei" implies a deep understanding of related food topics. Google and Bing return nearly identical results for the two queries, but engines like Mojeek return entirely different results. I often compare an engine's word substitutions to see if they're similar to another engine's, and see how many results from the top 20 are not present in the top 30-40 on other engines. I have a working list of other word substitutions I test.
+Another possible indicator I look for is word substitutions. Nearly every engine supports substitutions for verb tense or singular/plural word forms, but more advanced semantic substitutions are less common. Returning the same results for "matza gebrent" and "matzo brei" requires a deep understanding of related food topics. Google and Bing return nearly identical results for the two queries, but engines like Mojeek return entirely different results. I often compare an engine's word substitutions to see if they're similar to another engine's, and see how many results from the top 20 are not present in the top 30-40 on other engines. I have a working list of other word substitutions I test.
 
 ### Caveats
 
