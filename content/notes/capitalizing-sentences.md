@@ -1,7 +1,7 @@
 ---
 title: "Capitalizing sentences"
 date: 2022-07-17T18:22:38-07:00
-replyURI: "https://mk.nixnet.social/notes/92tluu3eml"
+replyURI: "https://archive.today/2022.09.10-193453/https://mk.nixnet.social/notes/92tluu3eml"
 replyTitle: "INITIAL CAPITALS IN ENGLISH SENTENCES? (poll)"
 replyType: "SocialMediaPosting"
 replyAuthor: "Alexandra"

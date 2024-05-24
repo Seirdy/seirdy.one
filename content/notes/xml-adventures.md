@@ -1,7 +1,7 @@
 ---
 title: "XML adventures"
 date: 2022-06-11T14:59:13-07:00
-replyURI: "https://mk.nixnet.social/notes/91dz17okx7"
+replyURI: "https://archive.today/2022.09.10-194752/https://mk.nixnet.social/notes/91dz17okx7"
 replyTitle: "Take a look at the xml:space attribute if you haven't"
 replyType: "SocialMediaPosting"
 replyAuthor: "Alexandra"

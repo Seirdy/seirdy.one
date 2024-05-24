@@ -36,13 +36,16 @@ IgnoreURLs:
   - "https://archive.is"
   - "https://archive.ph"
   - "https://archive.today"
+  - "https://baccyflap.com/noai" # connection refused
   - "https://ogp.me/ns"
+  - "https://xeiaso.net" # HTTP 416
   - "https://collector.seirdy.one/webmentions/"
   - "http://creativecommons.org/ns"
   - "https://seirdy.one/search/"
   # - "https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one"
   - "https://seirdy.one/.well-known/webfinger" # inexplicable false positive
   - "https://strugee.net/" # refuses connection
+  - "https://www.moonshot.forbiddenl0ve.net/index.php" # cert mismatch false positive
   - "https://fediring.net/(previous|next)" # redir
   # - "https://forum.palemoon.org/viewtopic.php?f=1&t=25473" # manual check: blocks crawlers
   - "https://forum.palemoon.org/viewtopic.php"

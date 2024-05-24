@@ -77,7 +77,6 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Accessible Net Directory](https://pinkvampyr.leprd.space/accessiblenet/) (pending)
-- [Moonshot](https://www.moonshot.forbiddenl0ve.net/index.php) (pending)
 
 </details>
 </details>

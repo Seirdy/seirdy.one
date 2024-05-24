@@ -1,10 +1,10 @@
 ---
 title: "Matrix performance problems"
 date: 2022-11-15T12:23:28-08:00
-replyURI: "https://fedi.lucdev.net/notice/APdYWfzd59CNH2QCem"
+replyURI: "https://web.archive.org/web/20221209081125/https://fedi.lucdev.net/notice/APdYWfzd59CNH2QCem"
 replyTitle: "I cannot seem to join big [Matrix] rooms; it seems the software is not efficient"
 replyType: "SocialMediaPosting"
-replyAuthor: "Lucie"
+replyAuthor: "Luc"
 replyAuthorURI: "https://lucdev.net"
 ---
 Synapse is incredibly slow, which is why I run the [Conduit matrix server](https://conduit.rs/). Server performance is the main price paid for Matrix' history replication.
