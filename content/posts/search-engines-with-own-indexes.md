@@ -480,13 +480,21 @@ I tried to pick queries that should have a good number of results and show varia
 
 - "Seirdy": My site is relatively low-traffic, but my nickname is pretty unique and visible on several of the highest-traffic sites out there.
 
-- "Project London": a small movie made with volunteers and <abbr title="Free, Libre, Open-Source Software">FLOSS</abbr> without much advertising. If links related to the movie show up, the engine's really good.
+- "Project London": a small movie made with volunteers and <abbr title="Free, Libre, Open-Source Software">FLOSS</abbr> without much advertising. If links related to small independent projects like this show up, the index has really good coverage of movies.
 
-- "oppenheimer": a name that could refer to many things. Without context, it should refer to the physicist who worked on the atomic bomb in Los Alamos. Other historical queries: "magna carta" (intermediate), "the prince" (very hard).
+- “oppenheimer” versus "J Robert Oppenheimer": a name that could refer to many things. Without context, it could refer to a high-budget movie or the physicist who led the Manhattan Project in Los Alamos. Other historical queries: “magna carta” (intermediate), “the prince” (very hard).
+
+(Update: I don't use these queries anymore; I've found better tests in recent months).
 
 Some less-mainstream engines have noticed this article, which is great! I've had excellent discussions with people who work on several of these engines. Unfortunately, this article's visibility also incentivizes some engines to optimize specifically for any methodology I describe. I've addressed this by keeping a long list of test queries to myself. The simple queries above are a decent starting point for simple quick evaluations, but I also test for common search operators, keyword length, and types of domain-specific jargon. I also use queries designed to pull up specific pages with varying levels of popularity and recency to gauge the size, scope, and growth of an index.
 
 Professional critics often work anonymously because personalization can damage the integrity of their reviews. For similar reasons, I attempt to try each engine anonymously at least once by using a VPN and/or my standard anonymous setup: an amnesiac Whonix VM with the Tor Browser. I also often test using a fresh profile when travelling, or via a Searx instance if it supports a given engine. When avoiding personalization, I use "varied" queries that I don't repeat verbatim across search engines; this reduces the likelihood of identifying me. I also attempt to spread these tests out over time so admins won't notice an unusual uptick in unpredictable and esoteric searches. This might seem overkill, but I already regularly employ similar methods for a variety of different scenarios.
+
+### Unique results without unique indexes
+
+Some engines, like Kagi and the Ask.com family of engines, have unique-looking results from external indexes. Unique results alone don't always imply independence, as an engine could alter ranking or add filters (something that very few engines are permitted to do; Google and Microsoft generally impose a strict ToS forbidding modification).
+
+Another possible indicator I look for is word substitutions. Returning the same results for "matza gebrent" and "matzo brei" implies a deep understanding of related food topics. Google and Bing return nearly identical results for the two queries, but engines like Mojeek return entirely different results. I often compare an engine's word substitutions to see if they're similar to another engine's, and see how many results from the top 20 are not present in the top 30-40 on other engines. I have a working list of other word substitutions I test.
 
 ### Caveats
 
