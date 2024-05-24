@@ -1612,7 +1612,7 @@ Imagine your typical "modern" website's deployment pipeline. It requires thousan
 
 Ten years from now, how much of this will still work?
 
-Try to ensure that your website can be archived, and/or easily re-built and served on an ordinary server. This way, your work can still be made accessible after you're gone. For example: all my site requires to build is a tarball of statically-linked binaries, a POSIX shell, and a decent Make implementation (bmake and GNU make work) to build; see [my build manifest](https://git.sr.ht/~seirdy/seirdy.one/tree/master/item/.build.yml). To serve, it just needs a static web server.
+Try to ensure that your website can be archived, and/or easily re-built and served on an ordinary server. This way, your work can still be made accessible after you're gone. For example: all my site requires to build is a tarball of statically-linked binaries, a POSIX shell, and a decent Make implementation (bmake and GNU make work) to build; see [my build manifest](https://git.sr.ht/~seirdy/seirdy.one/tree/e591c9d1ee54c16c40f4b8f2c1eab9e830577681/item/.build.yml). To serve, it just needs a static web server.
 
 Testing
 -------
