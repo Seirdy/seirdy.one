@@ -1,7 +1,8 @@
 ---
 title: "User choice and progressive enhancement"
 date: 2022-06-27T14:31:21-07:00
-replyURI: "https://lobste.rs/s/mvw7zd/details_as_menu#c_lxwjcc"
+lastMod: 2022-06-27T14:31:21-07:00
+replyURI: "https://lobste.rs/comments/lxwjcc/reply"
 replyTitle: "These browsers are mostly used by tech-savvy people"
 replyType: "SocialMediaPosting"
 replyAuthor: "Matt Campbell"
