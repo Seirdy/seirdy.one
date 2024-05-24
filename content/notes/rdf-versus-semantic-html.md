@@ -1,11 +1,12 @@
 ---
 title: "RDF versus semantic HTML"
 date: 2022-09-13T21:30:02-07:00
-replyURI: "https://cybre.space/@jauntywunderkind420/108993489770129012"
+lastMod: 2022-09-13T21:30:02-07:00
+replyURI: "https://web.archive.org/web/20231201000536/https://cybre.space/@jauntywunderkind420/108993489770129012"
 replyTitle: "Microdata and rdfa are excellent and wonderful ways to describe individual html elements"
 replyType: "SocialMediaPosting"
 replyAuthor: "@jauntywunderkind420@cybre.space"
-replyAuthorURI: "https://cybre.space/@jauntywunderkind420/"
+replyAuthorURI: "https://web.archive.org/web/20230202143104/https://cybre.space/@jauntywunderkind420/"
 ---
 
 > microdata and rdfa both directly mark up existing html content.

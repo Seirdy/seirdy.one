@@ -61,7 +61,7 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
-- ~~[Yesterlinks](https://links.yesterweb.org/)~~
+- [Yesterlinks (archived)](https://web.archive.org/web/20230817122434/https://links.yesterweb.org/)
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)

@@ -5,7 +5,7 @@ replyURI: "https://archive.today/hxOsO"
 replyTitle: "The amount of water other food need to produce 1kg of food"
 replyType: "SocialMediaPosting"
 replyAuthor: "Fristi"
-replyAuthorURI: "https://comfitu.re/"
+replyAuthorURI: "https://croc-monsieur.nl/"
 ---
 I have mixed feelings about infographics that reduce ecological footprints to single scalar non-fungible values.
 
