@@ -25,9 +25,6 @@ This list is not comprehensive; to keep this list small, I excluded many really 
 
 Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
 
-Some of these lists are also sources for the Oliphant blocklists:
-=> https://writer.oliphant.social/oliphant/the-blocklist-algorithm The Blocklist Algorithm - The Oliphant
-
 This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats.
 
 ## How Tier-0 and FediNuke work

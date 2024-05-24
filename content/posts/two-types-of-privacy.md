@@ -165,7 +165,7 @@ TE carries the risk of "springing a leak". While TR presents an incremental solu
 #### Other relevant discussions worth reading
 
 - [Arkenfox user.js issue 1274: Effort towards a common browser fingerprint](https://github.com/arkenfox/user.js/issues/1274)
-- [PrivacyGuides discussion 374: Great browser re-write-reboot](https://github.com/privacyguides/privacyguides.org/discussions/374)
+- [PrivacyGuides discussion 341: Great browser re-write-reboot](https://github.com/orgs/privacyguides/discussions/341)
 
 Conflicts between TR and TE
 ---------------------------

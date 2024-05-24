@@ -190,7 +190,7 @@ $ curl https://cht.sh/fly
 
 {{</codefigure>}}
 
-Thanks to Emily for <a href="https://sparkly.uni.horse/@emily/108451871152495325">reminding me of name conflicts.</a>
+Thanks to Emily for <a href="https://web.archive.org/web/20221117231326/https://sparkly.uni.horse/@emily/108451871152495325">reminding me of name conflicts.</a>
 
 <section role="doc-bibliography">
 

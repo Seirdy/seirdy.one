@@ -163,7 +163,7 @@ $ curl https://cht.sh/fly
 [...]
 ```
 
-Thanks to Emily for reminding me of this on Fedi.
+=> https://web.archive.org/web/20221117231326/https://sparkly.uni.horse/@emily/108451871152495325 Thanks to Emily for reminding me of this on Fedi.
 
 ## References and further reading
 
