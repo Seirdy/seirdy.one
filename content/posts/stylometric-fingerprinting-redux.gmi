@@ -155,6 +155,6 @@ If you wish to write anonymously, I recommend the following:
 5. If, after doing the prior steps, your anonymous work still has a reading level too similar to your non-anonymous writing: reduce the reading level by choosing simpler words.
 
 More information about stylometric fingerprinting resistance is on the Hitchiker's Guide to Online Anonymity:
-=> https://anonymousplanet-ng.org/guide.html#appendix-a4-counteracting-forensic-linguistics HGOA Appendix A4: counteracting forensic linguistics
+=> https://anonymousplanet.org/guide.html#appendix-a4-counteracting-forensic-linguistics HGOA Appendix A4: counteracting forensic linguistics
 
 Stay safe, everyone.
