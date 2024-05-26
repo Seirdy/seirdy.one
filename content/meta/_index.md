@@ -42,7 +42,6 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 
 - [512KB Club](https://www.512kb.club/)
 - [250kb club](https://250kb.club/)
-- [10 KB Club (archived)](https://web.archive.org/web/20231208000921/https://10kbclub.com/)
 - [no-JS Club](https://no-js.club/)
 - [Darktheme Club](https://darktheme.club/)
 - [XHTML Club](https://xhtml.club/)
@@ -61,7 +60,6 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [Writer's Lane, Nightfall City](https://nightfall.city/writers-lane/)
 - [Just Another Useless Page](https://www.geocities.ws/jaup/jaup.htm)
 - [Webrings Fanlisting](https://fanlistings.nickifaulk.com/webrings/)
-- [Yesterlinks (archived)](https://web.archive.org/web/20230817122434/https://links.yesterweb.org/)
 - [Gossip's Web](https://gossipsweb.net/personal-websites)
 - [Nixers](https://github.com/nixers-projects/sites/wiki/List-of-nixers.net-user-sites)
 - [Smooth Sailing](https://smoothsailing.asclaria.org/)
@@ -73,12 +71,24 @@ The {{<mention-work itemtype="WebSite">}}{{<cited-work name="1MB Club" url="http
 - [BUKMARK.CLUB](https://bukmark.club/)
 
 <details>
-<summary>Pending directories</summary>
+<summary>Toggle pending directories</summary>
 
 - [LinkLane](https://www.linklane.net/) (pending)
 - [Accessible Net Directory](https://pinkvampyr.leprd.space/accessiblenet/) (pending)
 
 </details>
+</details>
+
+### Historical entries
+
+Archived snapshots of webrings, website clubs, and other directories I've been part of but have since shut down:
+
+<details>
+<summary>Toggle historical entries</summary>
+- [Yesterlinks](https://web.archive.org/web/20230817122434/https://links.yesterweb.org/)
+- [10 KB Club](https://web.archive.org/web/20231208000921/https://10kbclub.com/)
+- [no js webring](https://web.archive.org/web/20230224173026/https://nojs.sugarfi.dev/)
+
 </details>
 
 ## Awards and novelty badges
