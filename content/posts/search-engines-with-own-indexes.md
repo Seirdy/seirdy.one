@@ -537,9 +537,11 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^6]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
 
-[^7]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^4] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case.
+[^7]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^4] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case. 
 
     <ins datetime="2023-03-13T13:34:30-07:00">Update: You.com seems to source organic link results from Bing, and only interleaves those results with its own curated infoboxes</ins>
+
+    <ins datetime="2024-05-25">Update: during a recent Bing outage, I found some organic link results on You.com that didn't look like they came from Bing. More research is needed again.</ins>
 
 [^8]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
 
