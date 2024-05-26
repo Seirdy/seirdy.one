@@ -573,7 +573,7 @@ Browser support for displaying alt-text in place of broken images seems good. Mo
 => https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html Alternative Text for CSS Generated Content
 
 That post seems to indicate that Firefox 81 on macOS 10.15 didn't display alt-text, but users report correct alt-text display in more recent Firefox versions:
-=> https://cybre.space/@nleigh/108688070682694730 Fediverse thread soliciting screenshots of alt-text display in Firefox on macOS.
+=> https://web.archive.org/web/20231210072526/https://cybre.space/@nleigh/108688070682694730 Fediverse thread soliciting screenshots of alt-text display in Firefox on macOS.
 
 On Gemini, much of this section applies to varying degrees. I typically employ this approach when linking to e.g. images. Sometimes, I even do this when linking to gemtext or HTML documents.
 

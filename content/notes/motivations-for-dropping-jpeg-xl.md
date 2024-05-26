@@ -1,7 +1,8 @@
 ---
 title: "Motivations for dropping JPEG-XL"
 date: 2023-01-12T15:40:35-08:00
-replyURI: "https://vulpine.club/@eevee/109674417561084417"
+date: 2023-01-12T15:51:10-08:00
+replyURI: "https://web.archive.org/web/20230131193442/https://vulpine.club/@eevee/109674417561084417"
 replyTitle: "with the jpeg xl thing…pushing their own formats is convenient for their other products"
 replyType: "SocialMediaPosting"
 replyAuthor: "Eevee"

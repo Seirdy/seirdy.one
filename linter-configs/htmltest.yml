@@ -46,13 +46,13 @@ IgnoreURLs:
   - "https://seirdy.one/.well-known/webfinger" # inexplicable false positive
   - "https://strugee.net/" # refuses connection
   - "https://www.moonshot.forbiddenl0ve.net/index.php" # cert mismatch false positive
-  - "https://fediring.net/(previous|next)" # redir
   # - "https://forum.palemoon.org/viewtopic.php?f=1&t=25473" # manual check: blocks crawlers
   - "https://forum.palemoon.org/viewtopic.php"
   - "https://queue.acm.org/detail" # manual check: blocks crawlers
   - "https://plausible.io/blog/google-floc#" # manual check: I block this domain
   # - "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830173" # manual check: 400 for some reason, using curl works fine.
   - "https://bugs.debian.org/cgi-bin/bugreport.cgi"
+  - "https://www.science.org/content/blog-post/deliberately-optimizing-harm" # http 413, browser works fine.
   # - "https://forum.kuketz-blog.de/viewtopic.php?p=78202" # manual check: blocks crawlers
   - "https://forum.kuketz-blog.de/viewtopic.php"
   - "https://web.archive.org/" # the wayback machine itself.
