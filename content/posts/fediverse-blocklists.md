@@ -406,8 +406,8 @@ freak.university {#freak-uni} OR pedo.school
 
 freeatlantis.com {#freeatlantis}
 : Far-right MAGA instance.
-: Admin has reblogged local users posting [extreme transmisogny](https://freeatlantis.com/@TXPatriot2021/110527351920294198), [xenophobia](https://freeatlantis.com/@Luther/110334945481724374), [anti-drag](https://freeatlantis.com/@waronmorons/110288183334646071), [MAGA](https://freeatlantis.com/@watson/110137469656072122), [anti-vax](https://freeatlantis.com/@watson/109743198074918647), [more anti-vax](https://freeatlantis.com/@Phil/109693908947686128).
-: Admin posts [QAnon](https://freeatlantis.com/@surferistic/109733973331065745).
+: Admin has reblogged local users posting [extreme transmisogny](https://archive.today/2024.05.26-070739/https://freeatlantis.com/@TXPatriot2021/110527351920294198), [xenophobia](https://archive.today/2024.05.26-070937/https://freeatlantis.com/@Luther/110334945481724374), [anti-drag](https://archive.today/2024.05.26-070756/https://freeatlantis.com/@waronmorons/110288183334646071), [MAGA](https://archive.today/2024.05.26-070803/https://freeatlantis.com/@watson/110137469656072122), [anti-vax](https://archive.ph/2024.05.26-070810/https://freeatlantis.com/@watson/109743198074918647), [more anti-vax](https://archive.today/2024.05.26-070817/https://freeatlantis.com/@Phil/109693908947686128).
+: Admin posts [QAnon](https://archive.today/2024.05.26-071103/https://freeatlantis.com/@surferistic/109733973331065745).
 
 freespeechextremist.com {#fse} OR fsebugoutzone.org
 : [End of this thread](https://web.archive.org/web/20230628203218/https://1611.social/@StarProphet@freespeechextremist.com/posts/AXA3GP4cXfijajukpU) has blatant antisemitism.
