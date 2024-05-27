@@ -40,7 +40,7 @@ These are large engines that pass all my standard tests and more.
 2. Bing: the runner-up. Allows submitting pages and sitemaps for crawling without login using the IndexNow API. Its index powers many other engines:
 
 * Yahoo (and its sibling engine, OneSearch)
-* DuckDuckGo³
+* DuckDuckGo³ (offers a Tor onion service, a JS-free version, and a TUI-browser-friendly "lite" version making it a good way to use Bing anonymously)
 * Startpage
 * AOL
 * Qwant (partial)⁴
@@ -180,6 +180,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 * Brave Search: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.¹⁰ The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100%) but can drop for advanced queries. (update: Brave's Bing contract appears to have expired as of April 2023).
 I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has held payments to creators without disclosing that creators couldn't receive rewards, has made dangerously misleading claims about fingerprinting resistance (will update with a link to my thoughts on the matter), is run by a CEO who spent thousands of dollars opposing gay marriage, and has rewritten typed URLs with affiliate links.
+Brave offers a Tor onion service and doesn't require JS.
 
 => https://search.brave.com/ Brave Search
 

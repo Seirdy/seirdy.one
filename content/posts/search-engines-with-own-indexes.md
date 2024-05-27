@@ -72,7 +72,7 @@ Google
 Bing
 : The runner-up. Allows submitting pages and sitemaps for crawling without login using [the IndexNow API](https://www.indexnow.org/), sharing IndexNow page submissions with Yandex and Seznam. Its index powers many other engines:
   - Yahoo (and its sibling engine, One&shy;Search)
-  - DuckDuck&shy;Go[^3]
+  - DuckDuck&shy;Go[^3] (offers a Tor onion service, a JS-free version, and a TUI-browser-friendly "lite" version making it a good way to use Bing anonymously)
   - AOL
   - Qwant (partial)[^4]
   - Ecosia
@@ -211,6 +211,8 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 : Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^9] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries. <ins cite="https://brave.com/search-independence/" datetime="2023-08-15T20:39:00-07:00">Update 2023-08-15: Brave's Bing contract appears to have expired as of April 2023.</ins>
 
   I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has [held payments to creators without disclosing that creators couldn't receive rewards](https://brave.com/rewards-update/), has made dangerously misleading claims about fingerprinting resistance,[^10] is run by a CEO who [spent thousands of dollars opposing gay marriage](https://arstechnica.com/information-technology/2014/03/new-mozilla-ceo-issues-statement-expresses-sorrow-for-causing-pain/), and [has rewritten typed URLs with affiliate links](https://www.pcmag.com/news/brave-browser-caught-redirecting-users-through-affiliate-links).
+
+  Brave offers a Tor onion service and doesn't require JS.
 
 [Plumb](https://plumb.one/)
 : Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
@@ -404,13 +406,11 @@ websearchengine.org OR tuxdex.com
 [Siik](https://web.archive.org/web/20221002041725/https://siik.co/)
 : Lacked contact info, and the ToS and Privacy Policy links were dead. Seemed to have PHP errors in the backend for some of its instant-answer widgets. If you scrolled past all that, you'd find web results powered by what seems to be its own index. These results did tend to be somewhat relevant, but the index seemed too small for more specific queries.
 
-
 Dead engines I don't have an extended description for:
 
 - [Parsijoo](https://www.parsijoo.ir/): Persian search engine.
 
 - [Moose.at](https://www.moose.at): German (Austria-based). The site is still up but redirects searches to Brave.
-
 
 ## Exclusions
 
@@ -537,7 +537,7 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^6]: Yippy claims to be powered by a certain IBM brand (a brand that could correspond to any number of products) and annotates results with the phrase "Yippy Index", but a side-by-side comparison with Bing and other Bing-based engines revealed results to be nearly identical.
 
-[^7]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^4] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case. 
+[^7]: I'm in the process of re-evaluating You.com. It claims to operate a crawler and index. It seems very much like DuckDuckGo[^4] to me: organic results look like they're from Bing, while infoboxes ("apps") seem to be scraped or queried from hand-picked websites. I'm not currently seeing results from "around the web" like the other engines that do pass my inclusion criteria. I might be wrong! I'm re-evaluating it to see if this isn't actually the case.
 
     <ins datetime="2023-03-13T13:34:30-07:00">Update: You.com seems to source organic link results from Bing, and only interleaves those results with its own curated infoboxes</ins>
 
