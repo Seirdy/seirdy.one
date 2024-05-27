@@ -6,5 +6,5 @@ I've used [many textual browsers]({{<relref "/meta/site-design.md#compatibility-
 
 I'm also looking at alternatives to [my w3m-sandbox script](https://git.sr.ht/~seirdy/bwrap-scripts/tree/trunk/item/w3m-sandbox) to show HTML emails. Pandoc with `commonmark-raw_html` output is an option; Haskell seems like a better choice than un-fuzzed C for this. I'd like a more battle-hardened library for networking, like libcurl (used in Edbrowse).
 
-I considered [Offpunk](https://notabug.org/ploum/offpunk), which uses Readability to extract articles. I'd rather pipe [rdrview](https://github.com/eafer/rdrview) output to w3m-sandbox. rdrview does some sandboxing, and sanitizes input to a subset of HTML.
+I considered [Offpunk](https://sr.ht/~lioploum/offpunk/), which uses Readability to extract articles. I'd rather pipe [rdrview](https://github.com/eafer/rdrview) output to w3m-sandbox. rdrview does some sandboxing, and sanitizes input to a subset of HTML.
 

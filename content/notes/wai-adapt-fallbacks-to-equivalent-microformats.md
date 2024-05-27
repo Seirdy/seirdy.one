@@ -16,6 +16,6 @@ There's a 1-1 mapping between many microformats and values in [the WAI-Adapt Con
 
 I propose the addition of microformats2 to the comparison wiki page, and would support either merging the content module with microformats or specifying a mapping for fallback.
 
-Syndicated to <a href="https://github.com/w3c/adapt/issues/221" class="u-syndication" rel="syndication">the GitHub w3c/adapt bug tracker</a> and <a href="https://indieweb.xyz/en/accessibility" class="u-syndication" rel="syndication">indieweb.xyz/en/accessibility</a>.
+Syndicated to <a href="https://github.com/w3c/adapt/issues/221" class="u-syndication" rel="syndication">the GitHub w3c/adapt bug tracker</a>.
 
 <ins>Update <time>2022-10-31</time>: the Content module has since been re-named to the Symbols module; I've updated the link in the this post.</ins>

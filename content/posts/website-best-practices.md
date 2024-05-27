@@ -1908,7 +1908,7 @@ A special thanks goes out to GothAlice for the questions she answered in <samp>#
 
 [^20]: uBlock Origin is a popular browser extension for content filtering; it's the most popular Firefox add-on. It includes a built-in feature to block all media elements exceeding a user-configurable size threshold.
 
-[^21]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
+[^21]: [WebAIM](https://wave.webaim.org/api/docs?format=html) and the [University of Illinois](https://web.archive.org/web/20240310010822/https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/) recommend 100 characters; [Tangaru](https://www.tanaguru.com/en/) recommends an even smaller limit of 80 characters. I sometimes exceed 100 characters for detailed images but usually stay below 80.
 
 [^22]: Browser support for displaying alt-text in place of broken images seems good. More information about support for alt-text exposure can be found on {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="Alternative Text for CSS Generated Content" extraName="headline" url="https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html">}}{{</mention-work>}}. That post seems to indicate that Firefox 81 on macOS 10.15 didn't display alt-text, but [users report correct alt-text display](https://web.archive.org/web/20231210072526/https://cybre.space/@nleigh/108688070682694730) in more recent Firefox versions.
 

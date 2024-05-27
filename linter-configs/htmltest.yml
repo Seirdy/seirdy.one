@@ -65,4 +65,5 @@ IgnoreURLs:
   - "https://docs.graycot.dev/s/MFowZsw_F" # DNSSEC issue
   # user has opted out of archiving
   - "https://herd.bovid.space/@garbados"
+  - "https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/"
 OutputDir: "linter-configs/htmltest"
