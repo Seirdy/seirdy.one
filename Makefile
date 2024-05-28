@@ -73,13 +73,13 @@ validate-html:
 htmlproofer:
 	htmlproofer $(OUTPUT_DIR) --disable-external --checks Images,Scripts,Favicon,OpenGraph --ignore-files $(OUTPUT_DIR)/search/index.html --ignore-urls '../music.txt'
 
-linter-configs/htmltest.yml:
+linter-configs/htmltest/refcache.json:
 	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) deploy@seirdy.one:/home/deploy/refcache.json linter-configs/htmltest/refcache.json
 
 # basic checks for generated HTML and broken links. Persist the broken
 # link cache remotely so we can run this in CI.
 .PHONY: htmltest
-htmltest: linter-configs/htmltest.yml
+htmltest: linter-configs/htmltest/refcache.json
 	htmltest -c linter-configs/htmltest.yml $(OUTPUT_DIR)
 	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) linter-configs/htmltest/refcache.json deploy@seirdy.one:/home/deploy/refcache.json
 
