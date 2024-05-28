@@ -7,7 +7,7 @@ EnforceHTML5: true
 IgnoreAltMissing: false
 IgnoreAltEmpty: true # an empty alt makes presentation-role explicit, it's not a defect.
 EnforceHTTPS: true
-ExternalTimeout: 10
+ExternalTimeout: 20
 HTTPConcurrencyLimit: 128
 IgnoreHTTPS:
   - "http://192.168.1"
@@ -57,4 +57,6 @@ IgnoreURLs:
   - "https://herd.bovid.space/@garbados"
   - "https://make.wordpress.org/accessibility/handbook/markup/infinite-scroll/"
   - "https://www.reddit.com/user/Seirdy/" # reddit blocks htmltest
+  - "https://io.netgarage.org/me/" # some clients give a TLS failure but recent browsers seem to work.
+  - "https://openai.com/blog/openai-codex/" # false positive
 OutputDir: "linter-configs/htmltest"
