@@ -5,7 +5,7 @@ replyURI: "https://vulpine.club/@KitRedgrave/108682844888729785"
 replyTitle: "Thread on concerns about DoH in Android"
 replyType: "SocialMediaPosting"
 replyAuthor: "vx. redgrave"
-replyAuthorURI: "https://vulpine.club/@KitRedgrave"
+replyAuthorURI: "https://firefish.kitredgrave.net/@kit"
 ---
 IMO: the main benefit of DNS-over-HTTPS (DoH) is that it's a stepping stone to [Oblivious DNS over HTTPS (RFC 9230)](https://www.rfc-editor.org/rfc/rfc9230.html).
 

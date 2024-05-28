@@ -144,7 +144,7 @@ Simply monitoring network activity and systematically testing all claims made by
 
 This is where some binary analysis comes in. Neither of Skochinsky's linked presentations seem to enumerate any contradictions with official Intel documentation. Unfortunately, some components are poorly understood due to being obfuscated using Huffman compression with unknown dictionaries:
 
-=> http://io.netgarage.org/me/ Intel ME Huffman algorithm
+=> https://io.netgarage.org/me/ Intel ME Huffman algorithm
 
 Understanding the inner workings of the obfuscated components blurs the line between software reverse-engineering and figuring out how the chips are actually made, the latter of which is nigh-impossible if you don't have access to a chip lab full of cash. However, black-box analysis does tell us about the capabilities of these components: see page 21 of "ME Secrets". Thanks to zdctg for clarifying this.
 

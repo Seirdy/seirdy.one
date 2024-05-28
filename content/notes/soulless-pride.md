@@ -9,4 +9,4 @@ A good smoke test to see if rainbow-flag/BLM-repping organizations actually give
 
 They don't care about minorities; they're only in if for the branding. When a soulless organization uses your symbols, it remains soulless.
 
-Soulless organizations don't have good or evil intent. {{<mention-work itemtype="VideoObject">}}{{<indieweb-person itemprop="author" first-name="Bryan" last-name="Cantrill" url="http://dtrace.org/blogs/bmc/">}} put this best in his talk {{<cited-work name="Fork Yeah! The Rise and Development of Illumnos" url="https://www.youtube.com/watch?v=-zRN7XLCRhc&t=38m30s">}} (starts at <time datetime="PT38M30S" itemprop="startTime">00:38:30</time>).{{</mention-work>}}
+Soulless organizations don't have good or evil intent. {{<mention-work itemtype="VideoObject">}}{{<indieweb-person itemprop="author" first-name="Bryan" last-name="Cantrill" url="https://bcantrill.dtrace.org/">}} put this best in his talk {{<cited-work name="Fork Yeah! The Rise and Development of Illumnos" url="https://www.youtube.com/watch?v=-zRN7XLCRhc&t=38m30s">}} (starts at <time datetime="PT38M30S" itemprop="startTime">00:38:30</time>).{{</mention-work>}}

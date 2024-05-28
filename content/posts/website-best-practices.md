@@ -995,7 +995,7 @@ Some image optimization tools I use:
 : Offers more advanced dithering options than gifsicle and pngquant.
 
 [`oxipng`](https://github.com/shssoichiro/oxipng)
-: Lossless PNG compression. It's like a parallelized version of [OptiPNG](http://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
+: Lossless PNG compression. It's like a parallelized version of [OptiPNG](https://optipng.sourceforge.net/) that also supports an implementation of [ZopfliPNG](https://github.com/google/zopfli/blob/831773bc28e318b91a3255fa12c9fcde1606058b/README.zopflipng) compression
 
 [`jpegoptim`](https://github.com/tjko/jpegoptim)
 : Lossless or lossy JPEG compression. Note that JPEG is an inherently lossy format; the lossless features of `jpegoptim` only shrink the size of existing JPEG files by removing unnecessary metadata.

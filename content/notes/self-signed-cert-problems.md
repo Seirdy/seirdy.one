@@ -6,7 +6,7 @@ replyURI: "https://web.archive.org/web/20230422173223/https://snowdin.town/notic
 replyTitle: "self-signatures should have been treated as something normal"
 replyType: "SocialMediaPosting"
 replyAuthor: "Luna Saphira Dragofelis"
-replyAuthorURI: "https://buff.tomboyfan.club/users/LunaDragofelis"
+replyAuthorURI: "https://pleroma.envs.net/users/Ae1AG6egkhnq6UN1XM"
 ---
 > in my opinion, self-signatures should have been treated as something normal, with a warning only triggered if the site has been visited before and the signing key has changed
 
