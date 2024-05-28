@@ -98,6 +98,7 @@ I build Nginx, Conduit, Webmentiond, and other software for seirdy.one using LLV
 <a href="https://www.w3.org/Promotion/WIP/">{{<picture name="b/wip" alt="The text “Web Interoperability Pledge” next to a drawing of gears." width="162" height="62" class="pix">}}</a>
 <a href="https://archive.webstandards.org/bannerx.html">{{<picture name="b/wpsnowbord" alt="A wasp next to the words “standards NOW!”" width="162" height="62" class="pix">}}</a>
 <a href="https://web.archive.org/web/20060206224207fw_/http://www.subreality.com/yellow.htm">{{<picture name="b/yellow_ribbon" alt="Yellow ribbon: online friendship means something!" width="162" height="62" class="pix">}}</a>
+{{<picture name="b/tiredaf" alt="Tired A-F of: paywalls, advertisements, notifications, marketing emails, followers, likes, influencers, artificial scarcity, parasocial interaction." width="162" height="62" class="pix">}}
 
 ### Notes on "Ideological affinity, Web-related" badges
 
@@ -122,6 +123,7 @@ I might eventually move these to a separate page under the "About" section of my
 
 See [my "uses" page]({{<relref "/about/uses.md">}}) for some more information.
 
+{{<picture name="b/linux" alt="Xenia the Linux fox next to the words “Linux now!”" width="162" height="62" class="pix">}}
 <a href="https://fediverse.party/en/fediverse/">{{<picture name="b/fediverse" alt="Join the fediverse." width="162" height="62" class="pix">}}</a>
 <a href="https://www.gutenberg.org/">{{<picture name="b/gutenberg" alt="Project Gutenberg." width="162" height="62" class="pix">}}</a>
 <a href="https://archive.org/?noscript=true">{{<picture name="b/internetarchive" alt="Internet Archive." width="162" height="62" class="pix">}}</a>
@@ -205,3 +207,5 @@ Other credits:
 - The El Goonish Shive badge is from [an old archived version of its website](https://web.archive.org/web/20071223104609/http://www.egscomics.com:80/banners.html).
 
 - Tildeverse badge made by {{<indieweb-person itemprop="mentions" name="DJ Chase" url="https://dj-chase.com/">}}.
+
+- Linux Now badge with Xenia the Linux Fox [made by Volt](https://meow.social/@voltbun/109600348286574222).
