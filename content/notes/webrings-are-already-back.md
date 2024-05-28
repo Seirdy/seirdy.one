@@ -8,7 +8,7 @@ replyAuthor: "Arne Bahlo"
 replyAuthorURI: "https://arne.me/"
 syndicatedCopies:
     - title: 'Lobsters'
-      url: 'https://lobste.rs/comments/3tsiiw/reply'
+      url: 'https://lobste.rs/s/foo1n7/we_need_bring_back_webrings#c_3tsiiw'
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AboaFMxxNcJfCgE95s'
     - title: 'jstpst'

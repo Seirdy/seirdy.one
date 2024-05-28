@@ -8,7 +8,7 @@ syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/ASl0lOGNcl5GNJL6Jc'
     - title: 'Lobsters'
-      url: 'https://lobste.rs/comments/f6rvfi/reply'
+      url: 'https://lobste.rs/s/coy6gt/why_is_building_ui_rust_so_hard#c_f6rvfi'
 ---
 How does Warp stack against other toolkits when it comes to accessibility and system integration?
 

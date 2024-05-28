@@ -2,7 +2,7 @@
 title: "Using BoringSSL"
 date: 2022-10-30T13:10:29-07:00
 lastMod: 2023-05-27T03:57:41Z
-replyURI: "https://lobste.rs/comments/sk5f3v/reply"
+replyURI: "https://lobste.rs/s/9eas9d/you_should_prepare_for_openssl_3_x_secvuln#c_sk5f3v"
 replyTitle: "“BoringSSL…is not intended for general use”"
 replyType: "Comment"
 replyAuthor: "AJ Jordan"
@@ -11,7 +11,7 @@ syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AUjf1wCr0xk0yCVpKK'
     - title: 'Lobsters'
-      url: 'https://lobste.rs/comments/lreowa/reply'
+      url: 'https://lobste.rs/s/9eas9d/you_should_prepare_for_openssl_3_x_secvuln#c_lreowa'
 ---
 
 Despite BoringSSL's "not intended for general use" warning, it's used by many projects:

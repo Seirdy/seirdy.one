@@ -2,7 +2,7 @@
 title: "User agents set the terms"
 date: 2022-08-12T00:27:26-07:00
 lastMod: 2022-08-12T00:27:26-07:00
-replyURI: "https://lobste.rs/comments/dqolcq/reply"
+replyURI: "https://lobste.rs/s/dusuzt/let_websites_framebust_out_native_apps#c_dqolcq"
 replyTitle: "I have the freedom to set the terms on which I will offer access to a website of mine."
 replyType: "DiscussionForumPosting"
 replyAuthor: "James Bennet"
