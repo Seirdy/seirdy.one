@@ -1,3 +1,4 @@
+{{- $button := partialCached "cache-bust.html" "/p/b/sticker_88x31.png" "/p/b/sticker_88x31.png" -}}
 <hr />
 <footer>
 	{{ partial "breadcrumblist.html" . }}
@@ -22,7 +23,9 @@
 				<a href="{{ site.BaseURL }}meta/site-design/">Site design standards</a>
 			</li>
 			<li>
-				<a href="{{ site.BaseURL }}about/#location-seirdy-online">Contact</a>
+				<a href="{{ site.BaseURL }}meta/badges/">
+					{{ printf `<img src="%s" alt="88-by-31 button: my favicon, a white colon and semicolon on a black backround, next to the word Seirdy." width="88" height="31" class="pix" />` $button.RelPermalink | safeHTML }}
+				</a>
 			</li>
 		</ul>
 	</nav>
