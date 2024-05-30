@@ -1,6 +1,6 @@
 ---
-title: "Takeaways from the Google Cloud Warehouse API documentation leak"
-description: "My thoughts on Google's Cloud Warehouse API doc leak, what we can learn from its ranking factors, and why the following SEO hype is overblown."
+title: "Takeaways from the Google Content Warehouse API documentation leak"
+description: "My thoughts on Google's Content Warehouse API doc leak, what we can learn from its ranking factors, and why the following SEO hype is overblown."
 date: "2024-05-30T04:47:38-04:00"
 tags:
     - search
