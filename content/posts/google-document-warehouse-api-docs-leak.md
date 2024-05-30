@@ -8,9 +8,9 @@ tags:
 outputs:
     - html
     - gemtext
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/notice/AiPaH6gN6VboAEbG5I'
 ---
 <section role="doc-introduction" itemprop="backstory">
 
