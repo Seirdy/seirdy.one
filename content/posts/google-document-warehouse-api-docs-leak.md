@@ -11,6 +11,10 @@ outputs:
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/notice/AiPaH6gN6VboAEbG5I'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/takeaways-from-the-google-cloud-warehouse-api-documentation-leak/1079'
+    - title: 'jstpst'
+      url: 'https://www.jstpst.net/f/just_post/10039/takeaways-from-the-google-cloud-warehouse-api-documentation'
 ---
 <section role="doc-introduction" itemprop="backstory">
 
