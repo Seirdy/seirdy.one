@@ -612,6 +612,10 @@ parcero.bond {#parcero}
 : [Antisemitism from admin](https://archive.today/2023.12.28-002727/https://parcero.bond/notice/AdE0tKsBYHTBpxfQ5Q).
 : [Sui-bait from admin](https://web.archive.org/web/20231228002906/https://parcero.bond/notice/AdDoer14YwYJja9V5s).
 
+piazza.today {#piazza}
+: [climate denial from admin](https://archive.today/2024.06.01-014811/https://piazza.today/@centurion/posts/AhvMSBKb1Bsa1jNXAO), [COVID misinformation from admin](https://ghostarchive.org/archive/ptplK?wr=false), [transphobia from admin](https://ghostarchive.org/archive/4gdb9?wr=false).
+: [xenophobic MAGA crap](https://archive.today/2024.06.01-014633/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AhelEioEQVRDb1Jw24) and [Great Replacement conspiracy theories](http://archive.today/2024.06.01-015727/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AguHJTpzkvKNoTW5NA) (archive visually cut off, but the post is visible in the screenshot tab or in page source code) from local user.
+
 pibvt.net {#pibvt}
 : Lolisho and actual photos of toddlers posted by MAPs. [FediBlock post](https://pleroma.envs.net/notice/AS9QjlcEaQgZKbz5gO) with some more details.
 
