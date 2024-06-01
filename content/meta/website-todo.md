@@ -45,6 +45,11 @@ These are roughly in descending order of importance:
 
 ## Improvements already made
 
+### June 2024
+
+- Added support for [No-Vary-Search](https://wicg.github.io/nav-speculation/no-vary-search.html)
+- Added humans.txt.
+
 ### May 2024
 
 - Wrapped `details` elements in borders to distinguish them in print media and to emphasize that the contents can be toggled.

@@ -1,0 +1,15 @@
+/* TEAM */
+Webmaster: Plural system of Seirdy, Cadmus, AKA Rohan Kumar.
+Contact: see /about/
+
+/* THANKS */
+Daniel Aleksandersen's <https://www.ctrl.blog> for Microdata usage.
+Athena Lilith Martin for more markup inspiration.
+The IndieWeb community for showing me the power of personal sites (Aaron Parecki in particular)
+
+/* SITE */
+Language: US English
+Doctype: Polygot, HTML5 or XHTML5
+Standards: HTML5, CSS3, WAI-ARIA, DPUB-ARIA, Atom, varius RSS/Atom extensions, Microformats2, Open Graph Protocol
+Components: Handwritten XHTML5 and CSS, Hugo, Nginx. More info at <https://seirdy.one/meta/build-this-site/#dependencies> and <https://seirdy.one/meta/#how-i-run-this-site>
+Site design standards: <https://seirdy.one/meta/site-design/>

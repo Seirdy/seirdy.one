@@ -59,6 +59,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Fatom.xml">{{<picture name="b/valid-atom" alt="Valid Atom feed." width="162" height="62" class="pix">}}</a>
 <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fseirdy.one%2Findex.xml">{{<picture name="b/valid-rss" alt="Valid RSS feed." width="162" height="62" class="pix">}}</a>
 <a href="{{<relref "/meta/wcag-conformance.md">}}">{{<picture name="b/wcag22" alt="W3C WAI-AA WCAG 2.2." width="162" height="62" class="pix">}}</a>
+<a href="https://web.archive.org/web/20240507225939/https://humanstxt.org/">{{<picture name="b/humanstxt" alt="humans dot TXT" width="162" height="62" class="pix">}}</a>
 
 ### Software that seirdy.one runs on
 
@@ -187,6 +188,7 @@ The following badges come from the sites they link to:
 - Atom and RSS validation badges
 - Web-14 censorship panda
 - AGPLv3 license
+- humans.txt
 - Say no to Web3
 - Web Interoperability Pledge
 - Standards NOW!
