@@ -1,0 +1,12 @@
+{
+	"$schema": "https://gmem.ca/button-schema",
+	"buttons": [
+		{
+			"id": "seirdy.one",
+			"alt": "Square icon of a colon and semicolon, next to the word “Seirdy”.",
+			"link": "https://seirdy.one/",
+			"sha256": "042c185929296eada5f38ea5dd9e8c1b51e9e4bdee6283bb92697dc4d7516100",
+			"uri": "https://seirdy.one/sticker_88x31.png"
+		}
+	]
+}
