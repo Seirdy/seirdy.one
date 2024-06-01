@@ -452,6 +452,11 @@ glee.li {#getgle}
 : [More blatant racism](https://web.archive.org/web/20230805180006/https://glee.li/notice/AYQQrs1oS2HvwPKxJA).
 : Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
 
+harpy.faith {#harpy}
+: [blatant antisemitism from admin](https://web.archive.org/web/20240601010626/https://the.asbestos.cafe/notice/AiRpmLwX7zqBu1RbUm), [admin doubling down with racist slurs after being called out](https://web.archive.org/web/20240601010312/https://the.asbestos.cafe/notice/AiS7b5nabscfp02buC).
+: [Admin sends sui-bait transphobic replies to trans women](https://web.archive.org/web/20240601010728/https://the.asbestos.cafe/notice/AiRM6y5c0rLHNWbYeG).
+: [suibait from user](https://web.archive.org/web/20240601005759/https://the.asbestos.cafe/notice/AiT35LJvA1iU2FjFvk).
+
 h5q.net {#h5q}
 : Contains untagged AI-generated photorealistic erotic content that may pose a legal risk in several jurisdictions.
 
@@ -501,6 +506,12 @@ lolicon.rocks {#lolicon-rocks}
 
 lolison.network {#lolison} OR lolison.top
 : Sibling instances focused on the MAP/pedophilia community. Claim to forbid CP, but also appears to have rules too lax for instances with such focus. Admin "Spag" also admins rapemeat.express; see its FediNuke entry.
+
+magicka.org {#magicka}
+: [antisemitism from admin](https://archive.today/2024.01.01-000040/https://mk.magicka.org/notes/9nxpu35bjwd608ne).
+: [unreclaimed use of homophobic slur](https://archive.today/2024.01.01-000105/https://mk.magicka.org/notes/9nxpx8fajwd608nr).
+: [climate change denial conspiracy theories](https://archive.today/2024.01.01-000355/https://mk.magicka.org/notes/9nw96fr2jwd607lm).
+: [anti-abortion](https://archive.today/2024.06.01-011504/https://mk.magicka.org/notes/9tt2ecthxjq600t3).
 
 marsey.moe {#marsey} OR taihou.website
 : boks.moe had [the occasional holocaust denial meme](https://archive.ph/ozeh1). one of the main users "Ruusu" set their display name to [a racial slur in a violent context](https://archive.ph/ANM7B). Staff member "MischievousuTomatosu" posts [blatantly racist takes on border control](https://archive.ph/WP9mb).
