@@ -11,8 +11,7 @@ Disallow: /
 Allow: /ads.txt
 Allow: /app-ads.txt
 
-# Enabling our crawler to access your site offers several significant benefits
-# to you as a publisher. By allowing us access, you enable the maximum number
+# By allowing us access, you enable the maximum number
 # of advertisers to confidently purchase advertising space on your pages. Our
 # comprehensive data insights help advertisers understand the suitability and
 # context of your content, ensuring that their ads align with your audience's
@@ -100,13 +99,7 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-# There isn't any public documentation for this AFAICT.
-# Reuters thinks this works so I might as well give it a shot.
-User-agent: anthropic-ai
-User-agent: Claude-Web
-Disallow: /
-# Extremely aggressive crawling with no documentation. people had to email the
-# company about this for robots.txt guidance.
+# Anthropic-AI crawler posted guidance after a long period of crawling without opt-out documentation: <https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler>
 User-agent: ClaudeBot
 Disallow: /
 
