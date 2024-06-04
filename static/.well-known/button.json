@@ -1,5 +1,6 @@
 {
-	"$schema": "https://gmem.ca/button-schema",
+	"$schema": "https://codeberg.org/LunarEclipse/well-known-button/raw/branch/main/drafts/button-2024-06.schema.json",
+	"default": "seirdy.one",
 	"buttons": [
 		{
 			"id": "seirdy.one",
