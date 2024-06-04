@@ -124,6 +124,7 @@ I might eventually move these to a separate page under the "About" section of my
 <a href="https://www.autisticasfxxk.com/">{{<picture name="b/autisticasfxxk.com" alt="The words “autistic as fuck” flash over a pick background. The word “fuck” is censored." width="176" height="62" class="pix">}}</a>
 <a href="https://www.defectivebydesign.org/">{{<picture name="b/dbd" alt="Defective by design. Eliminate DRM now!" width="176" height="62" class="pix">}}</a>
 <a href="https://en.wikipedia.org/wiki/Illegal_number?useskin=vector">{{<picture name="b/aacs" alt="The characters “8 8 8 C 0” over the vertical strips of the digital free speech flag." width="176" height="62" class="pix">}}</a>
+{{<picture name="b/emulate-now" alt="Emulate Now!" width="176" height="62" class="pix">}}
 
 ## Things I use
 
@@ -216,6 +217,8 @@ Other credits:
 - Tildeverse badge made by {{<indieweb-person itemprop="mentions" name="DJ Chase" url="https://dj-chase.com/">}}.
 
 - Linux Now badge with Xenia the Linux Fox [made by Volt](https://meow.social/@voltbun/109600348286574222).
+
+- "Emulate Now!" badge from [Neon with a Zero on Tumblr](https://ne0nwithazero.tumblr.com/post/702936474323206144).
 
 ## Appendix
 
