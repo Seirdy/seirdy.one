@@ -185,7 +185,7 @@ The Yesterweb is winding down its social activity after admin burnout, but it re
 
 ## Credits
 
-Many were sourced from [88x41db.com](https://88x31db.com/), which itself sources from other directories.
+Many were sourced from [88x31db.com](https://88x31db.com/), which itself sources from other directories.
 
 The following badges come from the sites they link to:
 
