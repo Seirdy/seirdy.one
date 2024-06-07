@@ -4,7 +4,7 @@ title: "Classic web badges"
 outputs:
     - html
 description: "My curation of over 70 88x31 badges, representing what I and this site use and stand for."
-image: "b/sticker_88x31.png"
+image: "b/sticker_352x124.png"
 ---
 My collection of over 70 88x31 badges, representing what I and this site use and stand for. If you have a badge you'd like me to add, just ask; it needs to have a format under 3&#160;kb and avoid excessively flashy animations for me to consider it. [See some tools I use for image optimization]({{<relref "/posts/website-best-practices.md#image-optimization">}}).
 
