@@ -14,19 +14,20 @@
 				<a rel="source" href="{{ .Site.Params.src }}">Source code</a>
 			</li>
 			<li>
-				<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor mirror</a>
+				<a rel="alternate" href="http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion{{ .RelPermalink }}">Tor</a>
 			</li>
 			<li>
 				<a href="{{ site.BaseURL }}meta/privacy/" rel="privacy-policy">Privacy</a>
 			</li>
 			<li>
-				<a href="{{ site.BaseURL }}meta/site-design/">Site design standards</a>
-			</li>
-			<li>
-				<a href="{{ site.BaseURL }}meta/badges/">
-					{{ printf `<img src="%s" alt="88-by-31 button: my favicon, a white colon and semicolon on a black backround, next to the word Seirdy." width="88" height="31" class="pix" />` $button.RelPermalink | safeHTML }}
-				</a>
+				<a href="{{ site.BaseURL }}meta/site-design/">Site design</a>
 			</li>
 		</ul>
 	</nav>
+	<hr />
+	<p>
+		<a href="{{ site.BaseURL }}meta/badges/">
+			{{ printf `<img src="%s" alt="88-by-31 button: my favicon, a white colon and semicolon on a black backround, next to the word Seirdy." width="88" height="31" class="pix" />` $button.RelPermalink | safeHTML }}
+		</a>
+	</p>
 </footer>
