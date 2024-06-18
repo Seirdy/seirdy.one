@@ -48,7 +48,10 @@ These are roughly in descending order of importance:
 ### June 2024
 
 - Added support for [No-Vary-Search](https://wicg.github.io/nav-speculation/no-vary-search.html)
+
 - Added humans.txt.
+
+- Added my badge to the site footer. This also helps make it easier for projects like [EightyEightThirty.One](https://eightyeightthirty.one/) to scrape.
 
 ### May 2024
 
