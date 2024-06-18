@@ -17,3 +17,4 @@ Firefox's sandboxing isn't entirely dependent on user namespaces, but it is weak
 
 Now, whether this matters is something I can't decide for you. My personal opinion is that Flatpak serves as a tool to package, deliver, and sandbox native applications; Web browsers are tools that deliver and sandbox Web applications. Distributing a browser through Flatpak is like distributing Flatpak itself through Flatpak. Web browsers are an _alternative_ to Flatpak; they have their own sandboxing and updating mechanisms.
 
+<ins datetime="2024-06-18" cite="https://forum.vivaldi.net/topic/33411/flatpak-support/192?lang=en-US">Update <time>2024-06-18</time>: [This is also the reason why the Vivaldi team won't publish a (verified) Flatpak of Vivaldi](https://forum.vivaldi.net/topic/33411/flatpak-support/192?lang=en-US).</ins>
