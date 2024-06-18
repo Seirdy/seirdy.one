@@ -6,6 +6,9 @@ replyTitle: "The outer layer will be via FlatPak"
 replyType: "SocialMediaPosting"
 replyAuthor: "Adrian Cochrane"
 replyAuthorURI: "https://adrian.geek.nz/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/9a1fcc96-1fef-4521-83a5-0b267f144c11'
 ---
 You might want to provision namespace-based isolation for your browsers. But that could throw a wrench into Flatpak-based distribution.
 
