@@ -156,6 +156,7 @@ Sites that link back to me:
 <a href="https://slatecave.net/railstation">{{<picture name="b/slatecave" alt="slatecave.net." width="176" height="62" class="pix">}}</a>
 <a href="https://www.theresnotime.co.uk/">{{<picture name="b/theresnotime" alt="fox head over the words “TheresNoTime”." width="176" height="62" class="pix">}}</a>
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="176" height="62" class="pix">}}</a>
+<a href="https://winter.entities.org.uk/">{{<picture name="b/winter" alt="winter colon-three meow!" width="176" height="62" class="pix">}}</a>
 <a href="https://ezrizhu.com/">{{<picture name="b/ezri" alt="ezri" width="176" height="62" class="pix">}}</a>
 
 ### Other personal sites
@@ -173,6 +174,7 @@ Sites that link back to me:
 <a href="https://yesterweb.org/">{{<picture name="b/yesterweb" alt="YesterWeb: reclaim the net." width="176" height="62" class="pix">}}</a>
 <a href="https://www.egscomics.com/">{{<picture name="b/egs" alt="El Goonish Shive." width="176" height="62" class="pix">}}</a>
 <a href="https://xkcd.com/">{{<picture name="b/xkcd" alt="xkcd." width="176" height="62" class="pix">}}</a>
+<a href="https://envs.net">{{<picture name="b/envs" alt="envs." width="176" height="62" class="pix">}}</a>
 
 ### Notes on "Friendly sites" badges
 
@@ -221,6 +223,8 @@ Other credits:
 - Linux Now badge with Xenia the Linux Fox [made by Volt](https://meow.social/@voltbun/109600348286574222).
 
 - "Emulate Now!" badge from [Neon with a Zero on Tumblr](https://ne0nwithazero.tumblr.com/post/702936474323206144).
+
+- envs.net badge [by winter](https://winter.entities.org.uk/buttons/).
 
 ## Appendix
 
