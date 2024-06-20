@@ -12,15 +12,13 @@ WWW_RSYNC_DEST = $(USER):$(WWW_ROOT)
 GEMINI_RSYNC_DEST = $(USER):$(GEMINI_ROOT)
 
 OUTPUT_DIR = public
-SSHFLAGS = -o KexAlgorithms=sntrup761x25519-sha512@openssh.com
-RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3/gif/ico -e "ssh $(SSHFLAGS)" --chmod=D755,F644
+SSHFLAGS = -o KexAlgorithms=sntrup761x25519-sha512@openssh.com -o VerifyHostKeyDNS=yes
+SKIP_COMPRESS=gz/br/zst/png/webp/jpg/avif/jxl/mp4/mkv/webm/opus/mp3/gif/ico
+RSYNCFLAGS += -rlpcv --zc=zstd --zl=6 --skip-compress=$(SKIP_COMPRESS) -e "ssh $(SSHFLAGS)" --chmod=D755,F644
 RSYNCFLAGS_EXTRA ?=
 # compression gets slow for extreme levels like the old "70109".
 # Diminishing returns after level 6; sometimes even larger files.
 ECT_LEVEL=6
-
-# For quick builds, just build these sections:
-RENDER_SECTIONS=entries
 
 csv/webrings.csv:
 	sh scripts/populate-webrings.sh
@@ -138,9 +136,12 @@ xhtmlize: hugo
 copy-to-xhtml:
 	find $(OUTPUT_DIR) -type f -name "*.html" | grep -v 'resume/index.html' | xargs -n1 sh scripts/copy-file-to-xhtml.sh
 
+# The grep command at the end makes the output much less noisy.
+# filter out duplicate xhtml files (they're just copies of the .html files)
+# filter gzip files (their zopfli-like compression is not deterministic)
 .PHONY: deploy-html
 deploy-html:
-	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete | grep -v 'l\.gz$$'
+	rsync $(RSYNCFLAGS) $(RSYNCFLAGS_EXTRA) --exclude 'gemini' --exclude '*.gmi' --exclude-from .rsyncignore $(OUTPUT_DIR)/ $(WWW_RSYNC_DEST) --delete | grep -Ev '\.(gz|xhtml)$$'
 
 .PHONY: deploy-gemini
 deploy-gemini:

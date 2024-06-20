@@ -5,12 +5,10 @@
 # no pipefail here since there are no pipes.
 set -eux
 
-# configure ssh
-echo "VerifyHostKeyDNS=yes
-KexAlgorithms=sntrup761x25519-sha512@openssh.com" >> ~/.ssh/config
-
 # mirrored at https://seirdy.one/pb/binaries.tar.gz
-rsync -WPv deploy@seirdy.one:/var/www/pb/binaries.tar.gz .
+rsync -WPv \
+	-e "ssh -o KexAlgorithms=sntrup761x25519-sha512@openssh.com -o VerifyHostKeyDNS=yes" \
+	deploy@seirdy.one:/var/www/pb/binaries.tar.gz .
 mkdir -p ~/bin
 tar xzf binaries.tar.gz -oC ~/bin
 rm binaries.tar.gz
