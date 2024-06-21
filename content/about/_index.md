@@ -23,7 +23,7 @@ I intentionally make very delayed updates to information such as my location.
 
 <dl>
 <dt>Age</dt>
-<dd><time datetime="P8400D">23</time></dd>
+<dd><time datetime="P8766D">24</time></dd>
 
 <dt>Location</dt>
 <dd>Somewhere in <span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/Place" class="p-region">New England</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
