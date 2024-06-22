@@ -167,6 +167,7 @@ Sites that link back to me:
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="176" height="62" class="pix">}}</a>
 <a href="https://easrng.net/">{{<picture name="b/easrng" alt="easrng." width="176" height="62" class="pix">}}</a>
 <a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="176" height="62" class="pix">}}</a>
+<a href="https://lunareclipse.zone/">{{<picture name="b/lunar-eclipse" alt="The text “Lunar Eclipse Zone” next to a magenta eclipsed moon." width="176" height="62" class="pix">}}</a>
 
 ### Other sites
 
