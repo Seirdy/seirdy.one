@@ -96,9 +96,9 @@
 		<activity:object-type>http://activitystrea.ms/schema/1.0/{{ $type }}</activity:object-type>
 		<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
 		{{- with .Params.image -}}
-			{{- $image := partial "cache-bust.html" (printf "/p/%s" . ) -}}
+		{{- $thumbnail := partial "cache-bust.html" (printf "/p/%s" . ) -}}
+		<media:thumbnail url="{{ $thumbnail.Permalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" />
 		{{- end -}}
-		<media:thumbnail url="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
 		{{ with .Description -}}
 		<summary type="text">{{ . }}</summary>
 		{{- end }}
