@@ -6,9 +6,9 @@ replyTitle: "what if I put in a bunch of effort to make my website valid XHTML5"
 replyType: "SocialMediaPosting"
 replyAuthor: "LunarEclipse"
 replyAuthorURI: "https://lunareclipse.zone/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/4660408b-41dc-4850-9197-9ce6585fceb7'
 ---
 
 Switching a site to XHTML5 is only a lot of work at first, because it may have latent bugs. For instance, you may have a stray tag that the HTML parser auto-closes but an XHTML parser won't. I find this effort worthwhile because [some of these bugs will eventually visibly manifest]({{<relref "/notes/polygot-xhtml5.md">}}).
