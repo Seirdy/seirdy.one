@@ -5,7 +5,7 @@ replyURI: "https://hachyderm.io/@evacide/112481894385686328"
 replyTitle: "I’ve got some news for Microsoft about how domestic abuse works."
 replyType: "SocialMediaPosting"
 replyAuthor: "evacide"
-replyAuthorURI: "https://hachyderm.io/@evacide/112481894385686328"
+replyAuthorURI: "https://hachyderm.io/@evacide"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/objects/931a72b0-09e9-42c8-b727-7b7a029b791c'
