@@ -6,9 +6,9 @@ replyTitle: "Progressive Enhancement Class"
 replyType: "WebSite"
 replyAuthor: "Dillo browser"
 replyAuthorURI: "https://dillo-browser.github.io/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/c04df0f6-a868-4af6-91b6-ce6e5b76c399'
 ---
 
 [This page at the time of writing](https://web.archive.org/web/20240623192730/https://dillo-browser.github.io/pec/) grades websites' progressive enhancement based on their ability to work without JavaScript. Everything, not just JavaScript, should be progressive enhancements.
