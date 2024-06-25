@@ -99,6 +99,11 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+# Official way to opt-out of LLM training by Apple
+# <https://support.apple.com/en-us/119829#datausage>
+User-agent: Applebot-Extended
+Disallow: /
+
 # Anthropic-AI crawler posted guidance after a long period of crawling without opt-out documentation: <https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler>
 User-agent: ClaudeBot
 Disallow: /
