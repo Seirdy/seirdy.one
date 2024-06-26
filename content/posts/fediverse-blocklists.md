@@ -64,7 +64,7 @@ There were some block-overrides for instances with fewer than 15 votes. Here's h
 
 Under ten controversial entries were excluded despite having more than enough votes, after consulting with other admins. Typically, these were instances that didn't pose a major safety risk, but did fail many admins' "vibe check" or exhibit major governance issues.
 
-I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup; [I maintain a supplementary list for those](#supplementary-blocklists).
+I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup, and bridges to other social media platforms; [I maintain supplementary lists for those](#supplementary-blocklists) that don't require consensus.
 
 ### Bias sources
 
@@ -200,8 +200,11 @@ Some supplementary blocklists I maintain with very different criteria:
 [BirdSiteLive and bird.makeup](https://seirdy.one/pb/bsl.txt)
 : These are services that allow Fediverse users to follow any Twitter user. Now that far-right figures are back on Twitter, these instance pose a problem. Admins wishing to ban a single Twitter user will need to ban that user across over 100 different Twitter mirrors. Moreover, any interactions with bridged accounts are unseen by the account holder on Twitter. Twitter users may not have consented to such mirroring. Admins wishing to simply ban mass-Twitter-mirroring can import this list.
 
+[Bridges](https://seirdy.one/pb/bridges.txt)
+: Bridges to other social media platforms, *excluding* Twitter/X bridges, that aren't opt-in. Bridges to Nostr are common. These are excluded from tier0.csv as they're in a dedicated list. Nostr is especially worth blocking because most bridges don't appear to do significant moderation or delegate to relays that do, effectively requiring moderators to moderate the whole network in its unmoderated form and potentially duplicate their work across multiple Nostr bridges.
+
 [Corporate social media with user-hostile dark patterns](https://seirdy.one/pb/corpo.txt)
-: A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes.
+: A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes. Not updated very often.
 
 [Spammy subdomains](https://seirdy.one/pb/spammy-subdomains.txt)
 : These domains are often used for HTTP tunneling or short-lived spin-up-spin-down servers. Fediverse instances running on their subdomains almost certainly aren't in it for the long haul, and very frequently shut down within hours or days without doing a clean self-destruct. Note that this is not to be confused with traditional dynamic-DNS subdomains, which are often used for longer-lived servers (although some admins do understandably block those anyway).
