@@ -119,7 +119,7 @@ Rather than using a single tool to perform all content filtering, we should try 
 
 [^4]: I use the term "malicious" loosely here. These scripts could perform tracking without prior informed consent or attempt to distract the user with ads, both of which are malicious.
 
-[^5]: Chromium offers this functionality. If users choose to block all cookies, it exposes controls to allow cookies for the current site that last for the current session or persist until they expire. It offers a similar site-specific toggle for JavaScript. As far as I am aware, Firefox does not expose controls for managing these permissions on the current page: users need to open the preferences page every time they wish to add such a rule, or use a privileged extension.
+[^5]: Chromium offers this functionality. If users choose to block all cookies, it exposes controls to allow cookies for the current site that last for the current session or persist until they expire. It offers a similar site-specific toggle for JavaScript. As far as I am aware, Firefox does not expose controls for managing these permissions on the current page: users need to open the preferences page every time they wish to add such a rule, or use a privileged extension. <ins itemprop="correction" itemscope="" itemtype="https://schema.org/CorrectionComment" datetime="2024-07-02">Update <time itemprop="datePublished">2024-07-02</time>: <span itemprop="text">Firefox does support per-site cookie settings via the site permissions menu, accessible via Page Info. Thanks Noah!</span></ins>
 
 [^6]: Animated custom emotes are a common offender, especially when a post contains several consecutive ones.
 

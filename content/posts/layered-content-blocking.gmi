@@ -102,7 +102,7 @@ Browsers don't download a rendered page; they download source code. It's up to t
 
 ³ I use the term "malicious" loosely here. These scripts could perform tracking without prior informed consent or attempt to distract the user with ads, both of which are malicious.
 
-⁴ Chromium offers this functionality. If users choose to block all cookies, it exposes controls to allow cookies for the current site that last for the current session or persist until they expire. It offers a similar site-specific toggle for JavaScript. As far as I am aware, Firefox does not expose controls for managing these permissions on the current page: users need to open the preferences page every time they wish to add such a rule, or use a privileged extension.
+⁴ Chromium offers this functionality. If users choose to block all cookies, it exposes controls to allow cookies for the current site that last for the current session or persist until they expire. It offers a similar site-specific toggle for JavaScript. As far as I am aware, Firefox does not expose controls for managing these permissions on the current page: users need to open the preferences page every time they wish to add such a rule, or use a privileged extension. (Update: Firefox does support per-site cookie settings via the site permissions menu, accessible via Page Info. Thanks Noah!).
 
 ⁵ Animated custom emotes are a common offender, especially when a post contains several consecutive ones.
 
