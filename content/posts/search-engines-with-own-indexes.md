@@ -245,6 +245,9 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 [Clew](https://clew.se/)
 : a FOSS new engine with a small index of several thousand pages. It focuses on independent content and downranks ads and trackers; there seems to be a real focus on quality over quantity, which makes it excellent for short-tail searches (especially around technical concepts). Ranking is more egalitarian than other engines, making it better for discovery and surfing than research. It's designed to be small and lightweight, with a compact index. Discovered in the seirdy.one access logs.
 
+[Lixia Labs Search](https://search.lixialabs.com/)
+: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
+
 ### Site finders
 
 These engines try to find a website, typically at the domain-name level. They don't focus on capturing particular pages within websites.
@@ -286,8 +289,8 @@ Quor
 [searchcode](https://searchcode.com/)
 : A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
 
-[Lixia Labs Search](https://search.lixialabs.com/)
-: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
+[StarFinder](https://star-finder.de/?l=en)
+: A search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendring link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
 
 ## Other languages
 

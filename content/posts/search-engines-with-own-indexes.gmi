@@ -223,6 +223,9 @@ These indexing search engines don’t have a Google-like “ask me anything” e
 * Clew: a FOSS new engine with a small index of several thousand pages. It focuses on independent content and downranks ads and trackers; there seems to be a real focus on quality over quantity, which makes it excellent for short-tail searches (especially around technical concepts). Ranking is more egalitarian than other engines, making it better for discovery and surfing than research. It's designed to be small and lightweight, with a compact index. Discovered in the seirdy.one access logs.
 => https://clew.se/ Clew
 
+* Lixia Labs Search: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
+=> https://search.lixialabs.com/ Lixia Labs Search
+
 ### Site finders
 
 These engines try to find a website, typically at the domain-name level. They don't focus on capturing particular pages within websites.
@@ -247,7 +250,7 @@ These engines try to find a website, typically at the domain-name level. They do
 * Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 * Bonzamate: a search engine specifically for Australian websites.
 * searchcode: A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
-* Lixia Labs Search: A new engine that focuses on indexing technical websites and blogs, with a minimal JavaScript-free front-end. Discovered in my access logs. Surprisingly good results for broad technical keyword queries.
+* StarFinder: a search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendring link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
 
 => https://highbrow.se/ High Browse
 => https://www.keybot.com/ Keybot Translation Search Machine.
@@ -255,7 +258,7 @@ These engines try to find a website, typically at the domain-name level. They do
 => https://bonzamate.com.au/ Bonzamate
 => https://boyter.org/posts/abusing-aws-to-make-a-search-engine/ Blog post about Bonzamate: "Abuzing AWS to make a search engine".
 => https://searchcode.com/ searchcode
-=> https://search.lixialabs.com/ Lixia Labs Search
+=> https://star-finder.de/?l=en StarFinder
 
 ## Other languages
 
