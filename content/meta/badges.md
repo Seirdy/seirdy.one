@@ -158,10 +158,10 @@ Sites that link back to me:
 <a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="176" height="62" class="pix">}}</a>
 <a href="https://winter.entities.org.uk/">{{<picture name="b/winter" alt="winter colon-three meow!" width="176" height="62" class="pix">}}</a>
 <a href="https://ezrizhu.com/">{{<picture name="b/ezri" alt="ezri" width="176" height="62" class="pix">}}</a>
+<a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="176" height="62" class="pix">}}</a>
 
 ### Other personal sites
 
-<a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="176" height="62" class="pix">}}</a>
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="176" height="62" class="pix">}}</a>
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="176" height="62" class="pix">}}</a>
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="176" height="62" class="pix">}}</a>
