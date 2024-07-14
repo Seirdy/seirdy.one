@@ -12,7 +12,7 @@
 {{ $dark_webp := resources.GetMatch (printf "/p/%s_dark.webp" (.Get "name")) -}}
 {{ $dark_avif := resources.GetMatch (printf "/p/%s_dark.avif" (.Get "name")) -}}
 {{ $dark_jxl := resources.GetMatch (printf "/p/%s_dark.jxl" (.Get "name")) -}}
-
+{{ $alt := .Get "alt" -}}
 {{- $orig_img := $light_png -}}
 {{- $orig_img_type := "image/png" -}}
 {{- $orig_img_dark := $dark_png -}}
@@ -119,7 +119,7 @@
 		type="{{ $orig_img_type }}" />
 	<img{{ with .Get "class" }} class="{{ . }}"{{ end }}
 		width="{{ $img_width }}" height="{{ $img_height }}"
-		src="{{ $orig_src.Permalink }}" alt='{{ .Get "alt" }}'
+		src="{{ $orig_src.Permalink }}" alt="{{ $alt }}"
 		{{ with .Parent -}}
 		{{ if eq .Name "transcribed-image-figure" -}}
 		{{ with .Get "id" -}}
