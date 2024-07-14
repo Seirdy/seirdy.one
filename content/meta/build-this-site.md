@@ -59,6 +59,8 @@ Other lints/checks I run also use additional command-line utilities such as `sd`
 
 #### Quick linters
 
+- [fflint](https://www.fflint.dev/)
+
 - Stylelint
 
 - [html-validate](https://html-validate.org/)
