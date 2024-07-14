@@ -15,8 +15,8 @@ set -e -u
 progname="$(basename "$0")"
 dirname="$(dirname "$0")"
 
-webrings_src="$dirname/../csv/webrings.base.csv"
-webrings_dest="$dirname/../csv/webrings.csv"
+webrings_src="$dirname/../assets/csv/webrings.base.csv"
+webrings_dest="$dirname/../assets/csv/webrings.csv"
 
 help_text="Usage: $progname [OPTION...]
 

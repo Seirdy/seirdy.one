@@ -1,5 +1,5 @@
 {{- $rewritesDict := dict "" "" -}}
-{{- range $i, $r := (getCSV "," "/csv/rewrites.csv") -}}
+{{- range $i, $r := (resources.Get "csv/rewrites.csv" | transform.Unmarshal) -}}
 	{{- $rewritesDict = merge $rewritesDict (dict (index $r 0) (index $r 1)) -}}
 {{- end -}}
 {{- return $rewritesDict -}}
