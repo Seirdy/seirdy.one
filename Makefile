@@ -97,10 +97,14 @@ html-validate:
 .validate-feed-notes:
 	scripts/bin/validate-feed file://$(PWD)/$(OUTPUT_DIR)/notes/atom.xml
 validate-feeds: .validate-feed-main .validate-feed-posts .validate-feed-notes
-.PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes
+
+fflint: hugo
+	sh scripts/fflint.sh $(OUTPUT_DIR)
+
+.PHONY: validate-feeds .validate-feed-main .validate-feed-posts .validate-feed-notes fflint
 
 .PHONY: lint-local
-lint-local: html-validate validate-html validate-json htmlproofer validate-feeds
+lint-local: fflint htmlproofer validate-feeds validate-json html-validate validate-html 
 
 # dev server, includes future and draft posts
 .PHONY: serve
@@ -195,5 +199,5 @@ lint-and-deploy-staging:
 deploy-envs:
 	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs xhtmlize
 	@$(MAKE) HUGO_FLAGS='--gc --ignoreCache' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs copy-to-xhtml
-	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs validate-html html-validate validate-json validate-feeds
+	@$(MAKE) HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs fflint validate-json validate-feeds validate-html html-validate
 	@$(MAKE) SSHFLAGS='-o KexAlgorithms=curve25519-sha256@libssh.org' HUGO_FLAGS='' USER=seirdy@envs.net WWW_ROOT=/home/seirdy/public_html GEMINI_ROOT=/home/seirdy/public_gemini HUGO_BASEURL='https://envs.net/~seirdy/' OUTPUT_DIR=public_envs deploy
