@@ -41,7 +41,7 @@ Template markup to embed my 88x31 badge.
 
 - Double the width and height in your HTML to `width="176" height="62"` to make them easier to read on higher-resolution screens.
 
-- The more consecutive badges you have, the shorter your alt-text should be. Balance the need for detail against the need to skim.
+- The more consecutive badges you have, the shorter your average alt-text should be. Balance the need for detail against the need to skim.
 
 - If you want to detect my button programmatically, consider the [`.well-known/button.json` schema](https://codeberg.org/LunarEclipse/well-known-button).
 
@@ -80,6 +80,7 @@ Read more about the design of this site in my [site design standards page]({{<re
 
 <a href="https://www.mabsland.com/Adoption.html">{{<picture name="b/panda_14c" alt="Smug panda fursona next to the text “Web 14”." width="176" height="62" class="pix">}}</a>
 <a href="https://tildeverse.org/">{{<picture name="b/tildeverse" alt="Tildeverse." width="176" height="62" class="pix">}}</a>
+<a href="https://indieweb.org/">{{<picture name="b/indieweb" alt="I W C Now! indieweb.org." width="176" height="62" class="pix">}}</a>
 <a href="https://indieweb.org/Webmention">{{<picture name="b/webmentions" alt="Webmentions supported." width="176" height="62" class="pix">}}</a>
 <a href="https://internet.nl/faqs/ipv6/">{{<picture name="b/ipv6" alt="The word “IPv6” next to a green checkmark." width="176" height="62" class="pix">}}</a>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/">{{<picture name="b/cc-by-sa" alt="Creative Commons BY-SA license." width="176" height="62" class="pix">}}</a>
