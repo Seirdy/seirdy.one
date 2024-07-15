@@ -1,6 +1,11 @@
 ---
 title: "Caveats to Ungoogled Chromium recommendations"
 date: 2024-07-15T00:05:38-04:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/b4de6133-3e88-448a-a795-874d285e56da'
+    - title: 'jstpst'
+      url: 'https://jstpst.net/f/technology/10291/caveats-to-ungoogled-chromium-recommendations'
 ---
 In the wake of a certain ad-funded browser company bundling adtech into its browser yet again, some people have been recommending Ungoogled-Chromium (<abbr>UGC</abbr>). I think it's fine to recommend <abbr>UGC</abbr> _with caveats,_ such as the fact that it disables component updates that include:
 
