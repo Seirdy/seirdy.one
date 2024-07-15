@@ -7,7 +7,9 @@ sitemap:
     Priority: 0.8
 stype: "https://schema.org/CollectionPage"
 ---
-Notes
-=====
+# Notes
 
-This is my microblog, containing short informal entries. [See my blog](../posts/) for longer entries. [An Atom feed](./atom.xml) contains the full text of all my notes. If that has any problems, I also have [a legacy RSS feed](./index.xml).
+This is my microblog, containing short informal entries. They're longer than most posts on microblogging networks (some would call this a "miniblog" instead), but a fraction of the size of the longer entries on  [my blog](../posts/). Most posts are under 300 words.
+
+[An Atom feed](./atom.xml) contains the full text of all my notes. If that has any problems, I also have [a legacy RSS feed](./index.xml).
+
