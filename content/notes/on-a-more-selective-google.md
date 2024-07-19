@@ -6,9 +6,9 @@ replyTitle: "Google Now Defaults to Not Indexing Your Content"
 replyType: "BlogPosting"
 replyAuthor: "Vincent Schmalbach"
 replyAuthorURI: "https://www.vincentschmalbach.com/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: 'https://pleroma.envs.net/objects/931a72b0-09e9-42c8-b727-7b7a029b791c'
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/99c2a77c-7bad-424b-840e-1e9be9377427'
 ---
 Selectivity is long overdue. Marginalia, Stract, and Teclis feel like a breath of fresh air for broad short-tail queries because they downrank or skip pages full of ads, trackers, scripts, and even SEO. However, Google's selectivity can't penalise such criteria as that would conflict with its ad business.
 
