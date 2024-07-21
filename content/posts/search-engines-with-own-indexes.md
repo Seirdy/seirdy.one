@@ -212,7 +212,11 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
   I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has [held payments to creators without disclosing that creators couldn't receive rewards](https://brave.com/rewards-update/), has made dangerously misleading claims about fingerprinting resistance,[^10] is run by a CEO who [spent thousands of dollars opposing gay marriage](https://arstechnica.com/information-technology/2014/03/new-mozilla-ceo-issues-statement-expresses-sorrow-for-causing-pain/), and [has rewritten typed URLs with affiliate links](https://www.pcmag.com/news/brave-browser-caught-redirecting-users-through-affiliate-links).
 
-  Brave offers a Tor onion service and doesn't require JS.
+  Brave Search offers a Tor onion service and doesn't require JS. Powers:
+
+  - Ghostery Private Search (identical results in my tests).
+
+  - Partially powers Kagi ([documented in 2023](https://web.archive.org/web/20231105004927/https://help.kagi.com/kagi/search-details/search-sources.html), [unclear after docs removed main sources after <time>2024-05-01</time>](https://github.com/kagisearch/kagi-docs/commit/6baff1c066db9b3d804653ea19bc9d1c076a710b)).
 
 [Plumb](https://plumb.one/)
 : Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
