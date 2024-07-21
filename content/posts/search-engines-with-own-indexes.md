@@ -214,7 +214,7 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
   Brave Search offers a Tor onion service and doesn't require JS. Powers:
 
-  - Ghostery Private Search (identical results in my tests).
+  - Ghostery Private Search (identical results in my tests).[^11]
 
   - Partially powers Kagi ([documented in 2023](https://web.archive.org/web/20231105004927/https://help.kagi.com/kagi/search-details/search-sources.html), [unclear after docs removed main sources after <time>2024-05-01</time>](https://github.com/kagisearch/kagi-docs/commit/6baff1c066db9b3d804653ea19bc9d1c076a710b)).
 
@@ -261,7 +261,7 @@ These engines try to find a website, typically at the domain-name level. They do
 : The best in this category. Has a small but growing index of over 8 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 
 [search.tl](http://www.search.tl/)
-: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^11] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^12] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 [Thunderstone](https://search.thunderstone.com/)
 : A combined website catalog and search engine that focuses on categorization. Its [about page](https://search.thunderstone.com/texis/websearch19/about.html) claims: <q cite="https://search.thunderstone.com/texis/websearch19/about.html">We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of _sites_ not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you're trying to finding things like _'BillyBob's personal beer can page on AOL'_, try Yahoo or Dogpile.</q> This seems to be the polar opposite of the engines in the ["small or non-commercial Web" category](#small-or-non-commercial-web).
@@ -433,7 +433,7 @@ Why bother using non-mainstream search engines?
 
 ### Conflicts of interest
 
-Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^12]
+Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^13]
 
 One way to avoid this conflict of interest is to _use search engines that aren't linked to major content providers;_ i.e., use engines with their own independent indexes.
 
@@ -556,8 +556,10 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
 [^10]: I will explain my thinking in another post later, and then edit this with a link to that post.
 
-[^11]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^11]: [Ghostery's documentation at the time of writing](https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search) is extremely misleading, using clever language that seems to heavily imply the use of an independent index and crawler while not saying so outright: Ghostery says it <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">gets you objective results from a unique search index</q> and that it will <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">crawl it's [sic] search index.</q> Privacy claims require trust, and word games do little to build it.
 
-[^12]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
+[^12]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+
+[^13]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
 
