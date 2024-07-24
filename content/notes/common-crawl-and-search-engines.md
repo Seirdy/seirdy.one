@@ -6,9 +6,9 @@ replyTitle: "We really fucking need a community owned search engine index that f
 replyType: "SocialMediaPosting"
 replyAuthor: "Marta Sokolska"
 replyAuthorURI: "https://me.pionaiki.com/"
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/48afb46f-0c40-46cb-8e48-867032d693aa'
 ---
 Common Crawl is the closest thing we have to an open index, though it doesn't meet your requirement of ignoring robots.txt for corporate websites while obeying it for personal sites. Unfortunately, being open and publicly available means that people use it to train LLMs. ([Google did this for initial versions of Bard]({{<relref "/notes/opting-out-of-llm-indexing.md">}})), so a lot of sites block its crawler. Most robots.txt guides for blocking GenAI crawlers include an entry for it now.
 
