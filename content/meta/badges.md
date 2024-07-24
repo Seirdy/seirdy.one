@@ -160,6 +160,7 @@ Sites that link back to me:
 <a href="https://winter.entities.org.uk/">{{<picture name="b/winter" alt="winter colon-three meow!" width="176" height="62" class="pix">}}</a>
 <a href="https://ezrizhu.com/">{{<picture name="b/ezri" alt="ezri" width="176" height="62" class="pix">}}</a>
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="176" height="62" class="pix">}}</a>
+<a href="https://xaselgio.net/">{{<picture name="b/xaselgio" alt="indigo’s den: xaselgo" width="176" height="62" class="pix">}}</a>
 
 ### Other personal sites
 
