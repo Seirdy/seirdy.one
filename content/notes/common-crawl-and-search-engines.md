@@ -9,8 +9,10 @@ replyAuthorURI: "https://me.pionaiki.com/"
 syndicatedCopies:
     - title: 'The Fediverse'
       url: 'https://pleroma.envs.net/objects/48afb46f-0c40-46cb-8e48-867032d693aa'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/common-crawl-and-search-engines/1136'
 ---
-Common Crawl is the closest thing we have to an open index, though it doesn't meet your requirement of ignoring robots.txt for corporate websites while obeying it for personal sites. Unfortunately, being open and publicly available means that people use it to train LLMs. ([Google did this for initial versions of Bard]({{<relref "/notes/opting-out-of-llm-indexing.md">}})), so a lot of sites block its crawler. Most robots.txt guides for blocking GenAI crawlers include an entry for it now.
+Common Crawl is the closest thing we have to an open index, though it doesn't meet your requirement of ignoring robots.txt for corporate websites while obeying it for personal sites. Unfortunately, being open and publicly available means that people use it to train LLMs. [Google did this for initial versions of Bard]({{<relref "/notes/opting-out-of-llm-indexing.md">}}), so a lot of sites block its crawler. Most robots.txt guides for blocking GenAI crawlers include an entry for it now.
 
 [Common Crawl powers Alexandria Search and was the basis of Stract's initial index]({{<relref "/posts/search-engines-with-own-indexes.md#smaller-indexes-or-less-relevant-results">}}), both of which are upstart FOSS engines.
 
