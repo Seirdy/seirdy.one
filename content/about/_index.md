@@ -139,6 +139,15 @@ Many people frame accessibility and compatibility in terms of "percentage of use
 
 I have some skin in the game: I rely on forced colors and use often use screen readers for web browsing. This is a really helpful measure to reduce overstimulation, given my anxiety and ADHD. I encourage others in similar situations to try these measures.
 
+### Collections
+
+I like to collect things online! Things I like to collect include:
+
+* [Custom emotes](https://git.envs.net/envs/pleroma-custom/)
+* [88x31 buttons]({{<relref "/meta/badges.md">}})
+* [Search engines]({{<relref "/posts/search-engines-with-own-indexes.md">}})
+* Probably more
+
 ### Software freedom
 
 While I care very much about "<span class="p-category category">free software</span>" (the name is confusing, it refers to freedom rather than price), I don't share the same perspective as most "fossbros" and organizations like the FSF. Software freedom is important because it gives people agency instead of delegating control to an authority; it's not valuable in and of itself, and promoting a "FOSS" alternative that has vulnerabilities and accessibility issues is sometimes counterproductive.
