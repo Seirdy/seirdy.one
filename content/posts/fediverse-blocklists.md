@@ -705,6 +705,13 @@ strelizia.net {#strelizia}
 : Admin [posts anti-Black racism](https://web.archive.org/web/20230808164722/https://strelizia.net/notice/AYFGEQcTnNSkcuIa36), [more blatant racism](https://web.archive.org/web/20230808164433/https://strelizia.net/notice/AY6JupLlwAlUJpprvc), and [some other slurs in non-reclaimed contexts](https://web.archive.org/web/20230808165632/https://strelizia.net/notice/AYCHMhIdT8w6L2YvD6)
 : Local user "nikiboo" posts [blatant anti-Black racism](https://web.archive.org/web/20230808181414/https://strelizia.net/notice/AXrIC2vJqLE5c296ps) (re-blogged by admin), has a profile photo with Nazi imagery.
 
+subs4social.xyz {#subs4social}
+: [blatant antisemitism](https://archive.today/2024.06.07-044344/https://subs4social.xyz/notes/9u4v9dgx0l) (transphobia further upthread if you view the canonical link).
+: [Misogyny and anti-Black racism](https://archive.today/2024.06.07-044443/https://subs4social.xyz/notes/9u4s4rakro), [more anti-Black racism](https://archive.today/2024.06.07-045502/https://subs4social.xyz/notes/9u4qo2ibo1).
+: [Transmisia](https://archive.today/2024.06.07-044545/https://subs4social.xyz/notes/9u4ovv3rjh).
+: [Legitimizing fervor over white genocide by using it as a comparison to fervor over climate change](https://archive.today/2024.06.07-045916/https://subs4social.xyz/notes/9u48ov3lu1).
+: All receipts are from the only user to show up in the explore tab.
+
 tastingtraffic.net {#tastingtraffic}
 : Admin account is a high-activity news account full of hashtag spam. Frequently posts [far-right transphobia/queerphobia](https://archive.today/2023.09.18-151425/https://tastingtraffic.net/@InternationalTechNews/111086792935014280), [another example](https://web.archive.org/web/20230924135533/https://tastingtraffic.net/@InternationalTechNews/110968062234187455). The same content is frequently pasted in multiple posts per day.
 
@@ -765,6 +772,11 @@ This section is very unfinished. Receipt criteria and threshold is weaker than F
 {{< nofollow >}} {{< dd-id >}}
 
 
+absolutelyproprietary.org {#absolutely-proprietary}
+: [Admin self-intro is a racial slur](https://web.archive.org/web/20240729105559/https://pl.absolutelyproprietary.org/notice/AkPIQLhAvEiPiKBoZM). [Posts a series of racial caricatures with slurs in this thread](https://archive.ph/wip/bkCyc).
+: [alt for pwm of crlf.ninja](https://archive.is/2024.07.29-110355/https://pl.absolutelyproprietary.org/users/pwm). [See crlf.ninja FediNuke entry](#crlf), featuring pwm.
+: [alt for pernia of cum.salon](https://ghostarchive.org/archive/CJsIH). [See cum.salon FediNuke entry](#cumcamp), featuring pernia.
+
 baraag.net {#baraag}
 : Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](https://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction. Consider blocking media if you wish to federate.
 
@@ -808,13 +820,15 @@ novoa.nagoya {#novoa}
 occultist.space {#occultist-space} OR enjoyer.network
 : Run by the same admin as the.usualsuspects.lol (FediNuke). Admin [announced the.usualsuspects.lol from the.occultist.space](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0). See [confirmation that the enjoyer.network admin is the same](https://pleroma.envs.net/notice/AY6ROdOne8F2oBGjtA).
 
+peister.org {#peister}
+: [Admin pinned post](https://web.archive.org/web/20240607052542/https://peister.org/notice/AgnDvTdu9Eu0omQusS) is blatant gender-critical/TERF nonsense. [More TERF posts from admin](https://web.archive.org/web/20240802075939/https://peister.org/notice/Ak4XrcOhIutyYtZ0MK). [Several more receipts available on the admin profile](https://web.archive.org/web/20240607052917/https://peister.org/users/quasi).
+
 shitposter.club {#spc} OR shitposter.world
 : [Blatant transphobia from user "noyoushutthefuckupdad"](https://archive.ph/J8Bhe), who's [gone on multiple transphobic benders](https://web.archive.org/web/20230731043635/https://shitposter.club/notice/AXhKBOWHdKeWMCUSxs), [with admin knowledge](https://ghostarchive.org/archive/qJPUD). [More transphobia from other users](https://web.archive.org/web/20230831030108/https://shitposter.club/notice/AZCc1yv50GaHraJnf6).
 : User "billiam" has a profile with [a Confederate battle-flag, antisemitic dog-whistles, and blatant white supremacy in a pinned post](https://web.archive.org/web/20230812014901/https://shitposter.club/users/billiam)
 : [Hosts user "Amerika", an outspoken eugenicist and nationalist](https://ghostarchive.org/archive/sIgyp). See receipts for their other account in [the FediNuke entry for noagendasocial.com](#nas).
 : User "Nudhul" [posts racist spam in the "MutualAid" hashtag](https://web.archive.org/web/20231103203216/https://clubcyberia.co/notice/AbFYbNOEt3Xa79cDBY).
 : Admin "Moon" [posts racist bait](https://web.archive.org/web/20230730211629/https://shitposter.club/notice/AXsvqZCmdxzMPgQN84).
-: [Truscum user "animeirl"](https://web.archive.org/web/20230728221400/https://shitposter.club/notice/AY8QoV7rx1Oj37qKzw), who also [ran an instance of the ap-proxy block-evasion tool](https://puddle.town/@null/109839571095716330).
 : [Some more racism from user "triodug"](https://archive.today/2023.07.31-054410/https://shitposter.club/notice/AT3JYq3GEFzwrvERs0).
 : Note that its freeze-peach environment probably won't be changing: [other users, including the admin, seem fond of it in this thread](https://archive.ph/r254T).
 : shitposter.world is the successor to shitposter.club following technical difficulties: [background information](https://archive.today/2024.04.01-022457/https://shitposter.world/notice/AgQHvGpoVFEjzZvXlI) and [admin confirmation](https://archive.today/2024.04.01-143407/https://shitposter.world/notice/AgPLQomASwKKwMzqSm).
