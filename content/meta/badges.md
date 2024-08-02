@@ -117,7 +117,7 @@ I might eventually move these to a separate page under the "About" section of my
 
 {{<picture name="b/antinazi" alt="No nazi. No fascism. No racism." width="176" height="62" class="pix">}}
 {{<picture name="b/animegay" alt="Anime is gay as hell but I approve!" width="176" height="62" class="pix">}}
-{{<picture name="b/brolove" alt="The words “It's okay to give your bros some love” next to two anime boys kissing." width="176" height="62" class="pix">}}
+{{<picture name="b/brolove" alt="The words “It’s okay to give your bros some love” next to two anime boys kissing." width="176" height="62" class="pix">}}
 {{<picture name="b/catboys" alt="The words “catboys meow!” next to a silhouette of a cat head flapping its ears." width="176" height="62" class="pix">}}
 {{<picture name="b/genderfluid" alt="genderfluid flag." width="176" height="62" class="pix">}}
 {{<picture name="b/trans-rights" alt="Trans rights now!" width="176" height="62" class="pix">}}
@@ -170,6 +170,7 @@ Sites that link back to me:
 <a href="https://easrng.net/">{{<picture name="b/easrng" alt="easrng." width="176" height="62" class="pix">}}</a>
 <a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="176" height="62" class="pix">}}</a>
 <a href="https://lunareclipse.zone/">{{<picture name="b/lunar-eclipse" alt="The text “Lunar Eclipse Zone” next to a magenta eclipsed moon." width="176" height="62" class="pix">}}</a>
+<a href="https://ch0ccyra1n.gitlab.io/">{{<picture name="b/ch0ccyra1n" alt="ch0ccyra1n’s website!" width="176" height="62" class="pix">}}</a>
 
 ### Other sites
 
