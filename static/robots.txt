@@ -110,8 +110,9 @@ Disallow: /
 
 # FacebookBot crawls public web pages to improve language models for our speech
 # recognition technology.
-# UPDATE 2024-07: The Meta-ExternalAgent crawler crawls the web for use cases such as training AI models or improving products by indexing content directly.
 # <https://developers.facebook.com/docs/sharing/bot/?_fb_noscript=1>
+# UPDATE: The Meta-ExternalAgent crawler crawls the web for use cases such as training AI models or improving products by indexing content directly.
+# <https://developers.facebook.com/docs/sharing/webmasters/web-crawlers>
 User-Agent: FacebookBot
 User-Agent: meta-externalagent
 Disallow: /

@@ -66,6 +66,7 @@ I don't currently use a prebuilt desktop environment. I assemble mine out of the
 * wormhole-william
 * rdrview
 * Efficient Compression Tool (better than Zopfli/ZopfliPNG)
+* usvg and resvg 
 * zpaqfranz
 * scc
 * Pandoc
