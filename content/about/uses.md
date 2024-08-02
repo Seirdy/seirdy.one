@@ -173,9 +173,9 @@ z.lua
 : The last word in optimizing gzip or PNG size. Runs circles around Zopfli, ZopfliPNG, oxipng, etc. I use it in combination with `brotli` to compress all static text and PNGs on this site.
 
 [usvg](https://github.com/RazrFalcon/resvg/tree/master/crates/usvg)
-: An SVG compiler, and one of the most under-appreciated tools I use. It compiles complex SVGs into simpler path-based SVGs. Edge-case SVGs may render incorrectly in some renderers (e.g. librsvg), but compiling them with usvg tends to iron these edge-cases out and make them more compatible. `usvg` is part of the [resvg](https://github.com/RazrFalcon/resvg) project, which is the most conformant SVG renderer I know of.
+: An SVG compiler, and one of the most under-appreciated tools I use. It compiles complex SVGs into simpler path-based SVGs. Edge-case SVGs may render incorrectly in some renderers (e.g. librsvg), but compiling them with usvg tends to iron these edge-cases out and make them more compatible. `usvg` is part of the [resvg](https://github.com/RazrFalcon/resvg) project, which is the most conformant SVG renderer I know of (and much smaller than librsvg if you include dependencies!).
 
-  All the SVGs I serve on seirdy.one have gone through `usvg`.
+  I've sent all the SVGs on seirdy.one through `usvg`, and many of the emotes on pleroma.envs.net with `resvg`.
 
 [zpaqfranz](https://github.com/fcorbelli/zpaqfranz)
 : I use this for my long-term backups. `zpaq` is a journaling archiver, which allows me to compress backup deltas without having to use a journaling filesystem. `zpaqfranz` adds several features related to integrity-checking. The compression ratios are ridiculously good, even without the journaling; it beats every other realistic option, especially when combined with pre-processing offered by [lrzip-next](https://github.com/pete4abw/lrzip-next).
