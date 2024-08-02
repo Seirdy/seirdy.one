@@ -201,7 +201,7 @@ Some supplementary blocklists I maintain with very different criteria:
 : These are services that allow Fediverse users to follow any Twitter user. Now that far-right figures are back on Twitter, these instance pose a problem. Admins wishing to ban a single Twitter user will need to ban that user across over 100 different Twitter mirrors. Moreover, any interactions with bridged accounts are unseen by the account holder on Twitter. Twitter users may not have consented to such mirroring. Admins wishing to simply ban mass-Twitter-mirroring can import this list.
 
 [Bridges](https://seirdy.one/pb/bridges.txt)
-: Bridges to other social media platforms, *excluding* Twitter/X bridges, that aren't opt-in. Bridges to Nostr are common. These are excluded from tier0.csv as they're in a dedicated list. Nostr is especially worth blocking because most bridges don't appear to do significant moderation or delegate to relays that do, effectively requiring moderators to moderate the whole network in its unmoderated form and potentially duplicate their work across multiple Nostr bridges.
+: Bridges to other social media platforms, _excluding_ Twitter/X bridges, that aren't opt-in. Bridges to Nostr are common. These are excluded from tier0.csv as they're in a dedicated list. Nostr is especially worth blocking because most bridges don't appear to do significant moderation or delegate to relays that do, effectively requiring moderators to moderate the whole network in its unmoderated form and potentially duplicate their work across multiple Nostr bridges.
 
 [Corporate social media with user-hostile dark patterns](https://seirdy.one/pb/corpo.txt)
 : A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes. Not updated very often.
@@ -422,6 +422,11 @@ freespeechextremist.com {#fse} OR fsebugoutzone.org
 froth.zone {#froth}
 : [Blatant racism](https://archive.today/2023.08.03-004755/https://froth.zone/notice/AQAJYgb2fjf0bEhbvs), [racist homophobia](https://archive.today/2023.08.03-004725/https://froth.zone/notice/AQA5cC86URWDuOwgYi). Reporting is unlikely to help given the lack of rules against this, [some ableism from the admin](https://web.archive.org/web/20230803161348/https://froth.zone/notice/AVFLzUfMMCZGqnTm8e) and [some racism from the admin](https://web.archive.org/web/20230803161352/https://froth.zone/notice/AVFRa00PoXEWFDYR2u).
 
+gameliberty.club {#gameliberty}
+: [Freeze-peach rules](https://archive.ph/ir4hc) permit lolisho, which may be a legal risk depending on your jurisdiction.
+: [Admin pinned posts](https://archive.ph/x9xUe) contain slurs in un-reclaimed contexts, and [runs an rsdb bot](https://gameliberty.club/@dailyslurbot) for more.
+: Admin [posts racist memes](https://gameliberty.club/@matrix/110691184671379555), [more racist memes](https://gameliberty.club/@matrix/110691000630024399), [anti-pride](https://gameliberty.club/@matrix/110705822988959149).
+
 gearlandia.haus {#gearlandia}
 : [Transphobic targeted harassment from multiple staff members](https://web.archive.org/web/20230805034502/https://gearlandia.haus/notice/AY8D5ossGoV9B7Eria), including sui-bait.
 : [Racist use of slurs from another staff member](https://web.archive.org/web/20230805035409/https://gearlandia.haus/notice/AVBWXlFGHdqqogRnmK).
@@ -432,11 +437,6 @@ geofront.rocks {#geofront}
 : Well-known Nazi instance.
 : [Blatantly racist and transphobic use of slurs](https://web.archive.org/web/20230802234620/https://geofront.rocks/notice/AYKO5jmR77AB8nBtZo), [ethno-nationalism](https://web.archive.org/web/20230802234722/https://geofront.rocks/notice/AYJDETasJd7SUuuS4O), [more racism](https://ghostarchive.org/archive/RGPfP). All from what seems to be the primary active user of the instance.
 : Another user has a [blatantly Nazi profile](https://web.archive.org/web/20230802235236/https://geofront.rocks/@flux) featuring violent transphobic shock content.
-
-gameliberty.club {#gameliberty}
-: [Freeze-peach rules](https://archive.ph/ir4hc) permit lolisho, which may be a legal risk depending on your jurisdiction.
-: [Admin pinned posts](https://archive.ph/x9xUe) contain slurs in un-reclaimed contexts, and [runs an rsdb bot](https://gameliberty.club/@dailyslurbot) for more.
-: Admin [posts racist memes](https://gameliberty.club/@matrix/110691184671379555), [more racist memes](https://gameliberty.club/@matrix/110691000630024399), [anti-pride](https://gameliberty.club/@matrix/110705822988959149).
 
 genderheretics.xyz {#genderheretics}
 : ["About" page explicitly labels the instance as transphobic](https://web.archive.org/web/20230804235043/https://genderheretics.xyz/about).
@@ -454,6 +454,14 @@ glee.li {#getgle}
 : Admin [posts <q>glad shes gone</q> in response to a gender and sexuality scholar dying](https://web.archive.org/web/20230803031028/https://glee.li/notice/AYG0asC42hyR8rld3I), and [participates in a transmisogynistic harassment campaign](https://archive.today/2023.08.03-154818/https://freespeechextremist.com/notice/AYMCBqcaPUmd6J0ho8).
 : [More blatant racism](https://web.archive.org/web/20230805180006/https://glee.li/notice/AYQQrs1oS2HvwPKxJA).
 : Instance is associated with [the website https://getgle.org](https://web.archive.org/web/20230731045659/https://getgle.org/dark-mode.html). Split off of asbestos.cafe in early 2023, formerly at a subdomain of getgle.org.
+
+goyim.social {#goyim}
+: antisemitism, racism. All the following posts are from main user "Flatulenator"
+: [Anti-Black racial caricatures](https://archive.today/2024.05.11-031159/https://nicecrew.digital/@Flatulenator@goyim.social/posts/AhhRup2INgYAzO0SXo)
+: [Antisemitic use of triple-parens](https://archive.today/2024.05.11-031504/https://freeatlantis.com/@icare4america/112385566195935930)
+: [Anti-diversity white pride](https://archive.today/2024.05.11-031238/https://freeatlantis.com/@DrFell/112409983151320233)
+: [Holocaust denial](https://archive.is/2024.08.02-051621/https://annihilation.social/notice/AjX0DlDwJvOzQuv3kO)
+: [More blatant antisemitism](https://ghostarchive.org/archive/RZaRq).
 
 harpy.faith {#harpy}
 : [blatant antisemitism from admin](https://web.archive.org/web/20240601010626/https://the.asbestos.cafe/notice/AiRpmLwX7zqBu1RbUm), [admin doubling down with racist slurs after being called out](https://web.archive.org/web/20240601010312/https://the.asbestos.cafe/notice/AiS7b5nabscfp02buC).
@@ -617,7 +625,7 @@ parcero.bond {#parcero}
 
 piazza.today {#piazza}
 : [climate denial from admin](https://archive.today/2024.06.01-014811/https://piazza.today/@centurion/posts/AhvMSBKb1Bsa1jNXAO), [COVID misinformation from admin](https://ghostarchive.org/archive/ptplK?wr=false), [transphobia from admin](https://ghostarchive.org/archive/4gdb9?wr=false).
-: [xenophobic MAGA crap](https://archive.today/2024.06.01-014633/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AhelEioEQVRDb1Jw24) and [Great Replacement conspiracy theories](http://archive.today/2024.06.01-015727/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AguHJTpzkvKNoTW5NA) (archive visually cut off, but the post is visible in the screenshot tab or in page source code) from local user.
+: [xenophobic MAGA crap](https://archive.today/2024.06.01-014633/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AhelEioEQVRDb1Jw24) and [Great Replacement conspiracy theories](https://archive.today/2024.06.01-015727/https://piazza.today/@KeineAngstVorOffenenDiskussionen/posts/AguHJTpzkvKNoTW5NA) (archive visually cut off, but the post is visible in the screenshot tab or in page source code) from local user.
 
 pibvt.net {#pibvt}
 : Lolisho and actual photos of toddlers posted by MAPs. [FediBlock post](https://pleroma.envs.net/notice/AS9QjlcEaQgZKbz5gO) with some more details.
