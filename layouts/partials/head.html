@@ -16,7 +16,7 @@
 	<!-- Only index the canonical locations, not the envs.net mirror. -->
 	{{ if or (eq (trim site.BaseURL "/") site.Params.CanonicalBaseURL) (in site.BaseURL "wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion") -}}
 	<!-- See https://noml.info/, https://www.deviantart.com/team/journal/UPDATE-All-Deviations-Are-Opted-Out-of-AI-Datasets-934500371 -->
-	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1,noai,noimageai,noml" />
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,noai,noimageai,noml" />
 	{{ else -}}
 	<meta name="robots" content="noindex,nofollow,noimageindex,noai,noimageai" />
 	{{ end -}}
