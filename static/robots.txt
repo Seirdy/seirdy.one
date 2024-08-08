@@ -87,6 +87,10 @@ Disallow: /
 User-agent: PiplBot
 Disallow: /
 
+# Well-known overly-aggressive bot that claims to respect robots.txt: http://mj12bot.com/
+User-agent: MJ12bot
+Crawl-Delay: 10
+
 ## Gen-AI data scrapers ##
 
 # Eat shit, OpenAI.
@@ -116,6 +120,9 @@ Disallow: /
 User-Agent: FacebookBot
 User-Agent: meta-externalagent
 Disallow: /
+
+# This one doesn't support robots.txt: https://www.allenai.org/crawler
+# block it with your reverse-proxy or WAF or something.
 
 # I'm not blocking CCBot for now. It publishes a free index for anyone to use.
 # Googe used this to train the initial version of Bard (now called Gemini).
