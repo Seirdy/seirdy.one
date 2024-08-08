@@ -254,13 +254,13 @@ Criteria for a good FediNuke receipt is stricter than the aforementioned criteri
 
 
 13bells.com {#13bells}
-: Admin posts [Sandy Hook school shooting conspiracy theories](https://archive.ph/dT9Am), [transmisia](https://archive.ph/Km8Ju), and [queermisia](https://web.archive.org/web/20230810193444/https://13bells.com/@amiko/110810353137172742).
+: Admin posts [Sandy Hook school shooting conspiracy theories](https://archive.ph/dT9Am), [transmisia](https://archive.ph/Km8Ju), and [queermisia](https://web.archive.org/web/20230810193444/https://13bells.com/@amiko/110810353137172742). Admin [spreads vaccine misinformation](https://ghostarchive.org/archive/9Kvug).
 
 1611.social {#1611}
 : [antisemitism from admin](https://web.archive.org/web/20230628203218/https://1611.social/@tyler/posts/AX9r68rwjhEQzMKJbU), [anti-vax from admin](https://archive.li/qFhQQ) with other local members, [antisemitic caricature from admin](https://archive.ph/3wIRL).
 
 4aem.com {#4aem}
-: Freeze peach PeerTube instance on the "tube" subdomain, hosting blatant antisemitic content. ["Clown World" dogwhistles](https://archive.ph/80Zwu), antisemitic ["Why Kanye West is right"](https://archive.ph/06UiV).
+: Freeze peach PeerTube instance on the "tube" subdomain, hosting blatant antisemitic content. ["Clown World" dogwhistles](https://archive.ph/80Zwu), antisemitic ["Why Kanye West is right"](https://archive.ph/06UiV), [more antisemitism](https://ghostarchive.org/archive/itBDB).
 
 5dollah.click {#5dollah}
 : [Blatantly racist use of slurs](https://web.archive.org/web/20230803174643/https://5dollah.click/notice/AYFv0JRxfVez3K6ftQ) from staff account, [more racism from same account](https://web.archive.org/web/20230803174620/https://5dollah.click/notice/AYGifHRMwMFURlzgye).
@@ -287,7 +287,6 @@ anon-kenkai.net {#anon-kenkai}
 asbestos.cafe {#asbestos}
 : [Racism and ableism from admin](https://archive.ph/d7cfQ).
 : [Admin sharing a dox attempt](https://archive.ph/LUA10)
-: [Transmedical gatekeeping from a cis user](https://web.archive.org/web/20230731041522/https://the.asbestos.cafe/notice/AYCymnXAtifMLgNzJg).
 : [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin. [Admin defends antisemitism](https://web.archive.org/web/20240110032818/https://the.asbestos.cafe/notice/AdgBSAo0q5L63JPXtY).
 : [Queermisic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
 
