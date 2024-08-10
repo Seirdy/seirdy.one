@@ -395,6 +395,10 @@ These engines were originally included in the article, but have since been disco
 => https://www.parsijoo.ir/  Parsijoo
 => https://www.moose.at  Moose.at
 
+## Upcoming engines
+
+=> https://cyberfind.net/bot.html Cyberfind
+
 ## Exclusions
 
 Three engines were excluded from this list for having a far-right focus.

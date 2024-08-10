@@ -422,6 +422,11 @@ Dead engines I don't have an extended description for:
 
 - [Moose.at](https://www.moose.at): German (Austria-based). The site is still up but redirects searches to Brave.
 
+## Upcoming engines
+
+- [Cyberfind](https://cyberfind.net/bot.html)
+- More to come
+
 ## Exclusions
 
 Three engines were excluded from this list for having a far-right focus.
