@@ -425,7 +425,7 @@ Dead engines I don't have an extended description for:
 ## Upcoming engines
 
 - [Cyberfind](https://cyberfind.net/bot.html)
-- More to come
+- [fynd](https://fynd.bot/)
 
 ## Exclusions
 
