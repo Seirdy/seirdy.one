@@ -107,11 +107,13 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
 
+* Peekr (formerly SvMetaSearch): Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source.
 * Infotiger: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section; I look forward to the day it "graduates" to the previous section. Infotiger also has a Tor hidden service.
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 * ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
 
+=> https://peekr.org/
 => https://infotiger.com/ Infotiger
 => http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/ Infotiger hidden service
 => http://www.seekport.com/ seekport (HTTP only)
@@ -200,8 +202,9 @@ Brave Search partially powers Kagi (documented in 2023, unclear after docs remov
 => https://kagifeedback.org/d/2808-reconsider-your-partnership-with-brave Kagi feedback ticket on partnership with Brave, allowing blatant homophobia in the discussion.
 => https://kagifeedback.org/d/865-suicide-results-should-probably-have-a-dont-do-that-widget-like-google/50 Kagi feedback ticket on suicide results
 
-* SVMetaSearch: A SearxNG metasearch engine that also includes results from its own index. All other sources can be turned off. Like most public Searx/SearxNG instances, reliability is very poor.
-=> https://svmetasearch.eu.org/
+* PriEco: A metasearch engine with one option for using its own index. Found in my access logs. All other sources can be turned off, allowing you to see its unique results. At the time of writing, its own index is unfortunately quite tiny.
+=> https://prieco.net/
+
 
 ## Non-generalist search
 

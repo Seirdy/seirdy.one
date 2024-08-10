@@ -137,6 +137,9 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough for users who'd like some more serendipity in less-specific searches.
 
 
+[Peekr (formerly SvMetaSearch)](https://peekr.org/)
+: Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source.
+
 [Infotiger](https://alpha.infotiger.com/)
 : My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotiger also has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
 
@@ -227,8 +230,8 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 [Kagi Search](https://kagi.com/)
 : The most interesting entry in this category, IMO. Like Neeva, it requires an account and limits use without payment. It's powered by its own Teclis index (Teclis can be used independently; see the [non-commercial section](#small-or-non-commercial-web) below), and claims to also use results from Google and Bing. The result seems somewhat unique: I'm able to recognize some results from the Teclis index mixed in with the mainstream ones. In addition to Teclis, Kagi's other products include the [Kagi.ai](https://kagi.ai/) intelligent answer service and the [TinyGem](https://tinygem.org/) social bookmarking service, both of which play a role in Kagi.com in the present or future. Unrelatedly: I'm concerned about the company's biases, as it seems happy to [use Brave's commercial API](https://kagifeedback.org/d/2808-reconsider-your-partnership-with-brave) (allowing blatant homophobia in the comments) and [allow its results to recommend suicide methods without intervention](https://kagifeedback.org/d/865-suicide-results-should-probably-have-a-dont-do-that-widget-like-google/50). I reject the idea that avoiding an option that may seem politically biased is the same as being unbiased if such a decision has real political implications.
 
-[SVMetaSearch](https://svmetasearch.eu.org/)
-: A SearxNG metasearch engine that also includes results from its own index. All other sources can be turned off. Like most public Searx/SearxNG instances, reliability is very poor.
+[PriEco](https://prieco.net/)
+: A metasearch engine with one option for using its own index. Found in my access logs. All other sources can be turned off, allowing you to see its unique results. At the time of writing, its own index is unfortunately quite tiny.
 
 ## Non-generalist search
 
