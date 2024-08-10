@@ -107,7 +107,7 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
 
-* Peekr (formerly SvMetaSearch, not to be confused with Peekier): Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source.
+* Peekr (formerly SvMetaSearch, not to be confused with Peekier): Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source, with an emphasis on self-hostability.
 * Infotiger: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section; I look forward to the day it "graduates" to the previous section. Infotiger also has a Tor hidden service.
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.

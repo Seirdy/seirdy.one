@@ -138,7 +138,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 
 
 [Peekr (formerly SvMetaSearch, not to be confused with Peekier)](https://peekr.org/)
-: Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source.
+: Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source, with an emphasis on self-hostability.
 
 [Infotiger](https://alpha.infotiger.com/)
 : My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotiger also has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
