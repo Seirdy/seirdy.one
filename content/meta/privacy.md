@@ -80,7 +80,7 @@ Searches performed on search boxes in the site footer and on the search page are
 
 No other information is automatically shared with any third-parties, to my knowledge.
 
-I may share excerpts of of server logs with third parties if I am trying to resolve a technical issue. For example, I may submit an excerpt of an error log when filing a bug report. Any time I have to share such an excerpt, I remove or alter all identifying information. This includes, but is not limited to: IP addresses, timestamps, and any uniquely-identifying user-agent strings.
+I may share excerpts of server logs with third parties if I am trying to resolve a technical issue. For example, I may submit an excerpt of an error log when filing a bug report. Any time I have to share such an excerpt, I remove or alter all identifying information. This includes, but is not limited to: IP addresses, timestamps, and any uniquely-identifying user-agent strings.
 
 I do not remove or alter identifying information when sharing excerpts of bot traffic.
 
@@ -111,4 +111,4 @@ By default, Web browsers may share characteristics about the user's hardware, co
 
 By default, many networks and Internet service providers often alter requests by redirecting them or injecting content. I have prevented this behavior by using a secure TLS cipher suite.
 
-By default, most web browsers connect to a website over insecure HTTP when users don't specify don't specify a URL scheme; this is frequently exploited by hostile networks to inject content or re-direct traffic. I mitigate this to the extent I can by using a `Strict-Transport-Security` header, participating in HSTS-Preload lists, and adding an HTTPS DNS record for HTTP/2 and HTTP/3 DNS-based APLN.
+By default, most web browsers connect to a website over insecure HTTP when users don't specify a URL scheme; this is frequently exploited by hostile networks to inject content or re-direct traffic. I mitigate this to the extent I can by using a `Strict-Transport-Security` header, participating in HSTS-Preload lists, and adding an HTTPS DNS record for HTTP/2 and HTTP/3 DNS-based APLN.
