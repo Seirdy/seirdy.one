@@ -83,7 +83,7 @@ Bing
   - PrivacyWall
   - Lilo
   - Search&shy;Scene
-  - Peekier
+  - Peekier (not to be confused with Peekier, a metasearch engine with its own index)
   - Oscobo
   - Million Short
   - Yippy search[^6]
@@ -137,7 +137,7 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough for users who'd like some more serendipity in less-specific searches.
 
 
-[Peekr (formerly SvMetaSearch)](https://peekr.org/)
+[Peekr (formerly SvMetaSearch, not to be confused with Peekier)](https://peekr.org/)
 : Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source.
 
 [Infotiger](https://alpha.infotiger.com/)
