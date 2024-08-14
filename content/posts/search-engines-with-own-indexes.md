@@ -83,7 +83,7 @@ Bing
   - PrivacyWall
   - Lilo
   - Search&shy;Scene
-  - Peekier (not to be confused with Peekier, a metasearch engine with its own index)
+  - Peekier (not to be confused with Peekr, a metasearch engine with its own index)
   - Oscobo
   - Million Short
   - Yippy search[^6]

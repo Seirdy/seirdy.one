@@ -52,7 +52,7 @@ These are large engines that pass all my standard tests and more.
 * PrivacyWall
 * Lilo
 * SearchScene
-* Peekier (not to be confused with Peekier, a metasearch engine with its own index)
+* Peekier (not to be confused with Peekr, a metasearch engine with its own index)
 * Oscobo
 * Million Short
 * Yippy search⁶
