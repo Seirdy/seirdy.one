@@ -47,9 +47,9 @@ This post is an attempt to document how they are made, their differences, their 
 
 ## How Tier-0 and FediNuke work
 
-[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **14 out of 27** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
+[My tier-0 list](https://seirdy.one/pb/tier0.csv) is a subset of the `pleroma.envs.net` blocklist. It contains entries that appeared on at least **15 out of 27** other hand-picked instance blocklists ("bias sources"), with exceptions detailed below. Not all Tier-0 entries have the same level of severity; a smaller list containing what I personally deem the "worse half" of Tier 0 is [FediNuke.txt](https://seirdy.one/pb/FediNuke.txt). **Consensus** builds Tier-0; **severity** builds FediNuke.
 
-When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 14 instead of 13.
+When I add a bias source, I may also increase the minimum number of votes required if I find that its blocklist is too close to (or mainly just imports all of) tier-0 or the blocklist of a bias source's blocklist. That's the reason why the threshold is 15 instead of 13 or 14.
 
 All entries use the root domains when applicable, or are as close to the root domain as possible without triggering false-positives.
 
@@ -57,7 +57,7 @@ All entries use the root domains when applicable, or are as close to the root do
 
 There were some block-overrides for instances with fewer than 15 votes. Here's how I went about overriding:
 
-- If an instance has **10 votes,** I may elect to add it after additional review instead of waiting for it to hit 14 votes.
+- If an instance has **10 votes,** I may elect to add it after additional review instead of waiting for it to hit 15 votes.
 - If an instance is run by **the same staff as another Tier-0 instance** and has **at least 5 votes,** I may add it after asking other admins about it and getting multiple thumbs-up from admins who import tier-0.
 - If an instance contains **blatant/unapologetic bigotry** (something really undeniable, like Nazi imagery or excessive use of slurs in violent/hateful/definitely-not-reclaimed contexts) with staff approval or involvement, I may add it to both tier-0 and `FediNuke.txt` after I get multiple thumbs-up.
 - If an instance becomes **risky even to many tier-0 instances** (untagged gore, dox attempts, significant cybersecurity risk, <abbr title="child sexual abuse material">CSAM</abbr>, etc. with staff approval or involvement): I may add it to both right away, skipping any process. This is rare.
@@ -70,7 +70,7 @@ I also excluded Twitter mirrors such as BirdSiteLive and bird.makeup, and bridge
 
 Criteria for a bias source:
 
-1. Has a public blocklist I can easily download.
+1. Has a blocklist I can easily download, possibly with an API key.
 2. Practices timely and proactive moderation: doesn't just wait for another instance start interacting and cause trouble, and updates more often than once a month. Evaluating this takes time.
 3. Blocks at least half of `FediNuke.txt`.
 
@@ -363,7 +363,7 @@ crucible.world {#crucible}
 : [Even more transmisia](https://archive.ph/WVFrK).
 
 cum.camp {#cumcamp} OR cum.salon
-: Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://web.archive.org/web/20230730233035/https://marsey.moe/@pernia@cum.salon/posts/AY8crsXbKZHmCIApgu).
+: Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://ghostarchive.org/archive/gDzD1).
 : The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires; however, [it came back after transferring to Epik](https://web.archive.org/web/20230819012541/https://shitposter.club/notice/AYpWAIw53KQXoohBbM).
 
 cunnyborea.space {#cunnyborea}
