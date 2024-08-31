@@ -9,7 +9,8 @@
 		"irc://irc.snoonet.org/Seirdy,isuser",
 		"irc://irc.tilde.chat/Seirdy,isuser",
 		"https://pleroma.envs.net/Seirdy",
-		"https://pleroma.envs.net/users/Seirdy"
+		"https://pleroma.envs.net/users/Seirdy",
+		"https://bsky.app/profile/seirdy.one"
 	],
 	"links": [
 		{
@@ -41,6 +42,11 @@
 			"rel": "self",
 			"type": "application/activity+json",
 			"href": "https://chai.kibbutz.gay/users/Seirdy"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://bsky.app/profile/seirdy.one",
+			"type": "text/html"
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",

@@ -426,6 +426,7 @@ Dead engines I don't have an extended description for:
 
 - [Cyberfind](https://cyberfind.net/bot.html)
 - [fynd](https://fynd.bot/)
+- [Wepch](https://www.wepch.com/search-engine)
 
 ## Exclusions
 

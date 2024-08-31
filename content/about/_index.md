@@ -73,7 +73,7 @@ I go by <span class="p-nickname nickname" itemprop="alternateName">Seirdy</span>
 
 <dt>Social (centralized)</dt>
 <dd>
-	<a href="https://a.gh0.pw/user/Seirdy" rel="me">apioforum</a>
+	<a href="https://bsky.app/profile/seirdy.one" rel="me">Bluesky</a> (pseudo-centralized)
 </dd>
 <dd>
 	<a href="https://tildes.net/user/Seirdy" rel="me">Tildes.net</a>

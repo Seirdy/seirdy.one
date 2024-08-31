@@ -62,7 +62,8 @@ My handle is "Seirdy" on all the platforms I use:
 => https://a.gh0.pw/user/Seirdy apioforum
 => https://envs.net/%7Eseirdy/ my tildeverse Web page
 => gemini://envs.net/%7Eseirdy/ my tildeverse Gemini page
-=> https://pleroma.envs.net/seirdy Fediverse (Pleroma)
+=> https://pleroma.envs.net/seirdy Fediverse (Akkoma)
+=> https://bsky.app/profile/seirdy.one Bluesky
 => https://matrix.to/#/@seirdy:seirdy.one Matrix: @seirdy:seirdy.one
 => mailto:seirdy@seirdy.one email
 => ../publickey.asc PGP: 1E892DB2A5F84479
