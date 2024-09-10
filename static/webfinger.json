@@ -69,6 +69,11 @@
 		},
 		{
 			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://discourse.32bit.cafe/u/seirdy",
+			"type": "text/html"
+		},
+		{
+			"rel": "http://webfinger.net/rel/profile-page",
 			"href": "https://discourse.wicg.io/u/seirdy",
 			"type": "text/html"
 		},
