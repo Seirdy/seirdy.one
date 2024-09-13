@@ -14,6 +14,11 @@ About
 		{{- $minutes := mod . 60 -}}
 		{{- $displayTime = (printf "%d&#160;hour and %d" $hours $minutes) | safeHTML -}}
 	{{- end -}}
-	; a {{ if lt . 10 }}short {{ else if and (gt . 20) (lt . 30) }}somewhat long {{ else if and (gt . 29) (lt . 60) }}long {{ else if gt . 59 }} very long {{ end -}}
+	{{- $indefiniteArticle := "a" -}}
+	{{- $vowelNumbers := slice 11 18 -}} {{/* 11 and 18 aren't qualified by "short" or "somewhat long" and start with vowel sounds so we need to say "an" instead of "a" */}}
+	{{- if (in $vowelNumbers .) -}}
+		{{- $indefiniteArticle = "an" -}}
+	{{- end -}}
+	; {{ $indefiniteArticle }} {{ if lt . 10 }}short {{ else if and (gt . 20) (lt . 30) }}somewhat long {{ else if and (gt . 29) (lt . 60) }}long {{ else if gt . 59 }} very long {{ end -}}
 	<time itemprop="timeRequired" datetime="PT{{ . }}M">{{ $displayTime }}&#160;minute</time> read
 {{- end -}}
