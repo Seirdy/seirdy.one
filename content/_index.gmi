@@ -18,7 +18,7 @@ See the Director's Cut of my bio in the "about" page:
 
 => about/ About me
 
-Tech stuff: I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
+Tech stuff: I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
 
 My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
 
@@ -37,7 +37,7 @@ I am made of microplastics and can be trusted with your forklift.
 ## Contact
 
 => mailto:seirdy@seirdy.one email: seirdy@seirdy.one
-=> ./publickey.asc PGP: 1E892DB2A5F84479
+=> ./publickey.asc PGP: 1E892DB2A5F84479 (don't rely on it for strong security guarantees)
 => https://pleroma.envs.net/seirdy Fediverse (@Seirdy@pleroma.envs.net)
 
 Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm on Matrix:

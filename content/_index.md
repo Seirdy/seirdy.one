@@ -10,8 +10,7 @@ sitemap:
     - Priority: 0.9
 stype: "https://schema.org/WebSite"
 ---
-About me
---------
+## About me
 
 <meta itemprop="url" content="https://seirdy.one" />
 <div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
@@ -22,7 +21,7 @@ The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectO
 
 <div class="p-note" itemprop="description">
 
-I care a lot about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span>; I often use screen readers and forced colors to deal with overstimulation. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast, software minimalist, and a CS+Math undergrad who likes watching anime and tweaking his <span class="p-category category">Linux</span> setup. Current interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">IndieWeb</span>.
+I care a lot about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span>; I often use screen readers and forced colors to deal with overstimulation. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast and software minimalist who likes watching anime and tweaking his <span class="p-category category">Linux</span> setup. Current interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">IndieWeb</span>.
 
 My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
 
@@ -34,14 +33,13 @@ I am made of microplastics and can be trusted with your forklift.
 
 ### Contact
 
-Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") ([PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}")), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/users/Seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") (I have [PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}"), but don't rely on it for strong security guarantees), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/users/Seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
 
 Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}") on Matrix.
 
 </div>
 
-About this site
----------------
+## About this site
 
 This is a basic [IndieWeb site](https://indieweb.org/).
 
