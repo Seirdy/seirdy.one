@@ -147,7 +147,7 @@ Results from these search engines don’t seem at all useful.
 * Yessle: seems new; allows page submission by pasting a page into the search box. Index is really small but it crawls new sites quickly. Claims to be private.
 * Bloopish: extremely quick to update its index; site submissions show up in seconds. Unfortunately, its index only contains a few thousand documents (under 100 thousand at the time of writing). It's growing fast: if you search for a term, it'll start crawling related pages and grow its index.
 * YaCy: community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
-* Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
+* Scopia: only seems to be available via the MetaGer metasearch engine after turning off Bing and news results. Tiny index, very low-quality. As of 2024-09-10, MetaGer is paid-only after losing its advertising contract with Yahoo.
 * Artado Search: Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
 * Active Search Results: very poor quality
 

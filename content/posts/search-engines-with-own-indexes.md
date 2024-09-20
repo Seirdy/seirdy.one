@@ -182,7 +182,7 @@ YaCy
 : Community-made index; slow. Results are awful/irrelevant, but can be useful for intranet or custom search.
 
 Scopia
-: only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality.
+: Only seems to be available via the [MetaGer](https://metager.org) metasearch engine after turning off Bing and news results. Tiny index, very low-quality. As of <time>2024-09-10</time>, [MetaGer is paid-only after losing its advertising contract with Yahoo](https://suma-ev.de/en/eine-aera-geht-zu-ende/).
 
 [Artado Search](https://www.artadosearch.com/)
 : Primarily Turkish, but it also seems to support English results. Like Plumb, it uses client-side JS to fetch results from existing engines (Google, Bing, Yahoo, Petal, and others); like MetaGer, it has an option to use its own independent index. Results from its index are almost always empty. Very simple queries ("twitter", "wikipedia", "reddit") give some answers. Supports site submission and crowdsourced instant answers.
@@ -200,7 +200,7 @@ Scopia
 : A FLOSS search engine that boasts a very impressive [feature-set](https://www.seekquarry.com/): it can parse sitemaps, feeds, and a variety of markup formats; it can import pre-curated data in forms such as access logs, Usenet posts, and WARC archives; it also supports feed-based news search. Despite the impressive feature set, Yioop's results are few and irrelevant due to its small index. It allows submitting sites for crawling. Like Meorca, Yioop has social features such as blogs, wikis, and a chat bot API.
 
 [Spyda](https://spyda.dev/)
-: {{<mention-work itemtype="BlogPosting">}}A small engine made by {{<indieweb-person itemprop="author" first-name="James" last-name="Mills" url="https://www.prologic.blog/">}}, described in {{<cited-work url="https://www.prologic.blog/2021/02/14/so-im-a.html" name="So I'm a Knucklehead eh?" extraName="headline">}}{{</mention-work>}}. It's written in Go; check out its [MIT-licensed Spyda source code](https://git.mills.io/prologic/spyda).
+: {{<mention-work itemtype="BlogPosting">}}A small engine made by {{<indieweb-person itemprop="author" first-name="James" last-name="Mills" url="https://www.prologic.blog/">}}, described in {{<cited-work url="https://www.prologic.blog/2021/02/14/so-im-a.html" rend="true" name="So I'm a Knucklehead eh?" extraName="headline">}}{{</mention-work>}}. It's written in Go; check out its [MIT-licensed Spyda source code](https://git.mills.io/prologic/spyda).
 
 [Slzii.com](https://www.slzii.com/)
 : A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
@@ -343,7 +343,7 @@ I'm unable to evaluate these engines properly since I don't speak the necessary 
 
 ## Almost qualified
 
-These engines come close enough to passing my inclusion criteria that I felt I had to mention them. They all display original organic results that you can't find on other engines, and maintain their own indexes. Unfortunately, they don't quite pass.
+These engines come close enough to passing my inclusion criteria that I felt I had to mention them. They all display original organic results that you can't find on other engines, and maintain their own indexes. Unfortunately, they don't quite pass because they don't crawl the Web; most limit themselves to a specific set of sites.
 
 
 [wiby.me](https://wiby.me) OR [wiby.org](https://wiby.org)
@@ -360,6 +360,11 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 
 [Kukei.eu](https://kukei.eu/)
 : A curated search engine for web developers, which crawls [a hand-picked list of sites](https://github.com/Kukei-eu/spider/blob/914b8dfffc10cb3a948561aef2bf86937d3a0b2e/index-sources.js). As it does not index the whole Web, it doesn't qualify. I still find it interesting.
+
+<!--
+[Unobtanium Search](https://unobtanium.rocks/)
+: A fledgling search engine by [Slatian](https://slatecave.net/). At the time of writing, it crawls hand-curated sites: personal, technical, indie wiki, and German hacker community sites. It may eventually crawl government/public-service sites. More documentation will be on its website.
+-->
 
 ## Misc
 
@@ -424,7 +429,7 @@ Dead engines I don't have an extended description for:
 
 ## Upcoming engines
 
-- [Cyberfind](https://cyberfind.net/bot.html)
+- [Cyberfind/find.tf](https://cyberfind.net/bot.html)
 - [fynd](https://fynd.bot/)
 - [Wepch](https://www.wepch.com/search-engine)
 
