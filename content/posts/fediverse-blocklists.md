@@ -32,7 +32,7 @@ I maintain four main blocklists for the Fediverse. Do not import them until you'
 [`FediNuke.txt`](https://seirdy.one/pb/FediNuke.txt)
 : A curated subset of `tier0.csv`, containing what I deem the "worse half" of it. This contains instances I really do recommend most people block, or at least avoid. I try to make it a suitable candidate for a "default blocklist", and use it as reference when I evaluate the quality of other blocklists.
 
-  This list is not comprehensive; to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and likelihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running blockbots, etc). Bad instances that mostly keep to themselves are less likely to cause problems for a new admin, and therefore less likely to get included in this minimal list.
+  This list is **not comprehensive;** to keep this list small, I excluded many really bad instances. I take into account not just severity, but also notoriety and likelihood of reaching/harming people on other instances (e.g. spewing toxicity in others' mentions, running block-notification bots, etc). Bad instances that mostly keep to themselves are less likely to cause problems for a new admin, and therefore less likely to get included in this minimal list. Finally, I take into account controversy; in order for this blocklist to fulfill its purpose of widely defederating the worst actors, no entry on it should be too controversial outside of the parts of Fedi already likely to reach tier-0.
 
   Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
 
@@ -96,7 +96,7 @@ A separate list exists for retractions from my tier0.csv list. I don't add entri
 
 The original goal was to make a blocklist appealing to instances with a more laid-back moderation approach, so that they would actually implement a decent blocklist and limit the reach of the worst actors. Unfortunately, the final `tier0.csv` blocklist is 350+ entries; this is still a bit much for the moderate instances.
 
-I pared that down to `FediNuke.txt`, which contains instances that were both really bad _and_ well-known. It's kind of hard to overlook how shitty each instance on the `FediNuke.txt` subset is. Common themes tend to be repeated unwelcome sui-bait from instance staff against individuals, creating or spreading dox materials against other users,[^1] unapologetic bigotry, uncensored shock content, and a complete lack of moderation.
+I pared that down to `FediNuke.txt`, which contains instances that were both really bad _and_ well-known. It's kind of hard to overlook how shitty each instance on the `FediNuke.txt` subset is. Common themes tend to be repeated unwelcome sui-bait[^1] from instance staff against individuals, creating or spreading dox materials against other users,[^2] unapologetic bigotry, uncensored shock content, and a complete lack of moderation.
 
 I think if you're starting a well-moderated instance, Tier 0 is a decent place to start (that's why it's in the standard CSV format). You should add and remove entries as you see fit. If you're making a client and want to give it a built-in blocklist, or are looking for a good "default" blocklist: FediNuke is a good option.
 
@@ -147,7 +147,7 @@ One mistake hasn't yet been listed; I'll wait for approval from one of the peopl
 
 I made a mistake that didn't have a negative impact on my lists, but did impact someone else's. Even if my own lists came out okay, the fact that I allowed this to happen should be enough reason for you to seriously question my judgement.
 
-I used to work with {{<indieweb-person name="Oliphant" url="https://oliphant.social/@Oliphant" itemprop="mentions">}} when generating lists.[^0] Oliphant offered [his own respository of blocklists](https://codeberg.org/oliphant/blocklists) ([GitHub mirror](https://github.com/sgrigson/oliphant)). Using an approach inspired by my `tier0.csv` generation process, he made lists generated from consensus across other lists. Unlike `tier0.csv`, the generated lists don't have significant manual curation. Oliphant's tier-1, tier-2, and tier-3 blocklists required decreasing levels of consensus. Until recently, he also offered a "unified max" blocklist containing ~~any entry common across at least two other blocklists~~ <ins datetime="2023-05-02T08:38:00-07:00">every entry from any trusted source</ins>.
+I used to work with {{<indieweb-person name="Oliphant" url="https://oliphant.social/@Oliphant" itemprop="mentions">}} when generating lists.[^3] Oliphant offered [his own respository of blocklists](https://codeberg.org/oliphant/blocklists) ([GitHub mirror](https://github.com/sgrigson/oliphant)). Using an approach inspired by my `tier0.csv` generation process, he made lists generated from consensus across other lists. Unlike `tier0.csv`, the generated lists don't have significant manual curation. Oliphant's tier-1, tier-2, and tier-3 blocklists required decreasing levels of consensus. Until recently, he also offered a "unified max" blocklist containing ~~any entry common across at least two other blocklists~~ <ins datetime="2023-05-02T08:38:00-07:00">every entry from any trusted source</ins>.
 
 One of Oliphant's sources was a single-user instance with many blocks made for personal reasons: the admin was uncomfortable with topics related to sex and romance. Blocking for personal reasons on a personal instance is totally fine, but those blocks shouldn't make their way onto a list intended for others to use. The admin of this instance gave permission to use this blocklist. However, **they did warn us of this fact.** With my own encouragement, **we decided to use their list anyway.**
 
@@ -277,7 +277,7 @@ adtension.com {#adtension}
 
 annihilation.social {#annihilation} OR dembased.xyz
 : [#FediBlock on 2023-02-24](https://pleroma.envs.net/notice/ASzpsfBstyxOmEtvEG)
-: Hosts a blockbot user, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki). In light of this, I'm not inclined to give the benefit of doubt over the cross in his display name and [doubling down on vaguely antisemitic posts](https://web.archive.org/web/20230920191234/https://social.xenofem.me/notice/AZwvB187WVZNkbgCDg). [Another example of antisemitic caricatures from the admin](https://web.archive.org/web/20231103144028/https://annihilation.social/notice/AbMGtcC0mKuqdyKQxE).
+: Hosts a block-notification bot, [with the handle "blockbot"](https://archive.ph/BAid6), and [a defederation-notification bot](https://archive.ph/VFO2x). [Racism from admin](https://web.archive.org/web/20230729234055/https://annihilation.social/notice/ASwz1H2DlWPaIkUWki). In light of this, I'm not inclined to give the benefit of doubt over the cross in his display name and [doubling down on vaguely antisemitic posts](https://web.archive.org/web/20230920191234/https://social.xenofem.me/notice/AZwvB187WVZNkbgCDg). [Another example of antisemitic caricatures from the admin](https://web.archive.org/web/20231103144028/https://annihilation.social/notice/AbMGtcC0mKuqdyKQxE).
 : [Blatant antisemitism from local user](https://web.archive.org/web/20240320005033/https://annihilation.social/notice/Af5EadUiy1vaqFtQxM).
 : dembased.xyz used to run the predecessor of annihilation.social. A few times since, a small experimental instance has been set up on a subdomain. Both are owned by the same person.
 
@@ -296,13 +296,13 @@ bae.st {#baest} OR skippers-bin.com
 : [skippers-bin.com is run by the same person as bae.st](https://archive.today/2023.11.17-114233/https://skippers-bin.com/@sjw).
 
 banepo.st {#banepost}
-: [Runs a blockbot](https://archive.ph/2c9Js). Admin posts [antisemitism, homomisia, and transmisia in one post](https://web.archive.org/web/20230730035807/https://www.banepo.st/notice/AXRzgFfrwY1BRaa9SK), [another with more of the same](https://archive.ph/JxXRv), [all of that with a side of ableism](https://web.archive.org/web/20230730040446/https://www.banepo.st/notice/AXql6rXn1tybo4umiO).
+: [Runs a block-notification bot](https://archive.ph/2c9Js). Admin posts [antisemitism, homomisia, and transmisia in one post](https://web.archive.org/web/20230730035807/https://www.banepo.st/notice/AXRzgFfrwY1BRaa9SK), [another with more of the same](https://archive.ph/JxXRv), [all of that with a side of ableism](https://web.archive.org/web/20230730040446/https://www.banepo.st/notice/AXql6rXn1tybo4umiO).
 
 bassam.social {#bassam}
 : [The admin equates people being against anti-queer discrimination with "oppression"](https://archive.ph/r1tDT). After a user [made a FediBlock post against bassam.social](https://mstdn.social/users/MagicLike/statuses/110430832688299722), its instance admin [doubled down on permitting bigotry](https://archive.ph/PQ7j0).
 
 beefyboys.win {#beefyboys}
-: [Runs a blockbot](https://web.archive.org/web/20230730042513/https://beefyboys.win/@maldalerts). Staff member "Prude" has a profile with [a racist rant pinned](https://web.archive.org/web/20230730043518/https://beefyboys.win/notice/AJfdGhgoE5K3CUV53A). Staff member "Tyler" posts ["racism is cool and natural"](https://archive.ph/6qDCI) followed immediately by racial slurs, and [other slurs in a non-reclaimed context](https://archive.ph/jGvHn).
+: [Runs a block-notification bot](https://web.archive.org/web/20230730042513/https://beefyboys.win/@maldalerts). Staff member "Prude" has a profile with [a racist rant pinned](https://web.archive.org/web/20230730043518/https://beefyboys.win/notice/AJfdGhgoE5K3CUV53A). Staff member "Tyler" posts ["racism is cool and natural"](https://archive.ph/6qDCI) followed immediately by racial slurs, and [other slurs in a non-reclaimed context](https://archive.ph/jGvHn).
 
 boymoder.biz {#boymoder}
 : Admin accounts post [anti-Indian racism](https://web.archive.org/web/20230730193948/https://boymoder.biz/notice/AWG1sVpdFr5edzwwUq), [racist copypasta](https://web.archive.org/web/20230730194158/https://boymoder.biz/notice/AWEzwl3QDV8xYxBjpQ). Staff includes "meso" from the.asbestos.cafe. [Incompatible moderation standards](https://web.archive.org/web/20230619154748/https://boymoder.biz/notice/AWpLw39olFJZ3Y9kIq).
@@ -323,7 +323,7 @@ cachapa.xyz {#cachapa}
 
 cannibal.cafe {#cannibal}
 : Shares some staff with lolison.top; see its FediNuke entry. Staff-endorsed instances in the "local bubble" include nnia.space, freak.university, rapemeat.express, and other instances on FediNuke for similar reasons.
-: Admin [is explicitly pro-contact](https://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).
+: Admin [is explicitly pro-contact](https://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).[^3]
 
 catgirl.life {#catgirl-life} OR peervideo.club
 : Both are part of [the Waifu Hunter Club's suite of services](https://web.archive.org/web/20230828181259/https://waifuhunter.club/services/), along with gameliberty.club; see its FediNuke entry. catgirl.life has [the same admin as gameliberty.club](https://archive.today/2023.08.28-181717/https://catgirl.life/@matrix07012), who [has used the domain for block-evasion](https://archive.today/2023.08.28-182409/https://catgirl.life/notes/8wpdshluoy). Like gameliberty.club, both instances also permit lolicon.
@@ -335,7 +335,7 @@ cawfee.club {#cawfee}
 : [Anti-vax from admin](https://web.archive.org/web/20230730211009/https://cawfee.club/notice/AXoyiP9rictCGP2zrs).
 
 childlove.space {#childlove} OR childlove.su
-: Pro-contact MAP instance. [Admin profile](https://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](https://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact. Appears to contain many users close to Newgon, a bigoted pro-contact conspiratorial group.
+: Pro-contact MAP instance.[^1] [Admin profile](https://archive.today/2023.10.06-195515/https://monk.ey.business/users/AaRGvnOHPOQxxPJK5Y), [user profile](https://archive.today/2023.10.06-200835/https://monk.ey.business/users/AaSD9Yd8sWKxZgWrg0%23replies), and several other users identify as pro-contact. Appears to contain many users close to Newgon, a bigoted pro-contact conspiratorial group.
 : This pro-contact instance [explicitly allows minors](https://archive.today/2023.10.06-201812/https://childlove.space/about/) in its ToS.
 
 clew.lol {#clew}
@@ -363,7 +363,7 @@ crucible.world {#crucible}
 : [Even more transmisia](https://archive.ph/WVFrK).
 
 cum.camp {#cumcamp} OR cum.salon
-: Instance has MRF policies to reject deletes and run a blockbot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://ghostarchive.org/archive/gDzD1).
+: Instance has MRF policies to reject deletes and run a block-notification bot [on cum.camp](https://web.archive.org/web/20230730232539/https://cum.camp/about) and [on cum.salon](https://web.archive.org/web/20221228172530/https://cum.salon/about). Staff members "pernia" and "nimt" are known for [overly-creepy posts related to sexual assault, esp. CSA](https://web.archive.org/web/20230730234254/https://boymoder.biz/notice/AXyuRlHglkmt1AHPn6), [another](https://ghostarchive.org/archive/gDzD1).
 : The cum.salon domain name was recently terminated by PorkBun after several people reported it for publishing dox materials. Other instances have locally overridden their DNS to continue federating until its TLS certificate expires; however, [it came back after transferring to Epik](https://web.archive.org/web/20230819012541/https://shitposter.club/notice/AYpWAIw53KQXoohBbM).
 
 cunnyborea.space {#cunnyborea}
@@ -384,7 +384,7 @@ djsumdog.com {#djsumdog}
 : [Jan 6th conspiracy theories](https://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZZCfoxpXdfdhH2L3I) while [calling participants "discount Mandelas"](https://archive.today/2023.10.02-144530/https://djsumdog.com/@djsumdog/posts/AZVZCzBbydqpJfrX4y).
 
 eientei.org {#eientei}
-: [Instance "about" page](https://web.archive.org/web/20230801231939/https://eientei.org/about) explicitly describes it as a racist instance, anad uses racial slurs. MRF policies on the "about" page feature a blockbot and rejecting deletes. Admin [posts antisemitic caricatures](https://web.archive.org/web/20230801233538/https://eientei.org/notice/AW33QYo0a9vhhJUyC8). User "lina" has [a bio with blatant bigotry](https://web.archive.org/web/20230801232340/https://eientei.org/users/lina).
+: [Instance "about" page](https://web.archive.org/web/20230801231939/https://eientei.org/about) explicitly describes it as a racist instance, anad uses racial slurs. MRF policies on the "about" page feature a block-notification bot and rejecting deletes. Admin [posts antisemitic caricatures](https://web.archive.org/web/20230801233538/https://eientei.org/notice/AW33QYo0a9vhhJUyC8). User "lina" has [a bio with blatant bigotry](https://web.archive.org/web/20230801232340/https://eientei.org/users/lina).
 
 eveningzoo.club {#eveningzoo}
 : [Transmisia from admin](https://archive.ph/TuRrR)
@@ -655,7 +655,7 @@ rayci.st {#raycist}
 
 rebelbase.site {#rebelbase}
 : Admin [posts blatant transmisia](https://web.archive.org/web/20230814024949/https://rebelbase.site/notice/AX6t2x7AChyiuhFUsy), [posts more thinly-veiled transmisia](https://web.archive.org/web/20230814023544/https://rebelbase.site/notice/AYhQJk2zbUcyGiH82i), [insists on misgendering](https://web.archive.org/web/20230814025301/https://rebelbase.site/notice/AX1YsLPgYHR6DQmEgS).
-: Admin is [anti-abortion](https://web.archive.org/web/20230814023633/https://rebelbase.site/notice/AYSDZeztvwDeSsgsbY), [identifies as an MRA](https://web.archive.org/web/20230814023557/https://rebelbase.site/notice/AYfMikFnBX2q120e1Y).
+: Admin is [anti-abortion](https://web.archive.org/web/20230814023633/https://rebelbase.site/notice/AYSDZeztvwDeSsgsbY), [identifies as an MRA](https://web.archive.org/web/20230814023557/https://rebelbase.site/notice/AYfMikFnBX2q120e1Y).[^4]
 : Elsewhere on the site is a user who posts [COVID denial](https://web.archive.org/web/20230603013809/https://rebelbase.site/notice/ACAQrNpLxyWyYvDpke), [anti-vax with a side of queermisia and Islamomisia](https://web.archive.org/web/20230814030006/https://rebelbase.site/@Bram_Christiaens/posts/AR4TNA8GFndIBMEfz6).
 
 ryona.agency {#ryona} OR plagu.ee
@@ -667,7 +667,7 @@ ryona.agency {#ryona} OR plagu.ee
 : [plagu.ee is run by the same admin as ryona.agency](https://pleroma.envs.net/notice/ATvo35BQNlDY9DQQue), with similar patches and MRF policies applied as per [the plagu.ee "about" page](https://web.archive.org/web/20230410181459/https://plagu.ee/about).
 
 schwartzwelt.xyz {#schwartzwelt}
-: Admin participates in a transmisic harassment campaign by [posting transmisic pedojacketing sui-bait containing Nazi iconography](https://web.archive.org/web/20230808021511/https://amala.schwartzwelt.xyz/notice/AY89V5Y55t9jdvpr9c). [More blatant transmisia from admin](https://web.archive.org/web/20230808023622/https://amala.schwartzwelt.xyz/notice/AYTSo1vSMIZE2hKXB2).
+: Admin participates in a transmisic harassment campaign by [posting transmisic pedojacketing[^5] sui-bait containing Nazi iconography](https://web.archive.org/web/20230808021511/https://amala.schwartzwelt.xyz/notice/AY89V5Y55t9jdvpr9c). [More blatant transmisia from admin](https://web.archive.org/web/20230808023622/https://amala.schwartzwelt.xyz/notice/AYTSo1vSMIZE2hKXB2).
 : Admin [participates in anti-indigenous racist harassment](https://web.archive.org/web/20230808024805/https://amala.schwartzwelt.xyz/notice/AYMVgC61Pka5RUfjaS).
 : Local user ["Agartha_Noble" posts blatant racism](https://web.archive.org/web/20230808024312/https://amala.schwartzwelt.xyz/notice/AYRLX09MQtpO2D0lwe) in a thread about race-mixing.
 
@@ -890,6 +890,14 @@ I like the idea of a separation between receipt-tracking projects and blocklist-
 I also hope to see more tier-0 lists crop up. Any instance should be able to make a tier-0 list by sub-setting its own blocklist. When that happens, "Seirdy's Tier-0 list" will hopefully lose whatever authority it has.
 
 
-[^1]: I did not consider dox attempts against certain neo-Nazis a reason to block.
+[^1]: Sui-bait is short for suicide-bait.
+
+[^2]: I did not consider dox attempts against certain neo-Nazis a reason to block.
+
+[^3]: A "contact stance" refers to beliefs around whether it's okay for adults to have sexual relations with minors when a significant age-gap exists. Pro-contact means support for such relations. I consider this support for <abbr>CSA</abbr>. Regardless of contact stances: I generally agree with blocking instances that allow lolicon, shotacon, sexualized babyfur, etc. but FediNuke is for the most extreme cases of every category.
+
+[^4]: Strictly speaking, "MRA" stands for "Mens' Rights Activist". In practice, it tends to refer to anti-feminists and misogynists.
+
+[^5]: The "jacketing" suffix refers to labelling someone something they're not to discredit them, often catering to stereotypes group-think. In the context of queermisia, queermisic pedojacketing refers to labelling queer people pedophiles on the basis of their queerness; this is especially common in institutionalized queermisia.
 
 
