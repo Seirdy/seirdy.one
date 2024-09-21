@@ -36,8 +36,7 @@ This is a "living document" that I add to as I receive feedback. See the updated
 
 <section role="doc-introduction">
 
-Intro&shy;duction {#introduction}
------------------
+## Intro&shy;duction {#introduction}
 
 I realize not everybody's going to ditch the Web and switch to Gemini or Gopher today (<span data-literal="that would be a difficult and unrealistic transition">that'll take, like, at least a month /s</span>). Until that happens, here's a non-exhaustive, highly-opinionated list of best practices for websites that focus primarily on text. I don't expect anybody to fully agree with the list; nonetheless, the article should have at least some useful information for any web content author or front-end web developer.
 
@@ -75,8 +74,7 @@ I wanted to create a single reference with non-contradictory guidelines, contain
 
 </section>
 
-Security and privacy
---------------------
+## Security and privacy
 
 One of the defining differences between textual websites and advanced Web&nbsp;2.0 sites/apps is safety. Most browser vulnerabilities are related to modern Web features like JavaScript and WebGL. The simplicity of basic textual websites should guarantee some extra safety; however, webmasters need to take additional measures to ensure limited use of "modern" risky features.
 
@@ -153,8 +151,7 @@ Be sure to check the privacy policies for the third party services and subscribe
 
 For embedded third-party content (e.g. images), give extra consideration to the ["Beyond alt-text" section](#beyond-alt-text). Your page should be as useful as possible if the embedded content becomes inaccessible.
 
-Optimal loading
----------------
+## Optimal loading
 
 Nearly every Internet user has to deal with unreliable connections every now and then, even the most privileged. Developing regions lack modern Internet infrastructure; high-ranking executives travel frequently. Everybody hits the worst end of the bell-curve.
 
@@ -299,8 +296,7 @@ Using [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) eliminates th
 
 Consider the trade-offs involved in enabling 0-<abbr title="Round-Trip Time">RTT</abbr> for TLS 1.3. On one hand, it shaves off a round-trip during session resumption; on the other hand, it can enable replay attacks. 0-RTT shouldn't be too unsafe for idempotent GET requests of static content. For dynamic content, evaluate whether your backend is vulnerable to replay attacks described in [appendix E.5](https://www.rfc-editor.org/rfc/rfc8446.html#appendix-E.5) of the spec.
 
-Against lazy loading
---------------------
+## Against lazy loading
 
 Lazy loading may or may not work. Some browsers, including Firefox and the Tor Browser, disable lazy-loading when the user turns off JavaScript. Turning it off makes sense because lazy-loading, like JavaScript, is a fingerprinting vector. Specifically, it identifies idiosyncratic scrolling patterns.
 
@@ -309,10 +305,7 @@ Lazy loading may or may not work. Some browsers, including Firefox and the Tor B
 <blockquote itemprop="text">
 	<p>Loading is only deferred when JavaScript is enabled. This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user’s approximate scroll position throughout a session, by strategically placing images in a page’s markup such that a server can track how many images are requested and when.</p>
 </blockquote>
-{{< quotecaption partOfType="TechArticle">}}
-{{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" extraName="headline">}}
-on <abbr title="Mozilla Developer Network">MDN</abbr>,
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
+{{< quotecaption partOfType="TechArticle">}}{{<cited-work name="<img>: The Image Embed element" url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" extraName="headline">}} on <abbr title="Mozilla Developer Network">MDN</abbr>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading"> the <code>loading</code> attribute</a>
 {{< /quotecaption >}}
 {{</quotation>}}
 
@@ -390,8 +383,7 @@ Caption below the panel
 
 {{< /transcribed-image-transcript >}} {{< /transcribed-image >}}
 
-Long-page performance
----------------------
+## Long-page performance
 
 Deferring network requests is a bad idea, as established in the [previous "Against lazy loading" section](#against-lazy-loading). There are other ways to improve large-page performance.
 
@@ -436,8 +428,7 @@ When pages grow long, keep performance in check by doing the following:
 
 * Test with screen readers on underpowered hardware. Examples include old entry-level Android phones and netbooks with aggressive thermal throttling.
 
-Old browsers
-------------
+## Old browsers
 
 People do not use your site exclusively with the latest stable versions of Chrome, Firefox, or Safari. If you use metrics, they will be biased against users who avoid your site due to incompatibilities.
 
@@ -478,8 +469,7 @@ CSS offers multiple equivalent ways to do the same thing; prefer older versions 
 
 When in doubt: [Can I Use](https://caniuse.com/) and [MDN's browser compatibility data](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Page_structures/Compatibility_tables) are excellent resources to track feature support across all the mainstream browser engines.[^15] Feel free to go wild when adding strictly-optional features.
 
-The Tor Browser
----------------
+## The Tor Browser
 
 Many people use Tor out of necessity. On Tor, additional constraints apply.
 
@@ -507,8 +497,7 @@ The Tor browser will download whichever format Firefox would, rather than whiche
 
 I address the issue by not using any SVG images on [my hidden service](http://wgq3bd2kqoybhstp77i3wrzbfnsyd27wt34psaja4grqiezqircorkyd.onion/).
 
-In-page search
---------------
+## In-page search
 
 In-page search (e.g., using <kbd>Ctrl</kbd> + <kbd>f</kbd>) has been a basic feature in document readers well before browsers, and continues to be an essential feature today.
 
@@ -541,8 +530,7 @@ Another problematic override is scroll-behavior. Enforcing smooth-scrolling (e.g
 
 There's a complex solution to [turn off smooth scrolling for un-focused elements](https://schepp.dev/posts/smooth-scrolling-and-page-search/), but it doesn't address separate issues such as anchor-link navigation.
 
-About fonts
------------
+## About fonts
 
 I recommend setting the default font to `sans-serif`. [`system-ui` causes issues](https://infinnie.github.io/blog/2017/systemui.html) among readers whose system fonts don't cover your website's charset.
 
@@ -592,8 +580,7 @@ font: 107.5%/1.5 sans-serif;
 
 {{</codefigure>}}
 
-Beyond alt-text
----------------
+## Beyond alt-text
 
 Expect some readers to have images disabled or unloaded. Examples include:
 
@@ -728,8 +715,7 @@ An image, alt-text, figure caption, and transcript combine to form a complex rel
 
 {{</codefigure>}}
 
-About custom colors
--------------------
+## About custom colors
 
 Always remember that any color palette you define in your stylesheets is merely a suggestion. Any colors you don't define could fall back to arbitrary defaults; all colors you define could be overridden by the user agent or operating system.
 
@@ -861,8 +847,7 @@ Different screens and display-calibrations render color differently; what may lo
 
 Color schemes should also look good to users who apply gamma adjustments. Most operating systems and desktop environments bundle a feature to reduce the screen color temperature at night, while some individuals may select a higher one in the morning.
 
-Visible interactive semantics
------------------------------
+## Visible interactive semantics
 
 {{<quotation>}}
 
@@ -979,8 +964,7 @@ Two screenshots of [the aforementioned _Smashing Magazine_ article](https://web.
 
 This behavior is particularly frustrating on long pages. Imagine if pressing <kbd>Tab</kbd> took you to the start of this article!
 
-Image optimization {#image-optimization}
-------------------
+## Image optimization {#image-optimization}
 
 Some image optimization tools I use:
 
@@ -1103,8 +1087,7 @@ This advice might seem daunting, but it’s usually easy to use existing tools t
 
 Two tools that can optimize the size of an SVG file are [SVGO](https://github.com/svg/svgo) and the now-discontinued [svgcleaner](https://github.com/RazrFalcon/svgcleaner). Too much lossy SVG compression can sometimes _reduce_ the effectiveness of gzip and Brotli compression. Compress in moderation.
 
-Layout
-------
+## Layout
 
 Page layout should be simple, predictable, consistent, familiar, and static. Avoid anything too unusual, since novelty could introduce a learning curve.
 
@@ -1204,8 +1187,7 @@ When setting max line lengths, use a CSS media query to ensure that printed vers
 
 {{</codefigure>}}
 
-Small viewports
----------------
+## Small viewports
 
 People read on a variety of viewport sizes. Page structure must be simple enough to handle these layouts smoothly.
 
@@ -1303,8 +1285,7 @@ This includes:
 {{< /quotecaption >}}
 {{</quotation>}}
 
-Spacing
--------
+## Spacing
 
 The previous ["small viewports" section](#small-viewports) may tempt you to make your content as dense as possible. Please don't overdo it.
 
@@ -1364,8 +1345,7 @@ Line spacing (leading) is at least space-and-a-half within paragraphs, and parag
 {{< /quotecaption >}}
 {{</quotation>}}
 
-Non-<wbr />browsers: reading mode {#non-browsers-reading-mode}
----------------------------------
+## Non-<wbr />browsers: reading mode {#non-browsers-reading-mode}
 
 Fully standards-compliant browsers aren't the only programs people use. They also use "reading mode" tools and services.
 
@@ -1385,8 +1365,7 @@ Again: avoid catering to non-standard implementations' quirks, especially undocu
 
 Reading modes aren't the only non-browser user agents out there. Plain-text feed readers and link previewers are some other options. I singled out reading modes because of their widespread adoption and value. Decide which other kinds of agents are important to you (if any), and see if they expose a hole in your semantics.
 
-Machine translation {#machine-translation}
--------------------
+## Machine translation {#machine-translation}
 
 Believe it or not, the entire world doesn't speak your website's languages. Browsers like Chromium, Microsoft Edge, and Safari have integrated machine translation to translate entire pages. Users can also leverage online website translators such as Google Translate or Bing. These "webpage translators" are far more complex than their plain-text predecessors.
 
@@ -1424,8 +1403,7 @@ Machine translators often skip `aria-label` and `aria-description`. For this rea
 
 Microsoft Edge is the only browser I know of to adjust text-direction during translation, but it breaks when faced with inline `<code>` and `<span>` elements.
 
-In&shy;accessible default stylesheets {#inaccessible-default-stylesheets}
--------------------------------------
+## In&shy;accessible default stylesheets {#inaccessible-default-stylesheets}
 
 Simple sites should err on the side of respecting default stylesheets. With rare exceptions, there are only two times I feel comfortable overriding default stylesheets:
 
@@ -1519,8 +1497,7 @@ a:focus,
 
 <ins>Update: Firefox 104 has adopted a much better 2-color focus indicator; supplying a custom indicator will be less important in 2023 once a Firefox ESR version above 104 becomes available.</ins>
 
-Screen reader improve&shy;ments {#screen-reader-improvements}
--------------------------------
+## Screen reader improve&shy;ments {#screen-reader-improvements}
 
 This section focuses on ways to improve screen reader support that have not already been covered. The most important measures (semantic HTML, good alt-text and image context, correct spelling, etc.) have already been covered in previous sections.
 
@@ -1585,8 +1562,7 @@ Beware of `display` and `visibility` CSS properties; they can interfere with con
 {{< /quotecaption >}}
 {{</quotation>}}
 
-Future users
-------------
+## Future users
 
 The number of people using your site in the future is hopefully greater than the number of people using your site in the present. Accordingly, your pages need to work correctly in the future.
 
@@ -1614,8 +1590,7 @@ Ten years from now, how much of this will still work?
 
 Try to ensure that your website can be archived, and/or easily re-built and served on an ordinary server. This way, your work can still be made accessible after you're gone. For example: all my site requires to build is a tarball of statically-linked binaries, a POSIX shell, and a decent Make implementation (bmake and GNU make work) to build; see [my build manifest](https://git.sr.ht/~seirdy/seirdy.one/tree/e591c9d1ee54c16c40f4b8f2c1eab9e830577681/item/.build.yml). To serve, it just needs a static web server.
 
-Testing
--------
+## Testing
 
 If your site is simple enough, it should automatically handle the vast majority of edge-cases. Different devices and browsers all have their quirks, but they generally have one thing in common: they understand <abbr title="Plain-Old, Semantic HTML">POSH</abbr>.
 
@@ -1719,8 +1694,7 @@ This page in the [SerenityOS](https://serenityos.org/) web browser. TLS&nbsp;1.2
 </figcaption>
 {{</image-figure>}}
 
-Future updates
---------------
+## Future updates
 
 This article is, and will probably always be, an ongoing work-in-progress. Some areas I have yet to cover:
 
@@ -1760,8 +1734,7 @@ This article is, and will probably always be, an ongoing work-in-progress. Some 
 
 * Rules for descriptive link text, for screen reader navigation and for user-agents that display links as footnotes (e.g. some textual browsers with the `dump` flag).
 
-Conclusion {#conclusion}
-----------
+## Conclusion {#conclusion}
 
 There are so many ways to read a page; authors typically cater only to the mainstream ones. Some ways to read a page I covered include:
 
@@ -1803,8 +1776,7 @@ Before you throw up your hands and decide you can't help everyone, take another 
 
 <section role="doc-acknowledgments">
 
-Ack&shy;nowledge&shy;ments and further reading {#further-reading}
-----------------------------------------------
+## Ack&shy;nowledge&shy;ments and further reading {#further-reading}
 
 Initial versions of this page were inspired by existing advocates for web minimalism.
 
