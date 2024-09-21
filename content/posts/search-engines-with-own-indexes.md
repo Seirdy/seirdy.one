@@ -361,10 +361,8 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 [Kukei.eu](https://kukei.eu/)
 : A curated search engine for web developers, which crawls [a hand-picked list of sites](https://github.com/Kukei-eu/spider/blob/914b8dfffc10cb3a948561aef2bf86937d3a0b2e/index-sources.js). As it does not index the whole Web, it doesn't qualify. I still find it interesting.
 
-<!--
 [Unobtanium Search](https://unobtanium.rocks/)
 : A fledgling search engine by [Slatian](https://slatecave.net/). At the time of writing, it crawls hand-curated sites: personal, technical, indie wiki, and German hacker community sites. It may eventually crawl government/public-service sites. More documentation will be on its website.
--->
 
 ## Misc
 

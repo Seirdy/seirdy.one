@@ -318,12 +318,15 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 * Search My Site: Similar to Marginalia and Teclis, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth. Its API powers this site's search results; try it out using the search bar at the bottom of this page. Does not qualify because it's limited to user-submitted and/or hand-picked sites.
 * Blog Surf: a search engine for blogs with RSS/Atom feeds. Does not qualify because all blogs submitted to the index require manual review, but it seems interesting. Its "MarketRank" algorithm seems to give it a bias towards sites popular on "Hacker" "News".
 * Kukei.eu: a curated search engine for web developers, which crawls a hand-picked list of sites. As it does not index the whole Web, it doesn't qualify. I still find it interesting.
+Unobtanium Search: A fledgling search engine by Slatian. At the time of writing, it crawls hand-curated sites: personal, technical, indie wiki, and German hacker community sites. It may eventually crawl government/public-service sites. More documentation will be on its website.
+
 
 => https://wiby.me  wiby.me
 => https://mwmbl.org/ Mwmbl
 => https://searchmysite.net Search My site
 => https://blogsurf.io/ Blog Surf
 => https://kukei.eu/ Kukei.eu
+=> https://unobtanium.rocks/
 
 ## Misc
 
