@@ -286,7 +286,7 @@ Don't feel too optimistic about this proposal: the version of delegated credenti
 
 For an introduction to the proposal, see {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="Certificate Delegation with ACME and STAR Certificates" extraName="headline" url="https://yaronf.svbtle.com/certificate-delegation-with-acme-and-star-certificates">}} by {{<indieweb-person itemprop="author" first-name="Yaron" last-name="Scheffer" itemprop="author" url="https://yaronf.svbtle.com/">}}{{</mention-work>}}, one of its co-authors.
 
-### My proposals {#own-proposals}
+## My proposals {#own-proposals}
 
 ### Eliminating single points of failure {#no-spof}
 
