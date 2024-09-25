@@ -10,6 +10,8 @@ syndicatedCopies:
       url: 'https://pleroma.envs.net/objects/4371b456-e37f-487f-886d-8b4fd7b705c2'
     - title: 'Bluesky'
       url: 'https://bsky.app/profile/seirdy.one/post/3l4yhmtm7it2a'
+    - title: 'Lobsters'
+      url: 'https://lobste.rs/s/txjj5z/post_ocsp_certificate_revocation_web_pki'
 ---
 <section role="doc-introduction" itemprop="backstory">
 
