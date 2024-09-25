@@ -307,7 +307,7 @@ Today, Certificate Authority Authorization (<abbr>CAA</abbr>) DNS records restri
 - Restrict issuance to short-lived certificates.
 - Restrict approved delegates for delegated credentials.
 
-With the first extension, an attacker who triggers a misissuance would compromise it for a few days or hours  months. The second extension limits the potential for rogue delegates to serve traffic on behalf of an <abbr>IdO</abbr>.
+With the first extension, an attacker who triggers a misissuance would compromise it for a few days or hours rather than months. The second extension limits the potential for rogue delegates to serve traffic on behalf of an <abbr>IdO</abbr>.
 
 I want to see the protections offered by Expect-Staple preloading for short-lived certificates. HTTPS Resource Records (<abbr>RRs</abbr>) or client-side preload lists can proactively tell clients to distrust any long-lived certificate for a domain.[^12]
 
