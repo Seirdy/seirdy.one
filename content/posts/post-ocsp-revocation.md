@@ -337,6 +337,7 @@ We don't have to go down to ten-day lifetimes right away. I propose starting by 
 
 - lego (recommended)
 - acme.sh[^23]
+- Posh-ACME
 
 <section role="doc-conclusion">
 
