@@ -124,6 +124,11 @@ Disallow: /
 # This one doesn't support robots.txt: https://www.allenai.org/crawler
 # block it with your reverse-proxy or WAF or something.
 
+# See <https://ds.rois.ac.jp/center8/crawler/>
+# Parent page says it builds LLMs in the infographic: <https://ds.rois.ac.jp/center8/>
+User-agent: Cotoyogi 
+Disallow: /
+
 # I'm not blocking CCBot for now. It publishes a free index for anyone to use.
 # Googe used this to train the initial version of Bard (now called Gemini).
 # I allow CCBot since its index is also used for upstart/hobbyist search engines
