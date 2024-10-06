@@ -1,6 +1,11 @@
 ---
 title: "Chromium’s influence on Chromium alternatives"
 date: 2024-10-06T11:40:34-04:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/5109b99d-e817-4f79-b9a4-8fe1293e3900'
+    - title: 'Bluesky'
+      url: 'https://bsky.app/profile/seirdy.one/post/3l5u57o7juu2q'
 ---
 I don't think most people realize how Firefox and Safari depend on Google for more than "just" revenue from default search engine deals and prototyping new web platform features.
 
