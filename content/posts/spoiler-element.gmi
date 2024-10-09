@@ -36,7 +36,7 @@ More special syntax for spoilers:
 
 ```
 ||optional placeholder text|Fluffychat and Discord hide this.||
->!Reddit hides this.<
+>!Reddit hides this.!<
 ```
 
 => https://www.bbcode.org/posting-a-spoiler-with-bbcode.php BBCode is the oldest example of dedicated spoiler syntax I know of.

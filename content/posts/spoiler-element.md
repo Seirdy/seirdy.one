@@ -94,7 +94,7 @@ More special syntax for spoilers:
 
 ```figure
 ||optional placeholder text|Fluffychat and Discord hide this.||
->!Reddit hides this.<
+>!Reddit hides this.!<
 [spoiler=optional placeholder text]BBCode hides this[/spoiler]
 ```
 
