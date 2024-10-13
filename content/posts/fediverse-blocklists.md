@@ -396,7 +396,7 @@ eveningzoo.club {#eveningzoo}
 
 feministwiki.org {#feministwiki}
 : [Pedojacketing and misgendering](https://archive.today/2024.09.24-141504/https://fedi.feministwiki.org/notice/AmG2K1lGrtC00Wd0kK) from admin.
-: Admin [explicitly promoting transphobia _by name_ as a moral imperative](https://ghostarchive.org/archive/WaWQK).
+: Admin [explicitly promoting transphobia _by name_ as a moral imperative](https://ghostarchive.org/archive/WaWQK?wr=false).
 : [More misgendering](https://ghostarchive.org/archive/l8iWb?wr=false) from admin.
 : Root domain is full of standard <abbr>TERF</abbr>/gender-critical talking points.
 
