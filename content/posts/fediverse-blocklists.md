@@ -394,6 +394,12 @@ eveningzoo.club {#eveningzoo}
 : [More antisemitism from admin](https://web.archive.org/web/20230802000129/https://eveningzoo.club/@Humpleupagus/posts/AYFDemmWklKkoCHOwS)
 : [White nationalism from user](https://web.archive.org/web/20230802000313/https://eveningzoo.club/@WeavingTales/posts/AYBsfFdqlsr3nxioz2).
 
+feministwiki.org {#feministwiki}
+: [Pedojacketing and misgendering](https://archive.today/2024.09.24-141504/https://fedi.feministwiki.org/notice/AmG2K1lGrtC00Wd0kK) from admin.
+: Admin [explicitly promoting transphobia _by name_ as a moral imperative](https://ghostarchive.org/archive/WaWQK).
+: [More misgendering](https://ghostarchive.org/archive/l8iWb?wr=false) from admin.
+: Root domain is full of standard <abbr>TERF</abbr>/gender-critical talking points.
+
 fluf.club {#fluf}
 : [Transmisia from admin](https://archive.today/2023.08.02-003048/https://freesoftwareextremist.com/notice/AYHzC307R2T8F9hpI0), [more transmisia](https://web.archive.org/web/20230802003149/https://eientei.org/notice/AYEuW35LVZ48XYOXPk), [transmisic sui-bait](https://web.archive.org/web/20230802003447/https://shitposter.club/notice/AYEKwm6THNpfFCVjm4).
 : The [instance "about" page](https://web.archive.org/web/20230805192514/https://fluf.club/about) recommends freespeechextremist.com and kiwifarms.cc as instances "with similar moderation policies"; both those instances are on FediNuke with receipts.
@@ -775,6 +781,7 @@ absolutelyproprietary.org {#absolutely-proprietary}
 : [Admin self-intro is a racial slur](https://web.archive.org/web/20240729105559/https://pl.absolutelyproprietary.org/notice/AkPIQLhAvEiPiKBoZM). [Posts a series of racial caricatures with slurs in this thread](https://archive.ph/wip/bkCyc).
 : [alt for pwm of crlf.ninja](https://archive.is/2024.07.29-110355/https://pl.absolutelyproprietary.org/users/pwm). [See crlf.ninja FediNuke entry](#crlf), featuring pwm.
 : [alt for pernia of cum.salon](https://ghostarchive.org/archive/CJsIH). [See cum.salon FediNuke entry](#cumcamp), featuring pernia.
+: [Another user spams BlackMastodon and MutualAid with racial slurs](https://archive.today/2024.10.06-035312/https://pl.absolutelyproprietary.org/notice/AmP0lDp0qntuJfOEzI)
 
 baraag.net {#baraag}
 : Very well-known lolicon-friendly instance that [recently cleaned up its act enough to re-federate with misskey.io](https://archive.today/2023.08.05-203258/https://baraag.net/@satori/110837928178354824), but still focuses on lolisho artwork and may therefore pose a legal risk, depending on your jurisdiction. Consider blocking media if you wish to federate.
