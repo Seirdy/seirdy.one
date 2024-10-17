@@ -36,9 +36,6 @@ I maintain four main blocklists for the Fediverse. Do not import them until you'
 
   Criteria are not set in stone. Instances well-known for causing significant problems for many other instances, particularly for instances run by and for marginalized groups, may be added.
 
-[`tier1.csv`](https://seirdy.one/pb/tier1.csv)
-: Identical to `tier0.csv`, except with the addition of some instances that I believe require an admin to make a more informed decision, or at least be aware of should they abstain from moderating. Either they are contentious entries or have detailed context I can't distill into a few pithy sentences like other entries. Entries of lower severity may also end up here.
-
 All these lists, just like all my content on seirdy.one, are CC-BY-SA licensed. However, I'd rather you not use them in another blocklist-related project without contacting me first. I made a lot of decisions about how these blocklists work and learned some tough lessons; I'd rather not see someone repeat my mistakes.
 
 This post is an attempt to document how they are made, their differences, their intended use, and especially their caveats. It also contains a work-in-progress list of receipts for instances in FediNuke and my Tier-0.
@@ -163,7 +160,7 @@ Since then, Oliphant has removed that admin's list (and his own) from his blockl
 
 ### July 2023: bad receipt for bungle.online
 
-A receipt for bungle.online, at the time a tier-0 instance, cited slurs from the admin account. One was a racial slur. However, I later found that the slur may have been used in a reclaimed context. I subsequently demoted the instance to tier-1 and removed that receipt.
+A receipt for bungle.online, at the time a tier-0 instance, cited slurs from the admin account. One was a racial slur. However, I later found that the slur may have been used in a reclaimed context. I subsequently demoted the instance to tier-1 and removed that receipt. I later abandoned the tier-1 blocklist entirely.
 
 Now I endeavor to be more careful about examining my preconceived notions when using slur-usage as a receipt. If a receipt revolves around slur usage, I should do a better job considering _how_ the slur was used if there aren't many other receipts indicating a pattern of discriminatory usage. I also should specifically seek approval from people of the relevant marginalized identity before publishing.
 
@@ -188,7 +185,7 @@ canary.tier0.example.com
 canary.fedinuke.example.com
 ```
 
-Doing so signals that you've read these docs. If you build a consensus-based blocklist that uses my lists as a source, I suggest adding your own canary domains.
+Doing so signals that you've read these docs. If you build a consensus-based blocklist that uses my lists as a source, I suggest adding your own canary domains. "tier1" is a legacy indicator for a blocklist I retired.
 
 If you see an instance whose blocklist contains these entries, unmodified: if it's a large or open-registration instance, assume the moderators aren't doing their jobs and _do not register_ for it. Single-user or tiny tight-knit instances are free to import whatever they want, though. Moderators of large or open-registration instances should be willing to set aside ten minutes to read something before importing a list.
 
@@ -201,7 +198,7 @@ Some supplementary blocklists I maintain with very different criteria:
 : These are services that allow Fediverse users to follow any Twitter user. Now that far-right figures are back on Twitter, these instance pose a problem. Admins wishing to ban a single Twitter user will need to ban that user across over 100 different Twitter mirrors. Moreover, any interactions with bridged accounts are unseen by the account holder on Twitter. Twitter users may not have consented to such mirroring. Admins wishing to simply ban mass-Twitter-mirroring can import this list.
 
 [Bridges](https://seirdy.one/pb/bridges.txt)
-: Bridges to other social media platforms, _excluding_ Twitter/X bridges, that aren't opt-in. Bridges to Nostr are common. These are excluded from tier0.csv as they're in a dedicated list. Nostr is especially worth blocking because most bridges don't appear to do significant moderation or delegate to relays that do, effectively requiring moderators to moderate the whole network in its unmoderated form and potentially duplicate their work across multiple Nostr bridges.
+: Bridges to other social media platforms, _excluding_ Twitter/X bridges, that aren't opt-in. Bridges to Nostr are common. These are excluded from tier0.csv as they're in a dedicated list. Nostr is especially worth blocking because most bridges don't appear to do significant moderation or delegate to relays that do, effectively requiring moderators to moderate the whole network in its unmoderated form and potentially duplicate their work across multiple Nostr bridges. I've explained my views on Threads in another post: {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="De-federating P92" url="../../../../2023/06/20/defederating-p92/" extraName="headline">}}{{</mention-work>}}.
 
 [Corporate social media with user-hostile dark patterns](https://seirdy.one/pb/corpo.txt)
 : A short list containing instances run by social media companies that have displayed user-hostile behavior, for anybody who doesn't wish to support such practices. Privacy abuse, growth-mindsets, dark patterns, and a history of vendor lock-in are common (but not all universal) themes. Not updated very often.
@@ -872,23 +869,9 @@ wideboys.org {#wideboys}
 
 {{</ dd-id >}} {{</ nofollow >}}
 
-### Tier-1 entries, excluding Tier-0
-
-This section hasn't been properly started yet. It'll be for entries that demand a lengthier explanation and/or a more informed, nuanced decision; or for entries of lower severity.
-
-{{<nofollow>}} {{< dd-id >}}
-
-
-bungle.online {#bungle}
-: Admin [repeatedly uses ableist slurs](https://archive.ph/l9cUm). [Another example](https://archive.ph/i1dSh). Also posts [body-shaming fatmisia](https://archive.today/2023.09.20-173637/https://bungle.online/notes/9jkj570prd), [anti-kink](https://archive.today/2023.09.20-174033/https://bungle.online/notes/9jlpkqzk90).
-
-{{</ dd-id >}} {{</nofollow>}}
-
 </details>
 
 ## Future
-
-Once Threads and/or Tumblr start federating, I plan to make a separate blocklist for "mainstream" social media platforms that prioritize profit over safety. I've explained my views on Threads in another post: {{<mention-work itemtype="BlogPosting">}}{{<cited-work name="De-federating P92" url="../../../../2023/06/20/defederating-p92/" extraName="headline">}}{{</mention-work>}}.
 
 The biggest complaint I've heard is the lack of reasons and receipts. I'm working on adding them to this page.
 
