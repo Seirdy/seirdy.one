@@ -318,6 +318,13 @@ cachapa.xyz {#cachapa}
 : [Root domain's "about" page](https://web.archive.org/web/20231025062617/https://cachapa.xyz/about/) contains transmisic, racist, queermisic, and other slurs in a list of things the owner "hates".
 : Instance permits lolicon, and runs accounts for it such as "Shishihime" and "NahidaBot"; this may be a legal risk, depending on your jurisdiction.
 
+caekis.love {#caekislove}
+: Posts [extreme anti-black racism](https://archive.today/2024.10.17-000705/https://cawfee.club/notice/An22HKnnXpVEYtEC8W), [more anti-black racism cross-posted from their Twitter/X account](https://archive.today/2024.10.17-000358/https://poa.st/@caekislove@caekis.love/posts/An2ohPSMVnGDc7DIbw), [more](https://archive.today/2024.10.17-001447/https://cawfee.club/notice/AmuW7DLHXITf8EcpeK).
+: [Extreme antisemitism](https://archive.today/2024.10.17-001414/https://cawfee.club/notice/AmuLHyrwaXVjvwpmAi), and [more antisemitism](https://archive.today/2024.10.17-002307/https://cawfee.club/notice/Amg4Ps2Zj2gGguixwe) to the point of wishing for genocide.
+: [Anti-blackness and antisemitism](https://archive.today/2024.10.17-002519/https://cawfee.club/notice/AmVU1Qaxls2w69cK6S).
+: [Participating in a queermisic harassment campaign](https://archive.today/2024.10.17-002238/https://cawfee.club/notice/AmkJ7Fp1MI1UtGnyhE).
+: Admin and primary user originally on the same "caekislove" handle on gleasonator.com; [see their receipts on the entry for gleasonator.com](#gleasonator).
+
 cannibal.cafe {#cannibal}
 : Shares some staff with lolison.top; see its FediNuke entry. Staff-endorsed instances in the "local bubble" include nnia.space, freak.university, rapemeat.express, and other instances on FediNuke for similar reasons.
 : Admin [is explicitly pro-contact](https://archive.today/2023.09.28-005227/https://paravielfalt.zone/@regenbogenfisch/111120363605697304).[^3]
