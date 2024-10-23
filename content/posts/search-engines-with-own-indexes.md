@@ -355,9 +355,6 @@ These engines come close enough to passing my inclusion criteria that I felt I h
 [Search My Site](https://searchmysite.net)
 : Similar to Marginalia and Teclis, but only indexes user-submitted personal and independent sites. It optionally supports IndieAuth. Its API powers this site's search results; try it out using the search bar at the bottom of this page. Does not qualify because it's limited to user-submitted and/or hand-picked sites.
 
-[Blog Surf](https://blogsurf.io/)
-: A search engine for blogs with RSS/Atom feeds. Does not qualify because all blogs submitted to the index require manual review, but it seems interesting. Its "MarketRank" algorithm seems to give it a bias towards sites popular on "Hacker" "News".
-
 [Kukei.eu](https://kukei.eu/)
 : A curated search engine for web developers, which crawls [a hand-picked list of sites](https://github.com/Kukei-eu/spider/blob/914b8dfffc10cb3a948561aef2bf86937d3a0b2e/index-sources.js). As it does not index the whole Web, it doesn't qualify. I still find it interesting.
 
@@ -418,6 +415,9 @@ websearchengine.org OR tuxdex.com
 
 [Siik](https://web.archive.org/web/20221002041725/https://siik.co/)
 : Lacked contact info, and the ToS and Privacy Policy links were dead. Seemed to have PHP errors in the backend for some of its instant-answer widgets. If you scrolled past all that, you'd find web results powered by what seems to be its own index. These results did tend to be somewhat relevant, but the index seemed too small for more specific queries.
+
+[Blog Surf](https://blogsurf.io/)
+: A search engine for blogs with RSS/Atom feeds. Originally in "almost qualified". It did not qualify because all blogs submitted to the index require manual review, but it seemed interesting. Its "MarketRank" algorithm gave it a bias towards sites popular on "Hacker" "News".
 
 Dead engines I don't have an extended description for:
 
