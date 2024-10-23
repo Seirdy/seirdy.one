@@ -35,6 +35,7 @@ first = "Rohan"
 last = "Kumar"
 nick = "Seirdy"
 email = "seirdy@seirdy.one"
+fediverse = "@Seirdy@pleroma.envs.net"
 
 [menu]
 [[menu.main]]
