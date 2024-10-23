@@ -403,6 +403,7 @@ These engines were originally included in the article, but have since been disco
 => https://cyberfind.net/bot.html Cyberfind
 => https://fynd.bot/ fynd
 => https://www.wepch.com/search-engine Wepch Search Engine
+=> https://www.weblogdb.com/ Weblog DataBase
 
 ## Exclusions
 
