@@ -129,6 +129,10 @@ Disallow: /
 User-agent: Cotoyogi 
 Disallow: /
 
+# https://webz.io/bot.html
+User-agent: Webzio-extended
+Disallow: /
+
 # I'm not blocking CCBot for now. It publishes a free index for anyone to use.
 # Googe used this to train the initial version of Bard (now called Gemini).
 # I allow CCBot since its index is also used for upstart/hobbyist search engines
