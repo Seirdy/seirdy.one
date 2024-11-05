@@ -85,6 +85,7 @@ Archived snapshots of webrings, website clubs, and other directories I've been p
 
 <details>
 <summary>Toggle historical entries</summary>
+
 - [Yesterlinks](https://web.archive.org/web/20230817122434/https://links.yesterweb.org/)
 - [10 KB Club](https://web.archive.org/web/20231208000921/https://10kbclub.com/)
 - [no js webring](https://web.archive.org/web/20230224173026/https://nojs.sugarfi.dev/)

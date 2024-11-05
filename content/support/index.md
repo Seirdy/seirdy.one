@@ -24,7 +24,7 @@ If you like anything I do and want to support me, you can send me a donation:
 : Ideal for recurring donations, but also supports one-time payments. Requires a Liberapay account. You may optionally publicize your donation.
 
 [Stripe](https://donate.stripe.com/dR65nv5BWg3icq46oo "{rel='me payment'}")
-: Supports one-time-donations. Does not require an account. Your can't publicize this donation.
+: Supports one-time-donations. Does not require an account. You can't publicize this donation.
 
 [Ko-Fi](https://ko-fi.com/Seirdy "{rel='me payment'}")
 : Supports both recurring and one-time donations. You may optionally publicize your donation.
