@@ -198,6 +198,9 @@ bmake
 <a href="https://github.com/yt-dlp" id="yt-dlp">yt-dlp</a>
 : Download videos from hundreds of different sites, including YouTube. Integrates with external downloaders like aria2 and downloads DASH chunks in parallel to max out your connection speed. yt-dlp also integrates with Sponsorblock to add skippable chapters for the segments I'd otherwise have to manually skip (sponsored content, subscription-begging, an ending segment featuring other videos, and other useless bullshit). I've forgotten what it's like to watch a video ad.
 
+<a href="https://github.com/shenwei356/rush" id="rush">rush</a>
+: A faster alternative to GNU Parallel for when `xargs(1)` isn't enough (e.g. for non-interleaved output). Also very easy to deploy on a new server, as it's a single statically-linkable binary instead of a Perl program with a list of runtime dependencies.
+
 ## This website
 
 I use multiple aforementioned tools (Neovim, bmake, sd, etc.) for routine tasks when building seirdy.one.

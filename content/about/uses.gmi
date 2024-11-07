@@ -71,6 +71,8 @@ I don't currently use a prebuilt desktop environment. I assemble mine out of the
 * scc
 * Pandoc
 * ghq, a VCS repository manager in the style of $GOPATH
+* yt-dlp
+* rush, a faster alternative to GNU Parallel for when xargs isn't enough (e.g. for non-interleaved output)
 
 => https://github.com/psanford/wormhole-william wormhole-william
 => https://github.com/eafer/rdrview rdrview
