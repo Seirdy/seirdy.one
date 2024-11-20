@@ -286,6 +286,7 @@ asbestos.cafe {#asbestos}
 : [Admin sharing a dox attempt](https://archive.ph/LUA10)
 : [Antisemitism from local user](https://web.archive.org/web/20230803032450/https://shrine.moe/notice/AYJfESHlqB0IvHPfqS) followed by ableism from admin. [Admin defends antisemitism](https://web.archive.org/web/20240110032818/https://the.asbestos.cafe/notice/AdgBSAo0q5L63JPXtY).
 : [Queermisic user](https://web.archive.org/web/20230803032850/https://pl.starnix.network/notice/AY1JMsQpMH4NukiNE0).
+: [Very explicit anti-blackness from local users](https://web.archive.org/web/20241120043300/https://the.asbestos.cafe/notice/Ao28rL7evIm11h64Dg).
 
 bae.st {#baest} OR skippers-bin.com
 : [Admin profile page has an "n-word pass"](https://web.archive.org/web/20230730000208/https://bae.st/sjw). Runs a host of bots posting lewd artwork, some of which venture into lolicon and Black-fetishism territory (e.g. "NessaBot"). Runs "glow_in_the_dark_cia_agent", one of the biggest followbots on Fedi. Instance rejects deletes.
