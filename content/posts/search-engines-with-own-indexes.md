@@ -167,6 +167,9 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Jambo](https://jambot.com/)
 : Docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
+[search.dxhub.de](http://search.dxhub.de/?c=main)
+: while Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries.
+
 ### Fledgling engines
 
 Results from these search engines don't seem particularly relevant; indexes in this category tend to be small.
