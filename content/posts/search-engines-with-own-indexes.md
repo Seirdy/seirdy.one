@@ -209,6 +209,9 @@ Scopia
 [Slzii.com](https://www.slzii.com/)
 : A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
 
+[Weblog DataBase](https://www.weblogdb.com/)
+: A metadata search engine for technical blogs. Very small index and ranking seems poor, but it seems to have [different goals from most search engines](https://www.weblogdb.com/about/): it encourages filtering search results iteratively until finding the desired subset of results. The index updates weekly and not all features are implemented yet.
+
 ### Semi-independent indexes
 
 Engines in this category fall back to GBY when their own indexes don't have enough results. As their own indexes grow, some claim that this should happen less often.

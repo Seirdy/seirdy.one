@@ -174,9 +174,11 @@ Results from these search engines don’t seem at all useful.
 => https://www.prologic.blog/2021/02/14/so-im-a.html Blog post introducing Spyda
 => https://git.mills.io/prologic/spyda Spyda source code
 
-Slzii.com: A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
+* Slzii.com: A new web portal with a search engine. Has a tiny index dominated by SEO spam. Discovered in the seirdy.one access logs.
+* Weblog DataBase: a metadata search engine for technical blogs. Very small index and ranking seems poor, but it seems to have different goals from most search engines: it encourages filtering search results iteratively until finding the desired subset of results. The index updates weekly and not all features are implemented yet.
 
 => https://www.slzii.com/ Slzii.com
+=> https://www.weblogdb.com/ Weblog DataBase
 
 ### Semi-independent indexes
 
