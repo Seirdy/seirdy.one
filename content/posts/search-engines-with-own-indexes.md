@@ -94,6 +94,7 @@ Bing
   - Netzzappen
   - You.com[^7]
   - Partially powers MetaGer by default; this can be turned off
+  - [ChatGPT Search](https://help.openai.com/en/articles/9237897-chatgpt-search)
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
 Yandex
@@ -168,7 +169,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 : Docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
 [search.dxhub.de](http://search.dxhub.de/?c=main)
-: while Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries.
+: while Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
 
 ### Fledgling engines
 
