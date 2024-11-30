@@ -9,13 +9,13 @@ stype: "https://schema.org/AboutPage https://schema.org/ProfilePage"
 ---
 <div itemscope="" itemprop="about" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 
-I'm known as Seirdy, or as Rohan (interchangeable). There are some differences between these two personas, but the line between the two is blurry. It's fine to mix them up. [Yes, I'm plural!](https://pluralpedia.org/w/Main_Page) It's no secret, but I don't usually show it. I haven't yet come up with a system name.
+I'm known as Seirdy, or as Rohan. There are some differences between these two personas, but the line between the two is blurry. It's fine to mix them up.
 
 This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger: [acct:seirdy@seirdy.one](https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one). Any currently-active public account not listed via WebFinger isn't actually me; please let me know if you find one.
 
 I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript). I hope to migrate identity proofs to something besides OpenPGP in the future.
 
-## Rohan/Cadmus: meat&shy;space persona {#Rohan}
+## Rohan: meat&shy;space persona {#Rohan}
 
 I go by <span itemprop="alternateName" class="p-name n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc).
 
@@ -54,7 +54,7 @@ My preferred forge for personal projects is Sourcehut, but my repositories have 
 
 ## Seirdy: online persona {#Seirdy}
 
-I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan and Cadmus.
+I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan.
 
 <dl>
 
@@ -110,11 +110,9 @@ If you send me marketing emails or solicit guest posts, I will block you and sub
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
-I used to have the Matrix ID `@seirdy:envs.net`. I sometimes use `@seirdy:fairydust.space` for technical reasons (seirdy.one runs a Conduit server but certain features only work in Synapse rooms).
+I used to have the Matrix ID `@seirdy:envs.net`. I no longer use it.
 
 If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{<relref "fediverse-greeting.md">}})
-
-<small>Poggies</small>
 
 </div>
 
