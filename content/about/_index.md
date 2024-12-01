@@ -144,7 +144,10 @@ I like to collect things online! Things I like to collect include:
 * [Custom emotes](https://git.envs.net/envs/pleroma-custom/)
 * [88x31 buttons]({{<relref "/meta/badges.md">}})
 * [Search engines]({{<relref "/posts/search-engines-with-own-indexes.md">}})
-* Probably more
+
+I'm working on additional online collections too.
+
+Offline, I also like to collect United States coins by year. I'm not a serious coin collector; I just take them from circulation.
 
 ### Software freedom
 
