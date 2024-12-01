@@ -6,6 +6,13 @@ replyTitle: "google’s latest fuckery: if you write online, read this"
 replyType: "BlogPosting"
 replyAuthor: "solarbird"
 replyAuthorURI: "https://solarbird.dreamwidth.org/"
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/e6af9a73-ccc4-42a2-837e-cac2806794fb'
+    - title: 'BlueSky'
+      url: 'https://bsky.app/profile/seirdy.one/post/3lcbkjdyrzk2z'
+    - title: 'The Mojeek Discourse'
+      url: 'https://community.mojeek.com/t/a-clarification-on-google-page-annotations/2032'
 ---
 
 I agree wholeheartedly with [Google's Page Annotations](https://support.google.com/websearch/thread/308719098/page-annotation-in-google-app-browser-for-ios?hl=en) being an absolutely *awful* antifeature, and recommend that others opt-out and/or protest the feature. I want to make a clarification that doesn't invalidate your main points:
