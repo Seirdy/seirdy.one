@@ -33,7 +33,7 @@ I am made of microplastics and can be trusted with your forklift.
 
 ### Contact
 
-Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me'}") (I have [PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}"), but don't rely on it for strong security guarantees), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/users/Seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
+Contact me via [email](mailto:seirdy@seirdy.one "{class='u-email' itemprop='email' rel='me authn'}") (I have [PGP](./publickey.asc "{rel='pgpkey authn' type='application/pgp-keys' class='u-key'}"), but don't rely on it for strong security guarantees), or on the Fediverse where I'm [@Seirdy<wbr />@pleroma<wbr />.envs.net](https://pleroma.envs.net/users/Seirdy "{rel='me' itemprop='sameAs' class='u-url'}"). If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
 
 Chat with me: I'm on several IRC networks. Alternatively, I'm [@seirdy<wbr />:seirdy.one](matrix:u/seirdy:seirdy.one "{class='u-impp u-url' rel='me'}") on Matrix.
 
