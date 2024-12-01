@@ -23,6 +23,7 @@
 	<link href="{{ .Site.Params.CanonicalBaseURL }}{{ $canonicalRelPermalink }}" rel="canonical" />
 	<link href="{{ .Site.Params.WebmentionEndpoint }}" rel="webmention" />
 	<link href="{{ printf `https://webmention.io/webmention?forward=%s` .Site.Params.WebmentionEndpoint}}" rel="pingback" />
+	<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 	{{ $webmanifest := resources.Get "/manifest.webmanifest" | resources.ExecuteAsTemplate "manifest.webmanifest" . | resources.Minify -}}
 	{{- $cacheBuster := $webmanifest.Content | crypto.FNV32a -}}
 	{{- $webmanifestFingerprinted := printf "/manifest.%d.webmanifest" $cacheBuster -}}
