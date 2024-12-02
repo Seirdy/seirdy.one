@@ -6,7 +6,11 @@ title: My workouts
 description: "Documenting my low-equipment at-home workout regiment. How I work out, why I work out, my workout split, my list of exercises, and advice I'm soliciting."
 date: "2024-12-02T00:09:10-05:00"
 evergreen: true
-draft: false
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/65db29f3-4af9-423a-ac39-079739f46ead'
+    - title: 'BlueSky'
+      url: 'https://bsky.app/profile/seirdy.one/post/3lccekzghl224'
 ---
 I document my low-equipment at-home workout regiment. I currently do a three-day split: arms, back, and legs. Years ago, I had access to a gym. Now, I do the best I can at home with weights and bands.
 
