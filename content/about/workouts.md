@@ -30,13 +30,26 @@ _Note: this living article is more casual than my others, and isn't up to the sa
 
 ### Equipment used
 
-- Adjustable dumbbells, currently to 50 pounds. I'm unfortunately maxed out on some exercises.
 
-- Resistance bands (compact, therapy, and loop bands).
+Adjustable dumbbells
+: Currently adjustable to 50 pounds. I'm unfortunately maxed out on some exercises.
 
-- Ankle weights. I sometimes put these on my wrists during dumbbell exercises for exercises I'm maxed out on.
+Resistance bands
+: Includes compact, therapy, and loop bands.
 
-- A bed. It isn't too strong, so I only use it as a resistance band anchor for face-pulls. It also serves as a bench, though without the adjustability or arm-mobility that a real exercise bench offers.
+Backpack
+: Filled with weight to power-up bodyweight exercises.
+
+Ankle weights
+: I sometimes put these on my wrists during dumbbell exercises for exercises I'm maxed out on, or load them into the backpack to make it heavier.
+
+Push-up handles
+: My first piece of exercise equipment! I always use these; push-ups feel incomplete without them.
+
+A bed
+: It isn't too strong, so I only use it as a resistance band anchor for face-pulls. It also serves as a bench, though without the adjustability or arm-mobility that a real exercise bench offers.
+
+All my equipment fits under the bed or in a shopping bag.
 
 ### What I lack
 
@@ -206,3 +219,4 @@ I do not lose sleep over the number being a little too low; hyper-focusing on nu
 - Do I have any under-trained muscles, especially on leg day?
 
 - Are there any online forums you'd recommend, given my exercise-related interests?
+
