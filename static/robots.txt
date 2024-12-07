@@ -133,6 +133,10 @@ Disallow: /
 User-agent: Webzio-extended
 Disallow: /
 
+# https://kangaroollm.com.au/kangaroo-bot/`
+User-agent: Kangaroo Bot
+Disallow: /
+
 # I'm not blocking CCBot for now. It publishes a free index for anyone to use.
 # Googe used this to train the initial version of Bard (now called Gemini).
 # I allow CCBot since its index is also used for upstart/hobbyist search engines
