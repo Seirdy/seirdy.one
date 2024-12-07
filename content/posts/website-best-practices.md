@@ -596,7 +596,7 @@ Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
 
-* Images should usually have alt-text under 100 ch.[^21] Save longer descriptions for a caption or <code>aria-<wbr />describedby</code>. Exceptions exist; this is just a weak norm.
+* Images should usually have alt-text under 100 ch.[^21] Save longer descriptions for a caption or <code>aria-<wbr />describedby</code>. Exceptions exist; this is just a weak norm. If longer descriptions elsewhere aren't an option, disregard this advice and make alt-text as long as it needs to be.
 
 * Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 

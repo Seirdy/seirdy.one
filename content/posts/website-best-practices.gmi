@@ -558,7 +558,7 @@ Expect some readers to have images disabled or unloaded. Examples include:
 Accordingly, follow good practices for alt-text:
 
 * Concisely summarize the image content the best you can, without repeating the surrounding content.
-* Images should usually have alt-text under 100 characters, excluding punctuation. Save longer descriptions for a caption or "aria-describedby". Exceptions exist; this is just a weak norm.
+* Images should usually have alt-text under 100 characters, excluding punctuation. Save longer descriptions for a caption or "aria-describedby". Exceptions exist; this is just a weak norm. If longer descriptions elsewhere aren't an option, disregard this advice and make alt-text as long as it needs to be.
 * Don't include significant information that isn't present in the image; I'll cover how to handle supplementary information in the next subsections.
 
 The W3C's Web Accessibility Initiative (WAI) offers a decision tree for writing alt-text. It's a little lacking in nuance, but makes for a good starting point:
