@@ -141,9 +141,12 @@ Disallow: /
 # Googe used this to train the initial version of Bard (now called Gemini).
 # I allow CCBot since its index is also used for upstart/hobbyist search engines
 # like Alexandria and for genuinely useful academic work I personally like.
-# I allow Owler for similar reasons:
+# I allow Owler but disallow its "GenAI" identifier for similar reasons:
 # <https://openwebsearch.eu/owler/#owler-opt-out>
 # <https://openwebsearch.eu/common-goals-with-common-crawl/>.
+User-Agent: GenAI
+Disallow: /
+
 # Omgilibot/Omgili is similar to CCBot, except it sells the scrape results.
 # I'm not familiar enough with Omgili to make a call here.
 # In the long run, my embedded robots meta-tags and headers could cover gen-AI
