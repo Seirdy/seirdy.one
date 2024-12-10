@@ -542,7 +542,7 @@ I found most bots via my server logs, but some third party collections proved he
 : I don't recall actually discovering a bot to block via Cloudflare Radar, but I'm linking it here as it's a helpful bot catalog in general. Be aware of errors in its bot categorization. Several bots listed under "AI Crawler" aren't actually training or even related to <abbr>GenAI</abbr>. Some "Search Engine Crawler" entries are non-crawling scrapers that only fetch favicons for search results. This is a good starting point for further research if you fact-check entries yourself.
 
 Helpful individuals
-: Thanks to {{<indieweb-person itemprop="mentions" name="jmjl" url="https://tilde.green/~jmjl/">}} for pointing me out to the Open Web Search adding a `GenAI` product token for opting out of <abbr>GenAI</abbr> training.
+: Thanks to {{<indieweb-person itemprop="mentions" name="jmjl" url="https://tilde.green/~jmjl/">}} for telling me about Open Web Search adding a `GenAI` product token for opting out of <abbr>GenAI</abbr> training, and about SemRush's array of product tokens.
 
 </section>
 
