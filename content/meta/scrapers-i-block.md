@@ -7,9 +7,13 @@ tags:
     - AI
 outputs:
     - html
-#syndicatedCopies:
-#    - title: 'The Fediverse'
-#      url: ''
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/c022c39f-5cab-49c8-bf84-7504326e87dc'
+    - title: 'BlueSky'
+      url: 'https://bsky.app/profile/seirdy.one/post/3lcwjwqkc5k2z'
+    - title: 'jstpst'
+      url: 'https://jstpst.net/f/articles/12091/scrapers-i-block-and-allow-with-explanations'
 ---
 <section role="doc-introduction" itemprop="backstory">
 
@@ -67,7 +71,7 @@ That said, many robots do not respect `X-Robots` tags, or an `X-Robots` tag does
 
 ### Comparing <span translate="no">robots.txt</span>, X-Robots, and the <abbr>TDM</abbr> Reservation Protocol
 
-Ideally, `X-Robots` would support per-engine rules in a standard format,such as <span translate="no">robots.txt</span>. Unfortunately, it doesn't. Unlike <span translate="no">robots.txt</span>, it has per-page rules that persist on archives of a given page, potentially saved in other data sets.
+Ideally, `X-Robots` would support per-engine rules in a standard format, such as <span translate="no">robots.txt</span>. Unfortunately, it doesn't. Unlike <span translate="no">robots.txt</span>, it has per-page rules that persist on archives of a given page, potentially saved in other data sets.
 
 A successor to `X-Robots` called the [Text and Data Mining (<abbr>TDM</abbr>) Reservation Protocol](https://w3c.github.io/tdm-reservation-protocol/) may close the gap between `X-Robots` and <span translate="no">robots.txt</span>. It allows setting policies on data-mining to forbid <abbr>LLM</abbr> training, among other things.
 
