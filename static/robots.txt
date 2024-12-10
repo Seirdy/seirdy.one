@@ -1,89 +1,31 @@
+# Please see <https://seirdy.one/meta/scrapers-i-block/> for an explanation on almost every entry, including intentionally-excluded entries.
+
 User-agent: *
 Disallow: /noindex/
 Disallow: /misc/
 
-# I opt out of online advertising so malware that injects ads on my site won't
-# get paid. You should do the same. my ads.txt file contains a standard
-# placeholder to forbid any compliant ad networks from paying for ad placement
-# on my domain.
-User-Agent: Adsbot
-Disallow: /
-Allow: /ads.txt
-Allow: /app-ads.txt
-
-# By allowing us access, you enable the maximum number
-# of advertisers to confidently purchase advertising space on your pages. Our
-# comprehensive data insights help advertisers understand the suitability and
-# context of your content, ensuring that their ads align with your audience's
-# interests and needs. This alignment leads to improved user experiences,
-# increased engagement, and ultimately, higher revenue potential for your
-# publication. (https://www.peer39.com/crawler-notice)
-#  --> fuck off.
-User-agent: peer39_crawler
 User-Agent: peer39_crawler/1.0
 Disallow: /
 
 ## IP-violation scanners ##
 
-# The next three are borrowed from https://www.videolan.org/robots.txt
-
-# > This robot collects content from the Internet for the sole purpose of #
-# helping educational institutions prevent plagiarism. [...] we compare student
-# papers against the content we find on the Internet to see if we # can find
-# similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
-#  --> fuck off.
 User-Agent: TurnitinBot
 Disallow: /
 
-# > NameProtect engages in crawling activity in search of a wide range of brand
-# and other intellectual property violations that may be of interest to our
-# clients. (http://www.nameprotect.com/botinfo.html)
-#  --> fuck off.
-User-Agent: NPBot
-Disallow: /
-
-# iThenticate is a new service we have developed to combat the piracy of
-# intellectual property and ensure the originality of written work for#
-# publishers, non-profit agencies, corporations, and newspapers.
-# (http://www.slysearch.com/)
-#  --> fuck off.
 User-Agent: SlySearch
 Disallow: /
 
-# BLEXBot assists internet marketers to get information on the link structure
-# of sites and their interlinking on the web, to avoid any technical and
-# possible legal issues and improve overall online experience.
-# (http://webmeup-crawler.com/)
-# --> fuck off.
 User-Agent: BLEXBot
 Disallow: /
 
-# Providing Intellectual Property professionals with superior brand protection
-# services by artfully merging the latest technology with expert analysis.
-# (https://www.checkmarknetwork.com/spider.html/)
-# "The Internet is just way to big to effectively police alone." (ACTUAL quote)
-# --> fuck off.
 User-agent: CheckMarkNetwork/1.0 (+https://www.checkmarknetwork.com/spider.html)
 Disallow: /
 
-# Stop trademark violations and affiliate non-compliance in paid search.
-# Automatically monitor your partner and affiliates’ online marketing to
-# protect yourself from harmful brand violations and regulatory risks. We
-# regularly crawl websites on behalf of our clients to ensure content
-# compliance with brand and regulatory guidelines.
-# (https://www.brandverity.com/why-is-brandverity-visiting-me)
-# --> fuck off.
 User-agent: BrandVerity/1.0
 Disallow: /
 
 ## Misc. icky stuff ##
 
-# Pipl assembles online identity information from multiple independent sources
-# to create the most complete picture of a digital identity and connect it to
-# real people and their offline identity records. When all the fragments of
-# online identity data are collected, connected, and corroborated, the result
-# is a more trustworthy identity.
-# --> fuck off.
 User-agent: PiplBot
 Disallow: /
 
@@ -93,67 +35,39 @@ Crawl-Delay: 10
 
 ## Gen-AI data scrapers ##
 
-# Eat shit, OpenAI.
-User-agent: ChatGPT-User
 User-agent: GPTBot
 Disallow: /
 
-# Official way to opt-out of Google's generative AI training:
-# <https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers>
 User-agent: Google-Extended
 Disallow: /
 
-# Official way to opt-out of LLM training by Apple
-# <https://support.apple.com/en-us/119829#datausage>
 User-agent: Applebot-Extended
 Disallow: /
 
-# Anthropic-AI crawler posted guidance after a long period of crawling without opt-out documentation: <https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler>
 User-agent: ClaudeBot
 Disallow: /
 
-# FacebookBot crawls public web pages to improve language models for our speech
-# recognition technology.
-# <https://developers.facebook.com/docs/sharing/bot/?_fb_noscript=1>
-# UPDATE: The Meta-ExternalAgent crawler crawls the web for use cases such as training AI models or improving products by indexing content directly.
-# <https://developers.facebook.com/docs/sharing/webmasters/web-crawlers>
 User-Agent: FacebookBot
 User-Agent: meta-externalagent
 Disallow: /
 
-# This one doesn't support robots.txt: https://www.allenai.org/crawler
-# block it with your reverse-proxy or WAF or something.
-
-# See <https://ds.rois.ac.jp/center8/crawler/>
-# Parent page says it builds LLMs in the infographic: <https://ds.rois.ac.jp/center8/>
 User-agent: Cotoyogi 
 Disallow: /
 
-# https://webz.io/bot.html
 User-agent: Webzio-extended
 Disallow: /
 
-# https://kangaroollm.com.au/kangaroo-bot/`
 User-agent: Kangaroo Bot
 Disallow: /
 
-# I'm not blocking CCBot for now. It publishes a free index for anyone to use.
-# Googe used this to train the initial version of Bard (now called Gemini).
-# I allow CCBot since its index is also used for upstart/hobbyist search engines
-# like Alexandria and for genuinely useful academic work I personally like.
-# I allow Owler but disallow its "GenAI" identifier for similar reasons:
-# <https://openwebsearch.eu/owler/#owler-opt-out>
-# <https://openwebsearch.eu/common-goals-with-common-crawl/>.
 User-Agent: GenAI
 Disallow: /
 
-# Omgilibot/Omgili is similar to CCBot, except it sells the scrape results.
-# I'm not familiar enough with Omgili to make a call here.
-# In the long run, my embedded robots meta-tags and headers could cover gen-AI
+User-Agent: SemrushBot-OCOB
+User-Agent: SemrushBot-FT
+Disallow: /
 
-# I don't block cohere-ai or Perplexitybot: they don't appear to actually
-# scrape data for LLM training purposes. The crawling powers search engines
-# with integrated pre-trained LLMs.
-# TODO: investigate whether YouBot scrapes to train its own in-house LLM.
+User-Agent: VelenPublicWebCrawler
+Disallow: /
 
 Sitemap: https://seirdy.one/sitemap.xml
