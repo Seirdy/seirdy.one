@@ -75,7 +75,7 @@ Ideally, `X-Robots` would support per-engine rules in a standard format, such as
 
 A successor to `X-Robots` called the [Text and Data Mining (<abbr>TDM</abbr>) Reservation Protocol](https://w3c.github.io/tdm-reservation-protocol/) may close the gap between `X-Robots` and <span translate="no">robots.txt</span>. It allows setting policies on data-mining to forbid <abbr>LLM</abbr> training, among other things.
 
-The `noai` `X-Robots` directive makes the same mistake as the "Do Not Track" HTTP request header, in that it's a vague polite request with incentive for compliance. Crawlers generally respect <span translate="no">robots.txt</span> because they get caught and banned if they don't; indexers respect `noindex` because it prevents duplicate, internal, and shallow pages from getting indexed. There's no incentive to respect `noai`.
+The `noai` `X-Robots` directive makes the same mistake as the "Do Not Track" HTTP request header, in that it's a vague polite request with no incentive for compliance. Crawlers generally respect <span translate="no">robots.txt</span> because they get caught and banned if they don't; indexers respect `noindex` because it prevents duplicate, internal, and shallow pages from getting indexed. There's no incentive to respect `noai`.
 
 The <abbr>TDM</abbr> Reservation Protocol is less like "Do Not Track" and more like Global Privacy Control: observance of the <abbr>TDM</abbr> Reservation Protocol could be a way to qualify for an exception under the European Union's "CDSM Directive". It could have a clear legal meaning and legal incentive, which gives companies a very good reason to respect it. After the <abbr>TDM</abbr> Reservation Protocol finalizes and is shown to work, I may adopt it.
 
