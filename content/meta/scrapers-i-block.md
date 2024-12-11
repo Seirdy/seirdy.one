@@ -61,6 +61,13 @@ I set `X-Robots` tags in every page that forbid training Generative AI algorithm
 
 {{<mention-work itemtype="BlogPosting">}}<span itemscope="" itemprop="publisher" itemtype="https://schema.org/Organization">DeviantArt</span> popularized the `NoAI` `X-Robots` tag in {{<cited-work name="UPDATE All Deviations Are Opted Out of AI Datasets" url="https://www.deviantart.com/team/journal/UPDATE-All-Deviations-Are-Opted-Out-of-AI-Datasets-934500371" extraName="headline">}}{{</mention-work>}}, wich [Cohost](https://web.archive.org/web/20241207040446/https://cohost.org/staff/post/272195-cohost-now-sets-devi) and [Misskey](https://github.com/misskey-dev/misskey/pull/10833) since implemented. The [img2dataset scraper](https://github.com/rom1504/img2dataset/pull/218) respects it.
 
+In September 2024, Bing announced support for a `nocache` robots directive and hijacked the existing `noarchive` directive.
+
+- `nocache` allows Microsoft to do <abbr>LLM</abbr> training only using search engine result titles and snippets, and preserves visibility in Bing Chat.
+- `noarchive` completely opts a site out of Bing Chat and Microsoft's <abbr>LLM</abbr> training.
+
+I adopted `nocache`, as I still want my site to support real archiving services.
+
 ### <span translate="no">robots.txt</span>
 
 <span translate="no">robots.txt</span> is meant to opt out of crawling, to reduce server load. It does _not_ opt you out of further processing of crawled pages. Data miners can still fetch your pages without crawling them: they can fetch archived snapshots, use data collection in users' browsers or browser extensions, download or buy datasets, etc. `X-Robots` tags are the only standard vendor-neutral format for opting out of processing of crawled pages.
