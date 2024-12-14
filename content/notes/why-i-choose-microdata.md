@@ -1,6 +1,11 @@
 ---
 title: "Why I choose Microdata"
 date: 2024-12-14T00:34:50-05:00
+syndicatedCopies:
+    - title: 'The Fediverse'
+      url: 'https://pleroma.envs.net/objects/996ae2cc-5e4a-451e-b165-b5a85c9432a8'
+    - title: 'Bluesky'
+      url: 'https://bsky.app/profile/seirdy.one/post/3ldam2tzshc2q'
 ---
 
 The four most popular ways to use RDF-based metadata on websites are RDFa-Core, RDFa-Lite, Microdata, and inline JSON-LD.
