@@ -2,23 +2,23 @@
 Hash: SHA256
 
 Contact: https://seirdy.one/about/
-Expires: 2024-11-12T00:00:00.000Z
+Expires: 2025-12-14T00:00:00.000Z
 Encryption: https://seirdy.one/publickey.asc
 Preferred-Languages: en
 Canonical: https://seirdy.one/.well-known/security.txt
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEErGrx+DjfPcwuR6bPHoktsqX4RHkFAmVOiVIACgkQHoktsqX4
-RHlQbg//c3VPPxEF7i7rsnDur4jyF1qzEjsj+/fdtS70ayRr20aqn2dC+ye7/qzh
-60jRe7kVUXxk5E1Lfc3sEZ3IEeCBDlzr2fEzRR6uUG+gWRwnW8qJAOJ6S+MbjDBI
-V8+PishDOfBt6U/4Jasq/Kx83AexZNyRY6joNphkvhz/31xCoxC8RLjKOBbzx+KR
-rzhcXmW8jmRk8l1pOivkdnZgdTEY/gUpkp/v5hmgSZ0/aDA2YSSB7jlKf6a2RRuo
-2xSgeguxAz7F1SvjTpydFSQR8W6dxkYuMHlZHov6qltPAgax8d/Bn0XT/CvZTkdn
-kXLdIKj53gD2L32C1K9Mwncw4qIvwCymCjHgmanSZPDW34p7f0yMFeTJT8P3H9Nk
-a76GB05uQXdo8svCzkngqT223LeiKd7CpIgdwpLuCsK5QABTSBEkLl7NyoGeX4vn
-mpAd5iFUlkQniD/RJhrTdfCdGh6TBJyAwj3agPYhoPRYwnC9SDZ99r1WJ+yU3aAp
-YYO5sN1kyxB2nplRWzPfXzmsnuPphnSqz3dtfnzRt7jsGbshxUps6hbxtweYp2LV
-JrYqvmPHUZRsGf79YbgmhxHMS5tDJflaJq7x2E5OWaUmrn2h3oU9qYJoVyDzTgWB
-fRpxXJ/VFiKg3OjON0cFjALqTWBSG0j+hXpac52UCZrfuW0RHZc=
-=/Zhb
+iQIzBAEBCAAdFiEErGrx+DjfPcwuR6bPHoktsqX4RHkFAmddIqsACgkQHoktsqX4
+RHmGpQ//aH3EfAiPu6L8vMJgLb191gYqLedXwwV9Sesiz+7kiovOYWW+++tC0K5g
+aWUfj0zsFIFVISzge18QjKgu0Ukxc7njljHW4exCSAVITZoVhTS0UH9bwUTpGlkt
+NIS8afaRPjO0CdHvYeRHdlVOqqXG4i8QpQYoUjMl4wGgxQLCkOBtCnjfOajl7Bsx
+by1LBj7RlQ2szSIV+YjGLoZjAhMAwPpWTIb1+6V4OFjFZXwbCW2+Go7PmgPN26DA
+hEpOtqYojtcghQdoBeGLo83GhdBOD/am61g2NLB6qgrqDcow9fz00HRPXCphpJvs
+mq8+yu1+/eL5drXgi8+uS0Sz3iqr6ia+DoWIY11KjhJswrxhE4SNbPeI9yIcmpZE
+ePZxdrdLC7H1Dg377SqG/KX99Kqg9HLn7miIjHlXo7IY4pKmf6caueq6/Qs5t2JH
+kDGxxwYWOx2I8bHut9QbzCvRqZh066tiR+Cb0j7ojIQaXn3V+6+/NoX/pViHA3mG
+Zitm2IQwPkhjbwqn7j8o69nwnYiMWM/aLgmtFqHbWUII+k6PmngjXvgkKr+9hxqt
+oIMYd4dDhLP8GSysSRkRPYUgs5kWICPzWRg0UiBtJbR4NvDM2Lu07Rn3amC6ZNRC
+38OXALuI6N5w/QhPcOuiA+XBvI3cvOe32g3Dk0vV4IjfRjoLLog=
+=mXMp
 -----END PGP SIGNATURE-----
