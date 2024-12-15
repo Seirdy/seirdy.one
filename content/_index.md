@@ -21,9 +21,7 @@ The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectO
 
 <div class="p-note" itemprop="description">
 
-I care a lot about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span>; I often use screen readers and forced colors to deal with overstimulation. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> enthusiast and software minimalist who likes watching anime and tweaking his <span class="p-category category">Linux</span> setup. Current interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">IndieWeb</span>.
-
-My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
+I care deeply about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span> , and hope my site's design reflects that. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> supporter, though my perspective on software freedom differs from organizations such as the FSF. Current other interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">Open Web</span> (including the <span class="p-category">IndieWeb</span>).
 
 </div>
 

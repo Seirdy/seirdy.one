@@ -18,9 +18,9 @@ See the Director's Cut of my bio in the "about" page:
 
 => about/ About me
 
-Tech stuff: I care a lot about accessibility, and often use screen readers and forced colors to deal with overstimulation. I'm a FLOSS (Free, Libre, and Open-Source Software) enthusiast, software minimalist who likes watching anime and tweaking his Linux setup. Current interests include search engines, security, privacy, and the IndieWeb.
+Tech stuff: current interests include accessibility, search engines, security, privacy, and the Open Web (including the IndieWeb).
 
-My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture.
+My perspective on software freedom is a bit different from the FSF's; I've been trying to distance myself from "fossbro" culture despite caring deeply abou software freedom.
 
 Git repos:
 
