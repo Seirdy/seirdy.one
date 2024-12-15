@@ -21,7 +21,7 @@ The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectO
 
 <div class="p-note" itemprop="description">
 
-I care deeply about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span> , and hope my site's design reflects that. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> supporter, though my perspective on software freedom differs from organizations such as the FSF. Current other interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">Open Web</span> (including the <span class="p-category">IndieWeb</span>).
+I care deeply about <span class="p-category category">inclusive design</span> and <span class="p-category category">accessibility</span>, and hope my site's design reflects that. I'm a <abbr class="p-category category" title="Free, Libre, and Open-Source">FLOSS</abbr> supporter, though my perspective on software freedom differs from organizations such as the FSF. Current other interests include <span class="p-category category">search engines</span>, <span class="p-category category">security</span>, <span class="p-category category">privacy</span>, and the <span class="p-category category">Open Web</span> (including the <span class="p-category">IndieWeb</span>).
 
 </div>
 
