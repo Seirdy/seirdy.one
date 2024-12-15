@@ -12,6 +12,9 @@ Disallow: /
 User-Agent: TurnitinBot
 Disallow: /
 
+User-Agent: AcademicBotRTU
+Disallow: /
+
 User-Agent: SlySearch
 Disallow: /
 

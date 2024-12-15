@@ -139,6 +139,19 @@ Information
 Commentary
 : TurnItIn also offers false-positive-ridden <abbr>LLM</abbr>-detection services, described in {{<mention-work itemtype="Article">}}{{<cited-work name="Beyond Surveillance: The Case Against AI Proctoring and AI Detection" url="https://bccampus.ca/2024/10/16/beyond-surveillance-the-case-against-ai-proctoring-ai-detection/" extraName="headline">}} by {{<indieweb-person first-name="Ian" last-name="Linkletter" url="https://libguides.bcit.ca/prf.php?id=2c1673be-7cd6-11ed-8528-0266e2e2286e" itemprop="author">}}{{</mention-work>}}. This forces students with original papers to adjust their writing styles, distancing themselves from <abbr>LLM</abbr> stylometric fingerprints.n Nn-native English speakers find this especially hard.
 
+### AcademicBotRTU
+
+
+Product tokens
+: `AcademicBotRTU`
+
+Reason
+: Intellectual property snitch.
+
+Information
+: {{<mention-work itemtype="Article">}}{{<cited-work url="https://academicbot.rtu.lv/" name="AcadeicBotRTU" extraName="headline">}}{{</mention-work>}}
+: Relevant quote: <q cite="https://academicbot.rtu.lv/">AcademicBotRTU is a web crawler developed for indexing websites and documents against which to compare and match academic works of students and researchers to help educational and scientific institutions finding and preventing plagiarism.</q>
+
 ### BLEXBot
 
 
