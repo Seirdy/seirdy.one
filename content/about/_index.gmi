@@ -55,7 +55,6 @@ More info:
 
 My handle is "Seirdy" on all the platforms I use:
 
-=> https://a.gh0.pw/user/Seirdy apioforum
 => https://envs.net/%7Eseirdy/ my tildeverse Web page
 => gemini://envs.net/%7Eseirdy/ my tildeverse Gemini page
 => https://pleroma.envs.net/seirdy Fediverse (Akkoma)

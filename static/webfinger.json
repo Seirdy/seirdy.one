@@ -54,6 +54,11 @@
 			"type": "text/html"
 		},
 		{
+			"rel": "http://webfinger.net/rel/profile-page",
+			"href": "https://th3core.com/talk/profile/?u=1286",
+			"type": "text/html"
+		},
+		{
 			"rel": "webmention",
 			"href": "https://collector.seirdy.one/webmentions/receive"
 		},
