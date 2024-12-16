@@ -1,6 +1,7 @@
 name,prev,home,next,random
 Indieweb,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/previous,https://xn--sr8hvo.ws/,https://xn--sr8hvo.ws/%F0%9F%98%A9%F0%9F%9A%A3%F0%9F%8D%91/next,null
 a11y-webring,https://a11y-webring.club/prev,https://a11y-webring.club/,https://a11y-webring.club/next,https://a11y-webring.club/random
+envs,https://envs.net/ring/?action=prev&me=seirdy,https://envs.net/ring/,https://envs.net/ring/?action=next&me=seirdy,https://envs.net/ring/?action=random&me=seirdy
 Meta,https://meta-ring.hedy.dev/previous,https://meta-ring.hedy.dev/,https://meta-ring.hedy.dev/next,https://meta-ring.hedy.dev/random
 Retroweb,https://webri.ng/webring/retroweb/previous?index=3,https://indieseek.xyz/webring/,https://webri.ng/webring/retroweb/next?index=3,https://webri.ng/webring/retroweb/random
 CSS,https://webri.ng/webring/cssjoy/previous?via=https://seirdy.one/,https://cs.sjoy.lol/,https://webri.ng/webring/cssjoy/next?via=https://seirdy.one/,https://webri.ng/webring/cssjoy/random/
