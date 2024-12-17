@@ -156,7 +156,6 @@ Sites that link back to me:
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="176" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/railstation">{{<picture name="b/slatecave" alt="slatecave.net." width="176" height="62" class="pix">}}</a>
 <a href="https://www.theresnotime.co.uk/">{{<picture name="b/theresnotime" alt="fox head over the words “TheresNoTime”." width="176" height="62" class="pix">}}</a>
-<a href="https://itzzen.net/">{{<picture name="b/itzzen" alt="www dot itzzen dot net." width="176" height="62" class="pix">}}</a>
 <a href="https://winter.entities.org.uk/">{{<picture name="b/winter" alt="winter colon-three meow!" width="176" height="62" class="pix">}}</a>
 <a href="https://ezrizhu.com/">{{<picture name="b/ezri" alt="ezri" width="176" height="62" class="pix">}}</a>
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="176" height="62" class="pix">}}</a>
@@ -168,11 +167,9 @@ Sites that link back to me:
 <a href="https://moth.monster/">{{<picture name="b/moth" alt="The word “moth” in a brown-on-orange palette next to a flat inverted moth icon." width="176" height="62" class="pix">}}</a>
 <a href="https://tilde.town/~georgemoody/">{{<picture name="b/georgemoody" alt="Georgemoody." width="176" height="62" class="pix">}}</a>
 <a href="https://owlsroost.xyz/">{{<picture name="b/owlsroost" alt="Owl’s Roost." width="176" height="62" class="pix">}}</a>
-<a href="https://easrng.net/">{{<picture name="b/easrng" alt="easrng." width="176" height="62" class="pix">}}</a>
 <a href="https://viatrix.is-hella.gay/">{{<picture name="b/vivi-8831" alt="Viatrix." width="176" height="62" class="pix">}}</a>
 <a href="https://lunareclipse.zone/">{{<picture name="b/lunar-eclipse" alt="The text “Lunar Eclipse Zone” next to a magenta eclipsed moon." width="176" height="62" class="pix">}}</a>
 <a href="https://ch0ccyra1n.gitlab.io/">{{<picture name="b/ch0ccyra1n" alt="ch0ccyra1n’s website!" width="176" height="62" class="pix">}}</a>
-<a href="https://translunar.academy/">{{<picture name="b/tla" alt="Translunar Academy." width="176" height="62" class="pix">}}</a>
 
 ### Other sites
 
