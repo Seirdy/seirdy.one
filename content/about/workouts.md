@@ -186,13 +186,31 @@ The workout that leaves me feeling the most sore afterwards. Warm-up should incl
 
 This is my shortest and most frequent workout. I often do this on days when I have little time, and to separate arm-day from back-day due to their overlap.
 
-1. Jumping goblet squats with dumbbell and backpack. Super high priority, 4 sets.
-2. Bulgarian split squats.
-3. Lunges with dumbbells.
-4. Clamshells with loop bands and ankle weights on thighs (to anchor them in place).
-5. Lateral leg raises with loop resistance bands and ankle weights.
-6. Lateral band walk.
-7. Calf raises with a reverse backpack and dumbbell.
+Most of these exercises hit the glutes hard, so I made no section dedicated to glutes.
+
+### Quads
+
+These are all compound and high priority, but really nail the quads.
+
+1. Jumping goblet squats with dumbbell and backpack. Super high priority, 4 sets. Upon exhaustion, switch to sumo squats.
+2. Forward lunges.
+3. Bulgarian split squats.
+
+### Hamstring
+
+4. Dumbbell stiff-leg deadlift, targeting hamstrings.
+5. Hip thrusts.
+6. Rear lunges.
+
+### Hips
+
+7. Clamshells with loop bands and ankle weights on thighs (to anchor them in place).
+8. Lateral leg raises with loop resistance bands and ankle weights.
+9. Lateral band walk.
+
+### Calves
+
+10. Calf raises with a reverse backpack and dumbbell.
 
 I spend most of my leg-day time on compound exercises.
 
