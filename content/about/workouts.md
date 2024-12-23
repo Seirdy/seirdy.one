@@ -59,7 +59,7 @@ All my equipment fits under the bed or in a shopping bag.
 
 - A chin-up bar. 😭
 
-- Time: well, it's complicated. Most workouts can fit within <time datetime="PT1H">one hour</time> if I stay focused, excluding a light warm-up less than <time datetime="PT30M">30 minutes</time> before I start. Commuting to a gym would take too more time (and cost money). The hour between my pre-workout carb-filled meal and my workout is some of the only free time I have in a day, and I don't want to lose any it shuffling between the gym and home/work.
+- Time: well, it's complicated. Most workouts can fit within <time datetime="PT1H">one hour</time> if I stay focused, excluding a light warm-up less than <time datetime="PT30M">30 minutes</time> before I start. Commuting to a gym would take time (and cost money). The hour between my pre-workout carb-filled meal and my workout is some of the only free time I have in a day, and I don't want to lose any of it shuffling between the gym and home/work.
 
 ## Motivations
 
@@ -124,7 +124,7 @@ Some of these also work out the traps quite well.
 
 #### Forearms and grip strength
 
-This is the hard part. Forearms exercises have the highest difficulty for me, and results don't come easily. There exist many different forearm muscles, such as those controlling individual finger movements. Instead of targeting specific muscles, I target specific movements.
+This is the hard part. Forearm exercises have the highest difficulty for me, and results don't come easily. There exist many different forearm muscles, such as those controlling individual finger movements. Instead of targeting specific muscles, I target specific movements.
 
 Grip strength is a major bottleneck for me, so I pay extra attention to this part of the workout.
 
@@ -188,7 +188,7 @@ This is my shortest and most frequent workout. I often do this on days when I ha
 
 Most of these exercises hit the glutes hard, so I made no section dedicated to glutes.
 
-### Quads
+#### Quads
 
 These are all compound and high priority, but really nail the quads.
 
@@ -196,19 +196,19 @@ These are all compound and high priority, but really nail the quads.
 2. Forward lunges.
 3. Bulgarian split squats.
 
-### Hamstring
+#### Hamstrings
 
 4. Dumbbell stiff-leg deadlift, targeting hamstrings.
 5. Hip thrusts.
 6. Rear lunges.
 
-### Hips
+#### Hips
 
 7. Clamshells with loop bands and ankle weights on thighs (to anchor them in place).
 8. Lateral leg raises with loop resistance bands and ankle weights.
 9. Lateral band walk.
 
-### Calves
+#### Calves
 
 10. Calf raises with a reverse backpack and dumbbell.
 
