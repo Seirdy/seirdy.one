@@ -32,7 +32,7 @@ _Note: this living article is more casual than my others, and isn't up to the sa
 
 
 Adjustable dumbbells
-: Currently adjustable to 50 pounds. I'm unfortunately maxed out on some exercises.
+: Currently adjustable from 5 to 70 pounds, in increments 5 pounds.
 
 Resistance bands
 : Includes compact, therapy, and loop bands.
@@ -95,7 +95,7 @@ I preface each workout with a warm-up within 30 minutes of starting it. This inc
 
 ### Arm day
 
-Not the most intense workout, but the longest one with the most exercises. Warm-up should include bodyweight elbow-in push-ups.
+Not the most intense workout, but the longest one with the most exercises. Warm-up should include bodyweight elbow-in push-ups. I often superset between shoulder and upper-arm exercises to speed things up.
 
 If it's a day off, I can do every single exercise listed. Doing so takes under <time datetime="PT1H30M">90 minutes</time> if I stay focused.
 
@@ -108,31 +108,36 @@ Four sets of push-ups: two decline and two flat.
 
 #### Shoulders
 
-Some of these also work out the traps quite well.
+Some of these also work out the traps quite well. I usually do the Arnold press and a rear-deltoid fly, but sometimes I do a shoulder concentration and hit every exercise in this section.
 
-3. Standing dumbbell overhead press (anterior and lateral deltoid). High priority, 4 sets.
-4. Lateral raise (lateral deltoid).
-5. Front raise (anterior deltoid).
-6. Horizontal rear-deltoid fly with therapy bands (rear deltoid).
+3. Arnold press (full deltoid). High priority.
+4. Standing dumbbell overhead press (anterior and lateral deltoid). Low priority.
+5. Lateral raise (lateral deltoid).
+6. Front raise (anterior deltoid).
+7. Horizontal rear-deltoid fly with therapy bands (rear deltoid).
+
+If I feel satisfied after a few Arnold press sets, skip the standing dumbbell overhead press.
 
 #### Upper arm segment
 
-7. Bicep curls (biceps, some forearm). High priority.
 8. Standing banded overhead extensions (triceps).
-9. Hammerhead curls (brachii).
+9. Hammerhead curls (brachii, some forearm).
 10. Reverse curls (brachii, forearms). High priority.
+11. Bicep concentration curls (biceps). High priority.
 
 #### Forearms and grip strength
 
 This is the hard part. Forearm exercises have the highest difficulty for me, and results don't come easily. There exist many different forearm muscles, such as those controlling individual finger movements. Instead of targeting specific muscles, I target specific movements.
 
+I go easy on this section if I'm including some back-day exercises in arm-day. Many back-day exercises, such as weighted lunges or farmer's carry, incorporate forearm endurance.
+
 Grip strength is a major bottleneck for me, so I pay extra attention to this part of the workout.
 
-11. Wrist/finger curls
-12. Reverse wrist/finger curls (requires very little weight: less than 12.5 pounds)
-13. Sideways wrist/finger curls
-14. Behind-the-back wrist/finger curls with bands.
-15. Forearm twists. High priority
+12. Wrist/finger curls
+13. Reverse wrist/finger curls (requires very little weight: less than 12.5 pounds)
+14. Sideways wrist/finger curls
+15. Behind-the-back wrist/finger curls with bands.
+16. Forearm twists. High priority.
 
 I hope to get a hand gripper at some point to really hone in on grip strength. For forearm twists, I stop when my grip weakens; this always happens before my forearms weaken.
 
@@ -144,7 +149,7 @@ I'm considering bringing deltoid exercises from arm-day to back day when I have 
 
 I can't over-emphasize how transformative this has been for my quality of life. Chores like laundry are a breeze when I can carry several loads (sheets, clothes, shower curtain, towels, tablecloths, and detergent for two!) in a single trip thanks to back-day gains. I find running much easier with good posture and strong lats.
 
-Back day has my two favorite exercises: Kroc rows and renegade rows. I love back day so much! Unfortunately, I'm maxed out on weight for some exercises (esp. Kroc rows). While this lets me focus on form and more explosive movement, I really need a weight extension.
+Back day has my two favorite exercises: Kroc rows and renegade rows. I love back day so much!
 
 #### Compound back
 
@@ -192,25 +197,28 @@ Most of these exercises hit the glutes hard, so I made no section dedicated to g
 
 These are all compound and high priority, but really nail the quads.
 
-1. Jumping goblet squats with dumbbell and backpack. Super high priority, 4 sets. Upon exhaustion, switch to sumo squats.
-2. Forward lunges.
-3. Bulgarian split squats.
+1. Jumping goblet squats with dumbbell and backpack. High priority.
+2. Standard dumbbell squats.
+3. Forward lunges.
+4. Bulgarian split squats. Low priority.
 
 #### Hamstrings
 
-4. Dumbbell stiff-leg deadlift, targeting hamstrings.
-5. Hip thrusts.
-6. Rear lunges.
+5. Dumbbell stiff-leg deadlift, targeting hamstrings.
+6. Hip thrusts. High priority.
+7. Rear lunges.
+
+I do rear lunges by stepping off a rolled-up mat for an extra decline.
 
 #### Hips
 
-7. Clamshells with loop bands and ankle weights on thighs (to anchor them in place).
-8. Lateral leg raises with loop resistance bands and ankle weights.
-9. Lateral band walk.
+8. Clamshells with loop bands and ankle weights on thighs (to anchor them in place).
+9. Lateral leg raises with loop resistance bands and ankle weights.
+10. Lateral band walk.
 
 #### Calves
 
-10. Calf raises with a reverse backpack and dumbbell.
+11. Calf raises with a reverse backpack and dumbbell.
 
 I spend most of my leg-day time on compound exercises.
 
