@@ -327,7 +327,7 @@ Reason
 Information
 : {{<mention-work itemtype="Article">}}{{<cited-work url="https://kangaroollm.com.au/kangaroo-bot/" name="Kangaroo Bot: Powering Australia's AI Data Collection" extraName="headline">}}{{</mention-work>}}
 
-### Open Web Search GenAI-targeted opt=out
+### Open Web Search GenAI-targeted opt out
 
 
 Product tokens
@@ -453,7 +453,7 @@ Regex filter
 Commentary
 : This robot used a _slightly_ different User-Agent string to reach my site than the one advertised on the crawling notice (I saw a <samp>-Dolma</samp> suffix in my logs).
 
-## FriendlyCrawler
+### FriendlyCrawler
 
 
 User-Agent strings
@@ -462,7 +462,7 @@ User-Agent strings
 Information
 : {{<mention-work itemtype="BlogPosting">}}{{<cited-work url="https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/" name="An Update on FriendlyCrawler" extraName="headline">}} by {{<indieweb-person first-name="Alexander" last-name="Kunz" url="https://www.alex-kunz.com/contact/" itemprop="author">}}{{</mention-work>}} has good coverage of this bot.
 
-## PerplexityBot
+### PerplexityBot
 
 
 User-Agent strings
