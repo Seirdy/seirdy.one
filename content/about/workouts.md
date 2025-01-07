@@ -139,7 +139,7 @@ Grip strength is a major bottleneck for me, so I pay extra attention to this par
 15. Behind-the-back wrist/finger curls with bands.
 16. Forearm twists. High priority.
 
-I hope to get a hand gripper at some point to really hone in on grip strength. For forearm twists, I stop when my grip weakens; this always happens before my forearms weaken.
+I also have a hand gripper and finger resistance bands to really hone in on grip strength. For forearm twists, I stop when my grip weakens; this always happens before my forearms weaken.
 
 ### Back day
 
