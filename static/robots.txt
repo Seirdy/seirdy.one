@@ -54,7 +54,7 @@ User-Agent: FacebookBot
 User-Agent: meta-externalagent
 Disallow: /
 
-User-agent: Cotoyogi 
+User-agent: Cotoyogi
 Disallow: /
 
 User-agent: Webzio-extended
