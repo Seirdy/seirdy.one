@@ -93,8 +93,9 @@ Bing
   - Fireball
   - Netzzappen
   - You.com[^7]
+  - Vuhuv
   - Partially powers MetaGer by default; this can be turned off
-  - [ChatGPT Search](https://help.openai.com/en/articles/9237897-chatgpt-search)
+  - ChatGPT Search[^8]
   - At this point, I mostly stopped adding Bing-<wbr />based search engines. There are just too many.
 
 Yandex
@@ -117,7 +118,7 @@ These engines pass most of the tests listed in the "methodology" section. All of
 : **My favorite generalist engine on this page.** Stract supports advanced ranking customization by allowing users to import "optics" files, like a better version of Brave's "goggles" feature. [Stract is fully open-source](https://github.com/StractOrg/stract), with code released under an AGPL-3.0 license. The index is isn't massive but it's big enough to be a useful supplement to more major engines. Stract started with the Common Crawl index, but now uses its own crawler. Plans to add contextual ads and a subscription option for ad-free search. Discovered in my access logs.
 
 [Right Dao](https://rightdao.com)
-: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^8] For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones. It seems to be a bit lacking in more recent pages.
+: Very fast, good results. Passes the tests fairly well. It plans on including query-based ads if/when its user base grows.[^9] For the past few months, its index seems to have focused more on large, established sites rather than smaller, independent ones. It seems to be a bit lacking in more recent pages.
 
 [Alexandria](https://www.alexandria.org/)
 : A pretty new "non-profit, ad free" engine, with [freely-licensed code](https://github.com/alexandria-org/alexandria). Surprisingly good at finding recent pages. Its index is built from the Common Crawl; it isn't as big as Gigablast or Right Dao but its ranking is great.
@@ -169,7 +170,10 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 : Docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
 [search.dxhub.de](http://search.dxhub.de/?c=main)
-: while Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
+: While Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
+
+[Fynd](https://fynd.bot/)
+: Does not appear to support full-page search, but does search page titles and description meta-tags. Supports URL submission. Found in my access logs. Currently in a prototype/experimental stage.
 
 ### Fledgling engines
 
@@ -218,13 +222,13 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
 
 [Brave Search](https://search.brave.com/)
-: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^9] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries. <ins cite="https://brave.com/search-independence/" datetime="2023-08-15T20:39:00-07:00">Update 2023-08-15: Brave's Bing contract appears to have expired as of April 2023.</ins>
+: Many tests (including all the tests I listed in the "Methodology" section) resulted results identical to Google, revealed by a side-by-side comparison with Google, Startpage, and a Searx instance with only Google enabled. Brave claims that this is due to how Cliqz (the discontinued engine acquired by Brave) used query logs to build its page models and was optimized to match Google.[^10] The index is independent, but optimizing against Google resulted in too much similarity for the real benefit of an independent index to show. Furthermore, many queries have Bing results mixed in; users can click an "info" button to see the percentage of results that came from its own index. The independent percentage is typically quite high (often close to 100% independent) but can drop for advanced queries. <ins cite="https://brave.com/search-independence/" datetime="2023-08-15T20:39:00-07:00">Update 2023-08-15: Brave's Bing contract appears to have expired as of April 2023.</ins>
 
-  I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has [held payments to creators without disclosing that creators couldn't receive rewards](https://brave.com/rewards-update/), has made dangerously misleading claims about fingerprinting resistance,[^10] is run by a CEO who [spent thousands of dollars opposing gay marriage](https://arstechnica.com/information-technology/2014/03/new-mozilla-ceo-issues-statement-expresses-sorrow-for-causing-pain/), and [has rewritten typed URLs with affiliate links](https://www.pcmag.com/news/brave-browser-caught-redirecting-users-through-affiliate-links).
+  I can't in good conscience recommend using Brave Search, as the company runs cryptocurrency, has [held payments to creators without disclosing that creators couldn't receive rewards](https://brave.com/rewards-update/), has made dangerously misleading claims about fingerprinting resistance,[^11] is run by a CEO who [spent thousands of dollars opposing gay marriage](https://arstechnica.com/information-technology/2014/03/new-mozilla-ceo-issues-statement-expresses-sorrow-for-causing-pain/), and [has rewritten typed URLs with affiliate links](https://www.pcmag.com/news/brave-browser-caught-redirecting-users-through-affiliate-links).
 
   Brave Search offers a Tor onion service and doesn't require JS. Powers:
 
-  - Ghostery Private Search (identical results in my tests).[^11]
+  - Ghostery Private Search (identical results in my tests).[^12]
 
   - Partially powers Kagi ([documented in 2023](https://web.archive.org/web/20231105004927/https://help.kagi.com/kagi/search-details/search-sources.html), [unclear after docs removed main sources after <time>2024-05-01</time>](https://github.com/kagisearch/kagi-docs/commit/6baff1c066db9b3d804653ea19bc9d1c076a710b)).
 
@@ -271,7 +275,7 @@ These engines try to find a website, typically at the domain-name level. They do
 : The best in this category. Has a small but growing index of over 8 million sites. If I want to find the website for a certain project, Kozmonavt works well (provided its index has crawled said website). It works poorly for learning things and finding general information. I cannot recommend it for anything serious since it lacks contact information, a privacy policy, or any other information about the org/people who made it. Discovered in the seirdy.one access logs.
 
 [search.tl](http://www.search.tl/)
-: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^12] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
+: Generalist search for one <abbr title="top-level domain">TLD</abbr> at a time (defaults to .com). I'm not sure why you'd want to always limit your searches to a single TLD, but now you can.[^13] There isn't any visible UI for changing the TLD for available results; you need to add/change the `tld` URL parameter. For example, to search .org sites, append `&tld=org` to the URL. It seems to be connected to [Amidalla](http://www.amidalla.de/). Amidalla allows users to manually add URLs to its index and directory; I have yet to see if doing so impacts search.tl results.
 
 [Thunderstone](https://search.thunderstone.com/)
 : A combined website catalog and search engine that focuses on categorization. Its [about page](https://search.thunderstone.com/texis/websearch19/about.html) claims: <q cite="https://search.thunderstone.com/texis/websearch19/about.html">We continuously survey all primary COM, NET, and ORG web-servers and distill their contents to produce this database. This is an index of _sites_ not pages. It is very good at finding companies and organizations by purpose, product, subject matter, or location. If you're trying to finding things like _'BillyBob's personal beer can page on AOL'_, try Yahoo or Dogpile.</q> This seems to be the polar opposite of the engines in the ["small or non-commercial Web" category](#small-or-non-commercial-web).
@@ -453,7 +457,7 @@ Why bother using non-mainstream search engines?
 
 ### Conflicts of interest
 
-Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^13]
+Google, Microsoft (the company behind Bing), and Yandex aren't just search engine companies; they're content and ad companies as well. For example, Google hosts video content on YouTube and Microsoft hosts social media content on LinkedIn. This gives these companies a powerful incentive to prioritize their own content. They are able to do so even if they claim that they treat their own content the same as any other: since they have complete access to their search engines' inner workings, they can tailor their content pages to better fit their algorithms and tailor their algorithms to work well on their own content. They can also index their own content without limitations but throttle indexing for other crawlers.[^14]
 
 One way to avoid this conflict of interest is to _use search engines that aren't linked to major content providers;_ i.e., use engines with their own independent indexes.
 
@@ -570,16 +574,18 @@ Some of this content came from the [Search Engine Map](https://www.searchenginem
 
     <ins datetime="2024-05-25">Update: during a recent Bing outage, I found some organic link results on You.com that didn't look like they came from Bing. More research is needed again.</ins>
 
-[^8]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
+[^8]: See [the ChatGPT Search help article](https://help.openai.com/en/articles/9237897-chatgpt-search): <q cite="https://help.openai.com/en/articles/9237897-chatgpt-search">ChatGPT searches based on your prompts and may share disassociated search queries with third-party search providers such as Bing.</q>
 
-[^9]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
+[^9]: This is based on a statement Right Dao made in [on Reddit](https://reddit.com/comments/k4clx1/_/ge9dwmh/?context=1) ([archived](https://web.archive.org/web/20210320042457/https://i.reddit.com/r/degoogle/comments/k4clx1/right_dao_a_new_independent_search_engine_that/ge9dwmh/?context=1)).
 
-[^10]: I will explain my thinking in another post later, and then edit this with a link to that post.
+[^10]: More information can be found in [this HN subthread](https://news.ycombinator.com/item?id=27593801) and some posts on the Cliqz tech blog ([one](https://0x65.dev/blog/2019-12-06/building-a-search-engine-from-scratch.html), [two](https://0x65.dev/blog/2019-12-10/search-quality-at-cliqz.html)).
 
-[^11]: [Ghostery's documentation at the time of writing](https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search) is extremely misleading, using clever language that seems to heavily imply the use of an independent index and crawler while not saying so outright: Ghostery says it <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">gets you objective results from a unique search index</q> and that it will <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">crawl it's [sic] search index.</q> Privacy claims require trust, and word games do little to build it.
+[^11]: I will explain my thinking in another post later, and then edit this with a link to that post.
 
-[^12]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+[^12]: [Ghostery's documentation at the time of writing](https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search) is extremely misleading, using clever language that seems to heavily imply the use of an independent index and crawler while not saying so outright: Ghostery says it <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">gets you objective results from a unique search index</q> and that it will <q cite="https://web.archive.org/web/20240721030135/https://www.ghostery.com/private-search">crawl it's [sic] search index.</q> Privacy claims require trust, and word games do little to build it.
 
-[^13]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
+[^13]: Some search engines support the `site:` search operator to limit searches to subpages or subdomains of a single site or TLD. `site:.one`, for instance, limits searches to websites with the ".one" TLD.
+
+[^14]: Matt from Gigablast told me that indexing YouTube or LinkedIn will get you blocked if you aren't Google or Microsoft. I imagine that you could do so by getting special permission if you're a megacorporation.
 
 

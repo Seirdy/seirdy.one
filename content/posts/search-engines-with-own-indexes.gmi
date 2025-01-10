@@ -62,6 +62,7 @@ These are large engines that pass all my standard tests and more.
 * Fireball
 * Netzzappen
 * You.com¹¹
+* Vuhuv
 * Partially powers MetaGer by default; this can be turned off
 * ChatGPT Search
 * At this point, I mostly stopped adding Bing-based search engines. There are just too many.
@@ -134,6 +135,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 * Gabanza: a search engine from a hosting company. I found few details abou the search engine itself, and the index was small, but it was suitable for discovering new pages related to short broad queries.
 * Jambot: docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 * search.dxhub.de: while Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
+* Fynd: does not appear to support full-page search, but does search page titles and description meta-tags. Supports URL submission. Found in my access logs. Currently in a prototype/experimental stage.
 
 => https://github.com/chatnoir-eu ChatNoir source code (GitHub)
 => https://groups.google.com/g/common-crawl/c/3o2dOHpeRxo/m/H2Osqz9dAAAJ ChatNoir Announcement
@@ -141,6 +143,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 => http://www.secretsearchenginelabs.com/tech/cashrank.php CashRank Algorithm
 => https://www.gabanza.com/ Gabanza - The new search engine.
 => https://jambot.com/ Jambot
+=> https://fynd.bot/ Fynd
 
 ### Unusable engines, irrelevant results
 
@@ -405,7 +408,6 @@ These engines were originally included in the article, but have since been disco
 ## Upcoming engines
 
 => https://cyberfind.net/bot.html Cyberfind
-=> https://fynd.bot/ fynd
 => https://www.wepch.com/search-engine Wepch Search Engine
 => https://www.weblogdb.com/ Weblog DataBase
 
