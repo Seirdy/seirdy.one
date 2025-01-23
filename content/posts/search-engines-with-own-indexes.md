@@ -170,7 +170,7 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 : Docs, blog posts, etc. have not been updated since around 2006 but the engine continues to crawl and index new pages. Discovered in my access logs. Has a bias towards older content.
 
 [search.dxhub.de](http://search.dxhub.de/?c=main)
-: While Gigablast seems dead, a version of it was open-source. This based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
+: While Gigablast seems dead, a version of it was open-source. This is based on that version of Gigablast. Its index is small but results are still useful for surfing new unseen corners of short-tail queries. Found via my access logs.
 
 [Fynd](https://fynd.bot/)
 : Does not appear to support full-page search, but does search page titles and description meta-tags. Supports URL submission. Found in my access logs. Currently in a prototype/experimental stage.
