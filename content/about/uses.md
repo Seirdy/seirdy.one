@@ -335,6 +335,57 @@ These are tools that I don't use, or avoid using.
 * File managers: I prefer using the shell with fzf-based tab-completion that also features preview windows.
 * Docker. I use Podman for disposable pet development environments, but I never use containers to run things on the server (except as a temporary learning exercise).
 
+## Mobile
+
+My phone runs GrapheneOS.
+
+I use Accrescent, Obtanium (with AppVerifier), F-Droid, and the Play Store for apps. Some apps I like:
+
+Flexify
+: Workout planning and tracking. One of my favorite apps.
+
+Breezy Weather
+: Weather app aggregating many data sources.
+
+Moshidon and Enafore (PWA)
+: fediverse clients.
+
+LinkShield
+: Chooses between Vanadium and Firefox Beta per link click, with many features disabled (including JavaScript) for browsing.
+
+Aegis
+: Two-factor-authentication.
+
+Molly-IM
+: Soft Signal fork.
+
+PipePipe
+: Video client, primarily for YouTube.
+
+YTDLnis
+: yt-dlp GUI
+
+mpvKit
+: Video player
+
+HeliBoard
+: Current keyboard. May try FlorisBoard once it gets predictive text.
+
+FluffyChat
+: Matrix client.
+
+Markor
+: Notes and Markdown files.
+
+Aves Libre
+: Photo gallery
+
+Thunderbird
+: IMAP email client. May try FairEmail later.
+
+Read You
+: Feed reading.
+
 
 [^1]: Honestly: I think upstream abandonment would be less of an issue if hardware vendors made new releases half as often, and had half the models to support.
 

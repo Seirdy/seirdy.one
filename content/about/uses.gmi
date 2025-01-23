@@ -103,3 +103,23 @@ These are tools that I don't use, or avoid using.
 * system monitoring TUIs: I usually just run the command to view the resource I need to know about
 * File managers: I prefer using the shell with fzf-based tab-completion that also features preview windows
 
+## Mobile
+
+My phone runs GrapheneOS. Some apps I like:
+
+* Flexify: workout planning and tracking. One of my favorite apps.
+* Breezy Weather: weather app aggregating many data sources.
+* Moshidon and Enafore (PWA): Fediverse clients.
+* LinkShield: chooses between Vanadium and Firefox Beta per link click, with many features disabled (including JavaScript) for browsing.
+* Aegis: two-factor-authentication.
+* Molly-IM: soft Signal fork.
+* PipePipe: Video client, primarily for YouTube.
+* YTDLnis: yt-dlp GUI
+* mpvKit: video player
+* HeliBoard: current keyboard. May try FlorisBoard once it gets predictive text.
+* FluffyChat: Matrix client.
+* Markor: notes and Markdown files.
+* Aves Libre: photo gallery
+* Accrescent, Obtanium (with AppVerifier), F-Droid, and Play Store for apps.
+* Thunderbird: IMAP email client. May try FairEmail later.
+* Read You: feed reading.
