@@ -15,7 +15,7 @@ stype: "https://schema.org/WebSite"
 <meta itemprop="url" content="https://seirdy.one" />
 <div itemprop="author" itemscope="" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="p-author author h-card vcard" id="seirdy">
 
-I'm <a itemprop="url" href="https://seirdy.one/" rel="author me home bookmark" class="u-url u-uid url">{{% indieweb-icon %}} <span itemprop="name" class="p-name fn p-nickname nickname">Seirdy</span></a> (<span class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></span>). I'm also known as <span itemprop="alternateName" class="n p-name"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> (<span class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></span>) in meatspace.
+I'm <a itemprop="url" href="https://seirdy.one/" rel="author me home bookmark" class="u-url u-uid url">{{% indieweb-icon %}} <span itemprop="name" class="p-name fn p-nickname nickname">Seirdy</span></a> (<span class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></span>).
 
 The Director's Cut of my bio is at my [About page](./about/ "{itemprop='subjectOf'}").
 

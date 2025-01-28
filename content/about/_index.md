@@ -1,23 +1,21 @@
 ---
 date: 2020-10-30
-title: About Seirdy (Rohan Kumar)
+title: About Seirdy
 outputs:
     - html
     - gemtext
-description: "Get to know Seirdy, also known as Rohan. Contact info, my projects, interests, online accounts, etc."
+description: "Get to know Seirdy. Contact info, my projects, interests, online accounts, etc."
 stype: "https://schema.org/AboutPage https://schema.org/ProfilePage"
 ---
 <div itemscope="" itemprop="about" itemtype="https://schema.org/Person" itemid="https://seirdy.one/#seirdy" class="h-card vcard">
 
-I'm known as Seirdy, or as Rohan. There are some differences between these two personas, but the line between the two is blurry. It's fine to mix them up.
+I'm Seirdy.
 
 This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger: [acct:seirdy@seirdy.one](https://seirdy.one/.well-known/webfinger?resource=acct%3Aseirdy%40seirdy.one). Any currently-active public account not listed via WebFinger isn't actually me; please let me know if you find one.
 
 I've published a version of my OpenPGP key via Web Key Directory; this version has notations containing Ariadne identity proofs for a few more accounts of mine. You can [verify those accounts on any Keyoxide instance](https://keyoxide.org/wkd/seirdy%40seirdy.one) (requires JavaScript). I hope to migrate identity proofs to something besides OpenPGP in the future.
 
-## Rohan: meat&shy;space persona {#Rohan}
-
-I go by <span itemprop="alternateName" class="p-name n"><span itemprop="givenName" class="p-given-name given-name">Rohan</span>&#160;<span itemprop="familyName" class="p-family-name family-name">Kumar</span></span> in "real life" (work, school, family, etc).
+## Meat&shy;space persona
 
 I intentionally make very delayed updates to information such as my location.
 
@@ -36,25 +34,13 @@ I intentionally make very delayed updates to information such as my location.
 
 <dt>Time zone</dt>
 <dd>America/New_York (EST, UTC-05:00; or EDT, UTC-04:00 during daylight savings)</dd>
-
-<dt>Software forges</dt>
-<dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
-<dd>
-	<a href="https://github.com/Seirdy" rel="me">GitHub</a>
-</dd>
-<dd>
-	<a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
-</dd>
-<dd>
-	<a href="https://codeberg.org/Seirdy" rel="me">Codeberg</a>
-</dd>
 </dl>
 
 My preferred forge for personal projects is Sourcehut, but my repositories have remotes for GitHub, GitLab, and Codeberg too. I accept contributions from any of these platforms; use whichever you prefer.
 
-## Seirdy: online persona {#Seirdy}
+## Online persona
 
-I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than Rohan.
+I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy</span> online. I have multiple online personas, but Seirdy is my main one and the only one I feel comfortable associating with my meatspace persona. Seirdy is a bit of an abstract character, a bit less "professional" than my meatspace persona.
 
 <dl>
 
@@ -103,6 +89,18 @@ I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy<
 <dt>Chat</dt>
 <dd>IRC: “Seirdy” on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)</dd>
 <dd>Matrix: <a href="matrix:u/seirdy:seirdy.one" class="u-impp u-url" rel="me">@seirdy<wbr />:seirdy.one</a></dd>
+
+<dt>Software forges</dt>
+<dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
+<dd>
+	<a href="https://github.com/Seirdy" rel="me">GitHub</a>
+</dd>
+<dd>
+	<a href="https://gitlab.com/Seirdy" rel="me">GitLab</a>
+</dd>
+<dd>
+	<a href="https://codeberg.org/Seirdy" rel="me">Codeberg</a>
+</dd>
 
 </dl>
 

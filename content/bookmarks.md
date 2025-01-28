@@ -3,7 +3,7 @@ outputs:
     - html
 layout: bookmarks
 title: My bookmarks
-description: "Links from around the web, curated and annotated by Rohan Kumar."
+description: "Links from around the web, curated and annotated by Seirdy."
 sitemap:
     - ChangeFreq: daily
 ---

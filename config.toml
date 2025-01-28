@@ -18,7 +18,7 @@ src = "https://sr.ht/~seirdy/seirdy.one/"
 canonicalBaseURL = "https://seirdy.one" # I have mirrors with different baseURLs
 webmentionEndpoint = "https://collector.seirdy.one/webmentions/receive"
 logUrlPrefix = "https://git.sr.ht/~seirdy/seirdy.one/log/master/item/"
-copyright = "Copyright © 2023 Rohan “Seirdy” Kumar"
+copyright = "Copyright © 2023 Seirdy"
 dark = "auto"
 highlight = false
 icon = "/favicon.svg"
@@ -31,8 +31,6 @@ lastmod = ['lastmod', ':git', 'date', 'publishDate']
 [author]
 name = "Seirdy"
 url = "https://seirdy.one/"
-first = "Rohan"
-last = "Kumar"
 nick = "Seirdy"
 email = "seirdy@seirdy.one"
 fediverse = "@Seirdy@pleroma.envs.net"

@@ -1,6 +1,6 @@
-# Seirdy (Rohan Kumar)
+# Seirdy
 
-I'm known as Seirdy online, and Rohan in meatspace. There are some differences between these personas, but the line between the two is blurry. It's fine to mix them up. I have other names too.
+I'm Seirdy. I have other names too.
 => https://pluralpedia.org/w/Main_Page Pluralpedia
 
 This page lists my most relevant accounts. A more comprehensive list of my online accounts is available via WebFinger:
@@ -35,7 +35,7 @@ I have a Tor hidden Web service which mirrors this site's contents, except for t
 Featured in:
 => gemini://nightfall.city/writers-lane/ Writer's Lane, Nightfall City
 
-## Location (Rohan, He/Him, meatspace)
+## Location (meatspace)
 
 I intentionally make very delayed updates to information such as my location.
 
@@ -51,7 +51,7 @@ More info:
 * Time zone: "America/New_York" (EDT or EST)
 * Age: 24
 
-## Location (Seirdy, They/Them, online)
+## Location (online)
 
 My handle is "Seirdy" on all the platforms I use:
 

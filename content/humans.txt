@@ -1,5 +1,5 @@
 /* TEAM */
-Webmaster: Plural system of Seirdy, Cadmus, AKA Rohan Kumar.
+Webmaster: Seirdy
 Contact: see /about/
 
 /* THANKS */
