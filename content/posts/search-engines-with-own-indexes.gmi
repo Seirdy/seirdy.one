@@ -261,7 +261,7 @@ These engines try to find a website, typically at the domain-name level. They do
 * Semantic Scholar: a search engine by the Allen Institute for AI focused on academic PDFs, with a couple hundred million papers indexed. Discovered in my access logs.
 * Bonzamate: a search engine specifically for Australian websites.
 * searchcode: A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
-* StarFinder: a search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendring link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
+* StarFinder: a search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendering link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
 
 => https://highbrow.se/ High Browse
 => https://www.keybot.com/ Keybot Translation Search Machine.

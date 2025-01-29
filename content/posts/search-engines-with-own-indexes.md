@@ -308,7 +308,7 @@ Quor
 : A code-search engine by the developer of Bonzamate. Searches a hand-picked list of code forges for source code, supporting many search operators.
 
 [StarFinder](https://star-finder.de/?l=en)
-: A search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendring link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
+: A search engine that focuses on Open Graph Protocol metadata, searching for domains that have OGP information and rendering link previews for them. A good surf-engine once you grok how to build sufficiently broad queries. Has a large and growing index of 4.8 million sites at the time of writing. Allows site submission.
 
 ## Other languages
 
