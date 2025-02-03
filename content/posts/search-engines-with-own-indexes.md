@@ -67,6 +67,8 @@ Google
 
   - [Zarebin](https://zarebin.ir/) (Persian, can return English results)
 
+  - Ecosia (choose between Google and Bing providers in settings)
+
   - A host of other engines using [Programmable Search Engine's](https://developers.google.com/custom-search/) client-side scripts.
 
 Bing
@@ -75,7 +77,7 @@ Bing
   - DuckDuck&shy;Go[^3] (offers a Tor onion service, a JS-free version, and a TUI-browser-friendly "lite" version making it a good way to use Bing anonymously)
   - AOL
   - Qwant (partial)[^4]
-  - Ecosia
+  - Ecosia (choose between Google and Bing providers in settings)
   - Ekoru
   - Privado
   - Findx

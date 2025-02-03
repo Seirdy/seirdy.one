@@ -34,6 +34,7 @@ These are large engines that pass all my standard tests and more.
 * DSearch
 * 13TABS
 * Zarebin.ir (Persian, can return English results)
+* Ecosia (can choose between Google and Bing backends)
 * A host of other engines using Programmable Search Engine's client-side scripts.
 => https://developers.google.com/custom-search/ Programmable Search Engine
 
@@ -44,7 +45,7 @@ These are large engines that pass all my standard tests and more.
 * Startpage
 * AOL
 * Qwant (partial)⁴
-* Ecosia
+* Ecosia (can choose between Google and Bing backends)
 * Ekoru
 * Privado
 * Findx
