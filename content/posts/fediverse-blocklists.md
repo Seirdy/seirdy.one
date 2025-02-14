@@ -634,10 +634,11 @@ pawlicker.com {#pawlicker}
 pawoo.net {#pawoo}
 : Lolisho instance that does not moderate sufficiently. Has had several incidents of actual CSAM and child predators going unmoderated for long durations, despite reports.
 
-parcero.bond {#parcero}
+parcero.bond {#parcero} OR parcero.casa
 : [Blatantly racist slur use from admin](https://web.archive.org/web/20231228002424/https://parcero.bond/notice/AdFAk7TtAOSWOdVTTE).
 : [Antisemitism from admin](https://archive.today/2023.12.28-002727/https://parcero.bond/notice/AdE0tKsBYHTBpxfQ5Q).
 : [Sui-bait from admin](https://web.archive.org/web/20231228002906/https://parcero.bond/notice/AdDoer14YwYJja9V5s).
+: New domains included `mi.parcero.casa` and `ti.parcero.casa`. [Admin endorsed transmisia](http://archive.today/2024.12.06-185231/https://mi.parcero.casa/post/01939d0c-afc7-a56b-e1d5-b91b2d2b1a91).
 
 piazza.today {#piazza}
 : [climate denial from admin](https://archive.today/2024.06.01-014811/https://piazza.today/@centurion/posts/AhvMSBKb1Bsa1jNXAO), [COVID misinformation from admin](https://ghostarchive.org/archive/ptplK?wr=false), [transmisia from admin](https://ghostarchive.org/archive/4gdb9?wr=false).
