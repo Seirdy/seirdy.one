@@ -234,6 +234,8 @@ Engines in this category fall back to GBY when their own indexes don't have enou
 
   - Partially powers Kagi ([documented in 2023](https://web.archive.org/web/20231105004927/https://help.kagi.com/kagi/search-details/search-sources.html), [unclear after docs removed main sources after <time>2024-05-01</time>](https://github.com/kagisearch/kagi-docs/commit/6baff1c066db9b3d804653ea19bc9d1c076a710b)).
 
+  - Powers [GOOD Search](https://good-search.org/en/) ([archived homepage](https://web.archive.org/web/20250313144823/https://good-search.org/en/)).
+
 [Plumb](https://plumb.one/)
 : Almost all queries return no results; when this happens, it falls back to Google. It's fairly transparent about the fallback process, but I'm concerned about _how_ it does this: it loads Google's Custom Search scripts from `cse.google.com` onto the page to do a client-side Google search. This can be mitigated by using a browser addon to block `cse.google.com` from loading any scripts. Plumb claims that this is a temporary measure while its index grows, and they're planning on getting rid of this. Allows submitting URLs, but requires solving an hCaptcha. This engine is very new; hopefully as it improves, it could graduate from this section. Its Chief Product Officer [previously founded](https://archive.is/oVAre) the Gibiru search engine which shares the same affiliates and (for now) the same index; the indexes will diverge with time.
 
