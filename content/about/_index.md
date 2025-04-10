@@ -17,6 +17,8 @@ I've published a version of my OpenPGP key via Web Key Directory; this version h
 
 ## Meat&shy;space persona
 
+This is the version of me I present to the public offline.
+
 I intentionally make very delayed updates to information such as my location.
 
 <dl>
@@ -30,6 +32,7 @@ I intentionally make very delayed updates to information such as my location.
 <dd class="p-gender-identity" itemprop="gender">Male</dd>
 
 <dt>Pronouns</dt>
+<dd class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></dd>
 <dd class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></dd>
 
 <dt>Time zone</dt>
@@ -48,10 +51,12 @@ I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy<
 <dd>Cyberspace</dd>
 
 <dt>Gender</dt>
-<dd class="p-gender-identity" itemprop="gender">Agender</dd>
+<dd class="p-gender-identity" itemprop="gender">Fluid</dd>
 
 <dt>Pronouns</dt>
 <dd class="p-pronouns"><span class="p-pronoun">they</span>/<span class="p-pronoun">them</span></dd>
+<dd class="p-pronouns"><span class="p-pronoun">he</span>/<span class="p-pronoun">him</span></dd>
+<dd class="p-pronouns"><span class="p-pronoun">she</span>/<span class="p-pronoun">her</span></dd>
 
 <dt>Social (Fediverse)</dt>
 <dd><a href="https://pleroma.envs.net/users/Seirdy" rel="me">@Seirdy<wbr />@pleroma<wbr />.envs.net</a> (primary)</dd>
