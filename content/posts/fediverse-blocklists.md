@@ -189,6 +189,8 @@ Doing so signals that you've read these docs. If you build a consensus-based blo
 
 If you see an instance whose blocklist contains these entries, unmodified: if it's a large or open-registration instance, assume the moderators aren't doing their jobs and _do not register_ for it. Single-user or tiny tight-knit instances are free to import whatever they want, though. Moderators of large or open-registration instances should be willing to set aside ten minutes to read something before importing a list.
 
+If you run a non-private instance that subscribes to a blocklist (whether mine or someone else's) with minimal manual review, I strongly recommend saying so in your instance's "About" page or equivalent. Users should know who is responsible for moderation, and that the biases of their instance staff don't paint the full picture of the biases of the instance's moderation.
+
 ## Supplementary blocklists
 
 Some supplementary blocklists I maintain with very different criteria:
