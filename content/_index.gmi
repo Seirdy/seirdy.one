@@ -40,11 +40,9 @@ I am made of microplastics and can be trusted with your forklift.
 => ./publickey.asc PGP: 1E892DB2A5F84479 (don't rely on it for strong security guarantees)
 => https://pleroma.envs.net/seirdy Fediverse (@Seirdy@pleroma.envs.net)
 
-Chat with me: I prefer IRC, where my nick is Seirdy on Libera.chat, Snoonet, OFTC, Tilde.Chat, and a few smaller networks. Alternatively, I'm on Matrix:
+Chat with me: I'm on Matrix:
 
-=> https://matrix.to/#/@seirdy:seirdy.one @seirdy:seirdy.one
-
-My secondary Matrix account for Synapse-only rooms is @seirdy:fairydust.space.
+=> https://matrix.to/#/@seirdy:envs.net @seirdy:envs.net
 
 If you send me marketing emails or solicit guest posts, I will block you and submit you to third-party blocklists without warning.
 

@@ -92,8 +92,8 @@ I go by <span class="p-nickname nickname p-name name fn" itemprop="name">Seirdy<
 <dd><a href="../publickey.asc" class="u-key" rel="pgpkey authn" type="application/pgp-keys"><code>1E892DB2A5F84479</code></a> (also available via Web Key Directory)</dd>
 
 <dt>Chat</dt>
-<dd>IRC: “Seirdy” on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others)</dd>
-<dd>Matrix: <a href="matrix:u/seirdy:seirdy.one" class="u-impp u-url" rel="me">@seirdy<wbr />:seirdy.one</a></dd>
+<dd>Matrix: <a href="matrix:u/seirdy:envs.net" class="u-impp u-url" rel="me">@seirdy<wbr />:envs.net</a></dd>
+<dd>IRC: “Seirdy” on many networks (Liberachat, Snoonet, OFTC, Tilde.Chat, apionet, some others). Mostly inactive now.</dd>
 
 <dt>Software forges</dt>
 <dd><a href="https://sr.ht/~seirdy" rel="me">Sourcehut</a> (preferred)</dd>
@@ -113,7 +113,7 @@ If you send me marketing emails or solicit guest posts, I will block you and sub
 
 At least two platforms listed in the "Social (centralized)" category are not endorsed, and I'm trying to wind down my use of them. If you find a "Seirdy" somewhere else and don't know whether or not it's me, please contact me and ask instead of assuming that it must be me.
 
-I used to have the Matrix ID `@seirdy:envs.net`. I no longer use it.
+I used to have the Matrix ID `@seirdy:seirdy.one`. I no longer use it.
 
 If you want to follow me on the Fediverse, [read my Fediverse greeting first]({{<relref "fediverse-greeting.md">}})
 
