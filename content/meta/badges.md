@@ -156,9 +156,6 @@ Sites that link back to me:
 <a href="https://astrid.tech/">{{<picture name="b/astriddottech" alt="astrid dot tech in glitchy distorted letters." width="176" height="62" class="pix">}}</a>
 <a href="https://slatecave.net/railstation">{{<picture name="b/slatecave" alt="slatecave.net." width="176" height="62" class="pix">}}</a>
 <a href="https://www.theresnotime.co.uk/">{{<picture name="b/theresnotime" alt="fox head over the words “TheresNoTime”." width="176" height="62" class="pix">}}</a>
-<a href="https://itzzen.net/">{{<picture name="b/itzzennet" alt="www dot itzzen dot net." width="176" height="62" class="pix">}}</a>
-<a href="https://winter.entities.org.uk/">{{<picture name="b/winter" alt="winter colon-three meow!" width="176" height="62" class="pix">}}</a>
-<a href="https://ezrizhu.com/">{{<picture name="b/ezri" alt="ezri" width="176" height="62" class="pix">}}</a>
 <a href="https://keithhacks.cyou/">{{<picture name="b/keith" alt="the word “keith” after a tilde and a bone, with a rainbow border." width="176" height="62" class="pix">}}</a>
 <a href="https://xaselgio.net/">{{<picture name="b/xaselgio" alt="indigo’s den: xaselgo" width="176" height="62" class="pix">}}</a>
 <a href="https://pixelde.su/">{{<picture name="b/pixeldesu" alt="pixel" width="176" height="62" class="pix">}}</a>
