@@ -27,6 +27,8 @@ I care deeply about <span class="p-category category">inclusive design</span> an
 
 Git repos: [Sourcehut](https://sr.ht/~seirdy "{rel='me'}"), [GitHub](https://github.com/Seirdy "{rel='me'}"), [Codeberg](https://codeberg.org/Seirdy "{rel='me'}"), and [GitLab](https://gitlab.com/Seirdy "{rel='me'}")
 
+Other interests include health and fitness, and veganism. I plan to write more about these topics in 2025.
+
 I am made of microplastics and can be trusted with your forklift.
 
 ### Contact

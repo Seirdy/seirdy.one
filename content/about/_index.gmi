@@ -49,7 +49,7 @@ Currently living somewhere in New England, USA.
 More info:
 
 * Time zone: "America/New_York" (EDT or EST)
-* Age: 24
+* Age: 25
 
 ## Location (online)
 
@@ -118,7 +118,20 @@ I like to collect things online! Things I like to collect include:
 => https://git.envs.net/envs/pleroma-custom/ custom emotes (almost 20k in 140+ packs!)
 => https://seirdy.one/meta/badges/ 88x31 badges
 => ../posts/2021/03/10/search-engines-with-own-indexes/ search engines
-And probably more
+
+I'm working on additional online collections too.
+
+Offline, I also like to collect United States coins by year. I'm not a serious coin collector; I just take them from circulation.
+
+### Health
+
+Since 2024 I've developed a deep special interest in fitness and nutrition. I may consider a career in this space eventually. It also ties into my interest in veganism.
+
+I've transformed my health since, putting on significant muscle and improving my diet to massively reduce food noise. I may blog more about this in time.
+
+### Veganism
+
+I went vegan in 2024 and haven't looked back. I'm an ethical vegan, although my views aren't exactly mainstream. I do support reduciterianism, and don't believe everyone should be vegan at this time. Perhaps with time things could change.
 
 ### Software freedom
 

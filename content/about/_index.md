@@ -23,7 +23,7 @@ I intentionally make very delayed updates to information such as my location.
 
 <dl>
 <dt>Age</dt>
-<dd><time datetime="P8766D">24</time></dd>
+<dd><time datetime="P9132D">25</time></dd>
 
 <dt>Location</dt>
 <dd>Somewhere in <span itemprop="homeLocation" itemscope="" itemtype="https://schema.org/Place" class="p-region">New England</span>, <abbr itemprop="nationality" itemscope="" itemtype="https://schema.org/Country" class="p-country-name" title="United States of America">USA</abbr></dd>
@@ -140,7 +140,7 @@ Many people frame accessibility and compatibility in terms of "percentage of use
 
 I have some skin in the game: I rely on forced colors and use often use screen readers for web browsing. This is a really helpful measure to reduce overstimulation, given my anxiety and ADHD. I encourage others in similar situations to try these measures.
 
-### Collections
+### <span class="p-category category">Collections</span>
 
 I like to collect things online! Things I like to collect include:
 
@@ -152,7 +152,17 @@ I'm working on additional online collections too.
 
 Offline, I also like to collect United States coins by year. I'm not a serious coin collector; I just take them from circulation.
 
-### Software freedom
+### <span class="p-category category">Health</span>
+
+Since 2024 I've developed a deep special interest in fitness and nutrition. I may consider a career in this space eventually. It also ties into my interest in veganism.
+
+I've transformed my health since, putting on significant muscle and improving my diet to massively reduce food noise. I may blog more about this in time.
+
+### Veganism
+
+I went vegan in 2024 and haven't looked back. I'm an ethical vegan, although my views aren't exactly mainstream. I do support reduciterianism, and don't believe everyone should be vegan at this time. Perhaps with time things could change.
+
+### <span class="p-category category">Software freedom</span> {#software-freedom}
 
 While I care very much about "<span class="p-category category">free software</span>" (the name is confusing, it refers to freedom rather than price), I don't share the same perspective as most "fossbros" and organizations like the FSF. Software freedom is important because it gives people agency instead of delegating control to an authority; it's not valuable in and of itself, and promoting a "FOSS" alternative that has vulnerabilities and accessibility issues is sometimes counterproductive.
 
