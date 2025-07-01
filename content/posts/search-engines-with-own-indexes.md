@@ -144,9 +144,6 @@ These engines fail badly at a few important tests. Otherwise, they seem to work 
 [Peekr (formerly SvMetaSearch, not to be confused with Peekier)](https://peekr.org/)
 : Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source, with an emphasis on self-hostability.
 
-[Infotiger](https://alpha.infotiger.com/)
-: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section: I use it often to discover new sites, and look forward to the day it "graduates" to the previous section. [Infotiger also has a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
-
 [seekport](http://www.seekport.com/)
 : The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 
@@ -433,6 +430,10 @@ websearchengine.org OR tuxdex.com
 
 [Blog Surf](https://blogsurf.io/)
 : A search engine for blogs with RSS/Atom feeds. Originally in "almost qualified". It did not qualify because all blogs submitted to the index require manual review, but it seemed interesting. Its "MarketRank" algorithm gave it a bias towards sites popular on "Hacker" "News".
+
+[Infotiger](https://web.archive.org/web/20250627183504/https://infotiger.com/)
+: Was one of my favorites. It offered advanced result filtering and sports a somewhat large index. It allowed site submission for English and German pages. [Infotiger also had a Tor hidden service](http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/).
+
 
 Dead engines I don't have an extended description for:
 

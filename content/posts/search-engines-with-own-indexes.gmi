@@ -111,14 +111,11 @@ Yep supports Open Graph and some JSON-LD at the moment. A look through the sourc
 These engines fail badly at a few important tests. Otherwise, they seem to work well enough.
 
 * Peekr (formerly SvMetaSearch, not to be confused with Peekier): Originally a SearxNG metasearch engine that also included results from its own index, it's since diverged. It now appears to return all results from its own growing ElasticSearch index. Open source, with an emphasis on self-hostability.
-* Infotiger: My favorite engine in this section. It offers advanced result filtering and sports a somewhat large index. It allows site submission for English and German pages. The fastest-improving engine in this section; I look forward to the day it "graduates" to the previous section. Infotiger also has a Tor hidden service.
 * seekport: The interface is in German but it supports searching in English just fine. The default language is selected by your locale. It’s really good considering its small index; it hasn’t heard of less common terms, but it’s able to find relevant results in other tests. It's the second-fastest-improving engines in this section.
 * Exalead: slow, quality is hit-and-miss. Its indexer claims to crawl the DMOZ directory, which has since shut down and been replaced by the Curlie directory. No relevant results for “Oppenheimer” and some other history-related queries. Allows submitting individual URLs for indexing, but requires solving a Google reCAPTCHA and entering an email address.
 * ExactSeek: small index, disproportionately dominated by big sites. Failed multiple tests. Allows submitting individual URLs for crawling, but requires entering an email address and receiving a newsletter. Webmaster tools seem to heavily push for paid SEO options. It also powers SitesOnDisplay and Blog-search.com.
 
 => https://peekr.org/
-=> https://infotiger.com/ Infotiger
-=> http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/ Infotiger hidden service
 => http://www.seekport.com/ seekport (HTTP only)
 => https://www.exalead.com/search/ Exalead
 => https://curlie.org Curlie
@@ -390,6 +387,7 @@ These engines were originally included in the article, but have since been disco
 * Marlo: Another FLOSS engine, written in Haskell. Has a small index that's good enough for surfing broad topics, but not good enough for specific research.
 * websearchengine.org and tuxdex.com: Both were run by the same people, powered by their inetdex.com index. Searches are fast, but crawls are a bit shallow. Claims to have an index of 10 million domains, and not to use cookies. The pages are currently down and the domains re-direct to porn sites; I'm not aware of any official notice.
 * Entfer: a newcomer that let registered users upvote/downvote search results to customize ranking. Didn't offer much information about who made it. Its index was small, but it did seem to return results related to the query.
+* Infotiger: Was one of my favorites. It offered advanced result filtering and sports a somewhat large index. It allowed site submission for English and German pages. Infotiger also had a Tor hidden service.
 
 => gemini://gus.guru/ gus.guru
 => https://xangis.com/the-wbsrch-experiment/ The Wbsrch Experiment
@@ -398,6 +396,8 @@ These engines were originally included in the article, but have since been disco
 => https://web.archive.org/web/20220624172257/https://ninfex.com/ Ninfex
 => https://marlo.sandymaguire.me/ Marlo
 => https://web.archive.org/web/20230810032916/https://entfer.com/ Entfer
+=> https://web.archive.org/web/20250627183504/https://infotiger.com/ Infotiger
+=> http://infotiger4xywbfq45mvd5drh43jpqeurakg2ya7gqwvjf2bbwnixzqd.onion/ Infotiger hidden service
 
 * Siik: Lacked contact info, and the ToS and Privacy Policy links were dead. Seemed to have PHP errors in the backend for some of its instant-answer widgets. If you scrolled past all that, you'd find web results powered by what seems to be its own index. These results did tend to be somewhat relevant, but the index seemed too small for more specific queries.
 * Parsijoo: Persian search engine
