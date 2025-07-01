@@ -316,7 +316,7 @@ breastmilk.club {#breastmilk}
 brighteon.social {#brighteon}
 : [Brighteon's "about" page](https://web.archive.org/web/20230724044425/https://brighteon.social/about/more) marks the instance as a far-right cesspit. Instance is connected to [the Brighteon network](https://web.archive.org/web/20230729030855/https://www.brighteon.com/), a far-right network featuring shows such as "The Reality Camp" with Stacey Campfield.
 
-cachapa.xyz {#cachapa}
+cachapa.xyz {#cachapa} OR cachapa.cc
 : Admin [posts blatant racism](https://archive.today/2023.08.05-185121/https://moar.cachapa.xyz/notes/9huxc4zgtc), [blatantly racist transmisic sui-biat](https://archive.today/2023.08.05-185812/https://moar.cachapa.xyz/notes/9bv4ns2itf).
 : [Root domain's "about" page](https://web.archive.org/web/20231025062617/https://cachapa.xyz/about/) contains transmisic, racist, queermisic, and other slurs in a list of things the owner "hates".
 : Instance permits lolicon, and runs accounts for it such as "Shishihime" and "NahidaBot"; this may be a legal risk, depending on your jurisdiction.
@@ -587,6 +587,9 @@ nobodyhasthe.biz {#nobodyhasthebiz} OR nationalist.social
 : Some local users on the new instance: [a self-identified racist with nazi iconography](https://archive.today/2023.11.15-200939/https://nationalist.social/@NateHiggers1488), and [a blatantly antisemitic white nationalist](https://archive.today/2023.11.15-200737/https://nationalist.social/@nike/posts/Abpuph0qDAPoIw5mT2).
 : [Admins of nationalist.social made it clear that reporting won't help](https://archive.today/2023.11.15-200150/https://nationalist.social/@thomas/posts/AboHPaZzPrl5S98PCa), if you're still holding out hope for some reason.
 
+peertube.se {peertube-se}
+: Instance [self-affiliates with the Nordic Resistance Movement](http://archive.today/2025.07.01-204007/https://peertube.se/c/motstandsmedia_shorts/videos?s=1). This is the main active account on the instance.
+
 shortstacksran.ch {#ssr} OR needs.vodka
 : Admin [posts ethno-fascist harassment](https://web.archive.org/web/20230731171924/https://needs.vodka/notice/AYEXL71RuRXt1MYkSG), [antisemitism](https://web.archive.org/web/20230731172003/https://needs.vodka/notice/AYE2Y0GlEONjGKO8dk). Supports [racist, misogynistic, violent grooming](https://web.archive.org/web/20230731172555/https://needs.vodka/notice/AYAgwij0ohSdci6UjI).
 : shortstacksran.ch is the continuation of squid.kids and shortstackran.ch (note the extra "s"), by the same admin. [See prior FediBlock post](https://pleroma.envs.net/notice/ARU20uCgVwHeewEm6S). On the new instance, the admin posts [extremely racist use of slurs](https://web.archive.org/web/20230811200737/https://shortstacksran.ch/notice/AYbjnyIOQ5ZYOpQtaC), and [racist antisemitism](https://web.archive.org/web/20230811200824/https://shortstacksran.ch/notice/AYbeUcILUiKOtOMWVE). [Blatantly racist use of slurs and hashtag-spam](https://web.archive.org/web/20230827224843/https://shortstacksran.ch/notice/AZ4J3H3mYPXYtiWcdM) in a block-bait post from a local user.
@@ -752,6 +755,10 @@ thenobody.club {#thenobody-club}
 truthsocial.co.in {#truthsocialcoin}
 : Named after Donald Trump's "Truth Social" network. [A glimpse at their local timeline](https://web.archive.org/web/20230914234747/https://truthsocial.co.in/public/local) shows mostly far-right content befitting of the instance name. One of the main posters, "Kittruth", regularly [posts racist talking points](https://web.archive.org/web/20230914235535/https://truthsocial.co.in/@Kittruth/111065663686727434). Instance seems completely unmoderated, with [spambots such as "leoedward" going unnoticed for months](https://web.archive.org/web/20230915000055/https://truthsocial.co.in/@leoedward).
 
+tsundere.love
+: [Admin profile](http://archive.today/2025.07.01-211634/https://tsundere.love/Wiz?tab=statuses) lists them as an alt of a loli.church user, and has an alt called "wizgroomer" that posts sexually explicit lolicon.
+: [Admin posts explicit anti-blackness](https://archive.today/2025.06.19-152117/https://tsundere.love/notice/AvI9vLtHmb5ExHgNgO) and [indomisic racism](https://ghostarchive.org/archive/eGG03).
+
 usualsuspects.lol {#usualsuspects}
 : Admin led [targeted transmisic bodyshaming harassment](https://ghostarchive.org/archive/jjfV9) against members of a mainly-trans instance. Originally created to be a [block-bait Soapbox instance](https://web.archive.org/web/20230705053714/https://the.usualsuspects.lol/notice/AXKIqzKiWFFDNryNM0).
 
@@ -764,6 +771,10 @@ varishangout.net {#varis}
 : Instance permits lolicon/shotacon. [sample non-graphic thread containing queermisia, esp. transmisia, with staff involvement](https://web.archive.org/web/20230729223647/https://varishangout.net/notice/AYBv4A9bwrZXfu0Hho), [another such thread](https://web.archive.org/web/20230729225002/https://varishangout.net/notice/AYBmTghTBGJaGbw9zM).
 : [Staff member being openly transmisic](https://web.archive.org/web/20230729234932/https://varishangout.net/notice/AYAXPrAAe2y35X7JFQ).
 : [Several members participating in transmisic harassment](https://web.archive.org/web/20230730232126/https://varishangout.net/notice/AY7wuahlngicOwhlxo).
+
+volk.network {volk} OR volk.love
+: [Admin account](https://web.archive.org/web/20250701205440/https://volk.network/@johnnydoomsayer) has a bio of "White Power Alt-Tech" with a Nazi solute in his profile photo. Reblogs local users posting blatant antisemitism, and anti-blackness, and Nazi flags.
+: volk.love is a PeerTube instance. [Its "Team" page](https://archive.today/2025.07.01-210131/https://volk.love/about/instance/team) mentions the admin of volk.netowrk, links back to volk.network, and its description is blatantly white supremacist.
 
 vtuberfan.social {#vtuberfan}
 : Racism and other hate-speech, CW for unmarked nudity in profile pictures and banners.
